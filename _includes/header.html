@@ -1,28 +1,56 @@
-<header class="site-header">
+<!--<header class="site-header">
 
   <div class="wrap">
-
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
-          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
-            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
-            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
-            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-      <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
-        {% endfor %}
-      </div>
-    </nav>
-
   </div>
 
 </header>
+-->
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">Form Tools</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="">Home <i class="ion-ios7-arrow-down"></i></a></li>
+				<li><a href="">News <i class="ion-ios7-arrow-down"></i></a></li>
+				<li class="dropdown active">
+				<a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">Docs <i class="ion-ios7-arrow-down"></i></a>
+				<ul class="dropdown-menu">
+					<li><a href="./">User Documentation</a></li>
+					<li><a href="./">Tutorials</a></li>
+					<li><a href="./">Installation</a></li>
+					<li><a href="./">Upgrading</a></li>
+					<li><a href="./">API</a></li>
+					<li><a href="./">Translations</a></li>
+					<li><a href="./">Theme Development</a></li>
+					<li><a href="./">Core Changelog</a></li>
+					<li><a href="./">API Changelog</a></li>
+				</ul>
+				</li>
+				<li><a href="/download.php">Download <i class="ion-ios7-arrow-down"></i></a></li>
+				<li class="dropdown">
+					<a href="/extensions.php" class="dropdown-toggle disabled js-activated" data-toggle="dropdown">Extensions <i class="ion-ios7-arrow-down"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="./">Modules</a></li>
+						<li><a href="./">Themes</a></li>
+						<li><a href="./">API</a></li>
+						<li><a href="./">Translations</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Donate <i class="ion-ios7-arrow-down"></i></a></li>
+				<li><a href="#">Forums <i class="ion-ios7-arrow-down"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container mainContent">

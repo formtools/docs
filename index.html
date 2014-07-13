@@ -1,20 +1,40 @@
 ---
 layout: default
+title: "Documentation"
 ---
 
 <div class="home">
 
-  <h1>Posts!</h1>
+	<h1>Form Tools Documentation</h1>
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+	<p>
+		Click one of the sections below for more information about that topic. If you find any errors or inconsistencies
+		in any of our documentation, please click the page's "feedback" link - or edit the file yourself on github!
+	</p>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+	<p>
+		For individual module documentation, see the <a href="http://modules.formtools.org">Modules section</a>.
+	</p>
+
+	<br />
+	<br />
+
+	<section>
+		<ul>
+			<li>
+				<a href="userdoc/">User Documentation</a> - This contains information about how to use 2.1.x and later of the
+				core script. It includes a discussion of all the Core features, what's changed since the 2.0.x branch, what's now available and how it works. If you want to learn more about the script, this is the place to start!
+			</li>
+		</ul>
+	</section>
+
+	<ul class="posts">
+		{% for post in site.posts %}
+		<li>
+			<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+			<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		</li>
+		{% endfor %}
+	</ul>
 
 </div>
