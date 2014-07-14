@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
+{% include head.html %}
+<body>
 
-  {% include head.html %}
+	{% include header.html %}
 
-    <body>
+	<div class="page-content">
+		<div class="wrap">
+			<h1>{{ page.heading }}</h1>
 
-    {% include header.html %}
+			{{ content }}
+		</div>
+	</div>
 
-    <div class="page-content">
-      <div class="wrap">
-      {{ content }}
-      </div>
-    </div>
+	{{ githublink page.path }}
 
-    {% include footer.html %}
+	{% include footer.html %}
 
-    </body>
+</body>
 </html>

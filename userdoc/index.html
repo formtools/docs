@@ -1,8 +1,7 @@
 ---
 layout: default
+heading: User Documentation
 ---
-
-<h1>User Documentation</h1>
 
 <p>
 	This document is intended as general help for administrators who've installed
@@ -12,190 +11,178 @@ layout: default
 
 <hr size="1">
 
-<table cellspacing="1" cellpadding="1" width="100%">
-	<tbody><tr>
-		<td width="33%" valign="top">
+<div class="row">
+	<div class="col-lg-4">
+		<h4><a href="the_basics/">The Basics</a></h4>
+		<ul>
+			<!--<li><a href="?page=what_form_tools_does">What Form Tools does</a></li>-->
+			<li><a href="the_basics/our_approach">Our Approach / Best of Both Worlds</a></li>
+			<li><a href="the_basics/components">Form Tools Components</a></li>
+			<li><a href="the_basics/config_file">The config.php file</a></li>
+			<li><a href="the_basics/install_upgrade">Installation and Upgrading</a></li>
+			<li><a href="the_basics/system_requirements">System Requirements</a></li>
+		</ul>
 
-			<h4><a href="?page=what_form_tools_does">The Basics</a></h4>
-			<ul>
-				<li><a href="?page=what_form_tools_does">What Form Tools does</a></li>
-				<li><a href="?page=our_approach">Our Approach / Best of Both Worlds</a></li>
-				<li><a href="?page=components">Form Tools Components</a></li>
-				<li><a href="?page=config_file">The config.php file</a></li>
-				<li><a href="?page=install_upgrade">Installation and Upgrading</a></li>
-				<li><a href="?page=system_requirements">System Requirements</a></li>
-			</ul>
+		<h4><a href="changes_in_210/">Changes in 2.1.0</a></h4>
 
-			<h4><a href="?page=changes_in_210">Changes in 2.1.0</a></h4>
+		<h4><a href="general_info/">General Information</a></h4>
+		<ul>
+			<li><a href="general_info/sortables">Sortables and Groupables</a></li>
+			<li><a href="general_info/general_info_placeholders">Placeholders</a></li>
+		</ul>
 
-			<h4><a href="?page=general_info">General Information</a></h4>
-			<ul>
-				<li><a href="?page=sortables">Sortables and Groupables</a></li>
-				<li><a href="?page=general_info_placeholders">Placeholders</a></li>
-			</ul>
+		<h4><a href="form_management/">Form Management</a></h4>
+		<ul>
+			<li><a href="form_management/form_types/">Internal vs. External Forms</a></li>
+			<li><a href="form_management/adding_forms/">Adding Forms</a>
+				<ul>
+					<li><a href="form_management/submission_type_comparison">process.php vs. the API</a></li>
+					<li><a href="form_management/add_form_step1">1: Choose Integration Method</a></li>
+					<li><a href="form_management/add_form_step2">2: Form Information</a></li>
+					<li><a href="form_management/add_form_step3">3: Test Submission</a></li>
+					<li><a href="form_management/add_form_step4">4: Database Setup</a></li>
+					<li><a href="form_management/add_form_step5">5: Field Types</a></li>
+					<li><a href="form_management/add_form_step6">6: Finalize Form</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="form_management/editing_forms">Editing Forms</a>
+				<ul>
+					<li><a href="form_management/edit_form_main_tab">Main tab</a></li>
+					<li><a href="form_management/edit_form_fields_tab">Fields tab</a></li>
+					<li><a href="form_management/edit_form_views_tab">Views tab</a></li>
+					<li><a href="form_management/edit_form_emails_tab">Emails tab</a></li>
+				</ul>
+			</li>
+			<li><a href="form_management/disabling_forms">Disabling forms</a></li>
+			<li><a href="form_management/deleting_forms">Deleting forms</a></li>
+			<li><a href="form_management/form_permissions">Form Permissions (who sees what?)</a></li>
+			<li><a href="form_management/field_option_groups">Option Lists</a>
+				<ul>
+					<li><a href="form_management/fog_adding">Adding via the Add Form Process</a></li>
+					<li><a href="form_management/fog_adding_manually">Adding manually</a></li>
+					<li><a href="form_management/fog_editing">Editing</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="form_management/form_fields">Individual Form Fields</a>
+				<ul>
+					<li><a href="form_management/adding_form_fields">Adding form fields</a> </li>
+					<li><a href="form_management/deleting_form_fields">Deleting form fields</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
 
-			<h4><a href="?page=form_management">Form Management</a></h4>
-			<ul>
-				<li><a href="?page=form_types">Internal vs. External Forms</a></li>
-				<li><a href="?page=adding_forms">Adding Forms</a>
-					<ul>
-						<li><a href="?page=submission_type_comparison">process.php vs. the API</a></li>
-						<li><a href="?page=add_form_step1">1: Choose Integration Method</a></li>
-						<li><a href="?page=add_form_step2">2: Form Information</a></li>
-						<li><a href="?page=add_form_step3">3: Test Submission</a></li>
-						<li><a href="?page=add_form_step4">4: Database Setup</a></li>
-						<li><a href="?page=add_form_step5">5: Field Types</a></li>
-						<li><a href="?page=add_form_step6">6: Finalize Form</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="?page=editing_forms">Editing Forms</a>
-					<ul>
-						<li><a href="?page=edit_form_main_tab">Main tab</a></li>
-						<li><a href="?page=edit_form_fields_tab">Fields tab</a></li>
-						<li><a href="?page=edit_form_views_tab">Views tab</a></li>
-						<li><a href="?page=edit_form_emails_tab">Emails tab</a></li>
-					</ul>
-				</li>
-				<li><a href="?page=disabling_forms">Disabling forms</a></li>
-				<li><a href="?page=deleting_forms">Deleting forms</a></li>
-				<li><a href="?page=form_permissions">Form Permissions (who sees what?)</a></li>
-				<li><a href="?page=field_option_groups">Option Lists</a>
-					<ul>
-						<li><a href="?page=fog_adding">Adding via the Add Form Process</a></li>
-						<li><a href="?page=fog_adding_manually">Adding manually</a></li>
-						<li><a href="?page=fog_editing">Editing</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="?page=form_fields">Individual Form Fields</a>
-					<ul>
-						<li><a href="?page=adding_form_fields">Adding form fields</a> </li>
-						<li><a href="?page=deleting_form_fields">Deleting form fields</a></li>
-					</ul>
-				</li>
-			</ul>
+	<div class="col-lg-4">
 
-		</td>
-		<td valign="top" width="33%">
+		<h4><a href="field_validation/">Field Validation (2.1.4+)</a></h4>
+		<ul>
+			<li><a href="field_validation/customizing_validation">Customizing the validation</a></li>
+		</ul>
 
-			<h4><a href="?page=field_validation">Field Validation (2.1.4+)</a></h4>
-			<ul>
-				<li><a href="?page=customizing_validation">Customizing the validation</a></li>
-			</ul>
+		<h4><a href="field_types/">Field Types</a></h4>
+		<ul>
+			<li><a href="field_types/how_field_types_are_used">How field types are used</a></li>
+			<li><a href="field_types/edit_field_dialog">The Edit Field dialog</a></li>
+			<li>
+				<a href="field_types/predefined_field_types">Pre-defined field types</a>
+				<ul>
+					<li><a href="field_types/ft_textboxes">Textboxes</a></li>
+					<li><a href="field_types/ft_textareas">Textareas</a></li>
+					<li><a href="field_types/ft_password">Passwords</a></li>
+					<li><a href="field_types/ft_radios">Radio Buttons</a></li>
+					<li><a href="field_types/ft_checkboxes">Checkboxes</a></li>
+					<li><a href="field_types/ft_dropdown">Dropdowns</a></li>
+					<li><a href="field_types/ft_multiselect">Multi-select dropdowns</a></li>
+					<li><a href="field_types/ft_date">Dates</a></li>
+					<li><a href="field_types/ft_time">Times</a></li>
+					<li><a href="field_types/ft_phone">Phone Numbers</a></li>
+					<li><a href="field_types/ft_code">Code / Markup Fields</a></li>
+				</ul>
+			</li>
+			<li><a href="field_types/bundled_field_type_modules">Bundled field type modules</a></li>
+			<li><a href="field_types/other_field_types">Other Field Types</a></li>
+			<li><a href="field_types/custom_fields_module">The Custom Fields module</a></li>
+		</ul>
 
-			<h4><a href="?page=field_types">Field Types</a></h4>
-			<ul>
-				<li><a href="?page=how_field_types_are_used">How field types are used</a></li>
-				<li><a href="?page=edit_field_dialog">The Edit Field dialog</a></li>
-				<li>
-					<a href="?page=predefined_field_types">Pre-defined field types</a>
-					<ul>
-						<li><a href="?page=ft_textboxes">Textboxes</a></li>
-						<li><a href="?page=ft_textareas">Textareas</a></li>
-						<li><a href="?page=ft_password">Passwords</a></li>
-						<li><a href="?page=ft_radios">Radio Buttons</a></li>
-						<li><a href="?page=ft_checkboxes">Checkboxes</a></li>
-						<li><a href="?page=ft_dropdown">Dropdowns</a></li>
-						<li><a href="?page=ft_multiselect">Multi-select dropdowns</a></li>
-						<li><a href="?page=ft_date">Dates</a></li>
-						<li><a href="?page=ft_time">Times</a></li>
-						<li><a href="?page=ft_phone">Phone Numbers</a></li>
-						<li><a href="?page=ft_code">Code / Markup Fields</a></li>
-					</ul>
-				</li>
-				<li><a href="?page=bundled_field_type_modules">Bundled field type modules</a></li>
-				<li><a href="?page=other_field_types">Other Field Types</a></li>
-				<li><a href="?page=custom_fields_module">The Custom Fields module</a></li>
-			</ul>
+		<h4><a href="form_submissions/">Form Submissions</a></h4>
+		<ul>
+			<li><a href="form_submissions/submissions_table">The Submissions Table</a></li>
+			<li><a href="form_submissions/search_submissions">Search Submissions</a></li>
+			<li><a href="form_submissions/exporting_form_data">Downloading / exporting form data</a></li>
+			<li><a href="form_submissions/editing_form_submissions">Editing form submissions</a></li>
+		</ul>
 
-			<h4><a href="?page=form_submissions">Form Submissions</a></h4>
-			<ul>
-				<li><a href="?page=submissions_table">The Submissions Table</a></li>
-				<li><a href="?page=search_submissions">Search Submissions</a></li>
-				<li><a href="?page=exporting_form_data">Downloading / exporting form data</a></li>
-				<li><a href="?page=editing_form_submissions">Editing form submissions</a></li>
-			</ul>
+		<h4><a href="client_accounts/">Client Accounts</a></h4>
+		<ul>
+			<li><a href="client_accounts/creating_accounts">Creating an Account</a></li>
+			<li><a href="client_accounts/logging_in">Logging In</a></li>
+			<li><a href="client_accounts/forget_password">Forget your password?</a></li>
+			<li><a href="client_accounts/editing_accounts">Editing an Account</a></li>
+			<li><a href="client_accounts/disabling_accounts">Disabling an Account</a></li>
+			<li><a href="client_accounts/deleting_accounts">Deleting an Account</a></li>
+			<li><a href="client_accounts/account_permissions">Account Permissions</a></li>
+		</ul>
 
-			<h4><a href="?page=client_accounts">Client Accounts</a></h4>
-			<ul>
-				<li><a href="?page=creating_accounts">Creating an Account</a></li>
-				<li><a href="?page=logging_in">Logging In</a></li>
-				<li><a href="?page=forget_password">Forget your password?</a></li>
-				<li><a href="?page=editing_accounts">Editing an Account</a></li>
-				<li><a href="?page=disabling_accounts">Disabling an Account</a></li>
-				<li><a href="?page=deleting_accounts">Deleting an Account</a></li>
-				<li><a href="?page=account_permissions">Account Permissions</a></li>
-			</ul>
+	</div>
 
-		</td>
-		<td valign="top" width="33%">
+	<div class="col-lg-4">
 
-			<h4><a href="?page=emails">Emails</a></h4>
-			<ul>
-				<li><a href="?page=configure_form_email_fields">Configuring Form Email Fields</a></li>
-				<li><a href="?page=editing_emails">Adding / Editing Emails</a></li>
-				<li><a href="?page=email_patterns">Email Patterns</a></li>
-				<li><a href="?page=swift_mailer_module">The Swift Mailer module</a></li>
-			</ul>
+		<h4><a href="emails/">Emails</a></h4>
+		<ul>
+			<li><a href="emails/configure_form_email_fields">Configuring Form Email Fields</a></li>
+			<li><a href="emails/editing_emails">Adding / Editing Emails</a></li>
+			<li><a href="emails/email_patterns">Email Patterns</a></li>
+			<li><a href="emails/swift_mailer_module">The Swift Mailer module</a></li>
+		</ul>
 
-			<h4><a href="?page=views">Views</a></h4>
-			<ul>
-				<li><a href="?page=view_list">View List</a></li>
-				<li><a href="?page=view_creation">Adding Views</a></li>
-				<li><a href="?page=editing_views">Editing Views</a>
-					<ul>
-						<li><a href="?page=edit_view_main_tab">Main tab</a></li>
-						<li><a href="?page=edit_view_columns_tab">Columns tab</a></li>
-						<li><a href="?page=edit_view_fields_tab">Fields tab</a></li>
-						<li><a href="?page=view_tabs">Tabs tab</a></li>
-						<li><a href="?page=view_filters">Filters tab</a></li>
-					</ul>
-				</li>
-				<li><a href="?page=view_permissions">View Permissions (who sees what?)</a></li>
-			</ul>
+		<h4><a href="views/">Views</a></h4>
+		<ul>
+			<li><a href="views/view_list">View List</a></li>
+			<li><a href="views/view_creation">Adding Views</a></li>
+			<li><a href="views/editing_views">Editing Views</a>
+				<ul>
+					<li><a href="views/edit_view_main_tab">Main tab</a></li>
+					<li><a href="views/edit_view_columns_tab">Columns tab</a></li>
+					<li><a href="views/edit_view_fields_tab">Fields tab</a></li>
+					<li><a href="views/view_tabs">Tabs tab</a></li>
+					<li><a href="views/view_filters">Filters tab</a></li>
+				</ul>
+			</li>
+			<li><a href="views/view_permissions">View Permissions (who sees what?)</a></li>
+		</ul>
 
-			<h4><a href="?page=settings">Settings</a></h4>
-			<ul>
-				<li><a href="?page=main_settings">Main Tab</a></li>
-				<li><a href="?page=account_settings">Accounts Tab</a></li>
-				<li><a href="?page=file_settings">Files Tab</a></li>
-				<li><a href="?page=menu_settings">Menus Tab</a></li>
-			</ul>
+		<h4><a href="settings/">Settings</a></h4>
+		<ul>
+			<li><a href="settings/main_settings">Main Tab</a></li>
+			<li><a href="settings/account_settings">Accounts Tab</a></li>
+			<li><a href="settings/file_settings">Files Tab</a></li>
+			<li><a href="settings/menu_settings">Menus Tab</a></li>
+		</ul>
 
-			<h4><a href="?page=themes">Themes</a></h4>
-			<ul>
-				<li><a href="?page=swatches">Swatches</a></li>
-				<li><a href="?page=installing_themes">Installing Themes</a></li>
-				<li><a href="?page=deleting_themes">Deleting Themes</a></li>
-				<li><a href="?page=upgrading_themes">Upgrading Themes</a></li>
-			</ul>
+		<h4><a href="themes/">Themes</a></h4>
+		<ul>
+			<li><a href="settings/swatches">Swatches</a></li>
+			<li><a href="settings/installing_themes">Installing Themes</a></li>
+			<li><a href="settings/deleting_themes">Deleting Themes</a></li>
+			<li><a href="settings/upgrading_themes">Upgrading Themes</a></li>
+		</ul>
 
-			<h4><a href="?page=modules">Modules</a></h4>
-			<ul>
-				<li><a href="?page=installing_modules">Installing Modules</a></li>
-				<li><a href="?page=deleting_modules">Deleting Modules</a></li>
-				<li><a href="?page=upgrading_modules">Upgrading Modules</a></li>
-			</ul>
+		<h4><a href="modules/">Modules</a></h4>
+		<ul>
+			<li><a href="modules/installing_modules">Installing Modules</a></li>
+			<li><a href="modules/deleting_modules">Deleting Modules</a></li>
+			<li><a href="modules/upgrading_modules">Upgrading Modules</a></li>
+		</ul>
 
-			<h4><a href="?page=translations">Translations / Language Packs</a></h4>
+		<h4><a href="translations/">Translations / Language Packs</a></h4>
 
-			<h4><a href="http://docs.formtools.org/changelog.php">Changelog</a></h4>
-
-		</td>
-
-	</tr>
-	</tbody></table>
-
-<div class="doc_page_date">Page last updated: {{ page.path | file_date | date_to_string }}</div><br>
-<br>
-
-<div class="doc_nav">
-	<table cellspacing="0" cellpadding="0" width="100%">
-		<tbody><tr>
-			<td width="33%" align="right" nowrap=""></td>
-			<td width="33%" align="center" nowrap=""><a href="../index.php">Documentation</a></td>
-			<td width="33%" align="left" nowrap=""><a href="index.php?page=what_form_tools_does">The Basics »</a></td>
-		</tr>
-	</tbody></table>
+		<!--<h4><a href="http://docs.formtools.org/changelog.php">Changelog</a></h4> -->
+	</div>
 </div>
+
+
+<!--
+<div class="doc_page_date">Page last updated: {{ page.path | file_date | date_to_string }}</div><br>
+-->
