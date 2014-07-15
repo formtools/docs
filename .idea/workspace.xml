@@ -2,25 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4634f204-5ae0-4550-ac89-18509e5c77c1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/changes_in_210.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/the_basics/components.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/the_basics/config_file.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/form_types.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_plugins/githublink.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/general_info/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/the_basics/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/the_basics/install_upgrade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/the_basics/our_approach.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/general_info/placeholders.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/general_info/sortables.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/the_basics/system_requirements.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/userdoc/the_basics.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step4.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step5.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step6.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_plugins/debug.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_includes/prev_next_nav.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userdoc/form_management/submission_type_comparison.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/index.html" afterPath="$PROJECT_DIR$/userdoc/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/the_basics/index.html" afterPath="$PROJECT_DIR$/userdoc/the_basics/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="docs.iws" />
@@ -44,10 +36,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="adding_external_forms.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userdoc/the_basics/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753">
+            <state line="7" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="1755">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prev_next_nav.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_includes/prev_next_nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="51" selection-start="143" selection-end="143" vertical-scroll-proportion="0.18442623" vertical-offset="0" max-vertical-offset="488">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myfilters.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_plugins/myfilters.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="48" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="githublink.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_plugins/githublink.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="63" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
               <folding />
             </state>
           </provider>
@@ -84,7 +103,6 @@
         <option value="$PROJECT_DIR$/_plugins/githublink.rb" />
         <option value="$PROJECT_DIR$/userdoc/our_approach.html" />
         <option value="$PROJECT_DIR$/userdoc/changes_in_210.html" />
-        <option value="$PROJECT_DIR$/userdoc/index.html" />
         <option value="$PROJECT_DIR$/userdoc/the_basics/components.html" />
         <option value="$PROJECT_DIR$/userdoc/the_basics/config_file.html" />
         <option value="$PROJECT_DIR$/userdoc/the_basics/install_upgrade.html" />
@@ -96,6 +114,17 @@
         <option value="$PROJECT_DIR$/userdoc/form_management/form_types.html" />
         <option value="$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html" />
         <option value="$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html" />
+        <option value="$PROJECT_DIR$/userdoc/index.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/submission_type_comparison.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step1.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step2.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step3.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step4.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step5.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step6.html" />
+        <option value="$PROJECT_DIR$/userdoc/the_basics/index.html" />
+        <option value="$PROJECT_DIR$/_plugins/debug.rb" />
+        <option value="$PROJECT_DIR$/_includes/prev_next_nav.html" />
       </list>
     </option>
   </component>
@@ -194,7 +223,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="general_info" />
+              <option name="myItemId" value="the_basics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -208,11 +237,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="userdoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="form_management" />
+              <option name="myItemId" value="_plugins" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -272,6 +297,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -283,7 +309,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -395,37 +420,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="8" selection-start="4311" selection-end="4311" vertical-scroll-proportion="0.96015936" vertical-offset="867" max-vertical-offset="1680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/head.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="818" selection-end="818" vertical-scroll-proportion="0.27888447" vertical-offset="0" max-vertical-offset="753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_includes/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="0" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.8783784" vertical-offset="190" max-vertical-offset="930">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_plugins/myfilters.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="35" selection-start="136" selection-end="136" vertical-scroll-proportion="0.15444015" vertical-offset="0" max-vertical-offset="777">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_plugins/githublink.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="47" selection-start="238" selection-end="238" vertical-scroll-proportion="0.27027026" vertical-offset="0" max-vertical-offset="777">
           <folding />
         </state>
       </provider>
@@ -437,23 +434,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/changes_in_210.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.119521916" vertical-offset="0" max-vertical-offset="753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="22" selection-start="45" selection-end="45" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="0" selection-start="7825" selection-end="7825" vertical-scroll-proportion="3.6454184" vertical-offset="0" max-vertical-offset="2910">
           <folding />
         </state>
       </provider>
@@ -507,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753">
@@ -531,6 +507,118 @@
     <entry file="file://$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/submission_type_comparison.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="24" selection-start="44" selection-end="44" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/changes_in_210.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.119521916" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="81" selection-start="1982" selection-end="1998" vertical-scroll-proportion="0.5139442" vertical-offset="288" max-vertical-offset="2925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="64" selection-end="64" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="30" selection-start="50" selection-end="50" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="29" selection-start="49" selection-end="49" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="53" selection-end="53" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="25" selection-start="45" selection-end="45" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step6.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="27" selection-start="47" selection-end="47" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="818" selection-end="818" vertical-scroll-proportion="0.43032786" vertical-offset="0" max-vertical-offset="488">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="1755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_plugins/myfilters.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="48" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_plugins/debug.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="619" selection-end="619" vertical-scroll-proportion="0.7324219" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_plugins/githublink.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="63" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/prev_next_nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="51" selection-start="143" selection-end="143" vertical-scroll-proportion="0.18442623" vertical-offset="0" max-vertical-offset="488">
           <folding />
         </state>
       </provider>
