@@ -1,0 +1,15 @@
+{% comment %}
+
+This file is simply used as a wrapper to format pages in a simple left-nav, right-column format. It's really
+kludgy right now (legacy code!) using forms, but can be updated later.
+
+Note: the calling page always needs to include the nav menu to be included via a "nav" param.
+
+{% endcomment %}
+
+<table cellspacing="0" cellpadding="1" width="100%">
+	<tbody><tr>
+		<td width="240" valign="top" class="docNav">
+			{% include {{include.nav}} selected=include.selected %}
+		</td>
+		<td valign="top">

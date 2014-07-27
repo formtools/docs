@@ -3,3 +3,59 @@ layout: default
 heading: Components
 ---
 
+{% include prev_next_nav.html %}
+{% include open_section.html nav='nav_userdoc_basics.html' selected='components' %}
+
+
+	<p>
+		Form Tools is organized into the following components:
+	</p>
+
+	<table cellspacing="0" cellpadding="0" class="info">
+		<tbody><tr>
+			<td valign="top" class="bold" width="140">Form Tools Core</td>
+			<td>
+				The Core contains all code required for the most basic usage of the script. It
+				includes the default theme, which ensures that the HTML for rendering the pages is
+				always up to date, and the default English translation file. You can
+				see what's changed in the Core code by looking at the
+				<a href="http://docs.formtools.org/changelog.php">Core changelog</a>.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="bold">Modules</td>
+			<td>
+				Modules are separate components which perform individual tasks. They are installed
+				and uninstalled by the Form Tools administrator. Like the other API and themes,
+				they are totally separate from the Core. You can see a list of all modules
+				here: <a href="http://modules.formtools.org">modules.formtools.org</a>.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="bold">Themes</td>
+			<td>
+				<a href="http://themes.formtools.org">Themes</a> let you customize the appearance of
+				the interface for any Form Tools user. There are a few to choose from, and you can
+				always create your own should you want to.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="bold">API</td>
+			<td>
+				The <a href="http://docs.formtools.org/api/?page=index">API</a> (<i>Application Programming
+				Interface</i>) is a set of functions written for programmers who'd like to use
+				Form Tools functionality and data within their own code / websites.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="bold">Translation Files</td>
+			<td>
+				Every language string within Form Tools is loaded from a language file. The
+				translation files can be downloaded from
+				<a href="http://translations.formtools.org">translations.formtools.org</a>.
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+{% include close_section.html %}

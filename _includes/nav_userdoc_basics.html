@@ -1,0 +1,20 @@
+
+<h4 {% if include.selected == 'the_basics' %}class="selected"{% endif %}><a href="/userdoc/the_basics/">The Basics</a></h4>
+
+<ul>
+	<li {% if include.selected == 'our_approach' %}class="selected"{% endif %}>
+		<a href="/userdoc/the_basics/our_approach">Our Approach</a>
+	</li>
+	<li {% if include.selected == 'components' %}class="selected"{% endif %}>
+		<a href="/userdoc/the_basics/components">Form Tools Components</a>
+	</li>
+	<li {% if include.selected == 'config_file' %}class="selected"{% endif %}>
+		<a href="/userdoc/the_basics/config_file">The config.php file</a>
+	</li>
+	<li {% if include.selected == 'install_upgrade' %}class="selected"{% endif %}>
+		<a href="/userdoc/the_basics/install_upgrade">Installation and Upgrading</a>
+	</li>
+	<li {% if include.selected == 'system_requirements' %}class="selected"{% endif %}>
+		<a href="/userdoc/the_basics/system_requirements">System Requirements</a>
+	</li>
+</ul>

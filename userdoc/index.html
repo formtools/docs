@@ -11,17 +11,10 @@ heading: User Documentation
 
 <hr size="1">
 
-<div class="row">
+<div class="row docNav">
 	<div class="col-lg-4">
-		<h4><a href="the_basics/">The Basics</a></h4>
-		<ul>
-			<!--<li><a href="?page=what_form_tools_does">What Form Tools does</a></li>-->
-			<li><a href="the_basics/our_approach">Our Approach / Best of Both Worlds</a></li>
-			<li><a href="the_basics/components">Form Tools Components</a></li>
-			<li><a href="the_basics/config_file">The config.php file</a></li>
-			<li><a href="the_basics/install_upgrade">Installation and Upgrading</a></li>
-			<li><a href="the_basics/system_requirements">System Requirements</a></li>
-		</ul>
+
+		{% include nav_userdoc_basics.html selected='the_basics' %}
 
 		<h4><a href="changes_in_210/">Changes in 2.1.0</a></h4>
 

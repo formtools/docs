@@ -3,3 +3,56 @@ layout: default
 heading: System Requirements
 ---
 
+
+{% include prev_next_nav.html %}
+{% include open_section.html nav='nav_userdoc_basics.html' selected='system_requirements' %}
+
+
+	<p>
+		Form Tools has very minimal server and browser requirements, enabling it to run on
+		the vast majority of web servers. The web browser requirements are only for
+		administrators and clients who log in to view and manage their form submissions.
+		Regular website visitors submitting content may use whatever browser and OS they wish.
+		system requirements haven't changed between versions 1.x to 2.x.
+	</p>
+
+	<ul>
+		<li>PHP 4.3+ <span class="light_grey">[N.B. Form Tools 2 will be the last version that supports PHP 4]</span></li>
+		<li>MySQL 4+</li>
+		<li>PHP Sessions (after installation, you can move to database sessions by setting the <b>$g_session_type</b> variable
+			in your <a href="?page=config_file">config.php file</a>)</li>
+		<li>PHP mail() function or SMTP for sending emails (see the
+			<a href="http://modules.formtools.org/swift_mailer/?page=index">Swift Mailer</a> module for further
+			information on the SMTP option)</li>
+		<li>Any modern web browser (Firefox 3.0+, IE 7+, Safari, Chrome) which has
+			JavaScript enabled.</li>
+	</ul>
+
+	<p>
+		You will need a MySQL user account which has permissions to create new tables within
+		a database. If you are not sure about this, you should contact your hosting
+		company.
+	</p>
+
+	<p>
+		You will need to be able to set folder permissions on on your website. Specifically,
+		for file uploads, your upload folder(s) will need to have write permissions. Also,
+		the Smarty cache folder will need to have full write-permissions to let the
+		temporary files be created. Generally speaking, users on Unix servers changing
+		permissions is permitted, but for those of you using Windows servers, you may need
+		to contact your hosting provider to do this for you.
+	</p>
+
+	<p>
+		If you have a choice of servers, I would <b>strongly</b> recommend choosing a UNIX
+		environment. In the past, the vast majority of problems have occurred on Windows
+		servers.
+	</p>
+
+	<p>
+		Lastly, if you're installing 2.1.5 or later, you will need to have the
+		<a href="http://modules.formtools.org/core_field_types/?page=index">Core Field Types</a>
+		module installed. This comes pre-bundled with all Form Tools installations.
+	</p>
+
+{% include close_section.html %}
