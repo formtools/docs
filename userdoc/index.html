@@ -1,5 +1,6 @@
 ---
 layout: default
+navSection: User Documentation
 heading: User Documentation
 ---
 
@@ -9,20 +10,17 @@ heading: User Documentation
 	available and how to get the script going.
 </p>
 
-<hr size="1">
+<br />
 
 <div class="row docNav">
 	<div class="col-lg-4">
 
 		{% include nav_userdoc_basics.html selected='the_basics' %}
 
-		<h4><a href="changes_in_210/">Changes in 2.1.0</a></h4>
+		<h4 class="selected"><a href="changes_in_210/">Changes in 2.1.0</a></h4>
 
-		<h4><a href="general_info/">General Information</a></h4>
-		<ul>
-			<li><a href="general_info/sortables">Sortables and Groupables</a></li>
-			<li><a href="general_info/placeholders">Placeholders</a></li>
-		</ul>
+		{% include nav_userdoc_general_info.html selected='general_info' %}
+
 
 		<h4><a href="form_management/">Form Management</a></h4>
 		<ul>
