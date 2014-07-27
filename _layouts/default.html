@@ -21,21 +21,19 @@
 					{% else %}
 						{{page.navSection}}
 					{% endif %}
-
 				{% endif %}
 
 			</nav>
 
 			<header>
 				<h1>{{ page.heading }}</h1>
+
+				{% include prev_next_nav.html %}
 			</header>
 
 			{{ content }}
-
 		</div>
 	</div>
-
-	{{ githublink page.path }}
 
 	{% include footer.html %}
 

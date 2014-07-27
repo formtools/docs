@@ -2,6 +2,14 @@
 	convert to Sass!
 */
 
+header {
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 20px;
+}
+header h1 {
+	margin-bottom: 6px;
+}
+
 .docNav .selected a {
 	font-weight: bold;
 }
@@ -18,7 +26,23 @@
 	margin-bottom: 10px;
 }
 
-header {
-	border-bottom: 1px solid #cccccc;
-	margin-bottom: 20px;
+.docPrevNextNav {
+	font-size: 8pt;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	height: 16px;
+}
+
+.docPrevNextNav a {
+	color: #999999;
+}
+.docPrevNextNav a:hover {
+	color: green;
+}
+.githubEdit {
+	padding-top: 16px;
+}
+.prevNextBottom {
+	border-top: 1px solid #cccccc;
+	margin-top: 16px;
 }
