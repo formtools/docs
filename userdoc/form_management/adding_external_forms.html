@@ -3,13 +3,51 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 heading: Adding External Forms
-prev: Form Management
-prevLink: /userdoc/form_management/
-next: Adding Internal Forms
-nextLink: /userdoc/form_management/adding_internal_forms/
+prev: Adding Internal Forms
+prevLink: /userdoc/form_management/adding_internal_forms
+next: process.php vs. the API
+nextLink: /userdoc/form_management/submission_type_comparison/
 ---
 
-{% include open_section.html nav='nav_userdoc_form_management.html' selected='form_types' %}
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='adding_external_forms' %}
 
+	<h4>Adding External Forms</h4>
+
+	<p>
+		To make integrating your own forms as pain-free as possible, the process is split into six
+		discrete steps. Each step needs to be completed to successfully add a form for storage by
+		Form Tools. If you are unable to finish setting up the form in one sitting, no problem! The
+		values you've entered for each page are stored in memory so you can pick up where you left
+		off. To keep things simple, the Add Form process only shows a subset of all the available
+		options: things like setting up email notifications and Views can be set after the form
+		has been successfully added. There's plenty of information on those steps elsewhere
+		in the documentation.
+	</p>
+
+	{% include screenshot.html item='i210.jpg' %}
+
+	<p>
+		To add an External form, just select the External form on the main Add form page. That
+		will open a dialog like the screenshot to the right. It's a checklist to confirm that
+		you will be able to configure your form. You must be able to edit your form
+		and that it is accessible via a URL.
+	</p>
+
+	<p>
+		In addition to the following pages in this documentation section, you might also be
+		interested in these tutorials - they explain how to add your forms with more step-by-step
+		instructions.
+	</p>
+
+	<ul>
+		<li><a href="/tutorials/adding_post_form/">Adding a POST form</a></li>
+		<li><a href="/tutorials/api_single_page_form/">Adding a single page POST form with the API</a></li>
+		<li><a href="/tutorials/api_multi_page_form/">Adding a multi-page POST form with the API</a></li>
+	</ul>
+
+	<p>
+		The next step is to choose a submission method: process.php or API. Go to the next page
+		to see a comparison between the two methods.
+	</p>
 
 {% include close_section.html %}

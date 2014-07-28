@@ -3,13 +3,129 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 heading: "2: Form Information"
-prev: Form Management
-prevLink: /userdoc/form_management/
-next: Adding Internal Forms
-nextLink: /userdoc/form_management/adding_internal_forms/
+prev: "Step 1: Choose Integration Method"
+prevLink: /userdoc/form_management/add_form_step1
+next: "Step 3: Test Submission"
+nextLink: /userdoc/form_management/add_form_step3
 ---
 
-{% include open_section.html nav='nav_userdoc_form_management.html' selected='form_types' %}
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='add_form_step2' %}
 
+	<p>
+		All right! Now to get down to work. Step 2 lets you configure the main settings for
+		your form. This page will look slightly different depending on the submission type you
+		selected in the previous step. So make sure you read the right section below.
+	</p>
+
+	{% include screenshot.html item='i212.jpg' %}
+
+	<h4>Direct / POST forms</h4>
+
+	<p>
+		Here's what each of the settings mean.
+	</p>
+
+	<table cellspacing="0" cellpadding="1" class="info" width="100%">
+		<tbody><tr>
+			<td width="160" class="blue" valign="top">Form Name</td>
+			<td>
+				This is used within Form Tools to uniquely identify your form. If you're planning on
+				adding lots of forms, it's important to give them as descriptive a name as possible
+				otherwise you'll forget which is which (believe me, it happens!). Later on, you will
+				be able to search the forms on this field.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Form URL</td>
+			<td>
+				This is where you enter the URL of your form. This is needed for the later steps:
+				it will dynamically load and extract the fields from your form, so it can extract lists
+				of radio buttons, checkbox, etc. values.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Redirect URL</td>
+			<td>
+				This is the URL of the "thank you" page, where users will be redirected to after they
+				have successfully submitted the form. By default, a form has a single redirect URL which
+				you should enter here. But here's a sneaky trick: if you actually need to redirect
+				to different locations, you can just include a hidden field in your form with the name
+				attribute: <b>form_tools_redirect_url</b>. Whatever URL you enter as the value in that
+				field will override the value stored in the Redirect URL for your form. Additionally,
+				if you want to redirect to different locations based on content from the actual form
+				submission, check out the
+				<a href="http://modules.formtools.org/submission_pre_parser/?page=field_values">Submission
+					Pre Parser module</a>.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Who can access?</td>
+			<td>
+				This setting determines the permissions for the overall form. You will later be able
+				to fine-tune these permissions by creating Views for the form, but this setting
+				controls the overall settings - who at least gets access to the form.
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+	{% include screenshot.html item='i213.jpg' %}
+
+	<h4>API / Code forms</h4>
+
+	<p>
+		Here's what all the settings mean on the API / Code form page.
+	</p>
+
+	<table cellspacing="0" cellpadding="1" class="info" width="100%">
+		<tbody><tr>
+			<td width="160" class="blue" valign="top">Form Name</td>
+			<td>
+				This is used within Form Tools to uniquely identify your form. If you're planning on
+				adding lots of forms, it's important to give them as descriptive a name as possible
+				otherwise you'll forget which is which (believe me, it happens!). Later on, you will
+				be able to search the forms on this field.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Is this a multi-page form?</td>
+			<td>
+				This is pretty self-explanatory, but note that by <i>multi-page</i> it really means
+				separate URLS. Form that have multiple pages hidden/shown with javascript still
+				count as a single form page. If you select "yes" for this, the next setting will let
+				you enter multiple URLs instead of just the one.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Form URL / Form URLs</td>
+			<td>
+				It's important to enter all the URLs of your form, preferably in order. Don't worry
+				about including your "thank you" page. Likewise, if your form includes a "review" page
+				that displays the information to the user prior to submitting it, unless it includes
+				new form fields, that does not need to be included.<br>
+				<br>
+				Unlike Form Tools 1.x, the Add Form process now configures all the multi-select
+				field options (radios, checkboxes, select and multi-select), and to do this properly,
+				it needs to examine the contents of each page of your form. That's why you need to
+				manually enter each form URL. It may seem like a pain, but it actually proves to be an
+				immense time-saving device!
+			</td>
+		</tr>
+		</tbody></table>
+
+
+	<h4>Check URL buttons</h4>
+
+	<p>
+		Every URL field on this page has a corresponding "Check URL" button. These open a dialog
+		window containing the URL you just entered, so you can easily confirm that they
+		have been entered correctly. Generally it's a good idea to verify all URLs to confirm
+		they're correct. If they are incorrect, a later step will be unable to read the fields
+		and populate the field options for the page.
+	</p>
+	<p>
+		Note: this feature has changed since 2.0.x versions: it no longer opens in a popup window
+		or forces you to confirm them. Instead, it's just added as an optional aid.
+	</p>
 
 {% include close_section.html %}

@@ -6,6 +6,10 @@ the new site (to be released later in 2014), all documentation is editable via g
 I'll expand on all this later, but it's now going to use Jekyll to handle generating the actual documentation. This should
 make it super easy for people to contribute and fix documentation - not like now, where the doc is in a closed MySQL DB.
 
+### How to build locally
+
+Instructions coming soon.
+
 
 ### Screenshots
 

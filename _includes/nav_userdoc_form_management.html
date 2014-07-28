@@ -1,19 +1,42 @@
-<h4 {% if include.selected == 'form_management' %}class="selected"{% endif %}><a href="/userdoc/form_management">Form Management</a></h4>
+<h4 {% if include.selected == 'form_management' %}class="selected"{% endif %}>
+	<a href="/userdoc/form_management">Form Management</a>
+</h4>
 
 <ul>
-	<li {% if include.selected == 'form_types' %}class="selected"{% endif %}><a href="/userdoc/form_management/form_types">Internal vs. External forms</a></li>
-	<li {% if include.selected == 'adding_internal_forms' %}class="selected"{% endif %}><a href="/userdoc/form_management/adding_internal_forms">Adding Internal Forms</a></li>
-	<li><a href="?page=adding_forms">Adding External Forms</a>
-	<ul>
-		<li><a href="?page=submission_type_comparison">process.php vs. the API</a></li>
-		<li><a href="?page=add_form_step1">1: Choose Integration Method</a></li>
-		<li><a href="?page=add_form_step2">2: Form Information</a></li>
-		<li><a href="?page=add_form_step3">3: Test Submission</a></li>
-		<li><a href="?page=add_form_step4">4: Database Setup</a></li>
-		<li><a href="?page=add_form_step5">5: Field Types</a></li>
-		<li><a href="?page=add_form_step6">6: Finalize Form</a></li>
-	</ul>
-</li>
+	<li {% if include.selected == 'form_types' %}class="selected"{% endif %}>
+		<a href="/userdoc/form_management/form_types">Internal vs. External forms</a>
+	</li>
+	<li {% if include.selected == 'adding_internal_forms' %}class="selected"{% endif %}>
+		<a href="/userdoc/form_management/adding_internal_forms">Adding Internal Forms</a>
+	</li>
+	<li>
+		<div {% if include.selected == 'adding_external_forms' %}class="selected"{% endif %}>
+			<a href="/userdoc/form_management/adding_forms">Adding External Forms</a>
+		</div>
+		<ul>
+			<li {% if include.selected == 'submission_type_comparison' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/submission_type_comparison">process.php vs. the API</a>
+			</li>
+			<li {% if include.selected == 'add_form_step1' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/add_form_step1">1: Choose Integration Method</a>
+			</li>
+			<li {% if include.selected == 'add_form_step2' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/add_form_step2">2: Form Information</a>
+			</li>
+			<li {% if include.selected == 'add_form_step3' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/add_form_step3">3: Test Submission</a>
+			</li>
+			<li {% if include.selected == 'add_form_step4' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/add_form_step4">4: Database Setup</a>
+			</li>
+			<li {% if include.selected == 'add_form_step5' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/add_form_step5">5: Field Types</a>
+			</li>
+			<li {% if include.selected == 'add_form_step6' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/add_form_step6">6: Finalize Form</a>
+			</li>
+		</ul>
+	</li>
 	<li>
 		<a href="?page=editing_forms">Editing Forms</a>
 		<ul>

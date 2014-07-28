@@ -3,13 +3,22 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 heading: "1: Choose Integration Method"
-prev: Form Management
-prevLink: /userdoc/form_management/
-next: Adding Internal Forms
-nextLink: /userdoc/form_management/adding_internal_forms/
+prev: process.php vs. the API
+prevLink: /userdoc/form_management/submission_type_comparison
+next: "Step 2: Form Information"
+nextLink: /userdoc/form_management/add_form_step2
 ---
 
-{% include open_section.html nav='nav_userdoc_form_management.html' selected='form_types' %}
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='add_form_step1' %}
 
+	{% include screenshot.html item='i211.jpg' %}
+
+	<p>
+		The first step is to choose your integration method. You have two options: POST / Direct, and
+		the API. Click on the "benefits" / drawbacks" links for more information about each
+		approach. Also, take a look at <a href="/userdoc/form_management/submission_type_comparison">this page</a> for
+		a comparison of the two techniques - that can really help you figure out which method
+		you'll want to use.
+	</p>
 
 {% include close_section.html %}
