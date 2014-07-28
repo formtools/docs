@@ -1,6 +1,50 @@
 ---
 layout: default
 heading: Changes in 2.1.0
+navSection: User Documentation
+navSectionLink: /userdoc
+prev: System Requirements
+prevLink: /userdoc/the_basics/system_requirements
+next: General Information
+nextLink: /userdoc/general_info
 ---
 
+<p>
+	This page is for existing 2.0.x users who want a quick overview of the changes in 2.1.0, so
+	they can quickly get up to speed.
+</p>
 
+<ul>
+	<li>Form Tools differentiates between <a href="?page=form_types">Internal and External
+		forms</a>.</li>
+	<li>The WYSIWYG field type has been moved to a
+		<a href="http://modules.formtools.org/field_type_tinymce/?page=index">separate module</a>. The same
+		options are available but no longer found in the Settings tabset. Now you configure the
+		default settings through the module.</li>
+	<li>The Edit Form -&gt; Database tab has been removed, and all the information to manage the
+		fields is now found on the Edit Form -&gt; Fields tab.</li>
+	<li>Form Tools 2.1.0 now offers new field types:
+		<ul>
+			<li><a href="?page=ft_phone">Phone number fields</a></li>
+			<li><a href="?page=ft_date">Date fields</a></li>
+			<li><a href="?page=ft_time">Time fields</a></li>
+			<li><a href="?page=ft_code">Code / Markup fields</a></li>
+		</ul>
+		2.1.0 was designed to be more flexible in the way these field types work. You can
+		have any number of settings, and customize them through the
+		<a href="http://modules.formtools.org/custom_fields/?page=index">Custom Fields module</a>. You
+		can also use the
+		<a href="http://modules.formtools.org/field_type_google_maps/?page=index">Google Maps field
+			type</a> (a separate module).
+	</li>
+	<li>Lots of interface updates! All sortable lists (options, settings, Views, Fields etc.)
+		are now sortable by drag-and-drop, rather than entering in a number in a field then
+		resubmitting the form. Alert and confirmation popups are now attractive dialog windows
+		instead.
+	</li>
+	<li>Field Option Groups are now called <i>Option Lists</i>, and the options can be grouped
+		together for better organization.</li>
+	<li>There's a new tab on the Edit View page that lets you control exactly which fields
+		show up as columns, and let you control their widths and how the data should be truncated
+		to fit on the page the best.</li>
+</ul>

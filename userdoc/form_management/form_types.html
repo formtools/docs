@@ -1,4 +1,35 @@
 ---
 layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
 heading: Internal vs. External Forms
+prev: Form Management
+prevLink: /userdoc/form_management/
+next: Adding Internal Forms
+nextLink: /userdoc/form_management/adding_internal_forms/
 ---
+
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='form_types' %}
+
+	<p>
+		{% include screenshot.html item='i208.jpg' %}
+
+		There are two types of forms in Form Tools: <i>Internal</i> and <i>External</i>.
+		When you click on the "Add Form" link in the menu, it will direct you to a page where you need to choose one of the
+		following types. Here's what each type means:
+	</p>
+
+	<ul>
+		<li><i>Internal forms</i> are created within Form Tools and are only found there - not
+			elsewhere on your site. Only Form Tools user accounts will have access to the form. You
+			create and configure the form directly through the interface.</li>
+		<li><i>External forms</i> are forms that already exist on your website, or somewhere on
+			the web. Up until Form Tools 2.1.0, all forms were external.</li>
+	</ul>
+
+	<p>
+		Note: you can change a form from External to Internal and back again. Choosing a
+		particular form type doesn’t box you in down the road.
+	</p>
+
+{% include close_section.html %}

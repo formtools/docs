@@ -2,20 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4634f204-5ae0-4550-ac89-18509e5c77c1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_plugins/githublink.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_plugins/myfilters.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_plugins/test.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_includes/nav_userdoc_form_management.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_includes/screenshot.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_data/screenshots.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/the_basics/components.html" afterPath="$PROJECT_DIR$/userdoc/the_basics/components.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/the_basics/config_file.html" afterPath="$PROJECT_DIR$/userdoc/the_basics/config_file.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/docs.css" afterPath="$PROJECT_DIR$/css/docs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/footer.html" afterPath="$PROJECT_DIR$/_includes/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/add_form_step1.html" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/add_form_step2.html" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/add_form_step3.html" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/add_form_step4.html" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/add_form_step5.html" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/add_form_step6.html" afterPath="$PROJECT_DIR$/userdoc/form_management/add_form_step6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html" afterPath="$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html" afterPath="$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/changes_in_210.html" afterPath="$PROJECT_DIR$/userdoc/changes_in_210.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/form_types.html" afterPath="$PROJECT_DIR$/userdoc/form_management/form_types.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/the_basics/index.html" afterPath="$PROJECT_DIR$/userdoc/the_basics/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/index.html" afterPath="$PROJECT_DIR$/userdoc/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/form_management/index.html" afterPath="$PROJECT_DIR$/userdoc/form_management/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/general_info/index.html" afterPath="$PROJECT_DIR$/userdoc/general_info/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/the_basics/install_upgrade.html" afterPath="$PROJECT_DIR$/userdoc/the_basics/install_upgrade.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/the_basics/our_approach.html" afterPath="$PROJECT_DIR$/userdoc/the_basics/our_approach.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/prev_next_nav.html" afterPath="$PROJECT_DIR$/_includes/prev_next_nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/general_info/placeholders.html" afterPath="$PROJECT_DIR$/userdoc/general_info/placeholders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/general_info/sortables.html" afterPath="$PROJECT_DIR$/userdoc/general_info/sortables.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userdoc/the_basics/system_requirements.html" afterPath="$PROJECT_DIR$/userdoc/the_basics/system_requirements.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -39,7 +46,17 @@
     <favorites_list name="docs" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="adding_internal_forms.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="0" selection-start="2439" selection-end="2439" vertical-scroll-proportion="1.2549801" vertical-offset="0" max-vertical-offset="1050">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -52,30 +69,13 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/_config.yml" />
-        <option value="$PROJECT_DIR$/_plugins/breadcrumb.rb" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/_posts/2014-07-13-welcome-to-jekyll.markdown" />
         <option value="$PROJECT_DIR$/_plugins/random.rb" />
         <option value="$PROJECT_DIR$/userdoc/the_basics.html" />
         <option value="$PROJECT_DIR$/_plugins/githublink.rb" />
         <option value="$PROJECT_DIR$/userdoc/our_approach.html" />
-        <option value="$PROJECT_DIR$/userdoc/changes_in_210.html" />
-        <option value="$PROJECT_DIR$/userdoc/general_info/index.html" />
-        <option value="$PROJECT_DIR$/userdoc/general_info/sortables.html" />
-        <option value="$PROJECT_DIR$/userdoc/general_info/placeholders.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/index.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/form_types.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html" />
         <option value="$PROJECT_DIR$/userdoc/form_management/submission_type_comparison.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step1.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step2.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step3.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step4.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step5.html" />
-        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step6.html" />
         <option value="$PROJECT_DIR$/_plugins/debug.rb" />
         <option value="$PROJECT_DIR$/_plugins/include_patch.rb" />
         <option value="$PROJECT_DIR$/_layouts/section_wrapper.html" />
@@ -87,13 +87,10 @@
         <option value="$PROJECT_DIR$/_includes/nav_userdoc_basics.html" />
         <option value="$PROJECT_DIR$/_layouts/page.html" />
         <option value="$PROJECT_DIR$/_includes/nav_userdoc_general_info.html" />
-        <option value="$PROJECT_DIR$/userdoc/index.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/_plugins/test.rb" />
         <option value="$PROJECT_DIR$/_plugins/myfilters.rb" />
         <option value="$PROJECT_DIR$/_plugins/ben.rb" />
         <option value="$PROJECT_DIR$/userdoc/the_basics/index.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/userdoc/the_basics/our_approach.html" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
         <option value="$PROJECT_DIR$/_includes/footer.html" />
@@ -101,8 +98,28 @@
         <option value="$PROJECT_DIR$/userdoc/the_basics/components.html" />
         <option value="$PROJECT_DIR$/css/docs.css" />
         <option value="$PROJECT_DIR$/userdoc/the_basics/config_file.html" />
-        <option value="$PROJECT_DIR$/userdoc/the_basics/install_upgrade.html" />
         <option value="$PROJECT_DIR$/userdoc/the_basics/system_requirements.html" />
+        <option value="$PROJECT_DIR$/userdoc/changes_in_210.html" />
+        <option value="$PROJECT_DIR$/_data/screenshots.yml" />
+        <option value="$PROJECT_DIR$/userdoc/general_info/placeholders.html" />
+        <option value="$PROJECT_DIR$/userdoc/the_basics/install_upgrade.html" />
+        <option value="$PROJECT_DIR$/userdoc/general_info/index.html" />
+        <option value="$PROJECT_DIR$/_includes/screenshot.html" />
+        <option value="$PROJECT_DIR$/userdoc/general_info/sortables.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/index.html" />
+        <option value="$PROJECT_DIR$/_includes/nav_userdoc_form_management.html" />
+        <option value="$PROJECT_DIR$/userdoc/index.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/form_types.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step2.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step1.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step3.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step4.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step5.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/add_form_step6.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html" />
+        <option value="$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html" />
       </list>
     </option>
   </component>
@@ -201,7 +218,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="the_basics" />
+              <option name="myItemId" value="form_management" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -335,79 +352,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/general_info/sortables.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0996016" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/general_info/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="41" selection-end="41" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/general_info/placeholders.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0996016" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/form_types.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="61" selection-end="61" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userdoc/form_management/submission_type_comparison.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="24" selection-start="44" selection-end="44" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/changes_in_210.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.119521916" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="64" selection-end="64" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="30" selection-start="50" selection-end="50" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="29" selection-start="49" selection-end="49" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="53" selection-end="53" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step5.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="25" selection-start="45" selection-end="45" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step6.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="27" selection-start="47" selection-end="47" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_plugins/debug.rb">
@@ -450,13 +397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/nav_userdoc_basics.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="5" selection-start="917" selection-end="917" vertical-scroll-proportion="0.37848607" vertical-offset="0" max-vertical-offset="753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="33" selection-start="101" selection-end="101" vertical-scroll-proportion="0.119521916" vertical-offset="0" max-vertical-offset="753">
@@ -478,44 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/nav_userdoc_general_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="20" selection-end="51" vertical-scroll-proportion="0.059760958" vertical-offset="0" max-vertical-offset="2790">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="14" selection-start="855" selection-end="855" vertical-scroll-proportion="0.5472973" vertical-offset="0" max-vertical-offset="740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="96" selection-end="158" vertical-scroll-proportion="0.13944224" vertical-offset="0" max-vertical-offset="1410">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="83" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.42" vertical-offset="0" max-vertical-offset="750">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_includes/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="30" selection-start="14" selection-end="28" vertical-scroll-proportion="0.02027027" vertical-offset="0" max-vertical-offset="740">
@@ -530,9 +432,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/docs.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="21" selection-start="567" selection-end="567" vertical-scroll-proportion="0.8880309" vertical-offset="0" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/changes_in_210.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="24" selection-start="101" selection-end="101" vertical-scroll-proportion="0.07968128" vertical-offset="0" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/nav_userdoc_general_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="5" selection-start="449" selection-end="449" vertical-scroll-proportion="0.17928287" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="25" selection-start="570" selection-end="570" vertical-scroll-proportion="0.6573705" vertical-offset="0" max-vertical-offset="753">
+        <state line="23" column="16" selection-start="434" selection-end="445" vertical-scroll-proportion="0.45816734" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_data/screenshots.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="491" column="0" selection-start="12670" selection-end="12670" vertical-scroll-proportion="0.32818532" vertical-offset="7110" max-vertical-offset="32565">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/config_file.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="838" selection-end="838" vertical-scroll-proportion="-4.391892" vertical-offset="3640" max-vertical-offset="4395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/components.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="96" selection-end="226" vertical-scroll-proportion="-0.23505977" vertical-offset="312" max-vertical-offset="1065">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/system_requirements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="105" selection-end="242" vertical-scroll-proportion="0.17928287" vertical-offset="0" max-vertical-offset="990">
           <folding />
         </state>
       </provider>
@@ -544,37 +495,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/docs.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="21" selection-start="567" selection-end="567" vertical-scroll-proportion="0.8880309" vertical-offset="0" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/components.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="96" selection-end="226" vertical-scroll-proportion="0.17928287" vertical-offset="0" max-vertical-offset="1065">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/config_file.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="105" selection-end="252" vertical-scroll-proportion="0.10135135" vertical-offset="0" max-vertical-offset="4395">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/system_requirements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="31" selection-start="169" selection-end="169" vertical-scroll-proportion="0.119521916" vertical-offset="0" max-vertical-offset="960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userdoc/the_basics/install_upgrade.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="112" selection-end="255" vertical-scroll-proportion="0.0996016" vertical-offset="0" max-vertical-offset="753">
+        <state line="23" column="0" selection-start="592" selection-end="592" vertical-scroll-proportion="0.45816734" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/screenshot.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="12" selection-start="485" selection-end="485" vertical-scroll-proportion="0.23904383" vertical-offset="0" max-vertical-offset="753">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/general_info/sortables.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="0" selection-start="3795" selection-end="3795" vertical-scroll-proportion="0.30278885" vertical-offset="1227" max-vertical-offset="1980">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/general_info/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="699" selection-end="699" vertical-scroll-proportion="0.45816734" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/the_basics/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="20" selection-end="247" vertical-scroll-proportion="0.03984064" vertical-offset="0" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/general_info/placeholders.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="8" selection-start="334" selection-end="379" vertical-scroll-proportion="0.27888447" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="0.30405405" vertical-offset="0" max-vertical-offset="740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="33" selection-start="817" selection-end="817" vertical-scroll-proportion="0.3" vertical-offset="0" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="8" selection-start="376" selection-end="421" vertical-scroll-proportion="0.3187251" vertical-offset="0" max-vertical-offset="975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/nav_userdoc_basics.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="72" selection-start="5" selection-end="73" vertical-scroll-proportion="0.01992032" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="645" selection-end="645" vertical-scroll-proportion="0.43824703" vertical-offset="0" max-vertical-offset="2100">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.119521916" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="0" selection-end="383" vertical-scroll-proportion="0.1992032" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="21" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0996016" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/form_types.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="21" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0996016" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.1992032" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/nav_userdoc_form_management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="45" selection-start="516" selection-end="516" vertical-scroll-proportion="0.10135135" vertical-offset="0" max-vertical-offset="740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="32" selection-start="378" selection-end="378" vertical-scroll-proportion="0.27888447" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/add_form_step6.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="0.119521916" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/adding_external_forms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="165" selection-end="165" vertical-scroll-proportion="0.13944224" vertical-offset="0" max-vertical-offset="753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userdoc/form_management/adding_internal_forms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="0" selection-start="2439" selection-end="2439" vertical-scroll-proportion="1.2549801" vertical-offset="0" max-vertical-offset="1050">
           <folding />
         </state>
       </provider>

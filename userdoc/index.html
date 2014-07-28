@@ -13,61 +13,15 @@ heading: User Documentation
 <br />
 
 <div class="row docNav">
+
 	<div class="col-lg-4">
-
 		{% include nav_userdoc_basics.html selected='the_basics' %}
-
 		<h4 class="selected"><a href="changes_in_210/">Changes in 2.1.0</a></h4>
-
 		{% include nav_userdoc_general_info.html selected='general_info' %}
-
-
-		<h4><a href="form_management/">Form Management</a></h4>
-		<ul>
-			<li><a href="form_management/form_types/">Internal vs. External Forms</a></li>
-			<li><a href="form_management/adding_internal_forms/">Adding Internal Forms</a>
-			<li><a href="form_management/adding_external_forms/">Adding External Forms</a>
-				<ul>
-					<li><a href="form_management/submission_type_comparison">process.php vs. the API</a></li>
-					<li><a href="form_management/add_form_step1">1: Choose Integration Method</a></li>
-					<li><a href="form_management/add_form_step2">2: Form Information</a></li>
-					<li><a href="form_management/add_form_step3">3: Test Submission</a></li>
-					<li><a href="form_management/add_form_step4">4: Database Setup</a></li>
-					<li><a href="form_management/add_form_step5">5: Field Types</a></li>
-					<li><a href="form_management/add_form_step6">6: Finalize Form</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="form_management/editing_forms">Editing Forms</a>
-				<ul>
-					<li><a href="form_management/edit_form_main_tab">Main tab</a></li>
-					<li><a href="form_management/edit_form_fields_tab">Fields tab</a></li>
-					<li><a href="form_management/edit_form_views_tab">Views tab</a></li>
-					<li><a href="form_management/edit_form_emails_tab">Emails tab</a></li>
-				</ul>
-			</li>
-			<li><a href="form_management/disabling_forms">Disabling forms</a></li>
-			<li><a href="form_management/deleting_forms">Deleting forms</a></li>
-			<li><a href="form_management/form_permissions">Form Permissions (who sees what?)</a></li>
-			<li><a href="form_management/field_option_groups">Option Lists</a>
-				<ul>
-					<li><a href="form_management/fog_adding">Adding via the Add Form Process</a></li>
-					<li><a href="form_management/fog_adding_manually">Adding manually</a></li>
-					<li><a href="form_management/fog_editing">Editing</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="form_management/form_fields">Individual Form Fields</a>
-				<ul>
-					<li><a href="form_management/adding_form_fields">Adding form fields</a> </li>
-					<li><a href="form_management/deleting_form_fields">Deleting form fields</a></li>
-				</ul>
-			</li>
-		</ul>
+		{% include nav_userdoc_form_management.html selected='form_management' %}
 	</div>
 
 	<div class="col-lg-4">
-
 		<h4><a href="field_validation/">Field Validation (2.1.4+)</a></h4>
 		<ul>
 			<li><a href="field_validation/customizing_validation">Customizing the validation</a></li>

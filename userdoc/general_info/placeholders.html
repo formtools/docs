@@ -1,5 +1,31 @@
 ---
 layout: default
+navSection: User Documentation
+navSectionLink: /userdoc/
 heading: Placeholders
+prev: Sortables and Groupables
+prevLink: /userdoc/general_info/sortables
+next: Form Management
+nextLink: /userdoc/form_management
 ---
 
+{% include open_section.html nav='nav_userdoc_general_info.html' selected='placeholders' %}
+
+	<p>
+		{% include screenshot.html item='i223.jpg' %}
+
+		Users familiar with earlier versions of Form Tools will know about the placeholders. Any
+		time you construct an email template you'll see that the email content is full of
+		placeholders. These are just variables that get replaced with content from the form as the
+		emails are actually constructed.
+	</p>
+
+	<p>
+		Placeholders are used throughout the application to provide you with a little more control
+		over what appears in the fields. In 2.1.0, field that accept placeholder now have an "world"
+		icon that appears at the right of the fields. Just click that and it will open a dialog
+		window like in the screenshot. That displays all available placeholders with some descriptive
+		text explains what each placeholder contains.
+	</p>
+
+{% include close_section.html %}

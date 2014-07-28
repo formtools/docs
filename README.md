@@ -7,6 +7,20 @@ I'll expand on all this later, but it's now going to use Jekyll to handle genera
 make it super easy for people to contribute and fix documentation - not like now, where the doc is in a closed MySQL DB.
 
 
+### Screenshots
+
+To include a screenshot, do the following:
+
+1. Upload the main image and thumbnail to the assets/screenshots folder. The thumbnail should have a width of 250px; the full-size
+image should be under 1024 width. Please call the file whatever makes sense - the existing iXXX.jpg filename convention was just
+because it was formerly in a CMS.
+2. Edit the _data/screenshots.yml file and add a new record for the new screenshot.
+3. Include the screenshot in the page, like so:
+```
+{% include screenshot.html item='i223.jpg' %}
+```
+
+
 ### Ruby dev help wanted!
 
 I spent some time on this, but didn't get very far. So instead of spinning my wheels I decided to hardcode some stuff

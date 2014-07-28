@@ -1,5 +1,127 @@
 ---
 layout: default
+navSection: User Documentation
+navSectionLink: /userdoc/
 heading: Sortables and Groupables
+prev: General Info
+prevLink: /userdoc/general_info/
+next: Placeholders
+nextLink: /userdoc/general_info/placeholders
 ---
 
+{% include open_section.html nav='nav_userdoc_general_info.html' selected='sortables' %}
+
+	<p>
+		A big part of the 2.1.0 re-write was to update the user interface. As any script
+		grows, the question is no longer <i>can this script do such-and-such</i>, it's: <i>how
+		easy is it for this script to do such-and-such</i>. Form Tools has an astonishing
+		amount of functionality available, but equal emphasis has to be placed on how easy it
+		is to configure.
+	</p>
+	<p>
+		With this in mind, all sortable lists that appear within the interface are now
+		sorted by drag-and-drop. In the earlier 2.0.x releases, you'd need to manually enter
+		a number for each row then update the form. This was far too slow. Secondly, some
+		sortable lists - such as the Edit Form -&gt; Fields tab, and Edit Menu pages -
+		now allow you to group multiple rows so you can sort them by dragging multiple rows in
+		one go. Once you get familiar with how it works it becomes second nature.
+	</p>
+	<p>
+		"Sortables" are pretty common, but I invented the "Groupables" for Form Tools. Even
+		though it's non-standard, I hope that once you see how it works once, you'll get the
+		idea and use it anywhere it appears without any additional learning curve.
+	</p>
+
+	<p>
+		Lastly, there's a third user interface pattern: <i>grouped sortables</i>. These
+		are multiple lists of sortable elements that themselves can be sorted: i.e. one list
+		can be sorted by dragging it above or beneath another list. For example, on the Edit View
+		-&gt; Fields tab.
+	</p>
+
+	<p>
+		Let's look at each.
+	</p>
+
+
+	<h4>Sortables</h4>
+
+	<p>
+		{% include screenshot.html item='i221.jpg' %}
+
+		Sortable lists are easily identifiable by their first "Order" column. Sortable rows
+		have an up-down arrow at the right of the Order column, indicating that the rows can be
+		sorted. In addition, when you mouseover the Order column, the cell is highlighted. To sort
+		them just click on the Order column and drag it up or down.
+	</p>
+
+	<p>
+		In the screenshot to the right, the URLs of the forms in the multi-page form are in a
+		sortable list. You can drag them up or down to the re-sort them.
+	</p>
+
+	<p>
+		As with any sortable list, you'll need to click the form's Update button to actually save
+		the new order.
+	</p>
+
+	<h4>Groupables</h4>
+
+	<p>
+		{% include screenshot.html item='i220.jpg' %}
+
+		Take a look at the screenshot to the right. Notice anything funny about the first "Order"
+		column? Down the lefthand side there are blocks of solid grey - some with different heights
+		than others. That column indicates that the rows are also <i>groupable</i>.
+	</p>
+
+	<p>
+		Sometimes, you may find that it's convenient to move around multiple rows a block. Some data
+		belongs in groups. For example, if you had a registration form, you might want to
+		group together Contact Information, travel information, hotel information, emergency contact
+		information and so on. And if you're creating multiple Views, it can be convenient to
+		drag and drop those rows as groups. That's the point of the Groupables.
+	</p>
+
+	<p>
+		To group two rows, they must first be next to each other. Then, click click the space
+		between the columns at the far left of the row. As you mouseover it, it will change to indicate it can be clicked.
+		When you click it, move the mouse over the Order column and notice that now when you click
+		and drag it, it moves <i>both</i> rows. Similarly, to separate two rows, just click between
+		the rows again.
+	</p>
+
+	<h4>Grouped Sortables</h4>
+
+	<p>
+		{% include screenshot.html item='i222.jpg' %}
+
+		Urgh. Seriously? So we have Sortables, Groupables and now <i>Grouped Sortables</i>? Yeah,
+		I know. If anyone more creative than myself has a better term for this, please let me
+		know through the forums.
+	</p>
+
+	<p>
+		Grouped Sortables are groups of sortable lists in which each list can itself be moved up
+		or down.
+	</p>
+
+	<p>
+		Take a look at the screenshot to the right. That's a shot of a simple Option List, with
+		the options arranged in two groups: English-speaking and non-English-speaking.
+	</p>
+
+	<p>
+		The contents of each list can be dragged and dropped within the same list, as you would
+		expect, but also, you can drag items from one group to the other. So if I added another
+		English-speaking country to the non-English Speaking country group by accident, I could
+		drag it to the other group.
+	</p>
+
+	<p>
+		Secondly, notice the up-down arrow in the green area at the top left of each group? That
+		means that the groups themselves are sortable. Just click there and drag the entire group
+		up or down to re-sort it.
+	</p>
+
+{% include close_section.html %}
