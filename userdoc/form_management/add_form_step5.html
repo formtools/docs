@@ -3,13 +3,100 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 heading: "5: Field Types"
-prev: Form Management
-prevLink: /userdoc/form_management/
-next: Adding Internal Forms
-nextLink: /userdoc/form_management/adding_internal_forms/
+prev: "Step 4: Database Setup"
+prevLink: /userdoc/form_management/add_form_step4
+next: "Step 6: Finalize Form"
+nextLink: /userdoc/form_management/add_form_step6
 ---
 
-{% include open_section.html nav='nav_userdoc_form_management.html' selected='form_types' %}
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='add_form_step5' %}
 
+
+	{% include screenshot.html item="i217.jpg" %}
+
+	<p>
+		Almost there! Step 5 gets down to the nitty gritty: specifying the field types, their
+		value(s) and the how much space should be allocated in the database for each field. The
+		page should look something like the screenshot to the right.
+	</p>
+
+	<p>
+		Once the page has fully loaded, click the "Smart Fill" button.
+	</p>
+
+	<h5>How it works</h5>
+
+	<p>
+		You form page(s) are loaded in hidden iframe(s) in the page. If the form was on a different
+		server, temporary copies are created locally so that the javascript can read them. When
+		you click "Smart Fill" button, the page parses your form page(s) and tries to determine
+		(a) their field type (dropdown, radio buttons etc) and (b) any multiple-select options they
+		may have; namely: radios, dropdowns and checkboxes all have multiple options. The script
+		figures all these out and displays them.
+	</p>
+
+	<p>
+		From a coding standpoint, this is quite a complicated page and there are numerous things
+		that could go wrong. For instance, if your webpage contains errors or is malformed, the
+		Smart Fill option may not be able to run properly. Because of this, there are various
+		safeguards in place so recommend courses of action. One such option is that if one or more
+		of your form fields cannot be found, the page will provide you with the option of manually
+		uploading copies of your form for it to be parsed directly. But for whatever reason, in case
+		you cannot complete the page, you can always click the "Skip Step" button to bypass the page.
+		You can always edit the form later to customize the fields then.
+	</p>
+
+
+	<h5>Limitations: checkboxes and radio buttons</h5>
+
+	{% include screenshot.html item="i56.jpg" %}
+
+	<p>
+		Due to the nature of HTML, checkboxes and radio buttons have their labels located
+		<b>outside</b> of the input field elements: technically they could appear anywhere in
+		the webpage. For instance:
+	</p>
+
+	{% highlight html %}
+<!-- field types with their labels found outside of the element -->
+<input type="radio" name="r1" /> My first radio!
+My second radio: <input type="radio" name="r2" />
+
+<input type="checkbox" name="c1" /> My first checkbox
+My second checkbox: <input type="checkbox" name="c2" />
+
+<!-- field types with their labels found inside the element -->
+<select name="s">
+	<option value="one">One</option>
+	<option value="two">Two</option>
+	<option value="three">Three</option>
+</select>
+	{% endhighlight %}
+
+	<p>
+		Because of this, the Smart Fill feature doesn't pre-fill the display texts for checkboxes or
+		radio buttons, since it doesn't know where to find them! Dropdowns always have their labels
+		found in the same place, so they CAN be pre-filled.
+	</p>
+
+	h5>Field Sizes</h5>
+
+	<p>
+		The field size column specifies how much storage should be allocated for each field. Always
+		make sure there's enough space! If you don't the form submission data will be truncated
+		when it first gets added to the database!
+	</p>
+
+	<p>
+		Users familiar with earlier versions of Form Tools may notice a couple of changes here:
+	</p>
+
+	<ul>
+		<li>The list of available field sizes is different, depending on the field type. For some
+			field types (like textareas) it would make sense to be able to allocated only 5 or 20
+			characters, whereas other field types (like textboxes) it would.</li>
+		<li>There are two new sizes: 1 char and 2 chars. These are included because sometimes
+			you only need that much space.</li>
+	</ul>
 
 {% include close_section.html %}

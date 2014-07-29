@@ -37,11 +37,12 @@ nextLink: /userdoc/form_management/add_form_step4
 		<li>Cut and paste the HTML in the textarea and replace your own &lt;form&gt; tag with it.
 			The HTML will look something like this:
 
-			<!--
-			<form action="http://www.yoursite.com/path/to/form_tools/process.php" method="post">
-				<input type="hidden" name="form_tools_initialize_form" value="1" />
-				<input type="hidden" name="form_tools_form_id" value="X" />
-			-->
+			{% highlight html %}
+<form action="http://www.yoursite.com/path/to/form_tools/process.php"
+	method="post">
+	<input type="hidden" name="form_tools_initialize_form" value="1" />
+	<input type="hidden" name="form_tools_form_id" value="X" />
+			{% endhighlight %}
 
 			If you indicated that this form contained a file upload field, you will see an extra
 			enctype="multipart/form-data" attribute. Note: if your existing form tag has other
@@ -62,17 +63,15 @@ nextLink: /userdoc/form_management/add_form_step4
 	<h4>Test Submission: API</h4>
 
 	{% include screenshot.html item='i215.jpg' %}
-	
+
 	<p>
 		Configuring your form to use the API to submit your test submission is covered in the following
 		tutorials:
 	</p>
 
 	<ul>
-		<li><a href="http://docs.formtools.org/tutorials/api_single_page_form/">Adding a single
-			page form with the API</a></li>
-		<li><a href="http://docs.formtools.org/tutorials/api_multi_page_form/">Adding a multi-page
-			form with the API</a></li>
+		<li><a href="/tutorials/api_single_page_form/">Adding a single page form with the API</a></li>
+		<li><a href="/tutorials/api_multi_page_form/">Adding a multi-page form with the API</a></li>
 	</ul>
 
 

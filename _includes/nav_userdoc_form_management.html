@@ -11,7 +11,7 @@
 	</li>
 	<li>
 		<div {% if include.selected == 'adding_external_forms' %}class="selected"{% endif %}>
-			<a href="/userdoc/form_management/adding_forms">Adding External Forms</a>
+			<a href="/userdoc/form_management/adding_external_forms">Adding External Forms</a>
 		</div>
 		<ul>
 			<li {% if include.selected == 'submission_type_comparison' %}class="selected"{% endif %}>
@@ -38,7 +38,9 @@
 		</ul>
 	</li>
 	<li>
-		<a href="?page=editing_forms">Editing Forms</a>
+		<div {% if include.selected == 'editing_forms' %}class="selected"{% endif %}>
+			<a href="/userdoc/form_management/editing_forms">Editing Forms</a>
+		</div>
 		<ul>
 			<li><a href="?page=edit_form_main_tab">Main tab</a></li>
 			<li><a href="?page=edit_form_fields_tab">Fields tab</a></li>

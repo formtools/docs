@@ -3,13 +3,56 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 heading: "6: Finalize Form"
-prev: Form Management
-prevLink: /userdoc/form_management/
-next: Adding Internal Forms
-nextLink: /userdoc/form_management/adding_internal_forms/
+prev: "Step 5. Field Types"
+prevLink: /userdoc/form_management/add_form_step5
+next: Editing Forms
+nextLink: /userdoc/form_management/editing_forms/
 ---
 
-{% include open_section.html nav='nav_userdoc_form_management.html' selected='form_types' %}
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='add_form_step6' %}
+
+
+	{% include screenshot.html item='i218.jpg' %}
+	<p>
+		The final step is just for finalizing your form: pushing it into "live" mode. This tells
+		Form Tools to start storing the submissions. What you need to do depends on the submission
+		type: <b>direct</b> or <b>code</b> via the API. Both are quite simple.
+	</p>
+
+	<h4>Direct Submissions</h4>
+
+	<p>
+		Return to your form and remove the following hidden field:
+	</p>
+
+	{% highlight html %}
+<input type="hidden" name="form_tools_initialize_form" value="1" />
+	{% endhighlight %}
+
+	<p>
+		Now refresh your form page. Going forward, submissions should now be stored in Form Tools.
+	</p>
+
+	<h4>Code Submissions (API)</h4>
+
+	<p>
+		Change the <b>ft_api_init_form_page</b> line on the first page of your form to whatever
+		line is displayed in the Add Form Step 6 page. It will looks something like this, except
+		the X will be your form number.
+	</p>
+
+{% highlight php %}
+$fields = ft_api_init_form_page(X);
+{% endhighlight %}
+
+	<p>
+		Then visit your "thank you" page to empty the sessions. Once this is done, all new form
+		submissions will be processed and stored by the program.
+	</p>
+
+	<p>
+		And you're done! Congratulations, you've finished configuring your form!
+	</p>
 
 
 {% include close_section.html %}
