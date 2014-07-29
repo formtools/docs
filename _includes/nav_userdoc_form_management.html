@@ -42,27 +42,58 @@
 			<a href="/userdoc/form_management/editing_forms">Editing Forms</a>
 		</div>
 		<ul>
-			<li><a href="?page=edit_form_main_tab">Main tab</a></li>
-			<li><a href="?page=edit_form_fields_tab">Fields tab</a></li>
-			<li><a href="?page=edit_form_views_tab">Views tab</a></li>
-			<li><a href="?page=edit_form_emails_tab">Emails tab</a></li>
+			<li {% if include.selected == 'edit_form_main_tab' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/edit_form_main_tab">Main tab</a>
+			</li>
+			<li {% if include.selected == 'edit_form_fields_tab' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/edit_form_fields_tab">Fields tab</a>
+			</li>
+			<li {% if include.selected == 'edit_form_views_tab' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/edit_form_views_tab">Views tab</a>
+			</li>
+			<li {% if include.selected == 'edit_form_emails_tab' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/edit_form_emails_tab">Emails tab</a>
+			</li>
 		</ul>
 	</li>
-	<li><a href="?page=disabling_forms">Disabling forms</a></li>
-	<li><a href="?page=deleting_forms">Deleting forms</a></li>
-	<li><a href="?page=form_permissions">Form Permissions (who sees what?)</a></li>
-	<li><a href="?page=field_option_groups">Option Lists</a>
+	<li {% if include.selected == 'disabling_forms' %}class="selected"{% endif %}>
+		<a href="/userdoc/form_management/disabling_forms">Disabling forms</a>
+	</li>
+	<li {% if include.selected == 'deleting_forms' %}class="selected"{% endif %}>
+		<a href="/userdoc/form_management/deleting_forms">Deleting forms</a>
+	</li>
+	<li {% if include.selected == 'form_permissions' %}class="selected"{% endif %}>
+		<a href="/userdoc/form_management/form_permissions">Form Permissions (who sees what?)</a>
+	</li>
+	<li>
+		<div {% if include.selected == 'field_option_groups' %}class="selected"{% endif %}>
+			<a href="/userdoc/form_management/field_option_groups">Option Lists</a>
+		</div>
+
 		<ul>
-			<li><a href="?page=fog_adding">Adding via the Add Form Process</a></li>
-			<li><a href="?page=fog_adding_manually">Adding manually</a></li>
-			<li><a href="?page=fog_editing">Editing</a></li>
+			<li {% if include.selected == 'form_permissions' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/fog_adding">Adding via the Add Form Process</a>
+			</li>
+			<li {% if include.selected == 'form_permissions' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/fog_adding_manually">Adding manually</a>
+			</li>
+			<li {% if include.selected == 'form_permissions' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/fog_editing">Editing</a>
+			</li>
 		</ul>
 	</li>
 	<li>
-		<a href="?page=form_fields">Form Fields</a>
+		<div {% if include.selected == 'form_fields' %}class="selected"{% endif %}>
+			<a href="/userdoc/form_management/form_fields">Form Fields</a>
+		</div>
+
 		<ul>
-			<li><a href="?page=adding_form_fields">Adding form fields</a> </li>
-			<li><a href="?page=deleting_form_fields">Deleting form fields</a></li>
+			<li {% if include.selected == 'adding_form_fields' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/adding_form_fields">Adding form fields</a>
+			</li>
+			<li {% if include.selected == 'deleting_form_fields' %}class="selected"{% endif %}>
+				<a href="/userdoc/form_management/deleting_form_fields">Deleting form fields</a>
+			</li>
 		</ul>
 	</li>
 </ul>
