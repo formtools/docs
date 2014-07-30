@@ -1,0 +1,61 @@
+<h4 {% if include.selected == 'field_types' %}class="selected"{% endif %}><a href="/userdoc/field_types/">Field Types</a></h4>
+
+<ul>
+	<li {% if include.selected == 'how_field_types_are_used' %}class="selected"{% endif %}>
+		<a href="/userdoc/field_types/how_field_types_are_used">How field types are used</a>
+	</li>
+	<li {% if include.selected == 'edit_field_dialog' %}class="selected"{% endif %}>
+		<a href="/userdoc/field_types/edit_field_dialog">The Edit Field dialog</a>
+	</li>
+	<li>
+		<div {% if include.selected == 'predefined_field_types' %}class="selected"{% endif %}>
+			<a href="/userdoc/field_types/predefined_field_types">Pre-defined field types</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'ft_textboxes' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_textboxes">Textboxes</a>
+			</li>
+			<li {% if include.selected == 'ft_textareas' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_textareas">Textareas</a>
+			</li>
+			<li {% if include.selected == 'ft_password' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_password">Passwords</a>
+			</li>
+			<li {% if include.selected == 'ft_radios' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_radios">Radio Buttons</a>
+			</li>
+			<li {% if include.selected == 'ft_checkboxes' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_checkboxes">Checkboxes</a>
+			</li>
+			<li {% if include.selected == 'ft_dropdown' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_dropdown">Dropdowns</a>
+			</li>
+			<li {% if include.selected == 'ft_multiselect' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_multiselect">Multi-select dropdowns</a>
+			</li>
+			<li {% if include.selected == 'ft_date' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_date">Dates</a>
+			</li>
+			<li {% if include.selected == 'ft_time' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_time">Times</a>
+			</li>
+			<li {% if include.selected == 'ft_phone' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_phone">Phone Numbers</a>
+			</li>
+			<li {% if include.selected == 'ft_code' %}class="selected"{% endif %}>
+				<a href="/userdoc/field_types/ft_code">Code / Markup Fields</a>
+			</li>
+		</ul>
+
+	</li>
+	<li {% if include.selected == 'bundled_field_type_modules' %}class="selected"{% endif %}>
+		<a href="/userdoc/field_types/bundled_field_type_modules">Bundled field type modules</a>
+	</li>
+	<li {% if include.selected == 'other_field_types' %}class="selected"{% endif %}>
+		<a href="/userdoc/field_types/other_field_types">Other Field Types</a>
+	</li>
+	<li {% if include.selected == 'custom_fields_module' %}class="selected"{% endif %}>
+		<a href="/userdoc/field_types/custom_fields_module">The Custom Fields module</a>
+	</li>
+</ul>

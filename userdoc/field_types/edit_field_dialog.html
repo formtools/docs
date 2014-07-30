@@ -1,0 +1,56 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Field Types
+heading: The Edit Field dialog
+prev: How field types are used
+prevLink: /userdoc/field_types/how_field_types_are_used
+next: Predefined field types
+nextLink: /userdoc/field_types/predefined_field_types
+---
+
+{% include open_section.html nav='nav_userdoc_field_types.html' selected='edit_field_dialog' %}
+
+
+	<p>
+		{% include screenshot.html item="i191.jpg" %}
+		When you click on the Edit icon for a field listed on the Edit Form -&gt; Fields tab,
+		you'll see a dialog window open up that looks something like the screenshot to the
+		right. The Edit Field dialog contains two tabs for 2.1.3 and earlier, and three
+		tabs for 2.1.4 and later.
+	</p>
+	<p>
+		The first tab is devoted to settings that are available to all (or most!) fields,
+		regardless of their type (radios, textareas, checkboxes etc). The second tab
+		contains whatever custom settings have been defined for that field type. The third
+		tab shows whatever validation rules are permitted for that field type.
+		For information on the individual field types (settings and validation), see the
+		appropriate page found later in this documentation section.
+	</p>
+
+	<p>
+		So! Here's what each of the options on the first tab mean. For people familiar with
+		earlier versions of Form Tools, these haven't changed that much.
+	</p>
+
+	<ul>
+		<li><b>Display Text</b>: the label for the field.</li>
+		<li><b>Form Field</b>: the form field's name attribute from your form.</li>
+		<li><b>Field Type</b>: the field type!</li>
+		<li><b>Pass On</b>: this setting is only relevant for External forms that POST their data
+			directly to process.php for (see the <a href="/userdoc/form_management/adding_external_forms">Add Form documentation</a>
+			for more info on that). It determines whether or not the data from the field should be passed on to the "thankyou"
+			page via the query string, after the submission is processed.</li>
+		<li><b>Field Size</b>: this lets you control how much space should be allocated in the database
+			for the field. If you ever find that values aren't being stored properly for your field -
+			this setting is the first place to check!</li>
+		<li><b>Data Type</b>: this setting controls how the values in the field should be handled
+			on the Submission Listing page, specifically, for sorting. Generally just leave this as
+			"string".</li>
+		<li><b>DB Column</b>: this field determines the name of the database column name
+			for your field.</li>
+	</ul>
+
+
+{% include close_section.html %}

@@ -1,0 +1,54 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Field Types
+heading: Field Types
+prev: Customizing validation
+prevLink: /userdoc/form_management/customizing_validation
+next: How field types are used
+nextLink: /userdoc/field_types/how_field_types_are_used
+---
+
+{% include open_section.html nav='nav_userdoc_field_types.html' selected='field_types' %}
+
+	{% include screenshot.html item="i190.jpg" %}
+
+	<p>
+		Form Tools 2.1.0 radically changed the way form field types were handled. Before 2.1,
+		there was the following finite, hardcoded list of supported field types:
+	</p>
+
+	<ul>
+		<li>Textbox</li>
+		<li>Textarea</li>
+		<li>Password</li>
+		<li>WYWISYG (<a href="http://tinymce.moxiecode.com/">TinyMCE</a>)</li>
+		<li>File</li>
+		<li>Radio Buttons</li>
+		<li>Checkboxes</li>
+		<li>Dropdown</li>
+		<li>Multi-select dropdown</li>
+	</ul>
+
+	<p>
+		While these fields covered most typical uses, occasionally you'd run into a situation where
+		you'd need something different. So, Form Tools 2.1.0 was designed to allow you to extend it
+		to support any type of field you want - for example,
+		<a href="http://modules.formtools.org/field_type_google_maps/?page=index">Google
+			Maps fields</a>, <a href="?page=ft_phone">Phone number fields</a>, or any of the HTML5 field
+		types currently gaining traction with the browser vendors.
+	</p>
+
+	<p>
+		The following section documents the ins and outs of the field types that are bundled
+		with Form Tools 2.1, including the File and TinyMCE field type modules.
+	</p>
+
+	<p>
+		Actual customization of the field types is done with the aid of the (premium)
+		<a href="http://modules.formtools.org/custom_fields/?page=index">Custom Fields module</a>.
+	</p>
+
+
+{% include close_section.html %}

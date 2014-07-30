@@ -1,0 +1,62 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Field Types
+heading: Textboxes
+prev: Predefined field types
+prevLink: /userdoc/field_types/predefined_field_types
+next: Textareas
+nextLink: /userdoc/field_types/ft_textareas
+---
+
+{% include open_section.html nav='nav_userdoc_field_types.html' selected='ft_textboxes' %}
+
+	<h4>Textboxes</h4>
+
+	<p>
+		{% include screenshot.html item="i193.jpg" %}
+		Textboxes are the most common field type. Chances are, most of your form fields are
+		textboxes. Before 2.1.0, the only thing you could customize about this field type was the
+		size - and that was dependent on the database size allocated. 2.1.0 provides a lot more
+		control. The screenshot to the right shows 5 different textboxes, each configured slightly
+		differently.
+	</p>
+
+	<p class="bold blue">Settings tab</p>
+
+	<p>
+		As with all field types, to choose a textbox for one of your fields just go to the Edit Form -&gt;
+		Fields tab. There, select the Textbox field type on the main page, or click the Edit icon and
+		select it there. As with all other field types, the first tab
+		of the Edit Field dialog contains the same information and is
+		<a href="/userdoc/field_types/edit_field_dialog">discussed here</a>.
+	</p>
+
+	<p>
+		{% include screenshot.html item="i192.gif" %}
+		The custom field settings for the Textbox field type are shown in the screenshot to the
+		right. Here's what they all mean (but you can probably figure it out by the labels!).
+	</p>
+
+	<ul>
+		<li><b>Size</b>: this controls the width of the field.</li>
+		<li><b>Max Length</b>: this lets you control the maximum number of characters that people
+			enter into the field.</li>
+		<li><b>Field Comments</b>: this setting lets you add some comments to the field. Sometimes
+			it can help to provide a little explanation to what information a field is storing - the
+			field label (Display Text) may not be enough. Comments appear underneath the field.</li>
+		<li><b>Highlight</b>: this displays the textbox in a particular colour: red, orange, yellow,
+			green or blue. Sometimes it can help to draw emphasis to particular important fields.</li>
+	</ul>
+
+	<p class="bold blue">Validation tab</p>
+
+	<p>
+		{% include screenshot.html item="i331.gif" %}
+		As of Form Tools 2.1.4, you can now add field validation to ensure that each field
+		contains the appropriate data when submitted through Form Tools.
+	</p>
+
+
+{% include close_section.html %}

@@ -1,0 +1,73 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Field Validation
+heading: Field Validation
+prev: Deleting form fields
+prevLink: /userdoc/form_management/deleting_form_fields
+next: Customizing the validation
+nextLink: /userdoc/field_validation/customizing_validation
+---
+
+{% include open_section.html nav='nav_userdoc_field_validation.html' selected='field_validation' %}
+
+	<p>
+		In Form Tools 2.1.4, we added a (long overdue!) field validation feature. This lets
+		you assign rules to your form fields to ensure they meet certain criteria, e.g. to make them
+		required fields, check they contain email addresses, numbers only, etc. This feature is
+		entirely optional and <i>only</i> affects forms within Form Tools. Please note that tour
+		<a href="/userdoc/form_management/form_types">external forms</a> will
+		still need to have their own validation added separately - just like before.
+	</p>
+	<p>
+		When you add a validation rule to a form field, it will affect all users (admin, client or
+		end user via the <a href="http://modules.formtools.org/submission_accounts/?page=index">Submission
+		Accounts</a> module), and regardless of the View they are using. Field validation is a
+		blanket setting, defined once for the form fields and affects everything all forms within
+		Form Tools, regardless of whether they are internal or external.
+	</p>
+
+	<p>
+		Validation is currently client-side only. This will be expanded later on.
+	</p>
+
+	<h4>The Edit Field dialog</h4>
+
+	<p>
+		{% include screenshot.html item="i331.gif" %}
+		You can add validation rules through the Edit Field dialog, found by clicking the "edit"
+		icon for a form field row on the Edit Form -&gt; Fields tab. There, click on the third
+		"Validation" tab. Depending on the field type, you'll see something like the screenshot
+		to the right.
+	</p>
+
+	<p>
+		Like the second "Settings" tab, validation rules are <i>field type-specific</i>: you'll
+		see different rules depending on what type the field is. The screenshot to the right
+		shows the available rules for the Textbox field type. Since textboxes can be used
+		to store a variety of different things, it makes sense to offer a number of different
+		validation options: <i>required, valid email, letters only, numbers only and
+		alphanumeric</i>. But if you look at the validation options for, say, a radio button
+		field type, you'll only see the "required" option. This is because none of the other
+		validation rules would make sense for radio buttons!
+	</p>
+
+	<p>
+		For more information on the Edit Field dialog, see <a href="?page=edit_field_dialog">this documentation page</a>.
+		That section also contains information about each field type and the validation options they offer.
+	</p>
+
+	<h4>Customizing the Error Message</h4>
+
+	<p>
+		When you select a validation rule on the Edit Field dialog, an error message will
+		be automatically pre-filled. You may customize the text to say whatever you want. Please
+		note that the <b>{$field}</b> part of the string is a <i>placeholder</i>. It will be
+		automatically converted to the display text of the form field, making it simple for
+		users to identify what fields were entered incorrectly. We'd strongly suggest including
+		it in your custom error message.
+	</p>
+
+
+{% include close_section.html %}
