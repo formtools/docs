@@ -3,14 +3,50 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Field Types
-heading: How field types are used
-prev: Field types
-prevLink: /userdoc/field_types
-next: The edit field dialog
-nextLink: /userdoc/field_type/edit_field_dialog
+subnavSectionLink: /userdoc/field_types
+heading: Textareas
+prev: Textboxes
+prevLink: /userdoc/field_types/ft_textboxes
+next: Passwords
+nextLink: /userdoc/field_types/ft_passwords
 ---
 
-{% include open_section.html nav='nav_userdoc_field_types.html' selected='how_field_types_are_used' %}
+{% include open_section.html nav='nav_userdoc_field_types.html' selected='ft_textareas' %}
 
+	<h4>Textareas</h4>
+
+	<p>
+		{% include screenshot.html item="i195.jpg" %}
+		Textareas got a whole lot more customizable in 2.1. In earlier versions you had absolutely
+		no control over how it would look or function. As my sister would say: <i>"Like, OMG, so
+		totally boring"</i>. Amen, sis. See the screenshot to the right to see a few examples
+		of what you can now do with textareas.
+	</p>
+
+	<p>
+		You can now control the height, add colours for emphasis, comments and text- and
+		word-counters. These are nice additions.
+	</p>
+
+	<div class="clear"></div>
+
+	<p>
+		{% include screenshot.html item="i194.jpg" %}
+		Here's a explanation of each field type in the Edit Field dialog window, and what each mean.
+		See the screenshot to see how the available fields look.
+	</p>
+
+	<ul>
+		<li><b>Height</b>: this lets you control the visual height of the textbox field. For
+			convenience, there are four preset heights you can choose from: tiny, small, medum and large.</li>
+		<li><b>Field Comments</b>: this setting lets you add some comments to the field. Sometimes
+			it can help to provide a little explanation to what information a field is storing - the
+			field label (Display Text) may not be enough. Comments appear underneath the field.</li>
+		<li><b>Highlight Colour</b>: this displays the textbox in a particular colour: red, orange,
+			yellow, green or blue. Sometimes it can help to draw emphasis to particular important fields.</li>
+		<li><b>Input length</b>: this setting is used in conjunction with the next. It lets you
+			add a textcounter / wordcounter to the field to limit the amount of information entered.</li>
+		<li><b>- Max length (words/chars)</b>: the number of words or characters.</li>
+	</ul>
 
 {% include close_section.html %}

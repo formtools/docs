@@ -3,14 +3,60 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Field Types
-heading: How field types are used
-prev: Field types
-prevLink: /userdoc/field_types
-next: The edit field dialog
-nextLink: /userdoc/field_type/edit_field_dialog
+subnavSectionLink: /userdoc/field_types
+heading: Dates
+prev: Multi-select dropdowns
+prevLink: /userdoc/field_types/ft_dropdowns
+next: Times
+nextLink: /userdoc/field_types/ft_times
 ---
 
-{% include open_section.html nav='nav_userdoc_field_types.html' selected='how_field_types_are_used' %}
+{% include open_section.html nav='nav_userdoc_field_types.html' selected='ft_dates' %}
 
+	<h4>Dates</h4>
+
+	<p>
+		{% include screenshot.html item="i201.jpg" %}
+		The date field is brand new to 2.1.0. In earlier versions, the Submission Date field was
+		special: when it was marked as editable within a View, you could edit the field through
+		a javascript calendar dialog. With 2.1.0, this same functionality has been enhanced and
+		applied to any fields that use the Date field.
+	</p>
+
+	<p>
+		The screenshot to the right shows a few examples of date fields, and how the calendar
+		looks when a field is clicked on. As per the comments on each field, you can
+		customize the date format, depending on what you need. You can either have a date or
+		datetime (which is just what it sounds like: the date plus time!).
+	</p>
+
+	<p>
+		As with all field types, click the Edit icon on the Edit Form -&gt; Fields page and go to
+		the second tab to see all the custom settings for that field type. Here's what each of
+		the field type settings mean.
+	</p>
+
+	<ul>
+		<li><b>Custom Date Format</b>: this lets you control how the date gets displayed. Behind
+			the scenes, dates are always stored as full datetimes in a specific format, so you can
+			change the custom date format for any field at any time and not lose any data.</li>
+		<li><b>Apply Timezone Offset</b>: this setting lets you take into account the user accounts
+			timezone offset. Note: if the field is being displayed outside of the context of a user
+			account (e.g. via the API in your own pages), no timezone is applicable so it will output
+			whatever date is stored in the database without any offset.</li>
+		<li><b>Field Comments</b>: this setting appears for <b>all</b> field types. It lets you add
+			some comments to appear underneath the field, to help explain what the field is about.</li>
+	</ul>
+
+	<h4>Other Stuff to note</h4>
+
+	<p>
+		Date fields are also unique in other ways. On the main Submission Listing page which
+		displays all your form submissions, if one of your date fields is marked as "searchable"
+		in the View, it will appear as an option in the search dropdown. When you select it there,
+		a new search bar will appear to let the user search by date / date range. This always
+		occurs for any date fields, just like the core Submission Date and Last Modified date
+		fields.
+	</p>
 
 {% include close_section.html %}

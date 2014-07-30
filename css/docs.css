@@ -46,3 +46,7 @@ header h1 {
 	border-top: 1px solid #cccccc;
 	margin-top: 16px;
 }
+
+.clear {
+	clear: both;
+}

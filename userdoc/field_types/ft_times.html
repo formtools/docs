@@ -3,14 +3,41 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Field Types
-heading: How field types are used
-prev: Field types
-prevLink: /userdoc/field_types
-next: The edit field dialog
-nextLink: /userdoc/field_type/edit_field_dialog
+subnavSectionLink: /userdoc/field_types
+heading: Times
+prev: Dates
+prevLink: /userdoc/field_types/ft_dates
+next: Phone Numbers
+nextLink: /userdoc/field_types/ft_phones
 ---
 
-{% include open_section.html nav='nav_userdoc_field_types.html' selected='how_field_types_are_used' %}
+{% include open_section.html nav='nav_userdoc_field_types.html' selected='ft_times' %}
 
+	<h4>Times</h4>
+
+	{% include screenshot.html item="i202.jpg" %}
+
+	<p>
+		This field type is totally new to Form Tools 2.1.0. It provides a simple javascript dialog
+		window to let you enter times in a standardized format. The screenshot to the right shows a
+		couple of examples of different time formats, how the fields look (with the clock icon)
+		and the timepicker itself.
+	</p>
+
+	<p>
+		In the Edit Form -&gt; Fields tab -&gt; Edit Field dialog, you are presented with the following
+		options:
+	</p>
+
+	{% include screenshot.html item="i203.jpg" %}
+
+	<ul>
+		<li><b>Custom Display Format</b>: this determines how your time field looks when displayed
+			when editing and viewing. <i>Unlike the date field, if you change this value after there
+				are already entries in the fields, the old data will not be automatically converted to the
+				new format.</i></li>
+		<li><b>Field Comments</b>: this field is common to all field types. It lets you add
+			some comments underneath the field to better explain what it's about.</li>
+	</ul>
 
 {% include close_section.html %}

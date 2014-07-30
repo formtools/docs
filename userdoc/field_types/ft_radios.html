@@ -3,14 +3,54 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Field Types
-heading: How field types are used
-prev: Field types
-prevLink: /userdoc/field_types
-next: The edit field dialog
-nextLink: /userdoc/field_type/edit_field_dialog
+subnavSectionLink: /userdoc/field_types
+heading: Radio Buttons
+prev: Passwords
+prevLink: /userdoc/field_types/ft_passwords
+next: Checkboxes
+nextLink: /userdoc/field_types/ft_checkboxes
 ---
 
-{% include open_section.html nav='nav_userdoc_field_types.html' selected='how_field_types_are_used' %}
+{% include open_section.html nav='nav_userdoc_field_types.html' selected='ft_radios' %}
 
+
+	<h4>Radio Buttons</h4>
+
+	{% include screenshot.html item="i197.jpg" %}
+
+	<p>
+		Radio button fields in 2.1.0 work essentially the same as with earlier versions. As with
+		checkboxes and dropdown fields, radio buttons first and foremost need a <i>data source</i>:
+		i.e. the options that will appear in the radio button list. Like before, those options
+		are defined in Option Lists (formerly called "Field Option Groups").
+	</p>
+
+	<p>
+		So, when you change a field type on the Edit Form -&gt; Fields tab from (say) a textbox to a
+		radio button group, you also need to edit the field in the Edit Field dialog window and
+		assign the data source. But I get ahead of myself! Let's look at the available settings first -
+		that'll help make sense of the field type.
+	</p>
+
+	<p>
+		In the Edit Field dialog, there are three available options:
+	</p>
+
+	{% include screenshot.html item="i196.jpg" %}
+
+	<ul>
+		<li><b>Option List / Contents</b>: this field is required. It specifies the data source for
+			the radio buttons. You have two choices: either use an Option List, or use the values pulled
+			from a field from another form. This latter option is quite exciting: it effectively lets
+			you tie together two distinct forms. Any time a new submission is added to the second form,
+			the value in the field you specify will be included in the list of radio buttons displayed
+			by this field.</li>
+		<li><b>Formatting</b>: this is best illustrated in the screenshot at the top of the page.
+			It gives you a little control over how the radio buttons are displayed. The options are:
+			horizontally (one next to the other), vertically (one above the other), or in 2, 3 or 4
+			columns. These latter options really help present the radios in a clear format.</li>
+		<li><b>Field Comments</b>: as with the other field types, this setting lets you add a comment
+			to appear underneath the field.</li>
+	</ul>
 
 {% include close_section.html %}

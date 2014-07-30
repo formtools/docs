@@ -3,14 +3,53 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Field Types
-heading: How field types are used
-prev: Field types
-prevLink: /userdoc/field_types
-next: The edit field dialog
-nextLink: /userdoc/field_type/edit_field_dialog
+subnavSectionLink: /userdoc/field_types
+heading: Phone numbers
+prev: Times
+prevLink: /userdoc/field_types/ft_times
+next: Code / markup fields
+nextLink: /userdoc/field_types/ft_code
 ---
 
-{% include open_section.html nav='nav_userdoc_field_types.html' selected='how_field_types_are_used' %}
+{% include open_section.html nav='nav_userdoc_field_types.html' selected='ft_phones' %}
 
+	<h4>Phone Numbers</h4>
+
+	{% include screenshot.html item="i204.jpg" %}
+
+	<p>
+		This field type is also new to 2.1.0. Before that, you had to collect phone numbers either
+		in a single field in your form, or by splitting them onto multiple lines. This was a pain.
+		So, 2.1.0 introduced a customizable phone number format. It can be used to gather phone
+		numbers in any format - regardless of country. In fact, it's so generic, you can actually
+		use it to create strings of textboxes on a single line to store anything you want. But
+		calling it the "Phone Number" field will probably cover the most common usage.
+	</p>
+
+	<p>
+		Take a glance at the screenshot to the right. That contains a number of examples of how
+		you can use the field. Cool, huh? It's really quite versatile: you can use it to store
+		phone number in any format - and it's very easy to learn how. Let's look at the Edit Field
+		dialog to see the options are and how you customize the format. As with the other field
+		types, to see the available settings for this field type, go to the Edit Form -&gt; Fields
+		tab, click the Edit icon (the penultimate column) and go to the second tab in the dialog
+		window that appears.
+	</p>
+
+	<p>
+		There are only two options:
+	</p>
+
+	{% include screenshot.html item="i205.jpg" %}
+
+	<ul>
+		<li><b>Phone Number Format</b>: this is where the magic happens! All you need to know is
+			any "x" character you enter in here will be converted into an input field and all other
+			characters are outputted as-is. If you have multiple x's in a row, a single textbox will
+			be output, but with the size and maxlength to allow that number of characters. That's it!
+			Very simple, but very powerful.</li>
+		<li><b>Field Comments</b>: this lets you add a comment underneath the field, in case
+			it needs a little explanation.</li>
+	</ul>
 
 {% include close_section.html %}

@@ -3,14 +3,37 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Field Types
-heading: How field types are used
-prev: Field types
-prevLink: /userdoc/field_types
-next: The edit field dialog
-nextLink: /userdoc/field_type/edit_field_dialog
+subnavSectionLink: /userdoc/field_types
+heading: Multi-select dropdown
+prev: Dropdowns
+prevLink: /userdoc/field_types/ft_dropdowns
+next: Dates
+nextLink: /userdoc/field_types/ft_dates
 ---
 
-{% include open_section.html nav='nav_userdoc_field_types.html' selected='how_field_types_are_used' %}
+{% include open_section.html nav='nav_userdoc_field_types.html' selected='ft_multiselects' %}
 
+	<h4>Multi-select dropdowns</h4>
+
+	{% include screenshot.html item="i200.jpg" %}
+
+	<p>
+		The multi-select dropdown field type has the following settings, listed below. As with the
+		other field types, to see the Edit Field dialog window where you can customize the field,
+		just click on the edit icon on the Edit Form -&gt; Fields tab.
+	</p>
+
+	<ul>
+		<li><b>Option List / Contents</b>: this field is required. It specifies the data source for
+			the radio buttons. You have two choices: either use an Option List, or use the values pulled
+			from a field from another form. This later option is quite exciting: it effectively lets
+			you tie together two separate forms. Any time a new submission is added to the second form,
+			the value in the field you specify will be included in the list of radio buttons displayed
+			by this field.</li>
+		<li><b>Num Rows</b>: this setting controls the height of the multi-select dropdown -
+			how many rows appear.</li>
+		<li><b>Field Comments</b>: as with the other field types, this setting lets you add a comment
+			to appear underneath the field.</li>
+	</ul>
 
 {% include close_section.html %}
