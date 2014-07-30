@@ -2,35 +2,29 @@
 layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
-heading: Editing Forms
-prev: "Step 6: Finalize Form"
-prevLink: /userdoc/form_management/add_form_step6
-next: Main tab
-nextLink: /userdoc/form_management/edit_form_main_tab
+subnavSection: Form Management
+subnavSectionLink: /userdoc/form_management
+heading: Deleting forms
+prev: Disabling forms
+prevLink: /userdoc/form_management/disabling_forms
+next: Form permissions (who sees what?)
+nextLink: /userdoc/form_management/form_permissions
 ---
 
-{% include open_section.html nav='nav_userdoc_form_management.html' selected='editing_forms' %}
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='deleting_forms' %}
 
-	{% include screenshot.html item="i219.jpg" %}
-
-	<p>
-		The nice thing about Form Tools is that it never boxes you in. If you set things up one
-		way, you can always change them later on. The following pages discuss each option found in
-		the four Edit Form tabs: Main, Fields, Views and Emails.
-	</p>
-
-	<ul>
-		<li><a href="/userdoc/form_management/edit_form_main_tab">Main tab</a></li>
-		<li><a href="/userdoc/form_management/edit_form_fields_tab">Fields tab</a></li>
-		<li><a href="/userdoc/form_management/edit_form_views_tab">Views tab</a></li>
-		<li><a href="/userdoc/form_management/edit_form_emails_tab">Emails tab</a></li>
-	</ul>
 
 	<p>
-		Form Tools 2.0.x users may notice that the <i>Database</i> tab has disappeared. In 2.1.x,
-		the functionality in the Database tab was merged into an updated
-		<a href="/userdoc/form_management/edit_form_fields_tab">Fields tab</a>.
+		{% include screenshot.html item="i305.gif" %}
+		If you no longer need a form, you can completely remove it from Form Tools by going to the
+		Manage Forms page and clicking its DELETE link. Please be very careful! Deleting a form
+		cannot be undone - all data will be deleted.
 	</p>
 
+	<p>
+		As of version 1.3.0 you will be redirected to a separate page to explicitly delete a form.
+		This will let you know which files (if any) that had been uploaded through that form's
+		fields and are slated for deletion.
+	</p>
 
 {% include close_section.html %}

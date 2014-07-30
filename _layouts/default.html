@@ -17,7 +17,15 @@
 					{% if page.navSectionLink %}
 						<a href="{{page.navSectionLink}}">{{page.navSection}}</a>
 						&raquo;
-						{{page.heading}}
+
+						{% if page.subnavSectionLink %}
+							<a href="{{page.subnavSectionLink}}">{{page.subnavSection}}</a>
+							&raquo;
+							{{page.heading}}
+						{% else %}
+							{{page.subnavSection}}
+						{% endif %}
+
 					{% else %}
 						{{page.navSection}}
 					{% endif %}

@@ -1,11 +1,4 @@
-<!--<header class="site-header">
-
-  <div class="wrap">
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-  </div>
-
-</header>
--->
+{% if site.showWrapper %}
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -52,5 +45,13 @@
 		</div>
 	</div>
 </div>
+
+{% else %}
+	<style type="text/css">
+		body .mainContent {
+			padding-top: 30px;
+		}
+	</style>
+{% endif %}
 
 <div class="container mainContent">

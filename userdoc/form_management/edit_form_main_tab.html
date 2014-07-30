@@ -1,0 +1,169 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Form Management
+subnavSectionLink: /userdoc/form_management
+heading: Main Tab
+prev: Editing Forms
+prevLink: /userdoc/form_management/editing_forms
+next: Fields Tab
+nextLink: /userdoc/form_management/edit_form_fields_tab
+---
+
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='edit_form_main_tab' %}
+
+	<p>
+		{% include screenshot.html item="i219.jpg" %}
+		The main tab contains the main settings for your form. Each setting is explained
+		individually below. Note, some settings (such as the entire Extended Form Info section)
+		only appear depending on how your form is configured. This was done to hide away
+		all the settings you don't need to see.
+	</p>
+
+	<p>
+		One thing you should know: Form Tools is very lenient in the way it receives and accepts
+		the data. So even though you may configure a form to be set up as a multi-page API form,
+		you can actually create 10 other forms that submit to the same form ID, only containing
+		a subset of the fields. Sometimes scenarios like this arise and it's good to know Form
+		Tools will let you do it.
+	</p>
+
+	<br clear="all">
+
+	<h4>Main Settings</h4>
+
+	<table cellspacing="0" cellpadding="2" class="info">
+		<tbody><tr>
+			<td width="150" class="blue" valign="top">Status</td>
+			<td>
+				This setting lets you take the form offline, preventing Form Tools from accepting any more
+				submissions from the form. Generally speaking, using this feature is discouraged for any
+				reason other than programmatically preventing any new submissions being added to the
+				database. For forms with temporary shelf lives (e.g. registrations for an event), you should
+				take the form itself offline to prevent people wasting their time filling it in, only
+				to find out the submission isn't going to be processed! However, if you do want to keep
+				the form up but don't want the users to see the Form Tools "303" error, add the following
+				hidden field to your form:
+
+{% highlight html %}
+<input type="hidden" name="form_tools_inactive_form_redirect_url" value="http://yoururl.com" />
+{% endhighlight %}
+
+				That will automatically redirect all users to a custom URL if and only if the form
+				is set to inactive/offline.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Form Name</td>
+			<td>
+				The form name is used in a various places throughout the program to uniquely identify your
+				form. Try to give it as descriptive a name as possible!
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Form Type</td>
+			<td>
+				This lets you choose between the External and Internal form types. For more information
+				about the meanings of these, see <a href="?page=form_types">this documentation page</a>.
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<h4>External Form Info</h4>
+
+	<p>
+		If you chose "External" for your form type, a new section shows up with the following
+		settings. Precisely what settings appear in this section depend on the values
+		you select, but here are ALL settings.
+	</p>
+
+	<table cellspacing="0" cellpadding="2" class="info">
+		<tbody><tr>
+			<td class="blue" width="150">Submission Type</td>
+			<td>This tracks whether your form data is being submitted directly to the process.php
+				script, or via the API.</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Is Multi-page form</td>
+			<td>
+				Whether or not the form is actually a multi-page form.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Form URL / Form URL</td>
+			<td>
+				This lets you keep track of the form URL(s). Generally it's mostly used in the Add Form
+				process, but it can also be used later for re-Smart Filling multi-select field option
+				groups. It's a good idea to always keep it up to date.
+			</td>
+		</tr>
+		</tbody></table>
+
+	<h4>Permissions / Other Settings</h4>
+
+	<table cellspacing="0" cellpadding="2" class="info">
+		<tbody><tr>
+			<td class="blue" width="150" valign="top">Access</td>
+			<td>
+				This determines the client permissions for this form: who can view and (potentially) edit
+				the form submissions. For more information on this setting, see the
+				<a href="?page=form_permissions">Form Permissions (who sees what?)</a> page.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Delete associated files when deleting submission</td>
+			<td>
+				This should be pretty self-explanatory. If you form contains file upload fields,
+				you'll want to decide whether or not files associated with submissions should be deleted
+				along with the submission. The default setting is <b>yes</b>, but you're free to change
+				it here.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Strip tags in form submissions</td>
+			<td>
+				This is included for security purposes to prevent XSS attacks and the like. This setting,
+				again, is enabled by default. What it does is strip out the contents of any tag -
+				regardless of the tag type - from the incoming form submission data. Now, depending on your
+				form contents this may not be desirable. If your form accepts HTML via a WYSIWYG field, for
+				instance, you'll need to disable this. This only affects <b>incoming</b> form submissions.
+				Once the data is in Form Tools you can add whatever content you want via the Form Tools UI
+				and not worry about it being removed.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Edit Submission Page Label</td>
+			<td>
+				This setting lets you control the page title and heading on the administrator's and
+				client's Edit Submission page. See the icon at the right of the input field? That
+				means that this field allows for <i>dynamic content</i>. Click the icon to see a dialog
+				window containing the available placeholders. Here's what's available:
+
+				<ul>
+					<li>you can enter language placeholders (so that the title will change depending on
+						the user account's language). Browse your language file (/global/lang) to see the available
+						language strings. They should be entered in Smarty syntax, like
+						<b>{$LANG.phrase_edit_submission}</b>.</li>
+					<li>you can specify form field values, e.g. "First Name" and "Last Name" from your form,
+						so that the title will be different for each submission that you are looking at. This
+						can be a nice clear way to visualize the information better.
+					</li>
+				</ul>
+
+				By default this setting is set to the string: "Edit Submission".
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Add Submission Button</td>
+			<td>
+				Like the previous setting, this field allows for dynamic placeholders. It controls
+				the label for the Add Submission button, which appears on the Submission Listing page and
+				(as of 2.1.0) on the Edit Submission page as well.
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+{% include close_section.html %}

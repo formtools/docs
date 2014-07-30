@@ -1,0 +1,94 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Form Management
+subnavSectionLink: /userdoc/form_management
+heading: Option Lists
+prev: Form permissions (who sees what?)
+prevLink: /userdoc/form_management/form_permissions
+next: "Option Lists: adding via the Add Form process"
+nextLink: /userdoc/form_management/option_lists_adding
+---
+
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='option_lists' %}
+
+
+
+
+	<p class="notify">
+		Before Form Tools 2.1.x, Option Lists were known as "Field Option Groups". Same idea,
+		different name!
+	</p>
+
+	<h4>What are Option Lists?</h4>
+
+	<p>
+		{% include screenshot.html item="i266.gif" %}
+		Form Tools 2 stores data for Option Lists (the values in checkbox groups,
+		radio buttons, dropdowns and multi-select dropdowns) in a slightly different way from
+		its predecessor. With the original script, each and every checkbox group, radio group and
+		dropdown maintained its own list of field options. Functionally this was perfectly
+		sound, but it had significant usability drawbacks; most importantly, if you had multiple
+		fields that contained the same list of field options and needed to change the contents of
+		the fields, you'd need to update each and every one of this fields. This could be extremely
+		time consuming and could lead to a lot of late nights drinking coffee to stay awake and
+		a lot of cursing the inventor of this script.
+	</p>
+
+	<p>
+		Form Tools remedies this through the "Option Lists". Now, all identical
+		field options are stored as a single group. To better understand this, imagine your form
+		contained the following groups of fields:
+	</p>
+
+{% highlight html %}
+<!-- Radio Buttons -->
+<input type="radio" name="colours" value="green" /> Green
+<input type="radio" name="colours" value="red" /> Red
+<input type="radio" name="colours" value="black" /> Black
+<input type="radio" name="colours" value="grey" /> Grey
+
+<!-- Checkboxes -->
+<input type="checkbox" name="more_colours[]" value="green" /> Green
+<input type="checkbox" name="more_colours[]" value="red" /> Red
+<input type="checkbox" name="more_colours[]" value="black" /> Black
+<input type="checkbox" name="more_colours[]" value="grey" /> Grey
+
+<!-- Select box -->
+<select name="yet_more_colours">
+	<option value="green">Green</option>
+	<option value="red">Red</option>
+	<option value="black">Black</option>
+	<option value="grey">Grey</option>
+</select>
+
+<!-- Multi-select box -->
+<select name="still_more_colours" multiple>
+	<option value="green">Green</option>
+	<option value="red">Red</option>
+	<option value="black">Black</option>
+	<option value="grey">Grey</option>
+</select>
+{% endhighlight %}
+
+	<p>
+		Even though the name attributes of the fields are different and that due to the nature
+		of the checkboxes and multi-select dropdown the user can select more than one option, the
+		actual <b>options</b> in the fields are the same. Each of them have the same four options:
+		Green, Red, Black and Grey, that have values: green, red, black and grey (note the
+		lowercase).
+	</p>
+
+	<p>
+		Form Tools is smart enough to realize that all of these fields are identical and
+		therefore should only bother storing them once. So, later on if and when you need to
+		change the values for each field, you can do it one location only.
+	</p>
+
+	<p>
+		The following pages explain the various aspects of the Option Lists, starting with
+		how they get added.
+	</p>
+
+{% include close_section.html %}

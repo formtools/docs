@@ -1,0 +1,63 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Form Management
+subnavSectionLink: /userdoc/form_management
+heading: "Option Lists: editing"
+prev: "Option Lists: adding manually"
+prevLink: /userdoc/form_management/option_lists_adding_manually
+next: Form Fields
+nextLink: /userdoc/form_management/form_fields
+---
+
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='option_lists_editing' %}
+
+
+	<p>
+		{% include screenshot.html item="i200.jpg" %}
+		To edit a field's Option List, you need to start by tracking it down. You can do this in two ways. One, visit
+		the Edit Form » Fields tab, locate the field, click the "Edit" link, then in the Edit Field dialog, go to the
+		second tab and click the "Edit Option List" link. next to the appropriate setting. The other way of doing it is
+		to just click on the Option Lists link in your left navigation panel. There, locate the Option List and edit it.
+		This is generally simpler when you have a small number of forms, but when you have a lot, it can be tricky
+		locating the one you want.
+	</p>
+
+	<p>
+		{% include screenshot.html item="i267.gif" %}
+		From here, editing the Option List is very easy. There are two methods: you can
+		manually edit them (which is convenient for shorter lists), or use the "Smart Fill"
+		feature found at the bottom of the page. The latter method is strongly recommended
+		for longer lists.
+	</p>
+
+	<p>
+		The Smart Fill feature works by entering the field name (the name="" attribute of the
+		form field) and the URL of the page where it's stored. Then, the script attempts to
+		parse the page and extract the list of field options.
+	</p>
+
+	<p>
+		Generally speaking, if you supplied the correct form field name, this should work fine.
+		But in case it cannot locate the field, you might want to try "hacking it" by copying
+		and pasting the field into a blank webpage and linking that that instead. This can at
+		least help identify where the problem lies.
+	</p>
+
+	<h4>Grouped Options</h4>
+
+	<p>
+		Form Tools 2.1.x introduced a new option where you can group similar options, e.g. you
+		could have a single Option List split into two groups: "Canadian Provinces" and "US
+		States".
+	</p>
+
+	<p>
+		How the grouped Option Lists get displayed depends on the field type it's being used in.
+		For example, a dropdown list would just group them visually in optgroups; radios and
+		checkboxes display them with a heading above each group.
+	</p>
+
+
+{% include close_section.html %}

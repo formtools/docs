@@ -1,0 +1,45 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Form Management
+subnavSectionLink: /userdoc/form_management
+heading: "Option Lists: adding manually"
+prev: "Option Lists: Adding via the Add Form Process"
+prevLink: /userdoc/form_management/option_lists_adding
+next: "Option Lists: editing"
+nextLink: /userdoc/form_management/option_lists_editing
+---
+
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='option_lists_adding_manually' %}
+
+	<p>
+		{% include screenshot.html item="i267.gif" %}
+		Sometimes you may need to add a new form field after adding the form to Form Tools; other
+		times you may change the options in a dropdown or group of checkboxes and need to update
+		Form Tools to update the list. No problem! Pretty much everything in Form Tools is
+		customizable, and this section is no exception.
+	</p>
+
+	<p>
+		To manually add an Option List, start by locating the field on the
+		<a href="/userdoc/form_management/edit_form_fields_tab">Edit Form &raquo; Fields</a> tab and click its
+		"Options" link. On that page, click the "Create new Option List" button. This will link you to a new,
+		blank Option List that has already been assigned to the field.
+	</p>
+
+	<p>
+		At this stage, you can approach it in two ways. If the number of field options is very small
+		(say under 5), it's probably fastest to just enter each field value and display text manually.
+		But if there are many items in the list, you'll probably want to use the "Smart Fill"
+		function found at the bottom of the page. This lets you pinpoint your form field by its
+		name attribute and URL. The script then does the work of filling in the field options.
+	</p>
+
+	<p>
+		Note, <a href="/userdoc/form_management/option_lists_adding">as discussed in the previous page</a>, out of necessity the
+		Smart Fill option cannot fill the Display Values for checkboxes or radio buttons.
+	</p>
+
+
+{% include close_section.html %}

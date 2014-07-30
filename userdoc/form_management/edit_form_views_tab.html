@@ -2,35 +2,29 @@
 layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
-heading: Editing Forms
-prev: "Step 6: Finalize Form"
-prevLink: /userdoc/form_management/add_form_step6
-next: Main tab
-nextLink: /userdoc/form_management/edit_form_main_tab
+subnavSection: Form Management
+subnavSectionLink: /userdoc/form_management
+heading: Views tab
+prev: Fields tab
+prevLink: /userdoc/form_management/edit_form_fields_tab
+next: Emails tab
+nextLink: /userdoc/form_management/edit_form_emails_tab
 ---
 
-{% include open_section.html nav='nav_userdoc_form_management.html' selected='editing_forms' %}
-
-	{% include screenshot.html item="i219.jpg" %}
+{% include open_section.html nav='nav_userdoc_form_management.html' selected='edit_form_views_tab' %}
 
 	<p>
-		The nice thing about Form Tools is that it never boxes you in. If you set things up one
-		way, you can always change them later on. The following pages discuss each option found in
-		the four Edit Form tabs: Main, Fields, Views and Emails.
+		{% include screenshot.html item="i255.gif" %}
+		The Views tab is the main hub for adding and managing your form Views. By default,
+		all new forms are given a single View containing all form fields, labeled "All Submissions".
+		Of course, this can be modified or removed, but you should always have at least one View
+		defined - otherwise a huge amount of the Form Tools functionality (like viewing the
+		submissions!) won't be possible.
 	</p>
-
-	<ul>
-		<li><a href="/userdoc/form_management/edit_form_main_tab">Main tab</a></li>
-		<li><a href="/userdoc/form_management/edit_form_fields_tab">Fields tab</a></li>
-		<li><a href="/userdoc/form_management/edit_form_views_tab">Views tab</a></li>
-		<li><a href="/userdoc/form_management/edit_form_emails_tab">Emails tab</a></li>
-	</ul>
 
 	<p>
-		Form Tools 2.0.x users may notice that the <i>Database</i> tab has disappeared. In 2.1.x,
-		the functionality in the Database tab was merged into an updated
-		<a href="/userdoc/form_management/edit_form_fields_tab">Fields tab</a>.
+		For more information on this tab and Views in general, visit the
+		<a href="/userdoc/views">Views section</a>.
 	</p>
-
 
 {% include close_section.html %}
