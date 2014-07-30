@@ -1,0 +1,94 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Form Submissions
+subnavSectionLink: /userdoc/form_submissions
+heading: Search submissions
+prev: The submissions table
+prevLink: /userdoc/form_submissions/
+next: Download / exporting form data
+nextLink: /userdoc/form_submissions/exporting_form_data
+---
+
+{% include open_section.html nav='nav_userdoc_form_submissions.html' selected='search_submissions' %}
+
+	<p>
+		Back when Form Tools 1.4.4 was introduced - back in the late paleolithic era - a new
+		search bar appeared at the top of the submission listings page for clients and
+		administrators. It provides you with a simple but powerful tool for searching your form
+		submissions.
+	</p>
+
+	<h4>Changes from 2.0.x</h4>
+
+	<p>
+		2.1.0 introduced a few improvements to the search bar.
+	</p>
+
+	<ol>
+		<li><b>Hiding the search bar</b>. Depending on your data set, sometimes you simply
+			don't <i>need</i> the search functionality - it's rare, but it can happen. Or, perhaps
+			you are charging client access to the script and want to limit functionality based on
+			a subscription model. To hide the search bar altogether, simply
+			uncheck all "Searchable" checkboxes for the fields in the View (under Edit Form -&gt;
+			Views tab -&gt; Edit View -&gt; Fields sub-tab). The page will automatically recognize that
+			there are no searchable fields and hide the search bar.
+		</li>
+		<li>
+			<b>Date fields</b>.
+			Secondly, the way the search bar handles date fields has changed. In 2.1.0, the Date
+			field type is a first class citizen. The Core Submission Date and Last Modified Date
+			fields are no longer the only fields that may utilize the javascript datepicker. Now
+			you can set ANY of your form fields to be date fields. As such, when you select any
+			form field that's set to a Date, it now shows a Select Date / Date Range field. The
+			old date range dropdown in 2.0.x has been removed in favour of this. When you click
+			on the Date Range field, a javascript dropdown will appear listing various search
+			options. You may use the functionality there to search by individual dates, pre-set
+			date ranges or specific date ranges. It's very powerful, and very easy to use!
+		</li>
+	</ol>
+
+
+	<h4>Available Search Options</h4>
+
+	<p>
+		The first dropdown box in the search bar contains the various database fields you
+		can search. The actual fields that appear in that dropdown depend on your current View.
+		It only lets you search fields in the current View that are marked as "Searchable". The
+		options can be grouped into the following:
+	</p>
+
+	<ul>
+		<li>All fields: lets you search the entire database for a specific keyword.</li>
+		<li>Custom field: lets you search for a string in a single form field. All of your
+			searchable View fields are listed.</li>
+
+		<li>Date / Last Modified: this option, when selected, pops open an additional dropdown
+			menu containing the search-by-date options. The new dropdown option contains various
+			options such as "Last day", "Last week" and "Last Month" as well as a search-by-month
+			option. If you are running Form Tools on a slow server and/or have a extremely high
+			volume of submissions in your form, you can use the search-by-month option to export
+			the data on a monthly basis, rather than all at once - which can sometimes cause server
+			timeouts. The "specific months" section lists the last 12 months starting with the
+			current month. If the earliest submission in your form was 3 months ago, you will
+			only see three months listed - no more.</li>
+		<li>IP Address: this is handy way to quickly locate all submissions made by a single
+			user.</li>
+	</ul>
+
+
+	<h4>Search Tips</h4>
+
+	<ul>
+		<li>Enter a SINGLE search keyword. Multiple words will be regarded as a single string,
+			making it less likely you'll find a match.</li>
+		<li>To reset the form submission listings page to its default sort order, listing all
+			submissions, click the "Show All" button at any time. If your current result set doesn't
+			contain all the items (e.g. you did a search for "Phil" which returns 4 of the 14
+			total submissions), the "Show All" button becomes bold. This serves as a visual aid to
+			&nbsp;remind you you're not viewing all the submissions made through the form.</li>
+	</ul>
+
+
+{% include close_section.html %}

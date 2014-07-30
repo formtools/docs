@@ -1,0 +1,44 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Client accounts
+subnavSectionLink: /userdoc/client_accounts/
+heading: Creating an account
+prev: Client accounts
+prevLink: /userdoc/client_accounts
+next: Logging in
+nextLink: /userdoc/client_accounts/logging_in
+---
+
+{% include open_section.html nav='nav_userdoc_client_accounts.html' selected='creating_accounts' %}
+
+	<p class="notify">
+		Note: you can only create client accounts, not any more administrators. Form Tools allows
+		for a single administrator account which is created during the installation phase.
+	</p>
+
+	<p>
+		{% include screenshot.html item="i158.gif" %}
+		To create a new client account, click on the <b>Clients</b> link on the left navigation
+		column, then on the "Add Client" button in the page. Fill in all required fields (those
+		marked with an asterix) and click the "Add Client" button at the bottom. Assuming all
+		fields were entered with valid values, you will be redirected to a new page for editing
+		this client account.
+	</p>
+
+	<p>
+		Form Tools 2.0.3 introduced a number of security features to force client passwords
+		to meet certain criteria: length and content. When creating new accounts, those criteria
+		are defined on the <a href="/userdoc/client_accounts/account_settings">Settings
+		» Accounts tab</a>. Read that page for a description of the various fields. If you have any
+		of the settings enabled concerning the client account passwords, you should see a message on the screen
+		describing the required criteria. An example of this is shown on the screenshot on this page.
+	</p>
+
+	<p>
+		For older versions of Form Tools, the security settings are not there: don't worry about
+		them!
+	</p>
+
+{% include close_section.html %}
