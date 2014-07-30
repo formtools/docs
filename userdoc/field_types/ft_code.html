@@ -4,7 +4,7 @@ navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Field Types
 subnavSectionLink: /userdoc/field_types
-heading: Code / markup field
+heading: Code / Markup field
 prev: Phone numbers
 prevLink: /userdoc/field_types/ft_phones
 next: Bundled field type module
@@ -12,6 +12,46 @@ nextLink: /userdoc/field_types/bundled_field_type_module
 ---
 
 {% include open_section.html nav='nav_userdoc_field_types.html' selected='ft_code' %}
+
+
+	<h4>Code / Markup fields</h4>
+
+	{% include screenshot.html item="i206.jpg" %}
+
+	<p>
+		The code / markup field type was added in 2.1.0, to offer the same functionality in your
+		form fields as offered throughout Form Tools. You may have noticed that in places like the
+		Export Manager module and Edit email template pages, the markup you enter there is syntax
+		highlighted to make your code easier to read. This is thanks to the wonderful
+		<a href="http://codemirror.net/" target="_blank">CodeMirror</a> script, which has been
+		bundled in Form Tools since 2.0.0.
+	</p>
+
+	<p>
+		The code / markup field type offers a few options to syntax highlight your fields. See the
+		screenshot to the right for a simple example. That shows what the fields look like when
+		they're set to editable. The next screenshot shows the same fields when they're not editable:
+		they just appear as syntax highlighted blocks of code.
+	</p>
+
+	{% include screenshot.html item="i207.jpg" %}
+
+	<p>
+		So! Here are the available configuration options for the code / markup field type. As with
+		all other fields types, to access the configuration settings, go to the Edit Form -&gt; Fields
+		tab, then click the Edit icon for the code/markup row. That will open up a dialog window,
+		and you'll find the field type-specific settings on the second tab.
+	</p>
+
+	<ul>
+		<li><b>Code / Markup type</b>: this setting lets the syntax highlighter know what language
+			the content is in, so it knows to apply the appropriate syntax highlighter. At the time
+			of writing, there are only four options: <i>CSS</i>, <i>HTML</i>, <i>Javascript</i> and
+			<i>XML</i>.</li>
+		<li><b>Height</b>: this controls the height of the code/markup field.</li>
+		<li><b>Field Comments</b>: this lets you add some comments to appear at the bottom of the
+			field, to provide a little more information - should it be necessary.</li>
+	</ul>
 
 
 {% include close_section.html %}

@@ -1,0 +1,16 @@
+<h4 {% if include.selected == 'form_submissions' %}class="selected"{% endif %}><a href="/userdoc/form_submissions/">Form Submissions</a></h4>
+
+<ul>
+	<li {% if include.selected == 'submissions_table' %}class="selected"{% endif %}>
+		<a href="/userdoc/form_submissions/submissions_table">The submissions table</a>
+	</li>
+	<li {% if include.selected == 'search_submissions' %}class="selected"{% endif %}>
+		<a href="/userdoc/form_submissions/search_submissions">Search submissions</a>
+	</li>
+	<li {% if include.selected == 'exporting_form_data' %}class="selected"{% endif %}>
+		<a href="/userdoc/form_submissions/exporting_form_data">Downloading / exporting form data</a>
+	</li>
+	<li {% if include.selected == 'editing_form_submissions' %}class="selected"{% endif %}>
+		<a href="/userdoc/form_submissions/editing_form_submissions">Editing form submissions</a>
+	</li>
+</ul>

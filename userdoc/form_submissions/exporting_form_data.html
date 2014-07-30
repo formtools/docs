@@ -1,0 +1,49 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Form Submissions
+subnavSectionLink: /userdoc/form_submissions
+heading: Downloading / exporting form data
+prev: Search submissions
+prevLink: /userdoc/form_submissions/search_submissions
+next: Editing form submissions
+nextLink: /userdoc/form_submissions/editing_form_submissions
+---
+
+{% include open_section.html nav='nav_userdoc_form_submissions.html' selected='exporting_form_data' %}
+
+	<h4>The Export Manager Module</h4>
+
+	{% include screenshot.html item="i265.gif" %}
+
+	<p>
+		All the ways that you can download the submission data is determined by a separate
+		module called the <a href="http://modules.formtools.org/export_manager/?page=index">Export Manager</a>. This
+		(free) module comes bundled with the default installations of Form Tools, but it's entirely
+		optional: you can uninstall it if you don't need it.
+	</p>
+
+	<p>
+		I'll leave all discussion of the module to the module's own
+		<a href="http://modules.formtools.org/export_manager/?page=index">help documentation</a>, but I
+		will just mention a few important points.
+	</p>
+
+	<ul>
+		<li><b>Groups vs. Types</b>. The various ways to export your data are organized into groups.
+			For example, the "HTML / Printer-friendly" option is an export group with three types:
+			"table format", "one-by-one" and "one submission per page". You can define as many export groups
+			and types as you need.</li>
+		<li><b>Permissions</b>. The Export Manager lets you associate each export group with
+			particular clients, with ALL clients or with only the administrator account.</li>
+		<li><b>Generation Type</b>. The export groups can either open a popup (e.g. "HTML / printer-friendly"), prompt
+			a file download (e.g. Excel), or even generate a file on the server. The XML format
+			(disabled by default) is preconfigured for this last option, but you will need to enable
+			it first.
+		</li>
+	</ul>
+
+
+
+{% include close_section.html %}

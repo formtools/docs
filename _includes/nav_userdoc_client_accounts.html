@@ -1,0 +1,25 @@
+<h4 {% if include.selected == 'client_accounts' %}class="selected"{% endif %}><a href="/userdoc/client_accounts/">Client Accounts</a></h4>
+
+<ul>
+	<li {% if include.selected == 'creating_accounts' %}class="selected"{% endif %}>
+		<a href="/userdoc/client_accounts/creating_accounts">Creating an Account</a>
+	</li>
+	<li {% if include.selected == 'logging_in' %}class="selected"{% endif %}>
+		<a href="/userdoc/client_accounts/logging_in">Logging In</a>
+	</li>
+	<li {% if include.selected == 'forget_password' %}class="selected"{% endif %}>
+		<a href="/userdoc/client_accounts/forget_password">Forget your password?</a>
+	</li>
+	<li {% if include.selected == 'editing_accounts' %}class="selected"{% endif %}>
+		<a href="/userdoc/client_accounts/editing_accounts">Editing an Account</a>
+	</li>
+	<li {% if include.selected == 'disabling_accounts' %}class="selected"{% endif %}>
+		<a href="/userdoc/client_accounts/disabling_accounts">Disabling an Account</a>
+	</li>
+	<li {% if include.selected == 'deleting_accounts' %}class="selected"{% endif %}>
+		<a href="/userdoc/client_accounts/deleting_accounts">Deleting an Account</a>
+	</li>
+	<li {% if include.selected == 'account_permissions' %}class="selected"{% endif %}>
+		<a href="/userdoc/client_accounts/account_permissions">Account Permissions</a>
+	</li>
+</ul>

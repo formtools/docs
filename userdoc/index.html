@@ -24,26 +24,8 @@ heading: User Documentation
 	<div class="col-lg-4">
 		{% include nav_userdoc_field_validation.html selected='field_validation' %}
 		{% include nav_userdoc_field_types.html selected='field_types' %}
-
-		<h4><a href="form_submissions/">Form Submissions</a></h4>
-		<ul>
-			<li><a href="form_submissions/submissions_table">The Submissions Table</a></li>
-			<li><a href="form_submissions/search_submissions">Search Submissions</a></li>
-			<li><a href="form_submissions/exporting_form_data">Downloading / exporting form data</a></li>
-			<li><a href="form_submissions/editing_form_submissions">Editing form submissions</a></li>
-		</ul>
-
-		<h4><a href="client_accounts/">Client Accounts</a></h4>
-		<ul>
-			<li><a href="client_accounts/creating_accounts">Creating an Account</a></li>
-			<li><a href="client_accounts/logging_in">Logging In</a></li>
-			<li><a href="client_accounts/forget_password">Forget your password?</a></li>
-			<li><a href="client_accounts/editing_accounts">Editing an Account</a></li>
-			<li><a href="client_accounts/disabling_accounts">Disabling an Account</a></li>
-			<li><a href="client_accounts/deleting_accounts">Deleting an Account</a></li>
-			<li><a href="client_accounts/account_permissions">Account Permissions</a></li>
-		</ul>
-
+		{% include nav_userdoc_form_submissions.html selected='form_submissions' %}
+		{% include nav_userdoc_client_accounts.html selected='client_accounts' %}
 	</div>
 
 	<div class="col-lg-4">

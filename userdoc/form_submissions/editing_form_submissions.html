@@ -1,0 +1,123 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Form Submissions
+subnavSectionLink: /userdoc/form_submissions
+heading: Editing form submissions
+prev: Downloading / exporting form data
+prevLink: /userdoc/form_submissions/exporting_form_data
+next: Client accounts
+nextLink: /userdoc/client_accounts/
+---
+
+{% include open_section.html nav='nav_userdoc_form_submissions.html' selected='editing_form_submissions' %}
+
+	<p>
+		This page discussed the various features of the Edit Submission page. Everything here relates
+		to both the administrator and client accounts - they both see virtually identical pages
+		with the same features.
+	</p>
+
+	<p>
+		As with the main Submission Listing page, <a href="?page=form_submissions">discussed
+		previously</a>, the contents of the Edit Submission page is largely determined by the form
+		View that the user is currently browsing. The View determines the following aspects of the
+		page: whether the fields are grouped in tabs or not; which fields are visible on each
+		tab; which fields may be edited or not; the order of the fields; whether or not the
+		"UPDATE" and "DELETE" buttons appear. This page explains each feature of the page.
+	</p>
+
+	<table cellspacing="0" cellpadding="1" class="info" width="100%">
+		<tbody><tr>
+			<td class="blue" width="160" valign="top">Navigation links</td>
+			<td>
+				{% include screenshot.html item="i310.gif" %}
+
+				Any time you edit a submission, you'll see the three links at the top of the page:
+				"« previous", "back to search results" and "next »". These provide you with
+				a convenient navigation tool to browse through the <b>current result set</b>. They
+				will navigate through whatever submissions were just displayed the last time you visited
+				the main submissions page. When you are on the first or last item, the previous and next
+				links are greyed out respectively.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" width="160" valign="top">Toggle button (admin only)</td>
+			<td>
+				{% include screenshot.html item="i309.gif" %}
+
+				This appears for administrators only. It lets you quickly toggle between the edit form
+				section to manage the form Views and viewing the submissions data. It can be handy if
+				you're in the midst of configuring the form.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" width="160" valign="top">Tabs</td>
+			<td>
+				{% include screenshot.html item="i312.gif" %}
+
+				This is an exciting new feature of Form Tools 2. It now lets you organize your form
+				data into tabs, grouping related data as you see fit. You can define up to 6 tabs, each
+				with a custom label. By default, all auto-generated views group form submissions
+				on a single tab labeled "Data".
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" width="160" valign="top">Fields</td>
+			<td>
+				{% include screenshot.html item="i311.gif" %}
+
+				The list of fields that appears on the Edit Submission page is again determined by the
+				View. In fact, the View determines not just WHICH fields appear, but also whether they
+				are editable and the order in which they appear. All this functionality is found on the
+				Edit View » fields tab.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" width="160" valign="top">UPDATE button</td>
+			<td>
+				{% include screenshot.html item="i313.gif" %}
+
+				The UPDATE button will appear on the Edit Submission page if there is one or more fields
+				on the page that may be edited. Like the last feature, this is determined on the
+				Edit View » fields tab. That tab contains all the controls for choosing which
+				fields are editable and which are not. One caveat: if you're using tabs to group your
+				data, any time a tab doesn't contain ANY editable fields, the UPDATE button won't
+				appear. This should behave intuitively, but it was worth the mention!
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" width="160" valign="top">DELETE button</td>
+			<td>
+				{% include screenshot.html item="i308.gif" %}
+
+				The DELETE button appears on the Edit Submission page if and only if the "May delete
+				submissions that appear in this View" option has been enabled on the Edit View »
+				main tab. This setting applies to everyone who uses the View - administrator and client.
+				It also determines whether or not the DELETE button appears on the main Submissions page.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" width="160" valign="top">Emails section</td>
+			<td>
+				{% include screenshot.html item="i74.jpg" %}
+
+				This section was added in Form Tools 2 to provide significantly more control for
+				sending emails from the Edit Submission page. This feature works by letting you
+				construct any number of pre-fab email templates like "Thanks for registering!"
+				"Your payment has been processed" and so on, then on the Edit Submission page you can
+				manually send them to whatever recipient list (usually the person / company who
+				made the submission).<br>
+				<br>
+				To allow your email to be sent from the Edit Submission page, you need to edit the
+				email template (Edit Form » Emails tab » Edit Email Template). There, click
+				the "Advanced Settings" link to show a few hidden features and choose the appropriate
+				value for the "Include option to send this email from Edit Submission page" option.
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+
+{% include close_section.html %}
