@@ -1,0 +1,31 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Client accounts
+subnavSectionLink: /userdoc/client_accounts/
+heading: Deleting an account
+prev: Disabling an account
+prevLink: /userdoc/client_accounts/disabling_accounts
+next: Account permissions
+nextLink: /userdoc/client_accounts/account_permissions
+---
+
+{% include open_section.html nav='nav_userdoc_client_accounts.html' selected='deleting_accounts' %}
+
+	<p>
+		Deleting a client account completely removes that user from the database, preventing them
+		from logging in. Additionally, any email templates that include them as a (non-custom)
+		recipient will be updated to no longer email them.
+	</p>
+	<p>
+		deleting a user account does not remove any of that client's forms. Each form must be
+		deleted separately.
+	</p>
+	<p>
+		To delete an account, simply click on the <b>Manage Clients</b> link in the leftmost navigation
+		column, and click the appropriate DELETE link. Be very careful! This cannot be undone.
+	</p>
+
+
+{% include close_section.html %}

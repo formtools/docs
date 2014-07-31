@@ -1,0 +1,31 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Client accounts
+subnavSectionLink: /userdoc/client_accounts/
+heading: Disabling an account
+prev: Editing an account
+prevLink: /userdoc/client_accounts/editing_accounts
+next: Deleting an account
+nextLink: /userdoc/client_accounts/deleting_accounts
+---
+
+{% include open_section.html nav='nav_userdoc_client_accounts.html' selected='disabling_accounts' %}
+
+	<p>
+		Disabling a client account prevents that client from being able to log in to view and
+		manage their form submissions. When clients try to log in with a disabled account, they
+		will receive a message on the login screen informing them that their account has been
+		disabled. <b>Note: disabling an account does not prevent any form submissions being
+		stored for any of the user's forms</b>. To prevent this, you must
+		<a href="/userdoc/form_management/disabling_forms">disable the form itself</a>.
+	</p>
+
+	<p>
+		To disable an account, click on the <b>Clients</b> link in the leftmost navigation
+		column, and click the appropriate EDIT link. On the <b>main</b> tab, change the value
+		of the Status setting to "pending".
+	</p>
+
+{% include close_section.html %}

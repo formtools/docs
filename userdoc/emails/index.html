@@ -1,0 +1,71 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc/
+subnavSection: Emails
+heading: Emails
+prev: Account Permissions
+prevLink: /userdoc/client_accounts/account_permissions
+next: Configuring Form Email Fields
+nextLink: /userdoc/emails/configure_form_email_fields
+---
+
+{% include open_section.html nav='nav_userdoc_emails.html' selected='emails' %}
+
+	<h4>Overview</h4>
+
+	{% include screenshot.html item="i304.gif" %}
+
+	<p>
+		Form Tools 2 includes highly customizable email functionality, to allow you to fine-tune
+		the emails that get sent out to whom, when and with what content.
+	</p>
+
+	<p>
+		The email management functionality within Form Tools 2 has been significantly improved
+		over its predecessor. Instead of providing a limited number of ways the emails can be sent
+		(namely: to clients, the user and the administrator), you may now create as many emails
+		as you need, each with their own content, with their own recipients, cc and bcc lists,
+		formatting (HTML, text or both). There are also advanced controls such as determining
+		which events should trigger the emails being sent: on submission, on editing and on
+		delete. Plus, you can map emails to only get sent for particular Views, e.g. only if the
+		form submission content contains certain value. It's very powerful! - and, hopefully
+		fairly simple to understand and configure.
+	</p>
+
+	<h4>Email Templates</h4>
+
+	<p>
+		At the centre of the new design is the idea of <b>email templates</b>. An email
+		template is just that: a template from which any number of emails can be sent, all
+		with the same structure, but containing different content depending on the form
+		submission.
+	</p>
+
+	<p>
+		An email template defines all of the following characteristics of an email:
+	</p>
+
+	<ul>
+		<li>The event trigger: on submission, on edit and/or on delete.</li>
+		<li>The email subject line.</li>
+		<li>The recipient list, including cc's, bccs.</li>
+		<li>The from and reply-to fields</li>
+		<li>It's status (i.e. on or off). This provides you with a simple mechanism to temporarily
+			disable emails from being sent without deleting them.</li>
+		<li>The HTML and text content - depending on whether you wish to send the email in HTML,
+			text or multipart format.</li>
+		<li>Whether the email should be mapped to a particular View. As mentioned above, this lets
+			you ensure the email is only set when certain criteria are met: i.e. a form field contains
+			a particular value or values.</li>
+		<li>Whether the email should appear on the Edit Submission page for yourself or your
+			client accounts, allowing you to send it while editing the email.</li>
+	</ul>
+
+	<p>
+		When adding / editing an email template, you're presented with a lot of configuration
+		fields. The following pages are an explanation of each field, arranged by tab.
+	</p>
+
+
+{% include close_section.html %}
