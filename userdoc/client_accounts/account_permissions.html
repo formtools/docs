@@ -1,0 +1,42 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Client accounts
+subnavSectionLink: /userdoc/client_accounts/
+heading: Account permissions
+prev: Deleting an account
+prevLink: /userdoc/client_accounts/deleting_accounts
+next: Emails
+nextLink: /userdoc/emails
+---
+
+{% include open_section.html nav='nav_userdoc_client_accounts.html' selected='account_permissions' %}
+
+	<p>
+		Client account permissions split into two categories: those relating to their own user
+		account settings, and those relating to managing and viewing the data. For information
+		on the former, see the <a href="/userdoc/client_accounts/editing_accounts">Editing Accounts</a> page -
+		especially the comments on the Settings tab.
+	</p>
+
+	<p>
+		Form Tools 2 lets you specify precisely what form information can be viewed and edited,
+		down to each and every form field. We tried to balance functionality with usability to
+		allow for this, so please let us know if you feel certain functionality is missing, or if
+		the user interface is unclear.
+	</p>
+
+	<p>
+		In order for a client to view a form, they need to be both assigned to the form, and to
+		one or more Views within the form. Assigning the client to a form is merely a generic
+		"blanket" setting, it doesn't provide any control over the details: that's handled by
+		the Views. Views let you customize subsets of the data - both in terms of what
+		fields are displayed and in what order, and in terms of which results appear in the
+		View. For more information, see the <a href="/userdoc/views">Views section</a>. Client
+		permissions are fundamentally about Views; once you learn how to create Views, changing
+		permissions for a particular client account is as simple as assigning a client to the
+		View.
+	</p>
+
+{% include close_section.html %}

@@ -4,109 +4,64 @@ navSection: User Documentation
 navSectionLink: /userdoc/
 subnavSection: Emails
 subnavSectionLink: /userdoc/emails
-heading: Configuration Tab
-prev: Adding / Editing Emails
-prevLink: /userdoc/emails/editing_emails
-next: Recipient(s) Tab
-nextLink: /userdoc/emails/emails_recipients_tab
+heading: Test Tab
+prev: Content Tab
+prevLink: /userdoc/emails/emails_content_tab
+next: Reference Tab
+nextLink: /userdoc/emails/emails_reference_tab
 ---
 
-{% include open_section.html nav='nav_userdoc_emails.html' selected='emails_configuration_tab' %}
+{% include open_section.html nav='nav_userdoc_emails.html' selected='emails_test_tab' %}
 
-	{% include screenshot.html item="i27.jpg" %}
 
-	<p>
-		The configuration tab contains the main settings for your email template: the "meta"
-		settings which determine how the email template should behave.
-	</p>
-
-	<table cellspacing="0" cellpadding="1" width="100%" class="info">
-		<tbody><tr>
-			<td width="180" class="blue" valign="top">Email Template Name</td>
-			<td>
-				This is used to help you identify the email template; it is only used internally and
-				doesn't appear in the email contents at all. You should use this field to try to
-				describe the email, e.g. "Administrator notification", "email sent to user",
-				"submission updated", "email sent to Accounting department", etc.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Status</td>
-			<td>
-				Whether the email should be sent or not.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Event Trigger</td>
-			<td>
-				This determines on which events the email should get sent. Currently there are only
-				three options: when the submission is first put through, when it is edited and when
-				it's deleted. You may also want to look at the next setting ("When sent") for related
-				functionality.
-			</td>
-		</tr>
-		</tbody></table>
+	{% include screenshot.html item="i30.jpg" %}
 
 	<p>
-		At the foot of the tab, there are also some additional fields grouped in an
-		"Advanced Settings" section. We figured these settings may not be that useful for
-		most people, so we tucked them away from public view.
+		The test tab lets you send and display emails generated with the settings you've entered
+		on the first three tabs. Note: in order to use the test option, there must have been at
+		least <b>one</b> submission in the database. The test functionality simulates a
+		"real-life" case by using the data in one of your submissions.
 	</p>
 
-	<table cellspacing="0" cellpadding="1" width="100%" class="info">
-		<tbody><tr>
-			<td width="180" class="blue" valign="top">When Sent</td>
-			<td>
-				This is a very powerful setting! It lets you map an email template to a particular
-				View - but not ANY View: only Views that have one or more filters defined. Views let
-				you define ways to view subsets of all your form information; filters are special in
-				they limit the results themselves: e.g. if 100 submissions were put through, a View
-				with a filter may only show 50 of them.<br>
-				<br>
-				This setting displays the dropdown of Views with filters since they are the only ones
-				that are relevant in this case. The setting ensures the email only gets sent if
-				the submission appears in the View. For example, say your form is collecting
-				registrations for a university course and one of the fields is "are you an
-				international student?". You could create a View called "International Students"
-				that only contains international students. You could then create an email that ONLY
-				get's sent to them by selecting the View in this field. Neat, huh?
-			</td>
-		</tr>
-		<tr>
-			<td width="120" class="blue" valign="top">Include option to send this email from Edit Submission page</td>
-			<td>
-				This option should probably be pretty self-explanatory. It determines whether the
-				administrator and any client accounts can manually send the email directly on the
-				Edit Submission page. By mapping it to a particular View, you effectively control
-				the permissions. Only clients assigned to a particular View can therefore send the
-				email.
-			</td>
-		</tr>
-		<tr>
-			<td width="120" class="blue" valign="top">Limit email content to fields in View</td>
-			<td>
-				This setting is NOT self-explanatory, so hopefully we can shed a little light on it!
-				As discussed above, the "When sent" setting allows you to map an email template to a
-				particular View. Because of this, it's altogether possible that the View you're
-				mapping it to only displays a subset of the form fields as well as having a filter
-				defined. Hence, it seems reasonable that you only want the email to contain those
-				fields in the View - not all fields defined in the form.<br>
-				<br>
-				This setting limits the fields passed in the <b>{$fields}</b> variable to the Smarty
-				loop in your email content to only those fields defined in the View. In other words,
-				if you're using an email template created with any of the "Smarty Loop" options,
-				the generated content will only contain fields in the View.<br>
-				<br>
-				The need for this may not be immediately clear. After all, you can always customize
-				the email contents by manually entering which fields should appear. However, as
-				discussed elsewhere, there are several benefits to using a Smarty loop over the
-				simple list of placeholders: one being that more information about the fields are
-				passed via the Smarty loop, another being that if you ever change your View, the email template
-				doesn't need to be manually updated.
-			</td>
-		</tr>
-		</tbody>
-	</table>
+	<p>
+		To test your email template, enter the email format to test (HTML, text
+		or both), your email address and a submission ID (either by ID or by clicking the
+		"random" option).
+	</p>
+
+	<p>
+		You can test your email template in two ways:
+	</p>
+
+	<ol>
+		<li>The <b>Display Email</b> button displays the email content in the page. This can be
+			a little more convenient than actually sending the email, since you don't have to go
+			fishing around in other programs looking for your email. That said, nothing beats sending
+			the actual email to see how it looks. The various headers (from, reply-to, cc and bcc)) are
+			only displayed in the page.</li>
+		<li>The <b>Send Test Email</b> does just that: it sends the email to the email address
+			specified.</li>
+	</ol>
+
+	<h4>A few remarks about sending test emails</h4>
+
+	<ul>
+		<li>Web servers send emails in different ways. Some of them send them immediately, others
+			cache them and send them in a batch at various intervals over the course of a day (I
+			encountered one once that only sent out emails once a day!). If you don't receive your
+			email immediately, you may want to wait for a few hours to see if it arrives.</li>
+		<li>If you don't receive your email within the expected time, check your spam folder.</li>
+		<li>If you have installed and configured the Swift Mailer module, emails sent with
+			this test facility will be sent via SMTP instead of with the default mail() script.</li>
+		<li>As mentioned in other places in the documentation, the PHP mail() function used by
+			the default Form Tools installation is notoriously fickle. It's implemented differently
+			for each web server, and some servers limit options like being able to send email in
+			multi-part format (HTML + text at the same time). If you have trouble getting it running,
+			you may be interested in the <a href="http://modules.formtools.org/swift_mailer/?page=index">Swift Mailer
+				module</a>.
+		</li>
+	</ul>
+
 
 
 {% include close_section.html %}

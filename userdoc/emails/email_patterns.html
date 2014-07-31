@@ -1,0 +1,185 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc/
+subnavSection: Emails
+subnavSectionLink: /userdoc/emails
+heading: Email Patterns
+prev: Reference
+prevLink: /userdoc/emails/emails_content_tab
+next: The Swift Mailer module
+nextLink: /userdoc/emails/swift_mailer_module
+---
+
+{% include open_section.html nav='nav_userdoc_emails.html' selected='email_patterns' %}
+
+	<p>
+		Now onto something a little more technical. This page gets a little advanced, so be warned!
+	</p>
+
+	<p>
+		As you've probably seen, the HTML template and Text template
+		fields on the content tab each have a corresponding "Examples" dropdown. These options
+		are known as "email patterns" [N.B. we would have called these "email templates", but
+		that term is already in play and "email template templates" sounds positively
+		glutinous].
+	</p>
+
+	<p>
+		The following page explains how to build your own email patterns so that they get
+		listed in that dropdown - letting you quickly construct emails based on your OWN
+		templates. This can save precious time and effort if you're in the position of
+		needing to add email templates quite frequently and would like things like a header
+		and footer inserted to match your site.
+	</p>
+
+	<p>
+		The email patterns are stored in your <b>/global/emails/patterns</b> folder. When you
+		browse the folder, you'll see a bunch of .tpl files (Smarty template files) and a
+		patterns.ini file. The patterns.ini file contains various meta information about the
+		patterns: a descriptive name of each, which section they should appear in
+		the dropdown and whether they should appear in the text or HTML dropdowns.
+	</p>
+
+	<p>
+		So far so good.
+	</p>
+
+	<h4>The Smarty Parser</h4>
+
+	<p>
+		As with all other HTML and code generation in Form Tools, email content is generated
+		by being passing through the Smarty parser.
+	</p>
+
+	<p>
+		When the administrator selects the email pattern from the dropdown field, it magically
+		inserts the content into the textarea. At a superficial
+		glance, they can see the content contains weird characters like {$QUESTION_email}, which
+		they can correctly deduce get converted into the appropriate meaning when the email is
+		&nbsp;sent. In other words, the content gets sent through the Smarty parser.
+	</p>
+
+	<p>
+		Well, that's only HALF the story. Before the content appears in the field, the content
+		has ALREADY passed through the parser. This lets us customize the "All fields" templates
+		to generate HTML and text containing placeholders that are unique to your individual
+		form.
+	</p>
+
+	<p>
+		This is probably pretty confusing, so here's a couple of examples to clear things up.
+	</p>
+
+	<h4>Examples</h4>
+
+	<p>
+		Consider the following email template, called <b>html_admin_full_form_submission.tpl</b>.
+		This is what it looks like
+	</p>
+
+	{% highlight smarty %}
+<p>
+	{$LANG.text_email_template_text_1_c}
+</p>
+
+<table cellpadding="0" cellspacing="1">
+{foreach from=$fields item=field}
+	{if $field.field_type != "system"}
+	<tr>
+		<td style="font-weight: bold">{$field.field_title}</td>
+		<td>{literal}{$ANSWER_{/literal}{$field.field_name}{literal}}{/literal}</td>
+	</tr>
+	{else}
+		{if $field.col_name == "submission_id"}
+		<tr>
+			<td style="font-weight: bold">{$field.field_title}</td>
+			<td>{literal}{$SUBMISSIONID}{/literal}</td>
+		</tr>
+		{elseif $field.col_name == "last_modified"}
+		<tr>
+			<td style="font-weight: bold">{$LANG.phrase_last_modified}</td>
+			<td>{literal}{$LASTMODIFIEDDATE}{/literal}</td>
+		</tr>
+		{elseif $field.col_name == "ip_address"}
+		<tr>
+			<td style="font-weight: bold">{$LANG.phrase_ip_address}</td>
+			<td>{literal}{$IPADDRESS}{/literal}</td>
+		</tr>
+		{/if}
+	{/if}
+{/foreach}
+</table>
+
+<p>
+	{$LANG.phrase_submission_made}
+</p>
+	{% endhighlight %}
+
+	<p>
+		When you select it in the UI, it becomes:
+	</p>
+
+	{% highlight smarty %}
+<p>
+	There has been a submission made through your form, {$FORMNAME}:
+</p>
+
+<table cellpadding="0" cellspacing="1">
+	<tr>
+		<td style="font-weight: bold">ID</td>
+		<td>{$SUBMISSIONID}</td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold">Email</td>
+		<td>{$ANSWER_email}</td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold">Password</td>
+		<td>{$ANSWER_password}</td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold">Name</td>
+		<td>{$ANSWER_name}</td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold">City</td>
+		<td>{$ANSWER_city}</td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold">Colours</td>
+		<td>{$ANSWER_colours}</td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold">Image File</td>
+		<td>{$ANSWER_image_file}</td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold">Image File2</td>
+		<td>{$ANSWER_image_file2}</td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold">IP Address</td>
+		<td>{$IPADDRESS}</td>
+	</tr>
+</table>
+
+<p>
+	Submission made: {$SUBMISSIONDATE}
+</p>
+	{% endhighlight %}
+
+	<h4>How to process</h4>
+
+	<p>
+		So now you know the issues involved with creating email patterns. Remember to escape
+		in {literal} tags and Smarty placeholders/logic that you want to appear in the visible
+		HTML/text. All other un-escaped Smarty content will be processed by the parser BEFORE
+		the content appears in the HTML template and text template fields.
+	</p>
+
+	<p>
+		After creating your new email pattern, edit the patterns.ini file.
+	</p>
+
+{% include close_section.html %}

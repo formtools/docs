@@ -30,7 +30,16 @@
 	<li {% if include.selected == 'email_patterns' %}class="selected"{% endif %}>
 		<a href="/userdoc/emails/email_patterns">Email Patterns</a>
 	</li>
-	<li {% if include.selected == 'swift_mailer_module' %}class="selected"{% endif %}>
-		<a href="/userdoc/emails/swift_mailer_module">The Swift Mailer module</a>
+	<li>
+		<div {% if include.selected == 'swift_mailer_module' %}class="selected"{% endif %}>
+			<a href="/userdoc/emails/swift_mailer_module">The Swift Mailer module</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'file_attachments' %}class="selected"{% endif %}>
+				<a href="/userdoc/emails/file_attachments">File Attachments</a>
+			</li>
+		</ul>
+
 	</li>
 </ul>

@@ -4,109 +4,138 @@ navSection: User Documentation
 navSectionLink: /userdoc/
 subnavSection: Emails
 subnavSectionLink: /userdoc/emails
-heading: Configuration Tab
-prev: Adding / Editing Emails
-prevLink: /userdoc/emails/editing_emails
-next: Recipient(s) Tab
-nextLink: /userdoc/emails/emails_recipients_tab
+heading: Content Tab
+prev: Recipient(s) Tab
+prevLink: /userdoc/emails/emails_recipients_tab
+next: Test Tab
+nextLink: /userdoc/emails/emails_test_tab
 ---
 
-{% include open_section.html nav='nav_userdoc_emails.html' selected='emails_configuration_tab' %}
+{% include open_section.html nav='nav_userdoc_emails.html' selected='emails_content_tab' %}
 
-	{% include screenshot.html item="i27.jpg" %}
+	{% include screenshot.html item="i29.jpg" %}
 
 	<p>
-		The configuration tab contains the main settings for your email template: the "meta"
-		settings which determine how the email template should behave.
+		Now for the fun stuff! The content tab is where you enter the content of your email.
+		There are two fields in the page: HTML template and Text template.
+	</p>
+
+	<h4>Email formats</h4>
+
+	<p>
+		The three most common ways to send emails are: HTML, text and
+		"multipart". Multipart emails are just HTML and text versions bundled together and sent
+		in the same email; the recipient's email client (e.g. Windows Outlook, Gmail, Eudora etc)
+		then chooses which one to display.
+	</p>
+
+	<p>
+		Form Tools does the job of figuring out how to send the email based on what you enter
+		in these two fields. If you enter just HTML, it will send the email in HTML format
+		only; if you enter text, it'll send it in text format, and both? You guessed it: it'll
+		send it in multipart. Not exactly brain surgery.
+	</p>
+
+	<h4>The email content / Smarty!</h4>
+
+	<p>
+		To save you the effort of having to build your emails by hand, we've created a number of
+		pre-constructed emails (or "email patterns") found in the "Examples" dropdowns for each
+		of the two content fields. Try selecting one and see how it automatically fills in the
+		email content for that section.
+	</p>
+
+	<p>
+		The email content is generated with a language called "Smarty". Smarty is a templating
+		language that allows you to embed logic and variables into the templates. This is
+		extremely powerful. You can use this language to do pretty much anything you need. With
+		Form Tools 1.x, you had to enter PHP to create any logic (such as omitting empty fields)
+		and this caused a lot of problems. Smarty is a far simpler approach.
+	</p>
+
+	<h4>A very, very short introduction to Smarty</h4>
+
+	<p>
+		By and large, you won't need to know anything about Smarty. You can just pick one of the
+		example email patterns, test it out and you're done! But here's a little more information
+		if you're curious.
 	</p>
 
 	<table cellspacing="0" cellpadding="1" width="100%" class="info">
 		<tbody><tr>
-			<td width="180" class="blue" valign="top">Email Template Name</td>
+			<td width="120" class="blue" valign="top">Placeholders</td>
 			<td>
-				This is used to help you identify the email template; it is only used internally and
-				doesn't appear in the email contents at all. You should use this field to try to
-				describe the email, e.g. "Administrator notification", "email sent to user",
-				"submission updated", "email sent to Accounting department", etc.
+				A placeholder is a sequence of characters like <b>{$QUESTION_my_email_field}</b>.
+				When the email is sent, it is converted to whatever special meaning it assigned to
+				it. For a list of all available placeholders for your form, see the Reference tab.
 			</td>
 		</tr>
 		<tr>
-			<td class="blue" valign="top">Status</td>
+			<td width="120" class="blue" valign="top">Logic</td>
 			<td>
-				Whether the email should be sent or not.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Event Trigger</td>
-			<td>
-				This determines on which events the email should get sent. Currently there are only
-				three options: when the submission is first put through, when it is edited and when
-				it's deleted. You may also want to look at the next setting ("When sent") for related
-				functionality.
+				Smarty also lets you embed logic (like if-else tests). To use the placeholder we just
+				mentioned, we could add something like this:
+
+				{if $QUESTION_my_email == "phil@philipglass.com"}
+				Hello Mr. Glass. Arpeggios get real boring!
+				{/if}
+
+				That will then add that derisive comment to the email IF the email sender if
+				phil@philipglass.com.
 			</td>
 		</tr>
 		</tbody></table>
 
+
+	<h4>"All Fields" vs. "Smarty Loop" patterns</h4>
+
 	<p>
-		At the foot of the tab, there are also some additional fields grouped in an
-		"Advanced Settings" section. We figured these settings may not be that useful for
-		most people, so we tucked them away from public view.
+		In the example dropdowns, you'll see the email patterns arranged into
+		four groups: "All fields", "Smarty Loop", "Notification Only" and "Programming Example".
+		(If you're a non-programmer, you won't be interested in the last one: just ignore it.
+		Pretend it's not there).
+	</p>
+	<p>
+		The Notification Only examples are very straightforward: just a "thanks" message
+		and a line with the time the submission was made. Simple.
 	</p>
 
-	<table cellspacing="0" cellpadding="1" width="100%" class="info">
-		<tbody><tr>
-			<td width="180" class="blue" valign="top">When Sent</td>
-			<td>
-				This is a very powerful setting! It lets you map an email template to a particular
-				View - but not ANY View: only Views that have one or more filters defined. Views let
-				you define ways to view subsets of all your form information; filters are special in
-				they limit the results themselves: e.g. if 100 submissions were put through, a View
-				with a filter may only show 50 of them.<br>
-				<br>
-				This setting displays the dropdown of Views with filters since they are the only ones
-				that are relevant in this case. The setting ensures the email only gets sent if
-				the submission appears in the View. For example, say your form is collecting
-				registrations for a university course and one of the fields is "are you an
-				international student?". You could create a View called "International Students"
-				that only contains international students. You could then create an email that ONLY
-				get's sent to them by selecting the View in this field. Neat, huh?
-			</td>
-		</tr>
-		<tr>
-			<td width="120" class="blue" valign="top">Include option to send this email from Edit Submission page</td>
-			<td>
-				This option should probably be pretty self-explanatory. It determines whether the
-				administrator and any client accounts can manually send the email directly on the
-				Edit Submission page. By mapping it to a particular View, you effectively control
-				the permissions. Only clients assigned to a particular View can therefore send the
-				email.
-			</td>
-		</tr>
-		<tr>
-			<td width="120" class="blue" valign="top">Limit email content to fields in View</td>
-			<td>
-				This setting is NOT self-explanatory, so hopefully we can shed a little light on it!
-				As discussed above, the "When sent" setting allows you to map an email template to a
-				particular View. Because of this, it's altogether possible that the View you're
-				mapping it to only displays a subset of the form fields as well as having a filter
-				defined. Hence, it seems reasonable that you only want the email to contain those
-				fields in the View - not all fields defined in the form.<br>
-				<br>
-				This setting limits the fields passed in the <b>{$fields}</b> variable to the Smarty
-				loop in your email content to only those fields defined in the View. In other words,
-				if you're using an email template created with any of the "Smarty Loop" options,
-				the generated content will only contain fields in the View.<br>
-				<br>
-				The need for this may not be immediately clear. After all, you can always customize
-				the email contents by manually entering which fields should appear. However, as
-				discussed elsewhere, there are several benefits to using a Smarty loop over the
-				simple list of placeholders: one being that more information about the fields are
-				passed via the Smarty loop, another being that if you ever change your View, the email template
-				doesn't need to be manually updated.
-			</td>
-		</tr>
-		</tbody>
-	</table>
+	<p>
+		The "All Fields" and "Smarty Loop" patterns are more complicated. Both generate the
+		same email content, but they do it in different ways. The
+		"All Fields" patterns generates the entire HTML or text for all variables in your form,
+		and directly reference the variables through their placeholders: {$QUESTION_name}
+		and {$ANSWER_name}. This generates an email template that's pretty easy to follow, even
+		at a glance. The placeholders are fairly simple to understand: {$QUESTION_name} would
+		be replaced with the label for the name" form field, and the response entered by the user in your form would replace the
+		{$ANSWER_name} placeholder.
+	</p>
+
+	<p>
+		The Smarty Loop patterns are more complicated, but also more powerful. Instead of
+		referencing each individual placeholder, it generates the email content by looping
+		over each field being passed to it, generating the content line by line. The benefits
+		to this approach are:
+	</p>
+
+	<ul>
+		<li>You can access a lot of "meta" information about each field, including the field
+			type, size, the form field name, database column - and more.</li>
+		<li>It allows you to map this particular email template to a particular View (via the
+			"Limit email content to fields in View" setting on the first Configuration tab). This
+			restricts the field list that's sent to the Smarty Loop to only those fields assigned
+			to the View.</li>
+		<li>The additional benefit of assigning it to a particular View is that any time
+			you change the list of form fields that should appear in the View, the email is
+			automatically updated. By using the previous "All fields" option where you'd manually
+			doctored the email content to only show the appropriate list, you would need to re-edit
+			the contents - which can be easy to forget.</li>
+	</ul>
+
+	<p>
+		The drawback to using the Smarty Loop option that if you're going to <b>edit</b> the
+		email contents, it can be more complicated.
+	</p>
 
 
 {% include close_section.html %}

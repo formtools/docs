@@ -1,0 +1,42 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc/
+subnavSection: Emails
+subnavSectionLink: /userdoc/emails
+heading: Configure Form Email Fields
+prev: Emails
+prevLink: /userdoc/emails
+next: Adding / Editing Emails
+nextLink: /userdoc/emails/editing_emails
+---
+
+{% include open_section.html nav='nav_userdoc_emails.html' selected='configure_form_email_fields' %}
+
+	<p>
+		{% include screenshot.html item="i154.jpg" %}
+		On the Edit Form » Emails tab, there's a button labeled "Configure Form Email Fields".
+		This page lets you pinpoint which of your form fields contain email address information
+		and any corresponding name fields.
+	</p>
+
+	<p>
+		The purpose of this section is to let Form Tools know which fields are relevant so that
+		theycan be used within the email templates. For example, if your form was a registration
+		form and contained fields for First Name, Last Name and Email address, you might want
+		to create an auto-email notification that emails the attendee to let them know they've
+		successfully registered. Or, perhaps your form contains multiple email
+		fields and want to send emails to each of them after the form is submitted. This
+		page lets you do just that: it lets you single out the email fields for use in the email
+		templates. Once they are defined here, you will see the option to use that row as a
+		recipient or as the "from" or "reply-to" email address. The Name / First Name and Last Name
+		fields are optional - only enter them if there's a corresponding name field or fields in your form.
+	</p>
+
+	<p>
+		Depending on your form contents, this feature may or may not be relevant. Often, forms
+		don't contain this information so you can simply ignore this page.
+	</p>
+
+
+{% include close_section.html %}
