@@ -4,14 +4,33 @@ navSection: User Documentation
 navSectionLink: /userdoc/
 subnavSection: Emails
 subnavSectionLink: /userdoc/emails
-heading: Email Patterns
-prev: Reference
-prevLink: /userdoc/emails/emails_content_tab
-next: The Swift Mailer module
-nextLink: /userdoc/emails/swift_mailer_module
+heading: Swift Mailer
+prev: Email Patterns
+prevLink: /userdoc/emails/email_patterns
+next: File Attachments
+nextLink: /userdoc/emails/file_attachments
 ---
 
 {% include open_section.html nav='nav_userdoc_emails.html' selected='swift_mailer_module' %}
 
+	<p>
+		As mentioned earlier, the out-the-box mail functionality is just the PHP mail() function.
+		The benefit to using this function is that many servers have it pre-configured to
+		allow you to send emails very easily. The drawback is that the implementation of this
+		function differs greatly from server to server. This can sometimes leads to problems,
+		such as emails not being properly sent out but not provide any clues that it didn't in fact
+		work.
+	</p>
+
+	<p>
+		With this in mind, we created the <a href="http://modules.formtools.org/swift_mailer/?page=index">Swift
+		Mailer module</a>. This module lets you override the default mail() function and send
+		all emails via an SMTP email server.
+	</p>
+
+	<p>
+		For more information about the module, see the
+		<a href="http://modules.formtools.org/swift_mailer/?page=index">module's online documentation</a>.
+	</p>
 
 {% include close_section.html %}
