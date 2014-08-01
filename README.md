@@ -10,6 +10,13 @@ make it super easy for people to contribute and fix documentation - not like now
 
 Instructions coming soon.
 
+<!--
+jekyll serve --watch --baseurl ''
+
+chmod 755 update_gh_pages.sh
+./update_gh_pages.sh
+-->
+
 
 ### Screenshots
 
