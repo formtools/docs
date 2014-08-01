@@ -1,98 +1,98 @@
 <h4 {% if include.selected == 'form_management' %}class="selected"{% endif %}>
-	<a href="/userdoc/form_management">Form Management</a>
+	<a href="{{site.baseurl}}/userdoc/form_management">Form Management</a>
 </h4>
 
 <ul>
 	<li {% if include.selected == 'form_types' %}class="selected"{% endif %}>
-		<a href="/userdoc/form_management/form_types">Internal vs. External forms</a>
+		<a href="{{site.baseurl}}/userdoc/form_management/form_types">Internal vs. External forms</a>
 	</li>
 	<li {% if include.selected == 'adding_internal_forms' %}class="selected"{% endif %}>
-		<a href="/userdoc/form_management/adding_internal_forms">Adding Internal Forms</a>
+		<a href="{{site.baseurl}}/userdoc/form_management/adding_internal_forms">Adding Internal Forms</a>
 	</li>
 	<li>
 		<div {% if include.selected == 'adding_external_forms' %}class="selected"{% endif %}>
-			<a href="/userdoc/form_management/adding_external_forms">Adding External Forms</a>
+			<a href="{{site.baseurl}}/userdoc/form_management/adding_external_forms">Adding External Forms</a>
 		</div>
 		<ul>
 			<li {% if include.selected == 'submission_type_comparison' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/submission_type_comparison">process.php vs. the API</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/submission_type_comparison">process.php vs. the API</a>
 			</li>
 			<li {% if include.selected == 'add_form_step1' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/add_form_step1">1: Choose Integration Method</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/add_form_step1">1: Choose Integration Method</a>
 			</li>
 			<li {% if include.selected == 'add_form_step2' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/add_form_step2">2: Form Information</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/add_form_step2">2: Form Information</a>
 			</li>
 			<li {% if include.selected == 'add_form_step3' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/add_form_step3">3: Test Submission</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/add_form_step3">3: Test Submission</a>
 			</li>
 			<li {% if include.selected == 'add_form_step4' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/add_form_step4">4: Database Setup</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/add_form_step4">4: Database Setup</a>
 			</li>
 			<li {% if include.selected == 'add_form_step5' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/add_form_step5">5: Field Types</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/add_form_step5">5: Field Types</a>
 			</li>
 			<li {% if include.selected == 'add_form_step6' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/add_form_step6">6: Finalize Form</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/add_form_step6">6: Finalize Form</a>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<div {% if include.selected == 'editing_forms' %}class="selected"{% endif %}>
-			<a href="/userdoc/form_management/editing_forms">Editing Forms</a>
+			<a href="{{site.baseurl}}/userdoc/form_management/editing_forms">Editing Forms</a>
 		</div>
 		<ul>
 			<li {% if include.selected == 'edit_form_main_tab' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/edit_form_main_tab">Main tab</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/edit_form_main_tab">Main tab</a>
 			</li>
 			<li {% if include.selected == 'edit_form_fields_tab' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/edit_form_fields_tab">Fields tab</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/edit_form_fields_tab">Fields tab</a>
 			</li>
 			<li {% if include.selected == 'edit_form_views_tab' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/edit_form_views_tab">Views tab</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/edit_form_views_tab">Views tab</a>
 			</li>
 			<li {% if include.selected == 'edit_form_emails_tab' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/edit_form_emails_tab">Emails tab</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/edit_form_emails_tab">Emails tab</a>
 			</li>
 		</ul>
 	</li>
 	<li {% if include.selected == 'disabling_forms' %}class="selected"{% endif %}>
-		<a href="/userdoc/form_management/disabling_forms">Disabling forms</a>
+		<a href="{{site.baseurl}}/userdoc/form_management/disabling_forms">Disabling forms</a>
 	</li>
 	<li {% if include.selected == 'deleting_forms' %}class="selected"{% endif %}>
-		<a href="/userdoc/form_management/deleting_forms">Deleting forms</a>
+		<a href="{{site.baseurl}}/userdoc/form_management/deleting_forms">Deleting forms</a>
 	</li>
 	<li {% if include.selected == 'form_permissions' %}class="selected"{% endif %}>
-		<a href="/userdoc/form_management/form_permissions">Form Permissions (who sees what?)</a>
+		<a href="{{site.baseurl}}/userdoc/form_management/form_permissions">Form Permissions (who sees what?)</a>
 	</li>
 	<li>
 		<div {% if include.selected == 'option_lists' %}class="selected"{% endif %}>
-			<a href="/userdoc/form_management/option_lists">Option Lists</a>
+			<a href="{{site.baseurl}}/userdoc/form_management/option_lists">Option Lists</a>
 		</div>
 
 		<ul>
 			<li {% if include.selected == 'option_lists_adding' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/option_lists_adding">Adding via the Add Form Process</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/option_lists_adding">Adding via the Add Form Process</a>
 			</li>
 			<li {% if include.selected == 'option_lists_adding_manually' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/option_lists_adding_manually">Adding manually</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/option_lists_adding_manually">Adding manually</a>
 			</li>
 			<li {% if include.selected == 'option_lists_editing' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/option_lists_editing">Editing</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/option_lists_editing">Editing</a>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<div {% if include.selected == 'form_fields' %}class="selected"{% endif %}>
-			<a href="/userdoc/form_management/form_fields">Form Fields</a>
+			<a href="{{site.baseurl}}/userdoc/form_management/form_fields">Form Fields</a>
 		</div>
 
 		<ul>
 			<li {% if include.selected == 'adding_form_fields' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/adding_form_fields">Adding form fields</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/adding_form_fields">Adding form fields</a>
 			</li>
 			<li {% if include.selected == 'deleting_form_fields' %}class="selected"{% endif %}>
-				<a href="/userdoc/form_management/deleting_form_fields">Deleting form fields</a>
+				<a href="{{site.baseurl}}/userdoc/form_management/deleting_form_fields">Deleting form fields</a>
 			</li>
 		</ul>
 	</li>
