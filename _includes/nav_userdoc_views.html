@@ -1,0 +1,45 @@
+<h4 {% if include.selected == 'emails' %}class="selected"{% endif %}><a href="{{site.baseurl}}/userdoc/emails/">Emails</a></h4>
+
+<ul>
+	<li {% if include.selected == 'configure_form_email_fields' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/emails/configure_form_email_fields">Configuring Form Email Fields</a>
+	</li>
+	<li>
+		<div {% if include.selected == 'editing_emails' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/userdoc/emails/editing_emails">Adding / Editing Emails</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'emails_configuration_tab' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/userdoc/emails/emails_configuration_tab">Configuration Tab</a>
+			</li>
+			<li {% if include.selected == 'emails_recipients_tab' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/userdoc/emails/emails_recipients_tab">Recipient(s) Tab</a>
+			</li>
+			<li {% if include.selected == 'emails_content_tab' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/userdoc/emails/emails_content_tab">Content Tab</a>
+			</li>
+			<li {% if include.selected == 'emails_test_tab' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/userdoc/emails/emails_test_tab">Test Tab</a>
+			</li>
+			<li {% if include.selected == 'emails_reference_tab' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/userdoc/emails/emails_reference_tab">Reference Tab</a>
+			</li>
+		</ul>
+	</li>
+	<li {% if include.selected == 'email_patterns' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/emails/email_patterns">Email Patterns</a>
+	</li>
+	<li>
+		<div {% if include.selected == 'swift_mailer_module' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/userdoc/emails/swift_mailer_module">The Swift Mailer module</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'file_attachments' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/userdoc/emails/file_attachments">File Attachments</a>
+			</li>
+		</ul>
+
+	</li>
+</ul>
