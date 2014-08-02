@@ -5,15 +5,13 @@ heading: User Documentation
 ---
 
 <p>
-	This document is intended as general help for administrators who've installed
-	Form Tools on their site and would like to better understand what options are
-	available and how to get the script going.
+	This section contains general help for administrators. It contains information on how to install and upgrade
+	the script, what functionality is available and how the various features work.
 </p>
 
 <br />
 
 <div class="row docNav">
-
 	<div class="col-lg-4">
 		{% include nav_userdoc_basics.html selected='the_basics' %}
 		<h4 class="selected"><a href="{{site.baseurl}}/changes_in_210/">Changes in 2.1.0</a></h4>
@@ -30,49 +28,11 @@ heading: User Documentation
 
 	<div class="col-lg-4">
 		{% include nav_userdoc_emails.html selected='emails' %}
-
-		<h4><a href="views/">Views</a></h4>
-		<ul>
-			<li><a href="views/view_list">View List</a></li>
-			<li><a href="views/view_creation">Adding Views</a></li>
-			<li><a href="views/editing_views">Editing Views</a>
-				<ul>
-					<li><a href="views/edit_view_main_tab">Main tab</a></li>
-					<li><a href="views/edit_view_columns_tab">Columns tab</a></li>
-					<li><a href="views/edit_view_fields_tab">Fields tab</a></li>
-					<li><a href="views/view_tabs">Tabs tab</a></li>
-					<li><a href="views/view_filters">Filters tab</a></li>
-				</ul>
-			</li>
-			<li><a href="views/view_permissions">View Permissions (who sees what?)</a></li>
-		</ul>
-
-		<h4><a href="settings/">Settings</a></h4>
-		<ul>
-			<li><a href="settings/main_settings">Main Tab</a></li>
-			<li><a href="settings/account_settings">Accounts Tab</a></li>
-			<li><a href="settings/file_settings">Files Tab</a></li>
-			<li><a href="settings/menu_settings">Menus Tab</a></li>
-		</ul>
-
-		<h4><a href="themes/">Themes</a></h4>
-		<ul>
-			<li><a href="settings/swatches">Swatches</a></li>
-			<li><a href="settings/installing_themes">Installing Themes</a></li>
-			<li><a href="settings/deleting_themes">Deleting Themes</a></li>
-			<li><a href="settings/upgrading_themes">Upgrading Themes</a></li>
-		</ul>
-
-		<h4><a href="modules/">Modules</a></h4>
-		<ul>
-			<li><a href="modules/installing_modules">Installing Modules</a></li>
-			<li><a href="modules/deleting_modules">Deleting Modules</a></li>
-			<li><a href="modules/upgrading_modules">Upgrading Modules</a></li>
-		</ul>
-
-		<h4><a href="translations/">Translations / Language Packs</a></h4>
-
-		<!--<h4><a href="http://docs.formtools.org/changelog.php">Changelog</a></h4> -->
+		{% include nav_userdoc_views.html selected='views' %}
+		{% include nav_userdoc_settings.html selected='settings' %}
+		{% include nav_userdoc_themes.html selected='themes' %}
+		{% include nav_userdoc_modules.html selected='modules' %}
+		<h4 class="selected"><a href="{{site.baseurl}}/translations/">Translations / Language Packs</a></h4>
 	</div>
 </div>
 

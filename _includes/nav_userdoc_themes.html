@@ -1,0 +1,16 @@
+<h4 {% if include.selected == 'themes' %}class="selected"{% endif %}><a href="{{site.baseurl}}/userdoc/themes/">Themes</a></h4>
+
+<ul>
+	<li {% if include.selected == 'list' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/themes/swatches">Swatches</a>
+	</li>
+	<li {% if include.selected == 'adding' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/themes/installing">Adding Views</a>
+	</li>
+	<li {% if include.selected == 'deleting' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/themes/deleting">Deleting Themes</a>
+	</li>
+	<li {% if include.selected == 'upgrading' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/themes/upgrading">Upgrading Themes</a>
+	</li>
+</ul>
