@@ -1,0 +1,35 @@
+---
+layout: default
+navSection: Installation
+navSectionLink: /installation
+subnavSection: "The Suhosin Extension"
+heading: "The Suhosin Extension"
+prev: "Step 6: Clean Up"
+prevLink: /installation/step6
+---
+
+{% include open_section.html nav='nav_installation.html' selected='suhosin' %}
+
+	<p>
+		<a href="http://www.hardened-php.net/suhosin/" target="_blank">Suhosin</a> is a PHP
+		extension designed to improve the security of PHP installations. Although it's motives are
+		good, sometimes it can wreak havoc with Form Tools installations. Suhosin lets you limit
+		the max size of the GET and POST PHP variables, preventing you from having
+		very large forms on your website.
+	</p>
+
+	<p>
+		You can find out if you have suhosin installed by looking at your php info file. For that, just upload
+		a .php file to your server with the following content:
+
+		{% highlight php %}
+		<?php phpinfo(); ?>
+		{% endhighlight %}
+
+		Then load that page in your browser and do a search for "suhosin". The settings that will cause the most
+		problems are <b>suhosin.get.max_vars</b> and <b>suhosin.post.max_vars</b>. Anything under a few thousand
+		will cause problems - if not with your forms, then with the Form Tools UI when trying to
+		manage your forms.
+	</p>
+
+{% include close_section.html %}

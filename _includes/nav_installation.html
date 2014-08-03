@@ -1,0 +1,26 @@
+<h4 {% if include.selected == 'installation' %}class="selected"{% endif %}><a href="{{site.baseurl}}/installation/">Installation</a></h4>
+
+<ol>
+	<li {% if include.selected == 'step1' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/installation/step1">Welcome!</a>
+	</li>
+	<li {% if include.selected == 'step2' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/installation/step2">System Check</a>
+	</li>
+	<li {% if include.selected == 'step3' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/installation/step3">Create Database Tables</a>
+	</li>
+	<li {% if include.selected == 'step4' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/installation/step4">Create Config File</a>
+	</li>
+	<li {% if include.selected == 'step5' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/installation/step5">Create Admin Account</a>
+	</li>
+	<li {% if include.selected == 'step6' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/installation/step6">Clean Up</a>
+	</li>
+</ol>
+
+<div {% if include.selected == 'suhosin' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/installation/suhosin">The Suhosin Extension</a>
+</div>

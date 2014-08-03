@@ -7,9 +7,9 @@ Note: the calling page always needs to include the nav menu to be included via a
 
 {% endcomment %}
 
-<table cellspacing="0" cellpadding="1" width="100%">
-	<tbody><tr>
-		<td width="280" valign="top" class="docNav">
-			{% include {{include.nav}} selected=include.selected %}
-		</td>
-		<td valign="top">
+
+<div class="row">
+	<div class="col-lg-3 docNav">
+		{% include {{include.nav}} selected=include.selected %}
+	</div>
+	<div class="col-lg-9">

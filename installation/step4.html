@@ -1,0 +1,32 @@
+---
+layout: default
+navSection: Installation
+navSectionLink: /installation
+subnavSection: "Step 4: Create Config File"
+heading: "Step 4: Create Config File"
+prev: "Step 3: Create Database Tables"
+prevLink: /installation/
+next: "Step 5: Create Admin Account"
+nextLink: /installation/step5/
+---
+
+{% include open_section.html nav='nav_installation.html' selected='step4' %}
+
+	<p>
+		{% include screenshot.html item='i345.gif' %}
+		The fourth step creates your configuration file. The config.php file is the <b>only</b>
+		file in Form Tools that stores custom data. It's not included in the original installation
+		script or in upgrade packages so it will never be overwritten.
+	</p>
+
+	<p>
+		This step attempts to create the file automatically. If it cannot, you will need to manually
+		create the file by creating it locally in notepad / textedit and FTPing it to your server.
+	</p>
+
+	<p>
+		The config.php file is located in the <b>/global</b> folder.
+	</p>
+
+
+{% include close_section.html %}
