@@ -1,7 +1,16 @@
 {% for screenshot in site.data.screenshots %}
 
 	{% if include.item == screenshot.filename %}
-		<div class="screenshot" style="float:right">
+		<div class="screenshot"
+			{% if include.align %}
+				{% if include.align == 'right' %}
+					style="float:right"
+				{% else %}
+					style="float:left"
+				{% endif %}
+			{% else %}
+				style="float:right"
+			{% endif %}>
 			<a href="/assets/screenshots/{{screenshot.filename}}" rel="lightbox[page]" class="fancybox" title="{{screenshot.caption}}">
 				<img src="/assets/screenshots/{{screenshot.thumb_filename}}" alt="{{screenshot.caption}}" title="{{screenshot.caption}}"
 					 border="0"></a>

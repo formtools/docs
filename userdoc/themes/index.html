@@ -1,0 +1,77 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Settings
+subnavSectionLink: /userdoc/themes
+heading: Themes
+prev: "Settings: Menus Tab"
+prevLink: /userdoc/settings/menus_tab
+next: Swatches
+nextLink: /userdoc/themes/swatches
+---
+
+{% include open_section.html nav='nav_userdoc_themes.html' selected='themes' %}
+
+	<p>
+		{% include screenshot.html item='i319.gif' %}
+		Form Tools 2 pages are all generated through themes. Themes are simply a set of CSS,
+		JavaScript files, images and Smarty templates. Smarty templates are just HTML, with
+		special logical rules and placeholders that provide more control to the
+		theme developer.
+	</p>
+
+	<p>
+		Form Tools allows you to install multiple themes and have different accounts associated
+		with each theme; e.g. you could have 5 people logged in at the same time, viewing the same
+		content but through very different themes. This can be beneficial in a number of ways:
+	</p>
+
+	<ul>
+		<li>The UIs of some themes may be more intuitive and attractive that others to different
+			users. Because of this, it's often a good idea to let client accounts have permissions to
+			choose their own theme (this can be set for all future accounts on the
+			<a href="?page=account_settings">Settings » Accounts tab</a>).</li>
+		<li>Some themes may have browser requirements that don't fit all users (e.g. a modern
+			browser or large screen dimensions</li>
+		<li>If your installation is being used to store forms for different websites, themes let
+			you "brand" the UI for each user - they could see a theme that looks like their own website,
+			for example.</li>
+	</ul>
+
+	<h4>Theme Versions</h4>
+
+	<p>
+		Form Tools is in a perpetual state of revision and development. Because of this, the
+		webpages used to render the HTML are always in flux. So how can you be sure that a theme
+		supports a particular version? Well, first of all, themes themselves have versions. Each
+		version is associated with one or more Form Tools Core versions. This lets you know whether
+		a theme is compatible with your installation or not. Secondly, to promote compatibility
+		and reduce the amount of work needed from theme developers, the themes themselves were
+		designed with a simple fallback mechanism. Theme developers don't need to creates
+		pages for every  page in the UI: just a handful of main global files. So, even if a theme
+		was developed long before a version of the Core, chances are it's still compatible. Also,
+		the upgrade script keeps track of dependencies and will always warn you if a new version
+		of the Core code is incompatible with a theme.
+	</p>
+
+	<h4>The default theme</h4>
+
+	<p>
+		The <b>default</b> theme is special: it's always bundled with Form Tools and is always
+		up to date; it contains all the pages required to properly display all pages in the
+		interface. You should never delete the default theme. Deleting the default theme will
+		prevent the script from working properly.
+	</p>
+
+	<p>
+		The screenshot at the top of the page is of the Settings » Themes page, rendered
+		using the default theme.
+	</p>
+
+	<p>
+		As of Form Tools 2.1.3, the default theme includes 10 separate <i>swatches</i>, which
+		let you display the default theme in a variety of different colours.
+	</p>
+
+{% include close_section.html %}

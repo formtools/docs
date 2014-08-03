@@ -1,0 +1,44 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Settings
+subnavSectionLink: /userdoc/themes
+heading: Installing Themes
+prev: Swatches
+prevLink: /userdoc/settings/swatches
+next: Deleting Themes
+nextLink: /userdoc/themes/deleting
+---
+
+{% include open_section.html nav='nav_userdoc_themes.html' selected='installing' %}
+
+	<p>
+		Installing a new theme is very simple.
+	</p>
+
+	<ol>
+		<li>First, <a href="http://themes.formtools.org">browse the available themes</a> list on the
+			Form Tools site to locate the theme you want.</li>
+		<li>Next, download the theme to your desktop.
+			<ul>
+				<li>For zipfiles, unzip the file on your computer using whatever
+					compressor/decompressor you have installed (we recommend
+					<a href="http://www.winzip.com" target="_blank">WinZip</a>) All themes are
+					located in their own unique folder. Send the single folder to your webserver via FTP;
+					it should be placed in your <b>[form tools root]/themes</b> folder.</li>
+				<li>For tar.gz files, FTP the folder to your <b>[form tools root]/themes</b>
+					folder on your webserver. SSH or telnet into your server and go to the themes folder.
+					There, run this command (replace name_of_tar_file_here with the name of your tar
+					file):
+
+					<blockquote><pre>tar -xzvf name_of_tar_file_here.tar.gz</pre></blockquote>
+				</li>
+			</ul>
+		</li>
+		<li>Next, log into Form Tools and go to the Settings » Themes page. Here, click the
+			"REFRESH THEME LIST" button. And that's it! You should now see your new theme.</li>
+	</ol>
+
+
+{% include close_section.html %}

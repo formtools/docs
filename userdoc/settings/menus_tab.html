@@ -3,14 +3,59 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Settings
-heading: Settings
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/settings
+heading: Menus Tab
+prev: Files Tab
+prevLink: /userdoc/settings/files_tab
+next: Themes
+nextLink: /userdoc/themes
 ---
 
-{% include open_section.html nav='nav_userdoc_settings.html' selected='settings' %}
+{% include open_section.html nav='nav_userdoc_settings.html' selected='menus_tab' %}
 
+	<p>
+		{% include screenshot.html item='i317.gif' %}
+		The final <b>menus</b> tab contains all functionality relating to the Form Tools navigation.
+		Here, you can modify your own administrator menu - adding, removing or re-sorting menu
+		items - and create or modify the client menus.
+	</p>
+
+	<p>
+		All new installations of Form Tools have two menus already set up: one for the
+		administrator, one for the client accounts. Depending on your needs, you may find that
+		these two menus are enough and that don't need to edit them or create any more. But if you
+		<b>do</b>, it's nice to know that you <b>can</b>.
+	</p>
+
+	<p>
+		Being able to customize the menu items can be very useful in some cases, to reduce the
+		amount of clicking to get from A to B. For example, if you only have a small number of forms,
+		you might want to consider putting links to each of them in the navigation menu itself. Or,
+		if you use one or more modules quite frequently, rather than having to navigate to the
+		Modules page, then find and select the appropriate module, you can instead add a link to
+		the module right in your menu.
+	</p>
+
+	<p>
+		{% include screenshot.html item='i318.gif' %}
+		Editing and managing the Client and Admin menu content work exactly the same way. On the
+		menus page, click the appropriate EDIT button. The following page will list all menu items
+		in that particular menu. The available pages dropdown lists all pages that are relevant
+		to the account type. Administrator menus, for example, have a much larger number of pages
+		that can be linked to. Some pages allow for additional settings, like "Form Submissions"
+		or "Edit Client" which let you pick a form and a client, respectively.
+	</p>
+
+	<h4>Pages Module</h4>
+
+	{% include screenshot.html item='i148.jpg' %}
+	<p>
+		The <a href="http://modules.formtools.org/pages/?page=index">Pages Module</a> - which comes installed with
+		all new standard Form Tools bundles - allows you to create custom pages within
+		the Form Tools UI, which you can then include as part of the navigation. Generally, this can
+		be useful to create "Splash" pages which you can link to for clients when they log in.
+		Ultimately, the functionality of that module will be expanded for more server-side
+		customization, but even at this stage it can be quite useful.
+	</p>
 
 {% include close_section.html %}

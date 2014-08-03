@@ -13,5 +13,51 @@ nextLink: /userdoc/settings/menus_tab
 
 {% include open_section.html nav='nav_userdoc_settings.html' selected='files_tab' %}
 
+	<p>
+		{% include screenshot.html item='i315.gif' %}
+		The <b>files</b> tab contains those settings related to file uploads for Form Tools and any
+		forms configured with Form Tools. This page contains settings such as the max file size,
+		file types and the file upload folder. All of these settings can be overridden for each
+		individual file field, but it's far more convenient to set the general settings here
+		first.
+	</p>
+
+	<table cellspacing="0" cellpadding="1" class="info" width="100%">
+		<tbody><tr>
+			<td class="blue" width="160" valign="top">Upload folder path</td>
+			<td>
+				This field determines the default file upload folder for all file upload fields.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Upload folder URL</td>
+			<td>
+				This field determines the default file upload URL for all file upload fields.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Max File Size</td>
+			<td>
+				This determines the maximum size of files that can be uploaded through the UI and
+				through your forms. The filesize options available in the download relate to your
+				server; the maximum option in that dropdown is the maximum size that files can be
+				uploaded as determined by your php.ini file.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Permitted File Types</td>
+			<td>
+				This determines what file types can be uploaded.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Use Lightbox to display files</td>
+			<td>
+				This option can be helpful if you're only upload images through your file fields.
+				It opens all files in a Lightbox popup.
+			</td>
+		</tr>
+		</tbody>
+	</table>
 
 {% include close_section.html %}
