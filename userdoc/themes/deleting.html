@@ -1,0 +1,36 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Settings
+subnavSectionLink: /userdoc/themes
+heading: Deleting Themes
+prev: Installing Themes
+prevLink: /userdoc/settings/swatches
+next: Upgrading Themes
+nextLink: /userdoc/themes/upgrading
+---
+
+{% include open_section.html nav='nav_userdoc_themes.html' selected='deleting' %}
+
+	<p>
+		To delete a theme, first go to the Settings » Themes page. There, disable the theme
+		you wish to delete. This is important. It ensures that none of them are already associated
+		with the theme you're trying to disable. If there ARE accounts assigned to the theme,
+		it will notify you and provide options to associate those client accounts to another
+		theme individually or in bulk.
+	</p>
+
+	<p>
+		Once the theme has been disabled, you can delete the folder on your server. It's located
+		in your <b>[form tools root]/themes</b> folder. Note: NEVER delete the <b>default</b>
+		folder.
+	</p>
+
+	<p>
+		After deleting the folder, next time you click the "REFRESH THEME LIST" button, the theme
+		will be removed from the page.
+	</p>
+
+
+{% include close_section.html %}

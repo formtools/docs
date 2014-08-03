@@ -1,0 +1,33 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Settings
+subnavSectionLink: /userdoc/themes
+heading: Upgrading Themes
+prev: Deleting Themes
+prevLink: /userdoc/themes/deleting
+next: Modules
+nextLink: /userdoc/modules
+---
+
+{% include open_section.html nav='nav_userdoc_themes.html' selected='upgrading' %}
+
+	<p>
+		Upgrading themes is very simple. Themes, modules, the Form Tools API and the Form Tools Core
+		script are all upgraded in the same way. Log into Form Tools (as an administrator) and to to
+		your Settings » Main tab. There, click the "Check for Updates" button. That submits
+		all relevant information about your installation - including your theme versions - to the Form
+		Tools site. The upgrade script then determines what components, if any, have been updated
+		and generates a custom zipfile containing whatever you want to upgrade.
+	</p>
+
+	<p>
+		The generated zipfiles mock the folder structure of your Form Tools installation exactly, and
+		only contain the files you need to overwrite. So, to upgrade the files, just upload the
+		entire root folder to your own server, overwriting the old files. Once this is completed,
+		log back into Form Tools and go to the Settings » Themes page. There, click the
+		"REFRESH THEME LIST" button. That will update the database with that latest theme versions.
+	</p>
+
+{% include close_section.html %}
