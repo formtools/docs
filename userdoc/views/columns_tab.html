@@ -3,14 +3,77 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: Columns Tab
+prev: Main Tab
+prevLink: /userdoc/views/main_tab
+next: Fields Tab
+nextLink: /userdoc/views/fields_tab
 ---
 
 {% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
 
+	<h4>Columns tab</h4>
+
+	{% include screenshot.html item='i259.gif' %}
+
+	<p>
+		The columns tab was added in 2.1.0, to provide more control over how the main Submission
+		Listing page looks. It also simplifies things a bit, by grouping the functionality
+		on a single page, instead of on the Fields tab, like in 2.0.x.
+	</p>
+
+	<p>
+		For new forms, the default View always contains five columns: the Submission ID, the
+		three first form fields, and then the Submission Date. Basically it's just making it's
+		best guess about what you'd like to see - but you can always customize it here.
+	</p>
+
+	<p>
+		Here's what all the columns mean.
+	</p>
+
+	<table class="info">
+		<tbody><tr>
+			<td class="blue" width="180">Order</td>
+			<td>
+				This controls the order in which the fields will appear. To re-sort them, just click on the
+				appropriate row in the Order column and drag the row up or down.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue">Field</td>
+			<td>
+				This is where you choose what field should appear as a column. Even though you can
+				choose <i>any</i> field, generally it makes sense to only pick from the fields that are
+				actually in the View (see the next <i>Fields</i> tab to control them).
+			</td>
+		</tr>
+		<tr>
+			<td class="blue">Sortable</td>
+			<td>
+				This controls whether the field column should be sortable or not by people on the
+				Submission Listing page (admin and client).
+			</td>
+		</tr>
+		<tr>
+			<td class="blue">Column Width</td>
+			<td>
+				This is a nice little feature added in 2.1.0. In earlier versions, Form Tools would
+				do it's best to space everything out appropriately, but it often failed. So, this column
+				let's you precisely customize how you'd like the table to be laid out.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue">Truncate</td>
+			<td>
+				Some fields contain a lot of data in them - far too much to include in an overview
+				table like the Submission Listing page. This setting controls whether or not the
+				information gets truncated in the table. If it's set to no, the information may
+				well span multiple lines.
+			</td>
+		</tr>
+		</tbody>
+	</table>
 
 {% include close_section.html %}

@@ -3,14 +3,105 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: Main Tab
+prev: Editing Views
+prevLink: /userdoc/views/editing
+next: Columns Tab
+nextLink: /userdoc/views/columns_tab
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='main_tab' %}
 
+
+	<h4>Main Tab</h4>
+
+	{% include screenshot.html item='i258.gif' %}
+
+	<p>
+		The main tab contains the main, general settings for your View. Here's where you go
+		to specify permissions and other such important info. As of 2.1.x, you can also
+		come here to specify default values for your form submissions added within the Form
+		Tools interface. This is a particularly nice addition - read below for more information.
+	</p>
+
+	<table cellspacing="0" cellpadding="1" width="100%" class="info">
+		<tbody><tr>
+			<td width="180" valign="top" class="blue">View Name</td>
+			<td>
+				This value is used to identify the View. It appears in both the administrator's and
+				the client's UI. Generally you'll want to enter something human-friendly that
+				clearly describes what information the View is encapsulating.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="blue">Submissions per page</td>
+			<td>
+				This determines the number of submissions that should appear in the main submission
+				listing page. It affects all people accessing the View via the Form Tools UI.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="blue">Default Sort Order</td>
+			<td>
+				This value defaults to Submission Date descending (i.e. most recent first) for all
+				new Views, but you can change it to whatever you need. Sometimes it can be beneficial
+				to sort alphabetically, for example. Two tips:
+				<ul>
+					<li>Bear in mind that you DO have the option to allow any column to be sortable -
+						this may be set on the Fields tab.</li>
+					<li>Even though this field lets you select any form field to acts as the default
+						sort order, you should probably choose a field that you specify in the
+						<a href="?page=edit_view_columns_tab">Edit View -&gt; Columns tab</a>. That way, if the user changes the
+						sort order on the Submission Listing page, they can always click the original column
+						to achieve the old sort order. If you chose a field for the default sort order that
+						isn't a column, it could be a bit weird for the user!</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="blue">Access</td>
+			<td>
+				This option lets you determine who can see the View. For more information on this
+				setting, see <a href="?page=view_permissions">View Permissions</a> page.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="blue">May delete submissions</td>
+			<td>
+				This option hides / shows the "DELETE" button on the main submission listing page and
+				on the individual Edit Submission pages. This affects both client and administrator
+				accounts.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="blue">May add submissions</td>
+			<td>
+				This option hides / shows the "Add »" button on the main submission listing page and
+				on the individual Edit Submission pages. This affects both client and administrator
+				accounts. Tip: to control the label of this button, go to the Edit Form -&gt; main tab.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" class="blue">Default Values for New Submissions</td>
+			<td>
+				If "May add submissions" is set to "yes", a new section will appear at the bottom of
+				the page. This was added in 2.1.0 to allow you to specify default values for submissions
+				added via the Form Tools interface. All you need to do is add those fields that you would
+				like to contain default values, and specify exactly what values you want them to have.
+				<ul>
+					<li>Tip: a big reason this was added was to reconcile an issue that arose when adding
+						View Filters. Filters let you limit the results that appear in a View (e.g. only
+						show people from Vancouver, BC). When you added a submission in that View, even though
+						the submission was created, it wouldn't get listed in the View - because the value
+						of the "City" field wasn't "Vancouver". So, the <i>Default Values for New Submissions</i>
+						resolves this issue: it lets new submissions added to Views with standard filters
+						automatically contain the appropriate values to be listed in the View. Keep this in mind!
+					</li>
+				</ul>
+			</td>
+		</tr>
+		</tbody>
+	</table>
 
 {% include close_section.html %}

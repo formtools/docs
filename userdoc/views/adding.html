@@ -3,14 +3,37 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: Adding Views
+prev: View List
+prevLink: /userdoc/views/list
+next: Editing Views
+nextLink: /userdoc/views/editing
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='adding' %}
 
+	<p>
+		Any time a form is created, a default View is created. This View
+		contains all form fields, it's set to 10 submissions per page (or whatever value
+		you've entered in the Settings -&gt; Main page), it orders the listings by
+		submission date - most recent first, and is publicly accessible by all clients.
+	</p>
+
+	<p>
+		{% include screenshot.html item="i256.gif" %}
+		Creating a new View is very simple. Just go to your Edit Form » Views tab and
+		click the "Create View" link for whatever View group you want to add it to. This link
+		it found at the <i>bottom right</i> of all View group sections. If you've
+		deleted all the View Groups, you'll see the option to create a new, default View. Click it!
+	</p>
+
+	<p>
+		Normally, when adding a new View, you'll see a dialog window appear that looks something
+		like the screenshot to your right. This is extremely powerful: it lets you
+		create a new View with all the fields, no fields, or base it on an existing View. If you
+		find yourself needing to create multiple, similar Views, this can be a very important
+		time-saver.
+	</p>
 
 {% include close_section.html %}

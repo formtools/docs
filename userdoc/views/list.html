@@ -3,14 +3,74 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: View List
+prev: Views
+prevLink: /userdoc/views/
+next: Adding Views
+nextLink: /userdoc/views/adding
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='list' %}
+
+	<p>
+		{% include screenshot.html item="i255.gif" %}
+		The Edit Form -&gt; Views tab has changed a bit in 2.1.x. It now provides a lot more
+		functionality than previous version. Click on the screenshot to the right to get an
+		idea of what sort of things you can do with it.
+	</p>
+
+	<h4>View Groups</h4>
+
+	<p>
+		First up, you can now group the Views - every View must belong to a single group. At the
+		time of writing (August 2011), the only immediate practical application of the grouping
+		is that on the Edit Submission and Submission Listing pages (client and admin), when you
+		click on the Views dropdown, you'll see the Views listed and grouped as you set them up
+		on this page. However, the grouping mechanism is very likely to be utilized in other
+		ways in the future (e.g. such as assigning a client to a group of View, rather than one by
+		one).
+	</p>
+
+	<p>
+		The group names are optional. So if you don't want the Views dropdown on the Submission
+		Listing and Edit Submission pages to show a heading (technically an "optgroup") for the
+		Views, just omit the group name.
+	</p>
+
+	<h4>The View tables</h4>
+
+	<p>
+		Each View group lists the Views one above the other. Each row contains a great deal
+		of information about the View, so you can get a good overview just by learning what
+		each column means. The first few columns: <b>View ID</b>, <b>View name</b> and <b>Who can
+		access?</b> are pretty self-explanatory, but the remaining columns are not so
+		self-evident. To find out what they mean, move your mouse over any cell - a tooltip will
+		appear, describing what the data means.
+	</p>
+
+	<ul>
+		<li><b>Columns</b>: this shows how many of the form fields are being used as columns on
+			the View's main Submission Listing page. (This is the page that lists all your submission
+			data, when you're viewing and editing the information).</li>
+		<li><b>Fields</b>: the number of fields that are visible in the View.</li>
+		<li><b>Tabs</b>: the number of tabs defined in the View</li>
+		<li><b>Filters</b>: the number of filters defined in the View</li>
+	</ul>
+
+	<p>
+		Clicking on any cell will redirect you to the appropriate page. Even though there's a lot
+		of information presented on the page, once you get your bearing you should find it very
+		quick and simple to use (and don't forget the tooltips if you forget!)
+	</p>
+
+	<h4>Re-sorting View groups and Views</h4>
+
+	<p>
+		Form Tools 2.1.0 added in client-side sorting for all components. Give
+		<a href="?page=sortables">this page</a> a read over. It explains all about sorting in
+		Form Tools.
+	</p>
 
 
 {% include close_section.html %}

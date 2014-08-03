@@ -3,14 +3,38 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: Editing Views
+prev: Adding Views
+prevLink: /userdoc/views/adding
+next: Main Tab
+nextLink: /userdoc/views/main_tab
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='editing' %}
 
+	<p>
+		{% include screenshot.html item="i257.gif" %}
+		After adding a new View or clicking any of the View links on the View tab, you'll be
+		redirected the Edit View page. This is where you go to customize every last aspect of your
+		View. There's a <b>lot</b> of functionality in these pages, so to keep things as clearly
+		organized as possible, we've grouped the options into five sub-tabs:
+	</p>
+
+	<ul>
+		<li><a href="{{site.baseurl}}/userdoc/views/main_tab">Main tab</a></li>
+		<li><a href="{{site.baseurl}}/userdoc/views/columns_tab">Columns tab</a></li>
+		<li><a href="{{site.baseurl}}/userdoc/views/fields_tab">Fields tab</a></li>
+		<li><a href="{{site.baseurl}}/userdoc/views/tabs_tab">Tabs tab</a></li>
+		<li><a href="{{site.baseurl}}/userdoc/views/filters_tab">Filters tab</a></li>
+	</ul>
+
+	<p>
+		Click on any of the links above to learn more about them. Tip: You may notice that the
+		main "Update View" button is located underneath the Edit View tabset. This is because you
+		can flip from sub-tab to sub-tab and only click "Update View" at the very end. You don't
+		need to click it anytime you switch from "Main" to "Columns" or anything like that - so
+		configuring your View should be that much faster.
+	</p>
 
 {% include close_section.html %}
