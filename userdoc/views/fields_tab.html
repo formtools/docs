@@ -3,14 +3,102 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: Fields Tab
+prev: Columns Tab
+prevLink: /userdoc/views/columns_tab
+next: Tabs Tab
+nextLink: /userdoc/views/tabs_tab
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='fields_tab' %}
+
+	<h4>Fields tab</h4>
+
+	{% include screenshot.html item="i260.gif" %}
+
+	<p>
+		The fields tab lets you customize which of your form fields appear in the View, in what
+		order, and other such fun stuff. This page was totally re-written in Form Tools 2.1
+		because we found that a great deal of your time was spent configuring Views: especially
+		the View fields. So now, it's considerably faster to configure your Views - it's all
+		done client-side with drag and drop, dialog windows and <i>general awesomeness</i>.
+	</p>
+
+	<p><b>Field groups</b></p>
+
+	<p>
+		Take a quick look at the screenshot to the right. As you can see, all form field rows
+		are contained with a group. The group may or may not be named. If you choose to name it,
+		then a header will appear above that section on the Edit Submission page the clearly
+		delineates those fields. This is a great addition to Form Tools, and can really help
+		visually break up related fields on larger forms, making it simpler for Form Tools users
+		to manage the submission data.
+	</p>
+
+	<p>
+		Unlike 2.0.x where you had to manually assign each and every field to a tab, now you
+		just assign a field group to a tab. Just select the tab in the top right of the View
+		field group.
+	</p>
+
+	<p><b>Adding fields</b></p>
+
+	<p>
+		{% include screenshot.html item="i261.gif" %}
+		To add more fields to your View, click on the "Add Views »" link at the bottom right
+		of the View group. That will open up a dialog looking something like the screenshot
+		to the left. The goal here was simplicity: we wanted a quick and easy way to pinpoint
+		which fields you want to add. Just select those fields you want and click the
+		"Add Fields" button at the bottom of the dialog window. The dialog will instantly
+		close and insert the fields at the bottom of the group you selected.
+	</p>
+
+	<p><b>Re-sorting fields</b></p>
+
+	<p>
+		No problem: mouse-over the first "Order" column. Notice that the mouse icon changes to a
+		draggable pointer? Just drag the row up or down to whatever location you want. To drag into
+		another field group, just drag it over!
+	</p>
+
+	<p>
+		Tip: if you have multiple rows you need to drag to a new location, you'll want to bind
+		them together first, then drag them all at once. To do that, just click between the
+		bars to the left of the Order column to join/break the rows. For more information on
+		Sortables in Form Tools 2.1, <a href="?page=sortables">give this page a read over</a>. :)
+	</p>
+
+	<p><b>Re-sorting field groups...?</b></p>
+
+	<p>
+		Yup! You can do this too. See the little icon at the top left of the View groups? Like with
+		the same icon on the field rows, that signifies that it's sortable. To re-sort it, just click
+		on the group then drag up or down.
+	</p>
+
+	<p><b>The field tables</b></p>
+
+	<p>
+		Here's what the table columns mean:
+	</p>
+
+	<ul>
+		<li><b>Order</b>. As discussed. This determines the order in which the field appears in
+			the View.</li>
+		<li><b>Field</b>. This identifies the field.</li>
+		<li><b>Field Type</b>. A little more information so you know what the field is.</li>
+		<li><b>Editable</b>. This determines whether the field can be edited through this View.</li>
+		<li><b>Searchable</b>. This lets you determine whether or not the user can search on this
+			field on the main Submission Listing page. Note: if you uncheck this column for all fields,
+			the search bar on the Submission Listing page simply isn't relevant and it will be hidden.
+		</li>
+	</ul>
+
+	<p>
+		If you're an old 2.0.x user and wonder where the Sortable column is, check out the
+		<a href="{{site.baseurl}}/userdoc/views/columns_tab">Edit View -&gt; Columns tab</a>!
+	</p>
 
 
 {% include close_section.html %}

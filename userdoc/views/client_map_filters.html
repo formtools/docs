@@ -3,14 +3,52 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: Client Map Filters
+prev: Standard Filters - examples
+prevLink: /userdoc/views/standard_filters_examples
+next: View Permissions
+nextLink: /userdoc/views/permissions
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='client_map_filters' %}
+
+
+	<p>
+		{% include screenshot.html item='i141.gif' %}
+		Client Map filters let you map the contents of a form submission field to the value
+		of a client account so that when the client logs in
+		they will only see submissions that are directly mapped to values in their own account.
+		This can significantly reduce the number of Views you need to create, and cut down on
+		configuration and maintenance time.
+	</p>
+
+	<p>
+		Unlike Standard filters, Client Map filters come with two caveats:
+	</p>
+
+	<ul>
+		<li>Client Map filters <b>only affect client accounts</b>. You can only create
+			these client accounts via the administrators interface but you will need to log through a
+			client account to confirm the View is working the way you'd expect. (N.B. Form Tools makes
+			it easy for you: just go to the Clients page and click on one of the "LOGIN" links).</li>
+		<li>Client Map filters are <b>only designed for use within Form Tools</b>. If you try to use
+			the View via the API, for example, any client map filters that you have created will be
+			ignored. Likewise for the Submission Accounts module. The reason for this is that they
+			are inherently dynamic: they rely on examining the contents of the currently logged in
+			client. If there IS no client account, the client map filter is discarded.
+		</li>
+	</ul>
+
+	<p>
+		By default, Form Tools Client accounts only come with a handful of fields for storing
+		client info. Because of this, "out of the box" Form Tools only allows the following fields
+		to be used in client map filters: <i>ID, First Name, Last Name, Email, Company Name</i>.
+		Since this is really just too restrictive, this feature is compatible with the
+		<a href="http://modules.formtools.org/extended_client_fields/?page=index">Extended Client Fields
+			module</a> - any fields created through that module will also appear in the Client Fields
+		dropdown in the Client Map filters table. This allows for tremendous flexibility.
+	</p>
 
 
 {% include close_section.html %}

@@ -3,14 +3,75 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: View Permissions
+prev: Client Map Filters
+prevLink: /userdoc/views/client_map_filters
+next: Settings
+nextLink: /userdoc/settings
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='permissions' %}
+
+	<p>
+		Views can be targeted to specific audiences. Sometimes, you may find all of
+		the form data should only be visible by the administrator, or that one or other
+		subset of the form data should should be seen by particular client accounts. No
+		problem! By mapping the permissions to the Views instead of the actual form,
+		you get a huge amount of control over who sees what.
+	</p>
+
+	<p>
+		On the Edit View » Main tab, there's an "Access" field. This lets you choose
+		who can see the View. The options are:
+	</p>
+
+	<ul>
+		<li>Administrator only</li>
+		<li>Public (all clients have access)</li>
+		<li>Private (only specific clients have access)</li>
+		<li>Hidden</li>
+	</ul>
+
+	<p>
+		The "Administrator only" option is straightforward: nobody except you will ever see
+		the View. Public Views are automatically seen by everyone. This can be a convenient
+		way to set the View permissions since they will be automatically visible to all
+		clients associated with the form - including those that haven't been created yet.
+		Setting a View to "Public" saves you the bother of having to manually configure
+		the permissions for each new user as they are created.
+	</p>
+
+	<p>
+		Also, the "Public" access type for Views is slightly different than the "Public" access
+		type for forms. If you set a View to public, it will <b>still only show up for those
+		clients assigned to the form - not all clients in the database</b>. Views will never be
+		displayed for any users that aren't assigned to the form to which it belongs.
+	</p>
+
+	<p>
+		The Private option lets you pinpoint precisely which clients can see the View.
+	</p>
+
+	<p>
+		The Hidden option is handy if you want to create Views for programmatic purposes but
+		don't want them to show up for anyone.
+	</p>
+
+	<h4>Omit Lists</h4>
+
+	<p>
+		Both public forms and public Views have omit lists. This can be convenient if you have
+		a situation where you want the convenience of the public access type (so it's
+		automatically) visible to newly created accounts, but you still don't want specific user
+		accounts to have access.
+	</p>
+
+	<p>
+		As you'd expect, the omit list for a form is also inherited by any of its Views. If
+		a form has a "public" access level but John Smith is on the omit list, then he will never
+		be able to see any of its Views, regardless of their access level.
+	</p>
 
 
 {% include close_section.html %}

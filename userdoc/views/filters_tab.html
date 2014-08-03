@@ -3,14 +3,50 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: Filters Tab
+prev: Tabs Tab
+prevLink: /userdoc/views/tabs_tab
+next: Standard Filters
+nextLink: /userdoc/views/standard_filters
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='filters_tab' %}
 
+	<h4>Filters tab</h4>
+
+	<p>
+		{% include screenshot.html item='i263.gif' %}
+		The final configuration option for your Views is the option of being able to define
+		<b>filters</b>. Filters lets you define custom rules for limiting the submissions that
+		appear in your View. While the contents of the Edit View -&gt; Fields tab let you control
+		which <b>fields</b> appear in the View, filters let you control which <b>submissions</b>
+		appear. This functionality used to be found on the Edit Client Accounts pages
+		but has been moved here with Form Tools 2.
+	</p>
+
+	<p>
+		Form Tools comes with two types of filters:
+		<i>Standard filters</i>, and <i>Client Map</i> filters. They provide you with two alternative
+		ways to limit the submissions that appear in the View.
+	</p>
+
+	<p>
+		You may define as many filters as you want for each View. When you add multiple filters,
+		<b>all</b> conditions have to be met for a submission to appear in the View. For example,
+		if you define a standard filter for "state" to be "WA" and another for "City" to be
+		"Seattle", the View will only contain submissions that are for Seattle, Washington - and
+		none other.
+	</p>
+
+	<p>
+		The following two pages describe the filter types, followed by some examples of how they
+		can be used.
+	</p>
+
+	<ul>
+		<li><a href="{{site.baseurl}}/userdoc/views/standard_filters">Standard Filters</a></li>
+		<li><a href="{{site.baseurl}}/userdoc/views/client_map_filters">Client Map Filters</a></li>
+	</ul>
 
 {% include close_section.html %}

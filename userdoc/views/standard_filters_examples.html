@@ -3,14 +3,174 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: Standard Filters - examples
+prev: Standard Filters
+prevLink: /userdoc/views/standard_filters
+next: Client Map Filters
+nextLink: /userdoc/views/client_map_filters
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='standard_filters_examples' %}
 
+	<p>
+		If you've read the previous page, by now you should have a pretty good idea of what
+		Standard filters do and how they work. Here's a few additional examples for situations that
+		might crop up. All of the examples are based on the same fictional "Send us your resume"
+		form for the federal government, where each submission is a person's resume.
+	</p>
+
+	<h4>Example 1: Only letting clients view "reviewed" submissions</h4>
+
+	<p>
+		You may find that you don't want clients to view all submissions that go through a form
+		the moment they are sent. Perhaps you need to review them first for whatever reason -
+		quality control, check them for relevance, etc.
+	</p>
+
+	<p>
+		Since there's nothing in the database that distinguishes a "non-reviewed" from a
+		"reviewed" submission, we're simply going to add it! Once it's been added, we'll create
+		a new View filter on that field so that all clients who are associated with the View will
+		only see submissions that meet that criteria: namely, those that have been reviewed by
+		you, the administrator.
+	</p>
+
+	<p>
+		First, click on the Database tab of the Edit Form pages. Here, click "Add Field(s)" and
+		leave "1" as the default value. Add the following values:
+	</p>
+
+	<table cellspacing="0" class="info" width="100%">
+		<tbody><tr>
+			<td width="250" class="blue">Auto-generate database column names</td>
+			<td>Leave <b>checked</b>.</td>
+		</tr>
+		<tr>
+			<td class="blue">Pass On</td>
+			<td>Leave <b>unchecked</b>.</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Form Field Name</td>
+			<td>
+				This new field isn't going to be passed along in the form with the other fields, but
+				Form Tools still requires a value here. It doesn't matter what you enter here, just
+				so long as it isn't already used by a form field. I'd suggest something like
+				"reviewed123" which will almost certainly be unique.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue">Display Text</td>
+			<td>Enter "Reviewed".</td>
+		</tr>
+		<tr>
+			<td class="blue">Field Size</td>
+			<td>Leave as "Tiny (&lt; 5 chars)".</td>
+		</tr>
+		<tr>
+			<td class="blue">Data Type</td>
+			<td>Leave as "String".</td>
+		</tr>
+		</tbody></table>
+
+	<p>
+		After clicking "ADD FIELDS", this new field will be stored in the database for your form
+		submissions.
+	</p>
+
+	<p>
+		Next, we want to make it a radio button option with two options: "No" and "Yes". Click
+		on the Fields tab, change the Field Type for the new Reviewed field to "Radio
+		buttons". Now click "UPDATE"; after the page reloads, click on the "Options" link.
+		That page will list all of the relevant settings for this form field. On the "Field
+		Option Group" click the "Create New Group" button <b>or</b> select an existing group, if
+		a group already exists with the options "Yes" and "No" (only).
+	</p>
+
+	<p>
+		We're getting there! On this new page, labeled "New Group" add two rows to the form, and
+		enter "Yes" and "No" for both the Field Value and Display Text columns. Check "horizontal"
+		for the Field Orientation setting and click the Update button.
+	</p>
+
+	<p>
+		Now let's take a breath. What have we done up to this point? We've created a new field
+		that can be used in your form Views, that will be displayed as "Yes" and "No" radio
+		buttons. The next, and final step is to associate it with one or more Views!
+	</p>
+
+	<p>
+		On your Edit Form » Views page, create a new View - base it on whatever existing
+		View you want it to be most like. On the Fields tab, add the new Reviewed field - and set
+		&nbsp;it as a column. This makes it appear in the main submission listing page.
+	</p>
+
+	<p>
+		Now click on the "[View Submissions]" link at the top right and select the View you just
+		created. Assuming your form has at least one submission, you'll now see a new, blank
+		column for "Reviewed". [Tip: to set the default value to "No" for all future submissions,
+		add a hidden field to your form called "reviewed123" with a value of "No"]. For any
+		submission, click on the "VIEW" link and change the "Reviewed" value to "Yes". Now you've
+		officially reviewed one of your submissions!
+	</p>
+
+	<p>
+		Finally - and most importantly! - we're going to add our filter for the View. This will
+		prevent EVERYONE assigned to the View from viewing any non-reviewed submissions. Edit the
+		View and go to the Filters tab. Select the "Reviewed" field. Change the operator value
+		to "Equals" and enter the text "Yes" in the Value(s) column. Click the "UPDATE" button
+		and you're done! To confirm that it's working properly, view the form submissions and select
+		the appropriate View. You should now only see a single submission appear - the one you
+		marked off as "Reviewed".
+	</p>
+
+	<p>
+		The above example covers a lot of ground. Once you become more familiar with Views and
+		Export Field Groups, it won't seem half so daunting!
+	</p>
+
+
+	<br>
+	<h4>Example 2: "Disabling" an account by hiding all new submissions</h4>
+
+	<p class="notify">
+		On a related note, you may also wish to see the Hooks Manager module documentation for an
+		example of how to do something similar: <u><a href="http://modules.formtools.org/hooks_manager/?page=client_account_expiry_dates">adding a
+		"expiry date" to a client account</a></u>.
+	</p>
+
+
+	<p>
+		If you're using Form Tools as a paid service for clients, you may need to disable
+		a user's account until payment is received. One solution is to simply set "Active"
+		to "no" (Permission tab): this will prevent the client from logging in. However, you
+		may also wish to continue to let them log in, but not show any <b>new</b> submissions.
+		This may be a more elegant solution, letting them see things still work, but they
+		cannot see anything new without getting their account up to date. You could also add a
+		"Payment required!" page via the <a href="http://modules.formtools.org/pages/?page=index">Pages Module</a> which
+		they'd see after logging in - to make it completely clear that they cannot see any new
+		submissions.
+	</p>
+	<p>
+		To do this, go to this Edit Form » Views tab, and add a new View called something
+		like "No New Submissions" - base it on whatever View the client already sees. Next, edit
+		the View and click on the Filters tab. In the "Field" column, select the "Submission
+		Date" field (or whatever you named it). Set the operator to "Before" and click on the
+		calendar icon. Here, select a date. After you click "UPDATE", anyone associated with the
+		View will now only be able to view submissions up to that date. Finally, unassign that
+		client from the OTHER View - the View that doesn't limit the submissions.
+	</p>
+
+	<h4>Example 3: Showing only submissions within a date range</h4>
+
+	<p>
+		This may be useful to give a client a sample of submissions for illustration purposes.
+		It is very similar to Example 2.
+	</p>
+	<p>
+		Repeat everything in the last example, except this time, include TWO filters: one for
+		"Before" a certain date and one for "After". This will limit everyone associated with
+		the View to only have access to those submissions in the date range supplied.
+	</p>
 
 {% include close_section.html %}

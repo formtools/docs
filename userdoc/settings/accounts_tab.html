@@ -1,0 +1,148 @@
+---
+layout: default
+navSection: User Documentation
+navSectionLink: /userdoc
+subnavSection: Settings
+subnavSectionLink: /userdoc/settings
+heading: Accounts Tab
+prev: Main Tab
+prevLink: /userdoc/settings/main_tab
+next: Files Tab
+nextLink: /userdoc/settings/files_tab
+---
+
+{% include open_section.html nav='nav_userdoc_settings.html' selected='accounts_tab' %}
+
+	<p>
+		{% include screenshot.html item='i314.gif' %}
+		The <b>accounts</b> tab controls the default settings for all new client accounts. Entering
+		the appropriate values in this page can help you reduce the amount of configuration work
+		for you. These settings merely act as the DEFAULT settings: you will still be able to override each
+		setting for each client.
+	</p>
+
+	<p>
+		The screenshot to the right shows the Accounts page in version <b>2.0.3</b> of the Core. In
+		earlier versions, you won't see the Security Settings section.
+	</p>
+
+	<p>
+		N.B. There was a minor change in 2.0.3 in that passwords are no longer limited to
+		alphanumeric characters, as with 2.0.2 and earlier.
+	</p>
+
+	<table cellspacing="0" cellpadding="1" class="info" width="100%">
+		<tbody><tr>
+			<td width="160" class="blue" valign="top">Page Titles</td>
+			<td>
+				This setting determines the string that will appear in the web browser for the web page,
+				via the &lt;title&gt; HTML node. You can enter whatever string you want, but bear in mind
+				it will appear for all pages. It's a good idea to include the <b>{$page}</b> Smarty
+				placeholder in this field, too. That placeholder is replaced with the actual page name
+				for each page within the Form Tools UI.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Footer Text</td>
+			<td>
+				By default, this value is blank. But if you include a value, it will appear at the
+				bottom of each page. A common use for this is to add a copyright line.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Default Theme</td>
+			<td>
+				The default theme for all new accounts.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Login Page</td>
+			<td>
+				This determines what page the client will get directed to after logging in. By default,
+				this is set to the Forms page, but you pick whatever you want. This field is compatible
+				with the <a href="http://modules.formtools.org/pages/?page=index">Pages module</a> - so you can create
+				custom pages and make them the client's login page.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Logout URL</td>
+			<td>
+				The URL where the clients are redirected to when they click Logout.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Default Language</td>
+			<td>
+				The default language for the client accounts.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">System Time Offset</td>
+			<td>
+				This setting lets you accomodate for differences between your server timezone and your
+				own timezone. This ensures times are all displayed in the correct time for your clients.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Default Sessions Timeout</td>
+			<td>
+				This determines the default inactivity timeout for the client accounts.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Date Format</td>
+			<td>
+				This setting lets you control the formatting of all dates within Form Tools. For
+				non-English installations, you'll probably want to change this value to exclude any
+				English strings. The formatting codes are from the php
+				<a href="http://ca.php.net/manual/en/function.date.php">date()</a> function.
+			</td>
+		</tr>
+		</tbody></table>
+
+	<h3>Security Settings</h3>
+
+	<p>
+		As mentioned above, this section was added in 2.0.3. It provides a few additional security
+		settings for the security-conscious. All these settings are turned off for new installations
+		and upgrades.
+	</p>
+
+	<table cellspacing="0" cellpadding="1" class="info" width="100%">
+		<tbody><tr>
+			<td width="160" class="blue" valign="top">
+				Auto-disable account after # failed login attempts
+			</td>
+			<td>
+				This setting prevents brute-force attempts at hacking a user account. The script
+				automatically disables the user account after a unbroken series of failed login
+				attempts.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Minimum password length</td>
+			<td>
+				This lets you force client passwords to be of a minimum number of characters.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Required password characters</td>
+			<td>
+				This settings is pretty self-explanatory: it lets you force the client account passwords
+				to contain certain characters - uppercase, numbers and "special" chars. This can
+				significantly reduce the likelihood of hackers guessing the account passwords.
+			</td>
+		</tr>
+		<tr>
+			<td class="blue" valign="top">Prevent re-use of # last passwords</td>
+			<td>
+				Form Tools automatically logs passwords and password changes for client accounts. This
+				setting lets you tap into that and prevent the client from re-using an old password.
+				Preventing password re-use like this can again reduce the likelihood of successful
+				hacking attempts.
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+{% include close_section.html %}

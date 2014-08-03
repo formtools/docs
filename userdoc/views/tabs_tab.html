@@ -3,14 +3,51 @@ layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Views
-heading: Views
-prev: File Attachments
-prevLink: /userdoc/emails/swift_mailer
-next: View List
-nextLink: /userdoc/views/list
+subnavSectionLink: /userdoc/views
+heading: Tabs Tab
+prev: Fields Tab
+prevLink: /userdoc/views/fields_tab
+next: Filters Tab
+nextLink: /userdoc/views/filters_tab
 ---
 
-{% include open_section.html nav='nav_userdoc_views.html' selected='views' %}
+{% include open_section.html nav='nav_userdoc_views.html' selected='tabs_tab' %}
 
+	<h4>Tabs... err, tab</h4>
+
+	<p>
+		"Tabs tab"? Boy, who <i>wrote</i> this documentation? Sheesh.
+	</p>
+
+	<p>
+		A nice new addition to Form Tools 2 is the option to display your form submissions
+		in custom-defined tabs. This can significantly simplify the user interface for yourself
+		and your users, letting you organize your data into re. Generally this feature is
+		most useful for larger forms with a lot of data.
+	</p>
+
+	<p>
+		{% include screenshot.html item='i262.gif' %}
+		By default, all new (blank) Views are created with a single tab: "Data". This, however, is
+		easily customizable. Just edit your View and click on the "Tabs" tab. Here, enter whatever
+		tab labels you want. You can enter up to six.
+	</p>
+
+	<p>
+		Tip: you may have noticed the "Update" button on the Edit View page is <i>outside</i> of
+		the four tabs (Main, Fields, Tabs and Filters). Whenever you see this, it means that when
+		you click it, it updates the data for all tabs. If the button is INSIDE one of the tabs,
+		it updates that tab alone. So here, you can edit all of the View information then update
+		it with a single click. Don't feel like you have to update the tabset information before
+		going to the Fields tab to assign your fields to your tabs: the dropdowns on the fields
+		tab are updated automatically.
+	</p>
+
+	<p>
+		Next, click on the Fields tab and click on a dropdown at the top of a View group:
+		that will list whatever tabs you have entered. Select the appropriate
+		ones you need and click update. You're done! Try editing a submission with this particular
+		View and see how it looks.
+	</p>
 
 {% include close_section.html %}
