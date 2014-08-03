@@ -2,16 +2,52 @@
 layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
-subnavSection: Settings
-subnavSectionLink: /userdoc/themes
+subnavSection: Modules
+subnavSectionLink: /userdoc/modules
 heading: Installing Modules
-prev: 
-prevLink: /userdoc/themes/upgrading
-next: Installing Modules
-nextLink: /userdoc/modules/installing
+prev: Modules
+prevLink: /userdoc/modules
+next: Deleting Modules
+nextLink: /userdoc/modules/deleting
 ---
 
 {% include open_section.html nav='nav_userdoc_modules.html' selected='installing' %}
+
+	<p>
+		Installing a new module is very simple.
+	</p>
+	<ol>
+		<li>First, <a href="http://modules.formtools.org">browse the available modules</a> list on the
+			Form Tools site to locate the module you want.</li>
+		<li>Download the module to your desktop.
+			<ul>
+				<li>For zipfiles, unzip the file on your computer using whatever compressor/decompressor you have
+					installed. All modules are located in their own unique folder. Send the single folder to your
+					webserver via FTP; it should be placed in your <b>[form tools root]/modules</b> folder.</li>
+				<li>For tar.gz files, FTP the tar file to your <b>[form tools root]/modules</b>
+					folder on your webserver. SSH or telnet into your server and go to the modules folder.
+					There, run this command (replace name_of_tar_file_here with the name of your tar
+					file):
+
+					{% highlight html %}
+tar -xzvf name_of_tar_file_here.tar.gz
+					{% endhighlight %}
+
+				</li>
+			</ul>
+		</li>
+		<li>Next, log into Form Tools and go to the Modules page. Here, click the
+			"REFRESH MODULE LIST" button. And that's it! You should now see your new module.
+		</li>
+		<li>
+			{% include screenshot.html item='i244.jpg' %}
+			For free modules, just click the INSTALL button and the module will be instantly
+			installed. For premium modules, you will see a dialog window appear where you need to
+			enter your license key. Please note: <i>you must be connected to the internet in order
+			to install any premium module</i>. Installing premium modules requires confirmation of
+			your license key from the Form Tools site.
+		</li>
+	</ol>
 
 
 {% include close_section.html %}

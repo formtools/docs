@@ -2,78 +2,44 @@
 layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
-subnavSection: Settings
-subnavSectionLink: /userdoc/themes
-heading: Modules
-prev: "Themes: Upgrading"
-prevLink: /userdoc/themes/upgrading
-next: Installing Modules
-nextLink: /userdoc/modules/installing
+subnavSection: Modules
+subnavSectionLink: /userdoc/modules
+heading: Deleting Modules
+prev: Installing Modules
+prevLink: /userdoc/modules/installing
+next: Upgrading Modules
+nextLink: /userdoc/modules/upgrading
 ---
 
-{% include open_section.html nav='nav_userdoc_modules.html' selected='modules' %}
-
-	<h4>About Modules</h4>
+{% include open_section.html nav='nav_userdoc_modules.html' selected='deleting' %}
 
 	<p>
-		Form Tools was designed to be modular. The Form Tools Core includes all the
-		necessary functionality to create and manage your forms, but most of the really
-		<i>cool</i> stuff is found in the modules. All modules are entirely optional: you can
-		pick and choose what additional functionality you need. For convenience, the main
-		<a href="http://www.formtools.org/download.php" target="_blank">download files</a>
-		include the most commonly requested modules, but you can always go ahead and
-		uninstall them if you don't need them.
+		To remove a module, all you need to do is visit the Modules page in the Form Tools
+		administrator interface and click the appropriate "UNINSTALL" link. After you confirm this
+		action, Form Tools will completely remove the module from your system - including
+		deleting the folder structure.
 	</p>
-
 	<p>
-		The modules are all <a href="http://modules.formtools.org" target="_blank">listed here</a>.
-		Check 'em out! There's lots of great functionality available!
+		Note: the folder may or may not be deleted, depending on file permissions. If it cannot
+		remove all the files in the module folder, it will let you know that you'll need to
+		manually delete the folder. If you don't delete it yourself, next time you click the
+		"REFRESH MODULE LIST" button, the module will magically re-appear...
 	</p>
-
-	<h4>Premium vs. Free</h4>
-
-	<p>
-		This is a new development with Form Tools 2.1.0. In order continue expanding Form Tools, it
-		needed to start generating an income. Form Tools started as an evenings-and-weekends hobby
-		project, but it grew to much, much more. Rather than start charging for the Core script, we
-		decided to charge for optional modules. So you'll notice that some modules are premium,
-		others are not. We <i>really</i> appreciate your support on this: we're not out to make a
-		killing, just enough to pay the bills so we can continue devoting ourselves to the script!
-	</p>
-
-	<h4>The Modules page</h4>
-
-	{% include screenshot.html item='i245.jpg' %}
-
-	<p>
-		The modules page provides a quick overview of all the modules installed on your system,
-		their versions and the option to select or uninstall them. Since there are no limit to
-		the number of modules you can have installed, this page can get rather full! So to help
-		you locate the module you want, we've included two handy features:
-	</p>
-
-	<ul>
-		<li><b>Sort</b>. The module name and "enabled" columns are sortable - click them twice to
-			reverse sort by that column.</li>
-		<li><b>Search</b>. The search field at the top of the page searches all aspects of the
-			module and returns the subset found. As of 2.1.0, you can also search by Enabled / Disabled.</li>
-	</ul>
 
 	<h4>Tips</h4>
 
-	<ul>
-		<li>
-			By default, the modules page lists 10 modules per page. But if you feel this is too
-			many or too few, you can edit that value on the <a href="?page=main_settings">Settings
-			» Main</a> tab.
-		</li>
-		<li>
-			Often, you may find yourself using a module so often that having to it can get annoying
-			having to click through the Modules page just to get to the module. To get around this,
-			you might want to consider adding a direct link to the module in your menu navigation.
-			You can read about <a href="">customizing the menus here</a>.
-		</li>
-	</ul>
+	<p>
+		If you DON'T want it to remove the module folder, add the folliowing line to the
+		end of your config.php file (found in the /global folder):
+	</p>
+
+	{% highlight php %}
+$g_delete_module_folder_on_uninstallation = false;
+	{% endhighlight %}
+
+	<p>
+		That will tell the code to NEVER delete module folders when they are uninstalled.
+	</p>
 
 
 {% include close_section.html %}

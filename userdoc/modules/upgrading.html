@@ -2,78 +2,37 @@
 layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
-subnavSection: Settings
-subnavSectionLink: /userdoc/themes
-heading: Modules
-prev: "Themes: Upgrading"
-prevLink: /userdoc/themes/upgrading
-next: Installing Modules
-nextLink: /userdoc/modules/installing
+subnavSection: Modules
+subnavSectionLink: /userdoc/modules
+heading: Upgrading Modules
+prev: Deleting Modules
+prevLink: /userdoc/modules/deleting
+next: Translations / Language Packs
+nextLink: /userdoc/translations
 ---
 
-{% include open_section.html nav='nav_userdoc_modules.html' selected='modules' %}
+{% include open_section.html nav='nav_userdoc_modules.html' selected='upgrading' %}
 
-	<h4>About Modules</h4>
 
 	<p>
-		Form Tools was designed to be modular. The Form Tools Core includes all the
-		necessary functionality to create and manage your forms, but most of the really
-		<i>cool</i> stuff is found in the modules. All modules are entirely optional: you can
-		pick and choose what additional functionality you need. For convenience, the main
-		<a href="http://www.formtools.org/download.php" target="_blank">download files</a>
-		include the most commonly requested modules, but you can always go ahead and
-		uninstall them if you don't need them.
+		Upgrading modules is very simple. Themes, modules, the Form Tools API and the Form Tools
+		Core script are all upgraded in the same way. Log into Form Tools as an administrator and
+		go to your Settings » Main tab. There, click the "Check for Updates" button. That
+		submits all relevant information about your installation - including your module versions -
+		to the Form Tools site. The upgrade script then determines what components, if any, have
+		been updated and generates a custom zipfile containing whatever components you want to
+		upgrade.
 	</p>
 
 	<p>
-		The modules are all <a href="http://modules.formtools.org" target="_blank">listed here</a>.
-		Check 'em out! There's lots of great functionality available!
+		The generated zipfiles mock the folder structure of your Form Tools installation exactly,
+		and only contain the files needed for the upgrade. So, to upgrade the files, just upload the
+		entire root folder to your own server, overwriting the old files. Once this is completed,
+		log back into Form Tools and go to the Modules page. There, click the "REFRESH MODULE LIST"
+		button at the bottom of the page. For all the modules that were just updated, the rows
+		should be highlighted and you should see an "UPGRADE" link instead of "SELECT". Just click
+		each link to upgrade each module.
 	</p>
-
-	<h4>Premium vs. Free</h4>
-
-	<p>
-		This is a new development with Form Tools 2.1.0. In order continue expanding Form Tools, it
-		needed to start generating an income. Form Tools started as an evenings-and-weekends hobby
-		project, but it grew to much, much more. Rather than start charging for the Core script, we
-		decided to charge for optional modules. So you'll notice that some modules are premium,
-		others are not. We <i>really</i> appreciate your support on this: we're not out to make a
-		killing, just enough to pay the bills so we can continue devoting ourselves to the script!
-	</p>
-
-	<h4>The Modules page</h4>
-
-	{% include screenshot.html item='i245.jpg' %}
-
-	<p>
-		The modules page provides a quick overview of all the modules installed on your system,
-		their versions and the option to select or uninstall them. Since there are no limit to
-		the number of modules you can have installed, this page can get rather full! So to help
-		you locate the module you want, we've included two handy features:
-	</p>
-
-	<ul>
-		<li><b>Sort</b>. The module name and "enabled" columns are sortable - click them twice to
-			reverse sort by that column.</li>
-		<li><b>Search</b>. The search field at the top of the page searches all aspects of the
-			module and returns the subset found. As of 2.1.0, you can also search by Enabled / Disabled.</li>
-	</ul>
-
-	<h4>Tips</h4>
-
-	<ul>
-		<li>
-			By default, the modules page lists 10 modules per page. But if you feel this is too
-			many or too few, you can edit that value on the <a href="?page=main_settings">Settings
-			» Main</a> tab.
-		</li>
-		<li>
-			Often, you may find yourself using a module so often that having to it can get annoying
-			having to click through the Modules page just to get to the module. To get around this,
-			you might want to consider adding a direct link to the module in your menu navigation.
-			You can read about <a href="">customizing the menus here</a>.
-		</li>
-	</ul>
 
 
 {% include close_section.html %}
