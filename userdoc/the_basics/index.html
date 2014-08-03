@@ -4,87 +4,108 @@ navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: The Basics
 heading: The Basics
-next: Our Approach
-nextLink: /userdoc/the_basics/our_approach
+next: Form Tools Components
+nextLink: /userdoc/the_basics/components
 ---
 
 {% include open_section.html nav='nav_userdoc_basics.html' selected='the_basics' %}
 
+	<h3>About Form Tools</h3>
+
 	<p>
 		Form Tools is a <i>forms framework</i> written in PHP and MySQL. At its heart, it's
-		a web form <b>processor, storage and data access script, designed to work with any existing
-		web form</b>. The way it works is by creating custom database tables to store the unique
-		data and structure of your form. It then provides assorted functionality for your data
-		set: such as allowing you to view, update, cross-reference and export your submission
-		data, mass data export via excel, printer-friendly rendering of your submission
-		data, sorting and categorization, form submission editing and optional email of form
-		submissions.
+		a <strong>web form creator, processor, data storage and access script</strong>. It was originally
+		designed to work with any existing web form, but has since been expanded to create forms automatically
+		as well.
+	</p>
+
+	<p>
+		Form Tools is very versatile in how it integrates with your forms. You can use the Form Builder module
+		interface to create them automatically (no programming / HTML skills necessary), you can use the PHP API
+		to integrate your own custom form with the script, or you can simply POST your form to Form Tools, which can
+		be used a storage script independent of your form. Anything goes!
+	</p>
+
+	<p>
+		Form Tools works by creating custom database tables to store the unique data and structure of your form. It
+		then provides a range of functionality customized to your data set, such as allowing you to view, update,
+		cross-reference and export your submission data, sorting and categorization of the data, form submission
+		editing, emailing of form submissions and a lot more.
 	</p>
 	<p>
 		To our knowledge, there's no other script out there that was designed in the same way - or
-		any that provide anywhere near the degree of control that Form Tools affords you.
+		any that provide anywhere near the degree of control over your data that Form Tools affords you.
 	</p>
+
+	<h3>Feature Highlights</h3>
 
 	<p>
 		Here are some of the script's key features:
 	</p>
 
-	<table cellpadding="0" cellspacing="1" width="100%" class="info">
-		<tbody><tr>
-			<td width="120" class="bold" valign="top">Free!</td>
-			<td>
-				Yup! Form Tools is available under the <a href="http://docs.formtools.org/license.php">GNU Public License</a>,
-				free for anyone to download and modify. With 2.1.0, we're in the process of introducing
-				a number of premium modules - but all the core functionality and script is still free.
-			</td>
-		</tr>
-		<tr>
-			<td class="bold" valign="top">Re-usable</td>
-			<td>
-				A single installation can handle as many forms as you wish - even from different
-				websites. You can set up as many client accounts as you wish, enabling multiple
-				users to log in, view and manage their own data online. Form Tools 2 provides a
-				wide palette of permission settings to allow you to precisely customize who sees
-				what.
-			</td>
-		</tr>
-		<tr>
-			<td class="bold" valign="top">Generic</td>
-			<td>
-				Very little modification to the web forms is needed to allow Form Tools to store
-				their content. It works with virtually any web form!
-			</td>
-		</tr>
-		<tr>
-			<td class="bold" valign="top">Styles / UI</td>
-			<td>
-				The entire script is theme-based, using Smarty templates to generate the HTML.
-				If need be, you can customize the UI for each of your clients so that it looks
-				completely different for each user.
-			</td>
-		</tr>
-		<tr>
-			<td class="bold" valign="top">Brandable</td>
-			<td>
-				By simply designing a default image and changing a few default values in the
-				Setup Options, you may customize Form Tools as belonging to your own company.
-			</td>
-		</tr>
-		<tr>
-			<td class="bold" valign="top">Extensible</td>
-			<td>
-				Form Tools 2 is fully modular, and some additional
-				<a href="http://docs.formtools.org/module_development/">documentation</a> has been
-				written to help you extend the script in whatever way you need. In addition, one of
-				our main goals was to allow strong integration between our script and the outside
-				world. For example, it was designed to be used in conjunction with other software,
-				such as online credit card payment processing; the script is also designed to allow
-				data export in a variety of (customizable) formats, such as XML. And, of course,
-				since the code is downloadable for free under the <a href="http://docs.formtools.org/license.php">GNU
-				Public License</a>, you can always access and edit the code yourself!
-			</td>
-		</tr>
-		</tbody>
-	</table>
+	<div class="row">
+		<div class="col-lg-2">
+			<strong>Free!</strong>
+		</div>
+		<div class="col-lg-10">
+			Yup! Form Tools is available under the <a href="http://docs.formtools.org/license.php">GNU Public License</a>,
+			free for anyone to download and modify. With 2.1.0, we're in the process of introducing
+			a number of premium modules - but all the core functionality and script is still free.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-2">
+			<strong>Re-usable</strong>
+		</div>
+		<div class="col-lg-10">
+			A single installation can handle as many forms as you wish - even from different
+			websites. You can set up as many client accounts as you wish, enabling multiple
+			users to log in, view and manage their own data online. Form Tools 2 provides a
+			wide palette of permission settings to allow you to precisely customize who sees
+			what.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-2">
+			<strong>Generic</strong>
+		</div>
+		<div class="col-lg-10">
+			Very little modification to the web forms is needed to allow Form Tools to store
+			their content. It works with virtually any web form!
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-2">
+			<strong>Brandable</strong>
+		</div>
+		<div class="col-lg-10">
+			By simply designing a default image and changing a few default values in the
+			Setup Options, you may customize Form Tools as belonging to your own company.
+
+			The entire script is theme-based, using Smarty templates to generate the HTML.
+			If need be, you can customize the UI for each of your clients so that it looks
+			completely different for each user.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-2">
+			<strong>Extensible</strong>
+		</div>
+		<div class="col-lg-10">
+			Form Tools 2 is fully modular, and some additional
+			<a href="http://docs.formtools.org/module_development/">documentation</a> has been
+			written to help you extend the script in whatever way you need. In addition, one of
+			our main goals was to allow strong integration between our script and the outside
+			world. For example, it was designed to be used in conjunction with other software,
+			such as online credit card payment processing; the script is also designed to allow
+			data export in a variety of (customizable) formats, such as XML. And, of course,
+			since the code is downloadable for free under the <a href="http://docs.formtools.org/license.php">GNU
+			Public License</a>, you can always access and edit the code yourself!
+		</div>
+	</div>
 
 {% include close_section.html %}
