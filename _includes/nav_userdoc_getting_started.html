@@ -1,0 +1,16 @@
+<h4 {% if include.selected == 'getting_started' %}class="selected"{% endif %}><a href="{{site.baseurl}}/userdoc/getting_started/">Getting Started</a></h4>
+
+<ul>
+	<li {% if include.selected == 'components' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/getting_started/components">Form Tools Components</a>
+	</li>
+	<li {% if include.selected == 'config_file' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/getting_started/config_file">The config.php file</a>
+	</li>
+	<li {% if include.selected == 'install_upgrade' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/getting_started/install_upgrade">Installation and Upgrading</a>
+	</li>
+	<li {% if include.selected == 'system_requirements' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/userdoc/getting_started/system_requirements">System Requirements</a>
+	</li>
+</ul>

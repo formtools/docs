@@ -4,7 +4,7 @@ navSection: User Documentation
 navSectionLink: /userdoc
 subnavSection: Form Management
 subnavSectionLink: /userdoc/form_management
-heading: Internal vs. External Forms
+heading: Form Types
 prev: Form Management
 prevLink: /userdoc/form_management/
 next: Adding Internal Forms
@@ -15,23 +15,42 @@ nextLink: /userdoc/form_management/adding_internal_forms/
 
 	<p>
 		{% include screenshot.html item='i208.jpg' %}
-
-		There are two types of forms in Form Tools: <i>Internal</i> and <i>External</i>.
+		There are three types of forms in Form Tools: <b>Internal</b>, <b>External</b> and <b>Form Builder</b> forms.
 		When you click on the "Add Form" link in the menu, it will direct you to a page where you need to choose one of the
 		following types. Here's what each type means:
 	</p>
 
-	<ul>
-		<li><i>Internal forms</i> are created within Form Tools and are only found there - not
-			elsewhere on your site. Only Form Tools user accounts will have access to the form. You
-			create and configure the form directly through the interface.</li>
-		<li><i>External forms</i> are forms that already exist on your website, or somewhere on
-			the web. Up until Form Tools 2.1.0, all forms were external.</li>
-	</ul>
+	<p class="box clear">
+		<b>Internal forms</b> are created within Form Tools and are only available within the Form Tools interface -
+		i.e. there's no publicly available form and only Form Tools user accounts will have access to the form. You
+		create and configure the form directly through the interface.
+		<a href="{{site.baseurl}}/userdoc/form_management/adding_internal_forms" class="learnMore btn btn-primary btn-xs">Learn More</a>
+	</p>
+
+	<p class="box">
+		<b>External forms</b> are forms that you create manually yourself, and exist on your own website - or somewhere
+		on the web. External forms are completely separate from Form Tools: any changes you make to them (new fields, etc)
+		force you to update the Form Tools form configuration separately to ensure the data is kept in sync. The benefit
+		to External Forms is that it imposes no limitations on what your form looks like or functions, however it comes
+		with the downside that you always have to manually update the form configuration in Form Tools to reflect
+		the state of your form.
+		<a href="{{site.baseurl}}/userdoc/form_management/adding_external_forms" class="learnMore btn btn-primary btn-xs">Learn More</a>
+	</p>
+
+	<p class="box">
+		<b>Form Builder forms</b> are available if you have the <a href="http://modules.formtools.org/form_builder">Form
+		Builder module</a> installed. By default, that module is included in all downloads. Form Builder forms
+		are similar to Internal Forms in that they are created and managed entirely within the Form Tools interface. However,
+		the Form Builder module lets you actually publish your form right on your website for the public to use.
+		<a href="http://modules.formtools.org/form_builder/?page=publishing_first_form" class="learnMore btn btn-primary btn-xs">Learn More</a>
+	</p>
 
 	<p>
-		Note: you can change a form from External to Internal and back again. Choosing a
-		particular form type doesn’t box you in down the road.
+		<b>Note</b>: if you're just getting started, don't worry about picking the wrong one! Form Tools is very
+		flexible: you can always change the form type down the road. And not just that. If you need your form to be fed
+		data from multiple sources, you can do that too. So if you wanted, you could have a Form Builder form
+		published on your site, but also have dozens of other forms - all containing different fields and styles, feeding
+		the same form in Form Tools. I'm really not kidding when I say Form Tools is flexible.
 	</p>
 
 {% include close_section.html %}

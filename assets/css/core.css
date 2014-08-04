@@ -2,9 +2,6 @@
  * This file should contain the core CSS, used across all subdomains. Any domain-specific content should be in a separate
  * CSS file and bundled separately.
  */
-
-
-
 .box {
 	padding-top: 25px;
 	padding-bottom: 15px;
@@ -1268,4 +1265,8 @@ input[type="color"]:focus,
 		width: auto;
 		margin: 0 0 15px; }
 
+}
+
+.marginBottom {
+	margin-bottom: 10px;
 }

@@ -1,0 +1,64 @@
+---
+layout: default
+navSection: Upgrading
+navSectionLink: /upgrading
+subnavSection: Upgrading to 2.0.3 or later
+heading: Upgrading to 2.0.3 or later
+next: "Upgrading to 2.1.0 or later"
+nextLink: /upgrading/2_1_0
+---
+
+{% include open_section.html nav='nav_upgrading.html' selected='2_0_3' %}
+
+	<div class="alert alert-warning">
+		<p>
+			<strong>If you upgrade you Form Tools installation from an older version than 2.0.3 to any later
+			version, you need to follow the instructions on this page.</strong>
+		</p>
+	</div>
+
+	<p>
+		With version 2.0.3 (beta 20100908) there was a minor change made to the structure of the
+		files: the Themes page was moved out of Settings and into the root, alongside the Modules
+		page. After upgrading normally, you'll need to make one small change the administrator's
+		menu to place the Themes page at the right spot. Here's how to do it.
+	</p>
+
+	<table cellspacing="1" cellpadding="0" class="info">
+		<tbody><tr>
+			<th width="50">Step</th>
+			<th>Instructions</th>
+			<th>Screenshot</th>
+		</tr>
+		<tr>
+			<td align="center" valign="top"><b>1</b></td>
+			<td valign="top">
+				After upgrading, log into Form Tools and go to the Settings » Menu page. There,
+				edit the administrator's menu. Assuming you haven't customized it, you should see a page
+				something like the screenshot to the right. Note that the "Themes" tab is no longer
+				there, but the navigation menu on the left still lists it under Settings. That's what
+				we're going to fix!
+			</td>
+			<td>{% include screenshot.html item='i165.gif' %}</td>
+		</tr>
+		<tr>
+			<td align="center" valign="top"><b>2</b></td>
+			<td valign="top">
+				Enter in the values shown in the screenshot: move the Themes page after Modules (by
+				entering 5.5 to sandwich it between position 5 and 6); uncheck the "submenu" checkbox
+				and click update.
+			</td>
+			<td>{% include screenshot.html item='i166.gif' %}</td>
+		</tr>
+		<tr>
+			<td align="center" valign="top"><b>3</b></td>
+			<td valign="top">
+				And you're done! You should see the Themes page appear in the left navigation menu in
+				its new position: like in the screenshot.
+			</td>
+			<td>{% include screenshot.html item='i167.gif' %}</td>
+		</tr>
+		</tbody></table>
+
+
+{% include close_section.html %}

@@ -2,24 +2,24 @@
 layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
-subnavSection: The Basics
-subnavSectionLink: /userdoc/the_basics
+subnavSection: Getting Started
+subnavSectionLink: /userdoc/getting_started
 heading: The config.php file
 prev: Form Tools Components
-prevLink: /userdoc/the_basics/components
+prevLink: /userdoc/getting_started/components
 next: Installation and Upgrading
-nextLink: /userdoc/the_basics/install_upgrade
+nextLink: /userdoc/getting_started/install_upgrade
 ---
 
-{% include open_section.html nav='nav_userdoc_basics.html' selected='config_file' %}
+{% include open_section.html nav='nav_userdoc_getting_started.html' selected='config_file' %}
 
 	<h4>The config.php file</h4>
 
 	<p>
 		The config.php file, found in your /global folder contains special settings for
-		to your particular installation: database connection values, the root folder and URLs
-		and other information. This file is unique to your installation and it's <b>the only
-		file in the script that you will need to define settings or edit</b>.
+		to your own Form Tools installation: database connection values, the root folder and URLs
+		and other information. This file is unique to your installation and <b>it's the only
+		file in the script that you need to edit</b>.
 	</p>
 
 	<p>
@@ -41,250 +41,317 @@ nextLink: /userdoc/the_basics/install_upgrade
 		contains variables defining these values - but <i>DO NOT EDIT THEM THERE!</i> The
 		library.php file contains the <b>default</b> values for all application-wide settings;
 		the config.php just overrides the ones that are necessary. This keeps everything nice
-		and tidy. :)
+		and tidy and simplifies upgrading.
 	</p>
 
 
 	<h4>Required Settings</h4>
 
-	<table class="info" cellpadding="2">
-	<tbody><tr>
-		<td class="blue" valign="top" width="140">$g_root_url</td>
-		<td>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>$g_root_url</strong>
+		</div>
+		<div class="col-lg-9">
 			This is the base URL of the Form Tools installation on your server. e.g.
 			<b>http://www.yoursite.com/formtools</b>. You can either supply an absolute or
 			relative URL. Note: if you include the full URL, make sure that the "www." part
 			is either included or removed consistently; if you try to log in at
 			<b>http://www.yoursite.com/admin</b> but your $root_url is set to
 			<b>http://yoursite.com/admin</b> it will not work! (and vice versa).
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_root_dir</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>$g_root_dir</strong>
+		</div>
+		<div class="col-lg-9">
 			The server directory path to your Form Tools folder.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_db_hostname</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>$g_db_hostname</strong>
+		</div>
+		<div class="col-lg-9">
 			The database hostname (often just 'localhost').
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_db_name</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>$g_db_name</strong>
+		</div>
+		<div class="col-lg-9">
 			The name of the database. Most often, hosting providers provide you with some sort of
 			user interface for creating databases and assigning user accounts to them. If you are
 			creating a new database for Form Tools, I would recommend "form_tools" for clarity.
 			Enter the database name here.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_db_username</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>$g_db_username</strong>
+		</div>
+		<div class="col-lg-9">
 			The MySQL username. Note: this user account must have privileges for creating new
 			tables, in addition to adding and removing records.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_db_password</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>$g_db_password</strong>
+		</div>
+		<div class="col-lg-9">
 			The MySQL password.
-		</td>
-	</tr>
-	</tbody></table>
+		</div>
+	</div>
 
-<br>
-<h4>Optional Settings</h4>
+	<br />
 
-<table class="info" cellpadding="2">
-	<tbody><tr>
-		<td class="blue" valign="top" width="140">$g_db_ssl</td>
-		<td>
+	<h4>Optional Settings</h4>
+
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_db_ssl</strong>
+		</div>
+		<div class="col-lg-8">
 			This should be set to <b>true</b> if you want to make a secure connection to the
 			database server.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_table_prefix</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_table_prefix</strong>
+		</div>
+		<div class="col-lg-8">
 			This value lets you define a custom database prefix for your Form Tools tables. This is
 			handy if Form Tools will be added to an existing database and you want to avoid table
 			naming conflicts. By default it it set to <b>ft_</b>. If you do not need to use a
 			different value, you needn't define it in your config.php file: it is already defaulted
 			to ft_ in your library.php file.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_max_nav_pages</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_max_nav_pages</strong>
+		</div>
+		<div class="col-lg-8">
 			This controls the maximum number of pagination links that appear in the Form Tools UI
 			(e.g. for viewing the submission listings page).
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_unicode</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_unicode</strong>
+		</div>
+		<div class="col-lg-8">
 			This offers support for unicode. All form submissions will be sent as UTF-8. This
 			is enabled for all new installations.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_check_ft_sessions</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_check_ft_sessions</strong>
+		</div>
+		<div class="col-lg-8">
 			This setting should be enabled prior to including this file in any external script
 			that doesn't require the person to be logged into Form Tools. The API, for example,
 			automatically sets this to false. This lets you leverage the Form Tools functionality
 			in the outside world without already being logged into Form Tools.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_default_error_reporting</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_default_error_reporting</strong>
+		</div>
+		<div class="col-lg-8">
 			For release candidates and main releases, this is set to 1 by default, meaning
 			that only genuine PHP errors are displayed. For Beta releases, this is set to
 			2047 - all errors and warning are displayed, which can help with debugging.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_debug</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_debug</strong>
+		</div>
+		<div class="col-lg-8">
 			This feature currently only has limited support in the code, but will be implemented more fully
 			at a later stage. When set to true it provides detailed, technical reasons for errors
 			that occur.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_smarty_debug</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_smarty_debug</strong>
+		</div>
+		<div class="col-lg-8">
 			When enabled, this option pops open a Smarty console for each webpage, displaying the
 			contents of variables available on the page.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_smarty_use_sub_dirs</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_smarty_use_sub_dirs</strong>
+		</div>
+		<div class="col-lg-8">
 			This tells Smarty to create the compiled templates in subdirectories, which is
 			slightly more efficient. It's not compatible on some systems, so it's set to false
 			by default.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_query_str_multi_val_separator</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_query_str_multi_val_separator</strong>
+		</div>
+		<div class="col-lg-8">
 			This determines the value used to separate the content of array form submissions (e.g. checkboxes
 			in your form that have the same name, or multi-select dropdowns) when submitted via a query string
 			for "direct" form submissions (added in version 1.4.2).
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_delete_module_folder_on_uninstallation</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-5">
+			<strong>$g_delete_module_folder_on_uninstallation</strong>
+		</div>
+		<div class="col-lg-7">
 			For module developers. This prevents the code from automatically deleting your
 			module folder when you're testing your uninstallation function. Defaults to TRUE, but
 			doesn't work on all systems: sometimes the PHP doesn't have the permission to remove
 			the folder.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_session_type</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_session_type</strong>
+		</div>
+		<div class="col-lg-8">
 			This setting lets you control the type of sessions the application uses. The default
 			value is "php", but you can change it to "database" if you'd rather use database sessions.
 			This affects all Form Tools accounts and determines the session type for forms that are
 			integrated with the API.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_session_save_path</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_session_save_path</strong>
+		</div>
+		<div class="col-lg-8">
 			This setting was added in <b>2.0.0-beta-20090614</b>. It lets you define the location
 			where temporary PHP sessions files should be created. Generally you won't need to define
 			this value, but some hosting providers (e.g. iPowerWeb) require that you do so in order
 			to use sessions.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_api_debug</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_api_debug</strong>
+		</div>
+		<div class="col-lg-8">
 			This enables debugging for the API functions. Generally this just causes the database
 			errors and other messages to be outputted along with the problem error code. Enabled by
 			default.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_api_recaptcha_public_key</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_api_recaptcha_public_key</strong>
+		</div>
+		<div class="col-lg-8">
 			Used in the <a href="http://docs.formtools.org/api/?page=ft_api_display_captcha">ft_api_display_captcha</a> function when displaying a CAPTCHA in
 			your form. Please see that function for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_api_recaptcha_private_key</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_api_recaptcha_private_key</strong>
+		</div>
+		<div class="col-lg-8">
 			Used in the <a href="http://docs.formtools.org/api/?page=ft_api_display_captcha">ft_api_display_captcha</a> function when displaying a CAPTCHA in
 			your form. Please see that function for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_api_header_charset</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_api_header_charset</strong>
+		</div>
+		<div class="col-lg-8">
 			This setting determines the header charset sent by the <b>ft_api_init_form_page</b>
 			API function. Defaults to "utf-8".
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_api_sessions_timeout</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_api_sessions_timeout</strong>
+		</div>
+		<div class="col-lg-8">
 			Determines how long sessions last for the API. This value defaults to 1 hour
 			(3600 seconds).
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_filename_char_whitelist</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_filename_char_whitelist</strong>
+		</div>
+		<div class="col-lg-8">
 			Permissible characters in a filename of files uploaded to Form Tools. All other
 			characters are stripped out.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_password_special_chars</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_password_special_chars</strong>
+		</div>
+		<div class="col-lg-8">
 			Special chars, required in password (optional setting through interface).
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_password_history_size</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_password_special_chars</strong>
+		</div>
+		<div class="col-lg-8">
+			Special chars, required in password (optional setting through interface).
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_password_history_size</strong>
+		</div>
+		<div class="col-lg-8">
 			The size of the password_history setting in the settings table. Form Tools keeps track
 			of the last 10 passwords, to (optionally) prevent users from re-using a password that
 			they used before.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_search_form_date_field_format</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_search_form_date_field_format</strong>
+		</div>
+		<div class="col-lg-8">
 			In Form Tools 2.1.0, when you search on a date field on the main Submission Listing page,
 			you will see a javascript dialog window to let you search by range, before a date, etc.
 			This setting controls the format of that date. This is deliberately simple: you have
 			only two options: <b>d/m/y</b> and <b>m/d/y</b>.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_max_ft_forms</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_max_ft_forms</strong>
+		</div>
+		<div class="col-lg-8">
 			Added in 2.2.3, this setting limits the Form Tools installation to only manage the
 			number of forms specified here. This feature is disabled by default.
-		</td>
-	</tr>
-	<tr>
-		<td class="blue" valign="top">$g_max_ft_form_fields</td>
-		<td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<strong>$g_max_ft_form_fields</strong>
+		</div>
+		<div class="col-lg-8">
 			Added in 2.2.3, this limits all Form Tools forms to a certain number of fields. This
 			feature is disabled by default.
-		</td>
-	</tr>
-	</tbody></table>
+		</div>
+	</div>
+
 
 {% include close_section.html %}

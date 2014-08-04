@@ -1,0 +1,44 @@
+---
+layout: default
+navSection: Upgrading
+navSectionLink: /upgrading
+subnavSection: Problems Upgrading?
+heading: Problems Upgrading?
+prev: "Upgrading to 2.1.0 or later"
+prevLink: /upgrading/2_1_0
+---
+
+{% include open_section.html nav='nav_upgrading.html' selected='problems' %}
+
+	<p>
+		For 2.1.3 and later, if there are ever any problems upgrading the database, all changes
+		that it just attempted to do are rolled back and a message is displayed with a
+		little information about what failed.
+	</p>
+
+	<p>
+		First and foremost: <b>report this problem in the forums!</b> It should not have
+		occurred, and either points to a problem with your database, or a problem with the upgrade
+		script itself. Please quote the entire error message, and mention which version you were
+		upgrading from.
+	</p>
+
+	<p>
+		In the even of the upgrade failing, your Form Tools database and files are
+		then incompatible. Upgrading involves updating some of the files on your server,
+		as well as the database upgrade. If the database upgrade fails, that means that there are new
+		files trying to read the new database, even though it wasn't updated. You have two options:
+	</p>
+
+	<ul>
+		<li>Wait to hear a response in the forums concerning the problem,</li>
+		<li>Revert your Form Tools files back to the previous version.</li>
+	</ul>
+
+	<p>
+		But please know that in the current state (new files + old database), Form Tools may not
+		be able to function normally.
+	</p>
+
+
+{% include close_section.html %}

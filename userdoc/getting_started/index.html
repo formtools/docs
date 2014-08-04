@@ -2,13 +2,18 @@
 layout: default
 navSection: User Documentation
 navSectionLink: /userdoc
-subnavSection: The Basics
-heading: The Basics
+subnavSection: Getting Started
+heading: Getting Started
 next: Form Tools Components
-nextLink: /userdoc/the_basics/components
+nextLink: /userdoc/getting_started/components
 ---
 
-{% include open_section.html nav='nav_userdoc_basics.html' selected='the_basics' %}
+{% include open_section.html nav='nav_userdoc_getting_started.html' selected='getting_started' %}
+
+	<p>
+		If you're new to Form Tools, this is where you should start! It contains a general introduction to the script
+		plus some practical information about how it all works.
+	</p>
 
 	<h3>About Form Tools</h3>
 
@@ -20,18 +25,20 @@ nextLink: /userdoc/the_basics/components
 	</p>
 
 	<p>
-		Form Tools is very versatile in how it integrates with your forms. You can use the Form Builder module
+		Form Tools is extremely versatile in how it integrates with your forms. You can use the Form Builder module
 		interface to create them automatically (no programming / HTML skills necessary), you can use the PHP API
 		to integrate your own custom form with the script, or you can simply POST your form to Form Tools, which can
-		be used a storage script independent of your form. Anything goes!
+		be used a data storage script independent of your form. Really anything goes! You can read about the
+		different integration methods <a href="{{site.baseurl}}/userdoc/form_management/form_types/">here</a>.
 	</p>
 
 	<p>
-		Form Tools works by creating custom database tables to store the unique data and structure of your form. It
-		then provides a range of functionality customized to your data set, such as allowing you to view, update,
-		cross-reference and export your submission data, sorting and categorization of the data, form submission
-		editing, emailing of form submissions and a lot more.
+		Form Tools works by creating custom database tables to store your unique form data. It provides a range of
+		functionality customized to your data set, such as allowing you to view, update, cross-reference and export
+		your submission data, create subsets of your data for viewing/editing by "client" accounts, data visualizations,
+		and much more.
 	</p>
+
 	<p>
 		To our knowledge, there's no other script out there that was designed in the same way - or
 		any that provide anywhere near the degree of control over your data that Form Tools affords you.
