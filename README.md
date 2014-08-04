@@ -1,4 +1,4 @@
-## docs
+## Form Tools Documentation
 
 WORK IN PROGRESS!
 
@@ -11,12 +11,12 @@ make it super easy for people to contribute and fix documentation - not like now
 ### View documentation online
 
 The documentation will eventually end up on docs.formtools.org, but right now you can find it on github page:
-(http://formtools.github.io/docs)[http://formtools.github.io/docs]
+http://formtools.github.io/docs
 
 
 ### How to build locally
 
-Instructions coming soon... just want to iron a few more wrinkles out first.
+Instructions coming soon... just want to get a little more of the doc done and iron out a few more wrinkles first.
 
 <!--
 jekyll serve --watch --baseurl ''
