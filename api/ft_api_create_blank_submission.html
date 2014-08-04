@@ -2,15 +2,52 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: Form Integration
+subnavSectionLink: api/form_integration
+heading: ft_api_create_blank_submission
+prev: ft_api_display_image_field
+prevLink: api/ft_api_display_image_field/
+next: Submissions
+nextLink: api/submissions/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_create_blank_submission' nav_width=5 %}
+
+	<p>
+		This function creates a blank submission for any of your forms already configured in Form Tools and returns
+		the unique submission ID. It's called like so:
+	</p>
+
+	{% highlight php %}
+<?php
+$submission_id = ft_api_create_blank_submission($form_id);
+?>
+	{% endhighlight %}
+
+	<p>
+		By default, the submission is NOT finalized - so it won't appear in the Form Tools UI. To make the submission finalized by default, pass a second parameter set to true.
+	</p>
+
+	{% highlight php %}
+<?php
+$submission_id = ft_api_create_blank_submission($form_id, true);
+?>
+	{% endhighlight %}
+
+	<p>
+		Lastly, if you need your new submission to contain default values, you can include a <b>third</b> parameter. This is a hash (associative array) of [database column name] =&gt; [value]. Note: you cannot set the default values for any of the system fields (submission ID, submission data, last modified date and IP address and is_finalized). To find the database column names, go to your Edit Form -&gt; Database tab.
+	</p>
+
+	{% highlight php %}
+<?php
+$default_values = array(
+	"col_1" => "Bob",
+	"col_2" => "Jenkins",
+	"col_3" => "bob@jenkins.net"
+);
+$submission_id = ft_api_create_blank_submission($form_id, true, $default_values);
+?>
+	{% endhighlight %}
 
 
 {% include close_section.html %}

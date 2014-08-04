@@ -1,6 +1,6 @@
 ## Form Tools Documentation
 
-WORK IN PROGRESS!
+### Overview
 
 This section contains the Form Tools documentation for the new Form Tools site, to be found at docs.formtools.org. With
 the new site (to be released later in 2014), all documentation is editable via github.
@@ -8,21 +8,25 @@ the new site (to be released later in 2014), all documentation is editable via g
 I'll expand on all this later, but it's now going to use Jekyll to handle generating the actual documentation. This should
 make it super easy for people to contribute and fix documentation - not like now, where the doc is in a closed MySQL DB.
 
-### View documentation online
-
-The documentation will eventually end up on docs.formtools.org, but right now you can find it on github page:
+The documentation will eventually end up on docs.formtools.org, but right now you can find it on github pages, here:
 http://formtools.github.io/docs
 
 
+## Contributing
+
+Fixes to the documentation and contributions are always welcome! You can contribute in two ways:
+1. Browse the documentation online and click the "EDIT PAGE" button when you find an error, or something you'd like to
+improve on. That will take you to github.com where you can edit the page right through your web browser.
+2. Clone the repository and build it locally. There, make your changes and submit a *pull request*.
+
+I will manually review all contributions.
+
 ### How to build locally
 
-Instructions coming soon... just want to get a little more of the doc done and iron out a few more wrinkles first.
+Instructions coming soon... first I want to get a little more of the doc done and iron out a few more wrinkles.
 
 <!--
 jekyll serve --watch --baseurl ''
-
-chmod 755 update_gh_pages.sh
-./update_gh_pages.sh
 -->
 
 

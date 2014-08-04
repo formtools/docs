@@ -2,15 +2,22 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: Submissions
+heading: Submissions
+prev: ft_api_create_blank_submission
+prevLink: api/ft_api_create_blank_submission/
+next: ft_api_show_submissions
+nextLink: api/ft_api_show_submissions/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='submissions' nav_width=5 %}
 
+	<p>
+		The API comes with a few functions that enable you to display and access Form Tools data in your pages.
+		All of them were designed to work as simply as possible, so hopefully you won't have trouble integrating
+		them into your site.
+	</p>
+
+	{% include section_api_displaying_submissions.html %}
 
 {% include close_section.html %}
