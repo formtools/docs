@@ -1,8 +1,8 @@
 ---
 layout: default
 navSection: API
-navSectionLink: /api
-subnavSection: API
+navSectionLink: api
+subnavSection: Form Integration
 heading: Form Integration
 prev: Function Reference
 prevLink: /api/function_reference
@@ -10,7 +10,13 @@ next: ft_api_init_form_page
 nextLink: /api/ft_api_init_form_page
 ---
 
-{% include open_section.html nav='nav_api.html' selected='ft_api_init_form_page' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='form_integration' nav_width=5 %}
 
+	<p>
+		The following functions were written to simplify your job of integrating your forms with Form Tools. Click
+		on any of the following links for more information.
+	</p>
+
+	{% include section_api_form_integration.html %}
 
 {% include close_section.html %}

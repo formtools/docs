@@ -1,18 +1,17 @@
 ---
 layout: default
 navSection: User Documentation
-navSectionLink: /userdoc
+navSectionLink: userdoc/
 subnavSection: Field Types
-subnavSectionLink: /userdoc/field_types
+subnavSectionLink: userdoc/field_types/
 heading: The Edit Field dialog
 prev: How field types are used
-prevLink: /userdoc/field_types/how_field_types_are_used
+prevLink: userdoc/field_types/how_field_types_are_used/
 next: Predefined field types
-nextLink: /userdoc/field_types/predefined_field_types
+nextLink: userdoc/field_types/predefined_field_types/
 ---
 
 {% include open_section.html nav='nav_userdoc_field_types.html' selected='edit_field_dialog' %}
-
 
 	<p>
 		{% include screenshot.html item="i191.jpg" %}
@@ -40,9 +39,9 @@ nextLink: /userdoc/field_types/predefined_field_types
 		<li><b>Form Field</b>: the form field's name attribute from your form.</li>
 		<li><b>Field Type</b>: the field type!</li>
 		<li><b>Pass On</b>: this setting is only relevant for External forms that POST their data
-			directly to process.php for (see the <a href="/userdoc/form_management/adding_external_forms">Add Form documentation</a>
-			for more info on that). It determines whether or not the data from the field should be passed on to the "thankyou"
-			page via the query string, after the submission is processed.</li>
+			directly to process.php for (see the <a href="{{site.baseurl}}/userdoc/form_management/adding_external_forms">Add
+			Form documentation</a> for more info on that). It determines whether or not the data from the field should
+			be passed on to the "thankyou" page via the query string, after the submission is processed.</li>
 		<li><b>Field Size</b>: this lets you control how much space should be allocated in the database
 			for the field. If you ever find that values aren't being stored properly for your field -
 			this setting is the first place to check!</li>

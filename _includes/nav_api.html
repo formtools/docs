@@ -13,14 +13,29 @@
 		</div>
 
 		<ul>
-			<li><a href="?page=form_integration">Form Integration</a>
+			<li>
+				<div {% if include.selected == 'form_integration' %}class="selected"{% endif %}>
+					<a href="{{site.baseurl}}/api/form_integration">Form Integration</a>
+				</div>
+
 				<ul>
-					<li><a href="?page=ft_api_init_form_page">ft_api_init_form_page</a></li>
-					<li><a href="?page=ft_api_process_form">ft_api_process_form</a></li>
-					<li><a href="?page=ft_api_clear_form_sessions">ft_api_clear_form_sessions</a></li>
-					<li><a href="?page=ft_api_display_image_field">ft_api_display_image_field</a></li>
-					<li><a href="?page=ft_api_create_blank_submission">ft_api_create_blank_submission</a></li>
+					<li {% if include.selected == 'ft_api_init_form_page' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page</a>
+					</li>
+					<li {% if include.selected == 'ft_api_process_form' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/ft_api_process_form">ft_api_process_form</a>
+					</li>
+					<li {% if include.selected == 'ft_api_clear_form_sessions' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/ft_api_clear_form_sessions">ft_api_clear_form_sessions</a>
+					</li>
+					<li {% if include.selected == 'ft_api_display_image_field' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/ft_api_display_image_field">ft_api_display_image_field</a>
+					</li>
+					<li {% if include.selected == 'ft_api_create_blank_submission' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/ft_api_create_blank_submission">ft_api_create_blank_submission</a>
+					</li>
 				</ul>
+
 			</li>
 			<li><a href="?page=functions_displaying_submissions">Submissions</a>
 				<ul>

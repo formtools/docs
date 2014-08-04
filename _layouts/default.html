@@ -9,17 +9,17 @@
 		<div class="wrap">
 
 			<nav id="mainDocNav">
-				<a href="{{site.baseurl}}">Documentation</a>
+				<a href="{{site.baseurl}}/">Documentation</a>
 
 				{% if page.navSection %}
 					&raquo;
 
 					{% if page.navSectionLink %}
-						<a href="{{site.baseurl}}{{page.navSectionLink}}">{{page.navSection}}</a>
+						<a href="{{site.baseurl}}/{{page.navSectionLink}}">{{page.navSection}}</a>
 						&raquo;
 
 						{% if page.subnavSectionLink %}
-							<a href="{{site.baseurl}}{{page.subnavSectionLink}}">{{page.subnavSection}}</a>
+							<a href="{{site.baseurl}}/{{page.subnavSectionLink}}">{{page.subnavSection}}</a>
 							&raquo;
 							{{page.heading}}
 						{% else %}
@@ -34,8 +34,7 @@
 			</nav>
 
 			<header>
-				<h1>{{ page.heading }}</h1>
-
+				<h1>{{page.heading}}</h1>
 				{% include prev_next_nav.html %}
 			</header>
 
