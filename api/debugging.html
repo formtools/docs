@@ -3,14 +3,57 @@ layout: default
 navSection: API
 navSectionLink: /api
 subnavSection: API
-heading: Download
-prev: About the API
-prevLink: /api/
-next: Finalized Submissions
-nextLink: /upgrading/finalized
+heading: Debugging Mode
+prev: Finalized Submissions
+prevLink: /api/finalized
+next: Function Reference
+nextLink: /api/function_reference
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='debugging' nav_width=5 %}
+
+	<p>
+		The API has a single $g_api_debug variable used to toggle debugging mode on and off for
+		all the API functions. By default, debugging is <b>enabled</b>.
+	</p>
+
+	<p>
+		When you're in debugging mode, any time an error occurs it halts your code and displays
+		the error in the webpage. The errors consistent of the error type ("user" or "system")
+		and the unique error code. The error code is a link to the online help documentation
+		which describes the nature of the error - and maybe a tip or two to solve it. Error
+		types indicate the severity of the error. "user" errors indicate that the function has
+		been fed an incorrect value or two; "system" errors mean that some worse has happened:
+		either a file is missing or there's a bug on our end!
+	</p>
+
+	<p>
+		Generally, you should find that errors only occur when you're in the midst of development,
+		so you can leave it perpetually in debugging mode. However, if you want to be extra careful,
+		you can you can deactivate debugging in two ways. One, by adding the following line in
+		every file where you include the API library file:
+	</p>
+
+	{% highlight php %}
+<?php
+require_once("/path/to/global/api/api.php");
+$g_api_debug = false;
+?>
+	{% endhighlight %}
+
+	<p>
+		Or, you can just add the following line to your /global/config.php file:
+	</p>
+
+{% highlight php %}
+$g_api_debug = true;
+{% endhighlight %}
+
+	<p>
+		Once this is done, the API functions will no longer display the error messages; instead,
+		they will return them programmatically which you can handle in whatever way you see fit.
+		See each function for more information on the return values.
+	</p>
 
 
 {% include close_section.html %}

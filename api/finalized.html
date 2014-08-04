@@ -2,15 +2,32 @@
 layout: default
 navSection: API
 navSectionLink: /api
-subnavSection: API
-heading: Download
+subnavSection: Finalized Submissions
+heading: Finalized Submissions
 prev: About the API
 prevLink: /api/
-next: Finalized Submissions
-nextLink: /upgrading/finalized
+next: Debugging
+nextLink: /api/debugging
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='finalized' nav_width=5 %}
 
+	<p>
+		When working with the API, there's one concept you should know about: <i>finalization</i>.
+		With the simple POST form submissions, submissions are immediately visible in the Form Tools
+		interface after the submissions is made. But with the API, it's a little more complicated.
+		You would want, for instance, incomplete submissions to appear in the Form Tools interface
+		before the user has completed all steps of the form. Similarly, what about people that
+		&nbsp;started filling in a form but never completed it? In those cases, you wouldn't want to see.
+	</p>
+
+	<p>
+		To get around this problem, when using the API, you need to explicitly finalize the
+		submissions. This is generally done on the final step of your form - or on the first, if you
+		have a one page form. You'll read more about finalization in the
+		<a href="{{site.baseurl}}/api/ft_api_process_form">ft_api_process_form()</a> function and
+		<a href="{{site.baseurl}}/api/ft_api_delete_unfinalized_submissions">ft_api_delete_unfinalized_submissions()</a>
+		functions. For now, it's enough that you understand the idea!
+	</p>
 
 {% include close_section.html %}

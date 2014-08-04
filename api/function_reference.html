@@ -3,14 +3,29 @@ layout: default
 navSection: API
 navSectionLink: /api
 subnavSection: API
-heading: Download
-prev: About the API
-prevLink: /api/
-next: Finalized Submissions
-nextLink: /upgrading/finalized
+heading: Function Reference
+prev: Debugging Mode
+prevLink: /api/debugging
+next: Form Integration
+nextLink: /api/form_integration
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='function_reference' nav_width=5 %}
+
+	<p>
+		This page lists all function available in the API.
+	</p>
+
+	{% include section_api_form_integration.html %}
+	<br />
+
+	{% include section_api_displaying_submissions.html %}
+	<br />
+
+	{% include section_api_user_accounts.html %}
+	<br />
+
+	{% include section_api_other.html %}
 
 
 {% include close_section.html %}
