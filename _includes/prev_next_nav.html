@@ -2,13 +2,13 @@
 	<div class="col-lg-6 text-left">
 
 		{% if page.prev %}
-			<a href="{{page.prevLink}}">&laquo; {{page.prev}}</a>
+			<a href="{{site.baseurl}}{{page.prevLink}}">&laquo; {{page.prev}}</a>
 		{% endif %}
 
 	</div>
 	<div class="col-lg-6 text-right">
 		{% if page.next %}
-			<a href="{{page.nextLink}}">{{page.next}} &raquo;</a>
+			<a href="{{site.baseurl}}{{page.nextLink}}">{{page.next}} &raquo;</a>
 		{% endif %}
 	</div>
 </div>

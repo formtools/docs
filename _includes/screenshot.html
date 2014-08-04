@@ -11,8 +11,8 @@
 			{% else %}
 				style="float:right"
 			{% endif %}>
-			<a href="/assets/screenshots/{{screenshot.filename}}" rel="lightbox[page]" class="fancybox" title="{{screenshot.caption}}">
-				<img src="/assets/screenshots/{{screenshot.thumb_filename}}" alt="{{screenshot.caption}}" title="{{screenshot.caption}}"
+			<a href="{{site.baseurl}}/assets/screenshots/{{screenshot.filename}}" rel="lightbox[page]" class="fancybox" title="{{screenshot.caption}}">
+				<img src="{{site.baseurl}}/assets/screenshots/{{screenshot.thumb_filename}}" alt="{{screenshot.caption}}" title="{{screenshot.caption}}"
 					 border="0"></a>
 			<br />
 			{{screenshot.caption}}
