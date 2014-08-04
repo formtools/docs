@@ -1,0 +1,56 @@
+---
+layout: default
+navSection: API
+heading: API
+next: Download
+nextLink: /api/download
+---
+
+{% include open_section.html nav='nav_api.html' selected='upgrading' nav_width=5 %}
+
+	<h4>About the API</h4>
+	<a name="about"></a>
+
+	<p>
+		The goal of the API is to provide communication between Form Tools and
+		the outside world. It contains functionality for tasks such as submitting form
+		submissions via PHP code rather than POSTing in the information to process.php,
+		accessing and display Form Tools data in your own webpages, managing client accounts
+		via code rather than the Form Tools interface and other such helpful functionality.
+	</p>
+
+	<p>
+		The Form Tools API is found in your <strong>[form tools root]/global/api/</strong> folder.
+	</p>
+
+	<p>
+		Depending on the needs and requests of users, additional functions are likely to be
+		added to this file.
+	</p>
+
+	<a name="requirements"></a>
+	<p><b>Requirements</b></p>
+	<ol>
+		<li>Form Tools must be installed on your server</li>
+		<li>It can only be called within a PHP page on the same server as your Form Tools
+			&nbsp;installation</li>
+		<li>It requires the /global/api/api.php file to have been included in your page</li>
+	</ol>
+
+	<a name="how_to_use"></a>
+	<p><b>How to use it</b></p>
+
+	<p>
+		In order to use the API functions you must include the api.php file in your web page
+		BEFORE the function call. You only need to include this line once. The path must be
+		&nbsp;edited for the location of your api.php file on your server. It can be a relative or
+		absolute link.
+	</p>
+
+	{% highlight php %}
+<?php
+require_once("/path/to/[form tools folder]/global/api/api.php");
+?>
+	{% endhighlight %}
+
+{% include close_section.html %}

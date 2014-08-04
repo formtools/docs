@@ -1,0 +1,58 @@
+<h4 {% if include.selected == 'api' %}class="selected"{% endif %}><a href="{{site.baseurl}}/api/">API</a></h4>
+
+<ul>
+	<li {% if include.selected == 'download' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/download">Download</a>
+	</li>
+	<li {% if include.selected == 'finalized' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/finalized">Finalized Submissions</a>
+	</li>
+	<li {% if include.selected == 'debugging' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/debugging">Debugging Mode</a>
+	</li>
+	<li>
+		<div {% if include.selected == 'function_reference' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/api/function_reference">Function Reference</a>
+		</div>
+
+		<ul>
+			<li><a href="?page=form_integration">Form Integration</a>
+				<ul>
+					<li><a href="?page=ft_api_init_form_page">ft_api_init_form_page</a></li>
+					<li><a href="?page=ft_api_process_form">ft_api_process_form</a></li>
+					<li><a href="?page=ft_api_clear_form_sessions">ft_api_clear_form_sessions</a></li>
+					<li><a href="?page=ft_api_display_image_field">ft_api_display_image_field</a></li>
+					<li><a href="?page=ft_api_create_blank_submission">ft_api_create_blank_submission</a></li>
+				</ul>
+			</li>
+			<li><a href="?page=functions_displaying_submissions">Submissions</a>
+				<ul>
+					<li><a href="?page=ft_api_show_submissions">ft_api_show_submissions</a></li>
+					<li><a href="?page=ft_api_show_submission">ft_api_show_submission</a></li>
+					<li><a href="?page=ft_api_show_submission_count">ft_api_show_submission_count</a></li>
+					<li><a href="?page=ft_api_get_submission">ft_api_get_submission</a></li>
+				</ul>
+			</li>
+			<li><a href="?page=functions_user_accounts">User Accounts</a>
+				<ul>
+					<li><a href="?page=ft_api_create_client_account">ft_api_create_client_account</a></li>
+					<li><a href="?page=ft_api_update_client_account">ft_api_update_client_account</a></li>
+					<li><a href="?page=ft_api_delete_client_account">ft_api_delete_client_account</a></li>
+					<li><a href="?page=ft_api_login">ft_api_login</a></li>
+				</ul>
+			</li>
+			<li><a href="?page=other_functions">Other Functions</a>
+				<ul>
+					<li><a href="?page=ft_api_load_field">ft_api_load_field</a></li>
+					<li><a href="?page=ft_api_display_captcha">ft_api_display_captcha</a></li>
+					<li><a href="?page=ft_api_delete_unfinalized_submissions">ft_api_delete_unfinalized_submissions</a></li>
+					<li><a href="?page=ft_api_check_submission_is_unique">ft_api_check_submission_is_unique</a></li>
+					<li><a href="?page=ft_api_start_sessions">ft_api_start_sessions</a></li>
+					<li><a href="?page=ft_api_display_post_form_captcha_error">ft_api_display_post_form_captcha_error</a></li>
+				</ul>
+			</li>
+		</ul>
+
+
+	</li>
+</ul>
