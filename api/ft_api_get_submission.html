@@ -2,15 +2,55 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: Submissions
+subnavSectionLink: api/submissions/
+heading: ft_api_get_submission
+prev: ft_api_show_submission_count
+prevLink: api/ft_api_show_submission_count/
+next: User Accounts
+nextLink: api/user_accounts/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_get_submission' nav_width=5 %}
 
+	<p>
+		The ft_api_get_submission() function does pretty much what you'd expect it to do: it retrieves
+		all information about a form submission. Unlike many other API functions, this one is more
+		for programmers. It returns a hash of information (where the keys are the database column names
+		and the values are the actual values in the field, directly from the database) which you can use
+		for whatever you need.
+	</p>
+
+	<p>
+		The function takes two parameters: <b>form ID</b> and <b>submission ID</b>. Both fields are
+		required. Here's an example of how it's called, where the form ID is 2 and submission ID is
+		550.
+	</p>
+
+	{% highlight php %}
+<?php
+$submission_info = ft_api_get_submission(2, 550);
+?>
+	{% endhighlight %}
+
+	<p>
+		Now, assuming your form has database columns called first_name and last_name, you could
+		access those values like so:
+	</p>
+
+	{% highlight php %}
+<?php
+echo $submission_info["first_name"]; // first name!
+echo $submission_info["last_name"]; // last name!
+?>
+	{% endhighlight %}
+
+	<p>
+		Tip: to find out what the database columns are all named, log into Form Tools and go to the
+		Edit Form » Database tab. There, look at the DB column name column. If you haven't
+		already done so, you might want to click the "Smart Fill" button to rename all your database
+		columns to the same values as you form fields. This can simplify working with the database
+		directly since the column names will be more descriptive.
+	</p>
 
 {% include close_section.html %}

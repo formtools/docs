@@ -2,15 +2,93 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: Submissions
+subnavSectionLink: /api/submissions
+heading: ft_api_show_submission
+prev: ft_api_show_submissions
+prevLink: api/ft_api_show_submissions/
+next: ft_api_show_submission_count
+nextLink: api/ft_api_show_submission_count/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_show_submission' nav_width=5 %}
 
+	<div class="alert alert-info">
+		<ul>
+			<li><a href="#requirements">Requirements</a></li>
+			<li><a href="#overview">Overview</a></li>
+			<li><a href="#find">How to find the form, View, export type and submission IDs</a></li>
+		</ul>
+	</div>
+
+	<a name="requirements"></a>
+	<h4>Requirements</h4>
+	<ol>
+		<li>It requires the Export Manager module to be installed and enabled.</li>
+		<li>To generate the HTML, it uses one of the export types - so you may find you need to create a new one with the appropriate formatting (discussed below).</li>
+	</ol>
+
+	<p>The <a href="{{site.baseurl}}/api/#requirements">general requirements</a> for the Form Tools API also apply.</p>
+
+	<hr size="1">
+
+	<a name="overview"></a>
+	<h4>Overview</h4>
+	<p>
+		This function displays an individual submission. This can actually already be achieved with
+		<a href="{{site.baseurl}}/api/ft_api_show_submissions">ft_api_show_submissions</a>, but this function is
+		written for this precise purpose, so you may find it simpler to use.
+	</p>
+
+	<p>
+		The function takes the following required parameters:
+	</p>
+
+	{% highlight php %}
+<?php
+ft_api_show_submission($form_id, $view_id, $export_type_id, $submission_id);
+?>
+	{% endhighlight %}
+
+	<p>
+		Here's a simple example. In it, the Form ID is 10, the View ID is 15, the
+		Export Type ID is 6 and the Submission ID is 155.
+	</p>
+
+	{% highlight php %}
+<?php
+// remember to update this path
+require("/path/to/global/code/api/api.php");
+
+ft_api_show_submission(10, 15, 6, 155);
+?>
+	{% endhighlight %}
+
+	<p>
+		All of this information is required to let the function know how to find and display the submission information.
+		The View controls what fields will be displayed; the export type ID determines the visual rendering of the field
+		information.
+	</p>
+
+	<hr size="1">
+
+	<a name="find"></a>
+	<h4>How to find the form, View, export type and submission IDs</h4>
+
+	<ul>
+		<li>The form ID can be found in Form Tools. Log in as the administrator and go to the Form List page. The "ID"
+			column is the form ID.</li>
+		<li>The View ID is found on the Views tab of the form. That tab lists all available Views, and like the forms
+			contains an ID column for the View ID.</li>
+		<li>To find the export type ID, go to the Modules page and select the Export Manager module. Click the Export
+			Group you want to use to determine the results (probably the HTML / Printer-friendly or another custom
+			group), then click on the "Export Types" tab. That lists the IDs of all export types that belong to that
+			group.</li>
+		<li>To find the submission ID, you'll need to go to the main submission listings page for your form (click
+			"VIEW" on the form list page in Form Tools. However, not all Views may display the submission ID. You will
+			need to pick one that shows this information (and if one doesn't exist, create one). All forms are initially
+			created with an "All Submissions" View, which contains the submission ID as the first field. Try looking
+			there!</li>
+	</ul>
 
 {% include close_section.html %}

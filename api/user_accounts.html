@@ -2,15 +2,48 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: User Accounts
+heading: User Accounts
+prev: ft_api_get_submission
+prevLink: api/ft_api_get_submission/
+next: ft_api_create_client_accounts
+nextLink: api/ft_api_create_client_accounts/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='user_accounts' nav_width=5 %}
+
+	<p>
+		To manage an entire website, administrators often need to memorize multiple login information for each piece of
+		software running on the server. Maybe they're using Wordpress for the blog, Joomla for the content management
+		and Image Gallery for managing a picture gallery. One standard workaround to avoid all this memorization is
+		to make all usernames and passwords the same for each script. But this still has the following drawbacks:
+	</p>
+
+	<ul>
+		<li>The user still needs to log in to each individual script.</li>
+		<li>Whenever they need to update their password, they have to update it X times; 1 for each script.</li>
+		<li>It's unsecure! If one script is compromised and the password discovered, all scripts are compromised.</li>
+	</ul>
+
+	<p>
+		The <b>ideal</b> would be to have a single user account for ALL scripts on the server, with a single login
+		point. When you log into one script, you log into all. But the problem is that all script implement their login
+		functionality in slightly different ways, and some are <b>very</b> complicated.
+	</p>
+
+	<p>
+		That's the purpose of these API functions - it's to encourage development of a 1-login system on your website.
+		Inevitably any such system will involve writing custom code, but we wanted to make the Form Tools portion of such a
+		task as simple as possible. So here's a few functions to get you on your merry way.
+	</p>
+
+	<h4>Functions</h4>
+	{% include section_api_user_accounts.html %}
+
+	<p>
+		* We'll investigate an Open ID module a later date. But even after such a system would be implemented, these functions
+		will still be of use to some people.
+	</p>
 
 
 {% include close_section.html %}

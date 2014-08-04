@@ -2,15 +2,64 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: Submissions
+subnavSectionLink: api/submissions/
+heading: ft_api_show_submission_count
+prev: ft_api_show_submission
+prevLink: api/ft_api_show_submission/
+next: ft_api_get_submission
+nextLink: api/ft_api_get_submission/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_show_submission_count' nav_width=5 %}
+
+	<p>
+		This function displays the number of submissions in a form. It takes a second optional View ID parameter that
+		limits the count to those results in a particular View. This is only needed for those instances where you've
+		created a View that uses a filter to show a <b>subset</b> of the form submissions, e.g. the number of male
+		applicants or the number of submissions that have been sent to a particular department in your company.
+	</p>
+
+	<p>
+		The function takes the following required parameters:
+	</p>
+
+	{% highlight php %}
+<?php
+echo ft_api_show_submission_count($form_id);
+?>
+	{% endhighlight %}
+
+	<p>
+		Or, if you're specifying a View:
+	</p>
+
+	{% highlight php %}
+<?php
+echo ft_api_show_submission_count($form_id, $view_id);
+?>
+	{% endhighlight %}
+
+	<p>
+		You would call it in your webpage (a PHP page) by embedding the following code. Note that you'll need to
+		replace 4 and 6 with your form and View IDs:
+	</p>
+
+	{% highlight php %}
+<?php
+echo ft_api_show_submission_count(4, 6);
+?>
+	{% endhighlight %}
+
+	<p>
+		To use the submission count value in your own code, just store it in a variable, like so:
+	</p>
+
+	{% highlight php %}
+<?php
+$num_submissions = ft_api_show_submission_count(4, 6);
+?>
+	{% endhighlight %}
 
 
 {% include close_section.html %}
