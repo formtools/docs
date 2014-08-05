@@ -104,7 +104,20 @@
 				</ul>
 			</li>
 		</ul>
-
-
+	</li>
+	<li {% if include.selected == 'error_codes' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/error_codes/">API Error Codes</a>
+	</li>
+	<li {% if include.selected == 'advanced_stuff' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/advanced_stuff/">Advanced Stuff</a>
+	</li>
+	<li {% if include.selected == 'namespaces' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/namespaces/">Namespaces</a>
+	</li>
+	<li {% if include.selected == 'sessions' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/sessions/">API Sessions</a>
+	</li>
+	<li {% if include.selected == 'feature_suggestions' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/feature_suggestions/">Feature Suggestions</a>
 	</li>
 </ul>

@@ -2,15 +2,19 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: Other Functions
+heading: Other Functions
+prev: ft_api_login
+prevLink: api/ft_api_login/
+next: ft_api_load_field
+nextLink: api/ft_api_load_field/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='other_functions' nav_width=5 %}
 
+	<p>
+		Here are a few other helpful function that aren't related to the previous sections.
+	</p>
+	{% include section_api_other.html %}
 
 {% include close_section.html %}

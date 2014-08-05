@@ -2,15 +2,80 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: User Accounts
+subnavSection: api/user_accounts/
+heading: ft_api_login
+prev: ft_api_delete_client_account
+prevLink: api/ft_api_delete_client_account/
+next: Other Functions
+nextLink: api/other_functions/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_login' nav_width=5 %}
+
+	<p>
+		This function logs a user in programmatically. It takes a single parameter: a hash with these keys:
+	</p>
+
+	<h4>Required keys</h4>
+	<ul>
+		<li>username (string)</li>
+		<li>password (string)</li>
+	</ul>
+
+	<h4>Optional keys</h4>
+	<ul>
+		<li>auto_redirect_after_login (boolean, defaulted to FALSE)</li>
+		<li>login_url (string) the URL to redirect to after logging in</li>
+	</ul>
+
+	<h4>Return Values</h4>
+	<p>
+		The return values first depend on whether the <a href="{{site.baseurl}}/api/debugging">$g_api_debug</a> value
+		is set. It if is, nothing is returned for errors: they are displayed in the browser. If not, the function has
+		the same return value pattern as the other functions: it returns an array with 2 indexes. The first is a
+		boolean, indicating whether the login was successful or not. The second is the unique
+		<a href="{{site.baseurl}}/api/error_codes">error code</a>, or the empty string when successful.
+	</p>
+
+	<p>
+		If the <b>auto_redirect_after_login</b> key is passed to the function (and set to true), the function will not
+		return any values on login: it will automatically redirect to the appropriate login page specified by the
+		individual user account settings. This login URL can be overridden if you pass the extra <b>login_url</b> key.
+	</p>
+
+	<p>
+		Here's an example of how it can be used:
+	</p>
+
+	{% highlight php %}
+<?php
+$account_info = array(
+  "username" => "bob",
+  "password" => "bob12345"
+);
+list ($success, $message) = ft_api_login($account_info);
+?>
+	{% endhighlight %}
+
+	<p>
+		This will log the user in, but not redirect anywhere - you can continue processing PHP statements after the ft_api_login() call. Important: make sure that this page has started sessions! Form Tools requires sessions to have started in order to store the login information for the duration of the users "stay" in Form Tools.
+	</p>
+
+	{% highlight php %}
+<?php
+$account_info = array(
+  "username" => "bob",
+  "password" => "bob12345",
+  "auto_redirect_after_login" => true
+);
+list ($success, $message) = ft_api_login($account_info);
+?>
+	{% endhighlight %}
+
+	<p>
+		This will automatically log the user in, if successful. They will be redirected to their custom login page, defined in their user settings.
+	</p>
 
 
 {% include close_section.html %}

@@ -2,15 +2,31 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: User Accounts
+subnavSectionLink: api/user_accounts/
+heading: ft_api_delete_client_account
+prev: ft_api_update_client_account
+prevLink: api/ft_api_update_client_account/
+next: ft_api_login
+nextLink: api/ft_api_login/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_delete_client_account' nav_width=5 %}
 
+	<p>
+		This function deletes a client account programmatically. Note: it only deletes client accounts, not the
+		administrator. It completely removes all references to the client account from the database, including
+		client-form and client-view omit lists, as email recipients and everywhere else.
+	</p>
+
+	<p>
+		Usage is very simple. It accepts a single parameter: the unique account ID.
+	</p>
+
+	{% highlight php %}
+<?php
+ft_api_delete_client_account($account_id);
+?>
+	{% endhighlight %}
 
 {% include close_section.html %}

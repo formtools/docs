@@ -2,15 +2,64 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: User Accounts
+subnavSectionLink: api/user_accounts/
+heading: ft_api_load_field
+prev: Other Functions
+prevLink: api/other_functions/
+next: ft_api_display_captcha
+nextLink: api/ft_api_display_captcha/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_load_field' nav_width=5 %}
 
+	<p>
+		This invaluable little function is a wrapper for ft_load_field, used in the core script. It's used for
+		storing and overwriting the contents of a single form field in sessions based on a sequence of priorities.
+	</p>
+
+	<p>
+		It assumes that a variable name can be found in GET, POST or SESSIONS (or all three). What this function does
+		is return the value stored in the most important variable (GET first, POST second, SESSIONS third), and
+		update sessions at the same time. This is extremely helpful in situations where you don't want to keep having
+		to submit the same information from page to page. The third parameter is included as a way to set a default
+		value.
+	</p>
+
+	<p>
+		It takes three parameters:
+	</p>
+
+	<ol>
+		<li>the field name</li>
+		<li>the session key used to store the value</li>
+		<li>the default value</li>
+	</ol>
+
+	<p>
+		One common place for this is to store the current page in memory for a paginated list of data:
+	</p>
+
+	{% highlight php %}
+<?php
+$page = ft_api_load_field("page", "session_page", 1);
+?>
+	{% endhighlight %}
+
+	<p>
+		This does the following: the first time the page is loaded, it uses the third parameter - the default value
+		"1" (page 1). If the query string contains a page=X value or if the page has received a field called "page",
+		it overwrites the value in sessions and stores the appropriate value in $page. The nice thing is that you
+		don't need to keep sending the "page" value to the webpage. It will always remember the last value. This can
+		save you a lot of fuss and bother!
+	</p>
+
+	<h4>A technical note</h4>
+
+	<p>
+		The function information is actually stored here: $_SESSION["ft"][<b>session key</b>] - e.g. in the previous
+		example, it would be stored: $_SESSION["ft"]["session_page"]. So in case you need to empty it, you'll need to
+		directly modify that value in sessions.
+	</p>
 
 {% include close_section.html %}

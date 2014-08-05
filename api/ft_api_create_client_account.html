@@ -2,15 +2,82 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: User Accounts
+subnavSection: api/user_accounts/
+heading: ft_api_create_client_account
+prev: User Accounts
+prevLink: api/user_accounts/
+next: ft_api_update_client_account
+nextLink: api/ft_api_update_client_account/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_create_client_account' nav_width=5 %}
 
+	<p>
+		This function creates a client account programmatically. Example usage:
+	</p>
+
+	{% highlight php %}
+<?php
+$account_info = array(
+  "first_name" => "Todd",
+  "last_name" => "Atkins",
+  "email" => "todd@gmail.com",
+  "username" => "todd",
+  "password" => "todd12345"
+);
+list($success, $info) = ft_api_create_client_account($account_info);
+?>
+	{% endhighlight %}
+
+	<p>
+		The function takes a single parameter - an associative array (hash) with the following keys.
+	</p>
+
+	<h4>Required keys</h4>
+
+	<ul>
+		<li><b>first_name</b> - the client's first name</li>
+		<li><b>last_name</b> - the client's last name</li>
+		<li><b>email</b> - the client's email address</li>
+		<li><b>username</b> - the client's login username</li>
+		<li><b>password</b> - the client's login password</li>
+	</ul>
+
+	<h4>Optional keys</h4>
+
+	<ul>
+		<li><b>account_status</b> - "active", "disabled", "pending" (default: "pending")</li>
+		<li><b>ui_language</b> - should only be one of the languages currently supported by the script, e.g. "en_us"</li>
+		<li><b>timezone_offset</b> - +- an integer value</li>
+		<li><b>sessions_timeout</b> - the inactivity duration after which the user is logged out (default: 30)</li>
+		<li><b>date_format</b> - the formatting for the dates in the user's UI. Default: "M jS y, g:i A". See the PHP <a href="http://ca3.php.net/manual/en/function.date.php" target="_blank">date()</a> function for formatting options</li>
+		<li><b>login_page</b> - the login page for the user (i.e. where they're redirected to after logging in). This value should be the key value from the <b>$g_pages</b> variable, found at the top of in the /global/code/menus.php file.</li>
+		<li><b>logout_url</b> - where the client is sent when they log out</li>
+		<li><b>theme</b> - the name of the theme folder</li>
+		<li><b>menu_id</b> - the unique menu ID</li>
+	</ul>
+
+	<h4>Return Values</h4>
+
+	<p>
+		As with the other functions, if the <b>$g_api_debug</b> value is set to true in your api.php file, this
+		function will display the error codes that occur. Otherwise, it returns the information. In that case, for
+		either a successful or failed INSERT call, it returns an array with two indexes:
+	</p>
+
+	{% highlight php %}
+<?php
+// ...
+list($success, $info) = ft_api_create_client_account($account_info);
+
+// if $success == true, $info contains the new account ID (an integer)
+// if $success == false, $info contains an array of error codes
+?>
+	{% endhighlight %}
+
+	<p>
+		The failure error codes are <a href="{{site.baseurl}}/api/error_codes/">documented here</a>.
+	</p>
 
 {% include close_section.html %}
