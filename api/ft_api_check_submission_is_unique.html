@@ -2,15 +2,76 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: Other Functions
+subnavSectionLink: api/other_functions/
+heading: ft_api_check_submission_is_unique
+prev: ft_api_delete_unfinalized_submissions
+prevLink: api/ft_api_delete_unfinalized_submissions./
+next: ft_api_start_sessions
+nextLink: api/ft_api_start_sessions/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_check_submission_is_unique' nav_width=5 %}
 
+	<p>
+		This function lets you check that
+		a submission is unique, based on whatever criteria is required for your form. For example,
+		a common usage of this function is to check that a submission currently being placed has
+		NOT already been placed by someone with the same email address.
+	</p>
+
+	<p>
+		The function has the following structure:
+	</p>
+
+	{% highlight php %}
+ft_api_check_submission_is_unique($form_id, $criteria, $submission_id]);
+	{% endhighlight %}
+
+	<p>
+		The <b>$form_id</b> parameter is self-explanatory; you can find this value in your Form
+		Tools interface. <b>$criteria</b> is a hash (associative array) where the keys are
+		the database column names and the values are the values being examined. This field
+		can contain any number keys. The third <b>$submission_id</b> parameter is OPTIONAL, and was
+		added in version 20090905 of the API. This lets you tell the function to ignore a particular
+		submission when doing to the comparison. In other words, it ensures that it doesn't run the
+		test for uniqueness against itself - because that would always fail!
+	</p>
+
+	<p>
+		To return to our example, imagine you want to check that a submission hasn't already been
+		placed by a user with a particular email address. You could check like this (where
+		"email" is the database column name and the form ID is 10):
+	</p>
+
+	{% highlight php %}
+<?php
+$criteria = array(
+  "email" => $_POST["email"]
+);
+// note the the $fields variable should be named to whatever your
+// ft_api_init_form_page() function call returns
+if (!ft_api_check_submission_is_unique(10, $criteria,
+	$fields["form_tools_submission_id"]))
+{
+  // uh-oh! A submission already exists with this email address!
+  // Abort, abort! here, you could do something like set a
+  // variable like: $already_exists = true
+  // and in the webpage do a little test to see if it's set.
+  // If so, let the user know what's going on
+}
+else
+{
+  // call ft_api_process_form function here to continue processing
+  // the form submission
+}
+?>
+	{% endhighlight %}
+
+	<p>
+		N.B. we chose to use database column names rather than form field names to allow you
+		to also use the system fields (is finalized, IP address) to check to uniqueness. You can
+		find the database column names on the Edit Form » Database tab.
+	</p>
 
 {% include close_section.html %}

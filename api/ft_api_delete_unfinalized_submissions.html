@@ -2,15 +2,78 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: Other Functions
+subnavSectionLink: api/other_functions/
+heading: ft_api_delete_unfinalized_submissions
+prev: ft_api_display_captcha
+prevLink: api/ft_api_display_captcha/
+next: ft_api_check_submission_is_unique
+nextLink: api/ft_api_check_submission_is_unique/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_delete_unfinalized_submissions' nav_width=5 %}
 
+	<h4>The problem</h4>
+
+	<p>
+		This page explains a problem that arises from using the API for your forms. If you don't
+		have any on your server, you don't have anything to worry about! Move along, move
+		along please.
+	</p>
+	<p>
+		For multi-page forms, it's entirely possible that some users will begin entering the form but never
+		complete it. As you probably know, Form Tools accounts for this by only "finalizing" the submission
+		(i.e. making it appear in the UI) when it's explicitly told to do so. This is generally done on the very
+		final step of your form.
+	</p>
+
+	<p>
+		But what about all those orphaned, unfinalized submissions? Well, they end up hidden in
+		the database, never to be used or seen again. Generally, this is not a big deal. In fact,
+		during the entire lifespan of Form Tools 1.x (which uses a similar finalization
+		mechanism), no-one once asked about this in the forums (!).  A little database clutter
+		isn't a disaster, but it would be nice to avoid.
+	</p>
+
+	<p>
+		Now onto the <b>real</b> problem. What if your form contains one or more file upload
+		fields? What happens to those files that are attached to these unfinalized submissions?
+		Exactly: they end up on your server, wasting valuable disk space. With the new API
+		functions in Form Tools 2, this could become a real problem. The
+		ft_api_process_form function significantly improves the file uploading mechanism to
+		allow file uploads on any page - hence, could result in files being uploaded that are
+		associated with submissions that never get finalized. So they end up stored on your server
+		indefinitely. Boo.
+	</p>
+
+	<h4>The solution</h4>
+
+	<p>
+		Enter the ft_api_delete_unfinalized_submissions function. This function does the job
+		of both deleting those unfinalized submissions and associated files, keeping your server nice and tidy.
+	</p>
+
+	<p>
+		It takes two parameters: the required form ID, and optional parameter: a boolean (true / false).
+	</p>
+
+	{% highlight php %}
+ft_api_delete_unfinalized_submissions($form_id, false);
+	{% endhighlight %}
+
+	<p>
+		If the second parameter is set to true, it deletes ALL unfinalized submissions in the
+		database - everything made up to this very moment. By default, it's set to false. The
+		default setting is that it deletes all unfinalized submissions that have been made
+		more than 2 hours ago. This is because it assumes that people may be in the process of
+		putting through a form - you don't want to delete those unfinalized submissions! So
+		in 99% of cases, leave the second parameter to <b>false</b>.
+	</p>
+
+	<h4>Return Value</h4>
+
+	<p>
+		This function returns the number of unfinalized submissions that it just deleted.
+	</p>
 
 {% include close_section.html %}

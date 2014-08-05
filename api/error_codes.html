@@ -1,0 +1,467 @@
+---
+layout: default
+navSection: API
+navSectionLink: api/
+subnavSection: API Error Codes
+heading: API Error Codes
+prev: ft_api_display_post_form_captcha_error
+prevLink: api/ft_api_display_post_form_captcha_error/
+next: Namespaces
+nextLink: api/namespaces/
+---
+
+{% include open_section.html nav='nav_api.html' selected='error_codes' nav_width=5 %}
+
+	<p>
+		The <b>Form Tools API</b> functions use <b>error codes</b> to identify all the possible
+		problems that may crop up. At a later date, the content of this page will be translated
+		- but for now, you're stuck with the English. Apologies to our non-English speaking
+		friends.
+	</p>
+	<p>
+		Errors are grouped in two categories: <span class="blue">user</span> errors, which occur
+		when the information fed to one of the functions is incorrect, and
+		<span class="red">system</span> errors which should never occur, and possibly indicate
+		a Form Tools bug. Most likely, however, system errors are caused by Form Tools files not
+		existing on your server or somehow got corrupted when being sent via FTP to your site.
+	</p>
+
+	<p>
+		The numbering scheme for the error codes is purely internal - they have no special
+		meaning. <b>These error codes have nothing to do with the HTML error codes, like
+		"404 not found"</b>.
+	</p>
+
+
+	<h4>form Integration</h4>
+
+	<table class="list_table" cellpadding="0" cellspacing="1">
+		<tbody><tr>
+			<th width="80">Error Code</th>
+			<th width="80">Type</th>
+			<th>Explanation</th>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="100"></a>100</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				This occurs when trying to initialize a form. It usually means you're
+				sending along an incorrect form ID. If you're NOT trying to initialize
+				a form, then you're still passing along the <b>form_tools_initialize_form</b> hidden field in your form for "direct" submission page - or you have the second parameter of the <a href="?page=ft_api_init_form_page">ft_api_init_form_page</a> set to "initialize" if you're submitting the information via PHP.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="101"></a>101</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				This occurs when the form has already been marked as "complete" through the Form Tools
+				interface, but you are still trying to send the test submission. This often means that
+				you've simply forgotten to perform the final step: go to "live" mode. For "direct"
+				submissions, you haven't removed the form_tools_initialize_form hidden field. For
+				submissions via the API, there are two likely causes:
+				<ol>
+					<li>you're passing along the wrong form ID (check it's not in a hidden field - this is a
+						common pitfall if you're upgrading an old Form Tools form)</li>
+					<li>you haven't removed the second parameter of the
+						<a href="?page=ft_api_init_form_page">ft_api_init_form_page</a> function on your
+						first form page for a form that HAS been set up. For the latter, clear your sessions
+						(see the <a href="?page=ft_api_clear_form_sessions">ft_api_clear_form_sessions</a>
+						function) and try putting through another submission.</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="102"></a>102</td>
+			<td class="red" valign="top">System</td>
+			<td>
+				The database query to add the submission ID system field failed. This should not occur; please post in our forums.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="103"></a>103</td>
+			<td class="red" valign="top">System</td>
+			<td>
+				The database query to insert one of your test submission fields failed.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="104"></a>104</td>
+			<td class="red" valign="top">System</td>
+			<td>
+				The database query to insert one the files in your test submission fields failed.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="105"></a>105</td>
+			<td class="red" valign="top">System</td>
+			<td>
+				The database query to insert the submission date, last modified date and IP address failed.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="200"></a>200</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				This error occurs when the <a href="?page=ft_api_init_form_page">ft_api_init_form_page</a> function is passed an invalid value for the second parameter. The second parameter contains the mode: it should any of the following string values: "test", "initialize" or "live". Alternatively, you can omit the parameter altogether - which is the same as "live".
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="300"></a>300</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				This occurs when <a href="?page=ft_api_process_form">ft_api_process_form</a> doesn't receive BOTH the form ID and the submission ID. These values are not passed to the function explicitly; they are set by <a href="?page=ft_api_init_form_page">ft_api_init_form_page</a> - which should ALWAYS be called prior to <a href="?page=ft_api_process_form">ft_api_process_form</a> on every one of your form pages.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="301"></a>301</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The form ID doesn't exist. Here, the function is trying to put through a live submission (i.e. non-test/initialize). Most likely, you passed the wrong form ID value to <a href="?page=ft_api_init_form_page">ft_api_init_form_page()</a>. Note: the (invalid) form ID is cached. Try emptying sessions using <a href="?page=ft_api_clear_form_sessions">ft_api_clear_form_sessions()</a>, update the form ID and try putting through another submission.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="302"></a>302</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The submission is already finalized! The
+				<a href="?page=ft_api_process_form">ft_api_process_form</a> only processes submissions
+				that aren't finalized. You need to confirm that you are only finalizing the submission
+				on the FINAL step of your form. See the documentation on
+				<a href="?page=ft_api_process_form">ft_api_process_form</a> form more information.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="303"></a>303</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The form has been disabled. Disabling the form is simply a technique to prevent new
+				submissions being registered in the database. You must prevent users from getting to
+				your form by redirecting them, or by removing the link to the form.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="304"></a>304</td>
+			<td class="red" valign="top">System</td>
+			<td>
+				The database UPDATE function failed, when trying to add your form's / form page's submission data. This should never occur, but has been known to with form Tools 1.x. If this occurs, please post in our forums with the full debugging message that appears on screen and we'll help resolve the problem.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="305"></a>305</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				This occurs when the unfinalized submission being processed in a multi-page form no longer exists, but the person hasn't finished putting it through. This should only occur if the database
+				record has been deleted - probably with <a href="?page=ft_api_delete_unfinalized_submissions">ft_api_delete_unfinalized_submissions</a>. It's strongly recommended that you don't pass the second parameter to the function so that only
+				older unfinalized submissions that are no longer needed are actually deleted.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="306"></a>306</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The "form_data" parameter must ALWAYS be passed to the <a href="?page=ft_api_process_form">ft_api_process_form</a>
+				function - even if it's empty. This is usually the $_POST value. See the function more information.
+			</td>
+		</tr>
+		</tbody></table>
+
+
+	<h4>Submissions</h4>
+
+	<table class="list_table" cellpadding="0" cellspacing="1">
+		<tbody><tr>
+			<th width="80"><b>Error</b> Code</th>
+			<th width="80">Type</th>
+			<th>Explanation</th>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="400"></a>400</td>
+			<td class="blue" valign="top">User</td>
+			<td>The Export Manager module is not installed or enabled in your Form Tools installation. Go to the modules page to install / enable it.</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="401"></a>401</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The form ID passed to the <a href="?page=ft_api_show_submissions">ft_api_show_submissions</a> function is invalid.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="402"></a>402</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The View ID passed to the <a href="?page=ft_api_show_submissions">ft_api_show_submissions</a> function is invalid.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="403"></a>403</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The Export Type ID passed to the <a href="?page=ft_api_show_submissions">ft_api_show_submissions</a> function is invalid.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="404"></a>404</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The value passed for the "pagination_location" to the <a href="?page=ft_api_show_submissions">ft_api_show_submissions</a> is incorrect. The valid values are "both", "top", "bottom" and "none".
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="405"></a>405</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The form ID parameter (First) passed to the
+				<a href="?page=ft_api_get_submission">ft_api_get_submission</a> is invalid.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="406"></a>406</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The submission ID parameter (second) passed to the
+				<a href="?page=ft_api_get_submission">ft_api_get_submission</a> is invalid.
+			</td>
+		</tr>
+		</tbody></table>
+
+	<h4>Other</h4>
+
+	<table class="list_table" cellpadding="0" cellspacing="1">
+		<tbody><tr>
+			<th width="80"><b>Error</b> Code</th>
+			<th width="80">Type</th>
+			<th>Explanation</th>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="500"></a>500</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The form ID passed to the <a href="?page=ft_api_create_blank_submission">ft_api_create_blank_submission</a> function is invalid.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="501"></a>501</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The default values passed to the <a href="?page=ft_api_create_blank_submission">ft_api_create_blank_submission</a> function are invalid. Most likely, you've misspelled one of the database column names or included one that doesn't exist.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="550"></a>550</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The form ID passed to the <a href="?page=ft_api_submission_is_unique">ft_api_submission_is_unique</a>
+				function is invalid.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="551"></a>551</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The second <b>$criteria</b> parameter passed to the
+				<a href="?page=ft_api_submission_is_unique">ft_api_submission_is_unique</a>
+				function is invalid - it needs to be a function.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="552"></a>552</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The second <b>$criteria</b> parameter passed to the
+				<a href="?page=ft_api_submission_is_unique">ft_api_submission_is_unique</a>
+				function is invalid - it needs to be a hash.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="553"></a>553</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The second <b>$criteria</b> parameter passed to the
+				<a href="?page=ft_api_submission_is_unique">ft_api_submission_is_unique</a>
+				function is invalid - it needs to be an associative array (hash) where the keys
+				are the form table column names and the values are the values you are checking
+				to uniquely identify the record.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="554"></a>554</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				This means the generated SQL query to test for uniqueness failed. The most likely
+				reason for this is that one or more of the criteria you've specified has an invalid
+				database column name; in other words, one of the keys is invalid. Note that the criteria
+				keys should be the database column names (found on your Edit Form » Database tab)
+				and <b>not</b> the form field names.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="600"></a>600</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The public and/or private recaptcha field key hasn't been set in your api.php file.
+				For more information, read the instructions on the
+				<a href="?page=ft_api_display_captcha">ft_api_display_captcha</a> page.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="650"></a>650</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The form ID passed to the <a href="?page=ft_api_delete_unfinalized_submissions">ft_api_delete_unfinalized_submissions</a> function is invalid.
+			</td>
+		</tr>
+		</tbody></table>
+
+	<h4>User Accounts</h4>
+
+	<table class="list_table" cellpadding="0" cellspacing="1">
+		<tbody><tr>
+			<th width="80"><b>Error</b> Code</th>
+			<th width="80">Type</th>
+			<th>Explanation</th>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="700"></a>700</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> function didn't receive the "first_name" key.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="701"></a>701</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> function didn't receive the "last_name" key.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="702"></a>702</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> function didn't receive the "email" key.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="703"></a>703</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> function received an invalid email address in the "email" key.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="704"></a>704</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> function didn't receive the "username" key.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="705"></a>705</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> function requires the "username" key only contains alphanumeric characters.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="706"></a>706</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> function received an invalid value the "username" key. This usually means the username is already taken.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="707"></a>707</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> function didn't receive a value in the "password" key.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="708"></a>708</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> function requires the "password" key only contains alphanumeric characters.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="709"></a>709</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The database INSERT query in the <a href="?page=ft_api_create_client_account">ft_api_create_client_account</a> query failed. Most likely, you're passing invalid values for one of the optional keys.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="800"></a>800</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The account ID passed to <a href="?page=ft_api_delete_client_account">ft_api_delete_client_account</a> was invalid.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="801"></a>801</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The account ID passed to <a href="?page=ft_api_delete_client_account">ft_api_delete_client_account</a> was not a client account.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="900"></a>900</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The account ID passed to <a href="?page=ft_api_update_client_account">ft_api_update_client_account</a> was invalid.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="901"></a>901</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The account ID passed to <a href="?page=ft_api_update_client_account">ft_api_update_client_account</a> was not a client account.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="902"></a>902</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The update query in <a href="?page=ft_api_update_client_account">ft_api_update_client_account</a> failed. This is usually due to one or more invalid values being passed to it. Try enabling <a href="?page=g_api_debug">$g_api_debug</a> and put through the query through your web browser. When the function fails, it will display the failed query in the debugging section.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="1000"></a>1000</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The password field wasn't sent to the <a href="?page=ft_api_login">ft_api_login</a> function, or it was empty.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="1001"></a>1001</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The login failed; the account has been disabled.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="1002"></a>1002</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The login failed; the account is still pending.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="1003"></a>1003</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The login failed; the password was incorrect.
+			</td>
+		</tr>
+		<tr>
+			<td class="bold" valign="top"><a name="1004"></a>1004</td>
+			<td class="blue" valign="top">User</td>
+			<td>
+				The login failed; the account was not found. This just means the username was incorrect.
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+{% include close_section.html %}

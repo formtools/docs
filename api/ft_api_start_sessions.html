@@ -2,15 +2,21 @@
 layout: default
 navSection: API
 navSectionLink: api/
-subnavSection: API
-heading: Download
-prev: About the API
-prevLink: api/
-next: Finalized Submissions
-nextLink: upgrading/finalized/
+subnavSection: Other Functions
+subnavSectionLink: api/other_functions/
+heading: ft_api_start_sessions
+prev: ft_api_check_submission_is_unique
+prevLink: api/ft_api_check_submission_is_unique/
+next: ft_api_display_post_form_captcha_error
+nextLink: api/ft_api_display_post_form_captcha_error/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='download' nav_width=5 %}
+{% include open_section.html nav='nav_api.html' selected='ft_api_start_sessions' nav_width=5 %}
 
+	<p>
+		This function was added in version <b>20090614</b> of the Beta. All it does is start sessions, setting the
+		page charset to whatever is stored in <b>$g_api_header_charset</b> (by default, UTF-8). This was added to
+		help abstract away some of the details of adding reCAPTCHA to a POST form.
+	</p>
 
 {% include close_section.html %}
