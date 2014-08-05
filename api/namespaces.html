@@ -1,0 +1,39 @@
+---
+layout: default
+navSection: API
+navSectionLink: api/
+subnavSection: Namespaces
+heading: Namespaces
+prev: API Error Codes
+prevLink: api/error_codes/
+next: Namespaces
+nextLink: api/namespaces/
+---
+
+{% include open_section.html nav='nav_api.html' selected='namespaces' nav_width=5 %}
+
+	<p>
+		Form Tools conscientiously namespaces all data to reduce the likelihood of conflict with
+		other scripts that are running. Namespacing is done on every level of the script:
+		database tables, main script sessions, API script sessions, API script function names, main script
+		function names (JS and PHP), special form fields. Truth is, I've been burned so many times by <b>other</b>
+		scripts not namespacing themselves properly, I got pretty sick of it!
+	</p>
+
+	<ul>
+		<li>All API functions begin with the <b>ft_api_</b> prefix.</li>
+		<li>For the form processing / management functions, the API stores all sessions in the
+			<b>$_SESSION["form_tools_form"]</b> key, but this can be changed if you're concerned about a conflict.
+			Just see the <a href="{{site.baseurl}}/api/ft_api_init_form_page/">ft_api_init_form_page</a> function for
+			information on how to set the session namespace. If you change it there, it will be reflected in all
+			subsequent API functions (i.e. you'll need to pass your custom namespace to those as well)</li>
+		<li>Form fields that have special meaning to Form Tools all have a <b>form_tools_</b> prefix, e.g.
+			form_tools_initialize_form, form_tools_redirect_url, form_tools_form_id, form_tools_ignore_submission</li>
+		<li>All main script functions have a <b>ft_</b> prefix.</li>
+		<li>The main script javascript files each have a namespace particular to the file. e.g. manage_submissions.js
+			stores all the functions wrapped in an ms_ns object, with the functions defined as object attributes.</li>
+		<li>The database tables all have a namespace specified by the user during the installation script. This is
+			defined in <b>$g_table_prefix</b> in your config.php file.</li>
+	</ul>
+
+{% include close_section.html %}
