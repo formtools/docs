@@ -2,23 +2,25 @@
 layout: default
 navSection: Module Development
 heading: Module Development
+next: Anatomy of a Module
+nextLink: module_development/anatomy/
 ---
 
 {% include open_section.html nav='nav_module_development.html' selected='introduction' nav_width=4 %}
 
 	<p>
-		This section is written for PHP developers who want to extend Form Tools to add additional functionality. There's
-		an awful lot of information in this section, but we do recommend slogging your way through the entire document.
-		Even if you don't catch all the details it will still give you a sense of module methodology, structure and
-		functionality already exists to make your job that much easier.
+		Want to write a Form Tools module? Awesome! There's an awful lot of information in this section, but we do
+		recommend slogging your way through the whole thing. Even if you don't catch all the details it will still
+		give you a sense of how it works and what exists to make your life easier. It won't be time wasted, honest.
 	</p>
+
+	<h4>Overview</h4>
 
 	<p>
 		No script with the scope of Form Tools can accommodate all functionality requests without becoming bloated
-		and unusable. To prevent this, many larger scripts turn to some form of module / plugin architecture to allow
-		users to enhance the core functionality with features that suit their custom requirements.
-		Form Tools is one of those scripts. Developers may extend the core functionality in whatever way they need while
-		reducing the amount of tampering with the core code required to a minimum.
+		and unusable. To prevent this, many larger scripts turn to some form of module / plugin architecture that keeps
+		the core code small, but still allows for extensibility. Form Tools is one of those scripts. Developers can
+		extend the core functionality in whatever way they need without needing to tamper with the core script.
 	</p>
 
 	<p>
@@ -39,12 +41,11 @@ heading: Module Development
 			information is stored in the database.
 		</li>
 		<li>
-			<b>International</b>. all (publicly available) modules need to be able to support multiple languages
-			in a very similar manner to the main build.
+			<b>International</b>. All modules need to be able to support multiple languages.
 		</li>
 		<li>
-			<b>Simple to develop and write</b>. Let's not forget the poor developer, here! If it's not easy to write, no-one's
-			going to want to do it.
+			<b>Simple to develop and write</b>. Let's not forget the poor developer here! If a module isn't easy to write,
+			no-one's going to want to do it.
 		</li>
 	</ul>
 
