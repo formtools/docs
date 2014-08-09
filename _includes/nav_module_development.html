@@ -1,0 +1,158 @@
+<h4 {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/module_development/introduction/">Module Development</a>
+</h4>
+
+<ul>
+	<li>
+		<div {% if include.selected == 'anatomy' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/module_development/module_anatomy/">Anatomy of a Module</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'file_module' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/file_module/">module.php</a>
+			</li>
+			<li {% if include.selected == 'file_index' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/file_index/">index.php</a>
+			</li>
+			<li {% if include.selected == 'file_index_tpl' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/file_index_tpl/">[any folder]/index.tpl</a>
+			</li>
+			<li {% if include.selected == 'file_lang' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/file_lang/">lang/[lang file].php</a>
+			</li>
+			<li {% if include.selected == 'file_library' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/file_library/">library.php</a>
+			</li>
+			<li {% if include.selected == 'folder_smarty' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/folder_smarty/">smarty/</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div {% if include.selected == 'special_functions' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/module_development/special_functions/">Special Functions</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'installation_function' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/installation_function/">Installation Function</a>
+			</li>
+			<li {% if include.selected == 'uninstallation_function' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/uninstallation_function/">Uninstallation Function</a>
+			</li>
+			<li {% if include.selected == 'upgrade_function' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/upgrade_function/">Upgrade Function</a>
+			</li>
+		</ul>
+	</li>
+	<li {% if include.selected == 'database_tables' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/module_development/database_tables/">Database Tables and Data</a>
+	</li>
+	<li {% if include.selected == 'module_nav' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/module_development/module_nav/">Module Navigation</a>
+	</li>
+	<li>
+		<div {% if include.selected == 'display_pages' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/module_development/display_pages/">Displaying your Pages</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'smarty_templates' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/smarty_templates/">Smarty Templates</a>
+			</li>
+			<li {% if include.selected == 'themes' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/themes/">Themes / CSS</a>
+			</li>
+			<li {% if include.selected == 'language_compatibility' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/language_compatibility/">Language Compatibility</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div {% if include.selected == 'helper_functions' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/module_development/helper_functions/">Helper Functions</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'ft_check_module_enabled' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_check_module_enabled/">ft_check_module_enabled</a>
+			</li>
+			<li {% if include.selected == 'ft_display_module_page' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_display_module_page/">ft_display_module_page</a>
+			</li>
+			<li {% if include.selected == 'ft_eval_smarty_string' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_eval_smarty_string/">ft_eval_smarty_string</a>
+			</li>
+			<li {% if include.selected == 'ft_get_dhtml_page_nav' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_get_dhtml_page_nav/">ft_get_dhtml_page_nav</a>
+			</li>
+			<li {% if include.selected == 'ft_get_module_hooks' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_get_module_hooks/">ft_get_module_hooks</a>
+			</li>
+			<li {% if include.selected == 'ft_get_module_settings' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_get_module_settings/">ft_get_module_settings</a>
+			</li>
+			<li {% if include.selected == 'ft_get_page_nav' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_get_page_nav/">ft_get_page_nav</a>
+			</li>
+			<li {% if include.selected == 'ft_include_modules' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_include_modules/">ft_include_modules</a>
+			</li>
+			<li {% if include.selected == 'ft_init_module_page' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_init_module_page/">ft_init_module_page</a>
+			</li>
+			<li {% if include.selected == 'ft_load_module_field' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_load_module_field/">ft_load_module_field</a>
+			</li>
+			<li {% if include.selected == 'ft_register_hook' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_register_hook/">ft_register_hook</a>
+			</li>
+			<li {% if include.selected == 'ft_sanitize' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_sanitize/">ft_sanitize</a>
+			</li>
+			<li {% if include.selected == 'ft_set_module_settings' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft_set_module_settings/">ft_set_module_settings</a>
+			</li>
+		</ul>
+
+	</li>
+	<li>
+		<div {% if include.selected == 'hooks' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/module_development/hooks/">Hooks</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'hooks_methodology' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/hooks_methodology/">Methodology</a>
+			</li>
+			<li {% if include.selected == 'code_hooks' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/code_hooks/">Code Hooks</a>
+			</li>
+			<li {% if include.selected == 'template_hooks' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/template_hooks/">Template Hooks</a>
+			</li>
+			<li {% if include.selected == 'examples' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/examples/">Examples</a>
+			</li>
+			<li {% if include.selected == 'related_links' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/related_links/">Related Links</a>
+			</li>
+		</ul>
+
+	</li>
+	<li>
+		<div {% if include.selected == 'common_tasks' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/module_development/common_tasks/">Common Tasks</a>
+		</div>
+
+		<ul>
+			<li {% if include.selected == 'displaying_tabs' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/displaying_tabs/">Displaying information in tabs</a>
+			</li>
+			<li {% if include.selected == 'displaying_pagination' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/displaying_pagination/">Displaying pagination</a>
+			</li>
+		</ul>
+	</li>
+</ul>
