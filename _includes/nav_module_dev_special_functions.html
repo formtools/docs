@@ -1,0 +1,15 @@
+<h4 {% if include.selected == 'special_functions' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/module_development/special_functions/">Special Functions</a>
+</h4>
+
+<ul>
+	<li {% if include.selected == 'installation_function' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/module_development/installation_function/">Installation Function</a>
+	</li>
+	<li {% if include.selected == 'uninstallation_function' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/module_development/uninstallation_function/">Uninstallation Function</a>
+	</li>
+	<li {% if include.selected == 'upgrade_function' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/module_development/upgrade_function/">Upgrade Function</a>
+	</li>
+</ul>
