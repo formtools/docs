@@ -1,0 +1,43 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: Upgrade Function
+heading: Upgrade Function
+prev: Uninstallation Function
+prevLink: module_development/uninstallation_function/
+next: Database Tables and Data
+nextLink: module_development/database_tables/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='upgrade_function' nav_width=4 %}
+
+	<h4>Upgrade Function</h4>
+
+	<p>
+		As with the two previous functions, the upgrade works in a similar manner. The function
+		must be located in your library.php file and be called <b>my_module__upgrade()</b> - where
+		(you know the drill!) the my_module part is the name of your module folder.
+	</p>
+
+	<p>
+		This function is called automatically by the Form Tools core on the Modules listing page.
+		If the module version in the module.php file is different from the value stored in the
+		database, it will highlight the module row and replace the "SELECT" link with an "UPGRADE"
+		link. When clicked, it will call your upgrade function (if defined).
+	</p>
+
+	<p>
+		Your upgrade function should look like this:
+	</p>
+
+	{% highlight php startinline %}
+function my_module__upgrade($old_version, $new_version)
+{
+  // execute whatever upgrade code you need to do here based on
+  // the two parameters
+}
+	{% endhighlight %}
+
+
+{% include close_section.html %}

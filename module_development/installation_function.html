@@ -1,0 +1,78 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: Installation Function
+heading: Installation Function
+prev: Special Functions
+prevLink: module_development/special_functions/
+next: Uninstallation Function
+nextLink: module_development/uninstallation_function/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='installation_function' nav_width=4 %}
+
+	<h4>Installation Function</h4>
+
+	<p>
+		This function must be named: <b>my_module__install()</b> (where <b>my_module</b> is
+		the module folder name). It takes a single parameter: the $module_id, passed to it from
+		the core code, in case you need it.
+	</p>
+
+	<p>
+		Here's a simple example of how this function is formatted:
+	</p>
+
+	{% highlight php startinline %}
+/**
+ * My Module's installation function. This is automatically called by Form
+ * Tools on installation.
+ *
+ * @param integer $module_id
+ * @return array [0] true / false
+ *               [1] success or error message
+ */
+function my_module__install($module_id)
+{
+  global $g_table_prefix, $L;
+
+  // do anything you want here
+
+  return array($success, $message);
+}
+	{% endhighlight %}
+
+	<p>
+		The module ID is passed to the function in case you need that information. Otherwise you
+		can just ignore it.
+	</p>
+	<p>
+		The return value is important. It needs to be an array with two indexes. The first
+		indicates whether the installation was successful or not. If it's set to false, Form
+		Tools will halt the installation. The second parameter is what should be displayed to
+		the user - this is either a success or error message, depending on the first parameter.
+		Note: this second parameter does <b>not need to be included</b> for success messages.
+		By default, a successfully installed module will automatically display a message
+		informing the user of this with a  "select this module" link. The second parameter,
+		if included, will override this default message. So to rely on the default message,
+		just pass an empty string as the second parameter, like so:
+	</p>
+
+{% highlight php startinline %}
+return array(true, "");
+{% endhighlight %}
+
+	<p><b>What your install script DOESN'T need to contain</b></p>
+
+	<p>
+		As mentioned, your custom installation function is called from within the Form Tools
+		core code. That code takes care of a lot of stuff you don't need to know about, including:
+	</p>
+
+	<ul>
+		<li>A new record for your module is created in the <b>modules</b> database table</li>
+		<li>The module menu is built and stored in the <b>module_menu_items</b> table.</li>
+	</ul>
+
+{% include close_section.html %}

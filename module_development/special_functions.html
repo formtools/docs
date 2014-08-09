@@ -1,0 +1,44 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: Special Functions
+heading: Special Functions
+prev: smarty/
+prevLink: module_development/smarty/
+next: Installation Function
+nextLink: module_development/installation_function/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='special_functions' nav_width=4 %}
+
+	<p>
+		You can choose to include contain three specially named functions that are automatically recognized and processed
+		by the Core script: the <strong>installation</strong>, <strong>uninstallation</strong> and
+		<strong>upgrade</strong> script. These allow standardized integration
+		with the Form Tools script so that when the user performs one of those tasks, you can execute whatever code
+		you need.
+	</p>
+	<p>
+		All three functions are optional. For simple modules, you may find you don't need any.
+	</p>
+
+	<p>
+		N.B. Your core module code can be procedural or object-oriented; it doesn't matter. However, these three
+		must be functions. If you wrap it in a class or rename it, the code won't be executed.
+	</p>
+
+	<h4>Where are they located?</h4>
+
+	<p>
+		You can place these functions anywhere you want, but they <strong>must</strong> be included in your
+		<a href="{{site.baseurl}}/module_development/file_library/">library.php</a> file.
+	</p>
+
+	<ul>
+		<li><a href="{{site.baseurl}}/module_development/installation_function/">Installation Function</a></li>
+		<li><a href="{{site.baseurl}}/module_development/uninstallation_function/">Uninstallation Function</a></li>
+		<li><a href="{{site.baseurl}}/module_development/upgrade_function/">Upgrade Function</a></li>
+	</ul>
+
+{% include close_section.html %}

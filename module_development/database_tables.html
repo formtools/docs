@@ -1,0 +1,68 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: Database Tables
+heading: Database Tables
+prev: Upgrade Function
+prevLink: module_development/upgrade_function/
+next: Module Navigation
+nextLink: module_development/module_nav/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='database_tables' nav_width=4 %}
+
+	<p>
+		Depending on what your module does, the information on this page may not be
+		necessary. But if you find you need to store data in the database, Form Tools
+		provides a number of built-in functions to make your job just that little bit
+		easier.
+	</p>
+
+
+	<h4>Storing small amounts of data - settings</h4>
+
+	<p>
+		If you only need to store small information snippets - like settings, you may be able
+		to get away without adding your own tables. Form Tools comes with a couple of handy
+		functions that store data permanently in the main <b>ft_settings</b> table. Give these
+		functions a read through for more information on how they can help.
+	</p>
+
+	<ul>
+		<li><a href="{{site.baseurl}}/module_development/ft_get_module_settings/">ft_get_module_settings</a></li>
+		<li><a href="{{site.baseurl}}/module_development/ft_set_module_settings/">ft_set_module_settings</a></li>
+	</ul>
+
+
+	<h4>Creating your own database tables</h4>
+
+	<p>
+		Module database tables should all follow this naming convention (N.B. the <b>ft_</b> prefix
+		in these examples actually depends on the users installation, so be sure to always use the
+		<b>$g_table_prefix</b> global variable when constructing table names):
+	</p>
+
+
+	{% highlight html %}
+ft_module_[module folder name]_[table name]
+	{% endhighlight %}
+
+	<p>
+		So if our "My Module" module needed its own custom data table, the database table
+		would be something like:
+	</p>
+
+	{% highlight html %}
+ft_module_my_module_data
+	{% endhighlight %}
+
+	<p>
+		Custom database tables can be created at any point, depending on your needs. Generally
+		they're created by your installation function and deleted by your uninstallation function
+		- but this is by no means enforced. If need be, you can create your tables within your
+		module pages, based on user input.
+	</p>
+
+
+{% include close_section.html %}
