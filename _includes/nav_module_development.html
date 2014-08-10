@@ -127,19 +127,8 @@
 		</ul>
 
 	</li>
-	<li>
-		<div {% if include.selected == 'common_tasks' %}class="selected"{% endif %}>
-			<a href="{{site.baseurl}}/module_development/common_tasks/">Common Tasks</a>
-		</div>
-
-		<ul>
-			<li {% if include.selected == 'displaying_tabs' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/displaying_tabs/">Displaying information in tabs</a>
-			</li>
-			<li {% if include.selected == 'displaying_pagination' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/displaying_pagination/">Displaying pagination</a>
-			</li>
-		</ul>
+	<li {% if include.selected == 'common_tasks' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/module_development/common_tasks/">Common Tasks</a>
 	</li>
 	<li {% if include.selected == 'example_modules' %}class="selected"{% endif %}>
 		<a href="{{site.baseurl}}/module_development/example_modules/">Example Modules</a>
