@@ -52,22 +52,8 @@
 	<li {% if include.selected == 'module_nav' %}class="selected"{% endif %}>
 		<a href="{{site.baseurl}}/module_development/module_nav/">Module Navigation</a>
 	</li>
-	<li>
-		<div {% if include.selected == 'display_pages' %}class="selected"{% endif %}>
-			<a href="{{site.baseurl}}/module_development/display_pages/">Displaying your Pages</a>
-		</div>
-
-		<ul>
-			<li {% if include.selected == 'smarty_templates' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/smarty_templates/">Smarty Templates</a>
-			</li>
-			<li {% if include.selected == 'themes' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/themes/">Themes / CSS</a>
-			</li>
-			<li {% if include.selected == 'language_compatibility' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/language_compatibility/">Language Compatibility</a>
-			</li>
-		</ul>
+	<li {% if include.selected == 'display_pages' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/module_development/display_pages/">Displaying your Pages</a>
 	</li>
 	<li>
 		<div {% if include.selected == 'helper_functions' %}class="selected"{% endif %}>

@@ -1,0 +1,60 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: Module Navigation
+heading: Module Navigation
+prev: Database Tables and Data
+prevLink: module_development/database_tables/
+next: Displaying your Pages
+nextLink: module_development/display_pages/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='module_nav' nav_width=4 %}
+
+	<p>
+		Every module has its own navigation menu - just like the main Form Tools navigation
+		menu. The contents and size of the menu is entirely up to you: each menu item can link
+		to whatever page you wish - whether it be a page within your module, an external link
+		or a link to another Form Tools page.
+	</p>
+	<p>
+		How the module navigation appears in the UI depends on the theme. With the default theme,
+		the module navigation appears at the top left, shifting the main navigation menu down
+		beneath it.
+	</p>
+
+	<p>
+		Your module menu items are defined in your <a href="{{site.baseurl}}/module_development/file_module/">module.php</a>
+		file, as discussed earlier.
+	</p>
+
+	<p>
+		The $MODULE["nav"] setting in that file defines your module's menu items. It is an array,
+		whose keys correspond to entries in your language file. The values are an array with two
+		indexes: the URL of the page, and whether it should appear as a submenu item or not.
+	</p>
+
+{% highlight php startinline %}
+$MODULE["nav"] = array(
+  "module_name"   => array('{$module_dir}/index.php', false),
+  "word_settings" => array('{$module_dir}/settings/', false),
+  "word_help"     => array('{$module_dir}/help/', false)
+);
+{% endhighlight %}
+
+	<p>
+		The "module_name", "word_settings" and "word_help" have corresponding entries in the
+		module's lang/en_us.php language file (e.g. $L["module_name"] = "Export Manager"
+		etc). The values each contain the {$module_dir} Smarty placeholder. This is a
+		convenient way to refer to the module root URL. Often you find you won't need it, but if
+		your module arranges its files in subfolders, this ensures valid links from any page
+		location.
+	</p>
+
+	<p>
+		After defining your module menu items in your module.php file as described above, the
+		menu information will be automatically created by the modules installation script.
+	</p>
+
+{% include close_section.html %}

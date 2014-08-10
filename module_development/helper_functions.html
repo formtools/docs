@@ -1,0 +1,40 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: Helper Functions
+heading: Helper Functions
+prev: Displaying your Pages
+prevLink: module_development/display_pages/
+next: ft_check_module_enabled
+nextLink: module_development/ft_check_module_enabled/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='helper_functions' nav_width=4 %}
+
+	<p>
+		Form Tools comes with a number of functions to simplify the job of writing your module.
+		It's well worth glancing over the following functions just to see what functionality is
+		available so that you don't end up writing duplicate code.
+	</p>
+
+	<p>
+		One thing to mention before getting started: the module folder names have special meaning
+		within Form Tools. Since the module names themselves are translated based on the users
+		language, and the module ID DB value may be different for the same module between two
+		different installations, the majority of these functions below use the folder name to
+		uniquely identify the module. So "pages" refers to the Pages module, "export_manager"
+		refers to the Export Manager module and so on. These module folder names act as the
+		modules namespace (both in terms of the files and referencing the code) and should not
+		be renamed by administrators. So as a developer, you can make the assumption that the
+		module folder names are consistent across all installations. So, for example, if you
+		use the <b>ft_check_module_enabled</b> and <b>ft_include_modules</b> function to import
+		the Pages module, this is perfectly valid and encouraged:
+	</p>
+
+	{% highlight php startinline %}
+if (ft_check_module_enabled("pages"))
+  ft_include_modules("pages");
+	{% endhighlight %}
+
+{% include close_section.html %}

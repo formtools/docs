@@ -1,0 +1,36 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: ft_eval_smarty_string
+heading: ft_eval_smarty_string
+prev: ft_display_module_page
+prevLink: module_development/ft_display_module_page/
+next: ft_get_dhtml_page_nav
+nextLink: module_development/ft_get_dhtml_page_nav/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='ft_eval_smarty_string' nav_width=4 %}
+
+	<p>
+		This is a powerful function that can process any string as a Smarty template, returning the string result.
+		The way it works is quite simple. You pass the string containing the Smarty logic / variables, and a list of
+		placeholders and their replacement values. It does the task of parsing the Smarty string and returning the
+		result. Here's an example. Imagine your language file contained this rule:
+	</p>
+
+	{% highlight php startinline %}
+$L["phrase_num_settings_to_complete"] = "You have {\$num_settings} settings to complete.";
+	{% endhighlight %}
+
+	<p>
+		Then, you can process that string to replace the $num_settings Smarty variable like so:
+	</p>
+
+	{% highlight php startinline %}
+$placeholders = array("num_settings" => 5);
+$string = ft_eval_smarty_string($L["phrase_num_settings_to_complete"], $placeholders);
+echo $string; // "You have 5 settings to complete."
+	{% endhighlight %}
+
+{% include close_section.html %}
