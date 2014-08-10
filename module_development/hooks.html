@@ -1,0 +1,73 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: Hooks
+heading: Hooks
+prev: ft_set_module_settings
+prevLink: module_development/ft_set_module_settings/
+next: Methodology
+nextLink: module_development/hooks_methodology/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='hooks' nav_width=4 %}
+
+	<p>
+		Any programmer can edit the Form Tools Core code to make whatever changes they need,
+		but the drawback is that any time they do this, they run the risk of having those changes
+		overwritten the next time the script is upgraded. This is a problem!
+	</p>
+
+	<p>
+		Enter Hooks. Hooks are a solution employed by many extensible web applications to solve
+		this situation (or at least patch it!). Hooks can be implemented in a wide variety of
+		ways, so the following pages outline our approach.
+	</p>
+
+	<p>
+		Hooks let programmers do two things: (1) have their code executed at certain locations
+		(<b>code hooks</b>) and (2) have their own HTML displayed in the main Form Tools webpages
+		(<b>template hooks</b>). When combined, this opens up a wide range of functionality
+		that was previously impossible to do safely. Let's take a closer look at each of these
+		hook types.
+	</p>
+
+	<h4>Code Hooks</h4>
+
+	<p>
+		Littered throughout the Form Tools code - mostly found in getter and setter functions -
+		there are numerous code hooks, where module developers can attach their own code. If you're
+		looking through the code, look for lines like this:
+	</p>
+
+{% highlight php startinline %}
+extract(ft_process_hooks("main", compact("account_info"), array("account_info")), EXTR_OVERWRITE);
+{% endhighlight %}
+
+	<p>
+		Basically what this does it pass off execution control to the ft_process_hooks function,
+		which calls all custom module functions that have been assign to the hook ("main", uniquely
+		identified by the calling function). It specifies what variables are passed and what
+		may be overwritten. For a full list of code hooks and what variables are passed and
+		overridable, <a href="{{site.baseurl}}/module_development/available_hooks/">click here</a>.
+	</p>
+
+	<h4>Template Hooks</h4>
+
+	<p>
+		Template hooks are probably simpler to understand. In the Smarty templates, there are
+		a number of locations where module developers may have their own HTML inserted into the
+		page. This can let you do things like add fields to forms, insert information or text
+		for the benefit of the user, or anything else. Template hooks look like this:
+	</p>
+
+{% highlight smarty %}
+{template_hook location="admin_edit_client_settings_top"}
+{% endhighlight %}
+
+	<p>
+		For a list of template hooks, <a href="{{site.baseurl}}/module_development/template_hooks/">click here</a>.
+	</p>
+
+
+{% include close_section.html %}

@@ -2,15 +2,72 @@
 layout: default
 navSection: Module Development
 navSectionLink: module_development/
-subnavSection: Helper Functions
-heading: Helper Functions
-prev: Displaying your Pages
-prevLink: module_development/display_pages/
-next: ft_check_module_enabled
-nextLink: module_development/ft_check_module_enabled/
+subnavSection: ft_get_page_nav
+heading: ft_get_page_nav
+prev: ft_get_module_settings
+prevLink: module_development/ft_get_module_settings/
+next: ft_include_modules
+nextLink: module_development/ft_include_modules/
 ---
 
-{% include open_section.html nav='nav_module_development.html' selected='helper_functions' nav_width=4 %}
+{% include open_section.html nav='nav_module_development.html' selected='ft_get_page_nav' nav_width=4 %}
 
+	<p>
+		You may find yourself in a position where you have too much information to display on
+		a single page and need to group them into pages, with the standard « 1 2 3 ...
+		pagination links. This function is written for precisely this purpose. It works for
+		showing pagination links for ANY lists of data.
+	</p>
+	<p>
+		It works by passing certain values - like the current page, the number of items per page
+		and so on - to the <b>pagination.tpl</b> template (found in the theme folder root),
+		which generates the pagination HTML / JS. As with all Smarty templates, if the
+		pagination.tpl file isn't found in the theme's root, it will use the default
+		pagination.tpl file in the <b>/themes/default</b> theme.
+	</p>
+
+	<p>
+		The function is called in your PHP, like so:
+	</p>
+
+{% highlight php startinline %}
+$page_vars["pagination"] = ft_get_page_nav($num_results, $num_per_page, $page);
+{% endhighlight %}
+
+	<p>
+		The function parameters are the following:
+	</p>
+
+	<ol>
+		<li>the number of results in the total result set (required)</li>
+		<li>the number of lines that appear per page (required)</li>
+		<li>the current page number (required)</li>
+		<li>any additional string you want to have passed along via the query string when the user clicks on one
+			of the pagination links (optional)</li>
+		<li>the key used to identify the page number, passed via the query string, e.g. index.php?<b>page</b>=5. The
+			default is the string "page", but you can use whatever string you want (optional)</li>
+		<li>the theme with which to render the HTML. This defaults to whatever theme the user is currently using, but
+			in case you need a specific pagination.tpl file, you can specify the theme folder name (optional).</li>
+	</ol>
+
+	<p>
+		The "pagination" key has to be passed to the template via the ft_display_module_page function, like so:
+	</p>
+
+{% highlight php startinline %}
+ft_display_module_page("your_template.tpl", $page_vars); // where $page_vars contains "pagination"
+{% endhighlight %}
+
+	<p>
+		Lastly, in your template just use the $pagination variable to display it:
+	</p>
+
+{% highlight smarty %}
+{$pagination}
+{% endhighlight %}
+
+	<p>
+		And you're done!
+	</p>
 
 {% include close_section.html %}

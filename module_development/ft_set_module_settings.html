@@ -2,15 +2,37 @@
 layout: default
 navSection: Module Development
 navSectionLink: module_development/
-subnavSection: Helper Functions
-heading: Helper Functions
-prev: Displaying your Pages
-prevLink: module_development/display_pages/
-next: ft_check_module_enabled
-nextLink: module_development/ft_check_module_enabled/
+subnavSection: ft_set_module_settings
+heading: ft_set_module_settings
+prev: ft_sanitize
+prevLink: module_development/ft_sanitize/
+next: Hooks
+nextLink: module_development/hooks/
 ---
 
-{% include open_section.html nav='nav_module_development.html' selected='helper_functions' nav_width=4 %}
+{% include open_section.html nav='nav_module_development.html' selected='ft_set_module_settings' nav_width=4 %}
+
+	<p>
+		This function abstracts away all the details of storing settings for your module in
+		the <b>settings</b> database table. It takes a single parameter: a hash of key-value
+		pairs where the key is the setting name and the value, the setting value.
+	</p>
+
+	<p>
+		Imagine you want to store two pieces of information supplied by the user: their age
+		and name. You could store this information in the database like so:
+	</p>
+
+{% highlight php startinline %}
+$info = array("name" => $name, "age" => $age);
+ft_set_module_settings($info);
+{% endhighlight %}
+
+	<p>
+		And that's it! It's now stored in the database. If the value didn't already exist in
+		the database it will be added. If it <b>did</b> already exist, the values will be
+		updated.
+	</p>
 
 
 {% include close_section.html %}

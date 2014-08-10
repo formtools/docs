@@ -1,0 +1,90 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: Hooks Methodology
+heading: Hooks Methodology
+prev: Hooks
+prevLink: module_development/hooks/
+next: Code Hooks
+nextLink: module_development/code_hooks/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='hooks_methodology' nav_width=4 %}
+
+	<p>
+		Hooks are stored in the <b>hooks</b> table in the database. As a module developer,
+		it's your responsibility to "register" them - i.e. add them to the database table so that
+		they get processed at the locations / times you want.
+	</p>
+	<p>
+		The benefit of storing them in the database prevents the need for the Core code to import all module
+		code files for each request and process them each individually - which can slow down the script. Instead,
+		this lets the code know precisely which module hooks need to be executed for which function.
+	</p>
+
+	<p>
+		For code hooks, the following information is needed:
+	</p>
+
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>Module folder name</strong>
+		</div>
+		<div class="col-lg-9">
+			As described.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>Core function</strong>
+		</div>
+		<div class="col-lg-9">
+			Which function in the Core you want to extend.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>Hook function</strong>
+		</div>
+		<div class="col-lg-9">
+			The name of the function that you want to be called (see here for a list of
+			<a href="{{site.baseurl}}/module_development/code_hooks/">available code hooks</a>).
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>Location</strong>
+		</div>
+		<div class="col-lg-9">
+			Different functions allow hooks at different locations. This is a string denoting
+			the location where your hook should be called (again, see the
+			<a href="{{site.baseurl}}/module_development/code_hooks/">available hooks</a> page for the locations
+			available for each function).
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>Priority</strong>
+		</div>
+		<div class="col-lg-9">
+			(optional) a value of 1-100, with 1 having the highest priority. This determines
+			the order in which multiple hooks associated with the same core function get
+			processed.
+		</div>
+	</div>
+
+	<p>
+		Form Tools comes with functions to add, retrieve and delete your hooks. Generally,
+		the best approach to registering hooks is to register them in your installation function.
+		However, you can register them "on the fly" within your own module, based on user input
+		if that is more appropriate to your needs.
+	</p>
+
+
+{% include close_section.html %}

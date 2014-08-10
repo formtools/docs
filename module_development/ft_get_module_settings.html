@@ -1,0 +1,35 @@
+---
+layout: default
+navSection: Module Development
+navSectionLink: module_development/
+subnavSection: ft_get_module_settings
+heading: ft_get_module_settings
+prev: ft_get_module_hooks
+prevLink: module_development/ft_get_module_hooks/
+next: ft_get_page_nav
+nextLink: module_development/ft_get_page_nav/
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='ft_get_module_settings' nav_width=4 %}
+
+	<p>
+		This function is the sister of <b>ft_set_module_settings</b> described previously. It retrieves values stored
+		in the database for your module. It accepts a single parameter: a string of the setting name (key), or an array of
+		strings if you want to retrieve multiple values. For example:
+	</p>
+
+	{% highlight php startinline %}
+// getting a single value
+$age = ft_get_module_settings("age");
+
+// getting multiple values
+$info = array("age", "name");
+list($age, $name) = ft_get_module_settings($info);
+	{% endhighlight %}
+
+	<p>
+		The <b>ft_set_module_settings</b> and <b>ft_get_module_settings</b> functions are good for small snippets of data. If you need to store larger quantities of data, we recommend you create your own database table.
+	</p>
+
+
+{% include close_section.html %}

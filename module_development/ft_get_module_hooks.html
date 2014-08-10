@@ -2,15 +2,22 @@
 layout: default
 navSection: Module Development
 navSectionLink: module_development/
-subnavSection: Helper Functions
-heading: Helper Functions
-prev: Displaying your Pages
-prevLink: module_development/display_pages/
-next: ft_check_module_enabled
-nextLink: module_development/ft_check_module_enabled/
+subnavSection: ft_get_module_hooks
+heading: ft_get_module_hooks
+prev: ft_get_dhtml_page_nav
+prevLink: module_development/ft_get_dhtml_page_nav/
+next: ft_get_module_settings
+nextLink: module_development/ft_get_module_settings/
 ---
 
-{% include open_section.html nav='nav_module_development.html' selected='helper_functions' nav_width=4 %}
+{% include open_section.html nav='nav_module_development.html' selected='ft_get_module_hooks' nav_width=4 %}
 
+	<p>
+		This function returns all hooks associated with this module. It's called like so:
+	</p>
+
+{% highlight php startinline %}
+$hooks = ft_get_module_hooks("my_module");
+{% endhighlight %}
 
 {% include close_section.html %}

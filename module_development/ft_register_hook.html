@@ -2,15 +2,37 @@
 layout: default
 navSection: Module Development
 navSectionLink: module_development/
-subnavSection: Helper Functions
-heading: Helper Functions
-prev: Displaying your Pages
-prevLink: module_development/display_pages/
-next: ft_check_module_enabled
-nextLink: module_development/ft_check_module_enabled/
+subnavSection: ft_register_hook
+heading: ft_register_hook
+prev: ft_load_module_field
+prevLink: module_development/ft_load_module_field/
+next: ft_sanitize
+nextLink: module_development/ft_sanitize/
 ---
 
-{% include open_section.html nav='nav_module_development.html' selected='helper_functions' nav_width=4 %}
+{% include open_section.html nav='nav_module_development.html' selected='ft_register_hook' nav_width=4 %}
 
+	<p>
+		This function registers a new hook in the database.
+	</p>
+
+{% highlight php startinline %}
+ft_register_hook($module_folder, $when, $core_function, $hook_function, $priority = 50, $force_unique = false);
+{% endhighlight %}
+
+	<p>
+		The second <b>$when</b> parameter is the string identifying where in the core function
+		the hook should be associated. See the <a href="{{site.baseurl}}/module_development/code_hooks/">code hooks</a>
+		page for more information on this and the available core functions that can have hooks.
+	</p>
+	<p>
+		The priority parameter determines the priority of the hook. It accepts any value from
+		1-100. 50 is the default.
+	</p>
+	<p>
+		The final parameter tells the function to ONLY register the hook if an identical hook
+		doesn't already exist. Identity is determined by all the fields passed EXCEPT the priority
+		field.
+	</p>
 
 {% include close_section.html %}
