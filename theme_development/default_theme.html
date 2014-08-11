@@ -1,0 +1,43 @@
+---
+layout: default
+navSection: Theme Development
+navSectionLink: theme_development/
+subnavSection: The Default Theme
+heading: The Default Theme
+prev: Theme Development
+prevLink: theme_development/
+next: Theme Structure
+nextLink: theme_development/theme_structure/
+---
+
+{% include open_section.html nav='nav_theme_development.html' selected='default_theme' nav_width=4 %}
+
+	<p>
+		Form Tools is organized into the following structural components: the Form Tools Core code (the "Core"),
+		Modules, Themes, the API and separate language files. The default theme is included as part of the Core. It
+		is <b>always</b> up to date. The default theme contains the pages for the visual presentation and generation
+		of all Form Tools content.
+	</p>
+
+	<div class="alert alert-danger">
+		<strong>Warning!</strong> You should NEVER delete this theme. Don't delete this theme. Don't delete this
+		theme. I'm serious. Deleting this theme would be like cutting off Form Tools legs, and that would make
+		Form Tools sad.
+	</div>
+
+	<p>
+		If you <b>do</b> delete the theme (and let's face, somebody will) you're going to
+		encounter problems. But don't panic, all is not lost: re-download Form Tools and
+		upload the <b>/themes/default</b> folder to your server at the appropriate spot in
+		your Form Tools installation.
+	</p>
+
+	<p>
+		As mentioned, the default theme contains all pages needed to display Form Tools pages
+		and content. This makes it unique: all other themes don't need to do this. Other themes
+		work by <b>overriding files in the default theme</b>. In other words, as a theme developer
+		all you need to do is override those files that you need. This keeps your themes as simple
+		as can be.
+	</p>
+
+{% include close_section.html %}

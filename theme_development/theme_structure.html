@@ -1,0 +1,63 @@
+---
+layout: default
+navSection: Theme Development
+navSectionLink: theme_development/
+subnavSection: Theme Structure
+heading: Theme Structure
+prev: The Default Theme
+prevLink: theme_development/default_theme/
+next: Cache Files
+nextLink: theme_development/cache_files/
+---
+
+{% include open_section.html nav='nav_theme_development.html' selected='theme_structure' nav_width=4 %}
+
+	<p>
+		Themes are structured in a very similar manner to the core script. They are all located in
+		their own unique folder, in the <b>/themes</b> folder.
+	</p>
+
+	<p>
+		If you look in the Form Tools root folder, you'll see the following directory structure.
+	</p>
+
+	<pre>/admin/account/
+/admin/clients/
+/admin/forms/add/
+/admin/forms/field_option_groups/
+/admin/forms/field_types/
+/admin/modules/
+/admin/settings/
+/clients/account/
+/clients/forms/
+</pre>
+
+	<p>
+		(and some other folders). Now look in the default theme folder (<b>/themes/default</b>).
+	</p>
+
+	<pre>/themes/default/admin/account/
+/themes/default/admin/clients/
+/themes/default/admin/forms/add/
+/themes/default/admin/forms/field_option_groups/
+/themes/default/admin/forms/field_types/
+/themes/default/admin/modules/
+/themes/default/admin/settings/
+/themes/default/clients/account/
+/themes/default/clients/forms/
+</pre>
+
+	<p>
+		As you can see, it mimics the directory structure exactly. This is done for all pages
+		that can be seen in a web browser.
+	</p>
+
+	<p>
+		So, when you're looking for the Smarty template that renders a particular page, you
+		know exactly where to find it. There <b>is</b> a little leeway provided for theme
+		developers in that you can create your own include files to be referenced wherever you
+		want, but by and large the goal was to make the PHP-Smarty page relationship 1-1
+		to make locating the Smarty template as simple as possible.
+	</p>
+
+{% include close_section.html %}

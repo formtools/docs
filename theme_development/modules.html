@@ -1,0 +1,47 @@
+---
+layout: default
+navSection: Theme Development
+navSectionLink: theme_development/
+subnavSection: Modules
+heading: Modules
+prev: Cache Files
+prevLink: theme_development/cache_files/
+next: The /about folder
+nextLink: theme_development/about_folder/
+---
+
+{% include open_section.html nav='nav_theme_development.html' selected='modules' nav_width=4 %}
+
+	<p>
+		Modules are special. Since you, the theme developer, cannot know what modules will be used
+		by each Form Tools installation, you can hardly be expected to provide templates for
+		each and every one - including those that aren't written yet!
+	</p>
+
+	<p>
+		Instead, skinning modules work like so: your job is to develop three special templates:
+		modules_header.tpl, modules_footer.tpl and module_menu.tpl. These three templates do the job
+		of rendering important areas of the module pages for ALL modules, namely: the header HTML,
+		footer HTML and the presentation of the module navigation menu.
+	</p>
+	&nbsp;
+	<p>
+		The actual job of creating the Smarty templates for each module is left to the module
+		developer. They create whatever pages they need - and they then include the three files
+		appropriately.
+	</p>
+
+	<p>
+		The benefits to this approach should be pretty clear: the resulting UI will be largely
+		consistent between the main Form Tools pages and each module. To further reinforce this
+		consistency, the Form Tools core contains a CSS file which should be included in ALL
+		template pages - including your modules_header.tpl file. This lets module developers
+		rely on those rules always being defined. Mostly the file just includes padding, margin
+		and colour rules. See:
+	</p>
+
+	<p>
+		<b>/global/css/main.css</b>
+	</p>
+
+{% include close_section.html %}
