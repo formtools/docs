@@ -1,0 +1,78 @@
+---
+layout: default
+navSection: Theme Development
+heading: Theme Development
+next: The Default Theme
+nextLink: theme_development/default_theme/
+---
+
+{% include open_section.html nav='nav_theme_development.html' selected='introduction' nav_width=4 %}
+
+	<div class="alert alert-danger">
+		Urgh this page is awful. Rewrite!
+	</div>
+
+	<h3>Overview</h3>
+
+	<p>
+		This section of the documentation is for people interested in customizing the look and feel of Form Tools.
+		For that, let's start with...
+	</p>
+
+	<h4>Smarty!</h4>
+
+	<p>
+		All HTML content in Form Tools 2 is now generated via <a href="http://smarty.net">Smarty Templates</a>.
+		Smarty is a separate web application written in PHP that's bundled with Form Tools. With Form Tools 2, instead of
+		constructing the HTML in PHP, Smarty helps separates the HTML (and other dynamic content) into separate files
+		that contain Smarty placeholders and logic. The template is then called and processed from within the Core
+		code, resulting in a final webpage or whatever content is needed.
+	</p>
+
+	<p>
+		Smarty is used not just for the HTML webpages, but the emails content (HTML + text),
+		language file strings - virtually everything. The benefits to using Smarty are too many
+		to enumerate: it's fundamentally a better approach that the previous method of
+		intermingling the HTML and PHP. What's more, we didn't just use Smarty for our own
+		convenience: this decision affects all users of Form Tools - be they theme developers,
+		module developers or just administrators constructing emails through the Form Tools UI.
+		It makes <b>everyone's</b> job easier.
+	</p>
+
+	<p>
+		But the primary, original purpose of using Smarty was to allow Form Tools to be skinned
+		with themes. The last of customizability of the Form Tools 1 UI was a significant
+		drawback. We included some simple options to define the CSS and main image, but it was
+		very basic. The new theme-based approach has no limitations.
+	</p>
+	<p>
+		Themes encompass the visual presentation of the entire script: client pages,
+		administrator pages, modules pages alike. It was designed to be easily extended, letting
+		you create your own themes <b>very</b> quickly. This can be invaluable if you need to skin
+		the UI for a client, making it look consistent with their own website. As with Form Tools
+		1.x, Form Tools 2 is completely brandable: we don't make you include links to our
+		website or even mention we wrote the thing. Two thumbs up for open source!
+	</p>
+
+	<h4>Themes + Overriding Pages</h4>
+
+	<p>
+		Themes work by overriding pages already defined in the default theme. The default theme
+		(discussed next) contains all theme pages needs to display the entire Form Tools
+		application. Other themes work by <b>only</b> overriding those pages required for whatever
+		type of presentation you have in mind. This keeps themes as small as possible, and makes
+		the increasingly likely of being compatible with future versions of the script.
+	</p>
+
+	<p>
+		On that note, generally it's a good idea to only override the main "special" templates
+		(discussed later) not individual pages within the Form Tools UI. This is because future
+		versions of the script are apt to make changes to individual pages, whereas the core pages
+		are more probable to remain unchanged. But even if you do need to do this, no problem! The
+		Form Tools website logs different versions of your theme for you, so you can map specific
+		versions to particular versions of the Form Tools  Core, ensuring your theme works in all
+		cases.
+	</p>
+
+
+{% include close_section.html %}
