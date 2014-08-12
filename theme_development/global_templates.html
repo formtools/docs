@@ -1,0 +1,311 @@
+---
+layout: default
+navSection: Theme Development
+navSectionLink: theme_development/
+subnavSection: Global Templates
+heading: Global Templates
+prev: Create a theme in 5 easy steps
+prevLink: theme_development/create_theme/
+next: Internationalization and Localization
+nextLink: theme_development/global_templates/
+---
+
+{% include open_section.html nav='nav_theme_development.html' selected='global_templates' nav_width=4 %}
+
+	<h3>Global Templates</h3>
+
+	<p>
+		Themes contain a number of "global" templates, used in many places throughout the script. These include
+		the main header and footer (header.tpl and footer.tpl), tabsets, module header and footer, the menu section,
+		module menu section, pagination (« 1 2 3 etc.) and a few others.
+	</p>
+	<p>
+		The following pages explain each of these templates.
+	</p>
+
+
+	<hr size="1" />
+
+	<h4>dhtml_pagination.tpl</h4>
+
+	<p>
+		The <b>dhtml_pagination.tpl</b> template generates the HTML for pages that use DHTML page
+		navigation. This includes the main forms and clients list page in the administrator UI.
+		Also, bear in mind this template can be used by any external module - if the module
+		developer chooses to use DHTML to handle the pages rather than server-side. The
+		server-side equivalent of this is the pagination.tpl
+		template. Both work in the same way - showing individual pages one by one. The dhtml
+		version works by having ALL results available in the page - with only one page shown at
+		a time. The pagination.tpl template passes the selected page number to the page - which
+		does the job of re-querying the database for the appropriate page of data. Which one
+		should be used generally depends on the volume of results.
+	</p>
+
+	<p>
+		This template requires the general.js javascript to have been included in the page.
+	</p>
+
+	<p>
+		The following variables are passed to the page:
+	</p>
+
+	{% highlight smarty %}
+{$num_results}
+{$viewing_range}
+{$current_page}
+{$total_pages}
+{$num_per_page}
+{$next_page}
+{$previous_page}
+	{% endhighlight %}
+
+	<p>
+		Most are self-explanatory. The $viewing_range variable contains a string like "[1-10]"
+		indicating what results are being displayed. The $next_page and $previous_page are the
+		page numbers of the surrounding pages.
+	</p>
+
+
+	<hr size="1" />
+
+	<h3>error.tpl</h3>
+
+	<p>
+		The error.tpl template is used to handle all major errors. Things that <b>shouldn't</b>
+		go wrong, but did. It displays the error along with any debugging information that
+		could be of use.
+	</p>
+
+	<p>
+		The following values are available in the page.
+	</p>
+
+	<div class="row">
+		<div class="col-lg-2">
+			<b>{$error_type}</b>
+		</div>
+		<div class="col-lg-10">
+			"error" or "notify"
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-2">
+			<b>{$last_error}</b>
+		</div>
+		<div class="col-lg-10">
+			Major errors are cached in sessions, and available via this placeholder.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-2">
+			<b>{$g_debug}</b>
+		</div>
+		<div class="col-lg-10">
+			This is available in all Smarty templates. The value is set in your library.php file. If set to true, it
+			can be used in this template to show additional debug information.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-2">
+			<b>{$error_debug}</b>
+		</div>
+		<div class="col-lg-10">
+			Additional debugging information (if available).
+		</div>
+	</div>
+
+
+	<hr size="1" />
+
+	<h3>footer.tpl</h3>
+
+	<p>
+		The footer template is called in (virtually) all pages. Your theme should detect for, and display the
+		{$account.settings.footer_text} value. Whether this value has a settings depends on the individual account
+		and whether the user is currently logged in.
+	</p>
+
+
+	<hr size="1" />
+
+	<h3>header.tpl</h3>
+
+	<p>
+		The header template is used on every page to begin the HTML. It should include the &lt;head&gt; and include all
+		requires javascript, CSS files. Precisely WHICH javascript files depend on your current version. We recommend
+		you either use the Example theme or examine the header.tpl in the default theme.
+	</p>
+
+	<p>
+		Here's an example, taken from the default theme.
+	</p>
+
+	{% highlight smarty %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="{$LANG.special_text_direction}">
+<head>
+	<title>{$head_title}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="shortcut icon" href="{$theme_url}/images/favicon.ico" >
+
+	<script type="text/javascript">
+		//<![CDATA[
+		var g = {literal}{}{/literal};
+		g.root_url = "{$g_root_url}";
+		g.error_colours = ["ffbfbf", "ffeded"];
+		g.notify_colours = ["c6e2ff", "f2f8ff"];
+		//]]>
+	</script>
+
+	<link type="text/css" rel="stylesheet" href="{$g_root_url}/global/css/main.css">
+	<link type="text/css" rel="stylesheet" href="{$theme_url}/css/styles.css">
+	<script type="text/javascript" src="{$g_root_url}/global/scripts/prototype.js"></script>
+	<script type="text/javascript" src="{$g_root_url}/global/scripts/scriptaculous.js?load=effects"></script>
+	<script type="text/javascript" src="{$g_root_url}/global/scripts/effects.js"></script>
+	<script type="text/javascript" src="{$g_root_url}/global/scripts/general.js"></script>
+	<script type="text/javascript" src="{$g_root_url}/global/scripts/rsv.js"></script>
+
+	{$head_string}
+	{$head_js}
+	{$head_css}
+
+</head>
+<body>
+	{% endhighlight %}
+
+
+	<p>
+		All the important variables are in the above example and I think they're fairly self-explanatory. Make sure
+		you include all three of the {$head_string}, {$head_js} and {$head_css}. They're used to insert custom
+		strings, JS and CSS into each page.
+	</p>
+
+
+	<hr size="1" />
+
+	<h3>menu.tpl</h3>
+
+	<p>
+		This template is used for rendering the menu on all pages. It does NOT include the module navigation; see
+		the modules_menu.tpl for that.
+	</p>
+	<p>
+		The template works by accessing the (ordered) menu items in the $SESSION.menu.menu_items array. This value
+		is populated AFTER the user has logged in. The template loops through each element in that array and
+		displays the row with the appropriate link. This makes the menu entirely customizable through the Settings
+		&raquo; Menus tab.
+	</p>
+
+	{% highlight smarty %}
+{assign var=is_current_parent_menu value=false}
+
+<div class="menu_items">
+{foreach from=$SESSION.menu.menu_items key=k item=i}
+
+	{assign var=link_id value=""}
+
+	{* main menu item *}
+	{if $i.is_submenu == "no"}
+
+	{* if this parent menu contains the page that is currently being viewed,
+	show the submenu options *}
+	{if $i.url == $nav_parent_page_url}
+		{assign var=is_current_parent_menu value=true}
+	{else}
+		{assign var=is_current_parent_menu value=false}
+	{/if}
+
+	<div class="nav_link"><a href="{$i.url}"{$link_id} class="no_border">{$i.display_text}</a></div>
+
+	{* child menu item *}
+	{else}
+	<div class="nav_link_submenu"><a href="{$i.url}"{$link_id} class="no_border">&#8212;
+		{$i.display_text}</a></div>
+	{/if}
+
+{/foreach}
+</div>
+	{% endhighlight %}
+
+
+	<hr size="1" />
+
+	<h3>messages.tpl</h3>
+
+	<p>
+		The messages.tpl template is used on most Form Tools pages to display error and notification messages. Even
+		if the page doesn't currently have a message to show, the message page elements is inserted into the page,
+		only hidden. The nice thing about this is that it's compatible with the main javascript library (general.js
+		and other javascript files) to display the message section if needed. This is often needed for things like
+		pages including forms, if the user happens to fill in the form incorrectly.
+	</p>
+
+
+	<hr size="1" />
+	<h3>pagination.tpl</h3>
+
+	<p>
+		The pagination.tpl template is the server-side version of the dhtml_pagination.tpl template. It's used to
+		display the « 1 2 3 pagination links in your template for pages that require it.
+	</p>
+	<p>
+		The following variables are passed to the page:
+	</p>
+
+	{% highlight smarty %}
+{$num_results}
+{$viewing_range}
+{$current_page}
+{$total_pages}
+{$num_per_page}
+{$next_page}
+{$previous_page}
+	{% endhighlight %}
+
+	<p>
+		Most are self-explanatory. The $viewing_range variable contains a string like "[1-10]" indicating what
+		results are being displayed. The $next_page and $previous_page are the page numbers of the surrounding
+		pages.
+	</p>
+
+
+	<hr size="1" />
+	<h3>tabset_close.tpl</h3>
+
+	<p>
+		The tabset_close.tpl template is used to close any open tabsets.
+	</p>
+
+
+	<hr size="1" />
+	<h3>tabset_open.tpl</h3>
+
+	<p>
+		The tabset_open.tpl template is used to render all tabsets in the Form Tools application, including
+		external modules. It works very simply: a list of tabs is passed to the template, which then loops through
+		them, marking the appropriate tab as selected.
+	</p>
+
+
+	<hr size="1" />
+	<h3>module_footer.tpl</h3>
+
+	<p>
+		The module_footer.tpl template is used to close all module pages. Generally speaking, it has the same
+		content as the footer.tpl template; both act to close the web pages.
+	</p>
+
+
+	<hr size="1" />
+	<h3>module_header.tpl</h3>
+
+	<p>
+		The module_header.tpl template is used on every module page to open the HTML. It should include the &lt;head&gt;
+		and include all required javascript and CSS files. Precisely WHICH javascript files depend on your current
+		version. We recommend you either use the Example theme or examine the module_header.tpl in the default theme.
+	</p>
+
+{% include close_section.html %}

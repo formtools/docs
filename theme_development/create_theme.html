@@ -1,0 +1,45 @@
+---
+layout: default
+navSection: Theme Development
+navSectionLink: theme_development/
+subnavSection: Create a theme in 5 easy steps
+heading: Create a theme in 5 easy steps
+prev: The /about folder
+prevLink: theme_development/about_folder/
+next: Global Templates
+nextLink: theme_development/global_templates/
+---
+
+{% include open_section.html nav='nav_theme_development.html' selected='create_theme' nav_width=4 %}
+
+	<p>
+		Here's a (very!) quick guide to creating a new theme. Once it's created, you can set about
+		customizing it to make it look however you wish.
+	</p>
+
+	<ol>
+		<li><a href="http://themes.formtools.org/example/">Download the example theme</a> and unzip it
+			on your desktop.</li>
+		<li>Choose a name for your theme (here, we'll call it "my_theme")and rename the
+			"example" folder.</li>
+		<li>Edit the <b>/my_theme/about/theme.php</b> file and change whatever values are
+			appropriate.</li>
+		<li>Upload your new theme folder to your server and add it to the Form Tools /themes folder,
+			along with the "default" theme - and any other themes that you have installed.</li>
+		<li>Log into Form Tools and go to Settings » Themes. There, click the "Refresh
+			Theme List" button. You should now see your new theme!</li>
+	</ol>
+
+	<p>
+		From here, the world's your oyster. You can start editing the templates and CSS
+		to make the script looks however you need. To change the thumbnail and image that appears
+		in the Settings » Themes tab, just update the screenshot.gif and thumbnail.gif files,
+		found in your <b>/my_theme/about/</b> folder.
+	</p>
+
+	<p>
+		Have fun!
+	</p>
+
+
+{% include close_section.html %}
