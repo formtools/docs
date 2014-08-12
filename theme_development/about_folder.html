@@ -1,0 +1,74 @@
+---
+layout: default
+navSection: Theme Development
+navSectionLink: theme_development/
+subnavSection: The /about folder
+heading: The /about folder
+prev: Modules
+prevLink: theme_development/modules/
+next: Create a theme in 5 easy steps
+nextLink: theme_development/create_theme/
+---
+
+{% include open_section.html nav='nav_theme_development.html' selected='about_folder' nav_width=4 %}
+
+	<p>
+		Every theme has its own <b>/about folder</b> (<b>/themes/my_module/about/</b>) containing
+		various "meta" information to allow it to be imported and accessible within Form Tools.
+		This folder should contain three files:
+	</p>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>theme.php</strong>
+		</div>
+		<div class="col-lg-9">
+			This file contains information about the theme, to pass to Form Tools. Here's an example
+			of this file:
+
+			{% highlight php %}
+<?php
+/**
+ * Form Tools Theme File
+ */
+
+$theme_name = "Default";
+$theme_author = "Form Tools";
+$theme_author_email = "ben.keen@gmail.com";
+$theme_link = "http://themes.formtools.org/themes";
+$theme_description = "The default Form Tools theme.";
+$theme_version = "1.0.0";
+$supports_ft_versions = "2.0.0";
+?>
+			{% endhighlight %}
+
+			All fields except <b>$theme_author_email</b> and <b>$theme_link</b> are required. The
+			<b>$supports_ft_versions</b> fields should contain a comma-delimited list of versions
+			that this theme supports.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>screenshot.gif</strong>
+		</div>
+		<div class="col-lg-9">
+			A screenshot of any page in your theme, which you feel gives the user the best sense
+			of how your theme looks. This can be any size, but we recommend keeping it within a
+			1000px width so that it'll fit within most screens. This image and the following
+			thumbnail appear in the Settings » Themes page, letting the administrator see
+			all themes at a glance.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>thumbnail.gif</strong>
+		</div>
+		<div class="col-lg-9">
+			A thumbnail of your screenshot. To ensure consistency within the Form Tools UI,
+			<b>this thumbnail should have a width of 200px</b>.
+		</div>
+	</div>
+
+{% include close_section.html %}
