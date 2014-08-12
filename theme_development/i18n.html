@@ -1,0 +1,24 @@
+---
+layout: default
+navSection: Theme Development
+navSectionLink: theme_development/
+subnavSection: Internationalization and Localization
+heading: Internationalization and Localization
+prev: Global Templates
+prevLink: theme_development/global_templates/
+---
+
+{% include open_section.html nav='nav_theme_development.html' selected='i18n' nav_width=4 %}
+
+	<p>
+		Form Tools 2, like it's predecessor may be translated in into other languages. As such, there should be NO
+		hardcoded English or other language strings in the templates. Of course, if you're developing a theme for a
+		particular case - not intending to publish it on this site, this is not enforced.
+	</p>
+	<p>
+		As a theme developer, you have access to any string found in the language files. See the
+		<b>/global/lang/en_us.php</b> file for the default English values. This contains all the strings at your
+		disposal. You can insert the strings into your theme like so: <b>{$LANG.phrase_my_phrase_here}</b>.
+	</p>
+
+{% include close_section.html %}

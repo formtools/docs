@@ -6,25 +6,21 @@ next: The Default Theme
 nextLink: theme_development/default_theme/
 ---
 
-{% include open_section.html nav='nav_theme_development.html' selected='introduction' nav_width=4 %}
-
-	<div class="alert alert-danger">
-		Urgh this page is awful. Rewrite!
-	</div>
+{% include open_section.html nav='nav_theme_development.html' selected='theme_development' nav_width=4 %}
 
 	<h3>Overview</h3>
 
 	<p>
-		This section of the documentation is for people interested in customizing the look and feel of Form Tools.
-		For that, let's start with...
+		This section is for people interested in customizing the look and feel of Form Tools.
+		The most important thing you need to know about is <i>smarty</i>.
 	</p>
 
 	<h4>Smarty!</h4>
 
 	<p>
-		All HTML content in Form Tools 2 is now generated via <a href="http://smarty.net">Smarty Templates</a>.
-		Smarty is a separate web application written in PHP that's bundled with Form Tools. With Form Tools 2, instead of
-		constructing the HTML in PHP, Smarty helps separates the HTML (and other dynamic content) into separate files
+		All HTML content in Form Tools 2 is generated via <a href="http://smarty.net">Smarty Templates</a>.
+		Smarty is a web application that's bundled with Form Tools. With Form Tools 2, instead of
+		constructing the HTML in PHP, Smarty helps remove the HTML (and other dynamic content) into separate files
 		that contain Smarty placeholders and logic. The template is then called and processed from within the Core
 		code, resulting in a final webpage or whatever content is needed.
 	</p>
