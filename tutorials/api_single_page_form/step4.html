@@ -1,0 +1,31 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding a Single Page Form with the API
+subnavSectionLink: tutorials/api_single_page_form/
+heading: Going Live!
+prev: The Test Submission
+prevLink: tutorials/api_single_page_form/step3/
+next: Related Links
+nextLink: tutorials/api_single_page_form/related_links/
+---
+
+{% include open_section.html nav='nav_tutorial_aspf.html' selected='step4' nav_width=4 %}
+
+	<p>
+		Finally, after your form has been added and configured via the Form Tools interface, you just need to make
+		one final change to push it live. On your form page, again change the ft_api_init_form_page function line
+		to this (where X is your form ID):
+	</p>
+
+	{% highlight php startinline %}
+$fields = ft_api_init_form_page(X);
+	{% endhighlight %}
+
+	<p>
+		(All you did was remove the second parameter). Now, after you've revisited the "thankyou" page to ensure that
+		sessions were emptied, all your form submissions should be stored in Form Tools!
+	</p>
+
+{% include close_section.html %}

@@ -1,0 +1,48 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding a Single Page Form with the API
+subnavSectionLink: tutorials/api_single_page_form/
+heading: "Configuring your \"Thankyou\" Page"
+prev: "Configuring your Form Page"
+prevLink: tutorials/api_single_page_form/step1/
+next: The Test Submission
+nextLink: tutorials/api_single_page_form/step3/
+---
+
+{% include open_section.html nav='nav_tutorial_aspf.html' selected='step2' nav_width=4 %}
+
+	<p>
+		This bit's easy. At the top of your thank you page (again, don't forget it has to be a
+		PHP file), add the following code:
+	</p>
+
+	{% highlight php %}
+<?php
+require_once("path/to/global/api/api.php");
+$fields = ft_api_init_form_page();
+ft_api_clear_form_sessions();
+?>
+	{% endhighlight %}
+
+	<p>
+		Don't forget to update the path to the API file, just like with your form page.
+	</p>
+
+	<h4 size="1">
+	</h4><h4>Explanation of Code</h4>
+
+	<p>
+		This code does two main things. One, it returns all form values entered by the user
+		in the $fields variable. You can use that variable to display information in the page,
+		if you so need. Two, it closes sessions. The API stores information supplied by the users
+		in "sessions" (temporary PHP storage) so that the information isn't lost as they go from
+		page to page. To ensure that the next time the user returns to the form they don't see
+		the old information, this page empties the sessions. Note: it's VERY important while
+		you're setting up your form that sessions are cleared. Otherwise, the test values won't
+		overridden and you'll never be able to finish setting up your form!
+	</p>
+
+
+{% include close_section.html %}

@@ -1,0 +1,20 @@
+<h4 {% if include.selected == 'introduction' %}class="selected"{% endif %}><a href="{{site.baseurl}}/tutorials/api_single_page_form/">Introduction</a></h4>
+
+<ol>
+	<li {% if include.selected == 'step1' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/tutorials/api_single_page_form/step1/">Configuring your Form Page</a>
+	</li>
+	<li {% if include.selected == 'step2' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/tutorials/api_single_page_form/step2/">Configuring your "Thankyou" Page</a>
+	</li>
+	<li {% if include.selected == 'step3' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/tutorials/api_single_page_form/step3/">The Test Submission</a>
+	</li>
+	<li {% if include.selected == 'step4' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/tutorials/api_single_page_form/step4/">Going Live!</a>
+	</li>
+</ol>
+
+<div {% if include.selected == 'related_links' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/tutorials/api_single_page_form/related_links/">Related Links</a>
+</div>

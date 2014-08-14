@@ -1,0 +1,138 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding a Single Page Form with the API
+subnavSectionLink: tutorials/api_single_page_form/
+heading: Configuring your Form Page
+prev: Introduction
+prevLink: tutorials/api_single_page_form/
+next: "Configuring your \"Thankyou\" Page"
+nextLink: tutorials/api_single_page_form/step2/
+---
+
+{% include open_section.html nav='nav_tutorial_aspf.html' selected='step1' nav_width=4 %}
+
+	<p>
+		Make sure your form has been given a .php extension (the API requires your files to be
+		PHP files - not HTML), then add the following PHP to the very top of your page with a
+		few minor modifications listed underneath:
+	</p>
+
+	{% highlight php %}
+<?php
+require_once("path/to/form_tools/global/api/api.php");
+$fields = ft_api_init_form_page("", "test");
+$params = array(
+  "submit_button" => "submit_button_name_attribute",
+  "next_page" => "thanks.php",
+  "form_data" => $_POST,
+  "file_data" => $_FILES,
+  "finalize" => true
+);
+ft_api_process_form($params);
+?>
+	{% endhighlight %}
+
+	<ul>
+		<li>The path to the api.php file has to be updated, depending on where it's located in
+			relation to your form.</li>
+		<li>Change "submit_button_name_attribute" to whatever the name attribute of your form
+			submit button may be. If it doesn't have one, add it!</li>
+		<li>Change "thanks.php" to whatever page you want to redirect to, after the form has been
+			submitted.</li>
+		<li>You can omit the "file_data" line if your form doesn't contain any file upload fields.</li>
+	</ul>
+
+	<br>
+
+	<p>
+		Next, make sure your form tag looks like this:
+	</p>
+
+	{% highlight php %}
+<form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
+	{% endhighlight %}
+
+	<p>
+		$_SERVER["PHP_SELF"] is just a PHP value for the location of the current page. This
+		makes the form <b>submit the information to itself</b>. The ft_api_process_form
+		function will take care of redirecting to the next page for you. One of the nice
+		things about posting the submission to itself is that if later on, you choose to add
+		server-side validation (<a href="{{site.baseurl}}/tutorials/php_validation/">see
+		this tutorial</a>), it's very easy to handle and display the errors on the same page.
+	</p>
+
+	<p>
+		It's generally a better idea to use $_SERVER["PHP_SELF"] instead of the name of the file,
+		since filenames sometimes change. If that happens, you'd need to remember to update the
+		action attribute. But by using the PHP variable, you don't have to worry about it!
+	</p>
+
+
+	<p>
+		With regard to the form's post attribute, if you want to use method="GET", that's fine - just change the PHP line in the top of the from:
+	</p>
+
+	{% highlight php %}
+"form_data" => $_POST,
+	{% endhighlight %}
+
+	to:
+
+	{% highlight php %}
+"form_data" => $_GET,
+	{% endhighlight %}
+
+	<p>
+		Finally, put through a form submission. You should be redirected to your "thank you" page.
+		So far so good!
+	</p>
+
+	<h4>Explanation of Code</h4>
+
+	<p>
+		If you're not interested in the details, ignore this section and
+		<a href="{{site.baseurl}}/tutorials/api_single_page_form/step2/">go to the next step</a>. It's just for those
+		of you who are curious to know what's going on!
+	</p>
+
+	<p>
+		The code does a number of things. First, the <b>ft_api_init_form_page</b> function
+		initializes the page environment; precisely what it does depends on the "mode", i.e. whether
+		the form is in "test" mode (like now), "initialize" mode (when you put through the
+		test submission to Form Tools later) or "live", when everything's been configured. But one
+		thing it ALWAYS does is start PHP sessions to provide storage for the form values and
+		"meta" info (like submission and form ID) as the user progresses through the form.
+	</p>
+
+	<p>
+		Note that the <b>ft_api_init_form_page</b> returns a <b>$fields</b> variable. This variable
+		contains all the form field values entered up to that point. So, imagine you added some
+		server-side validation that threw an error after the user submitted the form. You could
+		use the $fields variable to re-load all the values entered. (For more information
+		on that, see the <a href="{{site.baseurl}}/tutorials/php_validation/">Adding
+		Server-Side (PHP) Validation to your Forms</a> and <a href="{{site.baseurl}}/tutorials/api_refilling_form_fields/">Re-filling
+		form fields with the API</a> tutorials.
+	</p>
+
+	<p>
+		The <b>ft_api_process_form</b> function is the main work-horse function: it does the job
+		of adding the information to the database and redirecting, based on whatever values you
+		pass to it.
+	</p>
+
+	<p>
+		"Direct" form types that submit their content directly to the process.php script and have
+		the submission added in on go AFTER the user had submitted the form. The API works the
+		other way round. Once your form is live, the <b>ft_api_init_form_page</b> actually creates
+		a blank submission BEFORE the user has even filled in a field. Then, each form submit
+		will update those fields included in the form submission. Only when they are actually
+		finalized (i.e. the "finalize" =&gt; true parameter is passed to ft_api_process_form) is the
+		submission made visible within Form Tools. This has a number of benefits, including the
+		fact that it allows you to separate your form into multiple pages, updating separate
+		fields bit by bit. Also, it's compatible with adding an external mechanism to allow people
+		to return later on to complete setting up their form.
+	</p>
+
+{% include close_section.html %}
