@@ -1,0 +1,48 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: PHP Validation
+heading: PHP Validation
+next: Available Validation Rules
+nextLink: tutorials/php_validation/step1/
+---
+
+{% include open_section.html nav='nav_tutorial_php_validation.html' selected='introduction' nav_width=4 %}
+
+	<p>
+		Form Tools comes bundled with both PHP and JS validation scripts, which it uses internally
+		to ensure fields within the application's own forms are entered correctly. This tutorial
+		explains how to utilize this PHP validation script in your own forms, what features if
+		offers, how to add it to your forms and where to go for further information. Since there's
+		an awful lot of validation rules, this tutorial won't give a definitive discussion of
+		each feature - that is handled by the <a href="http://www.benjaminkeen.com/software/php_validation/">script's
+		documentation</a>. Instead it'll just aim to give an explanation of the whole process. It's
+		not too tricky - hopefully you'll be up and running in no time!
+	</p>
+
+	<p class="notify">
+		<b>Note</b>: currently, you cannot add server-side (PHP) validation to POST or "direct
+		submission" forms. This feature is only for forms that submit their content via the API.
+	</p>
+
+	<p>
+		The validation script is found in the <b>/global/code/validation.php</b> file, but this
+		file it automatically included when you include the API in your forms.
+	</p>
+
+	<p><b>Pre-requisites</b></p>
+
+	<p>
+		For this tutorial we're assuming that your form has already been configured
+		with the API and the form submissions
+		are being added to Form Tools. If you're not quite at that juncture yet, see one of
+		the following tutorials:
+	</p>
+	<ul>
+		<li><a href="{{site.baseurl}}/tutorials/api_single_page_form/">Adding a single page form with the API</a></li>
+		<li><a href="{{site.baseurl}}/tutorials/api_multi_page_form/">Adding a multi-page form with the API</a></li>
+	</ul>
+
+
+{% include close_section.html %}
