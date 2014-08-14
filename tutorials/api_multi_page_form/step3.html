@@ -1,0 +1,34 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding a Multi-page Form with the API
+subnavSectionLink: tutorials/api_multi_page_form/
+heading: "Configuring the \"Thankyou\" Page"
+prev: Configuring the First Form Page
+prevLink: tutorials/api_multi_page_form/step2/
+next: Confirming Everything's Working
+nextLink: tutorials/api_multi_page_form/step4/
+---
+
+{% include open_section.html nav='nav_tutorial_ampf.html' selected='step3' nav_width=4 %}
+
+	<p>
+		This bit's easy. At the top of your thank you page (again, it has to be a PHP file),
+		add the following code:
+	</p>
+
+{% highlight php %}
+<?php
+require_once("path/to/global/api/api.php");
+$fields = ft_api_init_form_page();
+ft_api_clear_form_sessions();
+?>
+{% endhighlight %}
+
+	<p>
+		Don't forget to update the path to the API file, just like with your other pages.
+	</p>
+
+
+{% include close_section.html %}

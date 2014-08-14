@@ -1,0 +1,37 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding a Multi-page Form with the API
+subnavSectionLink: tutorials/api_multi_page_form/
+heading: Going Live!
+prev: The Test Submission
+prevLink: tutorials/api_multi_page_form/step6/
+next: Related Links
+nextLink: tutorials/api_multi_page_form/related_links/
+---
+
+{% include open_section.html nav='nav_tutorial_ampf.html' selected='step6' nav_width=4 %}
+
+	<p>
+		Finally, after your form has been added and configured via the Form Tools interface, you
+		just need to make one final change to push it live. This step is discussed on the final
+		step of the Add Form process. On your first form page, again change the
+		<b>ft_api_init_form_page</b> function line to this (where X is your form ID):
+	</p>
+
+{% highlight php startinline %}
+$fields = ft_api_init_form_page(X);
+{% endhighlight %}
+
+	<p>
+		(All you did was remove the second parameter). Now, after you've revisited the "thank you"
+		page to ensure that sessions were emptied, all your form submissions should be stored in
+		Form Tools!
+	</p>
+
+	<p>
+		Time to mix that drink.
+	</p>
+
+{% include close_section.html %}

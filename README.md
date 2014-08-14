@@ -44,6 +44,9 @@ copy the format.
 {% include screenshot.html item='i223.jpg' %}
 ```
 
+Tip: I use the Live Templates feature of my IDE (PHPStorm) to add this and syntax highlighting automatically into the
+markup. It really helps cut down on copy-paste time.
+
 
 ### Ruby dev help wanted!
 
