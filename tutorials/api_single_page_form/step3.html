@@ -1,0 +1,48 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding a Single Page Form with the API
+subnavSectionLink: tutorials/api_single_page_form/
+heading: The Test Submission
+prev: "Configuring your \"Thankyou\" Page"
+prevLink: tutorials/api_single_page_form/step2/
+next: Going Live!
+nextLink: tutorials/api_single_page_form/step4/
+---
+
+{% include open_section.html nav='nav_tutorial_aspf.html' selected='step3' nav_width=4 %}
+
+	<p>
+		At this point, you've done 95% of the work. Now you just need to put through a test submission so that
+		Form Tools knows what form content to store.
+	</p>
+
+	<p>
+		Log into Form Tools (as the administrator) and on the Forms page, click on "Add Form". Continue to step 3
+		and click on the second "Code" option. There, it will have generated a line of PHP which looks like this (X
+		will be your form number):
+	</p>
+
+	{% highlight php startinline %}
+$fields = ft_api_init_form_page(X, "initialize");
+	{% endhighlight %}
+
+	<p>
+		Copy that line and overwrite the corresponding line in your form page.
+	</p>
+
+	<p>
+		{% include screenshot.html item='i98' %}
+		After saving, go to your "thankyou" page in your browser to ensure that sessions have
+		been deleted, then go back to your form. Here, fill in <b>every</b> field in your form
+		and click submit. You should see something like the screenshot to the right.
+	</p>
+
+	<p>
+		Return to Form Tools, click the "refresh page" button at the bottom of the page, then
+		click "Next Step »" to continue adding your form.
+	</p>
+
+
+{% include close_section.html %}
