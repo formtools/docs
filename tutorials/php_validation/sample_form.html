@@ -1,0 +1,77 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: PHP Validation
+subnavSectionLink: tutorials/php_validation/
+heading: Sample Form
+prev: Introduction & Features
+prevLink: tutorials/php_validation/
+next: Writing the Validation Rules
+nextLink: tutorials/php_validation/writing_validation_rules/
+---
+
+{% include open_section.html nav='nav_tutorial_php_validation.html' selected='sample_form' nav_width=4 %}
+
+	<p>
+		All right! Now let's look at a simple one-page form to which we're going to add our
+		validation. Adding validation to a page is the same for single or multi-page forms -
+		to the information read here is directly transferrable to any API form.
+	</p>
+
+	<p>
+		As mentioned earlier, at this point we're assuming that it's already been configured
+		with the API and the form submissions are being added to Form Tools.
+	</p>
+
+	<p>
+		Here's the entire PHP and HTML of our form. It's just a simple "comments" form with four fields:
+		subject, name, email and comments.
+	</p>
+
+{% highlight php %}
+<?php
+require_once("path/to/form_tools/global/api/api.php");
+$fields = ft_api_init_form_page("X"); // X would be your form ID
+$params = array(
+  "submit_button" => "sbmt",
+"next_page" => "thanks.php",
+"form_data" => $_POST,
+"finalize" => true
+);
+ft_api_process_form($params);
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Sample Form</title>
+</head>
+<body>
+
+<form method="post" action="<?=$_SERVER["PHP_SELF"]?>">
+
+Subject: <select name="subject">
+	<option value=""
+	<?php if ($fields["subject"] == "") echo "selected"; ?>>Please Select</option>
+	<option value="General Comment"
+	<?php if ($fields["subject"] == "General Comment") echo "selected"; ?>>General Comment</option>
+	<option value="Bug Report"
+	<?php if ($fields["subject"] == "Bug Report") echo "selected"; ?>>Bug Report</option>
+	<option value="Feature Suggestion"
+	<?php if ($fields["subject"] == "Feature Suggestion") echo "selected"; ?>>Feature Suggestion</option>
+</select><br />
+Name: <input type="text" name="fullname"
+			 value="<?=htmlspecialchars($fields["fullname"])?>" /><br />
+Email: <input type="text" name="email" value="<?=htmlspecialchars($fields["email"])?>" /><br />
+Comments: <textarea name="comments"><?=$comments?></textarea>
+
+<input type="submit" name="sbmt" value="Submit Form" />
+
+</form>
+
+</body>
+</html>
+{% endhighlight %}
+
+{% include close_section.html %}

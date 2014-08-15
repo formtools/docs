@@ -1,0 +1,124 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: PHP Validation
+subnavSectionLink: tutorials/php_validation/
+heading: Displaying the Errors
+prev: Adding Validation
+prevLink: tutorials/php_validation/adding_validation/
+next: Further Information
+nextLink: tutorials/php_validation/further_information/
+---
+
+{% include open_section.html nav='nav_tutorial_php_validation.html' selected='display_errors' nav_width=4 %}
+
+	<p>
+		Almost there! The final step is to display the errors to the user. At this juncture, the
+		errors are stored in the <b>$errors</b> PHP variable. So all we need to do is loop
+		through them and display them on the page. Here's some code for that:
+	</p>
+
+{% highlight php %}
+<?php
+// if $errors is not empty, the form must have failed one or more validation
+// tests. Loop through each and display them on the page for the user
+if (!empty($errors))
+{
+  echo "<div class='error'>Please fix the following errors:\n<ul>";
+	foreach ($errors as $error)
+	echo "<li>$error</li>\n";
+
+	echo "</ul></div>";
+}
+?>
+{% endhighlight %}
+
+<p>
+	Now all we do is add thank chunk of code to your form and we're done!
+</p>
+
+{% highlight php %}
+<?php
+require_once("path/to/form_tools/global/api/api.php");
+$fields = ft_api_init_form_page("X"); // X would be your form ID
+
+// validation time!
+$errors = array();
+if (isset($_POST['sbmt']))
+{
+  $rules = array();
+  $rules[] = "required,subject,Please select a subject.";
+  $rules[] = "required,fullname,Please enter your name.";
+  $rules[] = "required,email,Please enter your email address.";
+  $rules[] = "valid_email,email,Please enter a valid email address.";
+  $rules[] = "required,comments,Please enter your comments.";
+  $errors = validate_fields($_POST, $rules);
+
+  // no errors - great! Now we process the page. The ft_api_process_form does
+  // the job of both updating the database and redirecting to the next page
+  if (empty($errors))
+  {
+    $params = array(
+      "submit_button" => "sbmt",
+      "next_page" => "thanks.php",
+      "form_data" => $_POST,
+      "finalize" => true
+    );
+    ft_api_process_form($params);
+  }
+
+  // it failed validation. Update $fields with the latest contents of the form data
+  else
+  {
+    $fields = array_merge($_SESSION["form_tools_form"], $_POST);
+  }
+}
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Sample Form</title>
+</head>
+<body>
+
+<?php
+// if $errors is not empty, the form must have failed one or more validation
+// tests. Loop through each and display them on the page for the user
+if (!empty($errors))
+{
+  echo "<div class='error'>Please fix the following errors:\n<ul>";
+  foreach ($errors as $error)
+	echo "<li>$error</li>\n";
+
+  echo "</ul></div>";
+}
+?>
+
+<form method="post" action="<?=$_SERVER["PHP_SELF"]?>">
+
+Subject: <select name="subject">
+	<option value=""
+	<?php if (@$fields["subject"] == "") echo "selected"; ?>>Please Select</option>
+	<option value="General Comment"
+	<?php if (@$fields["subject"] == "General Comment") echo "selected"; ?>>General Comment</option>
+	<option value="Bug Report"
+	<?php if (@$fields["subject"] == "Bug Report") echo "selected"; ?>>Bug Report</option>
+	<option value="Feature Suggestion"
+	<?php if (@$fields["subject"] == "Feature Suggestion") echo "selected"; ?>>Feature Suggestion</option>
+</select><br />
+Name: <input type="text" name="fullname" value="<?=htmlspecialchars(@$fields["fullname"])?>" /><br />
+Email: <input type="text" name="email" value="<?=htmlspecialchars(@$fields["email"])?>" /><br />
+Comments: <textarea name="comments"><?=@$comments?></textarea>
+
+<input type="submit" name="sbmt" value="Submit Form" />
+
+</form>
+
+</body>
+</html>
+{% endhighlight %}
+
+
+{% include close_section.html %}

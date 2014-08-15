@@ -1,0 +1,50 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: PHP Validation
+subnavSectionLink: tutorials/php_validation/
+heading: Writing the Validation Rules
+prev: Sample Form
+prevLink: tutorials/php_validation/sample_form/
+next: Adding the Validation
+nextLink: tutorials/php_validation/adding_validation/
+---
+
+{% include open_section.html nav='nav_tutorial_php_validation.html' selected='writing_validation_rules' nav_width=4 %}
+
+	<p>
+		Okay! Now let's write our validation rules. These are basically a LIST (or an
+		array for the technically-literate), saying which form fields need to validated, in
+		what way, and what errors should be displayed to the user if they're not filled in properly.
+	</p>
+
+	<p>
+		For the sake of example, we'll assume that all the fields in our sample form are required
+		and we want to confirm that the email address they entered is valid. Here's what the PHP
+		validation rules will look like:
+	</p>
+
+{% highlight php startinline %}
+$rules = array();
+$rules[] = "required,subject,Please select a subject.";
+$rules[] = "required,fullname,Please enter your name.";
+$rules[] = "required,email,Please enter your email address.";
+$rules[] = "valid_email,email,Please enter a valid email address.";
+$rules[] = "required,comments,Please enter your comments.";
+{% endhighlight %}
+
+	<p>
+		What we're doing here is creating a list of validation rules ([b]$rules[/b]), each of
+		which contains (a) the validation rule itself, listed on an earlier page, (b) the <b>name</b>
+		attribute of the form field that we're validating and (c) the error message that will
+		be displayed to the user if the field is entered incorrectly.
+	</p>
+
+	<p>
+		Each component to the rule is separated by commas. Note: your error message <b>cannot contain
+		commas</b>. This is currently a limitation of the script.
+	</p>
+
+
+{% include close_section.html %}

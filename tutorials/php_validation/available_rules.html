@@ -1,0 +1,144 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: PHP Validation
+subnavSectionLink: tutorials/php_validation/
+heading: Available Validation Rules
+prev: Introduction & Features
+prevLink: tutorials/php_validation/
+next: Sample Form
+nextLink: tutorials/php_validation/sample_form/
+---
+
+{% include open_section.html nav='nav_tutorial_php_validation.html' selected='available_rules' nav_width=4 %}
+
+	<p>
+		The PHP validation script comes with functions for all commonly needed validation tasks -
+		things like ensuring email addresses are valid, fields are required and so forth. You can
+		run multiple tests on a single field if you need. To give you an idea of what
+		validation rules available, give the following table a quick look over. In the next step
+		we'll start working on adding some of these rules to validate a simple form.
+	</p>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>required</strong>
+		</div>
+		<div class="col-lg-9">field must be filled in</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>digits_only</strong>
+		</div>
+		<div class="col-lg-9">field must contain digits only</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>length=X</strong>
+		</div>
+		<div class="col-lg-9">field has to be X characters long</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>length=X-Y</strong>
+		</div>
+		<div class="col-lg-9">field has to be between X and Y (inclusive) characters long</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>length&gt;X</strong>
+		</div>
+		<div class="col-lg-9">field has to be greater than X characters long</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>length&gt;=X</strong>
+		</div>
+		<div class="col-lg-9">field has to be greater than or equal to X characters long</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>length&lt;X</strong>
+		</div>
+		<div class="col-lg-9">field has to be less than X characters long</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>length&lt;=X</strong>
+		</div>
+		<div class="col-lg-9">field has to be less than or equal to X characters long</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>valid_email</strong>
+		</div>
+		<div class="col-lg-9">field has to be valid email address</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>same_as</strong>
+		</div>
+		<div class="col-lg-9">fieldname is the same as fieldname2 (for password comparison)</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>range=X-Y</strong>
+		</div>
+		<div class="col-lg-9">field must be a number between the range of X and Y inclusive</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>range&gt;X</strong>
+		</div>
+		<div class="col-lg-9">field has to be a number greater than X</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>range&gt;=X</strong>
+		</div>
+		<div class="col-lg-9">field has to be a number greater than or equal to X</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>range&lt;X</strong>
+		</div>
+		<div class="col-lg-9">field has to be a number less than X</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>range&lt;=X</strong>
+		</div>
+		<div class="col-lg-9">field has to be a number less than or equal to X</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>is_alpha</strong>
+		</div>
+		<div class="col-lg-9">field has to be an alphanumeric character (anything between 0-9, a-Z)</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>letters_only</strong>
+		</div>
+		<div class="col-lg-9">field has to be a letter, a-Z</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>custom_alpha</strong>
+		</div>
+		<div class="col-lg-9">
+			This option is a layman's version of the <b>reg_exp</b> rule and offers more control
+			than the <b>letters_only</b> rule. It lets you check that a field is formatted in a
+			very specific way - like a specific series of integers and digits.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<strong>reg_exp</strong>
+		</div>
+		<div class="col-lg-9">field is validated according to a regular expression (programmers only)</div>
+	</div>
+
+
+{% include close_section.html %}

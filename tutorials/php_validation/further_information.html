@@ -1,0 +1,43 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: PHP Validation
+subnavSectionLink: tutorials/php_validation/
+heading: Further Information
+prev: Displaying the Errors
+prevLink: tutorials/php_validation/display_errors/
+---
+
+{% include open_section.html nav='nav_tutorial_php_validation.html' selected='further_information' nav_width=4 %}
+
+	<p>
+		And we're done! Now try putting through a test submission with one more of the fields entered
+		incorrectly. You should be returned to the same page, with errors.
+	</p>
+
+	<p>
+		To style the errors, just set the CSS for the "error" class - or define your own class, style it,
+		and doctor the PHP to use that class instead.
+	</p>
+
+	<p><b>Further Information</b></p>
+
+	<ul>
+		<li>
+			Check out the <a href="http://www.benjaminkeen.com/software/php_validation/">script's documentation</a>
+			for more information about the validation rules, and a downloadable example script that may help clarify how things work.
+		</li>
+		<li>
+			See the <a href="{{site.baseurl}}/tutorials/js_validation/">JS Validation</a> tutorial for information on
+			how to add client-side validation to your form.
+		</li>
+		<li>
+			See the <a href="{{site.baseurl}}/tutorials/api_refilling_form_fields/">Re-filling form fields using
+			the API</a> tutorial for an explanation of how to re-fill your form fields after the user fails server-side
+			validation.
+		</li>
+	</ul>
+
+
+{% include close_section.html %}
