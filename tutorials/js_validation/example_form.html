@@ -1,0 +1,95 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding JS validation to your forms
+subnavSectionLink: tutorials/js_validation/
+heading: Example Form
+prev: Introduction
+prevLink: tutorials/js_validation/
+next: Including rsv.js
+nextLink: tutorials/js_validation/rsv_file/
+---
+
+{% include open_section.html nav='nav_tutorial_js_validation.html' selected='example_form' nav_width=4 %}
+
+<td valign="top">
+
+	<p>
+		Let's start with a simple form that we're going to want to validate. Here's what
+		it looks like, followed by the code.
+	</p>
+
+	<form action="" method="post">
+
+		<table class="demoTable" cellpadding="0" cellspacing="1">
+			<tbody><tr>
+				<th width="150">First Name:</th>
+				<td><input type="text" name="first_name"></td>
+			</tr>
+			<tr>
+				<th>Last Name:</th>
+				<td><input type="text" name="last_name"></td>
+			</tr>
+			<tr>
+				<th>Email:</th>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<th>Your age:</th>
+				<td><input type="text" name="any_integer"></td>
+			</tr>
+			<tr>
+				<th>Marital Status:</th>
+				<td>
+					<input type="radio" id="ms1" name="marital_status" value="single">
+					<label for="ms1">Single</label><br>
+					<input type="radio" id="ms2" name="marital_status" value="married">
+					<label for="ms2">Married</label><br>
+					<input type="radio" id="ms3" name="marital_status" value="none_of_your_business">
+					<label for="ms3">None of your bloomin' business</label>
+				</td>
+			</tr>
+			</tbody></table>
+
+	</form>
+
+	<hr size="1">
+
+	<h4>The HTML Code</h4>
+
+{% highlight html %}
+<form action="" method="post">
+  <table class="demoTable" cellpadding="0" cellspacing="1">
+    <tr>
+      <th width="150">First Name:</th>
+      <td><input type="text" name="first_name" /></td>
+    </tr>
+    <tr>
+      <th>Last Name:</th>
+      <td><input type="text" name="last_name" /></td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+      <td><input type="text" name="email" /></td>
+    </tr>
+    <tr>
+      <th>Your age:</th>
+      <td><input type="text" name="any_integer" /></td>
+    </tr>
+    <tr>
+      <th>Marital Status:</th>
+      <td>
+        <input type="radio" id="ms1" name="marital_status" value="single" />
+          <label for="ms1">Single</label><br />
+        <input type="radio" id="ms2" name="marital_status" value="married" />
+          <label for="ms2">Married</label><br />
+        <input type="radio" id="ms3" name="marital_status" value="none_of_your_business" />
+          <label for="ms3">None of your bloomin' business</label>
+      </td>
+    </tr>
+  </table>
+</form>
+{% endhighlight %}
+
+{% include close_section.html %}

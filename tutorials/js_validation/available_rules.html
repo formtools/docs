@@ -1,0 +1,246 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding JS validation to your forms
+subnavSectionLink: tutorials/js_validation/
+heading: Available validation rules
+prev: The finished product
+prevLink: tutorials/js_validation/finished_product/
+next: More help
+nextLink: tutorials/js_validation/more_help/
+---
+
+{% include open_section.html nav='nav_tutorial_js_validation.html' selected='available_rules' nav_width=4 %}
+
+	<p>
+		As mentioned earlier, the validation rules are all of the following form:
+	</p>
+
+	<pre>[if:FIELD=VAL,]RULE,fieldname[,fieldname2[,fieldname3,date_flag]],error&nbsp;message"</pre>
+
+	<div style="margin: 10px;">
+		<b>if:FIELDNAME=VALUE,</b> or<br>
+		<b>if:FIELDNAME!=VALUE,</b>
+	</div>
+
+	<p>
+		This allows us to only validate a field only if a fieldname has - or doesn't have - a
+		particular value. This option allows for nesting; i.e. you can have multiple if
+		clauses, separated by commas. They will be examined in the order in which they appear
+		in the line.
+	</p>
+
+	<h4>RULE</h4>
+
+	<p>
+		Valid RULE strings are:
+	</p>
+
+
+<table border="0">
+	<tbody><tr>
+		<td class="blue" width="140">required</td>
+		<td>field must be filled in</td>
+	</tr>
+	<tr>
+		<td class="blue">digits_only</td>
+		<td>field must contain digits only</td>
+	</tr>
+	<tr>
+		<td class="blue">length=X</td>
+		<td>field has to be X characters long</td>
+	</tr>
+	<tr>
+		<td class="blue">length=X-Y</td>
+		<td>field has to be between X and Y (inclusive) characters long</td>
+	</tr>
+	<tr>
+		<td class="blue">length&gt;X</td>
+		<td>field has to be greater than X characters long</td>
+	</tr>
+	<tr>
+		<td class="blue">length&gt;=X</td>
+		<td>field has to be greater than or equal to X characters long</td>
+	</tr>
+	<tr>
+		<td class="blue">length&lt;X</td>
+		<td>field has to be less than X characters long</td>
+	</tr>
+	<tr>
+		<td class="blue">length&lt;=X</td>
+		<td>field has to be less than or equal to X characters long</td>
+	</tr>
+	<tr>
+		<td class="blue">valid_email</td>
+		<td>field has to be valid email address</td>
+	</tr>
+	<tr>
+		<td class="blue" valign="top">valid_date</td>
+		<td>
+			field has to be a valid date<br>
+			<br>
+			fieldname:	MONTH field<br>
+			fieldname2:	DAY field<br>
+			fieldname3: YEAR field<br>
+			date_flag: 	"later_date" / "any_date"<br>
+		</td>
+	</tr>
+	<tr>
+		<td class="blue">same_as</td>
+		<td>fieldname is the same as fieldname2 (for password comparison)</td>
+
+	</tr>
+	<tr>
+		<td class="blue">range=X-Y</td>
+		<td>field must be a number between the range of X and Y inclusive</td>
+	</tr>
+	<tr>
+		<td class="blue">range&gt;X</td>
+
+		<td>field has to be a number greater than X</td>
+	</tr>
+	<tr>
+		<td class="blue">range&gt;=X</td>
+		<td>field has to be a number greater than or equal to X</td>
+	</tr>
+	<tr>
+
+		<td class="blue">range&lt;X</td>
+		<td>field has to be a number less than X</td>
+	</tr>
+	<tr>
+		<td class="blue">range&lt;=X</td>
+		<td>field has to be a number less than or equal to X</td>
+
+	</tr>
+	<tr>
+		<td class="blue">is_alpha</td>
+		<td>field has to be an alphanumeric character (anything between 0-9, a-Z)</td>
+	</tr>
+	<tr>
+		<td class="blue" valign="top">custom_alpha</td>
+
+		<td>
+			This option is a layman's version of the <b>reg_exp</b> rule and offers more control
+			than the <b>letters_only</b> rule. It lets you check that a field is formatted in a very
+			specific way. For example:
+
+<pre class="javascript javascript" style="font-family:monospace;"><span style="color: #006600; font-style: italic;">// this requires the "field_name" form field be of the form: </span>
+<span style="color: #006600; font-style: italic;">// {any letter}{uc letter}{lc consonant}{lc consonant}</span>
+rules.<span style="color: #660066;">push</span><span style="color: #009900;">(</span><span style="color: #3366CC;">"custom_alpha,field_name,DLcc,Error message"</span><span style="color: #009900;">)</span>;</pre>						  Here's all the different formatting options and what each character means:
+			<p></p>
+
+			<div class="mybox3" style="width: 420px;">
+				<table cellspacing="0">
+					<tbody><tr>
+						<th width="20">L</th>
+						<td width="190">An uppercase letter.</td>
+						<th width="20">V</th>
+
+						<td>An uppercase vowel.</td>
+					</tr>
+					<tr>
+						<th>l</th>
+						<td>A lowercase letter.</td>
+						<th>v</th>
+						<td>A lowercase vowel.</td>
+
+					</tr>
+					<tr>
+						<th>D</th>
+						<td>A letter (upper or lower)</td>
+						<th>F</th>
+						<td>A vowel (upper or lower)</td>
+					</tr>
+
+					<tr>
+						<th>C</th>
+						<td>An uppercase Consonant</td>
+						<th>x</th>
+						<td>Any number, 0-9</td>
+					</tr>
+					<tr>
+
+						<th>c</th>
+						<td>A lowercase consonant</td>
+						<th>X</th>
+						<td>Any number, 1-9</td>
+					</tr>
+					<tr>
+						<th>E</th>
+
+						<td colspan="3">A consonant (upper or lower)</td>
+					</tr>
+					</tbody></table>
+			</div>
+
+			<p>
+				Any characters included in the string that aren't in the above list are simply required
+				as they are. So if your rules was CVC-VCV, the user would have to enter consonant, vowel, consonant
+				followed by a dash, followed by vowel, consonant, vowel.
+			</p>
+
+			<br>
+
+		</td>
+
+	</tr>
+	<tr>
+		<td class="blue" valign="top">reg_exp</td>
+		<td>
+			This option is for programmers only. It lets you validate a field by a regular expression.
+			This rule comes in two forms: one with a RegExp flag (like "g" for global, "i" for
+			case-insensitive etc.) and one without. Unless you expressly need to supply a flag, just
+			use the first form.
+
+			<br>
+
+			<table cellspacing="0">
+				<tbody><tr>
+					<td valign="top" width="80"><b>Form 1:</b></td>
+
+					<td>
+						<pre class="javascript">rules.<span style="color: rgb(0, 102, 0);">push</span><span style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(51, 102, 204);">"reg_exp,field_name,REGEXP,Error message"</span><span style="color: rgb(102, 204, 102);">)</span>;</pre>              </td>
+				</tr>
+				<tr>
+					<td valign="top"><b>Form 2:</b><br></td>
+
+					<td>
+						<pre class="javascript">rules.<span style="color: rgb(0, 102, 0);">push</span><span style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(51, 102, 204);">"reg_exp,field_name,REGEXP,Flag(s),Error message"</span><span style="color: rgb(102, 204, 102);">)</span>;</pre>              </td>
+				</tr>
+				</tbody></table>
+
+			<div class="mybox3">
+
+				Note: be sure to double-escape regexp escape characters. e.g. to match whitespace,
+				the <b>\s</b> needs to be <b>\\s</b>; commas also need to be double escaped: \\,
+			</div>
+			<br>
+		</td>
+	</tr>
+	<tr>
+		<td class="blue" valign="top">letters_only</td>
+
+		<td>field has to be a letter, a-Z (upper or lowercase)<br><br></td>
+	</tr>
+	<tr>
+		<td class="blue" valign="top">function</td>
+		<td>
+			This option is included for programmers. You may find that you need to supplement
+			the existing functionality with your own custom validation rules. See the
+			page on <a href="#" onclick="toggleSections('custom_validation_rules'); return false;" class="link">custom functions</a> for more information about this rule.
+		</td>
+
+	</tr>
+	</tbody></table>
+
+
+	<p>
+		Notes: With the digits_only, valid_email and custom_alpha rules, if the empty string is passed in it
+		won't generate an error, thus allowing validation of non-required fields. So, if you want a
+		field to be a valid email address, for example, provide separate rules for both "required" and
+		"valid_email" for that single form field.
+	</p>
+
+{% include close_section.html %}

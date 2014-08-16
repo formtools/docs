@@ -1,0 +1,30 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding JS validation to your forms
+subnavSectionLink: tutorials/js_validation/
+heading: Adding the onsubmit handler
+prev: Defining your validation rules
+prevLink: tutorials/js_validation/rules/
+next: The finished product
+nextLink: tutorials/js_validation/finished_product/
+---
+
+{% include open_section.html nav='nav_tutorial_js_validation.html' selected='onsubmit' nav_width=4 %}
+
+	<p>
+		Now you've created your rules, you need to attach them to the form so that when the user submits the
+		form, the RSV library validates the form with your rules. This is very easy, just add an onsubmit
+		attribute to your form tag, like so:
+	</p>
+
+	{% highlight html %}
+	<form ... onsubmit="return rsv.validate(this, rules)">
+	{% endhighlight %}
+
+	<p>
+		And you're done! Now continue to the next step to see the final result.
+	</p>
+
+{% include close_section.html %}

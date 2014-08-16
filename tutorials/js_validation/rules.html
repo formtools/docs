@@ -1,0 +1,73 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding JS Validation to your Forms
+subnavSectionLink: tutorials/js_validation/
+heading: Defining your validation rules
+prev: Including rsv.js
+prevLink: tutorials/js_validation/rsv_file/
+next: Adding the onsubmit handler
+nextLink: tutorials/js_validation/onsubmit/
+---
+
+{% include open_section.html nav='nav_tutorial_js_validation.html' selected='rules' nav_width=4 %}
+
+	<p>
+		Now for the fun stuff! The RSV library comes with a number of pre-built validation routines
+		that you can use to validate your fields. Here's how the validation works.
+	</p>
+
+	<p>
+		The rules are basically a LIST (or an	array for the technically-literate), saying which form
+		fields need to validated, in what order, what way, and what error message should be displayed
+		to the user if they're not filled in properly. Here is a simple example:
+	</p>
+
+{% highlight js %}
+var rules = []; // this stores all the validation rules
+rules.push("required,first_name,Please enter your first name.");
+rules.push("required,email,Please enter your email address.");
+rules.push("valid_email,email,Please enter a valid email address.");
+{% endhighlight %}
+
+	<p>
+		Here we are checking that the first name and email fields have a value and that
+		the email address is valid. Each rules.push("...") line adds a new validation rule to the
+		list. The "push" statements each contain a string (i.e. a bunch of characters wrapped
+		in quotes. The push statements are all of the following form:
+	</p>
+
+	<pre>"[if:FIELD=VAL,]RULE,fieldname[,fieldname2[,fieldname3,date_flag]],error message"</pre>
+
+	<p>
+		The square bracket [] notation is a commonly used convention in programming circles to
+		indicate that the contents are optional, in this case depending on the RULE used by
+		the line. A full list of available validation rules can be found in the
+		<a href="{{site.baseurl}}/tutorials/js_validation/available_rules/">Available Validation Rules</a> page.
+	</p>
+	<p>
+		Note: if you need to include commas in the error messages you must escape them with two backslashes,
+		like so: <b>\\,</b>
+	</p>
+
+	<h4>Back to the example already!</h4>
+
+	<p>
+		Alright. Our form has just 5 fields. Let's validate them all, making all fields required,
+		ensuring the email address is valid and that the "age" field is only numeric. No problem!
+		Here's how the validation rules would look:
+	</p>
+
+{% highlight js %}
+var rules = [];
+rules.push("required,first_name,Please enter your first name.");
+rules.push("required,last_name,Please enter your last name.");
+rules.push("required,email,Please enter your email address.");
+rules.push("valid_email,email,Please enter a valid email address.");
+rules.push("required,any_integer,Please enter your age.");
+rules.push("digits_only,any_integer,The age field may only contain digits.");
+rules.push("required,marital_status,Please enter your marital status.");
+{% endhighlight %}
+
+{% include close_section.html %}

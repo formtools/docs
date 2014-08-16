@@ -1,0 +1,53 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding JS validation to your forms
+subnavSectionLink: tutorials/js_validation/
+heading: Including rsv.js
+prev: The example form
+prevLink: tutorials/js_validation/example_form/
+next: Defining your validation rules
+nextLink: tutorials/js_validation/rules/
+---
+
+{% include open_section.html nav='nav_tutorial_js_validation.html' selected='rsv_file' nav_width=4 %}
+
+	<p>
+		Before starting work on adding the validation rules, we first need to include the library
+		in your webpage. Since Form Tools already has it bundled with its own files, you just need
+		to locate it and point to it on your server. You can find the file at this location:
+	</p>
+
+	<p>
+		<b>[form tools root]/global/scripts/rsv.js</b>
+	</p>
+
+	<p>
+		The "[form tools root]" is the folder of wherever you installed Form Tools.
+	</p>
+
+	<p>
+		You can include the file by either a "relative" or "absolute" link. A relative link is linking
+		to something <i>in respect to the location of the current file</i>. So, if you were to move
+		your files around, you would need to update the relative links each time. An absolute link
+		would be the full URL to the file. This would never change, regardless of what file is
+		doing the including. Here's an example of both:
+	</p>
+
+{% highlight html %}
+<!-- RELATIVE. this goes two folders up, then down into the global/scripts folder -->
+<script type="text/javascript" src="../../global/scripts/rsv.js"></script>
+
+<!-- ABSOLUTE -->
+<script type="text/javascript" src="http://www.yoursite.com/formtools/global/scripts/rsv.js"></script>
+{% endhighlight %}
+
+	<p>
+		You'll need to add one of those lines - with the paths adjusted for your own file locations
+		on your server in the top of your webpage, in between the &lt;head&gt; and &lt;/head&gt;
+		tags.
+	</p>
+
+
+{% include close_section.html %}

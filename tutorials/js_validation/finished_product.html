@@ -1,0 +1,91 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding JS validation to your forms
+subnavSectionLink: tutorials/js_validation/
+heading: The finished product
+prev: Adding the onsubmit handler
+prevLink: tutorials/js_validation/onsubmit/
+next: Available validation rules
+nextLink: tutorials/js_validation/available_rules/
+---
+
+{% include open_section.html nav='nav_tutorial_js_validation.html' selected='finished_product' nav_width=4 %}
+
+	<p>
+		And... here's the final HTML:
+	</p>
+
+{% highlight html %}
+<html>
+<head>
+  <script type="text/javascript" src="http://www.yoursite.com/ft/global/scripts/rsv.js"></script>
+  <script type="text/javascript">
+  var rules = [];
+  rules.push("required,first_name,Please enter your first name.");
+  rules.push("required,last_name,Please enter your last name.");
+  rules.push("required,email,Please enter your email address.");
+  rules.push("valid_email,email,Please enter a valid email address.");
+  rules.push("required,any_integer,Please enter your age.");
+  rules.push("digits_only,any_integer,The age field may only contain digits.");
+  rules.push("required,marital_status,Please enter your marital status.");
+
+  // *IMPORTANT!* these lines are required if you're using the rsv.js file that's bundled
+  // with Form Tools. They reset the custom options used throughout the main Form Tools
+  // script that won't be needed for your own forms
+  rsv.errorFieldClass = null;
+  rsv.displayType = "alert-all";
+  rsv.customErrorHandler = null;
+  </script>
+</head>
+<body>
+
+<form action="" method="post" onsubmit="return rsv.validate(this, rules)">
+
+  <table class="demoTable" cellpadding="0" cellspacing="1">
+    <tr>
+      <th width="150">First Name:</th>
+      <td><input type="text" name="first_name" /></td>
+    </tr>
+    <tr>
+      <th>Last Name:</th>
+      <td><input type="text" name="last_name" /></td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+      <td><input type="text" name="email" /></td>
+    </tr>
+    <tr>
+      <th>Your age:</th>
+      <td><input type="text" name="any_integer" /></td>
+    </tr>
+    <tr>
+      <th>Marital Status:</th>
+      <td>
+        <input type="radio" id="ms1" name="marital_status" value="single" />
+          <label for="ms1">Single</label><br />
+        <input type="radio" id="ms2" name="marital_status" value="married" />
+          <label for="ms2">Married</label><br />
+        <input type="radio" id="ms3" name="marital_status" value="none_of_your_business" />
+          <label for="ms3">None of your bloomin' business</label>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <input type="submit" name="" value="Submit" />
+  </p>
+
+</form>
+
+</body>
+</html>
+{% endhighlight %}
+
+	<p>
+		For some more complete demos, see the <a href="http://www.benjaminkeen.com/software/rsv/standalone/demo.php">demo
+		section</a> of the RSV pages.
+	</p>
+
+{% include close_section.html %}
