@@ -1,0 +1,32 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Adding your first form
+heading: Adding your first form
+next: POST forms and API forms
+nextLink: tutorials/adding_first_form/form_types/
+---
+
+{% include open_section.html nav='nav_tutorial_adding_first_form.html' selected='introduction' nav_width=3 %}
+
+	<p>
+		Now that you've installed Form Tools on your webserver, you can start adding forms to be stored
+		and accessible within its interface. This tutorial provides a quick introduction to how
+		this step works.
+	</p>
+
+	<p>
+		As mentioned throughout the documentation, Form Tools does <b>not create forms</b> - it
+		only processes and stores their content. It was deliberately designed to "form builder
+		agnostic": it doesn't force you to generate your forms through one or other program;
+		Form Tools is compatible with <b>any</b> type of web form - even forms stored in Flash
+		or Silverlight scripts. As long as it can send a POST request, Form Tools can handle it!
+	</p>
+
+	<p>
+		Next stop: the two ways to configure your forms to submit their content: <b>POST forms</b>
+		and <b>API forms</b>.
+	</p>
+
+{% include close_section.html %}
