@@ -13,6 +13,27 @@ nextLink: tutorials/post_form_captchas/related_links/
 
 {% include open_section.html nav='nav_tutorial_post_form_captchas.html' selected='error_message' nav_width=4 %}
 
+	<p>
+		When a user fails to enter the CAPTCHA correctly, an error message is displayed on the page
+		(via the <b>ft_api_display_post_form_captcha_error()</b> function).
+	</p>
+
+	<p>
+		To change the content or the style, all you need to do is pass a single field containing
+		whatever HTML you wish to appear. For example:
+	</p>
+
+{% highlight php %}
+<?php
+$error = '<div class="error">Error! Please re-enter!!</div>';
+ft_api_display_post_form_captcha_error($error);
+?>
+{% endhighlight %}
+
+	<p>
+		This passes some HTML wrapped in an <i>.error</i> class. You can define whatever CSS classes you
+		want and pass in the custom HTML.
+	</p>
 
 
 {% include close_section.html %}

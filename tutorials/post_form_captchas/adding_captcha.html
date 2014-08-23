@@ -13,6 +13,129 @@ nextLink: tutorials/post_form_captchas/reentering_fields/
 
 {% include open_section.html nav='nav_tutorial_post_form_captchas.html' selected='adding_captcha' nav_width=4 %}
 
+	<p>
+		Okay! Now let's add the CAPTCHA.
+	</p>
+
+	<p>
+		<b>1.</b> At the top of your form page, add the following PHP:
+	</p>
+
+{% highlight php %}
+<?php
+require_once("/path/to/formtools/global/api/api.php");
+ft_api_start_sessions();
+$fields = isset($_SESSION["form_tools_form_data"]) ?
+  ft_strip_tags($_SESSION["form_tools_form_data"]) : array();
+?>
+{% endhighlight %}
+
+	<p>
+		You need to include a valid path from your form page to the api.php file. This
+		can be an absolute or relative path (but not a URL!).
+	</p>
+
+	<p>
+		<b>2.</b> At an appropriate spot in your form (usually the bottom, but before the form
+		submit button, add this line of PHP to add the CAPTCHA:
+	</p>
+
+{% highlight php %}
+<?php ft_api_display_captcha(); ?>
+{% endhighlight %}
+
+	<p>
+		<b>3.</b> Include a hidden field in your form that contains the full URL of the
+		form page. This is optional, but may be required depending on your server. Try it
+		without it.
+	</p>
+
+{% highlight html %}
+<input type="hidden" name="form_tools_form_url" value="" />
+{% endhighlight %}
+
+	<p>
+		<b>4.</b> Add this code to the top of your form. In the event of the user incorrectly
+		entering CAPTCHA it displays the error.
+	</p>
+
+
+{% highlight php %}
+<?php ft_api_display_post_form_captcha_error(); ?>
+{% endhighlight %}
+
+	<hr size="1">
+
+	<p>
+		So far so good! Here's a sample form that should give you an idea of what your form should
+		look like at this point.
+	</p>
+
+{% highlight php %}
+<?php
+require_once("../qa2/global/api/api.php");
+ft_api_start_sessions();
+$fields = isset($_SESSION["form_tools_form_data"]) ?
+  ft_strip_tags($_SESSION["form_tools_form_data"]) : array();
+?>
+<html>
+<head>
+	<title>POST Form With CAPTCHA</title>
+</head>
+<body>
+
+<h1>Example form</h1>
+
+<?php ft_api_display_post_form_captcha_error(); ?>
+
+<form action="http://www.yoursite.com/formtools/process.php" method="post">
+	<input type="hidden" name="form_tools_form_id" value="1" />
+
+	First Name: <input type="text" name="first_name" value="" /><br />
+	Last Name: <input type="text" name="last_name" value="" /><br />
+	Email: <input type="text" name="email" value="" /><br />
+	Age: <select name="age">
+	<option value="Under 18">Under 18</option>
+	<option value="15-25">15-25</option>
+	<option value="25-40">25-40</option>
+	<option value="40+">40+</option>
+</select><br />
+
+	<?php ft_api_display_captcha(); ?>
+
+	<input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
+{% endhighlight %}
+
+<hr size="1">
+
+	<h4>process.php fix for Form Tools 2.0.x versions</h4>
+
+	<p>
+		It appears that the 2.0.x version may have a problem on some systems which needs a manual fix.
+		Edit your [form tools root]/process.php file. There, at the top of the file, add the line in
+		bold at the appropriate spot.
+	</p>
+
+	<p>
+		// if the API is supplied, include it as well<br>
+		&nbsp;<b>$folder = dirname(__FILE__);</b><br>
+		require_once("$folder/global/api/api.php");
+	</p>
+
+	<hr size="1">
+
+	<p>
+		Now try loading up the form in your browser and putting through a couple of submissions
+		to confirm that the CAPTCHA is working like it should. You may notice that when you enter
+		it incorrectly, you're returned to the form page but (a) your field values are all lost and
+		(b) the error message displayed doesn't look the way you want, or contains some text you don't
+		like. Both these issues are addressed in the next two steps.
+	</p>
+
 
 
 {% include close_section.html %}

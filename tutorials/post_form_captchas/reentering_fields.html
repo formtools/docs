@@ -13,6 +13,61 @@ nextLink: tutorials/post_form_captchas/error_message/
 
 {% include open_section.html nav='nav_tutorial_post_form_captchas.html' selected='reentering_fields' nav_width=4 %}
 
+	<p>
+		To allow you to re-enter the form field values entered up to that point, the process.php stores all form
+		values into sessions, which you can use on your form page to re-fill the fields. Let's tweak our example
+		form, used in the previous page:
+	</p>
+
+{% highlight php %}
+<?php
+require_once("../qa2/global/api/api.php");
+ft_api_start_sessions();
+$fields = isset($_SESSION["form_tools_form_data"]) ?
+  ft_strip_tags($_SESSION["form_tools_form_data"]) : array();
+?>
+<html>
+<head>
+	<title>POST Form With CAPTCHA</title>
+</head>
+<body>
+
+<h1>Example form</h1>
+
+<?php ft_api_display_post_form_captcha_error(); ?>
+
+<form action="http://www.yoursite.com/formtools/process.php" method="post">
+	<input type="hidden" name="form_tools_form_id" value="1" />
+
+	First Name: <input type="text" name="first_name"
+					   value="<?=htmlspecialchars(@$fields["first_name"])?>" /><br />
+	Last Name: <input type="text" name="last_name"
+					  value="<?=htmlspecialchars(@$fields["last_name"])?>" /><br />
+	Email: <input type="text" name="email"
+				  value="<?=htmlspecialchars(@$fields["email"])?>" /><br />
+	Age: <select name="age">
+	<option value="Under 18"
+	<?php if ($fields["age"] == "Under 18") echo "selected"; ?>>Under 18</option>
+	<option value="15-25"
+	<?php if ($fields["age"] == "15-25") echo "selected"; ?>>15-25</option>
+	<option value="25-40"
+	<?php if ($fields["age"] == "25-40") echo "selected"; ?>>25-40</option>
+	<option value="40+"
+	<?php if ($fields["age"] == "40+") echo "selected"; ?>>40+</option>
+</select><br />
+
+	<?php ft_api_display_captcha(); ?>
+
+	<input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
+{% endhighlight %}
 
 
+	<p>
+		This now extracts the values out of $fields and re-enters the form field values. This methodology can be
+		applied to any type of form field.
+	</p>
 {% include close_section.html %}

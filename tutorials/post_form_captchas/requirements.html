@@ -13,6 +13,36 @@ nextLink: tutorials/post_form_captchas/adding_captcha/
 
 {% include open_section.html nav='nav_tutorial_post_form_captchas.html' selected='requirements' nav_width=4 %}
 
+	<p>
+		In order to add a reCAPTCHA to your form, you first need to ensure the following steps are
+		complete.
+	</p>
+
+	<ol>
+		<li>You need to have the API installed. To get the latest version of the API either do a
+			standard upgrade by clicking on the "Check for Updates" button on the Settings
+			» main tab, or visit the <a href="{{site.baseurl}}/api/">API main page</a>.</li>
+		<li>You need to create a reCAPTCHA account on their website. I know it's a pain, but
+			it's very quick. <a href="http://recaptcha.net/whyrecaptcha.html" target="_blank">Visit
+				their site here</a> and sign up for an account. Once you've created an account you
+			register the domain(s) where you're using the service. Since the API only runs on the
+			same server as your Form Tools installation, you'll only need to set up the one
+			domain.<br>
+			<br>
+			Recaptcha will generate two keys for you: a private and a public one. Add
+			those two values to your <b>/global/config.php</b> file, like so:
+
+{% highlight php startinline %}
+$g_api_recaptcha_private_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+$g_api_recaptcha_public_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
+{% endhighlight %}
+
+			(replace the x's and y's with your own keys).
+		</li>
+		<li>Your form page need to be a .php file (or whatever file extension is used for PHP on your
+			server)</li>
+	</ol>
+
 
 
 {% include close_section.html %}
