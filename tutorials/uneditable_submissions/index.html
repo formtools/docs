@@ -1,0 +1,48 @@
+---
+layout: default
+navSection: Tutorials
+navSectionLink: tutorials/
+subnavSection: Preventing Clients from Editing Submissions
+heading: Preventing Clients from Editing Submissions
+---
+
+<p>
+	Often, you may find it beneficial to prevent one or more client accounts from editing the
+	form submissions. Form Tools lets you customize precisely which field is editable for which
+	user. This tutorial explains the steps involved.
+</p>
+
+<h4>...Let there be Views</h4>
+
+<p>
+	Every time you add a form to Form Tools for storage, a default View is created
+	that contains every field. This default View allows every field except the four system
+	fields to be editable, namely: submission ID, submission date, last modified date and IP
+	address.
+</p>
+
+<p>
+	Now lets duplicate that View, only preventing any of the fields from being editable.
+</p>
+
+<ol>
+	<li>In the Form Tools admin UI, go to the Forms page and click the EDIT link for the
+		appropriate form.</li>
+	<li>Click on the Views tab.</li>
+	<li>At the bottom of that page, select the View you want to duplicate (probably the All
+		Submissions View) then click "Create New View".</li>
+	<li>You'll now have been redirected to the "Edit View" page. Enter an appropriate name for
+		your view (e.g. "All submissions - View Only" or something). Also on this page,
+		you may want to change the access type to point to the client account(s) you want. But for
+		the sake of this example, we'll leave it alone and just view it with the administrator
+		account. Administrators can always view ALL Views, but they are limited to viewing and
+		editing those fields specified by the View.
+	</li>
+	<li>Click on the Fields tab. At the top of the tab there's a checkbox labeled "Allow
+		fields to be edited" - check the field and click the "Update View" button at the bottom
+		of the page to save the View.</li>
+	<li>And we're done! Click the <b>[View Submissions]</b> link in the top right of the page and
+		select the new View from the Views dropdown.</li>
+	<li>Edit a submission. You should now see all the fields listed, only now they're
+		not editable.</li>
+</ol>
