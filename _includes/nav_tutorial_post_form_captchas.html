@@ -1,0 +1,20 @@
+<h4 {% if include.selected == 'introduction' %}class="selected"{% endif %}><a href="{{site.baseurl}}/tutorials/post_form_captchas/">Introduction</a></h4>
+
+<ol>
+	<li {% if include.selected == 'requirements' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/tutorials/post_form_captchas/requirements/">Before you start / requirements</a>
+	</li>
+	<li {% if include.selected == 'adding_captcha' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/tutorials/post_form_captchas/adding_captcha/">Adding a CAPTCHA to your form</a>
+	</li>
+	<li {% if include.selected == 'reentering_fields' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/tutorials/post_form_captchas/reentering_fields/">Re-entering fields</a>
+	</li>
+	<li {% if include.selected == 'error_message' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/tutorials/post_form_captchas/error_message/">The error message</a>
+	</li>
+</ol>
+
+<div {% if include.selected == 'related_links' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/tutorials/post_form_captchas/related_links/">Related links</a>
+</div>
