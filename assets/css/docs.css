@@ -77,3 +77,7 @@ header h1 {
 .screenshot:hover {
 	background-color: #e9f4fe;
 }
+
+.alert .btn-primary {
+	margin-left: 12px;
+}

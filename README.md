@@ -23,11 +23,15 @@ I will manually review all contributions.
 
 ### How to build locally
 
-Instructions coming soon... first I want to get a little more of the doc done and iron out a few more wrinkles.
+Generally, contributing should be done via github by just editing the page, but if you'd like to 
 
-<!--
-jekyll serve --watch --baseurl ''
--->
+1. Clone this repo.
+2. Install Jekyll via the [instructions here](http://jekyllrb.com/docs/installation/)
+3. Once it's been installed, open up terminal/command line, navigate to the root folder of this repo and enter:
+`jekyll serve --watch --baseurl ''`
+
+That starts a local server which you can access at `http://localhost:4000/`. At this point, you can edit the files
+locally and the HTML files will be automatically regenerated on the fly.
 
 
 ### Screenshots
