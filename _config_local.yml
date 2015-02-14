@@ -4,8 +4,6 @@ email: ben.keen@gmail.com
 description: "Documentation and tutorials for all things Form Tools."
 baseurl: "./"
 url: "http://docs.formtools.org"
-
-# the base URL for the website-specific resources
 resourceurl: "http://localhost:8888/formtools-site/formtools.org/",
 
 # build settings
