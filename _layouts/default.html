@@ -7,44 +7,47 @@
 
 	{% include top_nav.html %}
 
-	<div class="page-content">
-		<div class="wrap">
+	<div class="container mainContent">
+		<div class="page-content">
+			<div class="wrap">
 
-			<nav id="mainDocNav">
-				<a href="{{site.baseurl}}/">Documentation</a>
+				<nav id="mainDocNav">
+					<a href="{{site.baseurl}}/">Documentation</a>
 
-				{% if page.navSection %}
-					&raquo;
-
-					{% if page.navSectionLink %}
-						<a href="{{site.baseurl}}/{{page.navSectionLink}}">{{page.navSection}}</a>
+					{% if page.navSection %}
 						&raquo;
 
-						{% if page.subnavSectionLink %}
-							<a href="{{site.baseurl}}/{{page.subnavSectionLink}}">{{page.subnavSection}}</a>
+						{% if page.navSectionLink %}
+							<a href="{{site.baseurl}}/{{page.navSectionLink}}">{{page.navSection}}</a>
 							&raquo;
-							{{page.heading}}
+
+							{% if page.subnavSectionLink %}
+								<a href="{{site.baseurl}}/{{page.subnavSectionLink}}">{{page.subnavSection}}</a>
+								&raquo;
+								{{page.heading}}
+							{% else %}
+								{{page.subnavSection}}
+							{% endif %}
+
 						{% else %}
-							{{page.subnavSection}}
+							{{page.navSection}}
 						{% endif %}
-
-					{% else %}
-						{{page.navSection}}
 					{% endif %}
-				{% endif %}
 
-			</nav>
+				</nav>
 
-			<header>
-				<h1>{{page.heading}}</h1>
-				{% include prev_next_nav.html %}
-			</header>
+				<header>
+					<h1>{{page.heading}}</h1>
+					{% include prev_next_nav.html %}
+				</header>
 
-			{{ content }}
+				{{ content }}
+			</div>
 		</div>
+
+		{% include footer-docs.html %}
 	</div>
 
-	{% include footer-docs.html %}
 	{% include footer.html %}
 
 </body>
