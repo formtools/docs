@@ -1,0 +1,11 @@
+# site settings
+title: Form Tools Documentation
+email: ben.keen@gmail.com
+description: "Documentation and tutorials for all things Form Tools."
+baseurl: "./"
+url: "http://docs.formtools.org"
+
+# build settings
+markdown: kramdown
+permalink: pretty
+showWrapper: true
