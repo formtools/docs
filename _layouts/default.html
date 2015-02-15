@@ -10,7 +10,7 @@
 
 	{% include top_nav.html %}
 
-	<section class="container">
+	<section class="container doc-container">
 		<div class="page-content">
 			<div class="wrap">
 
@@ -39,12 +39,10 @@
 
 				</nav>
 
-				{% if page.heading %}
-					<header>
-						<h1>{{page.heading}}</h1>
-						{% include prev_next_nav.html %}
-					</header>
-				{% endif %}
+				<header>
+					<h1>{{page.heading}}</h1>
+					{% include prev_next_nav.html %}
+				</header>
 
 				{{ content }}
 			</div>
