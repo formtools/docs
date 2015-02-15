@@ -86,6 +86,9 @@ header h1 {
 	color: #0A7CDF;
 }
 
+.doc-container {
+	padding-top: 160px;
+}
 .doc-container h1 {
 	font-weight: normal;
 }
