@@ -181,23 +181,6 @@ h3.heading-progress span {
 	width: 100%;
 	height: 100%; }
 
-/* main menu */
-.navbar-inverse {
-	background-color: #232323; }
-
-.navbar {
-	border: none !important;
-	border-radius: 0;
-	margin-bottom: 0px; }
-
-.navbar-brand {
-	background: transparent url("../../img/logo.png") center left no-repeat; }
-
-.navbar > .container .navbar-brand {
-	padding-left: 65px;
-	font-size: 22px;
-	font-weight: normal;
-	padding-top: 28px; }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
 	background-color: #68a4e0 !important;
