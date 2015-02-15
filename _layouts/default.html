@@ -2,11 +2,17 @@
 <html>
 <head>
 	{% include head.html %}
+
+	{%-- these are always included for docs, even for the prod site -->
+	<link rel="stylesheet" href="{{site.baseurl}}/assets/css/core.css">
+	<link rel="stylesheet" href="{{site.baseurl}}/assets/css/docs.css">
+
 </head>
 <body>
 
 	{% include top_nav.html %}
 
+	<section class="container">
 		<div class="page-content">
 			<div class="wrap">
 
@@ -45,6 +51,8 @@
 		</div>
 
 		{% include footer-docs.html %}
+
+	</section>
 
 	{% include footer.html %}
 
