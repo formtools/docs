@@ -85,3 +85,8 @@ header h1 {
 .alert-info {
 	color: #0A7CDF;
 }
+
+.doc-container h1 {
+	font-weight: normal;
+	margin-top: 75px;
+}
