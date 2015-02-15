@@ -5,7 +5,6 @@
 
 	<!-- doc-specific styles -->
 	<link rel="stylesheet" href="{{site.baseurl}}/assets/css/docs.css">
-
 </head>
 <body>
 
@@ -40,13 +39,12 @@
 
 				</nav>
 
-				<header>
-					{% if page.heading %}
+				{% if page.heading %}
+					<header>
 						<h1>{{page.heading}}</h1>
-					{% endif %}
-
-					{% include prev_next_nav.html %}
-				</header>
+						{% include prev_next_nav.html %}
+					</header>
+				{% endif %}
 
 				{{ content }}
 			</div>

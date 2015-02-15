@@ -81,3 +81,7 @@ header h1 {
 .alert .btn-primary {
 	margin-left: 12px;
 }
+
+.alert-info {
+	color: #0A7CDF;
+}
