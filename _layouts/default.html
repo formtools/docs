@@ -41,7 +41,10 @@
 				</nav>
 
 				<header>
-					<h1>{{page.heading}}</h1>
+					{% if page.heading %}
+						<h1>{{page.heading}}</h1>
+					{% endif %}
+
 					{% include prev_next_nav.html %}
 				</header>
 
