@@ -2,11 +2,11 @@
 title: Form Tools Documentation
 email: ben.keen@gmail.com
 description: "Documentation and tutorials for all things Form Tools."
-baseurl: "http://localhost:8888/formtools-site/docs.formtools.org"
+baseurl: "http://localhost:4000/docs.formtools.org"
 url: "http://docs.formtools.org"
-resourceurl: "http://localhost:8888/formtools-site/formtools.org"
-ft_url: "http://localhost:8888/formtools-site/formtools.org"
-docs_url: "http://localhost:8888/formtools-site/docs.formtools.org"
+resourceurl: "http://localhost:4000/formtools.org"
+ft_url: "http://localhost:4000/formtools.org"
+docs_url: "http://localhost:4000/docs.formtools.org"
 
 # build settings
 markdown: kramdown
