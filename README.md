@@ -33,9 +33,9 @@ If you want to run the documentation locally, do the following:
 1. Clone this repo.
 2. Install Jekyll via the [instructions here](http://jekyllrb.com/docs/installation/)
 3. Once it's been installed, open up terminal/command line, navigate to the root folder of this repo and enter:
-`jekyll serve --watch --baseurl ''`
+`jekyll serve --watch`
 
-That starts a local server which you can access at `http://localhost:4000/`. At this point, you can edit the files
+That starts a local server which you can access at `http://localhost:4000/docs/`. At this point, you can edit the files
 locally and the HTML files will be automatically regenerated on the fly.
 
 
