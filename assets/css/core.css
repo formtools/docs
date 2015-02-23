@@ -1502,3 +1502,104 @@ code {
 .top-nav-offset {
     margin-top: 75px;
 }
+
+
+/* docs */
+/*
+	convert to Sass!
+*/
+
+header {
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 20px;
+}
+header h1 {
+    margin-bottom: 6px;
+}
+
+.docNav .selected a, .docNav h4.selected a {
+    font-weight: 700;
+}
+.docNav h4 {
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.docNav ul {
+    margin-bottom: 15px;
+}
+#mainDocNav {
+    margin-bottom: 10px;
+}
+
+.docPrevNextNav {
+    font-size: 8pt;
+    margin-bottom: 4px;
+    margin-top: 2px;
+    height: 16px;
+}
+.docPrevNextNav a {
+    color: #999999;
+}
+.docPrevNextNav a:hover {
+    color: green;
+}
+
+.githubEdit {
+    padding-top: 16px;
+}
+.githubEdit a {
+    padding-left: 34px;
+    background: #0A7CDF url(../images/github.png) 4px center no-repeat;
+}
+
+.prevNextBottom {
+    border-top: 1px solid #cccccc;
+    margin-top: 16px;
+}
+.clear {
+    clear: both;
+}
+.box {
+    background-color: #f9f9f9;
+    text-align: left;
+    padding-top: 15px;
+}
+.box a.learnMore {
+    float: right;
+    padding: 4px 10px;
+}
+.screenshot {
+    background-color: #f9f9f9;
+    padding: 6px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    box-shadow: 0px 1px 2px #999999;
+    -webkit-box-shadow: 0px 1px 2px #999999;
+    margin-bottom: 10px;
+    width: 264px;
+    font-size: 12px;
+    padding-bottom: 0px;
+    margin-left: 10px;
+}
+.screenshot img {
+    border: 1px solid #aaaaaa;
+}
+.screenshot:hover {
+    background-color: #e9f4fe;
+}
+
+.alert .btn-primary {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.alert-info {
+    color: #0A7CDF;
+}
+
+.doc-container {
+    padding-top: 160px;
+}
+.doc-container h1 {
+    font-weight: normal;
+}
