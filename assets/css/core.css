@@ -8072,3 +8072,12 @@ div.CodeMirror-cursors {
 
 /* Help users use markselection to safely style text background */
 span.CodeMirror-selectedtext { background: none; }
+
+/** ensures the height is always 100% */
+.CodeMirror {
+    height: auto;
+    font-size: 10pt;
+    margin: 10px 0px;
+    border: 1px solid #cccccc;
+    background-color: #f9f9f9;
+}

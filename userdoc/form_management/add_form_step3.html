@@ -40,12 +40,11 @@ nextLink: userdoc/form_management/add_form_step4/
 		<li>Cut and paste the HTML in the textarea and replace your own &lt;form&gt; tag with it.
 			The HTML will look something like this:
 
-			{% highlight html %}
-<form action="http://www.yoursite.com/path/to/form_tools/process.php"
-	method="post">
+			{% codemirror html %}
+<form action="http://www.yoursite.com/path/to/form_tools/process.php" method="post">
 	<input type="hidden" name="form_tools_initialize_form" value="1" />
 	<input type="hidden" name="form_tools_form_id" value="X" />
-			{% endhighlight %}
+            {% endcodemirror %}
 
 			If you indicated that this form contained a file upload field, you will see an extra
 			enctype="multipart/form-data" attribute. Note: if your existing form tag has other
