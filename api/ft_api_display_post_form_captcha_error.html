@@ -21,9 +21,9 @@ nextLink: api/error_codes/
 		appropriate error message if the user fails to enter the CAPTCHA properly. Usage:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php echo ft_api_display_post_form_captcha_error(); ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The default error message is <i>Sorry, the CAPTCHA (image verification) was entered
@@ -32,12 +32,12 @@ nextLink: api/error_codes/
 		a string as the parameter, containing whatever HTML content you want. e.g.:
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <?php
 $error = '<div class="error">Error! Please re-enter!!</div>';
 ft_api_display_post_form_captcha_error($error);
 ?>
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		That will then embed that HTML and error message into the page.

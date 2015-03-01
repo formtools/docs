@@ -31,7 +31,7 @@ nextLink: module_development/file_library/
 		module:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 /*
 Form Tools - Module Language File
 ---------------------------------
@@ -58,7 +58,7 @@ $L["word_help"] = "Help";
 $L["word_icon"] = "Icon";
 $L["word_none"] = "None";
 // ...
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		When you define this file in the same language as the Form Tools administrator, all
@@ -72,17 +72,17 @@ $L["word_none"] = "None";
 		on screen, you would first define that word in your language file like so:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 $LANG["word_action"] = "Action";
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		You can then reference it in your template, using the $L variable, like this:
 	</p>
 
-	{% highlight smarty %}
+	{% codemirror smarty %}
 {$L.word_action}
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Or, to reference the value in your PHP, just reference the $L variable (defined in
@@ -99,10 +99,10 @@ $LANG["word_action"] = "Action";
 		hash keys:
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 $L["module_name"] = "My module";
 $L["module_description"] = "My module does this, that, and the other,";
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		These values are used on the Modules page to present information about the module

@@ -18,7 +18,7 @@ nextLink: api/ft_api_update_client_account/
 		This function creates a client account programmatically. Example usage:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $account_info = array(
   "first_name" => "Todd",
@@ -29,7 +29,7 @@ $account_info = array(
 );
 list($success, $info) = ft_api_create_client_account($account_info);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The function takes a single parameter - an associative array (hash) with the following keys.
@@ -67,7 +67,7 @@ list($success, $info) = ft_api_create_client_account($account_info);
 		either a successful or failed INSERT call, it returns an array with two indexes:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 // ...
 list($success, $info) = ft_api_create_client_account($account_info);
@@ -75,7 +75,7 @@ list($success, $info) = ft_api_create_client_account($account_info);
 // if $success == true, $info contains the new account ID (an integer)
 // if $success == false, $info contains an array of error codes
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The failure error codes are <a href="{{site.baseurl}}/api/error_codes/">documented here</a>.

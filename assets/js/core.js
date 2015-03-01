@@ -5,7 +5,8 @@ $(function () {
     var map = {
       js: "javascript",
       html: "htmlmixed",
-      smarty: "smarty"
+      smarty: "smarty",
+      php: "php"
     };
 
     CodeMirror.fromTextArea(this, {

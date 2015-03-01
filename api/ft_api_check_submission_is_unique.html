@@ -25,9 +25,9 @@ nextLink: api/ft_api_start_sessions/
 		The function has the following structure:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 ft_api_check_submission_is_unique($form_id, $criteria, $submission_id]);
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The <b>$form_id</b> parameter is self-explanatory; you can find this value in your Form
@@ -45,7 +45,7 @@ ft_api_check_submission_is_unique($form_id, $criteria, $submission_id]);
 		"email" is the database column name and the form ID is 10):
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $criteria = array(
   "email" => $_POST["email"]
@@ -67,7 +67,7 @@ else
   // the form submission
 }
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		N.B. we chose to use database column names rather than form field names to allow you

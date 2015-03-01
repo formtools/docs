@@ -35,20 +35,20 @@ nextLink: api/function_reference/
 		every file where you include the API library file:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 require_once("/path/to/global/api/api.php");
 $g_api_debug = false;
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Or, you can just add the following line to your /global/config.php file:
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 $g_api_debug = true;
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		Once this is done, the API functions will no longer display the error messages; instead,

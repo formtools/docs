@@ -20,7 +20,7 @@ nextLink: tutorials/api_single_page_form/step2/
 		few minor modifications listed underneath:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 require_once("path/to/form_tools/global/api/api.php");
 $fields = ft_api_init_form_page("", "test");
@@ -33,7 +33,7 @@ $params = array(
 );
 ft_api_process_form($params);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<ul>
 		<li>The path to the api.php file has to be updated, depending on where it's located in
@@ -51,9 +51,9 @@ ft_api_process_form($params);
 		Next, make sure your form tag looks like this:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		$_SERVER["PHP_SELF"] is just a PHP value for the location of the current page. This
@@ -75,15 +75,15 @@ ft_api_process_form($params);
 		With regard to the form's post attribute, if you want to use method="GET", that's fine - just change the PHP line in the top of the from:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 "form_data" => $_POST,
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	to:
 
-	{% highlight php %}
+	{% codemirror php %}
 "form_data" => $_GET,
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Finally, put through a form submission. You should be redirected to your "thank you" page.

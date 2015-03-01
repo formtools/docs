@@ -49,7 +49,7 @@ nextLink: api/other_functions/
 		Here's an example of how it can be used:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $account_info = array(
   "username" => "bob",
@@ -57,13 +57,13 @@ $account_info = array(
 );
 list ($success, $message) = ft_api_login($account_info);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		This will log the user in, but not redirect anywhere - you can continue processing PHP statements after the ft_api_login() call. Important: make sure that this page has started sessions! Form Tools requires sessions to have started in order to store the login information for the duration of the users "stay" in Form Tools.
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $account_info = array(
   "username" => "bob",
@@ -72,7 +72,7 @@ $account_info = array(
 );
 list ($success, $message) = ft_api_login($account_info);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		This will automatically log the user in, if successful. They will be redirected to their custom login page, defined in their user settings.

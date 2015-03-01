@@ -25,7 +25,7 @@ nextLink: module_development/uninstallation_function/
 		Here's a simple example of how this function is formatted:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 /**
  * My Module's installation function. This is automatically called by Form
  * Tools on installation.
@@ -42,7 +42,7 @@ function my_module__install($module_id)
 
   return array($success, $message);
 }
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The module ID is passed to the function in case you need that information. Otherwise you
@@ -60,9 +60,9 @@ function my_module__install($module_id)
 		just pass an empty string as the second parameter, like so:
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 return array(true, "");
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p><b>What your install script DOESN'T need to contain</b></p>
 

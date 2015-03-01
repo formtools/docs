@@ -19,14 +19,14 @@ nextLink: module_development/ft_get_page_nav/
 		strings if you want to retrieve multiple values. For example:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 // getting a single value
 $age = ft_get_module_settings("age");
 
 // getting multiple values
 $info = array("age", "name");
 list($age, $name) = ft_get_module_settings($info);
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The <b>ft_set_module_settings</b> and <b>ft_get_module_settings</b> functions are good for small snippets of data. If you need to store larger quantities of data, we recommend you create your own database table.

@@ -30,9 +30,9 @@ nextLink: module_development/related_links/
 		event happends in the code. Here's how we register the hook:
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 ft_register_hook("code", "my_module", "start", "ft_process_form", "my_hook", 50);
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		This line registers the code hook for the function <b>ft_process_form</b>; it tells it to
@@ -58,7 +58,7 @@ ft_register_hook("code", "my_module", "start", "ft_process_form", "my_hook", 50)
 		containing whatever information is passed by that particular function.
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 function my_hook($vars)
 {
   // $vars always contains the form_tools_overridable_vars key: an array of variable names that
@@ -74,7 +74,7 @@ function my_hook($vars)
   $info["name"] = "Overridden!";
   return $info;
 }
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		The comments should explain quite a bit. The two keys, <b>form_tools_overridable_vars</b>
@@ -101,9 +101,9 @@ function my_hook($vars)
 		Form Tools pages. Here's our register function:
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 ft_register_hook("template", "my_module", "edit_client_main_top", "", "say_hello", 50);
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		Like with the code hook register function calls, this line would usually be added to
@@ -116,9 +116,9 @@ ft_register_hook("template", "my_module", "edit_client_main_top", "", "say_hello
 		it'll be called wherever you find this line in one of the templates:
 	</p>
 
-{% highlight smarty %}
+{% codemirror smarty %}
 {template_hook location="admin_edit_client_main_top"}
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		(This happens to be in the /themes/default/admin/clients/tab_main.tpl template file).
@@ -131,7 +131,7 @@ ft_register_hook("template", "my_module", "edit_client_main_top", "", "say_hello
 	</p>
 
 
-{% highlight php startinline %}
+{% codemirror php %}
 /**
  * Our template hook function.
  *
@@ -144,6 +144,6 @@ function say_hello($location, $info)
 {
   echo "hello!";
 }
-{% endhighlight %}
+{% endcodemirror %}
 
 {% include close_section.html %}

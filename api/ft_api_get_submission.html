@@ -28,23 +28,23 @@ nextLink: api/user_accounts/
 		550.
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $submission_info = ft_api_get_submission(2, 550);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Now, assuming your form has database columns called first_name and last_name, you could
 		access those values like so:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 echo $submission_info["first_name"]; // first name!
 echo $submission_info["last_name"]; // last name!
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Tip: to find out what the database columns are all named, log into Form Tools and go to the

@@ -58,13 +58,13 @@ nextLink: module_development/helper_functions/
 		<b>modules_header.tpl</b> and <b>modules_footer.tpl</b> files, like so:
 	</p>
 
-	{% highlight smarty %}
+	{% codemirror smarty %}
 {include file='modules_header.tpl'}
 
 Your HTML here.
 
 {include file='modules_footer.tpl'}
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		It's the theme designers job to develop that wrapper so that your HTML appears in the appropriate spot.
@@ -133,9 +133,9 @@ Your HTML here.
 		language file, add your string like so:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 $L["phrase_num_settings_to_complete"] = "You have {\$num_settings} settings to complete.";
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Note that the <b>$</b> in <b>$num_settings</b> is escaped with a preceding \ dash. This
@@ -147,11 +147,11 @@ $L["phrase_num_settings_to_complete"] = "You have {\$num_settings} settings to c
 		&nbsp;to replace the Smarty variable <b>$num_settings</b> with the value you need to insert.
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php startinline %}
 $placeholders = array("num_settings" => 5);
 $string = ft_eval_smarty_string($L["phrase_num_settings_to_complete"], $placeholders)
 echo $string; // "You have 5 settings to complete."
-	{% endhighlight %}
+	{% endcodemirror %}
 
 
 {% include close_section.html %}

@@ -28,9 +28,9 @@ nextLink: userdoc/form_management/editing_forms/
 		Return to your form and remove the following hidden field:
 	</p>
 
-	{% highlight html %}
+	{% codemirror html %}
 <input type="hidden" name="form_tools_initialize_form" value="1" />
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Now refresh your form page. Going forward, submissions should now be stored in Form Tools.
@@ -44,9 +44,9 @@ nextLink: userdoc/form_management/editing_forms/
 		the X will be your form number.
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 $fields = ft_api_init_form_page(X);
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		Then visit your "thank you" page to empty the sessions. Once this is done, all new form

@@ -20,7 +20,7 @@ nextLink: tutorials/api_multi_page_form/step3/
 		important!
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 require_once("path/to/form_tools/global/api/api.php");
 $fields = ft_api_init_form_page();
@@ -32,7 +32,7 @@ $params = array(
 );
 ft_api_process_form($params);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Like before, you'll need to tweak the following for each form page:
@@ -53,14 +53,14 @@ ft_api_process_form($params);
 			Again, as before, if your form contains file fields, add one more parameter to the $params array: the last
 			<b>file_data</b> row.
 
-{% highlight php startinline %}
+{% codemirror php %}
 $params = array(
   "submit_button" => "submit_button_name_attribute",
   "next_page" => "next_page.php",
   "form_data" => $_POST,
   "file_data" => $_FILES
 );
-{% endhighlight %}
+{% endcodemirror %}
 
 		</li>
 		<li>
@@ -81,15 +81,15 @@ $params = array(
 		parameter to the $params array:
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 "finalize" => true
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		So, your code will look something like this:
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <?php
 require_once("path/to/form_tools/global/api/api.php");
 $fields = ft_api_init_form_page();
@@ -101,7 +101,7 @@ $params = array(
 );
 ft_api_process_form($params);
 ?>
-{% endhighlight %}
+{% endcodemirror %}
 
 
 {% include close_section.html %}

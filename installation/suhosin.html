@@ -23,9 +23,9 @@ prevLink: installation/step6/
 		You can find out if you have suhosin installed by looking at your php info file. For that, just upload
 		a .php file to your server with the following content:
 
-		{% highlight php %}
+		{% codemirror php %}
 		<?php phpinfo(); ?>
-		{% endhighlight %}
+		{% endcodemirror %}
 
 		Then load that page in your browser and do a search for "suhosin". The settings that will cause the most
 		problems are <b>suhosin.get.max_vars</b> and <b>suhosin.post.max_vars</b>. Anything under a few thousand

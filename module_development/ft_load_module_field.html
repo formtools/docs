@@ -30,9 +30,9 @@ nextLink: module_development/ft_register_hook/
 		The way it works is very simple. It's called like so:
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 $my_var = ft_load_module_field("my_module", "my_key", "var", "Default value!");
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		The four parameters are: your module folder, the key with which to later extract
@@ -48,9 +48,9 @@ $my_var = ft_load_module_field("my_module", "my_key", "var", "Default value!");
 		Imagine the following line is in your PHP.
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 $field_id = ft_load_module_field("my_module", "field_id", "field_id", "[NONE!]");
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		When a visitor first goes to the page, after this line has executed, $field_id (since

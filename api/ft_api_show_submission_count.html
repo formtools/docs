@@ -25,42 +25,42 @@ nextLink: api/ft_api_get_submission/
 		The function takes the following required parameters:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 echo ft_api_show_submission_count($form_id);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Or, if you're specifying a View:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 echo ft_api_show_submission_count($form_id, $view_id);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		You would call it in your webpage (a PHP page) by embedding the following code. Note that you'll need to
 		replace 4 and 6 with your form and View IDs:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 echo ft_api_show_submission_count(4, 6);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		To use the submission count value in your own code, just store it in a variable, like so:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $num_submissions = ft_api_show_submission_count(4, 6);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 
 {% include close_section.html %}

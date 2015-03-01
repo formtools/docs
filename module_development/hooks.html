@@ -41,9 +41,9 @@ nextLink: module_development/hooks_methodology/
 		looking through the code, look for lines like this:
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 extract(ft_process_hooks("main", compact("account_info"), array("account_info")), EXTR_OVERWRITE);
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		Basically what this does it pass off execution control to the ft_process_hooks function,
@@ -62,9 +62,9 @@ extract(ft_process_hooks("main", compact("account_info"), array("account_info"))
 		for the benefit of the user, or anything else. Template hooks look like this:
 	</p>
 
-{% highlight smarty %}
+{% codemirror smarty %}
 {template_hook location="admin_edit_client_settings_top"}
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		For a list of template hooks, <a href="{{site.baseurl}}/module_development/template_hooks/">click here</a>.

@@ -17,9 +17,9 @@ nextLink: module_development/ft_sanitize/
 		This function registers a new hook in the database.
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 ft_register_hook($module_folder, $when, $core_function, $hook_function, $priority = 50, $force_unique = false);
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		The second <b>$when</b> parameter is the string identifying where in the core function

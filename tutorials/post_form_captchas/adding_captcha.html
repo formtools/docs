@@ -22,14 +22,14 @@ nextLink: tutorials/post_form_captchas/reentering_fields/
 		<b>1.</b> At the top of your form page, add the following PHP:
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <?php
 require_once("/path/to/formtools/global/api/api.php");
 ft_api_start_sessions();
 $fields = isset($_SESSION["form_tools_form_data"]) ?
   ft_strip_tags($_SESSION["form_tools_form_data"]) : array();
 ?>
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		You need to include a valid path from your form page to the api.php file. This
@@ -41,9 +41,9 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 		submit button, add this line of PHP to add the CAPTCHA:
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <?php ft_api_display_captcha(); ?>
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		<b>3.</b> Include a hidden field in your form that contains the full URL of the
@@ -51,9 +51,9 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 		without it.
 	</p>
 
-{% highlight html %}
+{% codemirror html %}
 <input type="hidden" name="form_tools_form_url" value="" />
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		<b>4.</b> Add this code to the top of your form. In the event of the user incorrectly
@@ -61,9 +61,9 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 	</p>
 
 
-{% highlight php %}
+{% codemirror php %}
 <?php ft_api_display_post_form_captcha_error(); ?>
-{% endhighlight %}
+{% endcodemirror %}
 
 	<hr size="1">
 
@@ -72,7 +72,7 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 		look like at this point.
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <?php
 require_once("../qa2/global/api/api.php");
 ft_api_start_sessions();
@@ -109,7 +109,7 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 
 </body>
 </html>
-{% endhighlight %}
+{% endcodemirror %}
 
 <hr size="1">
 

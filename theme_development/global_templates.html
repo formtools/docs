@@ -50,7 +50,7 @@ nextLink: theme_development/i18n/
 		The following variables are passed to the page:
 	</p>
 
-	{% highlight smarty %}
+	{% codemirror smarty %}
 {$num_results}
 {$viewing_range}
 {$current_page}
@@ -58,7 +58,7 @@ nextLink: theme_development/i18n/
 {$num_per_page}
 {$next_page}
 {$previous_page}
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Most are self-explanatory. The $viewing_range variable contains a string like "[1-10]"
@@ -144,7 +144,7 @@ nextLink: theme_development/i18n/
 		Here's an example, taken from the default theme.
 	</p>
 
-	{% highlight smarty %}
+	{% codemirror smarty %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="{$LANG.special_text_direction}">
 <head>
@@ -175,7 +175,7 @@ nextLink: theme_development/i18n/
 
 </head>
 <body>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 
 	<p>
@@ -200,7 +200,7 @@ nextLink: theme_development/i18n/
 		&raquo; Menus tab.
 	</p>
 
-	{% highlight smarty %}
+	{% codemirror smarty %}
 {assign var=is_current_parent_menu value=false}
 
 <div class="menu_items">
@@ -229,7 +229,7 @@ nextLink: theme_development/i18n/
 
 {/foreach}
 </div>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 
 	<hr size="1" />
@@ -256,7 +256,7 @@ nextLink: theme_development/i18n/
 		The following variables are passed to the page:
 	</p>
 
-	{% highlight smarty %}
+	{% codemirror smarty %}
 {$num_results}
 {$viewing_range}
 {$current_page}
@@ -264,7 +264,7 @@ nextLink: theme_development/i18n/
 {$num_per_page}
 {$next_page}
 {$previous_page}
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Most are self-explanatory. The $viewing_range variable contains a string like "[1-10]" indicating what

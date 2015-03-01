@@ -181,11 +181,11 @@ nextLink: tutorials/js_validation/more_help/
 			than the <b>letters_only</b> rule. It lets you check that a field is formatted in a very
 			specific way. For example:
 
-{% highlight js %}
+{% codemirror js %}
 // this requires the "field_name" form field be of the form:
 // {any letter}{uc letter}{lc consonant}{lc consonant}
 rules.push("custom_alpha,field_name,DLcc,Error message");
-{% endhighlight %}
+{% endcodemirror %}
 
 			<p>
 				Here's all the different formatting options and what each character means:

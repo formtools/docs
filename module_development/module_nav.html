@@ -36,13 +36,13 @@ nextLink: module_development/display_pages/
 		indexes: the URL of the page, and whether it should appear as a submenu item or not.
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 $MODULE["nav"] = array(
   "module_name"   => array('{$module_dir}/index.php', false),
   "word_settings" => array('{$module_dir}/settings/', false),
   "word_help"     => array('{$module_dir}/help/', false)
 );
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		The "module_name", "word_settings" and "word_help" have corresponding entries in the

@@ -72,11 +72,11 @@ nextLink: api/ft_api_show_submission/
 		The function takes the following required parameters:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 ft_api_show_submissions($form_id, $view_id, $export_type_id, $page);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The first three parameters are self-explanatory, and can be found in the Form Tools interface. $page is
@@ -84,7 +84,7 @@ ft_api_show_submissions($form_id, $view_id, $export_type_id, $page);
 		Export Type ID is 2 and the $page value is passed in by the query string.
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 // the path will need to be updated!
 require("/path/to/global/api/api.php");
@@ -92,7 +92,7 @@ require("/path/to/global/api/api.php");
 $page = ft_api_load_field("page", "page", 1);
 ft_api_show_submissions(26, 23, 2, $page);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The ft_load_field function is a really handy helper function,
@@ -134,7 +134,7 @@ ft_api_show_submissions(26, 23, 2, $page);
 		an example of how it's called:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $page = (isset($_GET["page"])) ? $_GET["page"] : 1;
 $options = array(
@@ -144,7 +144,7 @@ $options = array(
 );
 ft_api_show_submissions(26, 23, 2, $page, $options);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		You can set any of the following values:

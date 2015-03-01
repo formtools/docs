@@ -54,10 +54,10 @@ nextLink: api/ft_api_delete_unfinalized_submissions/
 		those two values to your <b>/global/config.php</b> file, like so:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 $g_api_recaptcha_private_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 $g_api_recaptcha_public_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		(replace the x's and y's with your own keys).
@@ -72,11 +72,11 @@ $g_api_recaptcha_public_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
 		you want.
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 ft_api_display_captcha();
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		And you're done! Try it out!

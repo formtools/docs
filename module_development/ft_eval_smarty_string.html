@@ -20,18 +20,18 @@ nextLink: module_development/ft_get_dhtml_page_nav/
 		result. Here's an example. Imagine your language file contained this rule:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 $L["phrase_num_settings_to_complete"] = "You have {\$num_settings} settings to complete.";
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Then, you can process that string to replace the $num_settings Smarty variable like so:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 $placeholders = array("num_settings" => 5);
 $string = ft_eval_smarty_string($L["phrase_num_settings_to_complete"], $placeholders);
 echo $string; // "You have 5 settings to complete."
-	{% endhighlight %}
+	{% endcodemirror %}
 
 {% include close_section.html %}

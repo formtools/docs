@@ -47,9 +47,9 @@ nextLink: userdoc/form_management/edit_form_fields_tab/
 				the form up but don't want the users to see the Form Tools "303" error, add the following
 				hidden field to your form:
 
-{% highlight html %}
+{% codemirror html %}
 <input type="hidden" name="form_tools_inactive_form_redirect_url" value="http://yoururl.com" />
-{% endhighlight %}
+{% endcodemirror %}
 
 				That will automatically redirect all users to a custom URL if and only if the form
 				is set to inactive/offline.

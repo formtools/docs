@@ -24,10 +24,10 @@ nextLink: module_development/hooks/
 		and name. You could store this information in the database like so:
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 $info = array("name" => $name, "age" => $age);
 ft_set_module_settings($info);
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		And that's it! It's now stored in the database. If the value didn't already exist in

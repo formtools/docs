@@ -25,12 +25,12 @@ nextLink: tutorials/js_validation/onsubmit/
 		to the user if they're not filled in properly. Here is a simple example:
 	</p>
 
-{% highlight js %}
+{% codemirror js %}
 var rules = []; // this stores all the validation rules
 rules.push("required,first_name,Please enter your first name.");
 rules.push("required,email,Please enter your email address.");
 rules.push("valid_email,email,Please enter a valid email address.");
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		Here we are checking that the first name and email fields have a value and that
@@ -60,7 +60,7 @@ rules.push("valid_email,email,Please enter a valid email address.");
 		Here's how the validation rules would look:
 	</p>
 
-{% highlight js %}
+{% codemirror js %}
 var rules = [];
 rules.push("required,first_name,Please enter your first name.");
 rules.push("required,last_name,Please enter your last name.");
@@ -69,6 +69,6 @@ rules.push("valid_email,email,Please enter a valid email address.");
 rules.push("required,any_integer,Please enter your age.");
 rules.push("digits_only,any_integer,The age field may only contain digits.");
 rules.push("required,marital_status,Please enter your marital status.");
-{% endhighlight %}
+{% endcodemirror %}
 
 {% include close_section.html %}

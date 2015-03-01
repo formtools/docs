@@ -36,9 +36,9 @@ nextLink: module_development/ft_get_module_hooks/
 		The function is called in your PHP, like so:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 $page_vars["pagination"] = ft_get_dhtml_page_nav($num_results, $num_per_page, $page);
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The function parameters are the following:
@@ -56,17 +56,17 @@ $page_vars["pagination"] = ft_get_dhtml_page_nav($num_results, $num_per_page, $p
 		function, like so:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 ft_display_module_page("your_template.tpl", $page_vars); // where $page_vars contains "pagination"
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		In your template just use the $pagination variable to display it:
 	</p>
 
-	{% highlight smarty %}
+	{% codemirror smarty %}
 {$pagination}
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		You also <b>must</b> include /global/scripts/general.js in your template page. That

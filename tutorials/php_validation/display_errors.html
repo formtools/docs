@@ -20,7 +20,7 @@ nextLink: tutorials/php_validation/further_information/
 		through them and display them on the page. Here's some code for that:
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <?php
 // if $errors is not empty, the form must have failed one or more validation
 // tests. Loop through each and display them on the page for the user
@@ -33,13 +33,13 @@ if (!empty($errors))
 	echo "</ul></div>";
 }
 ?>
-{% endhighlight %}
+{% endcodemirror %}
 
 <p>
 	Now all we do is add thank chunk of code to your form and we're done!
 </p>
 
-{% highlight php %}
+{% codemirror php %}
 <?php
 require_once("path/to/form_tools/global/api/api.php");
 $fields = ft_api_init_form_page("X"); // X would be your form ID
@@ -119,7 +119,7 @@ Comments: <textarea name="comments"><?=@$comments?></textarea>
 
 </body>
 </html>
-{% endhighlight %}
+{% endcodemirror %}
 
 
 {% include close_section.html %}

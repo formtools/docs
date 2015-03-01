@@ -8079,5 +8079,7 @@ span.CodeMirror-selectedtext { background: none; }
     font-size: 10pt;
     margin: 10px 0px;
     border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 4px;
     background-color: #f9f9f9;
 }

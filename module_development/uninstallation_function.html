@@ -39,7 +39,7 @@ nextLink: module_development/upgrade_function/
 		The uninstall function is structured just like the install function:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 /**
  * My Module's uninstallation function. This is automatically called by Form
  * Tools when the module is uninstalled in the interface.
@@ -56,7 +56,7 @@ function my_module__uninstall($module_id)
 
   return array($success, $message);
 }
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		The module ID is passed to the function in case you need that information. Otherwise

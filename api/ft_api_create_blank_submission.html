@@ -19,27 +19,27 @@ nextLink: api/submissions/
 		the unique submission ID. It's called like so:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $submission_id = ft_api_create_blank_submission($form_id);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		By default, the submission is NOT finalized - so it won't appear in the Form Tools UI. To make the submission finalized by default, pass a second parameter set to true.
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $submission_id = ft_api_create_blank_submission($form_id, true);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Lastly, if you need your new submission to contain default values, you can include a <b>third</b> parameter. This is a hash (associative array) of [database column name] =&gt; [value]. Note: you cannot set the default values for any of the system fields (submission ID, submission data, last modified date and IP address and is_finalized). To find the database column names, go to your Edit Form -&gt; Database tab.
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $default_values = array(
 	"col_1" => "Bob",
@@ -48,7 +48,7 @@ $default_values = array(
 );
 $submission_id = ft_api_create_blank_submission($form_id, true, $default_values);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 
 {% include close_section.html %}

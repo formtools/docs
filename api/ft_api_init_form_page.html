@@ -53,23 +53,23 @@ nextLink: api/ft_api_process_form/
 		this PHP code to top of the FIRST page in your form (even if it's a single page form):
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 require_once("../global/api/api.php");
 $fields = ft_api_init_form_page("", "test");
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Next, if you have additional pages, add the following to the top of all subsequent pages:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 require_once("../global/api/api.php");
 $fields = ft_api_init_form_page();
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Note that they're very similar. The difference it that the first page sets up the

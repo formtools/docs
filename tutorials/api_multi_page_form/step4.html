@@ -35,17 +35,17 @@ nextLink: tutorials/api_multi_page_form/step5/
 		already inserted (i.e. after this line):
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 ft_api_process_form($params);
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Add the following line:
 	</p>
 
-	{% highlight php startinline %}
+	{% codemirror php %}
 print_r($fields);
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		That will output the content of $fields on each page (albeit in a very ugly fashion!). You

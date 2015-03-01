@@ -41,11 +41,11 @@ nextLink: api/ft_api_display_captcha/
 		One common place for this is to store the current page in memory for a paginated list of data:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <?php
 $page = ft_api_load_field("page", "session_page", 1);
 ?>
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		This does the following: the first time the page is loaded, it uses the third parameter - the default value

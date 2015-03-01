@@ -49,14 +49,14 @@ ft_api_process_form($params);
 			If your form contains file fields, add one more parameter to the $params array: the last
 			<b>file_data</b> row.
 
-			{% highlight php startinline %}
+			{% codemirror php %}
 $params = array(
   "submit_button" => "submit_button_name_attribute",
   "next_page" => "next_page.php",
   "form_data" => $_POST,
   "file_data" => $_FILES
 );
-			{% endhighlight %}
+			{% endcodemirror %}
 
 		</li>
 	</ol>
@@ -65,9 +65,9 @@ $params = array(
 		Next, make sure your form tag has the following action and method attributes:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		$_SERVER["PHP_SELF"] is just a PHP value for the location of the current page. This
@@ -90,15 +90,15 @@ $params = array(
 		fine - just change the PHP line in the top of the from:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 "form_data" => $_POST,
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	to:
 
-	{% highlight php %}
+	{% codemirror php %}
 "form_data" => $_GET,
-	{% endhighlight %}
+	{% endcodemirror %}
 
 
 {% include close_section.html %}

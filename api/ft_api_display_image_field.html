@@ -22,15 +22,15 @@ nextLink: api/ft_api_create_blank_submission
 		Usage is extremely simple. Imagine the file field upload section of your form looks something like this:
 	</p>
 
-	{% highlight php %}
+	{% codemirror php %}
 File: <input type="file" name="regular_file" />
-	{% endhighlight %}
+	{% endcodemirror %}
 
 	<p>
 		Now add the following PHP:
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 File: <input type="file" name="regular_file" />
 
 <?php
@@ -39,7 +39,7 @@ $params = array(
 );
 ft_api_display_image_field($params);
 ?>
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		Note that the single required parameter passed to ft_api_display_image_field is the name attribute of the file upload field.

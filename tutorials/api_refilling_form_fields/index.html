@@ -33,9 +33,9 @@ heading: Re-filling form fields using the API
 		its other functionality, this <b>returns all form values in a single PHP array</b>.
 	</p>
 
-{% highlight php startinline %}
+{% codemirror php %}
 $fields = ft_api_init_form_page();
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		The following explains how to re-fill fields of all different types. A few examples
@@ -57,10 +57,10 @@ $fields = ft_api_init_form_page();
 		To re-fill a text field, you just need to load the value attribute from the $fields array, like so:
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <input type="text" name="my_textfield1" value="<?=@$fields["my_textfield1"]?>" />
 <input type="text" name="my_textfield2" value="<?=htmlspecialchars(@$fields["my_textfield2"])?>" />
-{% endhighlight %}
+{% endcodemirror %}
 
 	<p>
 		The second line is similar to the first except that it encodes the content. This is necesary if the field is likely to contain double quotes. If it DOES, the HTML will be invalidated and it won't display properly. In most other cases, you don't need to encode it.
@@ -72,18 +72,18 @@ $fields = ft_api_init_form_page();
 		HTML-encoding the content for textareas is not necessary, since the content is not loaded within a double-quote encapsulated attribute.
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <textarea name="my_textarea"><?=@$fields["my_textarea"]?></textarea>
-{% endhighlight %}
+{% endcodemirror %}
 
 
 	<h4>Radio Buttons</h4>
 
-{% highlight php %}
+{% codemirror php %}
 <input type="radio" name="my_radio" value="one" <?php if (@$fields["my_radio"] == "one") echo "checked"; ?> /> Radio Button 1<br />
 <input type="radio" name="my_radio" value="two" <?php if (@$fields["my_radio"] == "two") echo "checked"; ?> /> Radio Button 2<br />
 <input type="radio" name="my_radio" value="three" <?php if (@$fields["my_radio"] == "three") echo "checked"; ?> /> Radio Button 3
-{% endhighlight %}
+{% endcodemirror %}
 
 	<h4>Checkboxes</h4>
 
@@ -91,7 +91,7 @@ $fields = ft_api_init_form_page();
 		Note the <b>[]</b> characters on group of checkboxes section. To pass along multiple values for a group of form fields with the same name, those characters are necessary.
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <!-- a single checkbox -->
 <input type="radio" name="my_single_checkbox" value="one" <?php if (@$fields["my_single_checkbox"] == "one") echo "checked"; ?> /> Checkbox 1
 
@@ -100,11 +100,11 @@ $fields = ft_api_init_form_page();
 <input type="checkbox" name="foods[]" value="pasta" <?php if (@in_array("pasta", $fields["foods"])) echo "checked"; ?> />Pasta<br />
 <input type="checkbox" name="foods[]" value="seafood" <?php if (@in_array("seafood", $fields["foods"])) echo "checked"; ?> />Seafood<br />
 <input type="checkbox" name="foods[]" value="chinese" <?php if (@in_array("chinese", $fields["foods"])) echo "checked"; ?> />Chinese<br />
-{% endhighlight %}
+{% endcodemirror %}
 
 	<h4>Dropdown</h4>
 
-{% highlight php %}
+{% codemirror php %}
 <select name="marital_status">
 	<option value="">Please select</option>
 	<option value="married" <?php if (@$fields["marital_status"] == "married") echo "selected"; ?>>Married</option>
@@ -112,7 +112,7 @@ $fields = ft_api_init_form_page();
 	<option value="common-law" <?php if (@$fields["marital_status"] == "common-law") echo "selected"; ?>>Common-law</option>
 	<option value="divorced" <?php if (@$fields["marital_status"] == "divorced") echo "selected"; ?>>Divorced</option>
 </select>
-{% endhighlight %}
+{% endcodemirror %}
 
 
 	<h4>Multi-select Dropdown</h4>
@@ -121,7 +121,7 @@ $fields = ft_api_init_form_page();
 		Note the <b>[]</b> characters in the name attribute of the select tag. They are required to pass along multiple values for a single form field like this.
 	</p>
 
-{% highlight php %}
+{% codemirror php %}
 <select name="authors[]" size="4" multiple>
 	<option value="bunin" <?php if (@in_array("bunin", $fields["authors"])) echo "selected"; ?>>Bunin</option>
 	<option value="chekhov" <?php if (@in_array("chekhov", $fields["authors"])) echo "selected"; ?>>Chekhov</option>
@@ -133,4 +133,4 @@ $fields = ft_api_init_form_page();
 	<option value="tolstoy" <?php if (@in_array("tolstoy", $fields["authors"])) echo "selected"; ?>>Tolstoy</option>
 	<option value="turgenev" <?php if (@in_array("turgenev", $fields["authors"])) echo "selected"; ?>>Turgenev</option>
 </select>
-{% endhighlight %}
+{% endcodemirror %}
