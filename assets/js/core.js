@@ -15,4 +15,12 @@ $(function () {
       viewportMargin: Infinity
     });
   });
+
+  $(".ss").magnificPopup({
+    type: 'image',
+    mainClass: 'mfp-fade',
+    gallery: {
+      enabled:true
+    }
+  });
 });

@@ -12,8 +12,8 @@ and it's been hacked more than once.
 - Open! Now that the doc is in a public repo, it'll make it super easy for people to contribute and fix documentation,
 unlike now, where the doc is in a closed MySQL DB.
 
-As noted, the documentation will eventually end up on docs.formtools.org, but right now you can find it on github 
-pages, here: http://formtools.github.io/docs
+Note: originally this standalone doc was visible on github.io, but I had to remove it due to an incompatibility with a
+custom Jekyll plugin.
 
 
 ## Contributing
