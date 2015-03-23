@@ -1,0 +1,28 @@
+{
+  "name": "formtools-docs",
+  "version": "0.0.1",
+  "description": "The build process for formtools.org and subdomains",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/formtools/docs.git"
+  },
+  "author": "Ben Keen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benkeen/formtools-site/issues"
+  },
+  "homepage": "https://github.com/benkeen/formtools-site",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-shell": "^1.1.2",
+    "grunt-template": "^0.2.3"
+  }
+}

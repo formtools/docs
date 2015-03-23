@@ -1313,12 +1313,6 @@
   main_link: ""
 
 - component_type: "core"
-  thumb_filename: "i244_th.jpg"
-  filename: "i244.jpg"
-  caption: "Installing premium modules"
-  main_link: ""
-
-- component_type: "core"
   thumb_filename: "i245_th.jpg"
   filename: "i245.jpg"
   caption: "Modules page"

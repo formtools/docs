@@ -1,3 +1,7 @@
+{% comment %}
+This file lets you include a screenshot from any location: this repo or any other.
+{% endcomment %}
+
 {% for screenshot in site.data.screenshots %}
 
 	{% if include.item == screenshot.filename %}
@@ -11,10 +15,15 @@
 			{% else %}
 				style="float:right"
 			{% endif %}>
-			<a href="{{site.baseurl}}/assets/screenshots/{{screenshot.filename}}" title="{{screenshot.caption}}" class="ss">
-				<img src="{{site.baseurl}}/assets/screenshots/{{screenshot.thumb_filename}}" alt="{{screenshot.caption}}" title="{{screenshot.caption}}"
-					 border="0"></a>
-			<br />
+
+      {% capture folder %}{{site.baseurl}}/assets/screenshots{% endcapture %}
+      {% if include.source %}
+        {% capture folder %}https://raw.githubusercontent.com/formtools/{{include.source}}/assets/screenshots{% endcapture %}
+      {% endif %}
+
+			<a href="{{folder}}/{{screenshot.filename}}" title="{{screenshot.caption}}" class="ss">
+				<img src="{{folder}}/{{screenshot.thumb_filename}}" alt="{{screenshot.caption}}" title="{{screenshot.caption}}" border="0"></a>
+      <br />
 			{{screenshot.caption}}
 		</div>
 	{% endif %}
