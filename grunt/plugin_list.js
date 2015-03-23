@@ -1,0 +1,40 @@
+var modules = [
+  "arbitrary_settings",
+  "calendar",
+  "client_audit",
+  "core_field_types",
+  "custom_fields",
+  "database_integrity",
+  "data_visualization",
+  "export_manager",
+  "extended_client_fields",
+  "facebook_forms",
+  "field_type_file",
+  "field_type_google_maps",
+  "field_type_tinymce",
+  "form_backup",
+  "form_builder",
+  "hello_database",
+  "hello_tabs",
+  "hello_world",
+  "hooks_manager",
+  "ip_security_check",
+  "js_error_logs",
+  "mass_edit",
+  "media_gallery",
+  "pages",
+  "report_builder",
+  "submission_pre_parser",
+  "submission_id_manager",
+  "submission_history",
+  "submission_accounts",
+  "swift_mailer",
+  "system_check",
+  "text_override"
+];
+
+var themes = [
+  "classicgrey",
+  "deepblue",
+  "ohcanada"
+];

@@ -1,84 +1,35 @@
 module.exports = function(grunt) {
 	"use strict";
 
-	var fs = require('fs');
-	var vm = require('vm');
+	var fs = require("fs");
+	var vm = require("vm");
+  var ffi = require("node-ffi");
 
-	var getModuleRepoCommands = function() {
-		var commands = [];
-		for (var i=0; i<modules.length; i++) {
-			commands.push('sudo git clone https://github.com/formtools/module-' + modules[i]  + ' repos/module-' + modules[i]);
-		}
-		return commands.join('&&');
-	};
+  var _includeInThisScope = function (path) {
+    var code = fs.readFileSync(path);
+    vm.runInThisContext(code, path);
+  }.bind(this);
+  _includeInThisScope("grunt/plugin_list.js");
+  _includeInThisScope("grunt/helpers.js");
 
-	var getThemeRepoCommands = function() {
-		var commands = [];
-		for (var i=0; i<themes.length; i++) {
-			commands.push('sudo git clone https://github.com/formtools/theme-' + themes[i]  + ' repos/theme-' + themes[i]);
-		}
-		return commands.join('&&');
-	};
-
-  var getUpdateCommands = function() {
-    var commands = [];
-    for (var i=0; i<themes.length; i++) {
-      if (i === 0) {
-        commands.push("cd repos/theme-" + themes[i])
-      } else {
-        commands.push("cd ../../repos/theme-" + themes[i]);
-      }
-      commands.push("sudo git pull");
-      commands.push("sudo git checkout ft-doc");
-    }
+  // this parses the list of downloaded modules and generates the _includes/generated-module-index.html page.
+  var generateModuleListPage = function() {
+    var foundModules = [];
     for (var i=0; i<modules.length; i++) {
-      commands.push("cd ../../repos/module-" + modules[i]);
-      commands.push("sudo git pull");
-      commands.push("sudo git checkout ft-doc");
+      var packageFile = "repos/module-" + modules[i] + "/package.json";
+      if (!fs.existsSync(packageFile)) {
+        continue;
+      }
+      foundModules.push(fs.readFileSync(packageFile));
     }
-    return commands.join('&&');
+
+    console.log(foundModules);
   };
 
-	var modules = [
-		"arbitrary_settings",
-		"calendar",
-		"client_audit",
-		"core_field_types",
-		"custom_fields",
-		"database_integrity",
-		"data_visualization",
-		"export_manager",
-		"extended_client_fields",
-		"facebook_forms",
-		"field_type_file",
-		"field_type_google_maps",
-		"field_type_tinymce",
-		"form_backup",
-		"form_builder",
-		"hello_database",
-		"hello_tabs",
-		"hello_world",
-		"hooks_manager",
-		"ip_security_check",
-		"js_error_logs",
-		"mass_edit",
-		"media_gallery",
-		"pages",
-		"report_builder",
-		"submission_pre_parser",
-		"submission_id_manager",
-		"submission_history",
-		"submission_accounts",
-		"swift_mailer",
-		"system_check",
-		"text_override"
-	];
+  // This parses the list of downloaded modules and generates the _includes/generated-module-index.html page.
+  var generateThemeListPage = function() {
 
-	var themes = [
-		"classicgrey",
-		"deepblue",
-		"ohcanada"
-	];
+  };
 
 
 	var config = {
@@ -105,6 +56,10 @@ module.exports = function(grunt) {
   // run only once after a fresh install to download all repos locally. This can also be run after a new
   // module/theme has been added
   grunt.registerTask("init", ["shell:downloadModules", "shell:downloadThemes"]);
+
+  grunt.registerTask("m", function () {
+    generateModuleListPage();
+  });
 
   // updates the content of the external repos and rebuilds
   grunt.registerTask("update", ["shell:update"]);
