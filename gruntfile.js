@@ -3,7 +3,6 @@ module.exports = function(grunt) {
 
 	var fs = require("fs");
 	var vm = require("vm");
-  var ffi = require("node-ffi");
 
   var _includeInThisScope = function (path) {
     var code = fs.readFileSync(path);
@@ -12,23 +11,64 @@ module.exports = function(grunt) {
   _includeInThisScope("grunt/plugin_list.js");
   _includeInThisScope("grunt/helpers.js");
 
-  // this parses the list of downloaded modules and generates the _includes/generated-module-index.html page.
-  var generateModuleListPage = function() {
-    var foundModules = [];
-    for (var i=0; i<modules.length; i++) {
-      var packageFile = "repos/module-" + modules[i] + "/package.json";
+  var generateListFile = function(source) {
+    var sourceObj = (source === "module") ? modules : themes;
+
+    var found = [];
+    for (var i=0; i<sourceObj.length; i++) {
+      var folder = source + "-" + sourceObj[i];
+      var packageFile = "repos/" + folder + "/package.json";
       if (!fs.existsSync(packageFile)) {
         continue;
       }
-      foundModules.push(fs.readFileSync(packageFile));
+
+      var json = grunt.file.readJSON(packageFile);
+
+      // copy the icons out of the module/theme
+      if (source === "module") {
+        copyIcons(folder, json.icons);
+      } else {
+        // copy theme screenshots
+      }
+
+      // append the folder name. This is used to construct links to the icons
+      json.folder = folder;
+
+      found.push(json);
     }
 
-    console.log(foundModules);
+    grunt.file.write("_data/" + source + "_list.json", JSON.stringify(found));
   };
 
-  // This parses the list of downloaded modules and generates the _includes/generated-module-index.html page.
-  var generateThemeListPage = function() {
 
+  var iconFile, targetFolder;
+  var copyIcons = function (folder, icons) {
+
+    // remove the old folder
+    config.clean.folder = ["./assets/generated/" + folder];
+    grunt.task.run("clean:folder")
+
+    // now copy over the icons
+    for (var icon in icons) {
+      iconFile = "./repos/" + folder + "/" + icons[icon];
+      targetFolder = "assets/generated/" + folder + "/";
+
+      // create the folder
+      grunt.task.run("shell:copyIcon");
+    }
+  };
+
+  var getCopyIconCommand = function () {
+    var commands = [];
+    commands.push("sudo mkdir " + targetFolder);
+    commands.push("sudo chmod 777 " + targetFolder);
+    commands.push("sudo cp " + iconFile + " " + targetFolder);
+
+    console.log("_______________________________");
+    console.log(commands);
+    console.log("_______________________________");
+
+    return commands.join('&&');
   };
 
 
@@ -36,31 +76,40 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON("package.json"),
 		clean: {},
 		template: {},
+    copy: {},
 
 		shell: {
 			start: { command: "jekyll serve --watch" },
       update:          { command: getUpdateCommands() },
 			downloadModules: { command: getModuleRepoCommands() },
-			downloadThemes:  { command: getThemeRepoCommands() }
+			downloadThemes:  { command: getThemeRepoCommands() },
+      copyIcon: { command: function() { getCopyIconCommand(); } }
 		}
 	};
 
 	grunt.initConfig(config);
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-template');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-shell');
 
-  // run only once after a fresh install to download all repos locally. This can also be run after a new
-  // module/theme has been added
-  grunt.registerTask("init", ["shell:downloadModules", "shell:downloadThemes"]);
-
-  grunt.registerTask("m", function () {
-    generateModuleListPage();
+  grunt.registerTask("createModuleListFiles", function () {
+    generateListFile("module");
+    generateListFile("theme");
   });
 
+  // ----------------------------------------------------------------------------------------------
+
+  // run only once after a fresh install to download all repos locally. This can also be run after a new
+  // module/theme has been added
+  grunt.registerTask("init", ["shell:downloadModules", "shell:downloadThemes", "createModuleListFiles"]);
+
   // updates the content of the external repos and rebuilds
-  grunt.registerTask("update", ["shell:update"]);
+  grunt.registerTask("update", ["shell:update", "createModuleListFiles"]);
+
+  // starts the server
+  grunt.registerTask("start", ["shell:start"]);
 };

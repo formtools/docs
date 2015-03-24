@@ -1,0 +1,22 @@
+---
+layout: default
+navPage: docs
+navSection: Modules
+heading: Modules
+---
+
+{% for module_info in site.data.modules_list %}
+
+  <div class="row">
+    <div class="col-lg-1">
+      <span class="icon64x64" style="background-image: {{module_info.icon.64x64}};"></span>
+    </div>
+		<div class="col-lg-3">
+			<a href="{{site.baseurl}}/tutorials/post_form_captchas/">{{module_info.name}}</a>
+		</div>
+		<div class="col-lg-8">
+      {{module_info.description}}
+		</div>
+	</div>
+
+{% endfor %}

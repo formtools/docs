@@ -2,6 +2,7 @@
 title: Form Tools Documentation
 email: ben.keen@gmail.com
 description: "Documentation and tutorials for all things Form Tools."
+exclude: [repos]
 baseurl: "http://localhost:4000/docs.formtools.org"
 url: "http://docs.formtools.org"
 resourceurl: "http://localhost:4000/formtools.org"
@@ -11,6 +12,7 @@ modules_url: "http://localhost:4000/modules.formtools.org"
 themes_url: "http://localhost:4000/themes.formtools.org"
 translations_url: "http://localhost:4000/translations.formtools.org"
 forums_url: "http://localhost:4000/themes.formtools.org"
+
 
 # build settings
 markdown: kramdown

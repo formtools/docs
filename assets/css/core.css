@@ -8494,3 +8494,9 @@ img.mfp-img {
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
     opacity: 0;
 }
+
+.icon64x64 {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+}

@@ -2,6 +2,7 @@
 title: Form Tools Documentation
 email: ben.keen@gmail.com
 description: "Documentation and tutorials for all things Form Tools."
+exclude: [repos]
 baseurl: "/docs"
 url: "http://docs.formtools.org"
 
