@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 
 	var fs = require("fs");
 	var vm = require("vm");
+  var rimraf = require('rimraf');
 
   var _includeInThisScope = function (path) {
     var code = fs.readFileSync(path);
@@ -11,9 +12,9 @@ module.exports = function(grunt) {
   _includeInThisScope("grunt/plugin_list.js");
   _includeInThisScope("grunt/helpers.js");
 
+
   var generateListFile = function(source) {
     var sourceObj = (source === "module") ? modules : themes;
-
     var found = [];
     for (var i=0; i<sourceObj.length; i++) {
       var folder = source + "-" + sourceObj[i];
@@ -21,10 +22,9 @@ module.exports = function(grunt) {
       if (!fs.existsSync(packageFile)) {
         continue;
       }
-
       var json = grunt.file.readJSON(packageFile);
 
-      // copy the icons out of the module/theme
+      // copy the icons out of the module/theme and into the docs section
       if (source === "module") {
         copyIcons(folder, json.icons);
       } else {
@@ -33,57 +33,50 @@ module.exports = function(grunt) {
 
       // append the folder name. This is used to construct links to the icons
       json.folder = folder;
-
       found.push(json);
     }
 
     grunt.file.write("_data/" + source + "_list.json", JSON.stringify(found));
   };
 
-
-  var iconFile, targetFolder;
   var copyIcons = function (folder, icons) {
-
-    // remove the old folder
-    config.clean.folder = ["./assets/generated/" + folder];
-    grunt.task.run("clean:folder")
+    // wipe out of the old folder and recreate it
+    var path = "assets/generated/" + folder;
+    rimraf.sync(path);
+    fs.mkdirSync(path);
 
     // now copy over the icons
     for (var icon in icons) {
-      iconFile = "./repos/" + folder + "/" + icons[icon];
-      targetFolder = "assets/generated/" + folder + "/";
-
-      // create the folder
-      grunt.task.run("shell:copyIcon");
+      var sourceFile = "./repos/" + folder + "/assets/images/" + icons[icon];
+      var targetLocation = "assets/generated/" + folder + "/" + icons[icon];
+      copyFileSync(sourceFile, targetLocation);
     }
   };
 
-  var getCopyIconCommand = function () {
-    var commands = [];
-    commands.push("sudo mkdir " + targetFolder);
-    commands.push("sudo chmod 777 " + targetFolder);
-    commands.push("sudo cp " + iconFile + " " + targetFolder);
-
-    console.log("_______________________________");
-    console.log(commands);
-    console.log("_______________________________");
-
-    return commands.join('&&');
+  var copyFileSync = function(srcFile, destFile) {
+    var content = fs.readFileSync(srcFile);
+    fs.writeFileSync(destFile, content);
   };
-
 
 	var config = {
 		pkg: grunt.file.readJSON("package.json"),
 		clean: {},
 		template: {},
     copy: {},
-
 		shell: {
 			start: { command: "jekyll serve --watch" },
       update:          { command: getUpdateCommands() },
 			downloadModules: { command: getModuleRepoCommands() },
 			downloadThemes:  { command: getThemeRepoCommands() },
-      copyIcon: { command: function() { getCopyIconCommand(); } }
+
+      // builds the module documentation into /modules/[MODULE_FOLDER]
+      buildModuleDoc: {
+        command: [
+          "cd repos/module-form_builder",
+          "jekyll build --config _config_docs.yml --destination ../../modules/module-form_builder"
+        ].join('&&')
+      }
+
 		}
 	};
 
@@ -108,7 +101,7 @@ module.exports = function(grunt) {
   grunt.registerTask("init", ["shell:downloadModules", "shell:downloadThemes", "createModuleListFiles"]);
 
   // updates the content of the external repos and rebuilds
-  grunt.registerTask("update", ["shell:update", "createModuleListFiles"]);
+  grunt.registerTask("update", ["shell:update", "createModuleListFiles", "shell:buildModuleDoc"]);
 
   // starts the server
   grunt.registerTask("start", ["shell:start"]);
