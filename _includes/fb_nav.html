@@ -1,0 +1,83 @@
+<div {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/">Introduction</a>
+</div>
+<div {% if include.selected == 'benefits' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/benefits/">Benefits</a>
+</div>
+
+<div {% if include.selected == 'usage' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/usage/">Usage</a>
+</div>
+
+<ul>
+	<li>
+		<div {% if include.selected == 'tutorials' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/usage/tutorials/">Quick-start tutorials / help</a>
+		</div>
+		<ul>
+			<li {% if include.selected == 'how_fb_works' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/usage/tutorials/how_fb_works/">How the Form Builder Works</a>
+			</li>
+			<li {% if include.selected == 'publishing_first_form' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/usage/tutorials/publishing_first_form/">Publishing your First Form</a>
+			</li>
+			<li {% if include.selected == 'tips_captcha' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/usage/tutorials/tips_captcha/">Adding a reCAPTCHA to your Form Builder forms</a>
+			</li>
+		</ul>
+	</li>
+
+	<li {% if include.selected == 'interface' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/interface/">The Interface</a>
+	</li>
+	<li {% if include.selected == 'template_sets' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/template_sets/">Template Sets</a>
+	</li>
+	<li {% if include.selected == 'default_form_field_values' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/default_form_field_values/">Default form field values</a>
+	</li>
+	<li {% if include.selected == 'common_tasks' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/common_tasks/">Common Tasks</a>
+	</li>
+	<li {% if include.selected == 'validation' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/validation/">Validation</a>
+	</li>
+</ul>
+
+
+<div {% if include.selected == 'customization' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/customization/">Customization</a>
+</div>
+
+<ul>
+	<li {% if include.selected == 'template_set_anatomy' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/template_set_anatomy/">Anatomy of a Template Set</a>
+	</li>
+	<li {% if include.selected == 'smarty_lang' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/smarty_lang/">Using the Smarty templating language</a>
+	</li>
+	<li {% if include.selected == 'customization_tips' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/customization_tips/">Customization Tips</a>
+	</li>
+</ul>
+
+
+
+<div {% if include.selected == 'other_information' %}class="selected"{% endif %}>
+	<a href="{{site.baseurl}}/other_information/">Other Information</a>
+</div>
+
+<ul>
+	<li {% if include.selected == 'import_export' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/import_export/">Importing and Exporting Template Sets / Downloads</a>
+	</li>
+	<li {% if include.selected == 'common_problems' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/common_problems/">Common Problems</a>
+	</li>
+	<li {% if include.selected == 'error_codes' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/error_codes/">Form Builder Error Codes</a>
+	</li>
+	<li {% if include.selected == 'more_help' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/more_help/">Where to go for more help</a>
+	</li>
+</ul>

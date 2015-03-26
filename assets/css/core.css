@@ -7659,9 +7659,6 @@ header h1 {
     margin-bottom: 6px;
 }
 
-.docNav {
-    padding: 0px;
-}
 .docNav .selected a,
 .docNav h4.selected a {
     font-weight: 700;

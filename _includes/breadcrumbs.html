@@ -1,0 +1,14 @@
+<nav id="mainDocNav">
+  <a href="/">Documentation</a>
+
+  {% for item in page.breadcrumbs %}
+
+    {% assign crumb = item | split: "," %}
+    {% if crumb.size == 2 %}
+      &raquo; <a href="{{crumb.last}}">{{crumb.first}}</a>
+    {% else %}
+      &raquo; {{crumb.first}}
+    {% endif %}
+
+  {% endfor %}
+</nav>

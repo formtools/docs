@@ -1,22 +1,19 @@
 ---
 layout: default
 navPage: docs
-navSection: Modules
 heading: Modules
+breadcrumbs:
+  - Modules
 ---
-
-{% for module_info in site.data.module_list %}
 
   <div class="row">
     <div class="col-lg-1">
-      <span class="icon48x48" style="background-image: url('../assets/generated/{{module_info.folder}}/{{module_info.icons.48x48}}')"></span>
+      <span class="icon48x48" style="background-image: url('form_builder/icons/icon-48x48.png')"></span>
     </div>
 		<div class="col-lg-2">
-			<a href="{{module_info.folder}}/">{{module_info.name}}</a>
+			<a href="form_builder/">Form Builder</a>
 		</div>
 		<div class="col-lg-9">
-      {{module_info.description}}
+      Automatically publish any forms directly onto your website. No programming knowledge needed!
 		</div>
 	</div>
-
-{% endfor %}
