@@ -14,11 +14,37 @@
 		<div {% if include.selected == 'tutorials' %}class="selected"{% endif %}>
 			<a href="/modules/form_builder/usage/tutorials/">Quick-start tutorials / help</a>
 		</div>
+		<ul>
+			<li {% if include.selected == 'how_fb_works' %}class="selected"{% endif %}>
+				<a href="/modules/form_builder/usage/tutorials/how_fb_works/">How the Form Builder Works</a>
+			</li>
+			<li {% if include.selected == 'publishing_first_form' %}class="selected"{% endif %}>
+				<a href="/modules/form_builder/usage/tutorials/publishing_first_form/">Publishing your First Form</a>
+			</li>
+			<li {% if include.selected == 'tips_captcha' %}class="selected"{% endif %}>
+				<a href="/modules/form_builder/usage/tutorials/tips_captcha/">Adding a reCAPTCHA to your Form Builder forms</a>
+			</li>
+		</ul>
 	</li>
+
 	<li>
     <div {% if include.selected == 'interface' %}class="selected"{% endif %}>
 		  <a href="/modules/form_builder/interface/">The Interface</a>
     </div>
+    <ul>
+      <li {% if include.selected == 'add_form_page' %}class="selected"{% endif %}>
+        <a href="/modules/form_builder/usage/interface/add_form_page/">The Add Form page</a>
+      </li>
+      <li {% if include.selected == 'publish_tab' %}class="selected"{% endif %}>
+        <a href="/modules/form_builder/usage/interface/publish_tab/">The Add Form page</a>
+      </li>
+      <li {% if include.selected == 'form_builder_window' %}class="selected"{% endif %}>
+        <a href="/modules/form_builder/usage/interface/form_builder_window/">The Form Builder window</a>
+      </li>
+      <li {% if include.selected == 'module_pages' %}class="selected"{% endif %}>
+        <a href="/modules/form_builder/usage/interface/module_pages/">The module pages</a>
+      </li>
+    </ul>
 	</li>
 	<li {% if include.selected == 'template_sets' %}class="selected"{% endif %}>
 		<a href="/modules/form_builder/usage/template_sets/">Template Sets</a>
@@ -30,6 +56,22 @@
     <div {% if include.selected == 'common_tasks' %}class="selected"{% endif %}>
 		  <a href="/modules/form_builder/usage/common_tasks/">Common Tasks</a>
     </div>
+
+    <ul>
+      <li {% if include.selected == 'form_offline' %}class="selected"{% endif %}>
+        <a href="/modules/form_builder/usage/common_tasks/form_offline/">Taking a form offline</a>
+      </li>
+      <li {% if include.selected == 'form_offline' %}class="selected"{% endif %}>
+        <a href="/modules/form_builder/usage/common_tasks/window_size/">Changing the default Form Builder window size</a>
+      </li>
+      <li {% if include.selected == 'form_offline' %}class="selected"{% endif %}>
+        <a href="/modules/form_builder/usage/common_tasks/tips_captcha/">Adding a CAPTCHA</a>
+      </li>
+      <li {% if include.selected == 'form_offline' %}class="selected"{% endif %}>
+        <a href="/modules/form_builder/usage/common_tasks/tips_targeting_specific_form_page/">Adding something to a specific form page</a>
+      </li>
+    </ul>
+
 	</li>
 	<li {% if include.selected == 'validation' %}class="selected"{% endif %}>
 		<a href="/modules/form_builder/field_validation/">Validation</a>

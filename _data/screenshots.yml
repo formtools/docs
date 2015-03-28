@@ -1,10 +1,7 @@
-{
-  "i18.jpg": {
-    "thumbnail": "i18_th.gif",
-    "caption": "Edit Form - Emails tab"
-  },
-
-}
+- component_type: "core"
+  thumb_filename: "i18_th.jpg"
+  filename: "i18.jpg"
+  caption: "Edit Form - Emails tab"
 
 - component_type: "core"
   thumb_filename: "i19_th.jpg"
