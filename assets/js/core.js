@@ -6,7 +6,7 @@ $(function () {
       js: "javascript",
       html: "htmlmixed",
       smarty: "smarty",
-      php: "php"
+      php: "text/x-php"
     };
 
     CodeMirror.fromTextArea(this, {
