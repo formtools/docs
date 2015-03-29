@@ -6,6 +6,11 @@ $(function () {
       js: "javascript",
       html: "htmlmixed",
       smarty: "smarty",
+      smarty2: {
+        name: "smarty",
+        leftDelimiter: '{{',
+        rightDelimiter: '}}'
+      },
       php: "text/x-php"
     };
 

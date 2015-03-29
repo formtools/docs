@@ -23,7 +23,7 @@ next: The interface,/modules/form_builder/usage/interface/
 </p>
 
 <p>
-  {% include screenshot.html item="i365.gif" source="docs" %}
+  {% include screenshot.html item="i364.gif" %}
 
   Spam is always a problem. To help prevent people from spamming your forms, the Form
   Builder comes with built-in support for <a href="http://www.google.com/recaptcha" target="_blank">reCAPTCHA</a> -
@@ -55,17 +55,18 @@ next: The interface,/modules/form_builder/usage/interface/
     In the template, at whatever spot you want (right before the continue_block is
     usual!), add the following code:
 
-<div class="codemirror" data-mode="smarty">
+{% raw %}
+<textarea class="codemirror" data-lang="smarty2">
 {{if $current_page == 1}}
   {{captcha}}
-{{/if}}
-</div>
+{{/if}}</textarea>
+{% endraw %}
 
     What that does is look at the current page number, and if it's equal to 1, display
     the CAPTCHA. You can change that number to whatever you want, but bear in mind that
     if you plan on re-using the template set again, the reCAPTCHA may not appear
     on the page that you want. For information on targetting a particular form or
-    View, <a href="?page=tips_targeting_specific_form_page">give this page a read
+    View, <a href="/modules/form_builder/usage/common_tasks/targeting_specific_form_page/">give this page a read
     over</a>.
   </li>
 </ol>
@@ -90,7 +91,11 @@ next: The interface,/modules/form_builder/usage/interface/
     In the template, at whatever spot you want (right before the continue_block is
     usual!), add the following code:
 
-    <pre class="smarty smarty" style="font-family:monospace;"><span style="color: #D36900;">{</span><span style="color: #D36900;">{</span>captcha<span style="color: #D36900;">}</span>}</pre>    That will output a fully-functional CAPTCHA to your Review page, preventing
+    {% raw %}
+<textarea class="codemirror" data-lang="smarty2">{{captcha}}</textarea>
+    {% endraw %}
+
+    That will output a fully-functional CAPTCHA to your Review page, preventing
     someone from submitting the form until they filled in the answer correctly.
   </li>
 </ol>
@@ -124,9 +129,11 @@ next: The interface,/modules/form_builder/usage/interface/
     you are using to publish your form.</li>
   <li>On that Templates tab, select the Header template you are using for your form.</li>
   <li>In the &lt;head&gt; section, add the following code:
-<pre class="html html" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a>&gt;</span>
-var RecaptchaOptions = { theme: 'theme_name' };
-<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a>&gt;</span></pre>
+
+    <textarea class="codemirror" data-lang="html"><script>
+  var RecaptchaOptions = { theme: 'theme_name' };
+</script></textarea>
+
     Where "theme_name" is "red", "white", "blackglass" or "clean".
   </li>
   <li>Save the template and refresh your form page. Hey presto!</li>
