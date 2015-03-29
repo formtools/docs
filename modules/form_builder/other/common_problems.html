@@ -15,4 +15,70 @@ next: Form Builder Error Codes,/modules/form_builder/other/error_codes/
 
   <h3>Common Problems</h3>
 
+  <p>
+    Page contents:
+  </p>
+
+  <ul>
+    <li><a href="#missing_field">My field isn't showing up in the form!</a></li>
+    <li><a href="#wysiwyg">WYSIWYG or Code / Markup field values not being stored properly</a></li>
+    <li><a href="#space_allocation">Checkboxes or Multi-select field values not being stored properly</a></li>
+  </ul>
+
+  <hr size="1">
+
+  <a name="missing_field"></a>
+  <h4>My field isn't showing up in the form!</h4>
+
+  <p>
+    This is a very common problem and there are two likely causes:
+  </p>
+
+  <ol>
+    <li><i>Did you add your form manually through the Edit Form » Fields tab?</i> If so,
+      don't forget to add it to your View(s) as well! The Form Builder uses your Views to
+      determine what fields should be included in your published form. You will need to add it
+      to the View that your published form is using. To do that, edit the View and go to the
+      Fields sub-tab. There, add your new field.</li>
+    <li><i>Is your field marked as non-editable?</i> If so, it won't be included in your
+      published form! System fields (Submission ID, submission Date, Last Modified and IP
+      Address) are automatically removed from your published form. Similarly, fields marked
+      as non-editable don't make any sense being display (since there'd be no field for the
+      user to fill in!) so they are removed.<br>
+      <br>
+      You can find out if a field is editable by going to the Edit Form » Views »
+      Edit View » Fields sub tab and look at the "Editable" column.
+    </li>
+  </ol>
+
+  <a name="wysiwyg"></a>
+  <h4>WYSIWYG or Code / Markup field values not being stored properly</h4>
+
+  <p>
+    For security reasons, all Form Tools forms are configured to strip out any markup / code
+    within the form fields. However, if you publish a form with the Form Builder that contains
+    either of these field types, you'll need to disable that feature.
+  </p>
+
+  <p>
+    To change it, go to the Edit Form » Main tab and set the "Strip tags in form
+    submissions" setting to "no".
+  </p>
+
+  <a name="space_allocation"></a>
+  <h4>Checkboxes or Multi-select field values not being stored properly</h4>
+
+  <p>
+    This is another common problem, often encountered with the other form types: Internal
+    and External. Checkboxes and Multi-select fields must have enough database space
+    allocated to store ALL selected item in the list. If too little space is available,
+    the information will be truncated and only the first few entries will be stored in the
+    field.
+  </p>
+
+  <p>
+    To increase the storage for your field, go to the Edit Form » Fields tab and edit
+    the field. There, change the Field Size setting to something a little larger.
+  </p>
+
 {% include close_section.html %}

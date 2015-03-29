@@ -16,4 +16,202 @@ next: Changing the default Form Builder window size,/modules/form_builder/usage/
 
   <h3>Taking a form offline</h3>
 
+
+<td valign="top">
+
+  <p>
+    <i>Page content:</i>
+  </p>
+
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#how_to">How to take a form offline</a></li>
+    <li><a href="#scheduling">Scheduling a time for a form to be taken offline</a></li>
+    <li><a href="#interrupted_submissions">People in middle of putting through submissions when a form goes offline</a></li>
+    <li><a href="#default_form_offline_page_content">Customizing the default Form Offline page content</a></li>
+  </ul>
+
+  <hr size="1">
+
+  <a name="introduction"></a>
+  <h4>Introduction</h4>
+
+  <p>
+    You can take any of your published forms offline whenever you want. You can do this
+    through two methods:
+  </p>
+
+  <ol>
+    <li>Delete the published form.</li>
+    <li>Mark the published form as <b>offline</b>.</li>
+  </ol>
+
+  <p>
+    The first method generally isn't a good idea. Any pages that link to your form page
+    will need to be updated to remove the link, otherwise they'll result in a 404 (page
+    not found) error for anyone that clicks on it. Since search engines may well have
+    catalogued the form URL, removing all the links on your site may still not be enough
+    to prevent errors. However, if you <b>do</b> prefer this method, just go to your
+    Edit Form » Publish tab and click the "x" for the published form that you wish
+    to delete. Done!
+  </p>
+
+  <p>
+    The second method - marking the form as offline - leaves the page on your website,
+    but changes the content to show a (customizable) "Form offline!" message. The
+    following sections on this page explains everything you need to know about taking
+    a form offline.
+  </p>
+
+  <hr size="1">
+
+  <a name="how_to"></a>
+  <h4>How to take a form offline</h4>
+
+  <p>
+    {% include screenshot.html item="i360.gif" %}
+
+    Taking a published form offline is very simple. Just go to your Edit Form -&gt; Publish
+    tab and click on the edit icon for the published form you want to take offline.
+    The edit link will open up the Form Builder window, containing the configuration
+    sidebar and a visual depiction of your form. See the screenshot to the right for
+    an example of how this page looks.
+  </p>
+
+  <p>
+    To take your form offline, just uncheck the "Is Online" checkbox in the "MAIN SETTINGS"
+    panel, then click the "Apply Changes" button to see how it looks. The Form Builder
+    will then refresh the page to show you how the offline form page looks.
+  </p>
+
+  <p>
+    <i>Related information:</i>
+  </p>
+
+  <ul>
+    <li>Form doesn't appear to go offline immediately? Read the section on
+      <a href="#interrupted_submissions">People in middle of putting through submissions when
+        a form goes offline</a> to explain why.</li>
+    <li><a href="#customize_page">Customizing the Form Offline page</a></li>
+  </ul>
+
+  <hr size="1">
+
+  <a name="scheduling"></a>
+  <h4>Scheduling a time for a form to be taken offline</h4>
+
+  <p>
+    {% include screenshot.html item="i362.gif" %}
+    Depending on your form, you may find it convenient to schedule a time for it to go offline. Here's how to do this:
+  </p>
+
+  <ol>
+    <li>First, open up the Form Builder window for your published form (Edit Form »
+      Publish tab and click the edit icon for the published form).</li>
+    <li>In the window, click on the "OTHER SETTINGS" panel in the left sidebar. There,
+      enter a date and time in the "Automatically take form offline on" field.</li>
+    <li>Click the "SAVE" button and close the Form Builder window.</li>
+  </ol>
+
+  <p>
+    Your form is now scheduled to go offline at the time specified. To confirm that there's
+    no problem with the server timezone offsets (see below), return to the Edit Form »
+    Publish tab and refresh the page. All published forms that are scheduled to be taken
+    offline will show a clock icon in the "Online" column (see screenshot to the right).
+    When you click on the clock, a dialog window will appear showing the current date and
+    time and when the form is slated to go offline. If the dates appear to be incorrect,
+    you'll need to tweak your server timezone!
+  </p>
+
+  <b>Server Timezone Offsets</b>
+
+  <p>
+    {% include screenshot.html item="i314.gif" %}
+    Sometimes, you may find that your server is located in a different timezone
+    from yourself. This causes problems with scheduling your form to come offline,
+    since the server will think it's one time - but for you, it's actually another!
+  </p>
+
+  <p>
+    The Form Builder takes into account your server timezone offset through the
+    setting on the Settings » Accounts tab. On that page, choose the appropriate
+    value from the "System Timezone Offset" dropdown. To ensure there's no confusion,
+    each option in the dropdown shows the appropriate time for that offset value, so
+    all you need to do is find the offset value that matches the time in your own
+    location.
+  </p>
+
+  <p>
+    See the screenshot to the right to see where the setting is located and what it looks
+    like.
+  </p>
+
+  <hr size="1">
+
+  <a name="interrupted_submissions"></a>
+  <h4>People in middle of putting through submissions when a form goes offline</h4>
+
+  <p>
+      {% include screenshot.html item="i359.gif" %}
+    What happens to people already in the process of putting through a submission at
+    the moment a form goes offline? They may be very frustrated to find that they've
+    gotten cut-off halfway through the form - especially for larger forms where they may
+    have spent considerable time!
+  </p>
+
+  <p>
+    To ward against this, by default the Form Builder will <i>permit everyone already in
+    the process of putting through a submission to finish their submission</i>. So,
+    anyone who has already started the form (i.e. have at least the first page opened in
+    their browser) will be able to continue.
+  </p>
+
+  <p>
+    However, this may not be what you want. If you want to immediately cut off all
+    submissions, do the following:
+  </p>
+
+  <ol>
+    <li>Log into Form Tools as an administrator and go to the Modules page.</li>
+    <li>Select the Form Builder module.</li>
+    <li>Click on the "Settings" link in the module navigation at the top left</li>
+    <li>Click on the "Offline Forms" tab.</li>
+    <li>For the "Offline Form Behaviour" setting, select the "Immediately prevent all
+      submissions" option.</li>
+  </ol>
+
+  <p class="tip">
+    <b>Tip:</b> when you're first creating and testing out your published form, you may
+    want to clear out the sessions and reset it to page 1. To do this, just append
+    <b>?clear</b> to the end of your form name, e.g. <i>yourformname.php<b>?clear</b></i>.
+    This will completely clear out any memory for the current form and show you what a new
+    user will see when first going to your form.
+  </p>
+
+  <hr size="1">
+
+  <a name="default_form_offline_page_content"></a>
+  <h4>Customizing the default Form Offline page content</h4>
+
+  <p>
+    {% include screenshot.html item="i361.gif" %}
+    Since each form is likely to have a different "thankyou" / "receipt" page, the
+    Form Builder lets you edit that content right within the Form Builder window itself.
+  </p>
+
+  <p>
+    In the left sidebar, click the "FORM OFFLINE PAGE CONTENT" section to expand the
+    contents. There, you will see a single textarea where you can customize what the users
+    will see in that page. Since this window is quite small, you may want to click on the
+    "edit full screen" link that appears at the bottom. That will open up a dialog window
+    as shown in the screenshot to the right, where you can edit the content in full screen
+    mode.
+  </p>
+
+  <p>
+    You need to enter HTML here. Anything you enter will be outputted directly into
+    the webpage.
+  </p>
+
+
 {% include close_section.html %}

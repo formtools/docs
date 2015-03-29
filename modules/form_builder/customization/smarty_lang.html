@@ -15,4 +15,82 @@ next: Customization Tips,/modules/form_builder/customization/tips
 
   <h3>Using the Smarty templating language</h3>
 
+  <p>
+    The Form Builder, like Form Tools, uses the <a href="http://www.smarty.net/" target="_blank">Smarty templating
+    language</a> to provide more control over your generated forms. Smarty lets you add logic (if-else, etc.) clauses
+    to your templates and resource files, output the content of variables (placeholders), manipulate data and much more.
+  </p>
+
+  <p>
+    Smarty is fairly easy to learn, and - compared to programming languages - more limited, which simplifies things.
+    Currently Form Tools uses version 2 of Smarty, so if you decide to check out their documentation, make sure
+    you're looking at the <a href="http://www.smarty.net/docsv2/en/" target="_blank">right version</a>!
+  </p>
+
+  <p>
+    We won't attempt to teach Smarty here - there's far too much to cover and it would be redundant when there's some
+    online documentation available by the original developers. However, a few things are worth bringing up.
+  </p>
+
+  <h4>Smarty Delimiters</h4>
+
+  <p>
+    Unlike the email templates, Export Manager and other places where Smarty is used, for the Form Builder, Smarty
+    delimiters are the double curly brace: <b>{{</b> and <b>}}</b>.. Elsewhere, you use the single curly brace. This
+    is because we found that with the Form Builder, you'd often be entering chunks of javavscript and CSS - both of
+    which use curly braces. So rather than having to force you to enter <b>{literal}</b> everywhere (which lets you
+    enter single curly braces normally), we chose to use the double curly-brace delimiter.
+  </p>
+
+  <h4>Variables</h4>
+
+  <p>
+    To reference a variable (output its contents or access its values), you just use
+    the following code:
+  </p>
+
+  {% raw %}
+<textarea class="codemirror" data-lang="smarty2">
+{{$your_var}}
+{{$P.your_placeholder}}
+{{$R.your_resource}}</textarea>
+  {% endraw %}
+
+  <p>
+    The your_placeholder variable output the content of a placeholder; the your_resource
+    variable outputs a full HTML &lt;link&gt;&amp;; or &lt;script&gt; tag (depending on
+    the resource type), to include that resource in your form page.
+  </p>
+
+  <h4>Smarty function calls</h4>
+
+  <p>
+    Smarty function calls look like variables, except they're missing the <b>$</b>
+    character. The Form Builder provides a number of built-in functions to handle the
+    generation of particular template types (like <b>{{header}}</b>
+    and <b>{{navigation}}</b>).
+  </p>
+
+  <h4>Conditional Statements</h4>
+
+  <p>
+    Simple if-else statements will be the most likely thing you'll use in your Template
+    Sets. They let you include code, show different content - whatever you want. Here's
+    a couple of simple examples:
+  </p>
+
+{% raw %}
+<textarea class="codemirror" data-lang="smarty2">
+{{if $your_var == "123"}}
+hey!
+{{/if}}
+
+{{if $your_var == "xyz"}}
+one
+{{else}}
+two
+{{/if}}</textarea>{% endraw %}
+
+
+
 {% include close_section.html %}

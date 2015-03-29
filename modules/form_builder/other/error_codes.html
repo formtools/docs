@@ -15,4 +15,37 @@ next: Where to go for more help,/modules/form_builder/other/more_help/
 
   <h3>Form Builder Error Codes</h3>
 
+  <p>
+    In case something serious goes wrong with a Form Builder-published form, it will
+    output a simple error code. These shouldn't ever occur, but if they do, the following
+    description should give you a little better idea of what's going on.
+  </p>
+
+  <table class="info" width="100%">
+    <tbody><tr>
+      <th width="120">Error Code</th>
+      <th>Explanation</th>
+    </tr>
+    <tr>
+      <td class="blue">FB100</td>
+      <td>
+        The form associated with this form builder form no longer exists.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue">FB101</td>
+      <td>
+        The View associated with this form builder form no longer exists.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue">FB102</td>
+      <td>
+        One of the specific Template Set templates being used by this published
+        form no longer exists.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
 {% include close_section.html %}

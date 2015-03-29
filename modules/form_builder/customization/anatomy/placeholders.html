@@ -16,4 +16,72 @@ next: Using the Smarty templating language,/modules/form_builder/customization/s
 
   <h3>Placeholders</h3>
 
+  <p>
+    {% include screenshot.html item="i378.jpg" %}
+    Placeholders are a key ingredient to making a versatile, re-usable Template Set. They
+    let you define optional settings that show up in the Form Builder window, which can
+    be entered for each form that uses the Template Set. Placeholders give you almost
+    unlimited flexibility in the content, behaviour and appearance of your forms.
+  </p>
+
+  <p>
+    Maybe a few examples would help. Using placeholders, you could define settings for your
+    Template Set to allow the administrator to control any or all of the following:
+  </p>
+
+  <ul>
+    <li>Fonts, font-sizes, font colours</li>
+    <li>Choice of banners / logos</li>
+    <li>Whether or not a reCAPTCHA should appear in the form, and where it would be
+      located</li>
+    <li>Whether ads get displayed in the page or not, their locations and which should
+      appear</li>
+    <li>The overall colours of the form - highlight colours, error colours etc.</li>
+    <li>Showing specific text or images on particular form pages</li>
+    <li>Show different information on each page, depending on what the user entered in
+      previous form pages</li>
+  </ul>
+
+  <p>
+    That's just off the top of my head. The whole idea of Placeholders was that they
+    wouldn't box you in at all: if you need something custom, a placeholder will let you
+    do it.
+  </p>
+
+  <h4>How they work</h4>
+
+  <p>
+    The simplest way to see how they work is to simply edit an existing Template Set and
+    click around. But here's a more descriptive explanation, for people who prefer that!
+  </p>
+
+  <p>
+    Placeholders can be stored in most of the standard field types: radios, checkboxes,
+    input fields, dropdowns and textareas. Each placeholder is given a specific variable
+    name which can be used in your templates and resources. The placeholder looks something
+    like this: <b>{{$P.your_placeholder}}</b>.
+  </p>
+
+  <p>
+    That placeholder, when used, will contain whatever value is entered or selected by
+    the administrator within the Form Builder window. For example:
+  </p>
+
+  {% raw %}<textarea class="codemirror" data-lang="smarty2">
+{{* this just outputs the content of the placeholder *}}
+{{$P.your_placeholder}}
+
+{{* this tests the value of the placeholder and outputs a message if it's equal to 1 *}}
+{{if $P.your_placeholder == "1"}}
+It equals 1!
+{{/if}}</textarea>
+  {% endraw %}
+
+  <p>
+    The second example - the conditional test - is exceedingly useful. You can use
+    that technique to output different styles into a CSS resource, or show specific
+    content in your templates. It all depends on what you want to do!
+  </p>
+
+
 {% include close_section.html %}

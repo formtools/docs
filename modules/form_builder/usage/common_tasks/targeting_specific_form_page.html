@@ -16,4 +16,76 @@ next: Field Validation,/modules/form_builder/usage/field_validation/
 
   <h3>Adding something to a specific form page</h3>
 
+  <p>
+    Forms published through the Form Builder each use a specific template for each
+    of its pages: the main <i>Form Page</i> template, the <i>Review Page</i> or
+    <i>Thankyou</i> template. If you're using a View that groups your form fields into
+    multiple tabs, those tabs are converted to separate form pages in the published form -
+    and each of those pages will use the same <i>Form Page</i> template.
+  </p>
+
+  <p>
+    Customizing the Review and Thankyou pages are easy: there's only ever one of them
+    in your form: so you can just edit that particular template type to add in whatever
+    you want. But what about your form pages? How do you customize a specific form page?
+  </p>
+
+  <p>
+    It's actually very simple.
+  </p>
+
+  <ol>
+    <li>Select the Form Builder module from your Modules page.</li>
+    <li>Select the Template Set you're using in your published form.</li>
+    <li>Edit the <i>Form Page</i> template you're using in your published form.</li>
+    <li>In that page, add the following code:
+
+      {% raw %}
+  <textarea class="codemirror" data-lang="smarty2">
+{{if $current_page == 2}}
+  Hello World!
+{{/if}}</textarea>
+      {% endraw %}
+
+    </li>
+  </ol>
+
+  <p>
+    That will output "hello world!" <i>only</i> on the second form page - not on your
+    other form pages. You can use the same technique to add anything you want to any
+    of your specific form pages.
+  </p>
+
+  <h4>Specifying a form or View</h4>
+
+  <p>
+    If you're re-using the Template Set for multiple published forms, you may find you
+    only want to add something to a particular form or View. To do that, we just expand
+    on our previous code. The following example will only output "Hello World" on
+    the second form page for forms with ID = 12.
+  </p>
+
+{% raw %}
+<textarea class="codemirror" data-lang="smarty2">
+{{if $current_page == 2 && $form_id = 12}}
+  Hello World!
+{{/if}}</textarea>
+{% endraw %}
+
+  <p>
+    Similarly, you can target a particular View, like so:
+  </p>
+
+{% raw %}
+<textarea class="codemirror" data-lang="smarty2">
+{{if $current_page == 2 && $view_id = 38}}
+  Hello World!
+{{/if}}</textarea>
+{% endraw %}
+
+  <p>
+    The form IDs are found on the main Forms page (first column). The View IDs are listed
+    on the Edit Form -&gt; Views tab.
+  </p>
+
 {% include close_section.html %}

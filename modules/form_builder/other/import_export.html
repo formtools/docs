@@ -13,6 +13,48 @@ next: Common Problems,/modules/form_builder/other/common_problems/
 
 {% include open_section.html nav='fb_nav.html' selected='import_export' %}
 
-  <h3>Importing and Exporting Template Sets / Downloads</h3>
+
+  <h3>Importing and Exporting Template Sets</h3>
+
+  <p>
+    We will soon be working on a new Shared Resource module / service to allow easy
+    sharing of assorted Form Tools data: form configurations, Option Lists and Form
+    Builder template sets. But until that is completed, the only way to import and
+    export your Template Set data is <i>manually</i>, as described below.
+  </p>
+
+  <h4>Exporting your Template Set</h4>
+
+  <p>
+    If you want to copy one of your Template Sets to another Form Tools installation, you
+    need to <i>export</i> it. Here's how it works.
+  </p>
+
+  <ol>
+    <li>Log into Form Tools and go to your Modules page. There, select the Form
+      Builder. The page that appears will list all of your Template Sets.</li>
+    <li>Mouse-over the "edit" icon for the Template Set you want to export (but don't click
+      it). You should see the URL appear in your browser status bar. Make a note of the number
+      for the template set ID (the X): <b>?page=info&amp;set_id=X</b></li>
+    <li>In the URL of the current page, add the following query string and click &lt;enter&gt;:
+      <b>?export=X</b> (where X is the Template Set ID that you spotted in the previous step).</li>
+    <li>After you click enter, you’ll see some generated PHP appear inside a full-page textarea.
+      Copy the generated PHP and save the file as <b>your_template_name.php</b>. You've exported
+      your Template Set!</li>
+  </ol>
+
+  <h4>Importing a Template Set</h4>
+
+  <ol>
+    <li>With your FTP client, upload your template set PHP file to the
+      /modules/form_builder/share folder.</li>
+    <li>Log into Form Tools and go to your Modules page. There, select the Form
+      Builder. The page that appears will list all of your Template Sets.</li>
+    <li>In the URL of the current page, add the following query string and click &lt;enter&gt;:
+      <b>?import=your_template_set_filename.php</b> (replace the "your_template_set_filename.php"
+      with the actual name of your file).</li>
+    <li>Click &lt;enter&gt; in the browser toolbar to load the page and import your
+      Template Set.</li>
+  </ol>
 
 {% include close_section.html %}

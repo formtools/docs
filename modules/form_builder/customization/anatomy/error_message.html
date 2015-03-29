@@ -17,4 +17,25 @@ next: Resources,/modules/form_builder/customization/anatomy/resources/
 
   <h3>Error Message</h3>
 
+  <p>
+    The Error Message template is used to display any errors that occur when a form
+    submission fails server-side validation. For the majority of users, if a field contains
+    field validation and they fail to enter the value properly, a dialog window will
+    appear containing the error message(s). However, for people with browsers that have
+    javascript disabled, the errors will be caught on the server (* N.B. At the current
+    version, not all client-side code has corresponding server-side validation. Read the
+    section on <a href="?page=validation">Field Validation</a> for more information.
+  </p>
+
+  <p>
+    Here's a typical example for the content of this Template Type.
+  </p>
+
+  {% raw %}
+<textarea class="codemirror" data-lang="smarty2">
+{{if $validation_error}}
+  <div class="fb_error">{{$validation_error}}</div>
+{{/if}}</textarea>
+  {% endraw %}
+
 {% include close_section.html %}

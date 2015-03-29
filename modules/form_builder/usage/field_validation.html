@@ -15,4 +15,50 @@ next: Customization,/modules/form_builder/customization
 
   <h3>Field Validation</h3>
 
+  <p>
+    Form Tools allows you to add field validation through the Edit Form » Fields tab.
+    There, click the edit icon for a row, and in the dialog window that appears, select the
+    third "Validation" tab. There, you can specify whatever validation you want for the field.
+    The available list of rules depends on the field type.
+  </p>
+
+  <p>
+    The Form Builder automatically recognizes whatever validation rules you have defined for
+    your fields and adds them to your published forms.
+  </p>
+
+  <p>
+    Fields that are marked as "required" are special: an asterix appears next to the field
+    label to indicate to the user that they must be entered. Other validation types, like
+    "valid email", "digits only" don't show the asterix and only get executed if the fields
+    have a value in them.
+  </p>
+
+  <h4>Provisos!</h4>
+
+  <p>
+    There are currently two limitations/weaknesses to the field validation.
+  </p>
+
+  <p>
+    <b>1. Client- vs. Server-side validation</b><br />
+    All validation rules that you enter will be validated on the client (i.e. with
+    javascript), but not all of them have server-side equivalents. In other words, if
+    javascript is disabled, those validation rules may not be executed. The "required"
+    validation rule is ALWAYS run, so people will never be able to submit a form without
+    entering values for those fields.
+  </p>
+  <p>
+    This is currently a limitation with the Form Tools Core and will be updated in a future
+    version (no version or date known just yet).
+  </p>
+
+  <p>
+    <b>2. Interface</b><br />
+    The interface for inputting and managing the field validation (in the Core) is pretty
+    weak right now. Like the previous point, we intend to update this in a future version of
+    the Core. Again, no version of date is known just yet.
+  </p>
+
+
 {% include close_section.html %}

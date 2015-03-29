@@ -17,4 +17,34 @@ next: Footer,/modules/form_builder/customization/anatomy/footer/
 
   <h3>Header</h3>
 
+  <p>
+    The Header Template Type contains the beginning on your HTML - the opening <html>, <head> and opening <body> tag.
+  </p>
+
+  <p>
+    The Form Builder generates forms with a lot of dynamic, javascript-dependant functionality, like Google Map fields,
+    file uploads, WYSIWYG fields, field validation and so on. As such, the Header template must contain the
+    {{$required_resources}} placeholder. That includes all the necessary javascript and CSS into the page.
+  </p>
+
+  <p>
+    Here's a trimmed down example of what this Template Type should contain:
+  </p>
+
+{% raw %}
+<textarea class="codemirror" data-lang="html">
+<html>
+<head>
+  <title>{{$form_name}}</title>
+  {{$required_resources}}
+</head>
+<body></textarea>
+{% endraw %}
+
+  <p>
+    If you want to include a consistent header to your form pages (like a banner, a logo or something), this template
+    would be a good location.
+  </p>
+
+
 {% include close_section.html %}

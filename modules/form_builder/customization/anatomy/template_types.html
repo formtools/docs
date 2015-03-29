@@ -16,4 +16,77 @@ next: Page Layout,/modules/form_builder/customization/anatomy/page_layout
 
   <h3>Template Types</h3>
 
+  <h4>All about Template Types</h4>
+
+  <p>
+    {% include screenshot.html item="i366.jpg" %}
+    Take a look at the screenshot to the right. It shows a form that was created with
+    the Form Builder using the Default Template Set.
+  </p>
+
+  <p>
+    If you look at the form, you can see the page elements, just at a glance:
+    you can see a header, a footer, the page fields, page title, some navigation and
+    a block at the bottom where the user clicks "Continue". You may not be able to
+    know where one section starts and ends, but you can get a general sense just by
+    the way the page looks.
+  </p>
+
+  <p>
+    Template Sets work on this principle. They're comprised of individual
+    <i>Template Types</i>, each used to draw a particular part of the page. When one
+    of your published forms is displayed, the Form Builder pieces it together out of
+    the selected Template Types.
+  </p>
+
+  <div class="clear"></div>
+  <p>
+    {% include screenshot.html item="i367.jpg" %}
+    To illustrate this, let's overlay the actual Template Set Template types through
+    a little Photoshop trickery. The screenshot to the right shows the same
+    page as before, except highlighting what markup is stored in what template.
+  </p>
+  <p>
+    As you can see, some template types are embedded within eachother. The "Page Layout"
+    Template Type contains the Header, Footer and Page templates; the Page template
+    (which is either a Form Page, Review Page, Thankyou Page or Offline Form Page
+    template, depending on the context) contains the Navigation and Continue Block
+    templates.
+  </p>
+
+  <div class="clear"></div>
+
+  <a name="multiple_template_types"></a>
+  <h4>Defining Multiple Template Types</h4>
+
+  <p>
+    The Form Builder was designed to allow you to define <i>multiple</i>
+    Template Types in a single Template Set. When this is done, the Form Builder then
+    presents the user the option of choosing which template they wish to use. This lets
+    you get a tremendous amount of use out of a single Template Set. For example, you
+    could create five different Header Template Types. Then, when using the Form Builder
+    to publish a new form, you could pick whatever Header you want to use.
+  </p>
+
+  <p>
+    {% include screenshot.html item="i368.jpg" %}
+
+    To further re-inforce this point: if you look at the screenshot to the right, it
+    shows the Form Builder window with the "TEMPLATES" panel open on the left. Notice
+    that there are three different Template Types that may be selected. This is because
+    each of those Template Types
+    has <i>more than one Template Type defined in the Template Set</i>. If there's
+    only one of a Template Type defined, it won't display it - because there's no
+    point! That Template Type would <i>have</i> to be used when generating the form.
+  </p>
+
+  <p>
+    This helps keep the Form Builder interface as uncluttered as possible, and only
+    presents the user with as much information as they really need.
+  </p>
+
+  <p>
+    The following sections discuss each of the template types.
+  </p>
+
 {% include close_section.html %}

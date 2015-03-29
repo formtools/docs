@@ -17,4 +17,21 @@ next: Form Offline page,/modules/form_builder/customization/anatomy/form_offline
 
   <h3>Thankyou Page</h3>
 
+  <p>
+    Compared the last two Template Types, the Thankyou Page content is very basic. The Form Builder contains a
+    special field to allow the Form Tools administrator to enter whatever content they want to appear on this
+    page. So, all that needs to be done is include that value through the {% raw %}<b>{{$thankyou_page_content}}</b>{% endraw %}
+    placeholder. It's often a nice idea to include the navigation as well - just for consistency and appearance. The
+    Thankyou page finalizes and clears the form sessions so a user can't go back and edit his form submission values.
+    As such, the navigation shouldn't permit the user to return to a particular form page.
+  </p>
+  <p>
+    Here's the typical contents of this Template Type:
+  </p>
+
+  {% raw %}
+<textarea class="codemirror" data-lang="smarty2">{{navigation}}
+{{$thankyou_page_content}}</textarea>
+{% endraw %}
+
 {% include close_section.html %}

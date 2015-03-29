@@ -17,4 +17,31 @@ next: Navigation,/modules/form_builder/customization/anatomy/navigation/
 
   <h3>Continue Block</h3>
 
+  <p>
+    The Continue Block is used to display the continue button at the bottom of your form and
+    Review pages, to allow the users to proceed through the form. All forms have at least two
+    pages: a form page and a thankyou page, but it may contain up to 8 pages: 6 form pages,
+    a Review page and a Thankyou page.
+  </p>
+
+  <p>
+    The only requirement for this template is that it contains an HTML submit button with
+    a name attribute of "form_tools_continue". The button can have whatever text you want on
+    it, and be styled however you want.
+  </p>
+
+  <p>
+    Here's the default content for this Template Type:
+  </p>
+
+  {% raw %}<textarea class="codemirror" data-lang="html">&lt;input type="submit" name="form_tools_continue" value="Continue" /></textarea>{% endraw %}
+
+  <p>
+    Tip: if you want to use an image as your submit button, make sure you include a hidden
+    field in this template with the name attribute of "form_tools_continue". That will ensure
+    the update code gets triggered properly when submitting the form.
+  </p>
+
+
+
 {% include close_section.html %}

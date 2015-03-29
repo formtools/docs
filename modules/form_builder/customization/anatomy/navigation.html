@@ -17,4 +17,43 @@ next: Error Message,/modules/form_builder/customization/anatomy/error_message/
 
   <h3>Navigation</h3>
 
+  <p>
+    If your form is more than a page, providing some navigation can be an important
+    addition to the form, to improve usability and clarity. It lets users to see how many
+    steps are in the form, how they are progressing, and the option to click back to a
+    previously edited page.
+  </p>
+
+  <p>
+    The Navigation template works by looping through all pages in the $nav_pages variable
+    and displaying the appropriate label and link.
+  </p>
+
+  <p>
+    Here's some example code:
+  </p>
+
+{% raw %}
+<textarea class="codemirror" data-lang="smarty2">
+<ul id="css_nav">
+  {{foreach from=$nav_pages item=page_info name=row}}
+    {{assign">assign">assign var=i value=$smarty.foreach.row.iteration}}
+    {{if $current_page > $i && $current_page != $num_pages}}
+      <li><a href="?page={{$i}}">{{$page_info.page_name}}</a></li>
+    {{elseif $current_page == $i || $current_page == $num_pages}}
+      <li class="css_nav_current_page">{{$page_info.page_name}}</li>
+    {{else}}
+      <li>{{$page_info.page_name}}</li>
+    {{/if}}
+  {{/foreach}}
+</ul></textarea>{% endraw %}
+
+  <p>
+    What this code does is compare each page number against the current page being
+    rendered. If it hasn't been passed yet, only the label is shown. If it's the current
+    page, it adds a special CSS class to it. If the page has been passed, it provides a link
+    back to it. The CSS layer handles the styles for each nav item.
+  </p>
+
+
 {% include close_section.html %}

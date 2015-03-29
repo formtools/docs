@@ -17,4 +17,16 @@ next: Continue Block,/modules/form_builder/customization/anatomy/continue_block/
 
   <h3>Form Offline Page</h3>
 
+  <p>
+    The Form Offline template is used whenever the form is taken offline. Like the Thankyou Template Type, this
+    should display whatever content was explicitly entered via the Form Builder window for the "FORM OFFLINE PAGE
+    CONTENT" setting.
+  </p>
+
+  <p>
+    You can add whatever markup you want, but the standard content of this template type is:
+  </p>
+
+  {% raw %}<textarea class="codemirror" data-lang="smarty2">{{$form_offline_page_content}}</textarea>{% endraw %}
+
 {% include close_section.html %}

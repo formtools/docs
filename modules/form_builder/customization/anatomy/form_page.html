@@ -17,4 +17,83 @@ next: Review Page,/modules/form_builder/customization/anatomy/review_page/
 
   <h3>Form Page</h3>
 
+  <p>
+    Here's where it gets interesting! The Form Page Template Type is used to generate
+    the HTML used for your form pages. So, if you published a form that arranged the fields
+    into three View tabs, those tabs are converted into form pages.
+  </p>
+
+  <p>
+    This page needs to contain the (relatively complex) Smarty logic needed to loop through
+    each field group and display the page title (the View tab label), the headings for the
+    field groups (the View Field Group label) and the fields themselves.
+  </p>
+
+  <p>
+    It also needs to contain the navigation template (to show users how they are progressing
+    through the form) and the Continue Block template, to allow them to proceed to the next
+    page.
+  </p>
+
+  <p>
+    Lastly, it needs to wrap everything in a form tag so that the data is submitted to
+    the server when the user clicks continue.
+  </p>
+
+  <p>
+    Here's an example taken from the Default Template Set.
+  </p>
+
+  <hr size="1">
+
+{% raw %}
+<textarea class="codemirror" data-lang="smarty2">
+{{navigation}}
+
+<h2>{{$page_name}}</h2>
+
+{{error_message}}
+
+<form action="{{$page_url}}" method="post" enctype="multipart/form-data"
+      id="ts_form_element_id" name="edit_submission_form">
+  {{foreach from=$grouped_fields key=k item=curr_group name=row}}
+  {{assign">assign">assign var=group value=$curr_group.group}}
+  {{assign">assign">assign var=fields value=$curr_group.fields}}
+
+  <a name="s{{$group.group_id}}"></a>
+  {{if $group.group_name}}
+  <h3>{{$group.group_name}}</h3>
+  {{/if}}
+
+  {{if $fields|@count > 0}}
+  <table class="table_1" cellpadding="1" cellspacing="1" border="0" width="798">
+    {{/if}}
+
+    {{foreach from=$fields item=curr_field}}
+    {{assign">assign">assign var=field_id value=$field.field_id}}
+    <tr>
+      <td width="180" valign="top">
+        {{$curr_field.field_title}}
+        <span class="req">{{if $curr_field.is_required}}*{{/if}}</span>
+      </td>
+      <td class="answer" valign="top">
+        <div class="pad_left">
+          {{edit_custom_field form_id=$form_id field_info=$curr_field
+          field_types=$field_types settings=$settings submission_id=$submission_id}}
+        </div>
+      </td>
+    </tr>
+    {{/foreach}}
+
+    {{if $fields|@count > 0}}
+  </table>
+  {{/if}}
+
+  {{/foreach}}
+
+  {{continue_block}}
+</form></textarea>
+  {% endraw %}
+
+
 {% include close_section.html %}

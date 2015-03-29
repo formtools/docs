@@ -17,4 +17,26 @@ next: Header,/modules/form_builder/customization/anatomy/header/
 
   <h3>Page Layout</h3>
 
+  <p>
+    The Page Layout Template Type is the very top level template that the Form Builder look at first. In all of the
+    Template Sets available in a Form Builder installation, it contains the same content:
+  </p>
+
+{% raw %}
+<textarea class="codemirror" data-lang="smarty2">
+{{header}}
+{{page}}
+{{footer}}</textarea>
+{% endraw %}
+
+  <p>
+    All three includes (header, page and footer) are required for this template type to function properly. If you omit
+    any of them, that section will be omitted altogether.
+  </p>
+
+  <p>
+    Technically, you could move the Header or Footer Template Type contents into this template, but I personally liked
+    keeping them separate just for clarity's sake.
+  </p>
+
 {% include close_section.html %}
