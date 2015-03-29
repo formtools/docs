@@ -1,0 +1,88 @@
+---
+layout: default
+navPage: docs
+heading: Form Builder
+breadcrumbs:
+  - Modules,/modules
+  - Form Builder,/modules/form_builder
+  - Usage,/modules/form_builder/usage
+  - How the Form Builder works
+prev: Quick-start tutorials / help,/modules/form_builder/usage/tutorials/
+next: Publishing your First Form,/modules/form_builder/usage/tutorials/publishing_first_form/
+---
+
+{% include open_section.html nav='fb_nav_usage.html' selected='how_fb_works' %}
+
+<h3>How the Form Builder works</h3>
+
+<p>
+  The Form Builder works by taking one of your form Views and converting that
+  configuration into an attractive form to publish on your website. The module lets
+  you choose a template set (a group of templates, each determining the appearance of
+  different aspects of the form) to precisely control the appearance of the published
+  forms. The Form Builder window let's you visually build your form by choosing
+  options in the left sidebar. When you're ready to publish the form, you click the
+  <i>Publish</i> Action Button at the bottom right to specify where it should get
+  generated, then click "Publish" and you're done!
+</p>
+
+<p>
+  In a nutshell, that's how it works!
+</p>
+
+<h4>A little more info about Views</h4>
+
+<p>
+  A Form Tools form can have any number of <i>Views</i>. The View controls various
+  aspects of your published form, for example:
+</p>
+
+<ol>
+  <li>What form fields should appear,</li>
+  <li>The order the fields should get listed,</li>
+  <li>How the fields are grouped within a page, and</li>
+  <li>Whether the fields are arranged into tabs when editing the data in the Form
+    Tools interface.</li>
+</ol>
+
+<p>
+  Since Views already define all this for us, the Form Builder simply takes that
+  information and renders it with templates, thus creating your form. Any time you
+  change your form View (e.g. add or remove fields to it), any published form that
+  uses it will be <i>automatically updated</i> to show the changes. You don't need
+  to re-save or re-publish the form.
+</p>
+
+<div class="tip">
+  <b>Tip</b>: <b>tabs or pages?</b> The Form Builder converts View <i>tabs</i> into
+  form <i>pages</i>. So if your View groups your fields into two tabs, your published
+  form will contain two form pages + an optional Review page, plus the "thankyou" /
+  "receipt" page. It's always a good idea to define the tab name, because that
+  controls the page title of the first form page.
+</div>
+
+<h4>Template Sets</h4>
+
+<p>
+  The template sets govern exactly how your published form will look. The Template
+  Sets let you customize the HTML, CSS and any javascript you wish to include in the
+  form pages.
+</p>
+
+<p>
+  A template set is comprised of multiple templates, each used to generate a
+  particular part of the page. For example, there are Header and Footer templates,
+  a Continue Block and Navigation templates. If your template set contains more
+  than one of each type, you will be given the option of selecting it in the
+  "TEMPLATES" section of the Form Builder sidebar. In effect, this lets you re-use
+  the same template set multiple times, but generate different-looking forms each
+  time.
+</p>
+
+<p>
+  For a more in-depth look at template sets, choose the Form Builder module from
+  your Modules page, select a Template Set and click around the interface to see how
+  it's put together.
+</p>
+
+{% include close_section.html %}
