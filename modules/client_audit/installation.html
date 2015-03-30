@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Client Audit
+breadcrumbs:
+  - Modules,/modules
+  - Installation
+next: Installation,/modules/client_audit/installation
+---
+
+{% include open_section.html nav='arbitrary_settings_nav.html' selected='introduction' %}
+
+  <p>
+    Installing the Client Audit module is exactly the same as installing any Form Tools module.
+    First, download the zip or tar file from the Downloads tab above. Then, follow the
+    <a href="http://docs.formtools.org/userdoc2_1/?page=installing_modules">instructions here</a>.
+  </p>
+
+  <p>
+    The Client Audit module works by tracking <i>changes</i> to client accounts. As such, when
+    it's first installed, the module automatically stores the current state - account,
+    account settings and account permissions - in its custom logs. Because of this, if
+    you have a large number of client accounts, it may take several seconds to configure
+    the database.
+  </p>
+
+  <p>
+    After installing the module, select it. You'll be taken a page that will tell you there's
+    been no activity on your client accounts. This is normal. At this point, the module
+    is enabled and active: as soon as any changes occur to any client accounts, you
+    will start seeing some logged items appear.
+  </p>
+
+{% include close_section.html %}
