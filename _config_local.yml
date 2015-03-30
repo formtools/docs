@@ -2,7 +2,6 @@
 title: Form Tools Documentation
 email: ben.keen@gmail.com
 description: "Documentation and tutorials for all things Form Tools."
-exclude: [repos]
 baseurl: "http://localhost:4000/docs.formtools.org"
 url: "http://docs.formtools.org"
 resourceurl: "http://localhost:4000/formtools.org"
