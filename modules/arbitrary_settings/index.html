@@ -1,0 +1,51 @@
+---
+layout: default
+navPage: docs
+heading: Arbitrary Settings
+breadcrumbs:
+  - Modules,/modules
+  - Arbitrary Settings
+next: Creating the Settings,/modules/arbitrary_settings/creating
+---
+
+{% include open_section.html nav='arbitrary_settings_nav.html' selected='introduction' %}
+
+  <p class="alert alert-info">
+    This module is for developers only. You will need PHP knowledge to utilize this script.
+  </p>
+
+  <p>
+    {% include screenshot.html item="i355.gif" %}
+    The <i>Arbitrary Settings</i> module is something of an oddity. Unlike the other
+    modules, it doesn't directly DO anything with Form Tools: all it does it let you
+    add a section  at the bottom of the Settings -&gt; Main tab, where you can define you own settings for
+    storage in the Form Tools database. What do those settings contain and do?
+    Anything you want.
+  </p>
+
+  <h4>So what's the point?</h4>
+
+  <p>
+    The point is to allow you to open up Form Tools to store arbitrary data that you can
+    use outside of the script. Maybe an example would help...
+  </p>
+
+  <p>
+    One of our clients that is using Form Tools to display submission data on their
+    site. Every year, they need their custom PHP page to be updating again and again,
+    for each year's form ID (and other settings). Each year I manually update the
+    form ID on that page, the number of submissions that get displayed on the page and
+    other minor little things. Since our client isn't technical, they are unable to do this
+    themselves.
+  </p>
+
+  <p>
+    But now, with this module, they can just edit the values with Form Tools itself:
+    which saves <i>us</i> time, and <i>them</i> money. Basically it lets you use Form Tools
+    to store "global" data, configurable by the clients through a few simple fields. Then,
+    you reference those values in your own PHP files. The result? No more bothersome
+    updates...! The client does it themselves.
+  </p>
+
+
+{% include close_section.html %}

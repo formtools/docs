@@ -1,0 +1,31 @@
+---
+layout: default
+navPage: docs
+heading: Arbitrary Settings
+breadcrumbs:
+  - Modules,/modules
+  - Arbitrary Settings,/modules/arbitrary_settings
+  - How to Use
+prev: The Settings &raquo; Main Tab,/modules/arbitrary_settings/main_tab/
+---
+
+{% include open_section.html nav='arbitrary_settings_nav.html' selected='how_to_use' %}
+
+  <h3>How to Use</h3>
+
+  <p>
+    {% include screenshot.html item="i357.gif" %}
+    Once your settings are created and populated, now you'll want to actually use them
+    in your code! This is really very simple. Click on the "How to Use" navigation link
+    in the module and copy and paste the code into your PHP page. Note: if your page already
+    include the Form Tools API or the library.php, you won't need to re-include it.
+  </p>
+
+  <p>
+    As the page describes, you can use the $settings var to access any of the values you
+    want. Note that checkbox and multi-select field will have their (multiple) values
+    serialized into a pipe-delimited string. To convert them to an array, just
+    <b>explode("|", $settings["your_setting_identifier"])</b>.
+  </p>
+
+{% include close_section.html %}
