@@ -1,0 +1,35 @@
+---
+layout: default
+navPage: docs
+heading: System Check
+breadcrumbs:
+  - Modules,/modules
+  - System Check,/modules/system_check/
+  - For Developers
+prev: Common Problems,/modules/system_check/common_problems/
+---
+
+{% include open_section.html nav='nav_system_check.html' selected='developers' %}
+
+  <h3>For Developers</h3>
+
+  <p>
+    If you're a module developer working on a module that uses one more tables, you'll probably
+    want to make your module compatible with this one. I've personally found it a really
+    invaluable tool for quickly eliminating the DB structure as the source of issues. The
+    module works really, really simply. It works by taking a snapshot of a valid database
+    and generates a PHP array containing the database table and column info. For testing,
+    it then compares the actual DB structure with the content in that file.
+  </p>
+
+  <p>
+    Take a look at the <b>dbi_generate_db_config_file</b> - this generates a PHP file for your
+    tables. What's probably simplest is just to edit the /database_integrity/index.php file
+    and uncomment the lines labeled "module table generation". Be sure to feed in the names of
+    your tables to that function. Then load the module in your browser: that will output the
+    content for your own custom database_integrity.php file (to be placed in your module root
+    folder).
+  </p>
+
+
+{% include close_section.html %}

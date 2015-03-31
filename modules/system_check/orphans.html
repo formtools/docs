@@ -1,0 +1,37 @@
+---
+layout: default
+navPage: docs
+heading: System Check
+breadcrumbs:
+  - Modules,/modules
+  - System Check,/modules/system_check/
+  - Orphan Clean-up
+prev: Hook Verification,/modules/system_check/hook_verification/
+next: Common Problems,/modules/system_check/common_problems/
+---
+
+{% include open_section.html nav='nav_system_check.html' selected='orphans' %}
+
+  <h3>Orphan Clean-up</h3>
+
+  <p>
+    This is a house-keeping test to examine the Core database tables for any unwanted orphaned records and references.
+    Orphaned records are database entries that are no longer needed and should have been deleted along with their
+    "parents". For example, when you delete a form, any references to that form ID should also be deleted. Orphaned
+    records shouldn't cause problems, but add unnecessary clutter to your database.
+  </p>
+
+  <p>
+    If this test finds any problems, we'd appreciate it if you'd report them in the forums: it'll help us identify
+    loopholes in the code.
+  </p>
+
+  <h4>Found problems?</h4>
+
+  <p>
+    Don't worry! Orphaned records are NOT a big deal. Just click the link that shows up and have them all removed.
+    "Death to orphans". That's always been my motto.
+  </p>
+
+
+{% include close_section.html %}
