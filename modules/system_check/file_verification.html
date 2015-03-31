@@ -1,0 +1,33 @@
+---
+layout: default
+navPage: docs
+heading: System Check
+breadcrumbs:
+  - Modules,/modules
+  - System Check,/modules/system_check/
+  - Table Verification
+prev: Why is this module needed?,/modules/system_check/why_needed/
+next: Table verification,/modules/system_check/table_verification/
+---
+
+{% include open_section.html nav='nav_system_check.html' selected='file_verification' %}
+
+  <h3>File Verification</h3>
+
+  {% include screenshot.html item="i349.jpg" %}
+
+  <p>
+    The File Verification test examines your Form Tools Core (2.1.5 or later), modules,
+    and themes to confirm that all the files exist on your server. If the test fails, it will
+    list those files that are missing. You will need to download the appropriate component (and
+    make sure you get the right version!) and manually upload them to the right spot on the
+    server.
+  </p>
+
+  <p>
+    Please note that this test only checks for file <i>existence</i>. It doesn't actually check
+    that the files contain the correct data. That can occasionally be the source of problems
+    after upgrading, when the new files haven't been properly overwritten.
+  </p>
+
+{% include close_section.html %}

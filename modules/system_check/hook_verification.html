@@ -1,0 +1,56 @@
+---
+layout: default
+navPage: docs
+heading: System Check
+breadcrumbs:
+  - Modules,/modules
+  - System Check,/modules/system_check/
+  - Hook Verification
+prev: Table Verification,/modules/system_check/table_verification/
+next: Orphan Clean-up,/modules/system_check/orphans/
+---
+
+{% include open_section.html nav='nav_system_check.html' selected='hook_verification' %}
+
+  <h3>Hook Verification</h3>
+
+  {% include screenshot.html item="i350.jpg" %}
+
+  <p>
+    Modules interact with the Core script by registering the code that needs to run when particular <i>hooks</i>
+    execute. For example, the File Upload module registers a function to handle file uploads which gets called when the
+    main "update submission function" runs. This allows the function to actually upload files. As another example, the
+    Extended Client Fields module registers a function that gets called in the Edit Client pages, letting the module
+    display the extra fields.
+  </p>
+
+  <p>
+    This technique of "Hook registration" is an essential part of Form Tools. This test examines the contents of the
+    <b>[prefix]hook_calls</b> table to check that what's being called is in fact what <i>should</i> be being called for
+    each module. In other words, it checks that the modules are able to function properly.
+  </p>
+
+  <h4>Results</h4>
+
+  <p>
+    The test is very simple: it checks that there are exactly the right number of hooks and that each one exactly maps
+    what should be in the table.
+  </p>
+
+  <h4>Errors? Don't panic!</h4>
+
+  <p>
+    First off, just because errors are found, it doesn't mean that there may have been problems in your installation.
+    For users that have been using older versions of the script, chances are that it will find errors in all or more of
+    the modules listed. This is due to a problem with the way the Core script handled upgrading modules: it occasionally
+    made hooks get registered multiple times (this will be fixed in Core 2.1.5). This doesn't cause any actual problems
+    with the module, but it's good to keep the database nice and tidy.
+  </p>
+
+  <p>
+    To fix the errors, just click the "repair modules" link that appears. Then re-run the test. No problems listed?
+    You're done!
+  </p>
+
+
+{% include close_section.html %}

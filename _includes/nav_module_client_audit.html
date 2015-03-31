@@ -1,0 +1,16 @@
+<div {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+	<a href="/modules/client_audit/">Introduction</a>
+</div>
+
+<ul>
+	<li {% if include.selected == 'installation' %}class="selected"{% endif %}>
+		<a href="/modules/client_audit/installation">Installation</a>
+	</li>
+	<li {% if include.selected == 'search_logs' %}class="selected"{% endif %}>
+		<a href="/modules/client_audit/search_logs/">Search the logs</a>
+	</li>
+	<li {% if include.selected == 'clear_logs' %}class="selected"{% endif %}>
+		<a href="/modules/client_audit/clear_logs/">Clear the logs</a>
+	</li>
+</ul>
+

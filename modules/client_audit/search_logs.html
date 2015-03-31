@@ -4,31 +4,22 @@ navPage: docs
 heading: Client Audit
 breadcrumbs:
   - Modules,/modules
-  - Installation
-next: Installation,/modules/client_audit/installation
+  - Client Audit,/modules/client_audit/
+  - Search logs
+prev: Installation,/modules/client_audit/installation
+next: Clearing the logs,/modules/client_audit/clear_logs/
 ---
 
-{% include open_section.html nav='nav_client_audit.html' selected='introduction' %}
+{% include open_section.html nav='nav_module_client_audit.html' selected='search_logs' %}
 
   <p>
-    Installing the Client Audit module is exactly the same as installing any Form Tools module.
-    First, download the zip or tar file from the Downloads tab above. Then, follow the
-    <a href="http://docs.formtools.org/userdoc2_1/?page=installing_modules">instructions here</a>.
+    {% include screenshot.html item="i159.gif" %}
+    Alright! Now let's assume there's been some activity on your client accounts (if you still
+    don't see anything when selecting the module, create a dud test account and trying
+    tinkering around with it: update settings, login and logout etc). When you return to the
+    module, you'll see all the activity logged in a table. Try changing a few search options -
+    you'll get the hang of it pretty fast.
   </p>
 
-  <p>
-    The Client Audit module works by tracking <i>changes</i> to client accounts. As such, when
-    it's first installed, the module automatically stores the current state - account,
-    account settings and account permissions - in its custom logs. Because of this, if
-    you have a large number of client accounts, it may take several seconds to configure
-    the database.
-  </p>
-
-  <p>
-    After installing the module, select it. You'll be taken a page that will tell you there's
-    been no activity on your client accounts. This is normal. At this point, the module
-    is enabled and active: as soon as any changes occur to any client accounts, you
-    will start seeing some logged items appear.
-  </p>
 
 {% include close_section.html %}

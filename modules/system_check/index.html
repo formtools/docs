@@ -1,0 +1,47 @@
+---
+layout: default
+navPage: docs
+heading: System Check
+breadcrumbs:
+- Modules,/modules
+- System Check
+next: Why is this module needed?,/modules/system_check/why_needed/
+---
+
+{% include open_section.html nav='nav_system_check.html' selected='introduction' %}
+
+  {% include screenshot.html item="i348.jpg" %}
+  <p>
+    This module replaces the older <a href="/modules/database_integrity/">Database
+    Integrity module</a>. It offers a few simple, quick tests to run on your
+    Form Tools installation: kind of like taking your car to get it serviced
+    - except this is free!
+  </p>
+
+  <h3>The tests</h3>
+
+  <p>
+    The module currently offers four tests:
+  </p>
+  <ul>
+    <li><b><a href="file_verification/">File Verification</a></b> - this
+      examines the <b>Core</b>, <b>modules</b> and <b>themes</b> to check that all the files
+      have been uploaded properly to your site.</li>
+    <li><b><a href="table_verification/">Table Verification</a></b> - this
+      examines the structure of your <b>Core</b> and <b>module</b> tables.</li>
+    <li><b><a href="hook_verification/">Hook Verification</a></b> - this
+      checks to make sure the <b>module</b> hooks are all correct.</li>
+    <li><b><a href="orphans/">Orphan Clean-up</a></b> - this
+      identifies and removes old, dud database records and references.</li>
+  </ul>
+
+  <h3>Compatibility</h3>
+
+  <p>
+    The System Check was designed to be compatible with the old Database Integrity module,
+    so you can simply install this module and run the same tests as offered by the older
+    module. However, the <a href="file_verification/">File Verification</a> test is
+    newer: you will need to upgrade your modules and themes to be able to run those tests.
+  </p>
+
+{% include close_section.html %}

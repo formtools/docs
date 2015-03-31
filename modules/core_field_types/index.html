@@ -1,0 +1,71 @@
+---
+layout: default
+navPage: docs
+heading: Core Field Types
+breadcrumbs:
+  - Modules,/modules
+  - Core Field Types
+---
+
+<p class="alert alert-info">
+  For people upgrading to 2.1.5 or later, installing this module is <b>optional but
+  recommended</b>.
+</p>
+
+<p>
+  The Core Field Types module is included in all Form Tools
+  <a href="http://www.formtools.org/download.php">download packages</a>
+  from 2.1.5 onwards. It is used by the installation script to populate the database with
+  the Core field types for use in your forms. Namely:
+</p>
+
+<ul>
+  <li>Textboxes</li>
+  <li>Passwords</li>
+  <li>Textareas</li>
+  <li>Radio buttons</li>
+  <li>Checkboxes</li>
+  <li>Dropdowns</li>
+  <li>Multi-select dropdowns</li>
+  <li>Dates</li>
+  <li>Times</li>
+  <li>Phone Numbers</li>
+  <li>Code/Markup fields</li>
+</ul>
+
+<p>
+  This is a special module. Since it handles key functionality, it cannot be uninstalled.
+</p>
+
+<h3>Why a Separate Module?</h3>
+
+<p>
+  Form Tools 2.1.0 re-designed the way field types are handled. Now you can develop new and interesting ways to gather
+  data through your forms. As simple illustrations of this, the <a href="/modules/field_type_google_maps/">Google Maps
+  module</a> lets you embed a fully functional Google Maps field into your forms, and the
+  <a href="/modules/field_type_tinymce/">TinyMCE module</a> displays a WYSIWYG field.
+</p>
+
+<p>
+  Initially, we thought that defining and distributing the most common field types (textboxes, textareas etc.) as part
+  of the Form Tools Core would be the simplest and most natural solution. Every form needs one of these field types,
+  so distributing it as an optional module made no sense. However, we found that in practice, the benefits to using
+  a module were just too great. Having field types managed through modules allowed for quick and simple updates and
+  fixes. But for the Core field types, we had to rely on new Core builds - as well as being limited in what it could
+  actually do in terms of testing and management.
+</p>
+
+<p>
+  We also released the <a href="/modules/custom_fields/">Custom Fields</a> module. This (extremely powerful!) module
+  provides a simple user interface to customize and create your own field types. However, the danger was that people
+  could then delete or overwrite the Core field types, and prevent their script from running properly. Since the field
+  types were created via the Core, it wasn't simple to reset their configurations, should the need arise.
+</p>
+
+<p>
+  So to solve both these problems, we created the Core Field Types module. It's required for all 2.1.5+ installations,
+  but optional for earlier versions. It handles the creation and management of these field types. Over time, we will
+  expand this module to allow you to test and reset the field types to ensure that your installation is always
+  configured properly.
+</p>
+

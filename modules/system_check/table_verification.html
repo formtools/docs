@@ -1,0 +1,75 @@
+---
+layout: default
+navPage: docs
+heading: System Check
+breadcrumbs:
+  - Modules,/modules
+  - System Check,/modules/system_check/
+  - Table Verification
+prev: File Verification,/modules/system_check/file_verification/
+next: Hook verification,/modules/system_check/hook_verification/
+---
+
+{% include open_section.html nav='nav_system_check.html' selected='table_verification' %}
+
+  <h3>Table Verification</h3>
+
+  {% include screenshot.html item="i351.jpg" %}
+
+  <p>
+    The first test you can run is called <b>Table Verification</b>. This works by
+    checking your <b>actual</b> Form Tools database structure with what it
+    <b>should</b> be. It then generates a log of all successfully tested elements (tables
+    and columns), and provides a list of elements that failed. These errors include:
+  </p>
+
+  <ul>
+    <li>Missing tables</li>
+    <li>Missing table columns</li>
+    <li>Invalid table columns: contain the wrong information</li>
+  </ul>
+
+  <h4>How to use</h4>
+  <p>
+    This test is exceedingly easy to use. Just install the module as usual (see <a href="/userdoc/installing_modules"
+      target="_blank">instructions here</a>), then go to your Modules page and select it. Once in the module, you'll
+    see a list of components that have provided information about their database structure. Select those components you
+    want to test (all are selected by default) and click the Test button. That will generate success and error logs of
+    what it finds.
+  </p>
+
+
+  <h4>What it DOESN'T test</h4>
+
+  <p>
+    This module currently only tests the database structure. It doesn't test the semantic content of the tables; i.e.
+    it doesn't confirm that the tables contain the data that's expected. Likewise, it doesn't test your custom form
+    tables to confirm that the fields and data in those tables match the data stored in your main forms table.
+  </p>
+
+  <h4>Found Problems?</h4>
+
+  <p>
+    Don't panic! This is a good thing! I mean, sure, <i>ideally</i> there would be no problems, but now at least we now
+    know what could be leading to any number problems with your installation.
+  </p>
+
+  <p>
+    If the module finds a problem with your tables, first check the <a href="common_problems/">Common Problems</a> page.
+    If you don't find your problem listed there, you'll need to <a href="">post your error logs in the forums</a>. The
+    Table Verification test only <i>identifies</i> problems - not fixes them. This is by design: we want to know what
+    problems people are running into so we can figure out what happened and find patterns in the problems. But also, we
+    don't want to execute potentially harmful "fixes" to your database without fully understanding them first.
+  </p>
+
+  <p>
+    After you post in the forums, we'll respond with instructions on how to proceed. This will include these steps:
+  </p>
+
+  <ol>
+    <li>Using phpMyAdmin or another database access tool, back up the database tables that are affected.</li>
+    <li>Again, using phpMyAdmin, run the SQL that we will supply.</li>
+  </ol>
+
+
+{% include close_section.html %}

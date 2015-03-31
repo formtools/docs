@@ -1,0 +1,60 @@
+---
+layout: default
+navPage: docs
+heading: System Check
+breadcrumbs:
+  - Modules,/modules
+  - System Check,/modules/system_check/
+  - Why is this module needed?
+prev: Introduction,/modules/system_check/
+next: File verification,/modules/system_check/file_verification/
+---
+
+{% include open_section.html nav='nav_system_check.html' selected='why_needed' %}
+
+  <h3>Why is this module needed?</h3>
+
+  <p>
+    Fair question! (It's not <b>totally</b> because I suck as a programmer. Honest.)
+  </p>
+
+  <hr size="1" />
+
+  <h4>How could a database get corrupted?</h4>
+
+  <p>
+    This can happen in a number of different ways, but the most likely causes are:
+  </p>
+
+  <ul>
+    <li>Problems with upgrading. This can occur if the SQL updates in the upgrade script
+      fail to run properly, either to a bug in the code or a problem with the content that
+      was FTP'd to your server.</li>
+    <li>If someone manually edited your database.</li>
+  </ul>
+
+  <hr size="1" />
+
+  <h4>Why would files ever be missing?</h4>
+
+  <p>
+    This is actually a common source of problems. When unzipped, the default Form Tools
+    installation (including themes + modules) is over 7MB. When you upload those files
+    to your webserver, a separate request is created for each one. Occasionally, the
+    FTP process gets interrupted, preventing all the files from being uploaded. This leads
+    to problems running the script or modules.
+  </p>
+
+  <hr size="1" />
+
+  <h4>Why would there be orphaned records left in the database and not removed?</h4>
+
+  <p>
+    Speaking candidly, because of <i>bugs</i>. When a form is deleted, all references to
+    that form <i>should</i> be deleted along with it. Similarly Views, Option Lists, etc.
+    etc. However, Form Tools is very big and complex: if there's a loophole here or
+    there, old orphaned records may get left behind. This test helps identify those loopholes
+    so we can fix them.
+  </p>
+
+{% include close_section.html %}
