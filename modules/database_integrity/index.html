@@ -1,0 +1,66 @@
+---
+layout: default
+navPage: docs
+heading: Database Integrity
+breadcrumbs:
+  - Modules,/modules
+  - Database Integrity
+next: Table Verification,/modules/database_integrity/table_verification/
+---
+
+{% include open_section.html nav='nav_database_integrity.html' selected='introduction' %}
+
+  <div class="alert alert-warning">
+    This module is now deprecated. If you're running 2.1.5 or later of the Form Tools
+    Core, use the <b><a href="/modules/system_check/">System Check</a></b>
+    module instead.
+  </div>
+
+  {% include screenshot.html item="i341.gif" %}
+
+  <p>
+    This module was written to help debug problems that arise with Form Tools. The
+    module provides you with a couple of quick, simple tests to run on your
+    database. This is well, well worth doing: in the very least to confirm that the
+    problems you're encountering are not due to a corrupt database.
+  </p>
+
+  <h3>The tests</h3>
+
+  <p>
+    The module offers two tests:
+  </p>
+  <ul>
+    <li><b><a href="table_verification/">Table Verification</a></b> - this
+      examines the structure of your Core and module tables.</li>
+    <li><b><a href="hook_verification/">Hook Verification</a></b> - this
+      checks to make sure the module hooks are all correct.</li>
+  </ul>
+
+  <h3>How could a database get corrupted?</h3>
+
+  <p>
+    This can happen in a number of different ways, but the most likely causes are:
+  </p>
+
+  <ul>
+    <li>Problems with upgrading. This can occur if the SQL updates in the upgrade script
+      fail to run properly, either to a bug in the code or a problem with the content that
+      was FTP'd to your server.</li>
+    <li>If someone manually edited your database.</li>
+  </ul>
+
+  <h3>Compatibility</h3>
+
+  <ul>
+    <li>This module supports all final releases of the Form Tools Core (at the time of
+      writing: 2.0.0-2.0.6, 2.1.0-2.1.4).</li>
+    <li>It <b>will not work</b> with early beta releases.</li>
+  </ul>
+
+  <p>
+    Any modules that have custom database tables may also use this module to test their
+    database integrity. I will be adding support for this module to all relevant modules.
+  </p>
+
+{% include close_section.html %}

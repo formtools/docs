@@ -1,0 +1,112 @@
+---
+layout: default
+navPage: docs
+heading: Database Integrity
+breadcrumbs:
+  - Modules,/modules
+  - Database Integrity,/modules/database_integrity
+  - Common Problems
+prev: Hook Verification,/modules/database_integrity/hook_verification
+next: For Developers,/modules/database_integrity/developers
+---
+
+{% include open_section.html nav='nav_database_integrity.html' selected='common_problems' %}
+
+  <p>
+    You shouldn't ever see any problems, but despite our best efforts, <i>bugs do happen</i>.
+    We'll maintain this list depending on what's reported in the forums.
+  </p>
+
+  <div class="alert alert-success">
+    FORM TOOLS CORE - ft_hook_calls - Invalid column: action_location<br>
+    &nbsp;&nbsp;&nbsp;- is: enum('start','end')<br>
+    &nbsp;&nbsp;&nbsp;- should be: varchar(100)
+  </div>
+
+  <b>Severity</b>
+
+  <p>
+    <span class="red bold">HIGH</span>. This error will prevent most modules from
+    functioning properly: you should fix it right away.
+  </p>
+
+  <b>Explanation</b>
+
+  <p>
+    In an early 2.0.0 Beta version, the <b>action_location</b> column of the
+    <b>[prefix]hook_calls</b> Core table only permitted two values: "start" and "end".
+    We changed that to a varchar before the final 2.0.0 release to allow for more
+    flexibility. However, it appears that the old setting slipped back into a later
+    version of the Core at some point, because we've had this reported a number of
+    times.
+  </p>
+
+  <b>Solution</b>
+
+  <ol>
+    <li>Through phpMyAdmin, run the following SQL query on your database (you
+      will need to change %%prefix%% with whatever database prefix your tables are using):
+
+      <blockquote><pre>ALTER TABLE %%prefix%%hook_calls CHANGE action_location action_location
+VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+</pre></blockquote>
+    </li>
+    <li>Return to the Database Integrity and run the
+      <a href="table_verification/">Table Verification</a> test again. The error should
+      now be gone.</li>
+    <li>
+      Now run the
+      <a href="hook_verification/">Hook Verification</a> test again. If it finds any
+      errors, just use the auto-repair option to fix them.
+    </li>
+  </ol>
+
+  <hr size="1">
+
+  <div class="alert alert-success">
+    Export Manager - ft_module_export_groups - missing column: form_view_mapping<br>
+    <br>
+    Export Manager - ft_module_export_groups - missing column: forms_and_views
+  </div>
+
+  <b>Severity</b>
+
+  <p>
+    <span class="blue bold">LOW</span>. This error will prevent the
+    <a href="/modules/export_manager/">Export Manager</a> module from working
+    properly, but there should be no other side-effects.
+  </p>
+
+  <b>Explanation</b>
+
+  <p>
+    This was due to a problem with how modules are upgraded. The problem was in the Core;
+    it will be fixed in 2.1.5.
+  </p>
+
+  <b>Solution</b>
+
+  <p>
+    You have two options.
+  </p>
+
+  <ol>
+    <li>Uninstall then re-install the module. However, if you've customized anything
+      within the module, those customizations will be lost.</li>
+    <li>Run the following queries on your database (replacing %%prefix%% with your
+      table prefix):
+
+      <blockquote><pre>ALTER TABLE %%prefix%%module_export_groups
+ADD form_view_mapping ENUM('all', 'except', 'only')
+NOT NULL DEFAULT 'all' AFTER access_type;
+
+ALTER TABLE %%prefix%%module_export_groups
+ADD forms_and_views MEDIUMTEXT NULL AFTER form_view_mapping;
+</pre><blockquote</li>
+  </ol>
+
+  <p>Lastly, run the "Hook Verification" test in the Database Integrity module and
+    tell it to repair any problems it finds.</p>
+
+
+{% include close_section.html %}
