@@ -5,12 +5,67 @@ heading: Custom Fields
 breadcrumbs:
 - Modules,/modules
 - Custom Fields,/modules/custom_fields/
-- Use in External Forms
-prev: When to use?,/modules/custom_fields/when_to_use
-next: Core Compatibility,/modules/custom_fields/core_compatibility
+- Editing Field Types,/modules/custom_fields/editing_field_types
+- Saving tab
+prev: Displaying tab,/modules/custom_fields/displaying_tab
+next: Validation tab,/modules/custom_fields/validation_tab
 ---
 
-{% include open_section.html nav='nav_custom_fields.html' selected='external_forms' %}
+{% include open_section.html nav='nav_custom_fields.html' selected='saving_tab' %}
+
+  <h3>Saving tab</h3>
+
+  {% include screenshot.html item="i335.gif" %}
+
+  <p>
+    This is an optional section. If the data for your form field type is just passed along in the POST request like the "native" HTML
+    field types (textboxes, textareas etc), you don't need to specify anything here. The
+    code will simply look at the POST request, pull the appropriate value out and insert it
+    into the database. This is very quick. However, it doesn't handle all cases. The
+    "Saving" tab lets you add custom PHP code that executes on fields of this type, prior
+    to adding to the database, so you can do whatever you want to doctor the field ata.
+  </p>
+
+  <p>
+    Form Tools stores <b>all</b> data for a form field in the fields's
+    <b>[prefix]form_[form ID]</b> database column. In some cases, this may
+    require serializing the data, then de-serializing it when viewing / editing.
+  </p>
+
+  <p>
+    As a simple example, the <a href="/userdoc/field_types/ft_phones">Phone
+    Number</a> field type lets users create a phone number field of an arbitrary format. They
+    enter a string like "(xxx) xxx-xxxx" and the field type (on the Displaying -&gt; Edit
+    Field tab) converts that into three textboxes. So, thinking as a developer, that means
+    that when a form containing these phone numbers is submitted, the POST request will
+    include an arbitrary number of textboxes (depending on the string they entered) - each
+    containing a <i>part</i> of the phone number field. So in order to store the entire phone
+    number in the (single) database field, you need to piece it all together and then submit
+    the concatenated - or serialized - result. And that's precisely what's being done in
+    this field type, shown in the screenshot above.
+  </p>
+
+  <p>
+    The phone number stores all the phone number parts, separated by the pipe character, so it's
+    easy to separate and re-create when viewing / editing.
+  </p>
+
+  <p>
+    The <b>$vars</b> variable contains all the information about the POST request and field
+    - including whatever arbitrary settings were specified for the field type. To see what's
+    available, the simplest thing to do is just do a <b>print_r($vars); exit;</b> in that section,
+    then in the Form Tools interface, submit the Edit Submission page on a View that contains
+    this field type. That will display on the screen the entire contents of the variable.
+  </p>
+
+  <h4>You MUST define a $value var</h4>
+
+  <p>
+    One last tip: if you enter custom PHP code here, you must define a $value variable that
+    contains the value to store in the database. It should be a string or number, nothing else.
+    Arrays will just be converted to "Array()" which won't help anybody!
+  </p>
+
 
 
 {% include close_section.html %}

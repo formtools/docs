@@ -5,12 +5,38 @@ heading: Custom Fields
 breadcrumbs:
 - Modules,/modules
 - Custom Fields,/modules/custom_fields/
-- Use in External Forms
-prev: When to use?,/modules/custom_fields/when_to_use
-next: Core Compatibility,/modules/custom_fields/core_compatibility
+- Editing Field Types,/modules/custom_fields/editing_field_types
+- Settings tab
+prev: Validation tab,/modules/custom_fields/validation_tab
+next: Shared Characteristics,/modules/custom_fields/shared_characteristics
 ---
 
-{% include open_section.html nav='nav_custom_fields.html' selected='external_forms' %}
+{% include open_section.html nav='nav_custom_fields.html' selected='settings_tab' %}
+
+  <h3>Settings tab</h3>
+
+  {% include screenshot.html item="i337.gif" %}
+
+  <p>
+    This is probably the coolest part about field types, and allow them to be <i>seriously</i>
+    flexible! Offering a plain "textbox" wouldn't be much use for people. You really need to be
+    able to customize aspects of it: as a simple example, the width of the field and the
+    maximum number of characters users can enter into it. This allow the single field type
+    to be used in multiple different places and ways, depending on the data they need to store
+    in it.
+  </p>
+
+  <p>
+    When we developed Form Tools 2.1.0, we didn't want to do like everyone else and provide a
+    finite list of optional settings: there's <i>always</i> going to be someone coming along
+    that needs something different. That's where these field type settings come in.
+  </p>
+
+  <p>
+    The "out the box" Form Tools installation comes with the <a href="/modules/custom_fields/core_field_types">field
+    types mentioned earlier</a>, each with a number of pre-configured settings. These settings are a list of the most
+    common settings that people are most likely to use.
+  </p>
 
 
 {% include close_section.html %}

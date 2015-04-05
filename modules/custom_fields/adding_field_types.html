@@ -12,5 +12,54 @@ next: Editing Field Types,/modules/custom_fields/editing_field_types
 
 {% include open_section.html nav='nav_custom_fields.html' selected='adding_field_types' %}
 
+  <h3>Adding Field Types</h3>
+
+  {% include screenshot.html item="i338.gif" %}
+  <p>
+    Adding a new field type is very simple. After selecting the module, click the appropriate
+    "Add Field Type »" link, found at the bottom right of the field type groups. That
+    will open a dialog window that looks like the screenshot to the right. Here's what
+    the fields mean.
+  </p>
+
+  <p>
+    <b>Field Name</b>. This is a string that best describes your field type (e.g. "Modified
+    textbox", "Calendar widget" or whatever is most appropriate). It doesn't have to be
+    unique, but we strongly suggest you name it something different to what's already
+    defined!
+  </p>
+
+  <p>
+    <b>Field Type Identifier</b>. This field must be unique. In the database, field types
+    are stored in the <b>[prefix]field_types</b> table, which uses an auto-increment column
+    to identify and reference them in the code. This numeric ID may be different for
+    each installation, so instead, this field allows you to provide a simple, human-friendly
+    string to identify your field type. There are functions in the Form Tools code base
+    (such as <b>ft_get_field_type_by_identifier()</b>) that allow you to reference field
+    types by their string ID instead their auto-increment value. This field must be
+    alphanumeric, and should be lower-case for consistency. This value <i>cannot be
+    changed</i> after you define it here.
+  </p>
+
+  <p>
+    <b>Group</b>. The group to which the field type belongs. You can group them however
+    you want through the Custom Fields main page.
+  </p>
+
+  <p>
+    <b>Base field type on...</b> This is a simple time-saving device. It creates a new
+    field type with all of the exact settings of another. <i>Please note</i>, however,
+    that for non-Core field types (i.e. field types defined through separate modules),
+    this will <b>not</b> copy over any template or code hooks defined. So don't be surprised
+    if you make a copy of the Google Maps field type and find that your new version doesn't
+    work!
+  </p>
+
+  <p>
+    After you have created your new field type, you'll be redirected to the edit section
+    where you can customize it. For information on that, see the upcoming
+    <a href="../editing_field_types">Editing Field Types</a> section.
+  </p>
+
 
 {% include close_section.html %}

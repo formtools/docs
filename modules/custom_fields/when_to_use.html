@@ -12,5 +12,59 @@ next: Use in External forms,/modules/custom_fields/external_forms
 
 {% include open_section.html nav='nav_custom_fields.html' selected='when_to_use' %}
 
+  <h3>When to use?</h3>
+
+  <p>
+    Since field types can be created and managed separately through both separate modules
+    <i>or</i> the Custom Fields module, which should you choose? Which is a better fit
+    for what you're trying to do?
+  </p>
+
+
+  <h4>What it's good for</h4>
+
+  <p>
+    The Custom Fields module provides a relatively simple interface for creating and
+    managing your field types, so for things like making small change to the field
+    types, adding new (simple) ones, adding validation rules, adding new settings and
+    so on and so forth, it's perfect.
+  </p>
+
+  <p>
+    For example, once browsers implement the new HTML5 standards better and we start seeing
+    sliders and colour-pickers as native form elements, creating them through this module
+    is an absolute breeze.
+  </p>
+
+  <p>
+    It's also exceedingly good as a workarea to try things out. The File upload, Google
+    Maps and WYSIWYG modules were all initially created via this module. I moved them into
+    separate modules for a number of reasons, including the fact that they are optional.
+    Placing them in separate modules allows users to only install those component that
+    they need.
+  </p>
+
+  <h4>What it's <i>not</i> good for</h4>
+
+  <p>
+    Advanced stuff. The file upload field, for example, is placed in a separate module
+    due to the complex server-side code that is needed to handle all the different
+    places that files are uploaded. The Custom Fields interface also doesn't allow you to
+    override <a href="/module_development/hooks">code or template hooks</a>: for that, you'll need a separate module.
+  </p>
+
+  <p>
+    If you require separate resource files (JS, Flash etc), you can <i>link</i> to
+    them via the module, but there's no facility to upload them to the site. So either
+    you need to use FTP to upload them, or wrap them in a separate module.
+  </p>
+
+  <h4>Still Not sure?</h4>
+
+  <p>
+    If you're not sure about whether you should pick this module to create your field
+    types / changes, <a href="http://forums.formtools.org">pipe up in the forums</a> and
+    describe what you're trying to do. We'll try to help out!
+  </p>
 
 {% include close_section.html %}

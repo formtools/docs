@@ -5,12 +5,40 @@ heading: Custom Fields
 breadcrumbs:
 - Modules,/modules
 - Custom Fields,/modules/custom_fields/
-- Use in External Forms
-prev: When to use?,/modules/custom_fields/when_to_use
-next: Core Compatibility,/modules/custom_fields/core_compatibility
+- Shared Characteristics
+prev: Settings tab,/modules/custom_fields/settings_tab
+next: Questions?,/modules/custom_fields/questions
 ---
 
-{% include open_section.html nav='nav_custom_fields.html' selected='external_forms' %}
+{% include open_section.html nav='nav_custom_fields.html' selected='shared_characteristics' %}
+
+  <h3>Shared Characteristics</h3>
+
+  {% include screenshot.html item="i339.gif" %}
+
+  <p>
+    In the module's navigation, you'll notice a menu item titled "Shared Characteristics".
+    The purpose of this page is to allow direct mapping of field settings between field types,
+    to provide a little meta data to the Core script. A little explanation may be necessary!
+  </p>
+
+  <p>
+    With the addition of the customizable field types, the field type settings became totally
+    discrete entities, semantically distinct from one another. In Form Tools 2.0.x, the Core
+    code was hardcoded: it would know that the field storing the Option List for radios and
+    for checkboxes were the same. But this changed in 2.1.0. So, for example, if a Form Tools
+    administrator using Form Tools 2.0.x changed the field type of a dropdown to a multi-select
+    dropdown, they wouldn't need to re-specify the Option List being used. However, in 2.1.x,
+    it's not so simple.
+  </p>
+
+  <p>
+    This page was the solution: it lets you map arbitrary characteristics of your
+    field type settings so that changing the field type will still maintain as many of the
+    settings already specified. Fundamentally, it allows for a more intuitive interface,
+    intelligently retaining as many configured settings as is possible, depending on the
+    source and destination field types.
+  </p>
 
 
 {% include close_section.html %}

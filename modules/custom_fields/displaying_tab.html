@@ -5,12 +5,39 @@ heading: Custom Fields
 breadcrumbs:
 - Modules,/modules
 - Custom Fields,/modules/custom_fields/
-- Use in External Forms
-prev: When to use?,/modules/custom_fields/when_to_use
-next: Core Compatibility,/modules/custom_fields/core_compatibility
+- Editing Field Types,/modules/custom_fields/editing_field_types
+- Displaying tab
+prev: Main tab,/modules/custom_fields/main_tab
+next: Saving tab,/modules/custom_fields/saving_tab
 ---
 
-{% include open_section.html nav='nav_custom_fields.html' selected='external_forms' %}
+{% include open_section.html nav='nav_custom_fields.html' selected='displaying_tab' %}
 
+  <h3>Displaying tab</h3>
+
+  {% include screenshot.html item="i334.gif" %}
+
+  <p>
+    Now we're getting into the fun stuff! The second <i>Displaying</i> tab controls everything
+    related to how the field type is displayed: it lets you customize every last character
+    that appears in the markup. It lets you interact with the (custom) field type settings
+    so that the markup changes depending on how it's configured - and lots more!
+  </p>
+
+  <p>
+    The Displaying tab is separated into four sub-tabs:
+  </p>
+
+  <ol>
+    <li><b>View Field</b> - this determines the code used to generate the field content when
+      it's being <i>viewed</i>. Fields are viewed in different places, based on the context. The
+      two most common places are on the Submission Listing page, and on the Edit Submission page
+      when the field is marked as uneditable.</li>
+    <li><b>Edit Field</b> - this controls the markup used to display the <i>editable</i>
+      version of the field.</li>
+    <li><b>CSS</b> - this lets you add in any custom CSS needed for the field type.</li>
+    <li><b>Javascript</b> - this lets you add in any custom javascript needed for the field type./li&gt;
+    </li>
+  </ol>
 
 {% include close_section.html %}

@@ -12,5 +12,58 @@ next: When to use?,/modules/custom_fields/when_to_use
 
 {% include open_section.html nav='nav_custom_fields.html' selected='core_field_types' %}
 
+  <h3>The Core Field Types</h3>
+
+  <p>
+    The Form Tools Core come pre-bundled with the field types listed below. Between
+    them, these field types cover all of the most typical fields needed in
+    people's forms. Each field type comes prefigured with the appropriate settings
+    and validation so no additional configuration is needed.
+  </p>
+
+  <ul>
+    <li>Textboxes</li>
+    <li>Password fields</li>
+    <li>Textareas</li>
+    <li>Radio Buttons</li>
+    <li>Checkboxes</li>
+    <li>Dropdown fields</li>
+    <li>Multi-select dropdowns</li>
+    <li>Dates</li>
+    <li>Times</li>
+    <li>Phone Number fields</li>
+    <li>Code / Markup fields</li>
+  </ul>
+
+  <p>
+    This module lets you edit any of these Core field types, with the exception of
+    <i>textboxes</i> and <i>dates</i>. Those two field types have hardcoded references in
+    the Core (for the Submission ID, Last Modified, Submission Date and IP Address)
+    and cannot be changed. Instead, the module allows you to make copies of them, which
+    you can then edit.
+  </p>
+
+  <h4>Additional Field Types</h4>
+
+  <p>
+    In addition, field types may also be created via separate modules. This has several
+    benefits over using the Custom Fields module, but it's considerably more complex.
+    <a href="http://www.formtools.org/download.php">The main Form Tools download package</a>,
+    contains two additional field type modules:
+  </p>
+
+  <ul>
+    <li><a href="/modules/field_type_file/">File Upload field</a></li>
+    <li><a href="/modules/field_type_tinymce/">TinyMCE (WYSIWYG) field</a></li>
+  </ul>
+
+  <p>
+    Any module that extends the Core with their own field types <b>cannot</b> be edited
+    via the Custom Fields module. You can use the module to browse their configurations
+    to see how they've been set up, but you won't be able to update them. This ensures
+    that you never make changes to those field type configurations which are later
+    overwritten by updates to the module.
+  </p>
+
 
 {% include close_section.html %}

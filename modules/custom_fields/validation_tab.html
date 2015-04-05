@@ -5,12 +5,27 @@ heading: Custom Fields
 breadcrumbs:
 - Modules,/modules
 - Custom Fields,/modules/custom_fields/
-- Use in External Forms
-prev: When to use?,/modules/custom_fields/when_to_use
-next: Core Compatibility,/modules/custom_fields/core_compatibility
+- Editing Field Types,/modules/custom_fields/editing_field_types
+- Validation tab
+prev: Saving tab,/modules/custom_fields/saving_tab
+next: Settings tab,/modules/custom_fields/settings_tab
 ---
 
-{% include open_section.html nav='nav_custom_fields.html' selected='external_forms' %}
+{% include open_section.html nav='nav_custom_fields.html' selected='validation_tab' %}
 
+  <h3>Validation tab</h3>
+
+  {% include screenshot.html item="i336.gif" %}
+
+  <p>
+    Form Tools 2.1.4 added the option to offer field validation in your Form Tools forms.
+    We implemented this as a field-type specific feature, since certain validation rules only
+    make sense for certain field types. For example, you won't need a "valid email only"
+    validation rule for a group of checkboxes or a WYSIWYG field, but you would for a textbox.
+  </p>
+
+  <p>
+    The Validation tab lets you create and customize those validation rules.
+  </p>
 
 {% include close_section.html %}
