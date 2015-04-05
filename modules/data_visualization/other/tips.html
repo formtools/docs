@@ -1,0 +1,87 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Other Information,/modules/data_visualization/other
+  - Tips for Creating Great Charts
+prev: Caching and Load Times,/modules/data_visualization/other/caching
+next: Feature Suggestions,/modules/data_visualization/other/feature_suggestions
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='tips' %}
+
+  <h3>Tips for Creating Great Charts</h3>
+
+  <p>
+    Here are a few tips for creating attractive, useful charts.
+  </p>
+
+  <h4>Know Thine Data</h4>
+
+  <p>
+    To produce an aesthetically appealing, clearly illustrative graph, you need to know
+    about your data set. If your form had 1000 submissions come through in March, but
+    none in the other months of the year, choosing to graph the entire year won’t be
+    terribly useful. The cardinal rule is: <i>know thine data.</i>
+  </p>
+
+  <h4>Don't be afraid Adjust and Tweak</h4>
+
+  <p>
+    Secondly, graphing is something you do during and after submissions have come in.
+    While you’re certainly welcome to create as many visualizations as you want
+    before your form has any data in it, but when the data starts coming in, you may
+    find that they’re not as valuable as you thought. We've found that you may often find
+    yourself returning to the visualization to tweak the settings based on the actual
+    data set.
+  </p>
+
+  <hr size="1">
+  <h3>Activity Chart Tips</h3>
+
+  <h4>Long durations = months, short durations = days</h4>
+
+  <p>
+    Pick the grouping count (days or months) based on the time period being graphed. It
+    doesn't make sense to display the submission count for each day for the last 5 years:
+    there's way too much information to graph. It'll take a long time to render and
+    may appear blank because there's so much information!
+  </p>
+
+  <hr size="1">
+
+  <h3>Field Chart Tips</h3>
+
+  <h4>Use fields assigned to Option Lists</h4>
+
+  <p>
+    For Field Charts, pick fields that are assigned to Option Lists - not those that
+    allow free entered text. Field Charts graph the total count of shared values, so if
+    you pick an input field to graph, chances are
+  </p>
+
+  <h4>Omit Empty Values</h4>
+
+  <p>
+    The option to omit empty values is a very handy one. If the field isn't required in your
+    form, you're going to have a lot of empty values which can throw off the graph.
+  </p>
+
+  <h4>Bars &amp; Columns vs Pie Charts</h4>
+
+  <p>
+    Google Charts is pretty darn cool. It does a tremendous amount of clever stuff behind
+    the scenes to make your chart look good. There's a subtle difference with the way
+    it handles Bar / Column Charts and Pie Charts. If the field you are charting
+    has value counts in a similar range - between 1000 and 1020, for example, then choosing
+    to use a Pie Chart may not be much use: it will let you see at a glance that all have
+    about the same counts, but nothing more. But if you choose a Bar or Column Chart, Google
+    Charts will automatically adjust the axes to start at a higher number - thus reducing the
+    range displayed, showing (say) 980 - 1020. This will highlight the differences in the
+    values between the values entered in the field.
+  </p>
+
+{% include close_section.html %}

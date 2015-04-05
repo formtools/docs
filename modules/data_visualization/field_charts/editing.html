@@ -1,0 +1,74 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Field Charts,/modules/data_visualization/field_charts
+  - Editing a Field Chart
+prev: Creating a Field Chart,/modules/data_visualization/field_charts/creating
+next: Viewing your visualizations,/modules/data_visualization/viewing
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='editing_field_charts' %}
+
+  <h3>Editing a Field Chart</h3>
+
+  <p>
+    The Add Field Chart page contains only a subset of all the available fields, so
+    that you can create the visualization as quickly as possible. But after its been
+    created, click the edit icon on the main visualization page to edit the item.
+    There, you'll find more settings at your disposal - grouped in four tabs.
+  </p>
+
+  <table cellspacing="0" cellpadding="2" class="info" width="100%">
+    <tbody><tr>
+      <td valign="top" width="120" class="blue">Main tab</td>
+      <td valign="top">
+        The first tab contains all the most important settings of the visualization:
+        the name by which it is to be identified, which form, View and field it is
+        concerned with, and the update frequency of the cache. For more information on
+        the cache, see the
+        <a href="/modules/data_visualization/other/caching">Caching and Load Times</a> page.
+      </td>
+      <td>
+        {% include screenshot.html item="i290.gif" %}
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Appearance tab</td>
+      <td valign="top">
+        The second tab contains all the settings relating to the appearance of the
+        Activity Chart. These are all discussed on the
+        <a href="/modules/data_visualization/field_charts/creating">Creating a new Field Chart</a> and
+        <a href="/modules/data_visualization/field_charts/default_settings">Default Settings</a> pages.
+      </td>
+      <td>{% include screenshot.html item="i291.gif" %}</td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Permissions tab</td>
+      <td valign="top">
+        The third tab lets you control who sees the visualization. The permissions allow
+        you to easily fine-tune it by assigning it to particular client accounts and/or
+        particular Views. <a href="/modules/data_visualization/other/permissions">Click here</a> for more information
+        on the visualization permissions.
+      </td>
+      <td>{% include screenshot.html item="i292.gif" %}</td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Advanced tab</td>
+      <td valign="top">
+        The fourth and final tab contains information and code for adding the visualization
+        in your own pages or in pages created by the Pages module. To display it
+        in your own PHP pages, you can just copy and paste the code supplied (note: your
+        pages need to be .php!). For more information on displaying the visualization
+        through the pages module, <a href="">give this page a
+        read.</a>
+      </td>
+      <td>{% include screenshot.html item="i293.gif" %}</td>
+    </tr>
+    </tbody></table>
+
+
+{% include close_section.html %}

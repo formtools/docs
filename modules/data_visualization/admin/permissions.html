@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+- Modules,/modules
+- Data Visualization,/modules/data_visualization
+- Administration,/modules/data_visualization/admin
+- Permissions
+prev: Main Settings,/modules/data_visualization/admin/main_settings
+next: Other Information,/modules/data_visualization/other
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='permissions' %}
+
+  <h3>Permissions</h3>
+
+  {% include screenshot.html item="i292.gif" %}
+
+  <p>
+    An important part of this module is the permissions: who can see what visualization. We
+    modeled the permissions after the Export Manager, which lets you map permissions to the
+    form View and/or to particular client accounts.
+  </p>
+
+  <p>
+    The other permission-related setting is found on the <a href="/modules/data_visualization/admin/main_settings">Main
+    Settings</a> page. There, the "Allow clients to refresh cache" setting lets you control
+    whether or not client accounts may update the cache for visualizations that appear in
+    their <a href="/modules/data_visualization/viewing/quicklinks_dialog">Quicklinks Dialog</a>.
+  </p>
+
+
+{% include close_section.html %}

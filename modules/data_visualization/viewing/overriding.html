@@ -1,0 +1,149 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Viewing your visualizations,/modules/data_visualization/viewing/
+  - Overriding visualization settings
+prev: The Pages module,/modules/data_visualization/viewing/pages_module
+next: Administration,/modules/data_visualization/admin
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='overriding' %}
+
+  <h3>Overriding visualization settings</h3>
+
+  <p class="alert alert-info">
+    This feature was added in 1.0.4.
+  </p>
+
+  <p>
+    When using your visualizations in the Pages module or in your own website, you may
+    sometimes find it useful to override specific aspects of the visualization: changing the
+    colour, hiding the title, changing the size, and so on. Before 1.0.4, you'd need to create a separate
+    visualization - now you can use the same one.
+  </p>
+
+  <p>
+    The next two sections explain how to override the settings for in Smarty and PHP. The
+    section at the bottom of the page describes all the settings that may be overridden.
+  </p>
+
+  <p><b>Smarty</b></p>
+
+  <p>
+    A typical Smarty function call looks like this:
+  </p>
+
+{% raw %}
+  <textarea class="codemirror" data-lang="smarty">{template_hook location="data_visualization" vis_id=1 height=300 width=600}</textarea>
+{% endraw %}
+
+  <p>
+    That will display the visualization (with ID of 1), with dimensions
+    600 x 300. To override any of the settings (listed below), just add them as separate
+    attributes. For example, let's change the colour to "red" and add a custom title:
+  </p>
+
+{% raw %}
+<textarea class="codemirror" data-lang="smarty">{template_hook location="data_visualization" vis_id=1 height=300 width=600
+  colour="red" title="My custom title..."}</textarea>
+{% endraw %}
+
+  <hr size="1">
+
+  <p><b>PHP</b></p>
+
+  <p>
+    A typical PHP function call looks like this:
+  </p>
+
+<textarea class="codemirror" data-lang="php"><?php
+require_once('/path/to/formtools/global/library.php');
+ft_include_module("data_visualization");
+$visualization_id = 1;
+$width  = 600;
+$height = 300;
+dv_display_visualization($visualization_id, $width, $height);
+?></textarea>
+
+  <p>
+    That will display the visualization (with ID of 1), with dimensions
+    600 x 300. To override any of the settings (listed below), just add them as separate
+    attributes. For example, let's do the same as above: change the colour to "red"
+    and a custom title.
+  </p>
+
+<textarea class="codemirror" data-lang="php"><?php
+require_once('/path/to/formtools/global/library.php');
+ft_include_module("data_visualization");
+$visualization_id = 1;
+$width  = 600;
+$height = 300;
+$settings = array(
+  "colour" => "red",
+  "title"  => "My custom title!"
+);
+dv_display_visualization($visualization_id, $width, $height, $settings);
+?></textarea>
+
+  <p>
+    Note the fourth parameter. That (optional) parameter is how you override the settings.
+  </p>
+
+  <hr size="1">
+
+  <p><b>What may be overridden</b></p>
+
+  <table cellspacing="0" cellpadding="1" class="info" width="100%">
+    <tbody><tr>
+      <th width="160">Visualization Type</th>
+      <th>Setting</th>
+      <th>Permitted values</th>
+    </tr>
+    <tr>
+      <td valign="top" rowspan="3">Activity Chart</td>
+      <td width="120">title</td>
+      <td>any string</td>
+    </tr>
+    <tr>
+      <td>colour</td>
+      <td>"red", "orange", "yellow", "green", "blue", "indigo", "violet", "black", "gray"</td>
+    </tr>
+    <tr>
+      <td>line_width</td>
+      <td>any number 0-10</td>
+    </tr>
+    <tr>
+      <td valign="top" rowspan="4">Field Chart</td>
+      <td width="120">title</td>
+      <td>any string</td>
+    </tr>
+    <tr>
+      <td>pie_chart_format</td>
+      <td>(for pie charts only) "3D" or "2D"</td>
+    </tr>
+    <tr>
+      <td>include_legend</td>
+      <td>(for pie charts only) "yes" / "no"</td>
+    </tr>
+    <tr>
+      <td>colour</td>
+      <td>"red", "orange", "yellow", "green", "blue", "indigo", "violet", "black", "gray"</td>
+    </tr>
+    </tbody></table>
+
+  <p><b>Other tips!</b></p>
+
+  <ul>
+    <li>The "colour" setting actually gives you more flexibility than is currently
+      provided by the module's interface. In addition to specifying the colour strings ("red",
+      "orange" and so on), you can also supply hex values, like "#C4159F".</li>
+    <li>If you don't want a title to your visualization, just override the <b>title</b>
+      setting with an empty string.</li>
+  </ul>
+
+
+{% include close_section.html %}

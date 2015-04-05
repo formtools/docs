@@ -1,0 +1,61 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+- Modules,/modules
+- Data Visualization,/modules/data_visualization
+- Other Information,/modules/data_visualization/other
+- Caching and Load Times
+prev: How to Install,/modules/data_visualization/other/how_to_install
+next: Tips for Creating Great Charts,/modules/data_visualization/other/tips
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='caching' %}
+
+  <h3>Caching and Load Times</h3>
+
+  <p>
+    So... caching! Caching is both your best and worst friend - that's right: it's
+    your <b>frenemy</b>. It can vastly improve speed but also lead to a great deal
+    of confusion when things don't appear to be updating. With that in mind, we were
+    extremely careful when designing the caching component. Whenever viewing the
+    visualizations through the <a href="/modules/data_visualization/viewing/quicklinks_dialog">Quicklinks dialog</a>,
+    the last cached time is shown (or "Not cached" if you've disabled the cache for
+    the visualization).
+  </p>
+
+  <h4>Why cache?</h4>
+
+  <p>
+    So here's the problem in a nutshell. Imagine your form contains a very large
+    data set: thousands, or even hundreds of thousands of records. When you choose to
+    create a visualizations on that data set, there's actually a tremendous amount of
+    work involved with rendering it: the database query takes a
+    long time to process, and the volume of information passed from the server to the
+    client can be excessively large. Caching can significantly speed this up. Instead of
+    re-running the same long-running query multiple times, it performs it once and caches
+    the result. Then for a set duration, all subsequent queries pull the information
+    from the cache instead of re-running the query.
+  </p>
+
+  <p>
+    Every visualization you create through the module has a cache frequency. If you choose,
+    you can set it not to cache at all - but you should only use that when speed
+  </p>
+
+  <p>
+    The basic rule of thumb is to just play it by ear. If you find visualizations are
+    taking a long time to load then use the cache.
+  </p>
+
+  <p>
+    Google Charts (which is used to render the actual charts) may take a long time
+    to display a visualization if there is a huge amount of data being passed into it. So
+    although caching will improve the speed in some cases, if your visualization contains
+    a lot of data (e.g. you're'graphing the activity count every day for the last 5 years),
+    the visualization will still take time to load. I'm afraid this is unavoidable - so
+    configure your visualizations well!
+  </p>
+
+{% include close_section.html %}

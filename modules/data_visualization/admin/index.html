@@ -6,14 +6,39 @@ breadcrumbs:
   - Modules,/modules
   - Data Visualization,/modules/data_visualization
   - Administration
-prev: one,/modules/data_visualization
-next: one,/modules/data_visualization
+prev: Overriding visualization settings,/modules/data_visualization/viewing/overriding
+next: Main Settings,/modules/data_visualization/admin/main_settings
 ---
 
-{% include open_section.html nav='nav_data_visualization.html' selected='activity_charts' %}
+{% include open_section.html nav='nav_data_visualization.html' selected='admin' %}
 
   <h3>Administration</h3>
 
+  {% include screenshot.html item="i294.gif" %}
+
+  <p>
+    As soon as you've created a few visualizations, you're going to find you need an easy
+    way to manage them: to locate, edit and delete them. Usability was taken into account
+    in all aspects of this module, so hopefully you'll find it easy to use!
+  </p>
+
+  <p>
+    The main page of the module looks something like the screenshot to the right: it
+    contains an advanced search bar at the top, letting you search for precisely those
+    visualizations you're interested in - by form, View, account, chart types and more.
+  </p>
+
+  <p>
+    In addition, this page was designed to work in conjunction with the administrator's
+    <a href="/modules/data_visualization/viewing/quicklinks_dialog">Quicklinks Dialog</a> so whenever you click the "Manage
+    Visualizations" button on a particular form View, it will redirect you to this page and
+    pre-fill the search to limit the results to only those visualizations you were just looking
+    at.
+  </p>
+
+  <p>
+    If you have any suggestions for this page, please let us know through <a href="http://forums.formtools.org">the forums</a>.
+  </p>
 
 
 {% include close_section.html %}
