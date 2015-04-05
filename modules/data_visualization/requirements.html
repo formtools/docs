@@ -1,0 +1,46 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Requirements
+prev: Introduction,/modules/data_visualization
+next: The module interface,/modules/data_visualization/interface
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='requirements' %}
+
+  <h3>Requirements</h3>
+
+  {% include screenshot.html item="i297.gif" %}
+
+  <ul>
+    <li>You must be using Form Tools Core <b>2.1.0 or later</b>.</li>
+    <li>This module uses the <a href="http://code.google.com/apis/chart/" target="_blank">Google
+      Charts API</a> to generate and render the visualization types. As such, you will always
+      need to be connected to the internet to see the visualizations. <b>This module will
+      not work offline</b>.
+    </li>
+    <li>You must agree to the Google Charts <a href="http://code.google.com/apis/chart/interactive/terms.html" target="_blank">Terms of
+        Service</a>.</li>
+  </ul>
+
+  <h4>Working locally with no internet?</h4>
+  <p>
+    If you happen to be working on a Form Tools installation on your local computer
+    without internet, the module will continue to load pages, just not the visualizations
+    themselves. Specifically, you'll see:
+  </p>
+
+  <ul>
+    <li>In the manage visualizations section, a message will be displayed on each page
+      notifying you that the module could not load the Google Charts library.</li>
+    <li>The Quicklinks dialog icon will continue to appear for the administrator and
+      client accounts so you can see what visualizations would normally appear for the form
+      and View, but none of them will actually appear - only the headings.</li>
+  </ul>
+
+
+{% include close_section.html %}

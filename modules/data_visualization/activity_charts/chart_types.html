@@ -1,0 +1,46 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Activity Charts,/modules/data_visualization/activity_charts
+  - Chart Types
+prev: Default Settings,/modules/data_visualization/activity_charts/default_settings
+next: Creating an Activity Chart,/modules/data_visualization/activity_charts/creating
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='activity_chart_types' %}
+
+  <h3>Chart Types</h3>
+
+  <table cellspacing="0" cellpadding="1" class="info">
+    <tbody><tr>
+      <td width="140" valign="top" class="blue">Line Charts</td>
+      <td valign="top">
+        Line Charts are just that! A single, coloured line showing the activity for
+        each day / month. If you mouseover any of the points a tooltip will appear
+        describing the day / month.
+      </td>
+      <td>{% include screenshot.html item="i301.gif" %}</td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Area Charts</td>
+      <td valign="top">
+        Area Charts are visually very much like Line Charts, except the area beneath the
+        line is filled in.
+      </td>
+      <td>{% include screenshot.html item="i278.gif" %}</td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Column Charts</td>
+      <td valign="top">
+        Column Charts show the activity of each day/month in columns. As with the other chart
+        types, you can mouseover the columns to see the details for that column.
+      </td>
+      <td>{% include screenshot.html item="i279.gif" %}</td>
+    </tr>
+    </tbody></table>
+
+{% include close_section.html %}

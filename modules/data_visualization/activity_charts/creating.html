@@ -1,0 +1,110 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Activity Charts,/modules/data_visualization/activity_charts
+  - Creating an Activity Chart
+prev: Activity Chart Types,/modules/data_visualization/activity_charts/chart_types
+next: Editing an Activity Chart,/modules/data_visualization/activity_charts/editing
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='creating_activity_charts' %}
+
+  <h3>Creating an Activity Chart</h3>
+
+  {% include screenshot.html item="i283.gif" %}
+
+  <p>
+    Okay! Let's create a new Activity Chart.
+  <p>
+
+  <p>
+    Select the Data Visualization module from the Modules page in the Form Tools
+    administration section. There, on the first page you
+    get redirected to, click the "Create New Visualization" button. A dialog window
+    will appear that looks like the screenshot to the right. To make it as clear as possible,
+    the two visualization types are clearly marked. Click on the "Activity Chart" image
+    on the left.
+  </p>
+
+  <p>
+    After you click it, you will be redirected to a single page where you can configure your
+    new Activity Chart. Like with the <a href="../default_settings/">default
+    Activity Chart settings</a>, the page contains two sample visualizations: thumbnail and
+    full size.
+  </p>
+
+  {% include screenshot.html item="i302.gif" %}
+
+  <p>
+    The screenshot to the right shows how the page looks before setting
+    any values. Here's what each of the settings mean.
+  </p>
+
+  <h4>Main Settings</h4>
+
+  <table cellspacing="0" cellpadding="1" class="info">
+    <tbody><tr>
+      <td class="blue" width="160" valign="top">Visualization Name</td>
+      <td>
+        This is used to identify this visualization. It's used in the module when browsing
+        your visualizations, and in the visualizations themselves to provide a title.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Form</td>
+      <td>
+        This determines which form submissions you wish to visualize.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h4>Appearance</h4>
+
+  <table cellspacing="0" cellpadding="1" class="info">
+    <tbody><tr>
+      <td width="200" valign="top" class="blue">Date Range to display</td>
+      <td>
+        This determines the time period to include in the graph. There are a lot of options,
+        but bear in mind that the larger the duration, the slower the visualization will
+        take to load.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Group submission count by</td>
+      <td>
+        This lets you group together the activity county by day or month. If you've selected
+        a short period to graph (e.g. the last week), it wouldn't make sense to choose
+        "month" here. Likewise, if you chose to display a year or more, you wouldn't want
+        to select "week" in this field.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Chart Type</td>
+      <td>
+        Activity Charts can be displayed as Line Charts, Area Charts or Column Charts. Click
+        on each on to see what they look like. The <a href="../chart_types">next
+        page</a> also shows each one.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Colour</td>
+      <td>
+        This controls the default colour of all Activity Charts.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Line Width</td>
+      <td>
+        This final setting is relevant for Line and Area Charts only: it controls how thick
+        the top line is.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+{% include close_section.html %}

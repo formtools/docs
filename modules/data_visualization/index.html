@@ -1,0 +1,74 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization
+next: Requirements,/modules/data_visualization/requirements
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='introduction' %}
+
+  <h3>Data Visualization</h3>
+
+  {% include screenshot.html item="i299.gif" %}
+
+  <p>
+    Form Tools is great for gathering and managing information, but not so great at
+    summarizing it. Up to now, it's been up to you to download your form submission data
+    and interpret it - which is not exactly convenient! Well, that's the purpose of
+    the Data Visualization module. It lets you - very easily - visualize different
+    aspects of your form data through Line Charts, Area Charts, Pie Charts, Bar Charts
+    and Column Charts, providing you and your users with an attractive, high level view
+    of your data.
+  </p>
+
+  <h4>Functionality, in brief</h4>
+
+  <p>
+    This module provides a simple interface to create and manage your visualizations,
+    assign them to specific forms, and allows you fine-tune the permissions so that
+    each client may see different visualizations (if needed). It lets you embed your
+    visualizations in custom pages in the Form Tools user interface and in your own
+    web pages. There is no limit to the number of visualizations you can create, and
+    each may be customized with its own style.
+  </p>
+
+  <h4>Visualization Types</h4>
+
+  <p>
+    The current version of this module allows for two ways to visualization your data, but
+    depending on demand, we hope to expand this functionality (see the <a href="other/feature_suggestions/">Feature Suggestions</a> page!).
+  </p>
+
+  <table cellspacing="0" cellpadding="4" class="info">
+    <tbody><tr>
+      <th colspan="2" style="height: 20px; text-align: left">&nbsp;Activity Charts</th>
+    </tr>
+    <tr>
+      <td valign="top">
+        Activity Charts display the activity on your forms: the frequency of submissions
+        during particular periods of time. You may choose between <b>Line Charts</b>,
+        <b>Area Charts</b> and <b>Column Charts</b> to display the data.
+      </td>
+      <td>
+        {% include screenshot.html item="i280.gif" %}
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" style="height: 20px; text-align: left">&nbsp;Field Charts</th>
+    </tr>
+    <tr>
+      <td valign="top">
+        Field Charts display the breakdown of content in a single form field. Generally,
+        this visualization type is used on multi-select Option List fields, since they
+        offer a finite number of values that the field may contain. You may choose
+        between <b>Pie Charts</b>, <b>Bar Charts</b> and <b>Column Charts</b> to display
+        the data.
+      </td>
+      <td>{% include screenshot.html item="i297.gif" %}</td>
+    </tr>
+    </tbody></table>
+
+{% include close_section.html %}

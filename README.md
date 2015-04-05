@@ -47,3 +47,11 @@ take some time to run. It's only run once.
 That starts a local server which you can access at `http://localhost:4000/docs/`. At this point, you can edit the files
 locally and the HTML files will be automatically regenerated on the fly.
 
+
+
+### Remaining TODO (for me)
+
+- remove all tables 
+- search for 'demo' and remove any references
+- link checker on the entire doc (once complete)
+
