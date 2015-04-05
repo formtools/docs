@@ -6,13 +6,39 @@ breadcrumbs:
   - Modules,/modules
   - Data Visualization,/modules/data_visualization
   - Field Charts
-prev: one,/modules/data_visualization
-next: one,/modules/data_visualization
+prev: Editing an Activity Chart,/modules/data_visualization/activity_charts/editing
+next: Default Settings,/modules/data_visualization/field_charts/default_settings
 ---
 
-{% include open_section.html nav='nav_data_visualization.html' selected='activity_charts' %}
+{% include open_section.html nav='nav_data_visualization.html' selected='field_charts' %}
 
   <h3>Field Charts</h3>
 
+  {% include screenshot.html item="i282.gif" %}
+
+  <p>
+    The second type of visualization are called <b>Field Charts</b>: they display the
+    breakdown of values in a single form field, showing the total count of each option.
+    As such, you'll mostly want to use this visualization type with fields that have a
+    finite list of input options - e.g. dropdowns, radio button and checkbox groups -
+    anything that uses an <a href="/userdoc/form_management/option_lists">Option List</a>. You <b>can</b> use this with
+    any field type, but you may get some pretty weird
+    charts if there are hundreds of different values! (See the section on
+    <a href="/modules/data_visualization/other/tips">Tips for creating great charts</a>).
+  </p>
+
+  <p>
+    Field Charts can displayed as Pie Charts, Column Charts and Bar
+    Charts.
+  </p>
+
+  {% include screenshot.html item="i296.gif" %}
+
+  <ul>
+    <li><a href="default_settings/">Default Settings</a></li>
+    <li><a href="chart_types">Chart Types</a></li>
+    <li><a href="creating/">Creating a new Field Chart</a></li>
+    <li><a href="editing/">Editing a Field Chart</a></li>
+  </ul>
 
 {% include close_section.html %}

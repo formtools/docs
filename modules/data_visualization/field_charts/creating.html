@@ -1,0 +1,124 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Field Charts,/modules/data_visualization/field_charts
+  - Creating a Field Chart
+prev: Field Chart Types,/modules/data_visualization/field_charts/chart_types
+next: Editing a Field Chart,/modules/data_visualization/field_charts/editing
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='creating_field_charts' %}
+
+  <h3>Creating a Field Chart</h3>
+
+  {% include screenshot.html item="i283.gif" %}
+
+  <p>
+    To create a new Field Chart, select the module from the Modules page in the Form
+    Tools administrator interface and click the "Create New Visualization" button at
+    the bottom of the page. That will open up a dialog window that looks something
+    like the screenshot to the right. Mouseover the second column - Field Charts - and
+    click.
+  </p>
+
+  <p>
+    The Add Field Chart page looks something like the second screenshot on this page. As
+    with the other configuration pages, the page shows two visualizations - thumbnail
+    and full size - which get updated as you fill in the page. Here's what each of
+    the fields mean.
+  </p>
+
+  <h4>Main Settings</h4>
+
+  {% include screenshot.html item="i303.gif" %}
+
+  <table cellspacing="0" cellpadding="1" class="info">
+    <tbody><tr>
+      <td width="140" class="blue" valign="top">Visualization Name</td>
+      <td>The unique name of this visualization, used to describe what it's about.</td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Form</td>
+      <td>The form that contains the field you're interested in visualizing.</td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">View</td>
+      <td>
+        The form View. After you select this option, the fields dropdown will be populated with
+        all the fields in the selected View.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Field</td>
+      <td>
+        The field you're interested in visualizing. As mentioned elsewhere, Field Charts
+        generally work best on fields that are assigned to Option Lists - i.e. dropdowns,
+        radios and checkboxes.
+      </td>
+    </tr>
+    </tbody></table>
+
+  <h4>Appearance</h4>
+
+  <p>
+    This section is where you can customize the look and feel of the visualization.
+  </p>
+
+  <table cellspacing="0" cellpadding="1" class="info">
+    <tbody><tr>
+      <td width="160" class="blue" valign="top">Chart Type</td>
+      <td>The type of chart. Try selecting different ones to see how they look.</td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Ignore fields with empty values</td>
+      <td>
+        This setting is important to produce quality charts. If the form fields you're
+        visualizing isn't required, the likelihood is that it contains any number of empty
+        values. Graphing empty values can throw off the chart, so this setting lets you
+        rectify it.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Colour</td>
+      <td>
+        This is for Bar and Column charts only. It determines the colour of the bars / columns.
+      </td>
+    </tr>
+    </tbody></table>
+
+  <h4>Pie Chart Settings</h4>
+
+  <table cellspacing="0" cellpadding="1&quot;" class="info" width="100%">
+    <tbody><tr>
+      <td width="160" class="blue" valign="top">Pie Chart Format</td>
+      <td>Whether you want a 2D or 3D pie chart.</td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Include legend in thumbnail</td>
+      <td>
+        This setting controls whether the small thumbnail version of the visualization
+        which appears in the <a href="/modules/data_visualization/viewing/quicklinks_dialog">Quicklinks Dialog</a> should
+        contain a legend or not. Generally, you probably won't want to include it, because
+        there isn't enough space. However, if you've increased the size of the thumbnail
+        on the <a href="/modules/data_visualization/admin/main_settings">Main Settings</a> page, you may wish to include the
+        legend.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Include legend in full size</td>
+      <td>
+        This determines whether or no the full size thumbnail contains the legend or not. The
+        full size visualization is what you see in the
+        <a href="/modules/data_visualization/viewing/quicklinks_dialog">Quicklinks Dialog</a> after clicking on a particular
+        visualization. It also controls the presence of the legend in visualizations loaded
+        through the Pages module and in pages loaded in your own pages.
+      </td>
+    </tr>
+    </tbody></table>
+
+
+{% include close_section.html %}

@@ -5,14 +5,57 @@ heading: Data Visualization
 breadcrumbs:
   - Modules,/modules
   - Data Visualization,/modules/data_visualization
-  - Viewing your visualization
-prev: one,/modules/data_visualization
-next: one,/modules/data_visualization
+  - Viewing your visualizations
+prev: Editing a Field Chart,/modules/data_visualization/field_charts/editing
+next: The Quicklinks Dialog,/modules/data_visualization/viewing/quicklinks_dialog
 ---
 
 {% include open_section.html nav='nav_data_visualization.html' selected='viewing' %}
 
-  <h3>Viewing your visualization</h3>
+  <h3>Viewing your visualizations</h3>
+
+  <p>
+    You can view your visualizations in three different ways. The table below summarizes
+    them and the next three pages explain them in more detail.
+  </p>
+
+  <table cellspacing="0" cellpadding="1" class="info">
+    <tbody>
+    <tr>
+      <td valign="top" width="190">
+        <a href="/modules/data_visualization/viewing/quicklinks_dialog">The Quicklinks Dialog</a>
+      </td>
+      <td valign="top">
+        The quicklinks dialog is found on your form submissions page. There, after you've created
+        one or more visualizations for your form (and it has permissions to show up), you'll
+        see a new pie chart icon in the "quicklinks" bar, appearing at the top right of the
+        Submissions table. Clicking it will open up quicklinks dialog containing all the
+        visualizations.
+      </td>
+      <td valign="top">{% include screenshot.html item="i299.gif" %}</td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="/modules/data_visualization/viewing/pages_module">Through the Pages module</a></td>
+      <td valign="top">
+        The <a href="/modules/pages/">Pages module</a> lets you create
+        any number of pages to link to within the Form Tools UI. The Data Visualization
+        module directly interacts with that module to automatically create pages containing
+        your visualizations and assign them to your menus.
+      </td>
+      <td>{% include screenshot.html item="i295.gif" %}</td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="/modules/data_visualization/viewing/external_pages">In your own pages</a></td>
+      <td valign="top" colspan="2">
+        Lastly, you're welcome to use your visualizations in your own webpages. This
+        is terrific for publicly displaying summaries of your form data. What's best is
+        that you don't need any programming knowledge! Just copy and paste the generated
+        PHP into your own PHP pages to display the visualization. Changing the size is
+        as simple as changing a couple of values so you can re-use the same visualization
+        multiple times, each showing it in different sizes.
+      </td>
+    </tr>
+    </tbody></table>
 
 
 {% include close_section.html %}

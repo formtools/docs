@@ -1,0 +1,39 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Viewing your visualizations,/modules/data_visualization/viewing/
+  - In your own pages
+prev: The Pages module,/modules/data_visualization/viewing/pages_module
+next: Overriding Visualization Settings,/modules/data_visualization/viewing/overriding
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='external_pages' %}
+
+  <h3>Showing visualizations in your own pages</h3>
+
+  {% include screenshot.html item="i289.gif" %}
+
+  <p>
+    The final way to display your visualizations is to display them directly in your own
+    website pages, outside of Form Tools.
+  </p>
+
+  <p>
+    It's actually very simple. Edit the visualization that you're interested in and go to the
+    "Advanced" tab. There, copy and paste the PHP that's generated in the section at the
+    bottom into your own PHP pages. Note: the pages must be on the same server as your
+    Form Tools installation. It will not work otherwise.
+  </p>
+
+  <h4>Changing the Visualization Size</h4>
+
+  <p>
+    You can change the size of the visualization by simply changing the values of the
+    <b>$height</b> and <b>$width</b> variables.
+  </p>
+
+{% include close_section.html %}

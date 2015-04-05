@@ -1,0 +1,93 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Field Charts,/modules/data_visualization/field_charts
+  - Default Settings
+prev: Field Charts,/modules/data_visualization/field_charts/
+next: Field Chart Types,/modules/data_visualization/field_charts/chart_types/
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='field_charts_default_settings' %}
+
+  <h3>Default Settings</h3>
+
+  {% include screenshot.html item="i284.gif" %}
+
+  <p>
+    The "Field Chart" link in the module navigation (found as a submenu under "Main
+    Settings") controls the default settings for all Field Charts you create through the
+    module. If you need to create a lot of similar Field Charts, this page can help cut
+    down on configuration time.
+  </p>
+
+  <p>
+    As with other pages in the module, as you change the content on the page, the example
+    visualizations are automatically updated to reflect your selections. The two
+    visualizations on the page contain dud data, just to give you a sense of how the
+    "real" visualizations will look.
+  </p>
+
+  <h4>Appearance</h4>
+
+  <p>
+    This section is where you can customize the look and feel of the visualization.
+  </p>
+
+  <table cellspacing="0" cellpadding="1">
+    <tbody><tr>
+      <td width="160" class="blue" valign="top">Chart Type</td>
+      <td>The type of chart. Try selecting different ones to see how they look.</td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Ignore fields with empty values</td>
+      <td>
+        This setting is important to produce quality charts. If the form fields you're
+        visualizing isn't required, the likelihood is that it contains any number of empty
+        values. Graphing empty values can throw off the chart, so this setting lets you
+        rectify it.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Colour</td>
+      <td>
+        This is for Bar and Column charts only. It determines the colour of the bars / columns.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h4>Pie Chart Settings</h4>
+
+  <table cellspacing="0" cellpadding="1" class="info" width="100%">
+    <tbody><tr>
+      <td width="160" class="blue" valign="top">Pie Chart Format</td>
+      <td>Whether you want a 2D or 3D pie chart.</td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Include legend in thumbnail</td>
+      <td>
+        This setting controls whether the small thumbnail version of the visualization
+        which appears in the <a href="/modules/data_visualization/viewing/quicklinks_dialog">Quicklinks Dialog</a> should
+        contain a legend or not. Generally, you probably won't want to include it, because
+        there isn't enough space. However, if you've increased the size of the thumbnail
+        on the <a href="?page=main_settings">Main Settings</a> page, you may wish to include the
+        legend.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Include legend in full size</td>
+      <td>
+        This determines whether or no the full size thumbnail contains the legend or not. The
+        full size visualization is what you see in the
+        <a href="/modules/data_visualization/viewing/quicklinks_dialog">Quicklinks Dialog</a> after clicking on a particular
+        visualization. It also controls the presence of the legend in visualizations loaded
+        through the Pages module and in pages loaded in your own pages.
+      </td>
+    </tr>
+    </tbody></table>
+
+{% include close_section.html %}
