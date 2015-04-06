@@ -1,0 +1,57 @@
+---
+layout: default
+navPage: docs
+heading: Export Manager
+breadcrumbs:
+  - Modules,/modules
+  - Export Manager,/modules/export_manager
+  - Overview,/modules/export_manager/overview
+  - Export Groups vs. Export Types
+prev: How it works,/modules/export_manager/overview/how_it_works/
+next: "Version 2.x: what's changed?,/modules/export_manager/v2changes/"
+---
+
+{% include open_section.html nav='nav_export_manager.html' selected='terms' %}
+
+  <h3>Export Groups vs. Export Types</h3>
+
+  <p>
+    In order to understand how the Export Manager works, it helps to understand the
+    meaning of the following two terms.
+  </p>
+
+  <p>
+    An <b>Export Group</b> is a group of one or more Export Types. It lets you combine
+    ways of viewing / exporting the data that possess the same characteristics. For
+    example, the printer-friendly format (enabled by default) has three ways to view
+    the data: table format, one-by-one and one-submission per page. Since they are so
+    similar (they display the data in HTML), they are grouped together in the same group.
+  </p>
+
+  <p>
+    <b>Export Types</b> are the actual ways to display / generate the data, e.g.
+    displaying all submissions in an HTML table, or in XML format.
+  </p>
+
+  <p>
+    Combining export types into groups has a number of benefits:
+  </p>
+
+  <ul>
+    <li>In the UI, they are all displayed in the same line with the same icon. An
+      additional dropdown is shown, listing the available export types.</li>
+    <li>Certain features can be abstracted from the individual export type. For
+      example, you can define a header and footer, add headers (e.g. to tell the browser to
+      treat the export type as CSV, Excel or another format).</li>
+    <li>You can define "global" settings for all export types, saving you the bother of
+      having to set them again and again for all export types in the group, namely:
+      <ul>
+        <li><b>Permissions</b> - who can use the export types in this group: administrators, all clients or a subset.</li>
+        <li><b>Action</b> - should the file be opened in a popup, a new window or generate a file on the server.</li>
+        <li><b>Hide / Show</b> - a simple way to hide / show all export types.</li>
+      </ul>
+    </li>
+  </ul>
+
+
+{% include close_section.html %}

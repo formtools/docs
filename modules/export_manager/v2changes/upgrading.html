@@ -1,0 +1,57 @@
+---
+layout: default
+navPage: docs
+heading: Export Manager
+breadcrumbs:
+  - Modules,/modules
+  - Export Manager,/modules/export_manager
+  - "Version 2.x: what's changed?,/modules/export_manager/v2changes"
+prev: "Version 2.x: what's changed?,/modules/export_manager/v2changes"
+next: "Main Functionality,/modules/export_manager/main"
+---
+
+{% include open_section.html nav='nav_export_manager.html' selected='v2upgrading' %}
+
+  <h3>Version 2.x: what's changed?</h3>
+
+  <p>
+    When you upgrade your Form Tools Core to 2.1.0 or later, you must upgrade the Export
+    Manager module to the latest 2.x version. Earlier versions are not compatible with
+    the new version of the Core. Now here's the bad news: when you upgrade this module,
+    <i>any custom changes that you’ve made within the Export Manager interface - custom
+      Smarty code, custom labels, custom settings, client-mappings - will be lost</i>.
+  </p>
+
+  <p>
+    It's unfortunate but there was no way to safely upgrade this module Smarty content,
+    since the very interface allow you to make customizations. That was the whole point
+    of the Export Manager - to allow such customizations - but it also makes making the
+    necessary upgrades rather sticky.
+  </p>
+
+  <h4>No customizations? No worries.</h4>
+  <p>
+    After upgrading to this module, just select the module from the Modules page and go
+    to the "Reset to Defaults" page. There, click the button to reset all the module
+    settings and code. This will ensure compatibility with 2.1.0.
+  </p>
+
+  <h4>Customizations?</h4>
+  <p>
+    If you've made customizations to the module but still want to upgrade to Form Tools
+    2.1.0, you’ll need to manually add in your changes.
+  </p>
+
+  <ol>
+    <li>Download and install a local copy of Form Tools 2.1.0, including the latest
+      version of the Export Manager module.</li>
+    <li>Open up the module and look at the Smarty content for the Export Groups and
+      Export Types. Using that as a base, merge in your changes manually. The new Export
+      Group and Type Smarty code has changed somewhat, so if you have trouble applying your
+      changes, please post in the forums.</li>
+    <li>KEEP BACKUPS. It sounds obvious, but it's often forgotten. In case of disaster,
+      you'll have something to roll back to.</li>
+  </ol>
+
+
+{% include close_section.html %}

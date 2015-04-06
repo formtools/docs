@@ -1,0 +1,65 @@
+---
+layout: default
+navPage: docs
+heading: Data Visualization
+breadcrumbs:
+  - Modules,/modules
+  - Data Visualization,/modules/data_visualization
+  - Administration,/modules/data_visualization/admin
+  - Main Settings
+prev: Administration,/modules/data_visualization/admin
+next: Permissions (who sees 'em?),/modules/data_visualization/admin/permissions
+---
+
+{% include open_section.html nav='nav_data_visualization.html' selected='main_settings' %}
+
+  <h3>Main Settings</h3>
+
+  {% include screenshot.html item="i298.gif" %}
+
+  <p>
+    The Main Settings page contains a number of key settings for the module.
+  </p>
+
+  <table cellspacing="0" cellpadding="1" class="info">
+    <tbody><tr>
+      <td class="blue" valign="top" width="180">Quicklinks dialog default dimensions</td>
+      <td>
+        This setting lets you control the size of the Quicklinks dialog window. You can always
+        resize the dialog manually, but this can be more convenient.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Visualization thumb size</td>
+      <td>
+        This controls the size of the tiled visualizations in the Quicklinks dialog. You
+        probably don't want to make these <i>too</i> small, since the thumbnails will be
+        unrecognizable!
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Default cache frequency</td>
+      <td>
+        The determines the default cache frequency for all newly created visualizations. You
+        can always override this value for any individual visualization.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Allow clients to refresh cache</td>
+      <td>
+        If this is set to "yes", the client will see a small refresh icon in the Quicklinks
+        dialog window for each full-screen visualization. It allows them to reload the cache
+        to ensure they're always graphing the most up to date data.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Lastly, the "Clear Visualization Cache" button at the bottom lets you
+    empty the cache for all visualizations so the next time they are loaded the caches will
+    all be renewed.
+  </p>
+
+
+{% include close_section.html %}

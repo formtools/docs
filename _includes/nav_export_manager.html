@@ -1,0 +1,63 @@
+<div {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+	<a href="/modules/export_manager/">Introduction</a>
+</div>
+<div {% if include.selected == 'overview' %}class="selected"{% endif %}>
+  <a href="/modules/export_manager/overview">Overview</a>
+</div>
+<ul>
+	<li {% if include.selected == 'how_it_works' %}class="selected"{% endif %}>
+		<a href="/modules/export_manager/overview/how_it_works">How it works</a>
+	</li>
+	<li {% if include.selected == 'terms' %}class="selected"{% endif %}>
+		<a href="/modules/export_manager/overview/terms/">Export Groups vs. Export Types</a>
+	</li>
+</ul>
+
+<div {% if include.selected == 'v2changes' %}class="selected"{% endif %}>
+  <a href="/modules/export_manager/v2changes">Version 2.x: what's changed?</a>
+</div>
+<ul>
+  <li {% if include.selected == 'v2upgrading' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/overview/v2upgrading">Upgrading to 2.x: special instructions</a>
+  </li>
+</ul>
+
+
+<div {% if include.selected == 'main_functionality' %}class="selected"{% endif %}>
+  <a href="/modules/export_manager/functionality">Main Functionality</a>
+</div>
+<ul>
+  <li {% if include.selected == 'adding_export_groups' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/main/how_it_works">Adding Export Groups</a>
+  </li>
+  <li {% if include.selected == 'editing_export_groups' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/main/editing_export_groups">Adding Export Groups</a>
+  </li>
+  <li {% if include.selected == 'editing_export_groups' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/main/permissions">Permissions</a>
+  </li>
+  <li {% if include.selected == 'editing_export_groups' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/main/managing_export_types">Managing Export Types</a>
+  </li>
+  <li {% if include.selected == 'settings' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/main/settings">Settings</a>
+  </li>
+  <li {% if include.selected == 'reset_defaults' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/main/reset_defaults">Reset to defaults</a>
+  </li>
+</ul>
+
+<div {% if include.selected == 'reference' %}class="selected"{% endif %}>
+  <a href="/modules/export_manager/reference">Reference and Advanced Stuff</a>
+</div>
+<ul>
+  <li {% if include.selected == 'adding_export_groups' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/reference/export_group_icons">Export Group Icons</a>
+  </li>
+  <li {% if include.selected == 'editing_export_groups' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/reference/filename_placeholders">Filename Placeholders</a>
+  </li>
+  <li {% if include.selected == 'editing_export_groups' %}class="selected"{% endif %}>
+    <a href="/modules/export_manager/reference/form_tools_api">Form Tools API</a>
+  </li>
+</ul>

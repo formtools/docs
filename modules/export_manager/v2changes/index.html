@@ -1,0 +1,49 @@
+---
+layout: default
+navPage: docs
+heading: Export Manager
+breadcrumbs:
+  - Modules,/modules
+  - Export Manager,/modules/export_manager
+  - "Version 2.x: what's changed?"
+next: "Upgrading to 2.x: special instructions,/modules/export_manager/v2changes/upgrading"
+---
+
+{% include open_section.html nav='nav_export_manager.html' selected='v2changes' %}
+
+  <h3>Version 2.x: what's changed?</h3>
+
+  <p>
+    For those of you familiar with 1.x versions of the Export Manager (i.e. any version that
+    works with Form Tools Core 2.0.0 to 2.0.6), here a quick overview of what's changed.
+  </p>
+
+  <ul>
+    <li>Compatibility with Form Tools Core 2.1.0.</li>
+    <li>Client-side sorting for Export Groups and Export Types.</li>
+    <li>Better navigation for the export groups.</li>
+    <li>Improved permissions. You can now map your Export Groups to particular accounts
+      (like with the earlier versions of the module), but now you can also configure them to
+      only show up for particular forms / Views. This is helpful if you create custom export
+      options that are particular to particular data sets or only offer export options to
+      client accounts that see particular Views.</li>
+    <li>Assorted UI updates, both for the administration section and the embedded "Export
+      Options" section at the bottom the Submissions page. The "all/selected" dropdown is
+      now a pair of radios buttons, and there's an icon at the top right of the section
+      that links directly to the module for quick reference.</li>
+    <li>Reset to Defaults page added. This clears out any changes you've made to the
+      export groups + types and returns them to the default values.</li>
+    <li>Slight language-type change. Now when you install the script, it installs the
+      language strings in the admin's choice of UI language. The fields can still be
+      customized using language placeholders, but I think that this is clearer. Seeing the
+      placeholders (e.g. <i>{$LANG.export_manager.phrase_html_printer_friendly}</i> instead
+      of <i>HTML / Printer Friendly</i>) all over the place is confusing, and it adds no
+      value for the majority of users.</li>
+    <li>Simpler Smarty markup for the export types, which will hopefully make it easier
+      for developers to follow. </li>
+    <li>By default, the printer-friendly and Excel export types now include the View
+      name in the title.</li>
+  </ul>
+
+
+{% include close_section.html %}

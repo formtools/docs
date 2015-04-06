@@ -1,0 +1,53 @@
+---
+layout: default
+navPage: docs
+heading: Export Manager
+breadcrumbs:
+  - Modules,/modules
+  - Export Manager
+next: Overview,/modules/export_manager/overview
+---
+
+{% include open_section.html nav='nav_export_manager.html' selected='introduction' %}
+
+  <h3>Introduction</h3>
+
+  {% include screenshot.html item="i181.gif" %}
+
+  <p>
+    The Export Manager module provides Form Tools with one of its more important features:
+    the ability to view and export your form submission data in any way you wish. Since
+    it's such a fundamental feature, this module comes pre-installed with all
+    (pre-bundled) Form Tools installations, letting you get to work without any
+    additional configuration required. The screenshot to the right is of the 2.0.0
+    version of this module, but the functionality has remained largely the same since
+    its first release.
+  </p>
+
+  <p>
+    In new installations, the module provides two ways to download / view your form
+    submissions: as an Excel spreadsheet or in an HTML printer-friendly format, which
+    has three sub-options: table format, one-by-one and one submission per page. There
+    are also two other export methods, hidden by default: CSV (comma separated values)
+    and XML. Depending on your needs, these can be enabled by the click of a button.
+    But most significantly, once you learn how the module works, you can construct
+    whatever other formats you need.
+  </p>
+
+  <p>
+    The Export Manager, used in conjunction with the Core <a href="/userdoc/views">Views</a> feature, acts
+    as a fully fledged Report Builder, letting you view and export whatever subset of the
+    form data you require. You also have the option to only show the export formats for
+    particular clients, particular subsets of your data, and particular forms and Views
+    (version 2.0.0 of the module and later only). It's VERY powerful!
+  </p>
+
+  <p>
+    One final note before we leap into the nitty-gritty: for you programmers /
+    advanced users out there, the Export Manager functionality can be utilized via the
+    Form Tools API to extract and display Form Tools submission content in your own pages.
+    See the <a href="?page=advanced_usage">Advanced Usage</a> section for more info on that.
+  </p>
+
+
+{% include close_section.html %}
