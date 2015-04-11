@@ -1,0 +1,51 @@
+---
+layout: default
+navPage: docs
+heading: Form Backup
+breadcrumbs:
+  - Modules,/modules
+  - Form Backup
+next: Settings,/modules/form_backup/settings
+---
+
+{% include open_section.html nav='nav_form_backup.html' selected='overview' nav_width=2 %}
+
+  <h3>Form Backup</h3>
+
+  {% include screenshot.html item="i155.gif" %}
+  <p>
+    The Form Backup module lets you back-up or make exact copies of your forms. It provides
+    a simple interface to let you copy the form, form submissions, form Views and email
+    templates. You can pick and choose what aspects you want copied, as shown in the
+    screenshot to the right. This can be an extremely useful if you need to roll out
+    multiple, identical forms and don't want to have to go through the Add Form process
+    for each. Also, it can be a useful way to take "snapshots" of your form configurations
+    and data so that it's available later for reference or archiving purposes.
+  </p>
+
+  <p>
+    The module has changed very little since it's original version, however, the "Settings"
+    page is only available to version 1.1.0 or later.
+  </p>
+
+  <p>
+    By and large, the module's functionality and usage speaks for itself: but there is one
+    possibly unexpected behaviour you should know about.
+  </p>
+
+  <h4>Files</h4>
+
+  <p>
+    Form Tools stores files directly on your server in a folder, not inside the database.
+    The database only stores the filenames. So, when you make a backup of a form, the files are
+    NOT copied: both forms will then refer to the same file. If you delete a file from one
+    form it will "orphan" it from the other. In other words: the other form will still contain
+    a reference to it, even though the file doesn't exist.
+  </p>
+  <p>
+    Similarly, if make a backup of a form then delete the original one and choose to delete all
+    the uploaded files, the backed-up form will only contain references to the deleted files.
+  </p>
+
+
+{% include close_section.html %}

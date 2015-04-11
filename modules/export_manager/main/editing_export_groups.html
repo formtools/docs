@@ -1,0 +1,92 @@
+---
+layout: default
+navPage: docs
+heading: Export Manager
+breadcrumbs:
+  - Modules,/modules
+  - Export Manager,/modules/export_manager
+  - Main Functionality,/modules/export_manager/main/
+  - Editing Export Groups
+prev: Adding Export Groups,/modules/export_manager/main/adding_export_groups
+next: Permissions,/modules/export_manager/main/permissions
+---
+
+{% include open_section.html nav='nav_export_manager.html' selected='editing_export_groups' %}
+
+  <h3>Editing Export Groups</h3>
+
+  {% include screenshot.html item="i180.gif" %}
+
+  <p>
+    The Export Group configuration is spread among 2 or 3 tabs, depending on the version
+    of the module you are running. The Export Manager 2.x version introduced a second
+    "Permissions" tab, discussed on the next page.
+  </p>
+
+  <p>
+    The "Main" tab contains all the main settings for the module. In 1.x versions it
+    also contains the permissions ("Access Type") setting. See the help on the Permissions
+    page for information on that.
+  </p>
+
+  <br class="clear">
+
+  <table cellpadding="0" cellspacing="1" class="info">
+    <tbody><tr>
+      <td width="120" valign="top" class="blue">Export Group Name</td>
+      <td>
+        This is the label for the Export Group that appears on the Submission Listings
+        page to visually identify it.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Visibility</td>
+      <td>
+        This determines whether or not the Export Group should show up or not. It can be
+        handy to disable an entire group while you’re not needing it.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Icon</td>
+      <td>
+        The icon to associate with the group.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Action</td>
+      <td>
+        This controls what happens when the user chooses the export group / export type
+        on the Submission Listing page. You have three options: generating a file on the
+        server, opening in a new window or in a popup (you may specify the dimensions).
+        If you're choosing the generate file option, the location of the files that are
+        created are specified in the module's <a href="../settings">Settings page</a>.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Action Button Text</td>
+      <td>
+        This determines what appears on the action button for the export group - it
+        should be whatever makes sense, so "Generate" or "Display" seem reasonable.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Headers</td>
+      <td>
+        This lets you supply some additional headers to be outputted by the server when
+        generating the page. For example, take a look at the Excel or CSV Export Groups.
+        The Excel Export Group contains headers to tell the browser it's an Excel file
+        and to open a dialog to prompt a file download.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Smarty Template</td>
+      <td>
+        This is where you enter the actual Smarty content for the Export Group. Note:
+        this field is just used for the main content: it should include the actual
+        Export Type with the <i>{$export_type_smarty_template}</i> template variable.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+{% include close_section.html %}

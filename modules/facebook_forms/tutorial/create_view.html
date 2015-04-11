@@ -1,0 +1,55 @@
+---
+layout: default
+navPage: docs
+heading: Facebook Forms
+breadcrumbs:
+  - Modules,/modules
+  - Facebook Forms,/modules/facebook_forms
+  - Creating a custom View
+prev: Creating the form in Form Tools,/modules/facebook_forms/tutorial/create_form
+next: Installing and configuring the module,/modules/facebook_forms/tutorial/configure_module
+---
+
+{% include open_section.html nav='nav_facebook_forms.html' selected='create_view' %}
+
+  <h3>Create a custom View</h3>
+
+  {% include screenshot.html item="i232.gif" %}
+
+  <p>
+    The next step is to create a View of the form that contains only those fields we need to
+    see. This is very similar to creating Views for use in Form Tools, with one exception:
+    some data won't be relevant. When a user visits the form, there isn't a submission already
+    created, so there's no point including any of the Core fields: Submission ID,
+    Submission Date, Last Modified Date and IP Address. If your View includes those fields,
+    they'll simply appear blank!
+  </p>
+
+  <p>
+    To create a new View, just go to the Edit Form -&gt; Views tab, and click "Add View". In the
+    dialog window that appears, create a new View based on the existing "All submissions"
+    View, as per the screenshot above.
+  </p>
+
+  {% include screenshot.html item="i233.gif" %}
+
+  <p>
+    On the Edit View page, go to the Fields tab and configure the View fields like in the second
+    screenshot. Note we've created the
+    Views in two groups: "Social Networks" and "Other".
+  </p>
+
+  <h3>A word on Tabs</h3>
+
+  <p>
+    Form Tools lets you organize your field Views into tabs. But for our Facebook forms,
+    this isn't relevant: the form will always be listed on a single page.
+  </p>
+
+  <p>
+    So bear in mind that if your View fields are grouped into tabs, they will be ignored
+    on your Facebook form and just listed sequentially.
+  </p>
+
+
+{% include close_section.html %}

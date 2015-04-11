@@ -1,0 +1,116 @@
+---
+layout: default
+navPage: docs
+heading: Facebook Forms
+breadcrumbs:
+  - Modules,/modules
+  - Facebook Forms,/modules/facebook_forms
+  - Creating the form in Form Tools
+prev: "Tutorial: creating a Facebook form,/modules/facebook_forms/tutorial"
+next: Creating a custom View,/modules/facebook_forms/tutorial/create_view
+---
+
+{% include open_section.html nav='nav_facebook_forms.html' selected='create_form' %}
+
+  <h3>Creating the form in Form Tools</h3>
+
+  <p>
+    The first step is to create our form. As mentioned earlier, this module is compatible with <i>any</i> type of
+    Form Tools form (API or POST, Internal or External), but to keep it simple, we're going to create an Internal form:
+    this is a form that is created and managed entirely through Form Tools. Once it's set up, we're going to get it
+    listed on Facebook. (To learn more about the difference between Internal and External forms,
+    <a href="/userdoc/form_management/form_types">give this page</a> a read over).
+  </p>
+
+  <p>
+    If you're in a rush and don't want to fuss around with all the details
+    of configuring this example form, just complete steps 1-2 on this page then continue
+    on. Your form won't be complete, but you'll still get a good idea how it all works.
+  </p>
+
+  <table width="100%">
+    <tbody><tr>
+      <th width="60">Step</th>
+      <th>Instructions</th>
+      <th width="250">Screenshot</th>
+    </tr>
+    <tr>
+      <td valign="top" class="bold">1</td>
+      <td valign="top">
+        Log into Form Tools on your site and click on the Add Form link in the left
+        navigation menu. There, select the Internal form option.
+      </td>
+      <td>
+        {% include screenshot.html item="i208.gif" %}
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="bold">2</td>
+      <td valign="top">
+        On the following page, enter the following information:
+        <table cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td width="140"><b>Form Name</b></td>
+            <td>Survey</td>
+          </tr>
+          <tr>
+            <td><b>Number of fields:</b></td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td><b>Access:</b></td>
+            <td>Administrator Only</td>
+          </tr>
+          </tbody></table>
+      </td>
+      <td>{% include screenshot.html item="i227.gif" %}</td>
+    </tr>
+    <tr>
+      <td valign="top" class="bold">3</td>
+      <td valign="top">
+        After you submit the previous page, you'll be redirected to the Edit Form page. There,
+        click on the Fields tab. This is where you configure your form fields to store whatever
+        information you want. At this step, just enter the Display Text and Field Type columns
+        as shown in the screenshot. Note: if you don't have the
+        <a href="/modules/field_type_tinymce/">tinyMCE Field</a>
+        module installed, you won't see the "WYSIWYG" option to select for the "Additional Comments?"
+        row. Just select the Textarea option instead.
+      </td>
+      <td valign="top">{% include screenshot.html item="i228.gif" %}</td>
+    </tr>
+    <tr>
+      <td valign="top" class="bold">4</td>
+      <td valign="top">
+        Next we need to create the Option Lists for the radio and dropdown fields. Click on
+        "Option Lists" in the navigation menu. There, create a new Option List with the values
+        shown in the screenshot to the right. These are the options that will be available
+        for our "Ratings" fields (rows 2 to 6 on the Edit Form -&gt; Fields page).
+      </td>
+      <td>{% include screenshot.html item="i229.gif" %}</td>
+    </tr>
+    <tr>
+      <td valign="top" class="bold">5</td>
+      <td valign="top">
+        Now, return to the Edit Form -&gt; Fields tab, click the edit icon for the Facebook row
+        and on the second tab, select the new "Ratings" Option List you created in the previous
+        step. Do the same for the next 4 fields (Twitter, Google+, Linked In, MySpace). Tip:
+        it's fastest to just click the "next field" link to go from one field to the next. When
+        you're done, click "Update".
+      </td>
+      <td>{% include screenshot.html item="i230.gif" %}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  {% include screenshot.html item="i231.gif" %}
+
+  <p>
+    Okay! Our form is now set up. On the Edit Form -&gt; Fields tab, click the grey icon at
+    the top right. That lets you toggle between editing the form and viewing the form data.
+    On the View data page, click the "Add »" button to create a new submission in
+    your form. You should get redirected to a page that looks like the screenshot to the
+    right. It's not perfect, but we're getting there!
+  </p>
+
+
+{% include close_section.html %}
