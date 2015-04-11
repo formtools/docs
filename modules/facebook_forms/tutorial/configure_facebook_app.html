@@ -1,0 +1,56 @@
+---
+layout: default
+navPage: docs
+heading: Facebook Forms
+breadcrumbs:
+  - Modules,/modules
+  - Facebook Forms,/modules/facebook_forms
+  - Configuring your Facebook App
+prev: Creating a custom View,/modules/facebook_forms/tutorial/create_view
+next: Configuring your Facebook App,/modules/facebook_forms/tutorial/create_form
+---
+
+{% include open_section.html nav='nav_facebook_forms.html' selected='configure_module' %}
+
+  <h3>Configuring your Facebook App</h3>
+
+  {% include screenshot.html item="i234.gif" %}
+
+
+  <p>
+  </p><div class="screenshot" style="float:right"><a href="http://static1.formtools.org/site/screenshots/i236.gif" rel="lightbox[page]" class="fancybox" title="Facebook Forms: Facebook dev area"><img src="http://static1.formtools.org/site/screenshots/i236_th.gif" alt="Facebook Forms: Facebook dev area" title="Facebook Forms: Facebook dev area" border="0"></a><br>Facebook Forms: Facebook dev area</div>
+  This bit may sound scary, but it's really not! Facebook have made it very easy for people
+  to create their own Apps on Facebook. Here's what you do.
+  <p></p>
+
+  <ol>
+    <li>Go to <a href="http://developers.facebook.com" target="_blank">http://developers.facebook.com</a>
+      and click on the Apps link on the top bar. There, you will need to log in. For this, you can
+      use your existing Facebook username and password. After you log in, you should see a page that looks
+      something like the screenshot above.</li>
+    <li>Click the "+ Create New App" button. In the dialog window that appears, enter the name of
+      your app (for this example, call it "Survey") and agree to the terms. The first time
+      you create an app, Facebook require you supplying your mobile phone number and/or credit
+      card information. Don't worry - it doesn't cost money to add your forms to Facebook.</li>
+    <li>After you've filled that in, you'll be redirected to a page in Facebook where you can
+      configure your App. Let's leave that alone for a moment. In another tab, open up Form
+      Tools and go to the Facebook Forms module. On the main page you should now see your
+      configured form. On the "Facebook Canvas URL" column, click the "View URL" button. A dialog
+      window will appear containing a URL. Copy that URL to your clipboard, and return to
+      the Facebook page.</li>
+    <li>Click on the "On Facebook" link in the left navigation and in the "Canvas"
+      section on the page, enter the name of whatever you want your application URL to be.
+      Every application needs to have a unique name, so try entering different values until
+      you find one that's available. In the "Canvas URL" field beneath it, paste in the URL
+      you copied from Form Tools and click save. You're done!</li>
+  </ol>
+
+  <p>
+  </p><div class="screenshot" style="float:right"><a href="http://static1.formtools.org/site/screenshots/i237.gif" rel="lightbox[page]" class="fancybox" title="Facebook Forms: our survey"><img src="http://static1.formtools.org/site/screenshots/i237_th.gif" alt="Facebook Forms: our survey" title="Facebook Forms: our survey" border="0"></a><br>Facebook Forms: our survey</div>  After you wait a few minutes for Facebook to create your app, enter the URL you Canvas page
+  URL you selected into your browser. You should see a form something like the screenshot
+  to the right. Nice! Your form is now added to Facebook! But let's do a couple of touch-ups.
+  <p></p>
+
+
+
+{% include close_section.html %}
