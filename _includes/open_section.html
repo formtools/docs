@@ -9,6 +9,10 @@ Note: the calling page always needs to include the nav menu to be included via a
 
 {% assign col1Class = 'col-lg-3' %}
 {% assign col2Class = 'col-lg-9' %}
+{% if include.nav_width == 2 %}
+  {% assign col1Class = 'col-lg-2' %}
+  {% assign col2Class = 'col-lg-10' %}
+{% endif %}
 {% if include.nav_width == 4 %}
 	{% assign col1Class = 'col-lg-4' %}
 	{% assign col2Class = 'col-lg-8' %}
@@ -23,4 +27,4 @@ Note: the calling page always needs to include the nav menu to be included via a
 	<div class="{{col1Class}} docNav">
 		{% include {{include.nav}} selected=include.selected %}
 	</div>
-	<div class="{{col2Class}}">
+	<div class="{{col2Class}} docPageContent">

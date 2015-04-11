@@ -1,0 +1,75 @@
+---
+layout: default
+navPage: docs
+heading: Export Manager
+breadcrumbs:
+  - Modules,/modules
+  - Export Manager,/modules/export_manager
+  - Main Functionality,/modules/export_manager/main/
+  - Managing Export Types
+prev: Permissions,/modules/export_manager/main/permissions/
+next: Settings,/modules/export_manager/main/settings
+---
+
+{% include open_section.html nav='nav_export_manager.html' selected='managing_export_types' %}
+
+  <h3>Managing Export Types</h3>
+
+  {% include screenshot.html item="i182.gif" %}
+
+  <p>
+    The last tab on the Edit Export Group pages contains all the Export Types for that
+    group. This is where you can actually see the Smarty code that's used to generate
+    the exported content.
+  </p>
+
+  <p>
+    As with all client-side sortable lists in Form Tools 2.1, to change the sort order of the
+    Export Types, just drag and drop the rows to their new position, then click the Update
+    Order button to save it. Sortable rows are all identifiable by them having a little up-down
+    icon in their Order row.
+  </p>
+
+  <h4>Editing an Export Type</h4>
+
+  {% include screenshot.html item="i186.gif" %}
+
+  <p>
+    Here's what all the various fields mean on this page.
+  </p>
+
+  <table cellpadding="0" cellspacing="1" class="info">
+    <tbody><tr>
+      <td width="120" valign="top" class="blue">Export Type Name</td>
+      <td>
+        This is the label that appears in the Export Type dropdown on the Submission Listings
+        page to visually identify it. Note: if the Export Group only has a single
+        Export Type, no dropdown will appear (since it's not needed).
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Visibility</td>
+      <td>
+        This determines whether or not the Export Type should show up or not to be used.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Filename</td>
+      <td>
+        If your Export Group is configured to generate a file, or prompt a download, this
+        is the setting that determines the filename. For more information on the placeholders
+        that may be used in this field, see the <a href="/modules/export_manager/reference/filename_placeholders">Filename
+        Placeholders</a> page.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Smarty Template</td>
+      <td>
+        And here's where all the work is done! This field contains the Smarty markup
+        used to generate the actual markup. It can generate any markup you want, be it XML,
+        CSV, HTML or whatever.
+      </td>
+    </tr>
+    </tbody></table>
+
+{% include close_section.html %}

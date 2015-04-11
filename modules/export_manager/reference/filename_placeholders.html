@@ -1,0 +1,124 @@
+---
+layout: default
+navPage: docs
+heading: Export Manager
+breadcrumbs:
+  - Modules,/modules
+  - Export Manager,/modules/export_manager
+  - Reference and Advanced Stuff,/modules/export_manager/reference
+  - Filename Placeholders
+prev: Export Group Icons,/modules/export_manager/reference/export_group_icons/
+next: Advanced Usage,/modules/export_manager/reference/advanced_usage
+---
+
+{% include open_section.html nav='nav_export_manager.html' selected='filename_placeholders' %}
+
+  <h3>Filename Placeholders</h3>
+
+
+  <p>
+    The following table lists all the placeholders available for use in generating filenames for the various export
+    types. The date and time placeholders reflect the time at which the information was exported. Most of the
+    placeholders correspond to the formatting characters used in the PHP
+    <a href="http://ca3.php.net/manual/en/function.date.php">date()</a> function. Note that some fields, like month
+    and day names, will be outputted in the language of the current user and could potentially lead to invalid
+    filenames.
+  </p>
+
+  <table cellspacing="1" cellpadding="0">
+    <tbody><tr>
+      <td width="160" class="blue">{$form_id}</td>
+      <td>Form ID</td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">{$export_group_name}</td>
+      <td>A filename-friendly version of the export group name (non-alpha chars converted to underscores)</td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">{$export_type_name}</td>
+      <td>A filename-friendly version of the export type name (non-alpha chars converted to underscores)</td>
+    </tr>
+    <tr>
+      <td class="blue">{$datetime}</td>
+      <td>A preformatted datetime of the form: YYYY-MM-DD.HH-MM-SS</td>
+    </tr>
+    <tr>
+      <td class="blue">{$date}</td>
+      <td>A preformatted date of the form: YYYY-MM-DD</td>
+    </tr>
+    <tr>
+      <td class="blue">{$time}</td>
+      <td>A preformatted time of the form: HH-MM-SS</td>
+    </tr>
+    <tr>
+      <td class="blue">{$Y}</td>
+      <td>Year: 4 digits</td>
+    </tr>
+    <tr>
+      <td class="blue">{$y}</td>
+      <td>Year: 2 digits</td>
+    </tr>
+    <tr>
+      <td class="blue">{$F}</td>
+      <td>Month: January through December</td>
+    </tr>
+    <tr>
+      <td class="blue">{$M}</td>
+      <td>Month: Jan through Dec</td>
+    </tr>
+    <tr>
+      <td class="blue">{$m}</td>
+      <td>Month: 01 through 12</td>
+    </tr>
+    <tr>
+      <td class="blue">{$n}</td>
+      <td>Month: 1 through 12</td>
+    </tr>
+    <tr>
+      <td class="blue">{$d}</td>
+      <td>Day: Monday through Sunday</td>
+    </tr>
+    <tr>
+      <td class="blue">{$D}</td>
+      <td>Day: Mon through Sun</td>
+    </tr>
+    <tr>
+      <td class="blue">{$j}</td>
+      <td>Day: 1 through 31</td>
+    </tr>
+    <tr>
+      <td class="blue">{$g}</td>
+      <td>Hours: 1 through 12</td>
+    </tr>
+    <tr>
+      <td class="blue">{$G}</td>
+      <td>Hours: 0 through 23</td>
+    </tr>
+    <tr>
+      <td class="blue">{$h}</td>
+      <td>Hours: 01 through 12</td>
+    </tr>
+    <tr>
+      <td class="blue">{$H}</td>
+      <td>Hours: 00 through 23</td>
+    </tr>
+    <tr>
+      <td class="blue">{$i}</td>
+      <td>Minutes: 00 through 59</td>
+    </tr>
+    <tr>
+      <td class="blue">{$s}</td>
+      <td>Seconds (with leading zeros)</td>
+    </tr>
+    <tr>
+      <td class="blue">{$U}</td>
+      <td>Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT)</td>
+    </tr>
+    <tr>
+      <td class="blue">{$a}</td>
+      <td>AM / PM</td>
+    </tr>
+    </tbody></table>
+
+
+{% include close_section.html %}

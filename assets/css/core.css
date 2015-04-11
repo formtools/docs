@@ -8501,3 +8501,12 @@ img.mfp-img {
     width: 64px;
     height: 64px;
 }
+
+.docPageContent h3:first-child {
+    margin-top: 0;
+}
+
+.centered {
+    float: none;
+    margin: 0 auto;
+}

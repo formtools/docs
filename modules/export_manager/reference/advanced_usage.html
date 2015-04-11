@@ -1,0 +1,49 @@
+---
+layout: default
+navPage: docs
+heading: Export Manager
+breadcrumbs:
+  - Modules,/modules
+  - Export Manager,/modules/export_manager
+  - Reference and Advanced Stuff,/modules/export_manager/reference
+  - Advanced Usage
+prev: Filename Placeholders,/modules/export_manager/reference/filename_placeholders/
+---
+
+{% include open_section.html nav='nav_export_manager.html' selected='advanced_usage' %}
+
+
+  <h3>Advanced Usage</h3>
+
+  <p>
+    The Export Manager can be used in conjunction with the Form Tools API to dynamically
+    display content in your webpages.
+  </p>
+
+  <p>
+    The API contains two functions -
+    <a href="/api/ft_api_show_submissions">ft_api_show_submissions</a> and
+    <a href="/api/ft_api_show_submission">ft_api_show_submission</a> - which were written to do just this: quickly
+    display submission content in your webpages. They work by passing in various values like the form ID, View ID and
+    <b>export type ID</b> (see the functions for further information).
+  </p>
+
+  <p>
+    The export type ID that you pass to the function is all-important. It determines which
+    of the export types you want to use to generate the HTML content. By default, the "HTML /
+    Printer-friendly" export group has three export types: "Table format", "One submission
+    per page" and "One-by-one". Any of these can be used in the API functions to generate the
+    HTML in the page. And, of course, you can always create your own custom export types.
+  </p>
+
+  <p>
+    For more information about the API functions, see the relevant help pages:
+  </p>
+
+  <ul>
+    <li><a href="/api/ft_api_show_submissions">ft_api_show_submissions</a></li>
+    <li><a href="/api/ft_api_show_submission">ft_api_show_submission</a></li>
+  </ul>
+
+
+{% include close_section.html %}

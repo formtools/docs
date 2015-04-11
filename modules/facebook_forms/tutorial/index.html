@@ -1,0 +1,65 @@
+---
+layout: default
+navPage: docs
+heading: Facebook Forms
+breadcrumbs:
+  - Modules,/modules
+  - Facebook Forms
+prev: Introduction,/modules/facebook_forms
+next: Creating the form in Form Tools,/modules/facebook_forms/tutorial/create_form
+---
+
+{% include open_section.html nav='nav_facebook_forms.html' selected='tutorial' %}
+
+  <h3>Tutorial: creating a Facebook form</h3>
+
+  {% include screenshot.html item="i239.gif" %}
+
+  <p>
+    This section of the documentation is a hands-on tutorial that explains how to create a form and get it displayed
+    on Facebook. Click on the screenshot to the right to see the end result: we'll be creating a simple survey that
+    asks people to rate social networks. Even though the form is very simple, you'll be able to apply the same process
+    to your own forms, regardless of complexity.
+  </p>
+
+  <p>
+    Alternatively, if you already have a form set up in Form Tools and would like to
+    use that instead, go right ahead! After finishing this page, just skip steps 1 and 2
+    and go straight to <a href="?page=step3">installing and configuring the module</a>.
+  </p>
+
+  <p>
+    Before leaping into the tutorial, let's start with a quick overview of the
+    whole process.
+  </p>
+
+  <h3>How it works</h3>
+
+  <p>
+    Your forms are implemented as Facebook "Apps". Apps are really just code that runs
+    on websites outside of facebook.com itself. In our case, the code is running your
+    website, through the Facebook Forms module. Normally, it's the responsibility of App
+    developers to create applications and code that is compatible and consistent with
+    Facebook. The Facebook Forms module does exactly that: it converts Form Tools forms
+    to run properly on Facebook - so you really don't need to know the nasty details.
+  </p>
+
+  <p>
+    The process of adding your forms works like this:
+  </p>
+
+  <ol>
+    <li>You create a form in Form Tools (Internal or External, API or POST - anything is fine!)</li>
+    <li>You go to the Facebook Form module and supply a few basic configuration information (only 2 fields are necessary)</li>
+    <li>You create a unique App URL for it via the Facebook developer section (This is REALLY easy)</li>
+    <li>You optionally return to the Form Tools module to make a few minor tweaks, like making the "Like" button
+      appear, and changing the occasional label, and, well... you're done!</li>
+  </ol>
+
+  <p>
+    Alright, enough chatter - let's go to our tutorial so you can see something more concrete.
+    I really think you'll find the process exceedingly simple once you see how it works.
+  </p>
+
+
+{% include close_section.html %}

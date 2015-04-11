@@ -1,0 +1,42 @@
+---
+layout: default
+navPage: docs
+heading: Export Manager
+breadcrumbs:
+  - Modules,/modules
+  - Export Manager,/modules/export_manager
+  - Main Functionality,/modules/export_manager/main/
+  - Permissions
+prev: Editing Export Groups,/modules/export_manager/main/editing_export_groups
+next: Managing Export Types,/modules/export_manager/main/managing_export_types
+---
+
+{% include open_section.html nav='nav_export_manager.html' selected='permissions' %}
+
+  <h3>Permissions</h3>
+
+  {% include screenshot.html item="i183.gif" %}
+
+  <p>
+    The second of the Edit Export Group tabs is labeled Permissions. This lets you fine-tune
+    who sees the Export Group and where they should appear.
+  </p>
+
+  <h4>Access Type</h4>
+
+  <p>
+    For Export Manager 1.x versions, this was found on the Main tab. It lets you control
+    which accounts see the Export Group. By default, the Export Groups are visible to
+    everyone, regardless of account type.
+  </p>
+
+  <h4>Where Shown</h4>
+
+  <p>
+    This should be pretty self-explanatory from the description of the options. It lets you
+    control which forms and Views the Export Group should appear. For convenience, you can
+    either specify those forms and Views that should contain the Export Group, or the inverse:
+    those that <i>shouldn't</i>.
+  </p>
+
+{% include close_section.html %}
