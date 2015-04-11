@@ -1,0 +1,39 @@
+---
+layout: default
+navPage: docs
+heading: Facebook Forms
+breadcrumbs:
+  - Modules,/modules
+  - Facebook Forms,/modules/facebook_forms
+  - Other,/modules/facebook_forms/other
+  - Limitations
+prev: Taking your form offline,/modules/facebook_forms/other/taking_offline
+---
+
+{% include open_section.html nav='nav_facebook_forms.html' selected='limitations' %}
+
+  <h3>Known Limitations</h3>
+
+  <p>
+    This is a pretty cool module, but there are a few limitations:
+  </p>
+
+  <ul>
+    <li>This module doesn't support multi-page forms. All forms are listed on a single page,
+      regardless of whether you've arranged the fields into tabs.</li>
+    <li>The "thankyou" page doesn't currently permit any "dynamic" data (e.g. referencing
+      values from the form submission, or displaying stats of all submissions made to date).
+    </li>
+    <li>The validation is currently very simple: only permitting you to specify which fields
+      are required, not things like email address format verification, checking that only numbers
+      were entered, etc.</li>
+    <li>The <a href="/modules/field_type_google_maps/" target="_blank">Google Maps field type module</a> is not
+      compatible.</li>
+  </ul>
+
+  <p>
+    If you're interested in seeing more features added to this module, let us
+    know <a href="http://forums.formtools.org">through the forums!</a>
+  </p>
+
+{% include close_section.html %}

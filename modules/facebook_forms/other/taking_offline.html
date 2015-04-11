@@ -1,0 +1,46 @@
+---
+layout: default
+navPage: docs
+heading: Facebook Forms
+breadcrumbs:
+  - Modules,/modules
+  - Facebook Forms,/modules/facebook_forms
+  - Other,/modules/facebook_forms/other
+  - Taking your form offline
+prev: How to install,/modules/facebook_forms/other/how_to_install
+next: Known limitations,/modules/facebook_forms/other/limitations
+---
+
+{% include open_section.html nav='nav_facebook_forms.html' selected='taking_offline' %}
+
+  <h3>Taking your form offline</h3>
+
+  {% include screenshot.html item="i240.gif" %}
+
+  <p>
+    Once you're done with your form and you don't want to show it online anymore, one solution
+    is to simply delete the Facebook App via the Facebook developers section. But that's not
+    very elegant: any existing links to that page will become broken. So instead, all you
+    need to do is change the status of the form to "offline". Once that's done, anyone visiting
+    the form will see a custom message that you want them to see.
+  </p>
+
+  <p>
+    Here's how it works.
+  </p>
+
+  <p>
+    In the Facebook Forms module (listed on your Form Tools Modules page), click the edit
+    icon for the Facebook form you want to take offline. There, on the first "Main" tab,
+    change "Status" to "offline".
+  </p>
+
+  {% include screenshot.html item="i242.gif" %}
+
+  <p>
+    At this point, your form is offline. However, you probably want to customize what people
+    see when they go to the page. To control that, go to Labels/Text tab and scroll down to
+    the "Offline Form" section. There, you can change the title and content of the page.
+  </p>
+
+{% include close_section.html %}

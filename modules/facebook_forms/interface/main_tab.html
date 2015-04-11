@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Facebook Forms
+breadcrumbs:
+  - Modules,/modules
+  - Facebook Forms,/modules/facebook_forms
+  - Module interface,/modules/facebook_forms/interface
+  - Main tab
+prev: The module interface,/modules/facebook_forms/interface
+next: Labels / Text tab,/modules/facebook_forms/interface/labels_tab
+---
+
+{% include open_section.html nav='nav_facebook_forms.html' selected='main_tab' %}
+
+  <h3>Main tab</h3>
+
+  {% include screenshot.html item="i240.gif" %}
+
+  <p>
+    The main tab contains the most important settings for your Facebook form, namely:
+    the form and which View should be used. As mentioned in the tutorial, you should always
+    choose or customize your View to remove all Core fields. Core fields (Submission ID,
+    Submission Date, Last Modified and IP Address) don't make sense in the context of a Facebook
+    form, because the submission hasn't been created yet.
+  </p>
+
+  <p>
+    The first setting, <i>Status</i> determines whether or not the form is online. For more
+    information on that, see the <a href="/modules/facebook_forms/other/taking_offline">Taking your form offline</a>
+    page.
+  </p>
+
+{% include close_section.html %}
