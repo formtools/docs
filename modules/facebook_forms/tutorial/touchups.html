@@ -4,61 +4,64 @@ navPage: docs
 heading: Facebook Forms
 breadcrumbs:
   - Modules,/modules
+  - Facebook Forms,/modules/facebook_forms
+  - Tutorial,/modules/facebook_forms/tutorial
   - Facebook Forms
-prev: Introduction,/modules/facebook_forms
-next: Creating the form in Form Tools,/modules/facebook_forms/tutorial/create_form
+prev: Configuring your Facebook App,/modules/facebook_forms/configure_facebook_app/
+next: The module interface,/modules/facebook_forms/interface
 ---
 
-{% include open_section.html nav='nav_facebook_forms.html' selected='tutorial' %}
+{% include open_section.html nav='nav_facebook_forms.html' selected='touchups' %}
 
   <h3>Tutorial: creating a Facebook form</h3>
 
   {% include screenshot.html item="i239.gif" %}
 
   <p>
-    This section of the documentation is a hands-on tutorial that explains how to create a form and get it displayed
-    on Facebook. Click on the screenshot to the right to see the end result: we'll be creating a simple survey that
-    asks people to rate social networks. Even though the form is very simple, you'll be able to apply the same process
-    to your own forms, regardless of complexity.
+    At this stage, your form now appears on Facebook, submissions are being sent to Form Tools
+    and the people submitting the form are redirected to a generic "thanks!" page. So far so
+    good. But you may want to make a few small changes to your form. The following sections
+    explain how to do different things.
   </p>
 
+  <div class="clear"></div>
+  <h3>1. Adding a "Like" button</h3>
+
+  {% include screenshot.html item="i238.gif" %}
+
   <p>
-    Alternatively, if you already have a form set up in Form Tools and would like to
-    use that instead, go right ahead! After finishing this page, just skip steps 1 and 2
-    and go straight to <a href="configure_module/">installing and configuring the module</a>.
+    The "Like" button is a great way to promote your form, and adding it is very simple. Back
+    in the Form Tools Facebook Forms module, edit your form configuration and click on the
+    "Advanced" tab. There, set the "Show Like Button" to "yes" and enter the full URL of your
+    Facebook Canvas Page in the field below (i.e. the URL you enter in your browser to see the
+    form). Click save and you're done! A "Like" button will appear at the bottom of your form,
+    as shown in the screenshot at the top of the page.
   </p>
 
+  <h3>2. Customizing the form labels and text</h3>
+
   <p>
-    Before leaping into the tutorial, let's start with a quick overview of the
-    whole process.
+    The Facebook Forms module gives you a lot of control over what is actually output to
+    your form. Just click on the "Labels/Text" tab to see what is available.
   </p>
 
-  <h3>How it works</h3>
+  <h3>3. Forcing the user to fill in certain fields</h3>
 
   <p>
-    Your forms are implemented as Facebook "Apps". Apps are really just code that runs
-    on websites outside of facebook.com itself. In our case, the code is running your
-    website, through the Facebook Forms module. Normally, it's the responsibility of App
-    developers to create applications and code that is compatible and consistent with
-    Facebook. The Facebook Forms module does exactly that: it converts Form Tools forms
-    to run properly on Facebook - so you really don't need to know the nasty details.
+    As mentioned at the top of the "Validation" tab, at the time the module was developed
+    the Form Tools Core doesn't support adding in field validation. This is slated for the
+    next release, but you shouldn't have to wait that long! So to add validation, just
+    check those fields you want to be required and add in the error message that should appear
+    if they are not. Required fields will appear with a <span class="red">*</span> red asterix
+    next to the row label and will cause a "Please fill in required fields" dialog window to
+    appear if the user attempts to submit the form without filling them in.
   </p>
 
-  <p>
-    The process of adding your forms works like this:
-  </p>
-
-  <ol>
-    <li>You create a form in Form Tools (Internal or External, API or POST - anything is fine!)</li>
-    <li>You go to the Facebook Form module and supply a few basic configuration information (only 2 fields are necessary)</li>
-    <li>You create a unique App URL for it via the Facebook developer section (This is REALLY easy)</li>
-    <li>You optionally return to the Form Tools module to make a few minor tweaks, like making the "Like" button
-      appear, and changing the occasional label, and, well... you're done!</li>
-  </ol>
+  <h3>4. Customizing the Thankyou page</h3>
 
   <p>
-    Alright, enough chatter - let's go to our tutorial so you can see something more concrete.
-    I really think you'll find the process exceedingly simple once you see how it works.
+    By default, the thankyou page is very plain. To customize the text that the user sees, just
+    go to the ""Labels/Text" tab and in the Thankyou Page section, enter whatever you want!
   </p>
 
 

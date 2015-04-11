@@ -7721,8 +7721,14 @@ header h1 {
     margin-bottom: 10px;
     width: 264px;
     font-size: 12px;
-    padding-bottom: 0px;
-    margin-left: 10px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+}
+.screenshot-right {
+    margin-left: 12px;
+}
+.screenshot-left {
+    margin-right: 12px;
 }
 .screenshot img {
     border: 1px solid #aaaaaa;
