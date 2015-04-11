@@ -1,0 +1,62 @@
+---
+layout: default
+navPage: docs
+heading: File Upload Field
+breadcrumbs:
+  - Modules,/modules
+  - File Upload Field,/modules/field_type_file
+  - Adding to your forms
+prev: File Settings,/modules/field_type_file/file_settings
+next: Files not uploading?,/modules/field_type_file/debugging
+---
+
+{% include open_section.html nav='nav_file_upload.html' selected='adding_to_forms' %}
+
+  <h3>Adding to your forms</h3>
+
+  <h4>Internal Forms</h4>
+
+  <p>
+    Adding file uploads to your internal forms is extremely easy. As an administrator, just
+    edit your form and go to the Fields tab. There, pick the "File" field type for the form
+    field that you want. You're done! (Really!).
+  </p>
+
+  <p>
+    To confirm it's working, click on the Edit/View toggle icon at the top right of the page.
+    There, create or edit a submission in the form (in a View that contains your file field).
+    For the field, try uploading a file. Make sure that the file matches whatever criteria
+    you specified on the Settings -&gt; Fields page - namely, size and filetype.
+  </p>
+
+  <h4>External Forms</h4>
+
+  <p>
+    For external forms, you need to do a little more work - but not too much!
+  </p>
+
+  <b>1. Update the &lt;form&gt; tag</b>
+
+  <p>
+    Any form that contains a file field needs to let the server know that it contains a
+    file. To do this, the form tag needs a new attribute:
+  </p>
+
+  <textarea class="codemirror" data-lang="html"><form ... enctype="multipart/form-data"></textarea>
+
+  <b>2. Add the file upload field</b>
+
+  <p>
+    This bit's obvious, but make sure your form actually contains the file upload field.
+  </p>
+
+  <textarea class="codemirror" data-lang="html"><input type="file" name="yourfilenamefield" /></textarea>
+
+  <b>3. For API forms</b>
+
+  <p>
+    For forms that use the API, you'll need to pass the <b>"file_data" =&gt; $_FILES</b>
+    key-value pair to the ft_api_process_form function, as shown in <a href="/tutorials/api_single_page_form/">this tutorial</a>.
+  </p>
+
+{% include close_section.html %}

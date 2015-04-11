@@ -1,0 +1,38 @@
+---
+layout: default
+navPage: docs
+heading: File Upload Field
+breadcrumbs:
+  - Modules,/modules
+  - File Upload Field
+next: Installing the module,/modules/field_type_file/installing
+---
+
+{% include open_section.html nav='nav_file_upload.html' selected='introduction' %}
+
+  <h3>Introduction</h3>
+
+  <p>
+    The File Upload module was written for the 2.1.x Form Tools Core to provide a mechanism to upload files through
+    your forms. In 2.0.x releases, this field type was part of the Core code, but it was moved to a separate module to
+    accommodate the new field type structure. Why is this better?
+  </p>
+
+  <ul>
+    <li>
+      We can now develop multiple modules to handle different file handling. e.g. have a separate "image" field that
+      could create thumbnails. Or, we could update this module - or create another - to allow for uploading multiple
+      files at once. [An Image Manager module has been in the works for some time!]
+    </li>
+    <li>
+      Now the file upload functionality is self-contained in a module, it will make it easier for us to roll out changes.
+    </li>
+  </ul>
+
+  <p>
+    Functionally, this module provides all the same options as 2.0.x releases, only with a slightly different
+    interface.
+  </p>
+
+
+{% include close_section.html %}
