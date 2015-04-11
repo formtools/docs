@@ -1,0 +1,56 @@
+---
+layout: default
+navPage: docs
+heading: Google Maps Field
+breadcrumbs:
+  - Modules,/modules
+  - Google Maps Field,/modules/field_type_google_maps
+  - Configuration Options
+prev: How to use,/modules/field_type_google_maps/
+---
+
+{% include open_section.html nav='nav_google_maps.html' selected='options' %}
+
+  <h3>Configuration Options</h3>
+
+  {% include screenshot.html item="i188.jpg" %}
+
+  <p>
+    The Google Maps Field offers just a few, simple configuration options, as shown in the screenshot to the right.
+  </p>
+
+  <div class="clear"></div>
+
+  <table class="info">
+    <tbody><tr>
+      <td class="blue" width="120">Map Size</td>
+      <td>This setting controls the vertical height of the map. There are four options,
+        defaulting to "Medium".</td>
+    </tr>
+    <tr>
+      <td class="blue">Show Lat/Lng when editing</td>
+      <td>
+        If the actual coordinates are of relevance to you, you can set this setting to "Yes".
+        Once enabled, it will show the latitude and longitude in text, underneath the map.
+        Any time you change the address it will automatically update the visible coordinates.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue">View/Export</td>
+      <td>
+        This controls how the field should be displayed on the Submission Listing page and
+        in the exported results (i.e. via the Export Manager). By default, it's set to show
+        the address, but you can change it here to show the coordinates instead.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue">Field Comments</td>
+      <td>
+        This setting should be familiar! All field types have the option of providing an
+        arbitrary comments section at the bottom of the field.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+{% include close_section.html %}
