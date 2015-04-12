@@ -1,0 +1,33 @@
+---
+layout: default
+navPage: docs
+heading: Swift Mailer
+breadcrumbs:
+  - Modules,/modules
+  - Swift Mailer,/modules/swift_mailer
+  - Handling Undeliverable Emails
+prev: File Attachments,/modules/swift_mailer/file_attachments/
+next: From Address Overridden,/modules/swift_mailer/from_address
+---
+
+{% include open_section.html nav='nav_swift_mailer.html' selected='undeliverable_emails' %}
+
+  <h3>Handling Undeliverable Emails</h3>
+
+  {% include screenshot.html item="i106.jpg" %}
+
+  <p>
+    How do you know if an email gets there or not? Quite often you <b>don't!</b> To remedy
+    this, Swift Mailer adds a new field to your Edit Email Templates page, allowing you to
+    specify the email's "return-path" header. This option ensures that all undeliverable
+    emails get bounced back to a specific email address rather than just get lost in the
+    tubes of the internets.
+  </p>
+
+  <p>
+    Take a look at the screenshot to the right. When you have Swift Mailer installed you'll
+    see the final "Undeliverable Email Recipient" field. This field does NOT appear if
+    the Swift Mailer module isn't installed.
+  </p>
+
+{% include close_section.html %}

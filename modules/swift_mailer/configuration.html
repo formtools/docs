@@ -1,0 +1,48 @@
+---
+layout: default
+navPage: docs
+heading: Swift Mailer
+breadcrumbs:
+  - Modules,/modules
+  - Swift Mailer,/modules/swift_mailer
+  - Configuration
+prev: Introduction,/modules/swift_mailer/
+next: Example Gmail Configuration,/modules/swift_mailer/gmail
+---
+
+{% include open_section.html nav='nav_swift_mailer.html' selected='configuration' %}
+
+  <h3>Configuration</h3>
+
+  {% include screenshot.html item="i99.jpg" %}
+  <p>
+    In order to start using the Swift Mailer module to send your emails, you need to do is
+    enable the module and supply your SMTP settings. If you don't know this information you will
+    need to contact your hosting provider. Note: not all hosting providers offer an SMTP
+    service.
+  </p>
+
+  <p>
+    As shown in the screenshot, there are a number of fields for you to fill in. These should
+    all be supplied by your hosting provider or email service. Speaking from experience,
+    you may find it a bit of a struggle to find the right combination of settings. It can
+    take a fair bit of get configured with the nuances of your SMTP server. If you are
+    unsure about the authentication procedure, try systematically choosing one at a time and
+    sending yourself a test email, as shown in the screenshot below.
+  </p>
+
+  <h4>Confirm everything's working</h4>
+
+  {% include screenshot.html item="i100.jpg" %}
+  <p>
+    To check that everything is working as it should, click on the "Test" tab. That page
+    lets you send emails to yourself in various formats.
+  </p>
+
+  <p>
+    We've tried to include some helpful error messages if the emails are not sent out, but
+    they are not exhaustive. If you run into trouble, you might want to try contacting your
+    hosting provider for further help.
+  </p>
+
+{% include close_section.html %}

@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Swift Mailer
+breadcrumbs:
+  - Modules,/modules
+  - Swift Mailer
+next: Configuration,/modules/swift_mailer/configuration
+---
+
+{% include open_section.html nav='nav_swift_mailer.html' selected='introduction' %}
+
+  <h3>Introduction</h3>
+
+  <p>
+    The Swift Mailer module, when installed and configured, overrides the default PHP <b>mail()</b> usage and sends
+    all Form Tools emails via the SMTP settings you supply.
+  </p>
+
+  <h4>Advantages over default mail() function</h4>
+
+  <ul>
+    <li>Some servers don't have PHP mail() set up.</li>
+    <li>The PHP mail() function is notoriously inconsistent across different servers. Often, simple things like sending
+      emails in multipart format (text + html) aren't permitted.</li>
+    <li>It allows you to include <i>file attachments</i> in your emails - either from files included in the form
+      submission or from a file on your server.</li>
+    <li>Option to specify return-path headers for each email template, which sends all non-deliverable emails back to
+      your inbox.</li>
+    <li>It's far faster!</li>
+    <li>People will think you're cool.</li>
+  </ul>
+
+{% include close_section.html %}

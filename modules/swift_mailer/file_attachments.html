@@ -1,0 +1,75 @@
+---
+layout: default
+navPage: docs
+heading: Swift Mailer
+breadcrumbs:
+  - Modules,/modules
+  - Swift Mailer,/modules/swift_mailer
+  - File Attachments
+prev: Example Gmail Configuration,/modules/swift_mailer/gmail/
+next: Handling Undeliverable Emails,/modules/swift_mailer/undeliverable_emails/
+---
+
+{% include open_section.html nav='nav_swift_mailer.html' selected='file_attachments' %}
+
+  <h3>File Attachments</h3>
+
+  <p>
+    Once the Swift Mailer is up and running, sending file attachments is a breeze. You can
+    attach files that were included in the form submission OR files that are found on your
+    server. There is no limit to the number of attachments you include, but generally it's a
+    good idea to keep the total size to a minimum.
+  </p>
+
+  <h4>1. Attaching files from the form submission</h4>
+
+  <p>
+    To include a file attachment in your emails, edit the appropriate email template and go to the
+    Content tab (where you enter the content for the emails). There, add the following to your
+    template (either text or HTML - it doesn't matter which; just as long as it's in one of them):
+  </p>
+
+  {% raw %}
+  <textarea class="codemirror" data-lang="smarty">{$attachment field="file_field1"}</textarea>
+  {% endraw %}
+
+  <p>
+    You will need to change the <b>file_field1</b> strings to match the file upload form
+    field name. You can include as many file fields are you want.
+  </p>
+
+  <p>
+    If the submission doesn't contain a file for that field, the email just won't include an
+    attachment.
+  </p>
+
+  <h4>2. Attaching files from your server</h4>
+
+  <p>
+    Attaching files from your server works in a similar way. For example:
+  </p>
+
+  {% raw %}
+  <textarea class="codemirror" data-lang="smarty">{$attachment file="/folder/myfile.txt"}</textarea>
+  {% endraw %}
+
+  <p>
+    A couple of things to note:
+  </p>
+
+  <ul>
+    <li>Note that the attribute is <b>file</b> not <b>field</b>.</li>
+    <li>The file path is relative to your Form Tools root. So if your Form Tools folder
+      is /formtools, and you have a file that you want to attach that's one folder up, you can put:
+
+      {% raw %}
+      <textarea class="codemirror" data-lang="smarty">{$attachment file="../folder/anotherfile.txt"}</textarea>
+      {% endraw %}
+
+      This assumes that the <b>$g_root_dir</b> value found in your /global/config.php file
+      is correct. We chose to use relative rather than absolute links so that in case you ever
+      change servers, you won't have to update each and every email template.
+    </li>
+  </ul>
+
+{% include close_section.html %}

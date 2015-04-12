@@ -1,0 +1,23 @@
+---
+layout: default
+navPage: docs
+heading: Swift Mailer
+breadcrumbs:
+  - Modules,/modules
+  - Swift Mailer,/modules/swift_mailer
+  - From Address Overridden
+prev: Handling Undeliverable Emails,/modules/swift_mailer/undeliverable_emails/
+---
+
+{% include open_section.html nav='nav_swift_mailer.html' selected='from_address' %}
+
+  <h3>From Address Overridden</h3>
+
+  <p>
+    One thing to beware. Depending on your SMTP service, you may find the "From" email
+    address being overridden by whatever email address is specified in the module settings.
+    Apparently, this is sometimes done automatically to prevent sending emails
+    from accounts that they weren't really sent from, as part of a "phishing" attack.
+  </p>
+
+{% include close_section.html %}

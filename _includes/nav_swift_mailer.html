@@ -1,0 +1,22 @@
+<div {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+	<a href="/modules/swift_mailer/">Introduction</a>
+</div>
+<div {% if include.selected == 'configuration' %}class="selected"{% endif %}>
+  <a href="/modules/swift_mailer/configuration/">Configuration</a>
+</div>
+
+<ul>
+	<li {% if include.selected == 'gmail' %}class="selected"{% endif %}>
+		<a href="/modules/swift_mailer/gmail">Example Gmail Configuration</a>
+	</li>
+</ul>
+
+<div {% if include.selected == 'file_attachments' %}class="selected"{% endif %}>
+  <a href="/modules/swift_mailer/file_attachments/">File Attachments</a>
+</div>
+<div {% if include.selected == 'undeliverable_emails' %}class="selected"{% endif %}>
+  <a href="/modules/swift_mailer/undeliverable_emails/">Handling Undeliverable Emails</a>
+</div>
+<div {% if include.selected == 'from_address' %}class="selected"{% endif %}>
+  <a href="/modules/swift_mailer/from_address/">From Address Overridden</a>
+</div>
