@@ -1,0 +1,28 @@
+---
+layout: default
+navPage: docs
+heading: TinyMCE Field
+breadcrumbs:
+  - Modules,/modules
+  - TinyMCE Field,/modules/field_type_tinymce
+  - External Form fields contain HTML tags?
+prev: Customizing individual fields,/modules/field_type_tinymce/customizing/
+---
+
+{% include open_section.html nav='nav_tinymce.html' selected='html_tags' %}
+
+
+  <h3>External Form fields contain HTML tags?</h3>
+
+  <p>
+    By and large the module is extremely straightforward. But there's one fringe case that you may need to know about.
+  </p>
+  <p>
+    By default, forms integrated with Form Tools have all HTML/XML tags stripped from the submission data. This is a
+    security measure; it prevents Evil People from doing Evil Stuff like performing XSS attacks on your site. But if
+    your own (external) form contains a rich-text editor, you'll want to allow HTML being submitted. To fix this, make
+    sure the "Strip tags in incoming submissions" field is set to "no".
+  </p>
+
+
+{% include close_section.html %}

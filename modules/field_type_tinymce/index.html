@@ -1,0 +1,45 @@
+---
+layout: default
+navPage: docs
+heading: TinyMCE Field
+breadcrumbs:
+  - Modules,/modules
+  - TinyMCE Field
+next: Changes from 2.0.6 and earlier,/modules/field_type_tinymce/changes
+---
+
+{% include open_section.html nav='nav_tinymce.html' selected='introduction' %}
+
+  <h3>Introduction</h3>
+
+  {% include screenshot.html item="i178.gif" %}
+
+  <p>
+    Up until 2.1.0, Form Tools came with a baked-in WYSIWYG editor. This allowed the
+    administrator to choose a rich-text editor for form fields, letting Form Tools users
+    edit those field types with all the benefits of rich-text.
+  </p>
+
+  <p>
+    (A quick aside. In case you didn't already know, WYSIWYG stands for What You See
+    Is What You Get - it's a commonly used term for rich-text editors. Moving on!).
+  </p>
+
+  <p>
+    With Form Tools 2.1.0, the WYSIWYG functionality was extracted and placed in a
+    separate module. Partly this was due to the restructuring of the way field types
+    are handled; partly it was simply because the WYSIWYG functionality wasn't central
+    to the core functionality of the script and lent itself to being in a separate
+    module. But placing it in a module also affords the following benefits:
+  </p>
+
+  <ul>
+    <li>It's now a lot easier to update since it's independent of the Form Tools
+      Core. We can now release quick updates and fixes.</li>
+    <li>The tinyMCE is no longer the only possible WYSIWYG field type. Depending on
+      user requirements, we can add additional WYSIWYG modules for scripts like
+      FCKEditor or htmlarea. Anything goes!</li>
+  </ul>
+
+
+{% include close_section.html %}
