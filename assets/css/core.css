@@ -8520,3 +8520,7 @@ img.mfp-img {
 .alert a {
     text-decoration: underline;
 }
+
+.module-index-list .row {
+    margin-bottom: 10px;
+}

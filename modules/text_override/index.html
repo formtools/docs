@@ -1,0 +1,75 @@
+---
+layout: default
+navPage: docs
+heading: Text Override
+breadcrumbs:
+  - Modules,/modules
+  - Text Override
+---
+
+<h3>Text Override</h3>
+
+<p>
+  This module lets you change the text for virtually any language string that appears in
+  Form Tools. Don't like the term "submission"? Rather user "attendee" or something other
+  word that better describes the content? No problem.
+</p>
+
+
+<h4>How it works</h4>
+
+<p>
+  All language strings for the Form Tools user interface are pulled from language files
+  found in your <b>/global/lang</b> folder. This allows you to display the interface in any
+  language that you want, provided a language file exists. For a full list of the available
+  languages, see the <a href="http://translations.formtools.org">translations section</a>.
+</p>
+
+<p>
+  Language files consist of one giant PHP array, with a unique "key" for each language string. For example:
+</p>
+
+
+<textarea class="codemirror" data-lang="php">// ...
+$LANG["word_about"] = "About";
+$LANG["word_accept"] = "Accept";
+$LANG["word_access"] = "Access";
+// ...</textarea>
+
+<p>
+  Here, the "word_about", "word_accept" and "word_access" are the keys. They uniquely
+  identify the string and are used throughout the code and templates to display that
+  particular string.
+</p>
+
+<p>
+  This module intercepts individual keys in the $LANG array and overrides them before
+  they gets outputted to the page.
+</p>
+
+<h4>Why not just edit the language file?</h4>
+
+<p>
+  Any time you upgrade, the language file contents may have been changed. So, any changes
+  you make to them are going to be overwritten any time you upgrade. This module is
+  compatible with upgrading.
+</p>
+
+<h4>Limitations / Restrictions</h4>
+
+<p>
+  It's not a perfect solution, but it can still help in a lot of cases. Here's a
+  few limitations:
+</p>
+
+<ul>
+  <li>It's not multi-language friendly. If you have users using different language packs
+    it will override the strings for EVERY language.</li>
+  <li>It doesn't affect individual modules pack string: only strings found in the Core
+    language file.</li>
+  <li>Form Tools strings are often used in multiple places. So if you override a string
+    like "SELECT", bear in mind it is a GLOBAL change: it will override the string for
+    everywhere in the UI that the string appears.
+  </li>
+</ul>
+
