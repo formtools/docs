@@ -5,13 +5,45 @@ heading: Extended Client Fields
 breadcrumbs:
   - Modules,/modules
   - Extended Client Fields
-next: Overview,/modules/export_manager/overview
+next: Adding Fields,/modules/extended_client_fields/adding_fields
 ---
 
-{% include open_section.html nav='nav_export_manager.html' selected='introduction' %}
+{% include open_section.html nav='nav_extended_client_fields.html' selected='overview' %}
 
-  <h3>Introduction</h3>
+  <h3>Overview</h3>
 
+  {% include screenshot.html item="i105.gif" %}
+
+  <p>
+    The Extended Client Fields module lets you construct any number of form fields to store
+    additional information for your client accounts. The module comes with a number of nifty
+    features, including:
+  </p>
+
+  <ul>
+    <li>Control whether the fields appear in the Edit Client -&gt; Main tab or -&gt; Settings tab.</li>
+    <li>Control the location and order they appear in the pages.</li>
+    <li>Choose whether the field should only appear for the administrator, or the client as well.</li>
+    <li>Each field can be of any of the following field types: textbox, textarea, select or multi-select dropdown,
+      radio buttons or checkboxes.</li>
+    <li>You can define a default value for the fields.</li>
+    <li>Group related field under a section header (optional)</li>
+  </ul>
+
+  <p>
+    The screenshot above shows a typical usage of this module. There are four new fields added
+    to the Edit Client page: gender, age, city and country grouped under the title
+    "Additional Info".
+  </p>
+
+  <h4>Requirements / Restrictions</h4>
+
+  <ul>
+    <li>This module requires version 2.0.0-beta-20090402 or later of the Form Tools Core. So upgrade first!</li>
+    <li>There's a hidden restriction with assigning your fields to the client's Edit Account -&gt; Settings page:
+      <b>the client must have at least one editable field defined on their Settings page</b>. If they don't, your
+      extended client fields won't show up. This is due to the way the Core template is structured.</li>
+  </ul>
 
 
 {% include close_section.html %}

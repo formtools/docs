@@ -1,0 +1,76 @@
+---
+layout: default
+navPage: docs
+heading: Extended Client Fields
+breadcrumbs:
+  - Modules,/modules
+  - Extended Client Fields,/modules/extended_client_fields/
+  - Developer Info
+prev: Section Titles,/modules/extended_client_fields/section_titles
+---
+
+{% include open_section.html nav='nav_extended_client_fields.html' selected='developer_info' %}
+
+  <h3>Developer Info</h3>
+
+  <p>
+    This page provides a little info about how the module is implemented, and some tips for building on top of it.
+  </p>
+
+  <h4>Hooks</h4>
+
+  <p>
+    The module utilizes a total of 10 hooks.
+  </p>
+
+  <p>
+    Code hooks (these are events in the code which this module piggy-backs its own functionality):
+  </p>
+
+  <ul>
+    <li><b>ft_admin_update_client</b> - called when the administrator updates the client accounts.</li>
+    <li><b>ft_update_client</b> - called when the client updates their own account.</li>
+  </ul>
+
+  <p>
+    Template hooks (these are placed in the templates that this module chooses to insert its content):
+  </p>
+
+  <ul>
+    <li>admin_edit_client_main_top</li>
+    <li>admin_edit_client_main_middle</li>
+    <li>admin_edit_client_main_bottom</li>
+    <li>admin_edit_client_settings_top</li>
+    <li>admin_edit_client_settings_bottom</li>
+    <li>edit_client_main_top</li>
+    <li>edit_client_main_middle</li>
+    <li>edit_client_main_bottom</li>
+    <li>edit_client_settings_top</li>
+    <li>edit_client_settings_bottom</li>
+  </ul>
+
+  <h4>Database</h4>
+
+  <p>
+    The Form Tools user account database was designed to be dynamic; i.e. to allow you to
+    create and assign additional information associated with each user account. The
+    main [prefix]accounts table contains those settings common to all accounts: admin and
+    clients. The [prefix]account_settings table allows you to assign arbitrary values to the
+    client accounts which will be automatically loaded for each account as they log in.
+    This module simply allocates additional fields to that table, which are updated by the
+    client / administrator when requested.
+  </p>
+
+  <h4>Ideas for future extensibility</h4>
+
+  <p>
+    This module actually has rather nice implications: since the additional fields
+    are loaded and available to the templates and code when the user logs in, you could
+    utilize this to create client groups or subdivisions of the accounts. (e.g. create one
+    or more dropdown fields, only accessible by the admin called "client group" called
+    "simple", "basic", "advanced", etc - or whatever), then create a module that
+    reads those values to choose what information should or shouldn't be displayed to the
+    user. Just an idea!
+  </p>
+
+{% include close_section.html %}
