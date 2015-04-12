@@ -1,0 +1,74 @@
+---
+layout: default
+navPage: docs
+heading: Hooks Manager
+breadcrumbs:
+  - Modules,/modules
+  - Hooks Manager
+next: Basic Usage,/modules/hooks_manager/basic_usage
+---
+
+{% include open_section.html nav='nav_hooks_manager.html' selected='introduction' %}
+
+  <h3>Introduction</h3>
+
+  <p class="alert alert-info">
+    <b>Warning!</b> This module requires technical knowledge of PHP, Smarty templating or in the very least HTML.
+  </p>
+
+  <h4>So what does this module do?</h4>
+
+  <p>
+    The Hooks Manager module provides you with a simple interface to add your own code or
+    HTML/Smarty markup allowing it to appear in Form Tools pages, or have it executed at
+    particular junctures in the code. What code you choose to add depends entirely on your
+    needs.
+  </p>
+
+  <p>
+    Form Tools has dozens and dozens of "hooks" littered throughout the code and within
+    the Smarty templates used to generate the visible webpages. These allow
+    developers like yourself to develop modules that extend the core functionality and
+    display extra information in the UI.
+  </p>
+
+  <p>
+    Like to add new fields to any of the Form Tools pages? Like to send emails to notify
+    yourselves when specific users change specific values in the form submissions? Like
+    to know when users are exporting data? No problem! All of this - and far, far more,
+    can be done relatively simply by using this module. To give you another idea, from a
+    technical standpoint the entire functionality offered by the Submission Pre-Parser
+    and Extended Client Fields modules could be emulated using the Hooks Manager. They
+    were implemented as separate modules since they're easier to handle that way.
+  </p>
+
+  <h4>Hooks Manager vs. custom modules</h4>
+
+  <p>
+    <b>This module adds nothing that can't be done via a custom module</b>. But writing a
+    separate module can be a bit of an uphill struggle: it requires learning about how
+    the Form Tools module system works which can take time. Plus, often you don't
+    need a UI for whatever it is you're doing: sometimes you just want something simpler;
+    sometimes you don't need a pretty UI to allow people to use and configure it.
+  </p>
+
+  <p>
+    The basic difference is that for larger functionality - functionality that requires
+    an interface for configuring its behaviour, you should run the gauntlet and
+    learning about how modules work. But for OTHER uses, the Hooks Manager may well be
+    a better fit.
+  </p>
+
+  <p>
+    To help you understand what this module can do, I'll provide a lot of examples
+    in this documentation. They should give you a clue of two things: how powerful it
+    is, and what kind of things it can do.
+  </p>
+
+  <p>
+    We'll start with a simple examination of the Hooks Manager UI: how you can utilize it
+    to solve your problem.
+  </p>
+
+
+{% include close_section.html %}

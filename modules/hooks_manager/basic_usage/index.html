@@ -1,0 +1,63 @@
+---
+layout: default
+navPage: docs
+heading: Hooks Manager
+breadcrumbs:
+  - Modules,/modules
+  - Hooks Manager,/modules/hooks_manager
+  - Basic Usage
+prev: Introduction,/modules/hooks_manager
+next: Basic Usage,/modules/hooks_manager/basic_usage
+---
+
+{% include open_section.html nav='nav_hooks_manager.html' selected='basic_usage' %}
+
+  <h3>Basic Usage</h3>
+
+  {% include screenshot.html item="i130.gif" %}
+
+  <p>
+    The Hooks Manager works around the concept of "rules" (borrowed from its predecessor, the
+    <a href="/modules/submission_pre_parser/">Submission Pre-Parser</a> module). You can define as many rules as you
+    want: each rule typically doing a single task. A rule is associated with one (and only one) hook.
+  </p>
+
+  <p>
+    You can create rules to be attached to code hooks, template hooks, and "custom" hooks (which are actually just
+    template hooks, but whose names are entirely up to you. Here's what they each mean.
+  </p>
+
+  <table cellspacing="0" cellpadding="1" width="100%">
+    <tbody><tr>
+      <td width="140" valign="top"><a href="../code_hooks">Code hooks</a></td>
+      <td>
+        Code hooks are events in the code which you can attach you own PHP code. There
+        are dozens and dozens of available code hooks for things like updating submissions,
+        sending emails and logging in.
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top"><a href="../template_hooks">Template hooks</a></td>
+      <td>
+        These are places in the actual webpages where you can insert your own HTML markup. For example, the
+        <a href="/modules/extended_client_fields/">Extended Client Fields</a> module uses template hooks to insert
+        extra fields for client accounts so you can store whatever you want. The Hooks Manager lets you do the same
+        thing, except that it allows you to insert code for ANY template hook (found on many pages in the Form Tools UI).
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../custom_hooks">Custom hooks</a></td>
+      <td>
+        Custom hooks are special, custom-defined template hooks. While the number and location
+        of Form Tools template hooks is static (me, the core developer adds them), you can
+        create as many custom hooks as you want. You can then use these hooks elsewhere in the
+        program to display your markup. For example, the (upcoming release) of the Pages module
+        lets you embed your custom hooks into a page to allow for whatever dynamic content
+        you want.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+{% include close_section.html %}

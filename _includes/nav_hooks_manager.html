@@ -1,0 +1,56 @@
+<div {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+	<a href="/modules/hooks_manager/">Introduction</a>
+</div>
+<div {% if include.selected == 'basic_usage' %}class="selected"{% endif %}>
+  <a href="/modules/hooks_manager/basic_usage">Basic Usage</a>
+</div>
+<ul>
+	<li {% if include.selected == 'code_hooks' %}class="selected"{% endif %}>
+		<a href="/modules/hooks_manager/basic_usage/code_hooks">Code Hooks</a>
+	</li>
+	<li {% if include.selected == 'template_hooks' %}class="selected"{% endif %}>
+		<a href="/modules/hooks_manager/basic_usage/template_hooks/">Template Hooks</a>
+	</li>
+  <li {% if include.selected == 'custom_hooks' %}class="selected"{% endif %}>
+    <a href="/modules/hooks_manager/basic_usage/custom_hooks/">Custom Hooks</a>
+  </li>
+</ul>
+
+<div {% if include.selected == 'examples' %}class="selected"{% endif %}>
+  <a href="/modules/hooks_manager/examples">Examples</a>
+</div>
+<ul>
+  <li {% if include.selected == 'add_email_template_placeholders' %}class="selected"{% endif %}>
+    <a href="/modules/hooks_manager/examples/add_email_template_placeholders">Adding an email template placeholder</a>
+
+    <ul>
+      <li {% if include.selected == 'add_email_template_placeholders' %}class="selected"{% endif %}>
+        <a href="/modules/hooks_manager/examples/add_client_field">Add new client field</a>
+      </li>
+      <li {% if include.selected == 'add_email_template_placeholders' %}class="selected"{% endif %}>
+        <a href="/modules/hooks_manager/examples/add_code_hook">Add code hook</a>
+      </li>
+    </ul>
+
+  </li>
+  <li {% if include.selected == 'tracking_last_emailed' %}class="selected"{% endif %}>
+    <a href="/modules/hooks_manager/examples/tracking_last_emailed/">Tracking "last emailed date" for submissions</a>
+
+    <ul>
+      <li {% if include.selected == 'new_db_field' %}class="selected"{% endif %}>
+        <a href="/modules/hooks_manager/examples/new_db_field">Add a new "last emailed" form field</a>
+      </li>
+      <li {% if include.selected == 'update_views' %}class="selected"{% endif %}>
+        <a href="/modules/hooks_manager/examples/update_views">Update your View(s)</a>
+      </li>
+      <li {% if include.selected == 'create_hook' %}class="selected"{% endif %}>
+        <a href="/modules/hooks_manager/examples/create_hook">Creating the hook</a>
+      </li>
+    </ul>
+
+  </li>
+</ul>
+
+<div {% if include.selected == 'references' %}class="selected"{% endif %}>
+  <a href="/modules/hooks_manager/references">References</a>
+</div>
