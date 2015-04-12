@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Submission Pre-Parser
+breadcrumbs:
+  - Modules,/modules
+  - Submission Pre-Parser,/modules/submission_pre_parser
+  - Debugging
+prev: Spam Detection,/modules/submission_pre_parser/spam_detection
+---
+
+{% include open_section.html nav='nav_submission_pre_parser.html' selected='debugging' %}
+
+  <h3>Debugging</h3>
+
+  <p>
+    This may help. Since the PHP control flow is passed to your code, if you're ever
+    not sure about what content is actually being made available, you can just stop processing
+    &nbsp;and examine it's contents. Try adding this to your rule:
+  </p>
+
+<textarea class="codemirror" data-lang="php">print_r($_POST);
+exit;</textarea>
+
+  <p>
+    Then put through a submission or update a submission (depending on which event(s) you have associated your rule with).
+  </p>
+
+  <p>
+    That will display everything you're receiving. For this module, all POST keys are editable - and of course, you can
+    add your own. Any other variables you create are ignored.
+  </p>
+
+{% include close_section.html %}

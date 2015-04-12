@@ -1,0 +1,51 @@
+---
+layout: default
+navPage: docs
+heading: Submission Pre-Parser
+breadcrumbs:
+  - Modules,/modules
+  - Submission Pre-Parser,/modules/submission_pre_parser
+  - Special Field Values
+prev: Rules,/modules/submission_pre_parser/rules
+next: Add vs. Update POST values,/modules/submission_pre_parser/post_values
+---
+
+{% include open_section.html nav='nav_submission_pre_parser.html' selected='field_values' %}
+
+  <h3>Special Field Values</h3>
+
+  <p>
+    The following POST keys have special values. The first two can be set in the PHP or forms
+    submitting the data, but the third is particular to the Submission Pre-parser.
+  </p>
+
+  <table cellspacing="0" cellpadding="1" class="info" width="100%">
+    <tbody><tr>
+      <td width="180" valign="top" class="blue">form_tools_ignore_submission</td>
+      <td>
+        This option lets you tell Form Tools not to bother storing the
+        submission. One practical use for this would be to employ the "hidden fields" method
+        for battling spam. See the <a href="../spam_detection">spam detection example</a> for instructions
+        on how to do this.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">form_tools_redirect_url</td>
+      <td>
+        This settings lets you choose the URL where the user will be redirected after the
+        add / update function is completed.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">form_tools_calling_function</td>
+      <td>
+        This value displays which function is currently calling your code. There are three
+        possibilities: <b>ft_process_form</b> (i.e. it's a standard form submission),
+        <b>ft_api_process_form</b> (a submission made through the API) and
+        <b>ft_edit_submission</b> (the submission is being edited via the API).
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+{% include close_section.html %}

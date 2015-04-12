@@ -1,0 +1,75 @@
+---
+layout: default
+navPage: docs
+heading: Submission Pre-Parser
+breadcrumbs:
+  - Modules,/modules
+  - Submission Pre-Parser,/modules/submission_pre_parser
+  - Examples,/modules/submission_pre_parser/examples
+  - Combining Fields
+prev: Examples,/modules/submission_pre_parser/examples
+next: Spam Detection,/modules/submission_pre_parser/spam_detection
+---
+
+{% include open_section.html nav='nav_submission_pre_parser.html' selected='combining_fields' %}
+
+  <h3>Combining Fields</h3>
+
+  <div class="alert alert-info">
+    Note: this example is only relevant to Form Tools 2.0.6 or earlier. Phone number fields are now predefined field
+    types in Form Tools 2.1.0. You can <a href="/userdoc/field_types/ft_phone">read about them here!</a>
+  </div>
+
+  <h4>Combining Form Fields</h4>
+
+  <p>
+    A common way to take phone numbers in forms is by separating it into components, like so:
+  </p>
+
+  <div>
+    (<input type="text" name="phone_1" size="3" value="123" maxlength="3">)
+    <input type="text" name="phone_2" size="3" value="456" maxlength="3">
+    <input type="text" name="phone_3" size="4" value="7890" maxlength="4">
+  </div>
+
+  <p>
+    The problem with this is that in the Form Tools UI, each field is displayed separately
+    on separate lines. Functionally this is still sound, but it's a bit ugly! To solve it,
+    you can create a pre-parser rule to combine them.
+  </p>
+
+  <ol>
+    <li>
+      First, in your Edit Form » Database tab, create a new field called just "Phone"
+      or something simple, and enter "phone" as the form field name.
+    </li>
+    <li>Next, add this new field to one of your Views. This is important! Otherwise your new
+      field won't show up anywhere in the Form Tools UI.</li>
+    <li>Go to the Submission Pre-parser module and add a new rule with the following PHP:
+
+<textarea class="codemirror" data-lang="php">if ( (isset($_POST["phone_1"]) && !empty($_POST["phone_1"])) &&
+  (isset($_POST["phone_2"]) && !empty($_POST["phone_2"])) &&
+  (isset($_POST["phone_3"]) && !empty($_POST["phone_3"])) ) {
+  $_POST["phone"] = "{$_POST["phone_1"]}-{$_POST["phone_2"]}-{$_POST["phone_3"]}";
+}</textarea>
+
+    </li>
+  </ol>
+
+  <p>
+    And you're done! The three phone form fields (here assumed to have the names "phone_1",
+    "phone_2" and "phone_3") are now combined to make a single field, stored in the "phone"
+    database field, looking like this:
+  </p>
+
+  <div>
+    <input type="text" name="phone" value="123-456-7890">
+  </div>
+
+  <p>
+    For the final touches, you'll probably want to either remove the separate phone fields
+    from your View or from the database altogether.
+  </p>
+
+
+{% include close_section.html %}

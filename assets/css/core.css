@@ -8516,3 +8516,7 @@ img.mfp-img {
     float: none;
     margin: 0 auto;
 }
+
+.alert a {
+    text-decoration: underline;
+}

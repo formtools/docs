@@ -1,0 +1,73 @@
+---
+layout: default
+navPage: docs
+heading: Submission Pre-Parser
+breadcrumbs:
+  - Modules,/modules
+  - Submission Pre-Parser,/modules/submission_pre_parser
+  - Add vs. Update POST values
+prev: Special Field Values,/modules/submission_pre_parser/field_values
+next: Examples,/modules/submission_pre_parser/examples
+---
+
+{% include open_section.html nav='nav_submission_pre_parser.html' selected='post_values' %}
+
+  <h3>Add vs. Update POST values</h3>
+
+  <p>
+    This page is only important if you want to add pre-parser rules that will be executed both when the submission is
+    first made AND when it's updated via the Form Tools UI.
+  </p>
+
+  <p>
+    The POST information for <b>adding</b> and <b>updating</b> submissions differs in two ways:
+  </p>
+
+  <ol>
+    <li>
+      The $_POST variable from a form will contain the form field names as the keys. For
+      submission update requests from the Form Tools UI, the requests will have the database
+      column name as the key.
+    </li>
+    <li>
+      Update requests may only contain a subset of the fields. This can
+      happen if you group the form submission data into separate tabs.
+    </li>
+  </ol>
+
+  <h4>Workaround #1</h4>
+
+  <p>
+    Create two separate rules: one to get executed for ADD requests, another for UPDATE.
+    You can do this with a simple boolean test:
+  </p>
+
+<textarea class="codemirror" data-lang="php">if ($_POST["form_tools_calling_function"] == "ft_update_submission") {
+  // code here
+} else {
+  // code here
+}</textarea>
+
+
+  <h4>Workaround #2</h4>
+
+  <p>
+    Another solution is to update the database column names to match your form field
+    names. This isn't a bad idea. For programmers planning on working with the code,
+    it's well worth updating the database column names to make them more descriptive.
+  </p>
+
+  <p>
+    To do this, go to your Edit Form » Database tab and click "Smart Fill". This
+    will set the database column names to the same as your form field names.
+  </p>
+
+  <p class="alert alert-danger">
+    Beware! This isn't 100% guaranteed to make the database column names and your form
+    fields identical! The Smart Fill script compares your form field names against a list
+    of MySQL reserved words, and if there are any matches, generates a DIFFERENT column
+    name. Check them over manually.
+  </p>
+
+
+{% include close_section.html %}

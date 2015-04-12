@@ -1,0 +1,65 @@
+---
+layout: default
+navPage: docs
+heading: Submission Pre-Parser
+breadcrumbs:
+  - Modules,/modules
+  - Submission Pre-Parser,/modules/submission_pre_parser
+  - Rules
+prev: Overview,/modules/submission_pre_parser
+next: Special Field Values,/modules/submission_pre_parser/field_values
+---
+
+{% include open_section.html nav='nav_submission_pre_parser.html' selected='rules' %}
+
+  <h3>Rules</h3>
+
+  <p>
+    The module organizes your code into <b>rules</b> - discrete ways to organize your PHP code, letting you define
+    what you want executed on one or more forms and to which event is taking place.
+  </p>
+
+  <p>
+    The add/edit rule page contains the following fields:
+  </p>
+
+  <table cellspacing="0" cellpadding="1" class="info" width="100%">
+    <tbody><tr>
+      <td width="120" class="blue" valign="top">Status</td>
+      <td>
+        Whether or not your PHP code should be executed. This lets you temporarily disable
+        processing of your PHP without having to delete it.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Rule Name</td>
+      <td>
+        A label to identify your rule in the Pre-parser rule list page.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Form</td>
+      <td>
+        This determines which form(s) will process your code.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Event</td>
+      <td>
+        This option determines for which events (i.e. functions) you want your code executed.
+        There are three options: when the form is submitted (a "direct" submission),
+        when the form is submitted via the API, and when the information is updated via the
+        Form Tools UI. NOTE: the POST data for the form submission and API form submissions
+        are different from the edit submission POST. This will be discussed in later pages.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">PHP Code</td>
+      <td>
+        Your PHP code!
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+{% include close_section.html %}
