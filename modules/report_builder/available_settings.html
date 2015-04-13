@@ -1,0 +1,62 @@
+---
+layout: default
+navPage: docs
+heading: Report Builder
+breadcrumbs:
+  - Modules,/modules
+  - Report Builder,/modules/report_builder
+  - Available Settings
+prev: Creating new reports,/modules/report_builder/creating_reports
+next: Export Options,/modules/report_builder/export_options
+---
+
+{% include open_section.html nav='nav_report_builder.html' selected='available_settings' %}
+
+  <h3>Available Settings</h3>
+
+  {% include screenshot.html item="i248.jpg" %}
+
+  <p>
+    The Reports Builder settings are pretty self-explanatory, but we'll document them here,
+    just for thoroughness.
+  </p>
+
+  <p>
+    When you select the module from the Modules page, you'll see a page that looks like the
+    screenshot to the right. Here's what the settings mean.
+  </p>
+  <div class="clear"></div>
+
+  <h4>1. Show <i>Reports</i> icon on Submission Listing Page</h4>
+
+  {% include screenshot.html item="i249.jpg" %}
+
+  <p>
+    This setting is enabled by default; it determines whether or not the reports icon should
+    appear on the Submission Listing page, as shown in the screenshot to the left.
+    The Reports icon is a very convenient way to quickly view all reports for a form, but
+    in case you don't want it to be displayed, just set this setting to "no".
+  </p>
+
+  <div class="clear"></div>
+  <h4>2. <i>Reports</i> icon should show reports in...</h4>
+
+  <p>
+    This setting determines the behaviour of the Reports icon. By default, it opens up the
+    reports in a <b>dialog</b> window (i.e. the URL of the page doesn't change and an overlay appears
+    which contains the reports). Dialog windows can just be closed, returning the user to
+    the original page. The other option is to open the reports in a totally new page. Both
+    methods show the same reports - they simply differ in how they behave.
+  </p>
+
+  <h4>3. Expand reports on All Reports page by default</h4>
+
+  <p>
+    This setting was added in 1.0.2 of the module. In previous version, the "All Reports" page
+    (which lists all reports for all forms) hides all the form reports by default and you
+    need to click on the Expand button to view them. This setting just lets you control
+    whether or not that list is expanded or hidden by default.
+  </p>
+
+
+{% include close_section.html %}

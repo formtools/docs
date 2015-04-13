@@ -1,0 +1,57 @@
+---
+layout: default
+navPage: docs
+heading: Report Builder
+breadcrumbs:
+  - Modules,/modules
+  - Report Builder,/modules/report_builder
+  - Export Options
+prev: Available Settings,/modules/report_builder/available_settings
+next: Feature Suggestions,/modules/report_builder/feature_suggestions
+---
+
+{% include open_section.html nav='nav_report_builder.html' selected='export_options' %}
+
+  <h3>Export Options</h3>
+
+  {% include screenshot.html item="i250.gif" %}
+
+  <p>
+    In an "out the box" installation of Form Tools, the Export Manager module and the Report
+    Builder module, you'll only see two download / export options on the reports: HTML and
+    Excel. The export options show up as columns of icons, next to each report - as shown
+    in the screenshot to the right.
+  </p>
+
+  <p>
+    However, this is totally customizable. As with the previous page on Creating Reports,
+    the functionality to create new Export Options is managed elsewhere: this time in the
+    Export Manager module.
+  </p>
+
+  <p>
+    The Export Manager module is an extremely advanced system for generating custom export
+    types. By default, it includes four types: HTML / Printer Friendly, Excel, CSV and XML -
+    but only the first two are enabled, which is why they are the only ones that show
+    up on the reports. To include those, just edit the Export Group in the Export Manager
+    module and change the visibility to yes.
+  </p>
+
+  <p>
+    For a lot more information about the Export Manager and how to customize your export
+    options, take a look at the <a href="/modules/export_manager/">module's documentation</a>.
+  </p>
+
+  <h4>Multiple Export Types?</h4>
+
+  <p>
+    If you start tinkering around with customizing the export options via the Export Manager,
+    there's one idiosyncracy to the Report Builder module that you should know about. It
+    will only ever list a single Export Type from each Export Group. (For more information
+    on the difference and definition of Export Types and Groups, see the
+    <a href="/modules/export_manager/">Export Manager's documentation</a>).
+    Specifically: it will only show the first Export Type.
+  </p>
+
+
+{% include close_section.html %}

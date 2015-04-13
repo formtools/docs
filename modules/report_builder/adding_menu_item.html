@@ -1,0 +1,69 @@
+---
+layout: default
+navPage: docs
+heading: Report Builder
+breadcrumbs:
+  - Modules,/modules
+  - Report Builder,/modules/report_builder
+  - How to install
+prev: How to install,/modules/report_builder/how_to_install
+next: Creating new reports,/modules/report_builder/creating_reports
+---
+
+{% include open_section.html nav='nav_report_builder.html' selected='adding_menu_item' %}
+
+  <h3>Adding a Reports menu item</h3>
+
+  {% include screenshot.html item="i251.gif" %}
+
+  <p>
+    To add a direct link to the reports in the main left column Form Tools navigation,
+    go to the Settings -&gt; Menus page, and edit either
+    the administrator or client account menu (whichever you want to add the link to). There,
+    you should
+    see a page that looks something like the screenshot to the right. When you clicking on any
+    of the pages column dropdowns, you will see a new section entitled "Report Builder".
+  </p>
+
+  <h4>Adding an <i>all form</i> report</h4>
+
+  <p>
+    Under the Report Builder section, the first option is entitled "Reports". That is the
+    <i>main</i> reports page for your Form Tools installation. When you add that to your
+    menu, anyone clicking on that link will see all forms and all reports (Views) for those
+    forms. Since the list can get quite large, all forms reports are hidden by default: you need
+    to click on a form row to see the reports. To see how that looks, click on the
+    screenshot below and to the right.
+  </p>
+
+  {% include screenshot.html item="i246.gif" %}
+
+  <p>
+    This main report page automatically figures out who's logged in and what forms and Views
+    they can access. So, you can assign that single page to any client account and when they
+    visit the page they will only ever see the subset of forms and View that they have
+    permission to access.
+  </p>
+
+  <p>
+    The <i>+ Expand</i> and <i>- Contract</i> button at the top right of the page lets the
+    user expand all forms to view all reports at the same time, or hide them.
+  </p>
+
+  <h4>Adding a report for a single form</h4>
+
+  {% include screenshot.html item="i247.gif" %}
+
+  <p>
+    This works exactly the same way. Instead of selecting the first "Reports" option in the
+    Report Builder section, select the specific form you're interested in. When a Form Tools
+    user account clicks on that menu item, they will see only the reports that are relevant
+    to that form, and their account. The list will be automatically expanded when the page loads
+    so the user only needs to click on the various export types to generate that report.
+  </p>
+
+  <p>
+    Note: the reports they see on this page are the same as on the report icon dialog.
+  </p>
+
+{% include close_section.html %}
