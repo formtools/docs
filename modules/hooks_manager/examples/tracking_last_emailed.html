@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Hooks Manager
+breadcrumbs:
+  - Modules,/modules
+  - Hooks Manager,/modules/hooks_manager
+  - Examples,/modules/hooks_manager
+  - Tracking "last emailed date" for submissions
+prev: Add code hook,/modules/hooks_manager/examples/add_code_hook
+next: "Step 1: Add a new Last Emailed form field,/modules/hooks_manager/examples/new_db_field"
+---
+
+{% include open_section.html nav='nav_hooks_manager.html' selected='tracking_last_emailed' %}
+
+  <h3>Tracking "last emailed date" for submissions</h3>
+
+  <p>
+    For this example, we're going to expand the core functionality of the Form Tools script by keeping track of the
+    last time each submission was emailed. This can be helpful for adminstrative purposes - knowing when a user was last
+    contacted.
+  </p>
+  <p>
+    This example has three steps:
+  </p>
+
+  <ol>
+    <li><a href="../new_db_field">Add a new "last emailed" form field</a></li>
+    <li><a href="../update_view">Update your View(s)</a></li>
+    <li><a href="../create_hook">Creating the hook</a></li>
+  </ol>
+
+
+{% include close_section.html %}

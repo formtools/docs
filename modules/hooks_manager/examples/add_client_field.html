@@ -1,0 +1,56 @@
+---
+layout: default
+navPage: docs
+heading: Hooks Manager
+breadcrumbs:
+  - Modules,/modules
+  - Hooks Manager,/modules/hooks_manager
+  - Examples,/modules/hooks_manager
+  - Client account expiry dates,/modules/hooks_manager/client_account_expiry_dates
+  - "Step 1: Add client field"
+prev: Client account expiry dates,/modules/hooks_manager/examples/client_account_expiry_dates
+next: "Step 2: Add code hook,/modules/hooks_manager/examples/add_code_hook"
+---
+
+{% include open_section.html nav='nav_hooks_manager.html' selected='add_client_field' %}
+
+  <h3>Step 1: Add new client field</h3>
+
+  {% include screenshot.html item="i131.gif" %}
+
+  <h4>Extended Client Fields module configuration</h4>
+
+  <ol>
+    <li><b>Install</b>: Alright! The first step is to download and install the
+      <a href="/modules/extended_client_fields/">Extended Client Fields</a> module. This module allows you to create
+      additional fields to store whatever information you want for your client accounts.
+    </li>
+    <li><b>Add a new "expiry date" field</b>. Create a new field with the fields entered as in the screenshot to the right.</li>
+    <li>
+      <b>Find the new field ID.</b> This bit's a little sneaky, but I can't think of a better way to do it. In the
+      Extended Client Fields module, go to the main page that lists all your fields. You should see the new "expiry
+      date" field. Roll your mouse over the "EDIT" link (or just click it). The URL for that page ends in
+      <b>edit.php?id=X</b>. Jot down the value of "X" (it'll be an integer).
+    </li>
+    <li>
+      <b>Add an expiry date for a single client account</b>. Edit one of your client accounts. You should now see your
+      new field show up, like in the screenshot below.
+
+      {% include screenshot.html item="i132.gif" %}
+
+      Enter a date in the past, perhaps yesterday. Enter the date in this format:
+      <b>yyyy-mm-dd</b>. It's very important that you enter the date in precisely that format:
+      if you add a space at the end, reverse the month and days, don't zero pad the month or
+      days or use a different separator than "-", this won't work!
+    </li>
+  </ol>
+
+  <p>
+    So far so good. Now let's add a new Hooks Manager rule to examine the dates in that new
+    field, and if the account expiry date has passed, prevent them from logging and
+    display a "Sorry your account has expired message". If a client account doesn't have an
+    expiry date set they can always log in like normal.
+  </p>
+
+
+{% include close_section.html %}

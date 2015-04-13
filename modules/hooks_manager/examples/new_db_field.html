@@ -1,0 +1,49 @@
+---
+layout: default
+navPage: docs
+heading: Hooks Manager
+breadcrumbs:
+  - Modules,/modules
+  - Hooks Manager,/modules/hooks_manager
+  - Examples,/modules/hooks_manager/examples/
+  - Tracking "last emailed date" for submission,/modules/hooks_manager/examples/tracking_last_emailed
+  - Add a new "last emailed" form field
+prev: 'Tracking "last emailed date" for submissions,/modules/hooks_manager/examples/tracking_last_emailed'
+next: "Step 2: Update your View(s),/modules/hooks_manager/examples/update_view"
+---
+
+{% include open_section.html nav='nav_hooks_manager.html' selected='new_db_field' %}
+
+  <h3>Step 1: Add a new "last emailed" form field</h3>
+
+  <p>
+    First off, we're going to create a new form field that's going to store the last emailed date. The way this
+    is going to work is that every form submission will now have a "last emailed date" field, containing just that: the
+    last time the submission was emailed.
+  </p>
+
+  {% include screenshot.html item="i135.gif" %}
+
+  <ol>
+    <li>In Form Tools, edit the form and go to the Database tab, as shown in the screenshot
+      to the right. On this page, click the "Add Field(s)" button on the bottom right of the
+      page.</li>
+    <li>
+      On the following page, enter in the fields as shown the next screenshot. It's important
+      that you enter these values in exactly as described:
+      <ul>
+        <li><b>Pass On</b> - leave unchecked</li>
+        <li><b>Form Field Name</b> - "last_emailed"</li>
+        <li><b>Display Text</b> - "Last Emailed"</li>
+        <li>
+          {% include screenshot.html item="i136.gif" %}
+          <b>Field Size</b> - Small (&lt;= 20 chars)</li>
+        <li><b>Data Type</b> - "String"</li>
+        <li><b>Database Column</b> - "last_emailed"</li>
+      </ul>
+
+      Finally, Click the "Add Field" button and proceed to the next step.
+    </li>
+  </ol>
+
+{% include close_section.html %}

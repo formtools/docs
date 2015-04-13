@@ -1,0 +1,50 @@
+---
+layout: default
+navPage: docs
+heading: Hooks Manager
+breadcrumbs:
+  - Modules,/modules
+  - Hooks Manager,/modules/hooks_manager
+  - Basic Usage,/modules/hooks_manager/basic_usage
+  - Code Hooks
+prev: Basic Usage,/modules/hooks_manager/basic_usage
+next: Template Hooks,/modules/hooks_manager/basic_usage/template_hooks
+---
+
+{% include open_section.html nav='nav_hooks_manager.html' selected='code_hooks' %}
+
+  <h3>Code Hooks</h3>
+
+  {% include screenshot.html item="i129.gif" %}
+
+  <p>
+    As mentioned earlier, code hooks let you add your own PHP to be executed at specific points
+    in the code, like updating submissions or editing client accounts. Here's what each
+    of the fields mean on the Add/Edit Hooks page:
+  </p>
+
+  <ul>
+    <li><b>Status</b>: whether this rule is enabled or not. This provides a convenient way to turn off - but not delete - a rule.</li>
+    <li><b>Rule Name</b>: a description of what the rule is doing.</li>
+    <li><b>Priority</b>: a single hook can have multiple rules assigned to it; rules can be
+      defined through the Hooks Manager or through custom modules. This setting determines in
+      what order your code should get executed.</li>
+    <li><b>Hook Type</b>: Code / Template / Custom. Choosing a different type shows different options in the grey box beneath it.</li>
+    <li><b>Code Hook</b>: this is a list of all available code hooks within Form Tools.
+      In order to pick the appropriate hook, you'll need to review the Form Tools source code
+      to figure out where you need to attach your code, depending on your requirements.
+      The names are mostly descriptive: in many cases you should be able to get a sense of
+      what the hook is about from the function name. [Tip: to locate the code hooks, do a
+      search in the /global/code folder for "extract". Those lines are the hooks].</li>
+    <li><b>PHP Code</b>: the code for your hook. To help out a little,
+      at the bottom of the page there is a list of what variables have been passed to this
+      particular code hook and what can be overwritten.<br>
+      <br>
+      As with the function names, hopefully you will get a sense of what information is stored
+      in each variable by the variable name. But in case you're not clear, either view the source
+      code for more information or do a print_r() on the variable, followed by an exit(); and
+      load whatever page is running the hook.
+    </li>
+  </ul>
+
+{% include close_section.html %}

@@ -1,0 +1,73 @@
+---
+layout: default
+navPage: docs
+heading: Hooks Manager
+breadcrumbs:
+  - Modules,/modules
+  - Hooks Manager,/modules/hooks_manager
+  - Examples,/modules/hooks_manager
+  - Adding an email template placeholder
+prev: Examples,/modules/hooks_manager/examples
+next: Client account expiry dates,/modules/hooks_manager/examples/client_account_expiry_dates
+---
+
+{% include open_section.html nav='nav_hooks_manager.html' selected='add_email_template_placeholders' %}
+
+  <h3>Adding an email template placeholder</h3>
+
+  <p>
+    The email templates let you customize every aspect of the emails sent out from
+    Form Tools. This is great and all, but sometimes it forces you to do a lot more work
+    that you should need to. For example, what if you wanted to add some footer text to
+    be appended to all emails? Or what if you had an image you'd like to appear as a banner
+    in all HTML emails? In situations like these, the last thing you want to do is
+    duplicate content again and again.
+  </p>
+  <p>
+    Instead, a simple workaround is to <i>create your own email template placeholders</i>.
+  </p>
+
+  <table cellspacing="0" cellpadding="1" width="100%">
+    <tbody><tr>
+      <th width="60">Step</th>
+      <th>Description</th>
+      <th>Screenshot</th>
+    </tr>
+    <tr>
+      <td valign="top"><b>1.</b></td>
+      <td valign="top">
+        Edit one of your email templates that you'd like to add some footer text. In either
+        the HTML Template or Text Template fields on the Content tab (which ever you are using),
+        add the following placeholder at the bottom:
+
+        {% raw %}
+        <textarea class="codemirror" data-lang="smarty">{$FOOTERTEXT}</textarea>
+        {% endraw %}
+
+      </td>
+      <td>
+        {% include screenshot.html item="i172.jpg" %}
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><b>2.</b></td>
+      <td valign="top">
+        Next, go to your Modules page and select the Hooks Manager. There, configure a new
+        rule with the contents of the attached image. Once that's done, the placeholder
+        you included in your email template will automatically converted to contain this
+        value. And you're done! To test it, just send yourself a test email on the Edit Email
+        Template page.
+      </td>
+      <td>
+        {% include screenshot.html item="i173.jpg" %}
+      </td>
+    </tr>
+    </tbody></table>
+
+  <p>
+    You can call your placeholders whatever you want - whatever is appropriate. This is a
+    very useful technique to reduce maintenance.
+  </p>
+
+
+{% include close_section.html %}

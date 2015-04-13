@@ -1,0 +1,56 @@
+---
+layout: default
+navPage: docs
+heading: Hooks Manager
+breadcrumbs:
+  - Modules,/modules
+  - Hooks Manager,/modules/hooks_manager
+  - Examples,/modules/hooks_manager/examples/
+  - Tracking "last emailed date" for submission,/modules/hooks_manager/examples/tracking_last_emailed
+  - Creating the Hooks Manager rule
+prev: Update your View(s),/modules/hooks_manager/examples/update_view
+next: References,/modules/hooks_manager/references
+---
+
+{% include open_section.html nav='nav_hooks_manager.html' selected='create_hook' %}
+
+  <h3>Step 3: Creating the Hooks Manager rule</h3>
+
+  {% include screenshot.html item="i138.gif" %}
+
+  <p>
+    Last step is to create a new Hooks Manager rule that ties everything together. What this
+    step does is append some custom PHP that's called whenever an email is sent to a particular
+    submission. Specifically, it updates the new last_emailed field that you just added to the
+    database and keep track of that info.
+  </p>
+
+  <p>
+    The code is actually quite simple. You can just copy and paste the following code into the
+    Hooks Manager rule, as shown in the screenshot on this page:
+  </p>
+
+<textarea class="codemirror" data-lang="php">// update the last emailed field for this submission
+$table_prefix = "ft_"; // you will need
+$now = date("Y-m-d H:i:s");
+$query = "UPDATE {$table_prefix}form_{$form_id}
+          SET last_emailed = '$now'
+          WHERE submission_id = $submission_id";
+@mysql_query($query);</textarea>
+
+  <p>
+    The only change you'll need to make is change the <b>$table_prefix</b> variable to store
+    your database prefix (this is found in your /global/config.php file).
+  </p>
+
+  <h4>Final Notes</h4>
+
+  <p>
+    The only deficiency of this method is that on the Edit Submission page, the "Email" feature
+    sends the email via Ajax and doesn't instantly update the "Last Edited"
+    field value displayed on the page. It will only be visibly updated when you return to the
+    submission the next time. [Technically, you can solve this by writing a custom
+    template hook... but that's another story!]
+  </p>
+
+{% include close_section.html %}

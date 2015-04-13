@@ -1,0 +1,56 @@
+---
+layout: default
+navPage: docs
+heading: Hooks Manager
+breadcrumbs:
+  - Modules,/modules
+  - Hooks Manager,/modules/hooks_manager
+  - Basic Usage,/modules/hooks_manager/basic_usage
+  - Custom Hooks
+prev: Template Hooks,/modules/hooks_manager/basic_usage/template_hooks
+next: Examples,/modules/hooks_manager/examples
+---
+
+{% include open_section.html nav='nav_hooks_manager.html' selected='custom_hooks' %}
+
+  <h3>Custom Hooks</h3>
+
+  <p>
+    "Custom" hooks is a new idea that, to be perfectly frank, has yet to be polished. Think
+    of this feature as Very-Much-In-Beta. I thought it would be helpful to use the Hooks
+    Manager to insert snippets of markup/code in other places throughout the application,
+    not just in the predetermined template and hook locations. For instance, it would be
+    nice to use the Pages modules to insert dynamic content - e.g. lists of forms, lists of
+    submissions - and not just static HTML content. Or perhaps it would be handy to be able
+    to have hooks within some of the modules.
+  </p>
+
+  <p>
+    This is what this feature is about.
+  </p>
+
+  <p>
+    As a simple example of this hook, upgrade to the latest version of the Pages
+    module. Then follow these steps:
+  </p>
+
+  <ol>
+    <li>In the Hooks Manager, create a custom hook and enter "hello_world" for the Custom
+      Hook field.</li>
+    <li>Select "HTML" as the content type.</li>
+    <li>Enter "Hello World!" as the content.</li>
+    <li>Go to the Pages module and create a new page.</li>
+    <li>Select "Smarty" as the content type and enter the following into the Page Content
+      field:
+
+{% raw %}
+<textarea class="codemirror" data-lang="smarty">{template_hook location="hello_world"}</textarea>
+{% endraw %}
+
+    </li>
+    <li>Finally, return to the Pages main page (the one that lists all Pages) and click the
+      "VIEW" link. Notice that the custom hook you entered has been replaced by whatever hook
+      content you entered!</li>
+  </ol>
+
+{% include close_section.html %}
