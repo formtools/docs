@@ -1,0 +1,37 @@
+---
+layout: default
+navPage: docs
+heading: Pages
+breadcrumbs:
+  - Modules,/modules
+  - Pages
+next: Adding / Editing Pages,/modules/pages/manage_pages
+---
+
+{% include open_section.html nav='nav_pages.html' selected='introduction' %}
+
+  <h3>Introduction</h3>
+
+  {% include screenshot.html item="i139.gif" %}
+
+  <p>
+    The Pages module lets you create custom pages to embed within the Form Tools UI, containing
+    whatever information you want. A common usage for this module is to provide some sort of
+    custom "Splash" screen for client accounts when they log in, which contains simple
+    help information.
+  </p>
+
+  <p>
+    With version <b>1.1.0</b> of this module, we added some more advanced functionality so
+    you can really utilize this script to good effect. Now you can do things like:
+  </p>
+
+  <ul>
+    <li>embed HTML, PHP or Smarty content</li>
+    <li>use Form Tools' built in Smarty functions to display form and submission data directly
+      within your pages</li>
+    <li>set the permissions on the page so that only a particular user account can access it
+      (this was possible prior to version 1.1.0, but it wasn't secure)</li>
+  </ul>
+
+{% include close_section.html %}

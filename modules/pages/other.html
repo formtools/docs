@@ -1,0 +1,91 @@
+---
+layout: default
+navPage: docs
+heading: Pages
+breadcrumbs:
+  - Modules,/modules
+  - Pages,/modules/pages
+  - Other
+prev: Adding / Editing Pages,/modules/pages/manage_pages
+---
+
+{% include open_section.html nav='nav_pages.html' selected='other' %}
+
+  <h3>Introduction</h3>
+
+  <ul>
+    <li><a href="#adding_page">Adding a Page to the menu navigation</a></li>
+    <li><a href="#default_login_page">Making a Page the default login page</a></li>
+    <li><a href="#limitations">Limitations</a></li>
+    <li><a href="#related_links">Related Links</a></li>
+  </ul>
+
+  <hr size="1">
+
+  <a name="adding_page"></a>
+  <h4>Adding a Page to the menu navigation</h4>
+
+  <p>
+    Form Tools lets you customize the contents of the Form Tools navigation for both
+    administrators and clients. In fact, you can construct as many client menus as you
+    want, so if need be, every client would see a different navigation menu when they
+    log in. The menu contents are managed through the Settings » Menus page. Once
+    you add a Page through the Pages module, you will be able to select it on the
+    add/edit menu pages - so let's begin by adding a Page.
+  </p>
+
+  <p>
+    Adding a Page is very simple. Just go to your Modules page, and select the Pages
+    module. Here, click the "Add Page" button. All pages have three - and only three - fields:
+  </p>
+
+  <ol>
+    <li><b>Page Name</b> - this is used to uniquely identify the Page in dropdowns
+      throughout the script. It also serves as the default menu item label if the page
+      gets linked to in a menu.</li>
+    <li><b>Page Heading</b> - this is the title of the page appearing in the browsers'
+      title field, and acts as the main page title.</li>
+
+    <li><b>Page Content</b> - this is a WYSIWYG editor, letting you easily generate HTML
+      for the page content.</li>
+  </ol>
+
+  <a name="default_login_page"></a>
+  <h4>Making a Page the default login page</h4>
+
+  <p>
+    After creating your page, you have the option of making that page the default login
+    page for any user account - including the administrator.
+  </p>
+  <ul>
+    <li>To make it the default login page for all future client accounts, go to the
+      Settings » Accounts page. Here, select the appropriate Page in the "Login Page"
+      dropdown field. You can also opt to allow clients to pick their own login page, by
+      checking the "Client's may edit" checkbox. (Don't worry: clients can only ever pick
+      a login page that's already defined in their own menu!)</li>
+
+    <li>You can customize the login page for an individual client account on the Edit
+      Client » Settings page.</li>
+    <li>Lastly, you can customize your own login page on the Your Account page.</li>
+  </ul>
+
+  <a name="limitations"></a>
+  <h4>Limitations</h4>
+
+  <p>
+    Currently, Pages are limited to text only. You can FTP images to your server and link
+    to them via HTML, but there is no facility in place to upload images / files directly,
+    or extract dynamic content from the Form Tools database. Depending on the requests
+    from individual users, specific features may be added at a later date.
+  </p>
+
+  <a name="related_links"></a>
+  <h4>Related Links</h4>
+
+  <ul>
+    <li><a href="/userdoc/settings/menus_tab">Menus</a></li>
+    <li><a href="/modules/submission_accounts/menus">Submission Accounts Module: customizing the menus</a></li>
+    <li><a href="/userdoc/modules/installing">Installing a module</a></li>
+  </ul>
+
+{% include close_section.html %}
