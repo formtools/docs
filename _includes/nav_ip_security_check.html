@@ -1,0 +1,12 @@
+<div {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+	<a href="/modules/ip_security_check/">Introduction</a>
+</div>
+<div {% if include.selected == 'configuration_page' %}class="selected"{% endif %}>
+  <a href="/modules/ip_security_check/configuration_page/">The Configuration Page</a>
+</div>
+<div {% if include.selected == 'denied_page' %}class="selected"{% endif %}>
+  <a href="/modules/ip_security_check/denied_page/">The Denied Page</a>
+</div>
+<div {% if include.selected == 'locked_out' %}class="selected"{% endif %}>
+  <a href="/modules/ip_security_check/locked_out">Ack, I'm locked out!</a>
+</div>

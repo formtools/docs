@@ -1,0 +1,52 @@
+---
+layout: default
+navPage: docs
+heading: IP Security Check
+breadcrumbs:
+  - Modules,/modules
+  - IP Security Check,/modules/ip_security_check
+  - Configuration Page
+prev: Introduction,/modules/ip_security_check
+next: The Denied Page,/modules/ip_security_check/denied_page
+---
+
+{% include open_section.html nav='nav_ip_security_check.html' selected='configuration_page' %}
+
+
+  <h3>Configuration Page</h3>
+
+  {% include screenshot.html item="i352.gif" %}
+
+  <p>
+    The module configuration page is pretty self-explanatory. Plus it contains a whole thwack of text already in the
+    page, so more blurb would be unnecessary. I'll just touch on the key elements here, just so that people browsing
+    the module doc can see how it works.
+  </p>
+
+  <b>Whitelists vs. Blacklists</b>
+
+  <p>
+    After installing the module, select it from your Modules page. There, you will be given the choice to define a
+    <b>whitelist</b> or a <b>blacklist</b>.
+  </p>
+
+  <ul>
+    <li>A <b>whitelist</b> is a list of <i>permitted</i> IP addresses. Only computers with IP addresses on the list
+      will be allowed to log in.</li>
+    <li>A <b>blacklist</b> is a list of <i>banned</i> IP addresses. Nobody on the list will be allowed to log in.</li>
+  </ul>
+
+  <p>
+    For convenience, your current IP address is listed at the top right of the module page. If you're defining a
+    whitelist, you'll probably want to add it!
+  </p>
+
+  <b>IP Ranges</b>
+
+  <p>
+    As of version 1.0.1 of this module, you can now define a range of IPs, by using the "*" character. For example,
+    <b>*.*.*.*</b> would match all IPs; <b>172.*.*.*</b> would only match those IPs that start with 172.
+  </p>
+
+
+{% include close_section.html %}

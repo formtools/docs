@@ -1,0 +1,47 @@
+---
+layout: default
+navPage: docs
+heading: IP Security Check
+breadcrumbs:
+  - Modules,/modules
+  - IP Security Check,/modules/ip_security_check
+  - Ack I'm locked out!
+prev: The Denied Page,/modules/ip_security_check/denied_page
+---
+
+{% include open_section.html nav='nav_ip_security_check.html' selected='locked_out' %}
+
+  <h3>Ack, I'm locked out!</h3>
+
+  {% include screenshot.html item="i352.gif" %}
+
+  <p>
+    This is BOUND to happen, so if you ever find yourself in this frustrating scenario, here's how to de-stickify the
+    situation. Note: you'll need phpMyAdmin access or another way to run a query on your database.
+  </p>
+
+  <ol>
+    <li>First, find out your IP address. There are <a href="http://lmgtfy.com/?q=What%27s+my+IP+address%3F"
+        target="_blank">plenty of websites that will tell you this</a>. (Sorry for the "Let Me Google That For You"
+      link - it wasn't intended snarkily, I just couldn't resist!)</li>
+    <li>Next, access your database and run the following query. Replace <b>[PREFIX]</b> and <b>[YOUR_IP]</b> with your
+      database prefix and IP address, respectively. (The database prefix is the characters used to prefix all of your
+      database tables. It's usually <b>ft_</b>. If you're not sure, you can find it in your /global/config.php file).
+
+      <blockquote><pre>INSERT INTO [PREFIX]settings (setting_name, setting_value, module)
+VALUES ('temp_ip_override', '[YOUR_IP]', 'ip_security_check');</pre></blockquote>
+
+      This updates the database settings table to allow for a <b>one-time</b> login access to Form Tools for your IP
+      address. After you successfully log in, the record you just added will be removed and you won't be able to log
+      in again. So...
+    </li>
+    <li>After you logged in, go to your Modules page. There, select the IP Security Check module and add your IP to
+      the whitelist - or remove it from the blacklist.</li>
+  </ol>
+
+  <p>
+    Problem solved. Now you can return to that episode of Seinfeld.
+  </p>
+
+
+{% include close_section.html %}

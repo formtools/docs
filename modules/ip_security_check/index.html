@@ -1,0 +1,57 @@
+---
+layout: default
+navPage: docs
+heading: IP Security Check
+breadcrumbs:
+  - Modules,/modules
+  - IP Security Check
+next: The Configuration Page,/modules/ip_security_check/configuration_page
+---
+
+{% include open_section.html nav='nav_ip_security_check.html' selected='introduction' %}
+
+  <h3>Introduction</h3>
+
+  {% include screenshot.html item="i352.gif" %}
+
+  <p>
+    The IP Security Check module provides you with an additional layer of security for your Form Tools installation.
+    When someone tries logging in, their IP address is compared against an IP whitelist or blacklist. If their IP isn't
+    permitted access, they are automatically redirected to a denied page. This provides an effective means to forbid
+    unwanted access.
+  </p>
+  <p>
+    This module overrides the standard Form Tools user account system. Even if the person logging in has a valid
+    username and password, this module can still forbid them access.
+  </p>
+
+  <b>Warning!</b>
+  <p>
+    Make sure you've thought things through before installing this module.
+    Like most security measures, increased security means more complexity and
+    more work. Bear in mind the following scenarios:
+  </p>
+
+  <ul>
+    <li>If you define an IP whitelist, any time you're on a non-standard
+      computer (like a friend's house, or co-worker's computer) you won't
+      be able to log in without explicitly adding their IP from a computer
+      that has access.</li>
+    <li>Whenever your ISP changes your IP address you may find yourself
+      denied entry.</li>
+    <li>If you have a list of clients, whose IP addresses were identified
+      and added to the IP whitelist, any time their IPs change, they will be
+      inconvenienced - as will you, when you have to update their info.</li>
+  </ul>
+
+  <p>
+    So the point is: be prepared for a few more headaches. That's the price you have to pay for good security.
+  </p>
+
+  <p>
+    The <a href="configuration_page/">following pages</a> cover the module's functionality and <a href="locked_out/">what to
+    do if you get locked out</a>.
+  </p>
+
+
+{% include close_section.html %}

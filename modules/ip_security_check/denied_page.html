@@ -1,0 +1,33 @@
+---
+layout: default
+navPage: docs
+heading: IP Security Check
+breadcrumbs:
+  - Modules,/modules
+  - IP Security Check,/modules/ip_security_check
+  - Denied Page
+prev: The Configuration Page,/modules/ip_security_check/configuration_page
+next: "Ack I'm locked out!,/modules/ip_security_check/locked_out"
+---
+
+{% include open_section.html nav='nav_ip_security_check.html' selected='denied_page' %}
+
+  <h3>The Denied Page</h3>
+
+  {% include screenshot.html item="i353.gif" %}
+
+  <p>
+    If a user is denied entry, they get redirected to the Denied Page. You can control the content of the page through
+    the module. Depending on your situation, you may want to politely explain what's happened and provide instructions
+    on who to contact to remedy the problem. Alternatively, you might want to tell them to "sod off", if you suspect
+    them of being Evildoers. Anything goes.
+  </p>
+
+  {% include screenshot.html item="i354.gif" align="left" %}
+
+  <p>
+    The screenshot to the left shows the default Denied Page. All the text can be changed, as shown in the screenshot above.
+  </p>
+
+
+{% include close_section.html %}
