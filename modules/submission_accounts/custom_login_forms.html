@@ -1,0 +1,67 @@
+---
+layout: default
+navPage: docs
+heading: Submission Accounts
+breadcrumbs:
+  - Modules,/modules
+  - Submission Accounts,/modules/submission_accounts
+  - Custom login forms
+prev: Logging in,/modules/submission_accounts/logging_in
+next: "Edit Submission: what the user sees,/modules/submission_accounts/edit_submission"
+---
+
+{% include open_section.html nav='nav_submission_accounts.html' selected='custom_login_forms' %}
+
+  <h3>Custom login forms</h3>
+
+  {% include screenshot.html item="i87.jpg" %}
+
+  <p>
+    The built-in login form is fine for some situations, but you may find it more convenient
+    for your users to embed a login form within your own pages. This can often improve
+    usability.
+  </p>
+
+  <p>
+    The Submission Accounts module auto-generates custom login forms for your configured
+    forms. The HTML it generates is very basic: no CSS markup; just plain HTML tags &amp; labels
+    - so you'll probably want to edit the generated content to fit it into your page.
+  </p>
+
+  <p>
+    To generate the custom login form, just select the form from the main Submission Accounts
+    page and click on the Custom Login tab. There, select the appropriate checkboxes to
+    generate the HTML.
+  </p>
+
+  <h4>Error Redirects</h4>
+
+  <p>
+    If you use a custom login form, you may want to redirect the user to a specific page if
+    they fail to login properly. By default, the user just gets directed to the default login
+    page which displays the error.
+  </p>
+
+  <p>
+    To redirect to a custom page, just include the following hidden field in your form:
+  </p>
+
+  <textarea class="codemirror" data-lang="html"><input type="hidden" name="invalid_login_redirect_url" value="http://www.yoursite.com" /></textarea>
+
+  <p>
+    Make sure "http://www.yoursite.com" is the appropriate URL. Then, all failed login
+    attempts will be redirected to that URL with an additional error message flag passed
+    in the query string. The possible query string values are:
+  </p>
+
+  <ul>
+    <li>no_form_id</li>
+    <li>no_username</li>
+    <li>no_password</li>
+    <li>invalid_form_id</li>
+    <li>form_inactive</li>
+    <li>login_incorrect</li>
+  </ul>
+
+
+{% include close_section.html %}

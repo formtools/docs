@@ -1,0 +1,48 @@
+---
+layout: default
+navPage: docs
+heading: Submission Accounts
+breadcrumbs:
+  - Modules,/modules
+  - Submission Accounts
+next: Configure a New Form,/modules/submission_accounts/configure_new_form
+---
+
+{% include open_section.html nav='nav_submission_accounts.html' selected='overview' %}
+
+  <h3>Overview</h3>
+
+  <p>
+    The Submission Accounts module lets you convert your form submissions into basic
+    user accounts, allowing the people who originally submitted the form to log in and update
+    their submission at a later date. This module can be used for as many forms as you want,
+    and provides a fair amount of control over what information can be viewed and edited
+    by the user.
+  </p>
+
+  <p>
+    In broad strokes, here's how the script works. When you first configure a form to
+    implement the submission accounts, you need to pinpoint two fields within your form
+    which act as the login username and password. Often, you may need to add an additional
+    "password" field to your form to integrate it with this module. For the username, you
+    can choose whatever field you want - but generally you'd pick the email field since
+    it's a great way to uniquely identify the user.
+  </p>
+
+  <p>
+    Next, you'd pick a theme and a View. This determines both the appearance of the UI for
+    the user when they log in, but also the fields that they can see and are editable.
+  </p>
+
+  <p>
+    Last, you'll need to link the user to the login form. For convenience, the module
+    comes with its own login page (found here: <b>/modules/submission_accounts/login.php</b>)
+    but it also includes a login form generation tool to allow you to embed your own login
+    forms within your own webpages.
+  </p>
+
+  <p>
+    Now onto some more details!
+  </p>
+
+{% include close_section.html %}

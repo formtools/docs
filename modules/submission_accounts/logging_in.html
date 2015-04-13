@@ -1,0 +1,50 @@
+---
+layout: default
+navPage: docs
+heading: Submission Accounts
+breadcrumbs:
+  - Modules,/modules
+  - Submission Accounts,/modules/submission_accounts
+  - Logging in
+prev: Settings,/modules/submission_accounts/settings
+next: Custom login forms,/modules/submission_accounts/custom_login_forms
+---
+
+{% include open_section.html nav='nav_submission_accounts.html' selected='logging_in' %}
+
+  <h3>Logging in</h3>
+
+  {% include screenshot.html item="i89.jpg" %}
+
+  <p>
+    The Submission Accounts module comes with its own pre-built login page. This looks
+    and functions almost identically to the main Form Tools login page, except that it's
+    slightly more customizable in terms of the text you see listed (labels and text). See the
+    <a href="../settings">Settings page</a> for more information about the customizable
+    settings.
+  </p>
+
+  <br clear="all" />
+  <p>
+    In order to use the login page, you <b>MUST</b> pass the relevant form
+    ID to the page via either the query string or a POST variable. For example, here's a
+    direct link passing it via GET:
+  </p>
+
+  <textarea class="codemirror" data-lang="html"><a href="http://site.com/formtools/modules/submission_accounts/login.php?form_id=X">Login</a></textarea>
+
+  <p>
+    The form ID is required (in the example, X would be replaced with your form ID). It's
+    used to let the module know which form is needed. The script checks it's valid before
+    displaying the login page. The styles of the login page depends on the form ID - when
+    you originally configured you form, you specified a theme. That's what's used here.
+  </p>
+
+  <p>
+    Lastly, if you specified an email field for your Submission Account, a
+    "Forgot your password?" link will appear, providing the user with a little fallback in
+    case they lost their password.
+  </p>
+
+
+{% include close_section.html %}

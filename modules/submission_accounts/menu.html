@@ -1,0 +1,45 @@
+---
+layout: default
+navPage: docs
+heading: Submission Accounts
+breadcrumbs:
+  - Modules,/modules
+  - Submission Accounts,/modules/submission_accounts
+  - Customizing the User Menu
+prev: Configure a New Form,/modules/submission_accounts/configure_new_form
+next: Settings,/modules/submission_accounts/settings
+---
+
+{% include open_section.html nav='nav_submission_accounts.html' selected='menu' %}
+
+  <h3>Customizing the User Menu</h3>
+
+  {% include screenshot.html item="i88.jpg" %}
+
+  <p>
+    After configuring a new form for use with the Submission Accounts module, visit the main Submission Accounts page
+    (click on the Submission Accounts link in the module nav menu) and click the Edit link for your form. There, click
+    on the Menus tab and you'll see a page looking something like the screenshot to the right - only probably a whole
+    lot blanker.
+  </p>
+
+  <p>
+    This page operates exactly like the main Admin and Client menu builder, found on your Settings » Menus tab. Here,
+    you can construct a menu containing whatever items you want your users to see when they log in to edit their
+    submission. Unlike the client and admin menu page, you'll see the options are quite limited! There are three
+    main options: <b>Edit Submission</b>, <b>Logout</b> and <b>Custom URL</b>. You'll always want to include the first
+    two. That lets the user be able to view (and potentially edit, if your View permits it) their submission information
+    and log out when they're done. The Custom URL option lets you link to external pages, e.g. relevant pages on your
+    website. The user will always be linked to the Edit Submission page upon logging in.
+  </p>
+
+  <h4>The Pages module</h4>
+
+  <p>
+    Another fun trick is to use the <a href="/modules/pages/">Pages module</a> to create custom pages that you can
+    include in the left nav. The Pages module was designed for exactly this purpose. You can enter documentation or
+    information pages very simply through the UI, providing your users with whatever custom information they
+    may require.
+  </p>
+
+{% include close_section.html %}

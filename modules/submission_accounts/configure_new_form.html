@@ -1,0 +1,159 @@
+---
+layout: default
+navPage: docs
+heading: Submission Accounts
+breadcrumbs:
+  - Modules,/modules
+  - Submission Accounts,/modules/submission_accounts
+  - Configure a new form
+prev: Overview,/modules/submission_accounts
+next: Customizing the User Menu,/modules/submission_accounts/menu
+---
+
+{% include open_section.html nav='nav_submission_accounts.html' selected='configure_new_form' %}
+
+  <h3>Configure a new form</h3>
+
+  {% include screenshot.html item="i94.gif" %}
+
+  <p>
+    After <a href="/userdoc/modules/installing">installing the module</a>, select it on the Modules page in the admin
+    UI and click on the "Configure New Form" button found on the main Submission Accounts page. This is shown in the
+    screenshot to the right.
+  </p>
+
+  <p>
+    The page that you are redirected to lets you configure the Submission Accounts module with one of your forms. Note
+    that you can only configure each form ONCE. The next time you try to configure a form you'll notice that the form
+    you previously configured is no longer available as a select option.
+  </p>
+
+  {% include screenshot.html item="i92.gif" align="left" %}
+
+  <p>
+    The Configure New Form page should look something like the screenshot to the left. This
+    page contains the main configuration settings for setting up the Submission Account.
+  </p>
+
+  <p>
+    Let's review each setting one by one.
+  </p>
+
+  <table cellspacing="0" cellpadding="0" class="info" width="100%">
+    <tbody><tr>
+      <td width="160" class="blue" valign="top">Form</td>
+      <td>
+        This lets you choose which form for which you'd like those users to be able to
+        log in and edit their submissions.
+      </td>
+    </tr>
+    <tr>
+      <td width="160" class="blue" valign="top">View</td>
+      <td>
+        This is an important setting! Views let you create custom subsets of the form data
+        including choosing which form fields should be displayed, how they're grouped (tabs)
+        and which fields are editable. Submission Accounts are associated with a View. This
+        provides you with enormous control over the appearance of the UI for the user who
+        logs in to view / edit his form submissions. Information like their IP address,
+        submission date, last modified date and submission ID may not be pertinent - so you
+        may wish to create a custom View that contains only those fields you want.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Theme</td>
+      <td>
+        This is another powerful setting. Like the previous View setting, this lets you
+        customize the appearance of the login page and backend pages for the user logging
+        in. Depending on your requirements, you may feel it worthwhile to develop a theme
+        that matches your website design so that logging in and editing the submission will
+        be a smooth transition from the public side to the backend. You can read more about
+        <a href="/theme_development/">theme development here</a>.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Email Field</td>
+      <td>
+        This setting is optional, but recommended. It rather depends on whether your form
+        contains an email field for the user or not. If you can select the email field here,
+        you are given the option of including a "Forgot your password?" link on the login
+        page that sends an email reminder to the user.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Username Field</td>
+      <td>
+        This setting is required! You need to identify a field that will identify
+        the user. The simplest solution - for both you and the user - is to specify
+        the email field here. People generally don't forget their own email addresses,
+        whereas usernames come and go. Also, this field does NOT have to be unique. The
+        Submission Accounts login script identifies the users by the username + password
+        combination, not just the username. So technically, you can have multiple (different)
+        users that use the same username.
+      </td>
+    </tr>
+    <tr>
+      <td class="blue" valign="top">Password Field</td>
+      <td>
+        Most forms don't contain a "password" field, but the Submission Accounts module
+        requires it. If you already have a password field in your form, you're rosy. You
+        don't need to read on. If not, here's some potential solutions:
+        <ul>
+          <li>The first, simplest solution is to just add a new password field to your form
+            which the user can fill in when they first submit the form. Don't forget that
+            you'll need to add this to Form Tools for storage as well. New fields are added
+            via the Edit Form » Database tab, which you
+            <a href="/userdoc/form_management/adding_form_fields">read about here</a>.
+          </li>
+          <li>
+            A second option is to include a hidden field in your form, containing a default
+            password which the users can use to log in for the first time. Bear in mind that
+            this isn't very secure: people can figure this out by viewing the form source,
+            and potentially gaining access to their information before they log in themselves
+            and update the password. Plus there's no guarantee that the user will change the
+            password having logged in. But depending on your situation - e.g. if you're
+            processing forms in a local or password protected environment, this may be
+            a legitimate solution.
+          </li>
+          <li>
+            A third option is to use the Submission Pre-Parser module to automatically
+            generate a random password for the user when they first register and email it
+            to them. This solution requires a little PHP knowledge. You can learn more about
+            the <a href="/modules/submission_pre_parser/">Submission Pre-Parser</a> module here.
+          </li>
+        </ul>
+
+      </td>
+    </tr>
+    </tbody></table>
+
+  <p><b>View Override Settings</b></p>
+
+  <p>
+    The last section on the page is entitled "View Override Settings". This was added in
+    version <b>1.1.0</b>. What it does is allow you to use a different View for a submission
+    depending on the values in that submission. This is a convenient way to show different
+    information to a user depending on their form values.
+  </p>
+
+  <p>
+    It works very simply: you just pick the form field that you want to base the rule on,
+    then choose the values that it contains. Finally, in the third column, specify the View
+    that should be used to display the data IF the previous condition is met. And that's it!
+  </p>
+
+  <p>
+    There are a few more things to note:
+  </p>
+
+  <ul>
+    <li>You can define as many rules as you want, but the order is important. The FIRST
+      View rule that meets the criteria for a submission is the one that's used to display to
+      the user.</li>
+    <li>If none of the rules are met for a submission, it uses the default View.</li>
+    <li>If the user themselves changes a field value that you have specified in the
+      View Override section, they will automatically see the new View.</li>
+    <li>To specify multiple values for a rule, just enter them with a pipe (|) delimiter,
+      e.g. "Arts|Humanities|Sciences".</li>
+  </ul>
+
+{% include close_section.html %}

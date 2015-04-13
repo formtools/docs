@@ -1,0 +1,85 @@
+---
+layout: default
+navPage: docs
+heading: Submission Accounts
+breadcrumbs:
+- Modules,/modules
+- Submission Accounts,/modules/submission_accounts
+- Settings
+prev: Customizing the User Menu,/modules/submission_accounts/menu
+next: Logging In,/modules/submission_accounts/logging_in
+---
+
+{% include open_section.html nav='nav_submission_accounts.html' selected='settings' %}
+
+  <h3>Settings</h3>
+
+  {% include screenshot.html item="i90.jpg" %}
+
+  <p>
+    The settings page contains various options for customizing the default login form
+    and behaviour of the script. Bear in mind that the settings defined below apply to
+    <b>all</b> forms that have been configured with the Submission Accounts module. A
+    number of the fields have really one one logical value (like "Password" for the "Login
+    Page Password Field Label" setting) but they've deliberately been made to be
+    customizable to support multiple languages.
+  </p>
+
+  <table cellspacing="0" cellpadding="0" class="info" width="100%">
+    <tbody><tr>
+      <td width="170" valign="top" class="blue">Login Page Heading</td>
+      <td>
+        This setting determines the main heading on the default login page
+        (<b>[form tools root]/modules/submission_accounts/login.php</b>). Generally
+        you'll want to set it to "Please Log In" or something along those lines.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Login Page Intro Text</td>
+      <td>
+        This lets you include a little welcome blurb to appear under the login page header
+        on the default login page.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Login Page Username / Email login field label</td>
+      <td>
+        The login form has two login fields: one for the username and one for the password.
+        Depending on what data field you're using to act as the username (e.g. a custom
+        username field or just the email address) you'll want to enter an appropriate label
+        here.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Login Page Password Field Label</td>
+      <td>
+        Generally you'll just want to leave this as "Password".
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Login Button Label</td>
+      <td>
+        This should be something like "Log In", "Login", "Submit" or something along those
+        lines.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Logout URL</td>
+      <td>
+        This is required. It determines what URL the user will be redirected to after they
+        log out of the interface. Again, don't forget that ALL users will be redirected to
+        this URL, regardless of the form that they were associated with.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Num Users Listed Per Page</td>
+      <td>
+        This setting is used within the module UI. It determines the number of users that
+        get listed on the Edit Submission Account » Users tab. That tab lists those
+        users that have logged into the module to update / view their account information.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+{% include close_section.html %}

@@ -1,0 +1,47 @@
+---
+layout: default
+navPage: docs
+heading: Submission Accounts
+breadcrumbs:
+  - Modules,/modules
+  - Submission Accounts,/modules/submission_accounts
+  - "Edit Submission: What the User Sees"
+prev: Custom login forms,/modules/submission_accounts/custom_login_forms
+next: Keeping track of who logs in,/modules/submission_accounts/who_logs_in
+---
+
+{% include open_section.html nav='nav_submission_accounts.html' selected='edit_submission' %}
+
+  <h3>Edit submission</h3>
+
+  {% include screenshot.html item="i93.jpg" %}
+
+  <p>
+    As mentioned in another documentation page, the user's form information that's visible and editable
+    is completely customizable. When you configure your form, you associate it with a particular
+    View. That View can have whatever list of form fields that you wish, grouped into tabs
+    and with only certain fields being editable. This is very powerful! So, to customize
+    what information your users can see and edit, you just need to create a new View and
+    assign your Submission Account to that View. <a href="/userdoc/views/">Click
+    here</a> for more information about Views, including how to create them.
+  </p>
+
+  <p>
+    The screenshot on this page shows a typical edit submission page, as seen by the logged-in
+    user. The overall theme is the "Classic Grey", but you can assign whatever theme you
+    want, and you can always <a href="/theme_development/">write your own!</a>
+  </p>
+
+  <p><b>View Overrides</b></p>
+
+  <p>
+    A nice new juicy feature added in <b>1.1.0</b> is the option to override the default View
+    for any submission based on the values stored in that form. In other words, you can
+    say "use View X <b>IF</b> the form submission has a particular value for form field Y".
+    The feature is pretty self-explanatory, but see the comments at the
+    <a href="../configure_new_form">bottom of the configuration page</a> for more
+    information.
+  </p>
+
+
+{% include close_section.html %}
