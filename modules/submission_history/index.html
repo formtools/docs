@@ -1,0 +1,68 @@
+---
+layout: default
+navPage: docs
+heading: Submission History
+breadcrumbs:
+  - Modules,/modules
+  - Submission History
+next: Configure a New Form,/modules/submission_accounts/configure_new_form
+---
+
+{% include open_section.html nav='nav_submission_history.html' selected='introduction' %}
+
+  <h3>Introduction</h3>
+
+  {% include screenshot.html item="i160.gif" %}
+
+  <p>
+    The Submission History module provides an important service: it tracks changes to your
+    form submissions so you can browse changes - who made what change and when - as well as
+    restore older versions, and even undelete entire submissions.
+  </p>
+
+  <p>
+    Let's start with a little behind-the-scenes discussion of how the module works.
+  </p>
+
+  <h4>How it works</h4>
+
+  <p>
+    The Submission History module creates copies of all your form table structures, with
+    some additional "meta" information for each submission row. Then, any time data in
+    your form is added, edited or deleted, corresponding entries are made in the form's
+    history table. Likewise, if you ever changed your form - add, delete or edit database
+    fields - the history table is updated as well.
+  </p>
+
+  {% include screenshot.html item="i162.gif" %}
+
+  <p>
+    All the submission activity information is then displayed to the administrator via a
+    separate panel at the bottom of the Edit Submission page. Administrators can browse
+    the changes to the submissions to see what changed and when.
+  </p>
+
+  <p>
+    Since a log for an individual submission can get pretty large (hundreds, even thousands
+    of edits), you may not want the history to get loaded each and every time you view a
+    form submission: it can add slow down the speed at which your page loads. With this
+    in mind, the module was developed as an Ajax component: it only starts loading the
+    history log after the rest of the page has loaded via an Ajax call. Secondly, there's
+    a configuration setting to choose whether or not you want the history to be displayed
+    on page load. If the submission history isn't something you'd be looking at very often,
+    this can be a handy option. See the
+    <a href="?page=settings">Settings page</a> for more information on that setting.
+  </p>
+
+  <h4>Limitations</h4>
+
+  <p>
+    This module is ONLY for administrators. The whole module is centered around the
+    openness of the data: who edited what, when. Client accounts are discrete entities: they
+    don't know about each other. It simple seemed inappropriate to open up this information
+    to each client account. If you don't like it, make a case in the forums and we can
+    discuss it! :)
+  </p>
+
+
+{% include close_section.html %}

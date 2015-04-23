@@ -1,0 +1,43 @@
+<div {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+	<a href="/modules/submission_history/">Introduction</a>
+</div>
+<div {% if include.selected == 'inside_the_module' %}class="selected"{% endif %}>
+  <a href="/modules/submission_history/inside_the_module">Inside the module</a>
+</div>
+
+<ul>
+	<li {% if include.selected == 'tracking_page' %}class="selected"{% endif %}>
+		<a href="/modules/submission_history/tracking">The tracking page</a>
+	</li>
+	<li {% if include.selected == 'undelete' %}class="selected"{% endif %}>
+		<a href="/modules/submission_history/undeleting/">Undeleting Submissions</a>
+	</li>
+	<li {% if include.selected == 'settings' %}class="selected"{% endif %}>
+		<a href="/modules/submission_history/settings_page/">The settings page</a>
+	</li>
+</ul>
+
+<div {% if include.selected == 'edit_submission_page' %}class="selected"{% endif %}>
+  <a href="/modules/submission_history/inside_the_module">The Edit Submission page</a>
+</div>
+<ul>
+  <li {% if include.selected == 'history_list' %}class="selected"{% endif %}>
+    <a href="/modules/submission_history/history_list">The History List</a>
+  </li>
+  <li {% if include.selected == 'viewing_change' %}class="selected"{% endif %}>
+    <a href="/modules/submission_history/viewing_change/">Viewing a change</a>
+  </li>
+</ul>
+
+<div {% if include.selected == 'files' %}class="selected"{% endif %}>
+  <a href="/modules/submission_history/files">Files and the Submission History module</a>
+</div>
+<div {% if include.selected == 'performance' %}class="selected"{% endif %}>
+  <a href="/modules/submission_history/performance">Performance</a>
+</div>
+<div {% if include.selected == 'submission_accounts' %}class="selected"{% endif %}>
+  <a href="/modules/submission_history/submission_accounts">Submission Accounts module</a>
+</div>
+<div {% if include.selected == 'comments' %}class="selected"{% endif %}>
+  <a href="/modules/submission_history/comments">Other Comments</a>
+</div>
