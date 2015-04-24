@@ -1,0 +1,27 @@
+---
+layout: default
+navPage: docs
+heading: Submission History
+breadcrumbs:
+  - Modules,/modules
+  - Submission History,/modules/submission_history
+  - The Edit Submission page,/modules/submission_history/edit_submission
+  - Viewing a Change
+prev: The History List,/modules/submission_history/history_list
+next: Files and the Submission History module,/modules/submission_history/files
+---
+
+{% include open_section.html nav='nav_submission_history.html' selected='viewing_change' %}
+
+  <h3>Viewing a Change</h3>
+
+  {% include screenshot.html item="i162.gif" %}
+
+  <p>
+    The VIEW link shows a separate page listing all fields - and highlights (in yellow)
+    those fields that have changed from the previous version. It also provides a simple
+    navigation so you can navigate forwards and backwards along the change history, if you're
+    curious to find out who changed what, when.
+  </p>
+
+{% include close_section.html %}

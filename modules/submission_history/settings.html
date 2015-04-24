@@ -1,0 +1,136 @@
+---
+layout: default
+navPage: docs
+heading: Submission History
+breadcrumbs:
+  - Modules,/modules
+  - Submission History,/modules/submission_history
+  - Inside the Module,/modules/submission_history/inside_module
+  - Settings page
+prev: Undeleting Submissions,/modules/submission_history/undeleting
+next: The Edit Submission page,/modules/submission_history/edit_submission
+---
+
+{% include open_section.html nav='nav_submission_history.html' selected='settings' %}
+
+  <h3>Settings page</h3>
+
+  {% include screenshot.html item="i164.jpg" %}
+
+  <p>
+    The settings page contains all the settings that are pertinent to the module. Here's
+    a description of what each setting means.
+  </p>
+
+  <h4>Main Settings</h4>
+
+  <p>
+    These settings relate to the overall functioning of the script and provide a few
+    controls over limiting the log size. If database size is an issue, these settings
+    can really come in handy.
+  </p>
+
+  <div class="clear"></div>
+
+  <table cellspacing="0" cellpadding="1" class="info" width="100%">
+    <tbody><tr>
+      <th width="260">Setting</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Automatically track activity for all new forms</td>
+      <td>
+        By default, this setting is enabled ("Yes"). It lets you choose whether or not
+        you want to track activity for forms that you haven't created yet - for forms
+        that you will be adding sometime in the future. If you're only interested in tracking
+        the submission history for a particular form or forms, you should set this field
+        to "no".
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Limit submission history size to # records</td>
+      <td>
+        This is the first of three settings that let you control the maximum size of your
+        submission history tables. This setting limits the total size for
+        <b>each submission</b>. So if you were to set this to "20 records", the module
+        would only track the last 50 changes to a submission - older changes are dropped.
+        The default value is 50.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Limit total table log size to # records</td>
+      <td>
+        This setting lets you ensure that the total size of the history table never exceeds
+        a certain number of rows. This setting is independent of the actual submissions: it
+        will always delete the oldest history rows that exceed the total permissable row
+        count. By default, this setting is set to empty - it doesn't limit the table log
+        size.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Auto-delete history older than...</td>
+      <td>
+        This setting provides another alternative way to keep your submission history logs
+        in check. It will automatically delete all history that's older than a particular
+        date - e.g. 1 week, 6 months or a year. This setting is also set to empty by
+        default (i.e. if never deletes old history).
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Num Deleted Submissions Per Page</td>
+      <td>
+        This settings determines the number of deleted submissions displayed per page
+        on the "Undelete" page for each form. You can find that page by clicking the "UNDELETE"
+        link on the <a href="?page=tracking">Tracking page</a> for each form.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h4>Edit Submission Page</h4>
+
+  <p>
+    These settings affect the appearance and functionality of the history panel
+    that appears at the bottom of the administrator's Edit Submission page.
+  </p>
+
+  <table cellspacing="0" cellpadding="1" width="100%">
+    <tbody><tr>
+      <th width="260">Setting</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Submission history section label</td>
+      <td>
+        This is the label that appears to identify the submission history panel
+        on the administrator's Edit Submission page.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Auto-load history on edit submission page</td>
+      <td>
+        This setting lets you choose whether or not the submission history panel should
+        automatically show the history when you're browsing your submissions.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Num history listed per page</td>
+      <td>
+        This determines the number of submission history items to show on the Edit Submission
+        page. By default, it's set to 10. Whenever there is more history to display than
+        can fit on a page, you will see some <b>« 1 2 3 »</b> pagination.
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="blue">Date Format</td>
+      <td>
+        This setting controls the formatting of the dates in the submission history panel.
+        As with all other date format settings in Form Tools, the format is determined
+        by the <a href="http://ca2.php.net/manual/en/function.date.php" target="_blank">PHP
+        date function</a>.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+{% include close_section.html %}
