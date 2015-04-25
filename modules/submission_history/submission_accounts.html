@@ -6,27 +6,23 @@ breadcrumbs:
   - Modules,/modules
   - Submission History,/modules/submission_history
   - Edit Submission page
-prev: The settings page,/modules/submission_history/settings
-next: The history list,/modules/submission_history/history_list
+prev: Performance,/modules/submission_history/performance
+next: Other Comments,/modules/submission_history/comments
 ---
 
-{% include open_section.html nav='nav_submission_history.html' selected='edit_submission' %}
+{% include open_section.html nav='nav_submission_history.html' selected='submission_accounts' %}
 
-  <h3>Edit Submission page</h3>
+  <h3>Submission Accounts</h3>
 
   {% include screenshot.html item="i160.gif" %}
 
   <p>
-    The Edit Submission page is where you go to browse the change history for a submission.
-    By default, it'll just show a bar along the bottom of the page with a "Load History"
-    button, like in the screenshot. But if you think you'll be browsing the submissions a lot
-    and want to save time having to click that button each time, just go to the module
-    settings and set the "Auto-load history on edit submission page" to Yes.
+    <i>Yes</i>, the Submission History module is compatible with the Submission Accounts module!
   </p>
 
-  <ul>
-    <li><a href="../history_list">The History List</a></li>
-    <li><a href="../viewing_changes">Viewing a Change</a></li>
-  </ul>
+  <p>
+    Just install/upgrade to the latest version of the module and any changes that the users
+    make to their own submission will be shown in the Submission History log.
+  </p>
 
 {% include close_section.html %}

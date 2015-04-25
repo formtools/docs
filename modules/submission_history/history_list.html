@@ -1,0 +1,57 @@
+---
+layout: default
+navPage: docs
+heading: Submission History
+breadcrumbs:
+  - Modules,/modules
+  - Submission History,/modules/submission_history
+  - The Edit Submission page,/modules/submission_history/edit_submission
+  - The History List
+prev: The Edit Submission page,/modules/submission_history/edit_submission
+next: Viewing Change,/modules/submission_history/viewing_change
+---
+
+{% include open_section.html nav='nav_submission_history.html' selected='history_list' %}
+
+  <h3>The History List</h3>
+
+  {% include screenshot.html item="i163.gif" %}
+
+  <p>
+    The History List show up as a paginated list of changed, most recent to oldest in a
+    blue box at the foot of the page. It's mostly self-explanatory, but here's a few
+    extra notes.
+  </p>
+
+  <p>
+    The <b>Change Type</b> column shows the type of change to the submission. The possible
+    values are: <b>new</b>, <b>update</b>, <b>delete</b> and <b>undelete</b> - which are
+    all self-explanatory. You may also see: <b>submission</b>, meaning that the submission
+    was updated by the <a href="/modules/submission_accounts/?page=index">Submission
+    Account module</a>, <b>restore</b> - meaning that you, the administrator restored an
+    older version from the submission history list, and <b>original</b>. This last one
+    appears when you install the module and then update a submission. In this case,
+    none of the submissions have any history already logged. So Instead of just
+    logging the new change, in this case two history items are logged: the <b>original</b>
+    state of the submission, and the new <b>update</b>. "Original" seemed a more accurate
+    way to identify the change type than just re-use "new".
+  </p>
+
+  <p>
+    The <b>Changed By</b> column lists which user made the change to the submission. If
+    it's a client account, it will be a link to that account. If it was updated by the
+    user via the Submission Accounts module, it will just show "Submission Accounts module".
+  </p>
+
+  <p>
+    The <b>Changed Fields</b> column contains a dropdown showing (a) how many fields were
+    changed in the update, and which fields. Click on the VIEW link for a more complete
+    display of the changed data.
+  </p>
+
+  <p>
+    At the very bottom of the page is a button labeled "Clear Submission Log". This will
+    delete all history for this submission.
+  </p>
+
+{% include close_section.html %}

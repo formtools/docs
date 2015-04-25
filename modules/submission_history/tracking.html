@@ -1,0 +1,47 @@
+---
+layout: default
+navPage: docs
+heading: Submission History
+breadcrumbs:
+  - Modules,/modules
+  - Submission History,/modules/submission_history
+  - Inside the Module,/modules/submission_history/inside_module
+  - The tracking page
+prev: Inside the module,/modules/submission_history/inside_module
+next: Undeleting Submissions,/modules/submission_history/undeleting
+---
+
+{% include open_section.html nav='nav_submission_history.html' selected='tracking' %}
+
+  <h3>The tracking page</h3>
+
+  {% include screenshot.html item="i168.jpg" %}
+
+  <p>
+    After installing the module, when you select the module from the Modules page you'll
+    be redirected to the main Tracking page. This contains a list of your forms, and some
+    related information and functionality. Here's what the information in each of the
+    columns mean.
+  </p>
+
+  <ul>
+    <li>
+      The tracking column indicates whether the module is currently tracking activity
+      for the form's submissions. This means <b>all</b> events: when submissions are added,
+      deleted, edited, undeleted and restored from a previous version.
+    </li>
+    <li>The table size gives you an idea of how much space is being taken up for logging
+      each form</li>
+    <li>The num rows column shows the number of rows in the history table. This number
+      may get extremely large, since any single submission can have any number of edits.</li>
+    <li>The UNDELETE column lets you undelete submissions that had been deleted from
+      your form and had formerly been tracked.</li>
+    <li>The clear logs buttons empties the logs for that form.</li>
+  </ul>
+
+  <p>
+    Lastly, the buttons at the bottom of the page let you control which of your forms
+    you want to have their activity tracked, and also to delete all logs with one click.
+  </p>
+
+{% include close_section.html %}

@@ -5,28 +5,56 @@ heading: Submission History
 breadcrumbs:
   - Modules,/modules
   - Submission History,/modules/submission_history
-  - Edit Submission page
-prev: The settings page,/modules/submission_history/settings
-next: The history list,/modules/submission_history/history_list
+  - Other Comments
+prev: Submission Accounts module,/modules/submission_history/submission_accounts
 ---
 
-{% include open_section.html nav='nav_submission_history.html' selected='edit_submission' %}
+{% include open_section.html nav='nav_submission_history.html' selected='comments' %}
 
-  <h3>Edit Submission page</h3>
-
-  {% include screenshot.html item="i160.gif" %}
+  <h3>Other Comments</h3>
 
   <p>
-    The Edit Submission page is where you go to browse the change history for a submission.
-    By default, it'll just show a bar along the bottom of the page with a "Load History"
-    button, like in the screenshot. But if you think you'll be browsing the submissions a lot
-    and want to save time having to click that button each time, just go to the module
-    settings and set the "Auto-load history on edit submission page" to Yes.
+    This is a big module. By and large it should work as you expect, but there are a few
+    things here and there that you may want to know about.
   </p>
 
   <ul>
-    <li><a href="../history_list">The History List</a></li>
-    <li><a href="../viewing_changes">Viewing a Change</a></li>
+    <li>
+      The module only tracks <b>changes</b>. So if you edit a submission and just click
+      update without editing any values, it won't add a new history item. This is not a
+      bug! It does this by design. :)<br><br>
+    </li>
+    <li>
+      When you first install the module, you may potentially have hundreds, thousands, or
+      even hundreds of thousands of records spread over your various forms. So instead of
+      creating copies of all your submission data (which could take up HUGE amounts of
+      space), it only ever creates a history item when that item is <b>updated</b> or
+      <b>deleted</b>. So, in the case of when it's updated: you'll see the history on the
+      Edit Submission page jump from <b>no records</b> to <b>two records</b>. This is
+      unintuitive, I know. But it makes sense when you think about it. When you update a
+      record you want to know two things: what information was there beforehand, and what
+      just changed. So in this situation it inserts two records in the submission history
+      table - one for each state. This is the only time you will see this happen. Updating
+      submissions that already have some history on them will just insert a single row
+      into the history table.
+      <br><br>
+    </li>
+    <li>
+      This module operates on the assumption that the only time the data is updated is via
+      the Form Tools UI. So if you manually update content in the database, you will see
+      the next history log of the affected submissions have those changes attributed to that
+      update, and that user. Unfortunately there's no way around this just yet. Feel free
+      to continue manually update the DB content, but bear in mind that this will be a
+      side-effect.
+      <br><br>  </li>
+    <li>
+      When you browse the changes in the submission history panel at the bottom of the
+      administrator's Edit Submission page, you may note that it always shows ALL fields:
+      even those that don't appear in the current View. This seemed the best approach. The
+      reason being that whenever you choose to restore a version of the submission from the
+      history table, it's important that you can see the values for ALL fields - not just
+      those in the current View. We wouldn't want you to restore incorrect values!
+      <br><br>
+    </li>
   </ul>
-
 {% include close_section.html %}

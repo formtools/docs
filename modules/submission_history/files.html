@@ -5,28 +5,35 @@ heading: Submission History
 breadcrumbs:
   - Modules,/modules
   - Submission History,/modules/submission_history
-  - Edit Submission page
-prev: The settings page,/modules/submission_history/settings
-next: The history list,/modules/submission_history/history_list
+  - Files and the Submission History module
+prev: Viewing a change,/modules/submission_history/viewing_change
+next: Performance,/modules/submission_history/performance
 ---
 
-{% include open_section.html nav='nav_submission_history.html' selected='edit_submission' %}
+{% include open_section.html nav='nav_submission_history.html' selected='files' %}
 
-  <h3>Edit Submission page</h3>
+  <h3>Files and the Submission History module</h3>
 
-  {% include screenshot.html item="i160.gif" %}
+  {% include screenshot.html item="i39.gif" %}
 
   <p>
-    The Edit Submission page is where you go to browse the change history for a submission.
-    By default, it'll just show a bar along the bottom of the page with a "Load History"
-    button, like in the screenshot. But if you think you'll be browsing the submissions a lot
-    and want to save time having to click that button each time, just go to the module
-    settings and set the "Auto-load history on edit submission page" to Yes.
+    Let's talk about file uploads and the Submission History module. Form Tools forms may
+    contain any number of file upload fields. Ordinarily, when you delete a submission
+    Form Tools will delete that submission's files based on whatever value (yes/no) you've
+    entered in the "Delete associated files when deleting submission" field on the Edit Form
+    &gt; Main tab - as shown in the screenshot to the right.
   </p>
 
-  <ul>
-    <li><a href="../history_list">The History List</a></li>
-    <li><a href="../viewing_changes">Viewing a Change</a></li>
-  </ul>
+  <p>
+    The problem is that the Submission History module opens up the possibility of undeleting
+    submissions. So if you've set that value to "yes", files will automatically deleted with
+    the submission. So undeleting it will only retrieve the data: the file field will
+    just appear as empty. If this is a concern for you, set that field value to "no".
+  </p>
+
+  <p>
+    The module does NOT create copies of your files. I thought about this for some time and
+    decided against it. Feel free to disagree with me by posting in the forums!
+  </p>
 
 {% include close_section.html %}
