@@ -14,7 +14,7 @@ next: module.php,/module_development/file_module/
 	<p>
 		All right! Let's dissect a module. Personally I tend to learn better by viewing
 		an example - so if you're anything like me you might want to take a look at our
-		<a href="/module_development/example_modules/">"Hello World!" example modules</a>
+		<a href="{{site.baseurl}}/module_development/example_modules/">"Hello World!" example modules</a>
 		as well - that contains three modules you can upload to your Form Tools installation that show off
 		how it works.
 	</p>
@@ -37,7 +37,7 @@ next: module.php,/module_development/file_module/
 			<strong>/modules/my_module/module.php</strong>
 		</div>
 		<div class="col-lg-7">
-			<a href="/module_development/file_module" class="btn btn-primary pull-right">More Info</a>
+			<a href="{{site.baseurl}}/module_development/file_module" class="btn btn-primary pull-right">More Info</a>
 			This file contains information about your module: the author information, name and
 			description, and the module navigation menu.
 		</div>
@@ -48,7 +48,7 @@ next: module.php,/module_development/file_module/
 			<strong>/modules/my_module/index.php</strong>
 		</div>
 		<div class="col-lg-7">
-			<a href="/module_development/file_index" class="btn btn-primary pull-right">More Info</a>
+			<a href="{{site.baseurl}}/module_development/file_index" class="btn btn-primary pull-right">More Info</a>
 			The first page the administrator will be linked to when clicking on the module in
 			the Modules listing page.
 		</div>
@@ -59,7 +59,7 @@ next: module.php,/module_development/file_module/
 			<strong>/modules/my_module/lang/en.php</strong>
 		</div>
 		<div class="col-lg-7">
-			<a href="/module_development/file_lang" class="btn btn-primary pull-right">More Info</a>
+			<a href="{{site.baseurl}}/module_development/file_lang" class="btn btn-primary pull-right">More Info</a>
 			All modules require a language file in the language of the developer. For US English,
 			this file would be called en_us.php. This uses the ISO 639-2 standard for the language
 			file names. This language file contains (at minimum) the module name and module description.
@@ -71,7 +71,7 @@ next: module.php,/module_development/file_module/
 			<strong>/modules/my_module/index.tpl</strong>
 		</div>
 		<div class="col-lg-7">
-			<a href="/module_development/file_index_tpl/" class="btn btn-primary pull-right">More Info</a>
+			<a href="{{site.baseurl}}/module_development/file_index_tpl/" class="btn btn-primary pull-right">More Info</a>
 			All HTML in Form Tools is rendered via Smarty templates. This provides enormous power
 			to the developer, but can be admittedly a little tricky at first. Your module will
 			need to define at least one Smarty template to render the index.php page. Other than
@@ -91,9 +91,9 @@ next: module.php,/module_development/file_module/
 			<strong>/modules/my_module/library.php</strong>
 		</div>
 		<div class="col-lg-7">
-			<a href="/module_development/file_library/" class="btn btn-primary pull-right">More Info</a>
+			<a href="{{site.baseurl}}/module_development/file_library/" class="btn btn-primary pull-right">More Info</a>
 			This file is needed if you need to do any of the following: include an installation
-			function, uninstallation function, use <a href="/module_development/hooks/">hooks</a> or
+			function, uninstallation function, use <a href="{{site.baseurl}}/module_development/hooks/">hooks</a> or
 			need to access your module in the main script.
 		</div>
 	</div>
@@ -103,7 +103,7 @@ next: module.php,/module_development/file_module/
 			<strong>/modules/my_module/smarty/</strong>
 		</div>
 		<div class="col-lg-7">
-			<a href="/module_development/folder_smarty/" class="btn btn-primary pull-right">More Info</a>
+			<a href="{{site.baseurl}}/module_development/folder_smarty/" class="btn btn-primary pull-right">More Info</a>
 			Any Smarty functions and modifiers should be placed in this subfolder. Depending on
 			the content and scope of your module, this may not be needed. But if you
 			<b>do</b> and need to access them in pages in the core script, you will need to

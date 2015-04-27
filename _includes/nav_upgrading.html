@@ -1,14 +1,16 @@
-<h4 {% if include.selected == 'upgrading' %}class="selected"{% endif %}><a href="/upgrading/">Upgrading</a></h4>
+<h4 {% if include.selected == 'upgrading' %}class="selected"{% endif %}>
+    <a href="{{site.baseurl}}/upgrading/">Upgrading</a>
+</h4>
 
 <ul>
 	<li {% if include.selected == '2_0_3' %}class="selected"{% endif %}>
-		<a href="/upgrading/2_0_3">2.0.3</a>
+		<a href="{{site.baseurl}}/upgrading/2_0_3">2.0.3</a>
 	</li>
 	<li {% if include.selected == '2_1_0' %}class="selected"{% endif %}>
-		<a href="/upgrading/2_1_0">2.1.0</a>
+		<a href="{{site.baseurl}}/upgrading/2_1_0">2.1.0</a>
 	</li>
 </ul>
 
 <div {% if include.selected == 'problems' %}class="selected"{% endif %}>
-	<a href="/upgrading/problems">Problems Upgrading?</a>
+	<a href="{{site.baseurl}}/upgrading/problems">Problems Upgrading?</a>
 </div>

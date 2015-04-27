@@ -1,4 +1,10 @@
-<div {% if include.selected == 'introduction' %}class="selected"{% endif %}><a href="/tutorials/adding_first_form/">Introduction</a></div>
-<div {% if include.selected == 'form_types' %}class="selected"{% endif %}><a href="/tutorials/adding_first_form/form_types/">POST forms and API forms</a></div>
-<div {% if include.selected == 'next_step' %}class="selected"{% endif %}><a href="/tutorials/adding_first_form/next_step/">Picked your Submission Method?</a></div>
+<div {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+    <a href="{{site.baseurl}}/tutorials/adding_first_form/">Introduction</a>
+</div>
+<div {% if include.selected == 'form_types' %}class="selected"{% endif %}>
+    <a href="{{site.baseurl}}/tutorials/adding_first_form/form_types/">POST forms and API forms</a>
+</div>
+<div {% if include.selected == 'next_step' %}class="selected"{% endif %}>
+    <a href="{{site.baseurl}}/tutorials/adding_first_form/next_step/">Picked your Submission Method?</a>
+</div>
 

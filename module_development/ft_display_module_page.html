@@ -12,8 +12,11 @@ next: ft_eval_smarty_string,/module_development/ft_eval_smarty_string/
 {% include open_section.html nav='nav_module_development.html' selected='ft_display_module_page' nav_width=4 %}
 
 	<p>
-		This is the main work-horse function used to you display a web page for your module. It works by letting you define the location of a Smarty template with which to render the page, and the content to pass to the page. There is no limit to either the type or volume of information passed to the template, but a general rule of thumb is KISS (Keep It Simple,
-		Stupid): don't pass along too much info and keep that info in simple data structures that easy to process by the template.
+		This is the main work-horse function used to you display a web page for your module. It works by letting you
+        define the location of a Smarty template with which to render the page, and the content to pass to the page.
+        There is no limit to either the type or volume of information passed to the template, but a general rule of
+        thumb is KISS (Keep It Simple, Stupid): don't pass along too much info and keep that info in simple data
+        structures that easy to process by the template.
 	</p>
 
 	{% codemirror php %}

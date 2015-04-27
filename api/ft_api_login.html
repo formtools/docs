@@ -31,11 +31,11 @@ next: Other Functions,/api/other_functions/
 
 	<h4>Return Values</h4>
 	<p>
-		The return values first depend on whether the <a href="/api/debugging">$g_api_debug</a> value
+		The return values first depend on whether the <a href="{{site.baseurl}}/api/debugging">$g_api_debug</a> value
 		is set. It if is, nothing is returned for errors: they are displayed in the browser. If not, the function has
 		the same return value pattern as the other functions: it returns an array with 2 indexes. The first is a
 		boolean, indicating whether the login was successful or not. The second is the unique
-		<a href="/api/error_codes">error code</a>, or the empty string when successful.
+		<a href="{{site.baseurl}}/api/error_codes">error code</a>, or the empty string when successful.
 	</p>
 
 	<p>
@@ -59,7 +59,9 @@ list ($success, $message) = ft_api_login($account_info);
 	{% endcodemirror %}
 
 	<p>
-		This will log the user in, but not redirect anywhere - you can continue processing PHP statements after the ft_api_login() call. Important: make sure that this page has started sessions! Form Tools requires sessions to have started in order to store the login information for the duration of the users "stay" in Form Tools.
+		This will log the user in, but not redirect anywhere - you can continue processing PHP statements after the
+        ft_api_login() call. Important: make sure that this page has started sessions! Form Tools requires sessions to
+        have started in order to store the login information for the duration of the users "stay" in Form Tools.
 	</p>
 
 	{% codemirror php %}

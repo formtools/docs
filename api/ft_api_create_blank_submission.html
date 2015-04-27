@@ -25,7 +25,8 @@ $submission_id = ft_api_create_blank_submission($form_id);
 	{% endcodemirror %}
 
 	<p>
-		By default, the submission is NOT finalized - so it won't appear in the Form Tools UI. To make the submission finalized by default, pass a second parameter set to true.
+		By default, the submission is NOT finalized - so it won't appear in the Form Tools UI. To make the submission
+        finalized by default, pass a second parameter set to true.
 	</p>
 
 	{% codemirror php %}
@@ -35,7 +36,10 @@ $submission_id = ft_api_create_blank_submission($form_id, true);
 	{% endcodemirror %}
 
 	<p>
-		Lastly, if you need your new submission to contain default values, you can include a <b>third</b> parameter. This is a hash (associative array) of [database column name] =&gt; [value]. Note: you cannot set the default values for any of the system fields (submission ID, submission data, last modified date and IP address and is_finalized). To find the database column names, go to your Edit Form -&gt; Database tab.
+		Lastly, if you need your new submission to contain default values, you can include a <b>third</b> parameter.
+        This is a hash (associative array) of [database column name] =&gt; [value]. Note: you cannot set the default
+        values for any of the system fields (submission ID, submission data, last modified date and IP address and
+        is_finalized). To find the database column names, go to your Edit Form -&gt; Database tab.
 	</p>
 
 	{% codemirror php %}

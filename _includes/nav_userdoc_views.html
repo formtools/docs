@@ -1,44 +1,46 @@
-<h4 {% if include.selected == 'views' %}class="selected"{% endif %}><a href="/userdoc/views/">Views</a></h4>
+<h4 {% if include.selected == 'views' %}class="selected"{% endif %}>
+    <a href="{{site.baseurl}}/userdoc/views/">Views</a>
+</h4>
 
 <ul>
 	<li {% if include.selected == 'list' %}class="selected"{% endif %}>
-		<a href="/userdoc/views/list">View List</a>
+		<a href="{{site.baseurl}}/userdoc/views/list">View List</a>
 	</li>
 	<li {% if include.selected == 'adding' %}class="selected"{% endif %}>
-		<a href="/userdoc/views/adding">Adding Views</a>
+		<a href="{{site.baseurl}}/userdoc/views/adding">Adding Views</a>
 	</li>
 	<li>
 		<div {% if include.selected == 'editing' %}class="selected"{% endif %}>
-			<a href="/userdoc/views/editing">Editing Views</a>
+			<a href="{{site.baseurl}}/userdoc/views/editing">Editing Views</a>
 		</div>
 
 		<ul>
 			<li {% if include.selected == 'main_tab' %}class="selected"{% endif %}>
-				<a href="/userdoc/views/main_tab">Main Tab</a>
+				<a href="{{site.baseurl}}/userdoc/views/main_tab">Main Tab</a>
 			</li>
 			<li {% if include.selected == 'columns_tab' %}class="selected"{% endif %}>
-				<a href="/userdoc/views/columns_tab">Columns Tab</a>
+				<a href="{{site.baseurl}}/userdoc/views/columns_tab">Columns Tab</a>
 			</li>
 			<li {% if include.selected == 'fields_tab' %}class="selected"{% endif %}>
-				<a href="/userdoc/views/fields_tab">Fields Tab</a>
+				<a href="{{site.baseurl}}/userdoc/views/fields_tab">Fields Tab</a>
 			</li>
 			<li {% if include.selected == 'tabs_tab' %}class="selected"{% endif %}>
-				<a href="/userdoc/views/tabs_tab">Tabs Tab</a>
+				<a href="{{site.baseurl}}/userdoc/views/tabs_tab">Tabs Tab</a>
 			</li>
 			<li>
 				<div {% if include.selected == 'filters_tab' %}class="selected"{% endif %}>
-					<a href="/userdoc/views/filters_tab">Filters Tab</a>
+					<a href="{{site.baseurl}}/userdoc/views/filters_tab">Filters Tab</a>
 				</div>
 
 				<ul>
 					<li {% if include.selected == 'standard_filters' %}class="selected"{% endif %}>
-						<a href="/userdoc/views/standard_filters">Standard Filters</a>
+						<a href="{{site.baseurl}}/userdoc/views/standard_filters">Standard Filters</a>
 					</li>
 					<li {% if include.selected == 'standard_filters_examples' %}class="selected"{% endif %}>
-						<a href="/userdoc/views/standard_filters_examples">Examples</a>
+						<a href="{{site.baseurl}}/userdoc/views/standard_filters_examples">Examples</a>
 					</li>
 					<li {% if include.selected == 'client_map_filters' %}class="selected"{% endif %}>
-						<a href="/userdoc/views/client_map_filters">Client Map Filters</a>
+						<a href="{{site.baseurl}}/userdoc/views/client_map_filters">Client Map Filters</a>
 					</li>
 				</ul>
 			</li>
@@ -46,6 +48,6 @@
 	</li>
 
 	<li {% if include.selected == 'permissions' %}class="selected"{% endif %}>
-		<a href="/userdoc/views/permissions">View Permissions</a>
+		<a href="{{site.baseurl}}/userdoc/views/permissions">View Permissions</a>
 	</li>
 </ul>

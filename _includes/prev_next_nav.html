@@ -1,15 +1,15 @@
 <div class="row docPrevNextNav">
 	<div class="col-lg-6 text-left">
-		{% if page.prev %}
-      {% assign link = page.prev | split: "," %}
-      <a href="{{link.last}}">&laquo; {{link.first}}</a>
-		{% endif %}
+    {% if page.prev %}
+        {% assign link = page.prev | split: "," %}
+        <a href="{{link.last}}">&laquo; {{link.first}}</a>
+    {% endif %}
 	</div>
 
 	<div class="col-lg-6 text-right">
-		{% if page.next %}
-      {% assign link = page.next | split: "," %}
-			<a href="{{link.last}}">{{link.first}} &raquo;</a>
-		{% endif %}
+    {% if page.next %}
+        {% assign link = page.next | split: "," %}
+        <a href="{{link.last}}">{{link.first}} &raquo;</a>
+    {% endif %}
 	</div>
 </div>
