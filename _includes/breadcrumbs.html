@@ -5,7 +5,7 @@
 
     {% assign crumb = item | split: "," %}
     {% if crumb.size == 2 %}
-      &raquo; <a href="{{crumb.last}}">{{crumb.first}}</a>
+      &raquo; <a href="{{site.baseurl}}/{{crumb.last}}">{{crumb.first}}</a>
     {% else %}
       &raquo; {{crumb.first}}
     {% endif %}
