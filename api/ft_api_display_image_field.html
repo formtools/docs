@@ -14,7 +14,11 @@ next: ft_api_create_blank_submission,/api/ft_api_create_blank_submission
 {% include open_section.html nav='nav_api.html' selected='ft_api_display_image_field' nav_width=5 %}
 
 	<p>
-		This function is included for people with multi-page forms that contain file upload fields - specifically, file upload fields which are used to upload <b>images</b>. What this function does is take care of all the code needed for displaying the image in your form - either on the original form page, if the user returns to the page to edit some values - or on some sort of "review" page where they can see all the values they inputted up to that point.
+		This function is included for people with multi-page forms that contain file upload fields - specifically, file
+        upload fields which are used to upload <b>images</b>. What this function does is take care of all the code
+        needed for displaying the image in your form - either on the original form page, if the user returns to the
+        page to edit some values - or on some sort of "review" page where they can see all the values they inputted up
+        to that point.
 	</p>
 
 	<p>
@@ -41,11 +45,15 @@ ft_api_display_image_field($params);
 {% endcodemirror %}
 
 	<p>
-		Note that the single required parameter passed to ft_api_display_image_field is the name attribute of the file upload field.
+		Note that the single required parameter passed to ft_api_display_image_field is the name attribute of the file
+        upload field.
 	</p>
 
 	<p>
-		What this code now does is display the image in the webpage - if it's already been uploaded. Also, it displays a "Delete File" button, where the user can choose to delete the uploaded file. Note that the original file upload field is still in the HTML. If the user uploads another image, the system automatically deletes the old file and uploads the new image.
+		What this code now does is display the image in the webpage - if it's already been uploaded. Also, it displays
+        a "Delete File" button, where the user can choose to delete the uploaded file. Note that the original file
+        upload field is still in the HTML. If the user uploads another image, the system automatically deletes the
+        old file and uploads the new image.
 	</p>
 
 	<p>

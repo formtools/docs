@@ -23,7 +23,7 @@ next: API Sessions,/api/sessions/
 		<li>All API functions begin with the <b>ft_api_</b> prefix.</li>
 		<li>For the form processing / management functions, the API stores all sessions in the
 			<b>$_SESSION["form_tools_form"]</b> key, but this can be changed if you're concerned about a conflict.
-			Just see the <a href="/api/ft_api_init_form_page/">ft_api_init_form_page</a> function for
+			Just see the <a href="{{site.baseurl}}/api/ft_api_init_form_page/">ft_api_init_form_page</a> function for
 			information on how to set the session namespace. If you change it there, it will be reflected in all
 			subsequent API functions (i.e. you'll need to pass your custom namespace to those as well)</li>
 		<li>Form fields that have special meaning to Form Tools all have a <b>form_tools_</b> prefix, e.g.

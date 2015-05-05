@@ -19,17 +19,17 @@ next: smarty/,/module_development/smarty/
 
 	<ol>
 		<li>First, any PHP in this file is automatically imported by the
-			<a href="/module_development/ft_init_module_page/">ft_init_module_page()</a> function.
+			<a href="{{site.baseurl}}/module_development/ft_init_module_page/">ft_init_module_page()</a> function.
 		</li>
 		<li>If any features of your module needs to be accessed outside of its own module
 			folder (e.g. in one of the core Form Tools pages), the
-			<a href="/module_development/ft_include_modules/">ft_include_modules()</a>
+			<a href="{{site.baseurl}}/module_development/ft_include_modules/">ft_include_modules()</a>
 			function - which is used throughout Form Tools to include one or more modules
 			on a single page - expects to find all the core functionality in the library.php
 			file. If it doesn't exist, it won't work.
 		</li>
 		<li>
-			If you register one or more <a href="/module_development/hooks/">hooks</a>, your hook function has
+			If you register one or more <a href="{{site.baseurl}}/module_development/hooks/">hooks</a>, your hook function has
 			to be defined in this file - or in a file that's included by the library.php file.
 		</li>
 		<li>
@@ -52,9 +52,9 @@ next: smarty/,/module_development/smarty/
 	</p>
 
 	<ul>
-		<li><a href="/module_development/installation_function/">Installation function</a></li>
-		<li><a href="/module_development/uninstallation_function/">Uninstallation function</a></li>
-		<li><a href="/module_development/upgrade_function/">Upgrade function</a></li>
+		<li><a href="{{site.baseurl}}/module_development/installation_function/">Installation function</a></li>
+		<li><a href="{{site.baseurl}}/module_development/uninstallation_function/">Uninstallation function</a></li>
+		<li><a href="{{site.baseurl}}/module_development/upgrade_function/">Upgrade function</a></li>
 	</ul>
 
 {% include close_section.html %}

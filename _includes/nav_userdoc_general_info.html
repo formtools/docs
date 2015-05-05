@@ -1,10 +1,12 @@
-<h4 {% if include.selected == 'general_info' %}class="selected"{% endif %}><a href="/userdoc/general_info/">General Information</a></h4>
+<h4 {% if include.selected == 'general_info' %}class="selected"{% endif %}>
+    <a href="{{site.baseurl}}/userdoc/general_info/">General Information</a>
+</h4>
 
 <ul>
 	<li {% if include.selected == 'sortables' %}class="selected"{% endif %}>
-		<a href="/userdoc/general_info/sortables">Sortable and Groupables</a>
+		<a href="{{site.baseurl}}/userdoc/general_info/sortables">Sortable and Groupables</a>
 	</li>
 	<li {% if include.selected == 'placeholders' %}class="selected"{% endif %}>
-		<a href="/userdoc/general_info/placeholders">Placeholders</a>
+		<a href="{{site.baseurl}}/userdoc/general_info/placeholders">Placeholders</a>
 	</li>
 </ul>

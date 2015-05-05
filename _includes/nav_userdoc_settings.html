@@ -1,16 +1,18 @@
-<h4 {% if include.selected == 'settings' %}class="selected"{% endif %}><a href="/userdoc/settings/">Settings</a></h4>
+<h4 {% if include.selected == 'settings' %}class="selected"{% endif %}>
+    <a href="{{site.baseurl}}/userdoc/settings/">Settings</a>
+</h4>
 
 <ul>
 	<li {% if include.selected == 'main_tab' %}class="selected"{% endif %}>
-		<a href="/userdoc/settings/main_tab">Main Tab</a>
+		<a href="{{site.baseurl}}/userdoc/settings/main_tab">Main Tab</a>
 	</li>
 	<li {% if include.selected == 'accounts_tab' %}class="selected"{% endif %}>
-		<a href="/userdoc/settings/accounts_tab">Accounts Tab</a>
+		<a href="{{site.baseurl}}/userdoc/settings/accounts_tab">Accounts Tab</a>
 	</li>
 	<li {% if include.selected == 'files_tab' %}class="selected"{% endif %}>
-		<a href="/userdoc/settings/files_tab">Files Tab</a>
+		<a href="{{site.baseurl}}/userdoc/settings/files_tab">Files Tab</a>
 	</li>
 	<li {% if include.selected == 'menus_tab' %}class="selected"{% endif %}>
-		<a href="/userdoc/settings/menus_tab">Menus Tab</a>
+		<a href="{{site.baseurl}}/userdoc/settings/menus_tab">Menus Tab</a>
 	</li>
 </ul>
