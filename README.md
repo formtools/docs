@@ -7,7 +7,7 @@ We use [Jekyll](http://jekyllrb.com/) to handle generating the actual markup. Je
 In other words, rather than the web pages being constructed on the fly as people request them from the server, all the 
 heavy lifting is done beforehand. The site is *generated* before being pushed to the server. 
 
-The new website + doc has lots of benefit:
+The new website + docs have lots of benefits:
 - **Speed!** - static files are far faster to load than the PHP/MySQL-heavy website right now. 
 - **Open!** - now that the doc is in a public repo, it's super easy for people to contribute and fix documentation,
 unlike the old site where the doc is in a closed database.
@@ -40,13 +40,10 @@ npm install
 npm install -g grunt-cli
 ```
 
-4. Next, the documentation needs to download ALL other repos (modules, themes, etc). Run: `grunt init`. This will
-take some time to run. It's only run once.
-5. Now start the server: `jekyll serve --watch`
+4. Next, start up the doc with `grunt start` (I need to run `sudo grunt start` myself).
 
 That starts a local server which you can access at `http://localhost:4000/docs/`. At this point, you can edit the files
 locally and the HTML files will be automatically regenerated on the fly.
-
 
 
 ### Remaining TODO (for me)
