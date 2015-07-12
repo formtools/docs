@@ -1,4 +1,4 @@
-<h4 {% if include.selected == 'api' %}class="selected"{% endif %}><a href="/api/">API</a></h4>
+<h4 {% if include.selected == 'api' %}class="selected"{% endif %}><a href="{{site.baseurl}}/api/">API</a></h4>
 
 <ul>
 	<li {% if include.selected == 'finalized' %}class="selected"{% endif %}>
@@ -38,21 +38,21 @@
 			</li>
 			<li>
 				<div {% if include.selected == 'submissions' %}class="selected"{% endif %}>
-					<a href="/api/submissions/">Submissions</a>
+					<a href="{{site.baseurl}}/api/submissions/">Submissions</a>
 				</div>
 
 				<ul>
 					<li {% if include.selected == 'ft_api_show_submissions' %}class="selected"{% endif %}>
-						<a href="/api/ft_api_show_submissions/">ft_api_show_submissions</a>
+						<a href="{{site.baseurl}}/api/ft_api_show_submissions/">ft_api_show_submissions</a>
 					</li>
 					<li {% if include.selected == 'ft_api_show_submission' %}class="selected"{% endif %}>
-						<a href="/api/ft_api_show_submission/">ft_api_show_submission</a>
+						<a href="{{site.baseurl}}/api/ft_api_show_submission/">ft_api_show_submission</a>
 					</li>
 					<li {% if include.selected == 'ft_api_show_submission_count' %}class="selected"{% endif %}>
-						<a href="/api/ft_api_show_submission_count/">ft_api_show_submission_count</a>
+						<a href="{{site.baseurl}}/api/ft_api_show_submission_count/">ft_api_show_submission_count</a>
 					</li>
 					<li {% if include.selected == 'ft_api_get_submission' %}class="selected"{% endif %}>
-						<a href="/api/ft_api_get_submission/">ft_api_get_submission</a>
+						<a href="{{site.baseurl}}/api/ft_api_get_submission/">ft_api_get_submission</a>
 					</li>
 				</ul>
 			</li>
