@@ -1,3 +1,7 @@
+# ---------------------------------------------------------------------
+# Used when loading the docs within the context of the website. PROD.
+# ---------------------------------------------------------------------
+
 # site settings
 title: Form Tools Documentation
 email: ben.keen@gmail.com
