@@ -1,7 +1,7 @@
 {
   "name": "formtools-docs",
   "version": "0.0.1",
-  "description": "The build process for formtools.org and subdomains",
+  "description": "Form Tools documentation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

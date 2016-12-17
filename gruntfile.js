@@ -15,8 +15,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-shell');
 
-  // ----------------------------------------------------------------------------------------------
-
   // starts the Jekyll server
   grunt.registerTask("start", ["shell:start"]);
 };

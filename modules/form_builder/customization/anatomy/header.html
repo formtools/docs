@@ -24,7 +24,7 @@ next: Footer,/modules/form_builder/customization/anatomy/footer/
   <p>
     The Form Builder generates forms with a lot of dynamic, javascript-dependant functionality, like Google Map fields,
     file uploads, WYSIWYG fields, field validation and so on. As such, the Header template must contain the
-    {{$required_resources}} placeholder. That includes all the necessary javascript and CSS into the page.
+    {% raw %}{{$required_resources}}{% endraw %} placeholder. That includes all the necessary javascript and CSS into the page.
   </p>
 
   <p>
