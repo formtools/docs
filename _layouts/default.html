@@ -14,27 +14,31 @@
 		</div>
 	</section>
 
-	<section class="container doc-container">
-		<div class="page-content">
-			<div class="wrap">
+	<section class="page-body">
 
-        {% include breadcrumbs.html %}
+		<section class="container doc-container">
+			<div class="page-content">
+				<div class="wrap">
 
-				<header>
-					<h1>{{page.heading}}</h1>
-					{% include prev_next_nav.html %}
-				</header>
+					{% include breadcrumbs.html %}
 
-				{{ content }}
+					<header>
+						<h1>{{page.heading}}</h1>
+						{% include prev_next_nav.html %}
+					</header>
+
+					{{ content }}
+				</div>
 			</div>
-		</div>
 
-		{% include footer-docs.html %}
+			{% include footer-docs.html %}
 
-	</section>
+		</section>
 
 	{% include core-footer.html %}
   {% include docs-footer.html %}
+
+	</section>
 
 </body>
 </html>
