@@ -16,6 +16,7 @@ modules_url: "http://localhost:4000/modules.formtools.org"
 themes_url: "http://localhost:4000/themes.formtools.org"
 translations_url: "http://localhost:4000/translations.formtools.org"
 forums_url: "http://localhost:4000/themes.formtools.org"
+hello_url: "http://localhost:4000/hello.formtools.org"
 
 # build settings
 markdown: kramdown
