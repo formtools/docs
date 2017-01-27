@@ -7099,14 +7099,6 @@ aside .widget:not(:first-child) {
 }
 
 
-/* Footer */
-#footer {
-    padding: 50px 0;
-    font-size: 13px;
-    margin-top: 0px;
-}
-
-
 .title-section{
     margin-top: 75px;
     min-height: 55px;
@@ -7239,12 +7231,6 @@ aside .widget:not(:first-child) {
     border: none;
 }
 
-
-
-.copyright {
-    text-align: right;
-    padding: 16px;
-}
 
 /*google map*/
 #map-canvas {
