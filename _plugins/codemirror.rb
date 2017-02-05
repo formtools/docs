@@ -12,7 +12,7 @@ module Jekyll
         end
 
 		def render(context)
-		    require 'CGI'
+		    require 'cgi'
 		    '<textarea class="codemirror" data-lang="' + @lang.to_s + '">' + CGI.escapeHTML(super.strip) + '</textarea>'
 		end
 	end
