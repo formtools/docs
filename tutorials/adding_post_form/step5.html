@@ -1,0 +1,56 @@
+---
+layout: default
+navPage: docs
+heading: Adding a POST form
+breadcrumbs:
+- Tutorials,/tutorials/
+- Adding a POST form
+subnavSection: Adding a POST form
+prev: "Step 4: Database Setup,/tutorials/adding_post_form/step4/"
+next: "Step 6: Finalize Form,/tutorials/adding_post_form/step6/"
+---
+
+{% include open_section.html nav='nav_tutorial_adding_post_form.html' selected='step5' nav_width=3 %}
+
+<p>
+    {% include screenshot.html item="i58.jpg" %}
+    This page lists all of your form fields and lets you "Smart Fill" them (i.e. set their
+    field types and contents) at the click of a button.
+</p>
+
+<h3>Limitations: checkboxes and radio buttons</h3>
+
+<p>
+    Due to the nature of HTML, checkboxes and radio buttons have their labels located <b>outside</b> of the input
+    field elements: technically they could appear anywhere in the webpage. For instance:
+</p>
+
+<textarea class="codemirror" data-lang="html">
+&lt;!-- field types with their labels found outside of the element --&gt;
+&lt;input type="radio" name="r" /> My first radio!
+My second radio: <input type="radio" name="r" /&gt;
+
+&lt;input type="radio" name="c" /> My first checkbox
+My second checkbox: <input type="checkbox" name="c" /&gt;
+
+&lt;!-- field types with their labels found inside the element --&gt;
+    &lt;option value&gt;="one"&gt;One&lt;/option&gt;
+    &lt;option value="two"&gt;Two&lt;/option&gt;
+    &lt;option value="three"&gt;Three&lt;/option&gt;
+&lt;/select>
+</textarea>
+
+<p>
+    {% include screenshot.html item="i56.jpg" %}
+    Because of this, the Smart Fill feature doesn't pre-fill the display texts for checkboxes or
+    radio buttons, since it doesn't know where to find them! Dropdowns always have their labels
+    found in the same place, so they CAN be pre-filled.
+</p>
+
+<p>
+    Once you've finished configuring your form fields, click the "Next Step" button to continue.
+</p>
+
+
+
+{% include close_section.html %}

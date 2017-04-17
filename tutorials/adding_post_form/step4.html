@@ -1,0 +1,90 @@
+---
+layout: default
+navPage: docs
+heading: Adding a POST form
+breadcrumbs:
+- Tutorials,/tutorials/
+- Adding a POST form
+subnavSection: Adding a POST form
+prev: "Step 3: Test Submission,/tutorials/adding_post_form/step3/"
+next: "Step 5: Field Types,/tutorials/adding_post_form/step5/"
+---
+
+{% include open_section.html nav='nav_tutorial_adding_post_form.html' selected='step4' nav_width=3 %}
+
+<p>
+    {% include screenshot.html item="i55.jpg" %}
+    So far so good! Form Tools has now received your test submission; the vast majority of
+    the technical stuff is done. You haven't quite reached the point where you're cracking
+    open the champagne, but you're getting close.
+</p>
+
+<p>
+    Now it's mostly just a matter of configuring your form fields to make them look and behave
+    like you'd expect within the Form Tools UI. This step gathers information about your
+    fields so that it can create a custom database table to store all future form
+    submissions. Here's what all the columns and features of this page mean:
+</p>
+
+
+<div class="row">
+    <div class="col-lg-3">Order</div>
+    <div class="col-lg-9">
+        This field determines the default order of your form fields as they will be listed
+        in the administration pages. Generally you'll want to arrange these in a logical manner,
+        but it doesn't terribly matter: every time the administrator or client looks at the form
+        data it will be through a View. Each View can be sorted in whatever way you want.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3">Form Field Name</div>
+    <div class="col-lg-9">
+        The name of your form field. This is included for reference, so you can see at a glance
+        what the row is all about.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3">Display Name</div>
+    <div class="col-lg-9">
+        The display name should uniquely identify your field within your form. It should serve
+        as a simple label like "First Name", "Email", "Contact Phone Number" or something along
+        those lines. The <b>Smart Fill</b> button makes it's best guess at filling in the
+        display names based on the names you've given your form fields.<br />
+        <br />
+        Tip: if you'd like the Smart Fill option to work as effectively, you'll need to format
+        your form fields with underscore notation, like so <b>company_name</b>, <b>first_name</b>
+        and <b>email</b>. These get Smart-Filled as <b>Company Name</b>, <b>First Name</b> and
+        <b>Email</b> respectively. Smart Filling works by converting all underscores
+        to spaces and then uppercasing the first letter of each word.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3">Sample Data</div>
+    <div class="col-lg-9">
+        This column is again included just for reference: it shows the contents of the field
+        that was originally submitted.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3">Field Size</div>
+    <div class="col-lg-9">
+        This column determines how much storage should be allocated for this field in the
+        database. This field is a common source of error. If you ever see your data get chopped
+        off in the UI, or find that fields with field options groups (dropdowns, checkboxes &
+        radios) sometimes don't show up properly, it's probably because the form data got
+        truncated.<br />
+        <br />
+        There are five field sizes. Don't pick the option that fits MOST data for this field, but
+        for ALL data. Even if 99% of your fields will be under 20 characters, if there's one field
+        that could be 21 characters pick the <b>Medium</b> field size.<br />
+        <ul>
+            <li>Tiny &lt;= 5 chars</li>
+            <li>Small &lt;= 20 chars</li>
+            <li>Medium &lt;= 256 chars</li>
+            <li>Large (TEXT) - 65,535 characters</li>
+            <li>Very Large (MEDIUMTEXT) - 16,777,215 characters</li>
+        </ul>
+    </div>
+</div>
+
+{% include close_section.html %}

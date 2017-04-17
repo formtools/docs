@@ -1,0 +1,64 @@
+---
+layout: default
+navPage: docs
+heading: Adding a POST form
+breadcrumbs:
+- Tutorials,/tutorials/
+- Adding a POST form
+subnavSection: Adding a POST form
+prev: "Step 1: Checklist,/tutorials/adding_post_form/step1/"
+next: "Step 3: Test Submission,/tutorials/adding_post_form/step3/"
+---
+
+{% include open_section.html nav='nav_tutorial_adding_post_form.html' selected='step2' nav_width=3 %}
+
+<p>
+    {% include screenshot.html item="i53.jpg" %}
+    Step 2 is where you enter all the main settings for your form. The screenshot to the right shows some demo
+    settings, but you should enter the values that are relevant for your own form. Here's what all the fields mean.
+</p>
+
+<div class="clear"></div>
+
+<div class="row">
+    <div class="col-lg-3">
+        <strong>Form Name</strong>
+    </div>
+    <div class="col-lg-9">
+        This is used within Form Tools to uniquely identify your form. If you're planning on
+        adding lots of forms, it's important to give them the most descriptive names possible.
+        On the form list page, you will be able to search the forms on what you enter here.
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3">
+        <strong>Form URLs</strong>
+    </div>
+    <div class="col-lg-9">
+        Enter the URL of your form.
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3">
+        <strong>Redirect URL</strong>
+    </div>
+    <div class="col-lg-9">
+        This is the URL of the final "thank you" page, where users will be redirected to after they
+        have successfully submitted the form.
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3">
+        <strong>Who can access?</strong>
+    </div>
+    <div class="col-lg-9">
+        This setting determines who can view the form. You will later be able to
+        further customize these permissions by creating separate form
+        <a href="https://docs.formtools.org/userdoc/views/">Views</a>.
+    </div>
+</div>
+
+{% include close_section.html %}

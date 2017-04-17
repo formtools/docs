@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Adding a POST form
+breadcrumbs:
+- Tutorials,/tutorials/
+- Adding a POST form
+subnavSection: Adding a POST form
+prev: "Step 5: Field Types,/tutorials/adding_post_form/step5/"
+next: "Related Links,/tutorials/adding_post_form/related_links/"
+---
+
+{% include open_section.html nav='nav_tutorial_adding_post_form.html' selected='step6' nav_width=3 %}
+
+<p>
+    {% include screenshot.html item="i82.jpg" %}
+    The final step is just for finalizing your form: pushing it into "live" mode. This tells
+    Form Tools to start storing the submissions.
+</p>
+
+<p>
+    Return to your form and remove the following hidden field:
+</p>
+
+<textarea class="codemirror" data-lang="html">
+&lt;input type="hidden" name="form_tools_initialize_form" value="1" /&gt;</textarea>
+
+<p>
+    After you refresh your form page, submissions should now be stored in Form Tools.
+    You're done! :)
+</p>
+
+
+{% include close_section.html %}
