@@ -1,0 +1,63 @@
+---
+layout: default
+navPage: docs
+heading: Setting up a PayPal-Enabled Form
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+next: "Overview,/tutorials/paypal/overview/"
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='introduction' nav_width=4 %}
+
+<p>
+    In my experience, working with PayPal is like pulling teeth. I find their interface deeply unintuitive and
+    convoluted and their documentation - although extensive - virtually impossible to navigate. There seems to be
+    dozens of ways to do the same thing only with slight variations. If I had any other choice for online payments,
+    I'd leap at it in a second. But I don't: PayPal is the worldwide standard so we have to suck it up and learn to do
+    things their way!
+</p>
+
+<p>
+    This tutorial explains how to add a simple donation form to your website. I've included a zipfile (see below)
+    containing all the files you need and comes with all the really nasty stuff preconfigured.
+</p>
+
+<p>
+    Although this tutorial is about setting up a donation form, you can apply anything you learn here to add any
+    PayPal-enabled form, such as a shopping cart for ordering merchandise. Also, although this is about PayPal, the
+    same general process applies for most external payment gateways - so if any any point you want to jump ship and use
+    Google Checkout, WorldPay or something else, you can still learn a lot just by understanding the process described
+    herein.
+</p>
+<p>
+    The bulk of this tutorial is less to do with Form Tools than it is PayPal. Most of the work is figuring out how to
+    send and receive information from PayPal in a format they require. Hooking it up to Form Tools is actually fairly
+    simple, although conceptually may prove a little confusing at first if you're not familiar with using the Form
+    Tools API method of submitting your form. The tutorial begins with a top-down discussion of the entire process. I
+    chose to start with the abstract process rather than the details because it really is vital that you understand
+    precisely what you're trying to do. It's not the sort of task you can just implement then understand in retrospect -
+    you'd be unlikely to succeed setting up your form without knowing what's going on first!
+</p>
+<p>
+    As always, I've tried to keep this tutorial as simple as possible for the not-so technical folks. But here are the
+    requirements:
+</p>
+
+<ul>
+    <li>Basic PHP and HTML knowledge</li>
+    <li><a href="https://www.paypal.com/">A PayPal account</a></li>
+    <li><a href="https://developer.paypal.com/">A PayPal developer's account</a>.</li>
+    <li><a href="{{site.ft_url}}/files/paypal_donate.zip">This zipfile</a> released by PayPal and modified by
+        myself. It contains a number of pre-built pages for implementing a form on your site.</li>
+    <li>A strong cup of coffee. Or two. Or possibly three.</li>
+</ul>
+
+<p>
+    All of the above points will be discussed below. You can see an example of a PayPal enabled form with Form Tools'
+    own <a href="{{site.ft_url}}/donate/">donation form</a>. If this tutorial comes in handy, how about seeing it in
+    action and making a donation? ;-)
+</p>
+
+{% include close_section.html %}

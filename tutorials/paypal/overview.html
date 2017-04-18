@@ -1,0 +1,53 @@
+---
+layout: default
+navPage: docs
+heading: Setting up a PayPal-Enabled Form
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: Introduction,/tutorials/paypal/
+next: Instant Payment Notification (IPN),/tutorials/paypal/ipn/
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='overview' nav_width=3 %}
+
+<p>
+    Let's start with a pretty, unintimidating diagram which outlines the whole process.
+    I've simplified a few things (such as the fact that the user can cancel at any
+    step) to keep it clear, but the overview is accurate. <b>Click on the image for a larger
+    view</b>.
+</p>
+
+{% include screenshot.html item="i113.gif" %}
+
+<p>
+    A few important points to note:
+</p>
+
+<ul>
+    <li>
+        All PayPal pages are wrapped in a blue box. These pages are pre-built by PayPal and reside on their servers -
+        generally you don't have to worry about them very much. The pages in the grey box reside on your website. As
+        you can see, when the user fills in and submits the form, they are redirected to and from the PayPal site to
+        complete the transaction.
+    </li>
+    <li>
+        PayPal offers a little control over the appearance of their pages to provide a little homogeneity for the user
+        making the payment - but not much.
+    </li>
+    <li>
+        The first form page - although a single page in the diagram - can be the final page in a sequence of pages,
+        e.g. in a shopping cart process where they enter information bit by bit on separate pages. For simplicity - and
+        because our Donation Form example only requires it - the form is only one page long for this tutorial.
+        Speaking practically, it makes no difference.
+    </li>
+    <li>
+        The "Review Page" is necessary step, but when the user reaches that step, they can be automatically redirected
+        to PayPal if you wish. It is your choice whether or not you display any form submission content for review on
+        that page. Since the donation form is a single page containing very few fields, I felt that this step was not
+        necessary and made it automatically redirect with javascript.
+    </li>
+</ul>
+
+{% include close_section.html %}
