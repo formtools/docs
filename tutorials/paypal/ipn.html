@@ -1,0 +1,28 @@
+---
+layout: default
+navPage: docs
+heading: Setting up a PayPal-Enabled Form
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: Overview,/tutorials/paypal/overview/
+next: "Step 1: Configuring your form with Form Tools,/tutorials/paypal/step1/"
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='ipn' nav_width=3 %}
+
+<p>
+    IPN is a service provided by PayPal that automatically notifies your server the instant a
+    transaction occurs. This lets us ensure that all successful payments get marked as "paid"
+    in our Form Tools database.
+</p>
+
+<p>
+    And here's the other piece of good news: you don't really need to know how it works. The
+    zipfile contains a file with all the functions needed to interact with PayPal to confirm
+    a purchase and mark the submission as complete. So... let's get started setting
+    up your form!
+</p>
+
+{% include close_section.html %}

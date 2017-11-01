@@ -101,6 +101,9 @@ header h1 {
     padding-bottom: 0;
     margin-bottom: 10px;
 }
+.screenshot.auto-width {
+    width: auto;
+}
 .screenshot-right {
     margin-left: 12px;
 }

@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Swift Mailer
+breadcrumbs:
+  - Modules,/modules
+  - Swift Mailer
+prev: Introduction,/modules/swift_mailer/
+next: Configuration,/modules/swift_mailer/configuration
+---
+
+{% include open_section.html nav='nav_swift_mailer.html' selected='security' %}
+
+    <h3>Security</h3>
+
+    <div class="alert alert-danger">
+        This page is important, please read!
+    </div>
+
+    <p>
+        In order to send the emails via SMTP, this module needs to <b>store your SMTP credentials including an email
+        and password in the Form Tools database</b>. As of 2.0.0 the module <i>encrypts</i> this information in the
+        database, but it's still a 2-way encryption (i.e. it can unencrypt it to use the information to send emails
+        as needed). Because of this, <b>if a malicious user gains access to your server or database they will be
+        able to access the email account</b>.
+    </p>
+
+    <p>
+        To minimize the damage if this occurs, you should use an email account that's used solely for the purpose of
+        Form Tools emails. That way, the amount of information that can be accessed from the email is limited.
+        Secondly, you may want to consider regularly deleting any email logs on the SMTP server.
+    </p>
+
+{% include close_section.html %}

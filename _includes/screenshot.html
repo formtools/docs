@@ -1,21 +1,19 @@
 {% for screenshot in site.data.screenshots %}
 
 	{% if include.item == screenshot.filename %}
-		<div
+		<div class="screenshot
+			{% if include.noWidth %}auto-width{% endif %}
 			{% if include.align %}
-				{% if include.align == 'right' %}
-          class="screenshot screenshot-right" style="float:right"
-				{% else %}
-          class="screenshot screenshot-left" style="float:left"
-				{% endif %}
+				{% if include.align == 'right' %}screenshot-right" style="float:right"
+				{% else %} screenshot-left" style="float:left"{% endif %}
 			{% else %}
-        class="screenshot screenshot-right" style="float:right"
+				screenshot-right" style="float:right"
 			{% endif %}>
 
 			<a href="{{site.baseurl}}/assets/screenshots/{{screenshot.filename}}" title="{{screenshot.caption}}" class="ss">
 				<img src="{{site.baseurl}}/assets/screenshots/{{screenshot.thumb_filename}}" alt="{{screenshot.caption}}"
-          title="{{screenshot.caption}}" border="0"></a>
-      <br />
+					title="{{screenshot.caption}}" border="0"></a>
+			<br />
 			{{screenshot.caption}}
 		</div>
 	{% endif %}
