@@ -16,8 +16,9 @@ next: Spam Detection,/modules/submission_pre_parser/spam_detection
   <h3>Combining Fields</h3>
 
   <div class="alert alert-info">
-    Note: this example is only relevant to Form Tools 2.0.6 or earlier. Phone number fields are now predefined field
-    types in Form Tools 2.1.0. You can <a href="{{site.baseurl}}/userdoc/field_types/ft_phone">read about them here!</a>
+    Note: Phone number fields are now predefined field types in Form Tools 2.1.0. You can 
+    <a href="{{site.baseurl}}/userdoc/field_types/ft_phone">read about them here!</a> But this example illustrates 
+    how you could emulate it manually.
   </div>
 
   <h4>Combining Form Fields</h4>
@@ -34,7 +35,7 @@ next: Spam Detection,/modules/submission_pre_parser/spam_detection
 
   <p>
     The problem with this is that in the Form Tools UI, each field is displayed separately
-    on separate lines. Functionally this is still sound, but it's a bit ugly! To solve it,
+    on separate lines. Functionally this is still sound, but it's a bit ugly and hard to read. Instead,
     you can create a pre-parser rule to combine them.
   </p>
 
