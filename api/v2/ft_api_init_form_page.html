@@ -1,0 +1,81 @@
+---
+layout: default
+navPage: docs
+heading: ft_api_init_form_page
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Function Reference,/api/function_reference/
+  - Form Integration,/api/form_integration/
+  - ft_api_init_form_page
+prev: Form Integration,/api/form_integration/
+next: ft_api_process_form,/api/ft_api_process_form/
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='ft_api_init_form_page' nav_width=5 %}
+
+	<p>
+		This valuable little function performs a number of tedious tasks, which previously had to do manually
+		with PHP. This function does the following:
+	</p>
+
+	<ul>
+		<li>
+			Creates a temporary storage for your form data in sessions (so you can access the already-submitted
+			form data as the user progresses through the form)
+		</li>
+		<li>
+			Requests a unique submission ID for the form submission (one submission ID per form submission - even
+			if it's a multi page form)
+		</li>
+		<li>
+			Returns ALL form data submitted to date. So if you have a multi page form, on page 3 of 5, it'll
+			return all the first 3 form submission field information. This can be handy if you need to re-fill form
+			fields when the user returns to an earlier page.
+		</li>
+	</ul>
+
+	<p>
+		This function accommodates the three stages of your form:
+	</p>
+
+	<ol>
+		<li>Initial setup (before integration with Form Tools)</li>
+		<li>Putting through the test submission</li>
+		<li>Processing "live" submissions</li>
+	</ol>
+
+
+	<h4>Initial setup</h4>
+
+	<p>
+		Before trying to put through your test submission, you should get your form working with this function. Add
+		this PHP code to top of the FIRST page in your form (even if it's a single page form):
+	</p>
+
+	{% codemirror php %}
+<?php
+require_once("../global/api/api.php");
+$fields = ft_api_init_form_page("", "test");
+?>
+	{% endcodemirror %}
+
+	<p>
+		Next, if you have additional pages, add the following to the top of all subsequent pages:
+	</p>
+
+	{% codemirror php %}
+<?php
+require_once("../global/api/api.php");
+$fields = ft_api_init_form_page();
+?>
+	{% endcodemirror %}
+
+	<p>
+		Note that they're very similar. The difference it that the first page sets up the
+		environment: it lets the function know not to try to retrieve the submission ID
+		(since the form doesn't exist yet!)
+	</p>
+
+
+{% include close_section.html %}

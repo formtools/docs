@@ -1,0 +1,46 @@
+---
+layout: default
+navPage: docs
+heading: API
+breadcrumbs:
+    - API,/api/
+    - API v2.x
+next: Finalized Submissions,/api/v2/finalized/
+---
+
+{% include open_section.html nav='nav_api_v2.html' selected='api' nav_width=5 %}
+
+	<div class="alert alert-info">
+		<a href="https://github.com/formtools/api/releases/" class="btn btn-primary">Download</a>
+		The API releases are all found on github.
+	</div>
+
+	<p>
+		The Form Tools API files should be placed in your <strong>[form tools root]/global/api/</strong> folder.
+	</p>
+
+	<a name="requirements"></a>
+	<p><b>Requirements</b></p>
+	<ol>
+		<li>Form Tools must be installed on your server</li>
+		<li>It can only be called within a PHP page on the same server as your Form Tools installation</li>
+		<li>It requires the /global/api/API.class.php file to have been included in your page</li>
+	</ol>
+
+	<a name="how_to_use"></a>
+	<p><b>How to use it</b></p>
+
+	<p>
+		In order to use the API functions you must include the api.php file in your web page
+		BEFORE the function call. You only need to include this line once. The path must be
+		&nbsp;edited for the location of your api.php file on your server. It can be a relative or
+		absolute link.
+	</p>
+
+	{% codemirror php %}
+<?php
+require_once("/path/to/[form tools folder]/global/api/API.class.php");
+?>
+	{% endcodemirror %}
+
+{% include close_section.html %}

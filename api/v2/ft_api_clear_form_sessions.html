@@ -1,0 +1,71 @@
+---
+layout: default
+navPage: docs
+heading: ft_api_clear_form_sessions
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Function Reference,/api/function_reference/
+  - Form Integration,/api/form_integration
+  - ft_api_clear_form_sessions
+prev: ft_api_process_form,/api/ft_api_process_form
+next: ft_api_display_image_field,/api/ft_api_display_image_field
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='ft_api_clear_form_sessions' nav_width=5 %}
+
+	<p>
+		This function should always be called on the final "thankyou" page of your form. The
+		two functions, <a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page</a> and
+		<a href="{{site.baseurl}}/api/ft_api_process_form">ft_api_process_form</a> store various values in
+		sessions (a built-in PHP temporary storage mechanism) while the user progresses through
+		your form. This function clears them.
+	</p>
+
+	<div class="alert alert-warning">
+		Note: it appears there may be an issue with this function: you must include the following
+		line before calling <b>ft_api_clear_form_sessions</b> otherwise your sessions may not be
+		cleared:
+
+		{% codemirror php %}
+$fields = ft_api_init_form_page(X); // where X is your form ID
+		{% endcodemirror %}
+	</div>
+
+	<h4>Why is this needed?</h4>
+
+	<p>
+		If the sessions aren't emptied, the user may not be able to put through a second form
+		submission. The reason for this is that when they return to the form, the API functions
+		may well load the old submission ID from the <i>previous</i> submission. Then, when it
+		comes to updating the submission information, it will realize that the submission has
+		already been finalized by the original form submission - and fail!
+	</p>
+
+	<h4>Usage</h4>
+
+	<p>
+		The function is generally called without any parameters. It has no return value.
+	</p>
+
+	{% codemirror php %}
+<?php
+ft_api_clear_form_sessions();
+?>
+	{% endcodemirror %}
+
+	<p>
+		If you originally passed a custom sessions namespace string to the
+		<a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page</a> function, you need to pass
+		the same namespace string to this function. For example, if your namespace was "my_form",
+		you'd call this function like so:
+	</p>
+
+	{% codemirror php %}
+<?php
+ft_api_clear_form_sessions("my_form");
+?>
+	{% endcodemirror %}
+
+
+{% include close_section.html %}

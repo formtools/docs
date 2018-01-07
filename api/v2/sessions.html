@@ -1,0 +1,33 @@
+---
+layout: default
+navPage: docs
+heading: API Sessions
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - API Sessions
+prev: Namespaces,/api/namespaces/
+next: Feature Suggestions,/api/feature_suggestions/
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='sessions' nav_width=5 %}
+
+	<p>
+		When you use the API for your forms, it uses sessions to store information about the form
+		as the user progresses from page to page. Prior to version <b>1.0.0-beta-20090908</b> of the
+		API, it always used PHP sessions to store the information. After that release, it uses EITHER
+		database or PHP sessions, depending on what value you have set in your
+		<b>$g_api_session_type</b> variable (<a href="{{site.baseurl}}/userdoc/getting_started/config_file/">see
+		here</a> for more information). If you have problems with PHP sessions, it's recommended
+		that you set that value to "database"
+	</p>
+
+	<p>
+		To control the timeout for the database sessions, set the
+		<b>$g_api_session_timeout</b> value to something appropriate. This is in seconds and defaults
+		to 3600 (1 hour). Again, see the
+		<a href="{{site.baseurl}}/userdoc/getting_started/config_file/">help documentation on the config.php file</a>
+		for more information.
+	</p>
+
+{% include close_section.html %}

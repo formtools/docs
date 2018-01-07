@@ -7,55 +7,34 @@ breadcrumbs:
 next: Finalized Submissions,/api/finalized/
 ---
 
-{% include open_section.html nav='nav_api.html' selected='api' nav_width=5 %}
-
-	<h4>About the API</h4>
-	<a name="about"></a>
+{% include open_section.html nav='nav_api_versions.html' selected='api' nav_width=3 %}
 
 	<div class="alert alert-info">
-		<a href="https://github.com/formtools/api/releases/tag/1.1.4" class="btn btn-primary">Download</a>
+		<a href="https://github.com/formtools/api/releases/" class="btn btn-primary">Download</a>
 		The API releases are all found on github.
 	</div>
 
 	<p>
-		The goal of the API is to provide communication between Form Tools and
-		the outside world. It contains functionality for tasks such as submitting form
-		submissions via PHP code rather than POSTing in the information to process.php,
-		accessing and display Form Tools data in your own webpages, managing client accounts
-		via code rather than the Form Tools interface and other such helpful functionality.
+		The goal of the API is to provide communication between Form Tools and the outside world. It contains
+        functionality for tasks such as submitting form submissions via PHP code rather than POSTing in the information
+        to process.php, accessing and display Form Tools data in your own webpages, managing client accounts
+		through code rather than the Form Tools interface and other such helpful functionality.
 	</p>
 
 	<p>
 		The Form Tools API files should be placed in your <strong>[form tools root]/global/api/</strong> folder.
 	</p>
 
-	<p>
-		Depending on the needs and requests of users, additional functions are likely to be
-		added to this file.
-	</p>
+    <a name="api_versions"></a>
+    <p><b>API v1.x vs API v2.x</b></p>
 
-	<a name="requirements"></a>
-	<p><b>Requirements</b></p>
-	<ol>
-		<li>Form Tools must be installed on your server</li>
-		<li>It can only be called within a PHP page on the same server as your Form Tools installation</li>
-		<li>It requires the /global/api/api.php file to have been included in your page</li>
-	</ol>
-
-	<a name="how_to_use"></a>
-	<p><b>How to use it</b></p>
-
-	<p>
-		In order to use the API functions you must include the api.php file in your web page
-		BEFORE the function call. You only need to include this line once. The path must be
-		&nbsp;edited for the location of your api.php file on your server. It can be a relative or
-		absolute link.
-	</p>
-
-	{% codemirror php %}
-<?php
-require_once("/path/to/[form tools folder]/global/api/api.php");
-?>
-	{% endcodemirror %}
+    <p>
+        Form Tools 3 was a complete rewrite of the application, changing the codebase from functional code to
+        object-oriented. The API v2.x was updated for Form Tools 3 compatibility, converting the API into a class.
+    </p>
+    <p>
+        In terms of functionality, v1.x and v2.0.0 of the API are identical: they (currently) provide the same methods.
+        <i>What's changed has the way you call the API methods</i>.
+    </p>
 
 {% include close_section.html %}

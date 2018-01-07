@@ -1,0 +1,222 @@
+---
+layout: default
+navPage: docs
+heading: ft_api_show_submissions
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Function Reference,/api/function_reference/
+  - Submissions,/api/submissions/
+  - ft_api_show_submissions
+prev: Submissions,/api/submissions/
+next: ft_api_show_submission,/api/ft_api_show_submission/
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='ft_api_show_submissions' nav_width=5 %}
+
+
+	<div class="alert alert-info">
+		<ul>
+			<li><a href="#requirements">Requirements</a></li>
+			<li><a href="#overview">Overview</a></li>
+			<li><a href="#find">How to find the form, View and export Type IDs</a></li>
+			<li><a href="#options">The $options parameter</a></li>
+			<li><a href="#return_values">Return values</a></li>
+			<li><a href="#details_page">Linking to a Details page</a></li>
+		</ul>
+	</div>
+
+
+	<a name="requirements"></a>
+	<h4>Requirements</h4>
+
+	<ol>
+		<li>It requires the Export Manager module to be installed and enabled.</li>
+		<li>
+			To generate the HTML, it uses one of the export types - so you may find you need to
+			create a new one with the appropriate formatting (discussed below).
+		</li>
+	</ol>
+
+	<p>
+		The <a href="{{site.baseurl}}/api/#requirements">general requirements</a> for the Form Tools API
+		also apply.
+	</p>
+
+
+	<hr size="1">
+
+	<a name="overview"></a>
+	<h4>Overview</h4>
+	<p>
+		This function lets you display your form submissions in your own webpages. By default,
+		it only displays a page-worth of results - but this can be overridden if need be.
+	</p>
+	<p>
+		The function works by being told which form, View and Export Type you would like to
+		use to render the form information. By specifying the View ID, you can precisely
+		customize what <b>fields</b> you'd like to see published just by adding or editing
+		the Views. You may find it beneficial to create a separate View that displays exactly
+		what you want.
+	</p>
+	<p>
+		By specifying the export type ID, you customize the <b>manner</b> in which that
+		information is presented (e.g. table format or one-by one). Out the box, Form Tools
+		comes with three HTML-related export types found in the Export Manager module.
+		But you may find you want to create a new one for use with this function. Between the
+		Views and the export types, you have complete control over the appearance of the
+		data in your webpage! Neat, huh?
+	</p>
+
+	<p>
+		The function takes the following required parameters:
+	</p>
+
+	{% codemirror php %}
+<?php
+ft_api_show_submissions($form_id, $view_id, $export_type_id, $page);
+?>
+	{% endcodemirror %}
+
+	<p>
+		The first three parameters are self-explanatory, and can be found in the Form Tools interface. $page is
+		the current page to display. Here's a simple example. In it, the Form ID is 26, the View ID is 23, the
+		Export Type ID is 2 and the $page value is passed in by the query string.
+	</p>
+
+	{% codemirror php %}
+<?php
+// the path will need to be updated!
+require("/path/to/global/api/api.php");
+
+$page = ft_api_load_field("page", "page", 1);
+ft_api_show_submissions(26, 23, 2, $page);
+?>
+	{% endcodemirror %}
+
+	<p>
+		The ft_load_field function is a really handy helper function,
+		<a href="{{site.baseurl}}/api/ft_api_load_field" target="_blank">discussed here</a>. Suffice to say that
+		it always returns the appropriate page number - defaulted to 1. If a "page" value is
+		specified in the query string or through a POST submission, it will return that value.
+	</p>
+
+	<hr size="1">
+
+	<a name="find"></a>
+	<h4>How to find the form, View and export Type IDs</h4>
+
+	<ul>
+		<li>
+			The form ID can be found in Form Tools. Log in as the administrator and go to the
+			Form List page. The "ID" column is the form ID.
+		</li>
+		<li>
+			The View ID is found on the Views tab of the form. That tab lists all available
+			Views, and like the forms contains an ID column for the View ID.
+		</li>
+		<li>
+			To find the export type ID, go to the Modules page and select the Export Manager
+			module. Click the Export Group you want to use to determine the results (probably
+			the HTML / Printer-friendly or another custom group), then click on the "Export Types"
+			tab. That lists the IDs of all export types that belong to that group.
+		</li>
+	</ul>
+
+	<hr size="1">
+
+	<a name="options"></a>
+	<h4>The $options parameter</h4>
+
+	<p>
+		There's one final, optional parameter for the ft_api_show_submissions function: an
+		$options parameter. This lets you override certain default functionality. Here's
+		an example of how it's called:
+	</p>
+
+	{% codemirror php %}
+<?php
+$page = (isset($_GET["page"])) ? $_GET["page"] : 1;
+$options = array(
+	"show_columns_only" => true,
+	"num_per_page" => 5,
+	"order" => "name-ASC"
+);
+ft_api_show_submissions(26, 23, 2, $page, $options);
+?>
+	{% endcodemirror %}
+
+	<p>
+		You can set any of the following values:
+	</p>
+
+	<ul>
+		<li><b>num_per_page</b> - (integer) by default, it returns the number of results per page specified by the
+			View. This setting overrides that value.</li>
+		<li><b>submission_ids</b> - (array or integer) this limits the results returned to the submission ID or
+			submission IDs specified in this field. Note: this function will only return those submissions that are
+			within the specified VIEW. </li>
+		<li><b>order</b> - (string) the database column name with a -DESC or -ASC suffix (e.g. col_1-ASC).</li>
+		<li><b>page_num_identifier</b> - (string) passed via the query string to denote what page it's on (default:
+			"page")</li>
+		<li><b>show_columns_only</b> - (boolean) limits the fields that are displayed to those fields marked as
+			"Column" in the View. Defaults to false.</li>
+		<li><b>return_as_string</b> - (boolean) if this value is set to true, instead of outputting the result the
+			function returns the HTML as a string.</li>
+		<li><b>pagination_theme</b> - (string) the pagination links (&lt;&lt; 1 2 3 ...) HTML is generated by the
+			pagination.tpl template, found in each of the theme folders. Generally this file is the same for all
+			themes, but in case it isn't, this setting lets you choose the theme folder with which to render the
+			HTML.</li>
+		<li><b>pagination_location</b> - (string) accepts the values "top" (the default), "bottom", "both" or
+			"none". This determines where (if anywhere) the pagination links should appear. By default it only appears
+			at the top of the page, but you can set this value to either "both" or "bottom" to have it appear there
+			instead / as well.</li>
+	</ul>
+
+	<hr size="1">
+
+	<a name="return_values"></a>
+	<h4>Return Values</h4>
+
+	<p>
+		In the examples above, the function just prints the HTML to the screen. This is the
+		normal behaviour. But here's a full list of all the possible return / display values.
+	</p>
+
+	<ol>
+		<li>If error:
+			<ol>
+				<li>if $g_api_debug == true, the error page will be displayed displaying the error code.</li>
+				<li>if $g_api_debug == false, it returns an array with two indexes: [0] false, [1] the API error code</li>
+			</ol>
+		</li>
+		<li>If successful:
+			<ol>
+				<li>if "return_as_string" option key is set, it returns an array with two indexes: [0] true, [1] the HTML content</li>
+				<li>if "return_as_string" not set, it just prints the HTML to the page (the default behaviour)</li>
+			</ol>
+		</li>
+	</ol>
+
+	<hr size="1">
+
+	<a name="details_page"></a>
+	<h4>Linking to a details page</h4>
+
+	<p>
+		A common way to organize the form submission is to list a subset of the information in a table, and provide a
+		"More Info" or "Details" link next to each submission. That links to a page which lists the full submission
+		information. You can emulate this behavior by doing the following:
+	</p>
+
+	<ol>
+		<li>In the Export Manager module, create a new export type, with a link for each submission linking to another
+			page called, say, details.php. Make sure the link contains the submission ID as part of the query string.</li>
+		<li>Create the details.php page on your server which will be used to display the submission details. On that
+			page, use the <a href="{{site.baseurl}}/api/ft_api_show_submission">ft_api_show_submission</a> function to display the
+			individual submission data.
+		</li>
+	</ol>
+
+
+{% include close_section.html %}

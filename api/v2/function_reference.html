@@ -1,0 +1,35 @@
+---
+layout: default
+navPage: docs
+heading: Function Reference
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Function Reference
+prev: Debugging Mode,/api/debugging/
+next: Form Integration,/api/form_integration/
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='function_reference' nav_width=5 %}
+
+	<p>
+		This page lists all function available in the API.
+	</p>
+
+	<h4><a href="{{site.baseurl}}/api/form_integration">Form Integration</a></h4>
+	{% include section_api_form_integration.html %}
+	<br />
+
+	<h4><a href="{{site.baseurl}}/api/submissions">Displaying Submissions</a></h4>
+	{% include section_api_displaying_submissions.html %}
+	<br />
+
+	<h4><a href="{{site.baseurl}}/api/user_accounts">User Accounts</a></h4>
+	{% include section_api_user_accounts.html %}
+	<br />
+
+	<h4><a href="{{site.baseurl}}/api/other_functions">Other Functions</a></h4>
+	{% include section_api_other.html %}
+
+
+{% include close_section.html %}

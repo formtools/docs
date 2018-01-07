@@ -1,0 +1,57 @@
+---
+layout: default
+navPage: docs
+heading: ft_api_update_client_account
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Function Reference,/api/function_reference/
+  - User Accounts,/api/user_accounts/
+  - ft_api_update_client_account
+prev: ft_api_create_client_account,/api/ft_api_create_client_account/
+next: ft_api_delete_client_account,/api/ft_api_delete_client_account/
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='ft_api_update_client_account' nav_width=5 %}
+
+
+	<p>
+		This function updates a client account. Usage:
+	</p>
+
+	{% codemirror php %}
+<?php
+ft_api_update_client_account($account_id, $settings);
+?>
+	{% endcodemirror %}
+
+	<p>
+		The first parameter is the unique account ID; the second a hash (associative array) with any of the following values.
+	</p>
+
+	<ul>
+		<li><b>first_name</b> - the client's first name</li>
+		<li><b>last_name</b> - the client's last name</li>
+		<li><b>email</b> - the client's email address</li>
+		<li><b>username</b> - the client's login username</li>
+		<li><b>password</b> - the client's login password. Note: this should <b>not be unencrypted</b>. The function encrypts it itself.</li>
+		<li><b>account_status</b> - "active", "disabled", "pending" (default: "active")</li>
+		<li><b>ui_language</b> - should only be one of the languages currently supported by the script, e.g. "en_us"</li>
+		<li><b>timezone_offset</b> - +- an integer value</li>
+		<li><b>sessions_timeout</b> - the inactivity duration after which the user is logged out (default: 30)</li>
+		<li><b>date_format</b> - the formatting for the dates in the user's UI. Default: "M jS y, g:i A". See the PHP
+			<a href="http://ca3.php.net/manual/en/function.date.php" target="_blank">date()</a> function for formatting options</li>
+		<li><b>login_page</b> - the login page for the user (i.e. where they're redirected to after logging in). This
+			value should be the key value from the <b>$g_pages</b> variable, found at the top of in the /global/code/menus.php file.</li>
+		<li><b>logout_url</b> - where the client is sent when they log out</li>
+		<li><b>theme</b> - the name of the theme folder</li>
+		<li><b>menu_id</b> - the unique menu ID</li>
+	</ul>
+
+	<p>
+		The function will only overwrite those values specified in the second parameter. If it's not included, it will
+		be ignored. Note: it will still overwrite the settings if the hash key is defined but empty! So be sure to only
+		pass those keys that you need to overwrite.
+	</p>
+
+{% include close_section.html %}

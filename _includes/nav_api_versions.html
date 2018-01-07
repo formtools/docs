@@ -1,0 +1,10 @@
+<h4 {% if include.selected == 'api' %}class="selected"{% endif %}><a href="{{site.baseurl}}/api/">API</a></h4>
+
+<ul>
+	<li {% if include.selected == 'api_v1' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/v1">API v1.x (Form Tools 2)</a>
+	</li>
+	<li {% if include.selected == 'api_v2' %}class="selected"{% endif %}>
+		<a href="{{site.baseurl}}/api/v2/">API v2.x (Form Tools 3)</a>
+	</li>
+</ul>

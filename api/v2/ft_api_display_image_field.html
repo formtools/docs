@@ -1,0 +1,72 @@
+---
+layout: default
+navPage: docs
+heading: ft_api_display_image_field
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Function Reference,/api/function_reference/
+  - Form Integration,/api/form_integration
+  - ft_api_display_image_field
+prev: ft_api_clear_form_sessions,/api/ft_api_clear_form_sessions
+next: ft_api_create_blank_submission,/api/ft_api_create_blank_submission
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='ft_api_display_image_field' nav_width=5 %}
+
+	<p>
+		This function is included for people with multi-page forms that contain file upload fields - specifically, file
+        upload fields which are used to upload <b>images</b>. What this function does is take care of all the code
+        needed for displaying the image in your form - either on the original form page, if the user returns to the
+        page to edit some values - or on some sort of "review" page where they can see all the values they inputted up
+        to that point.
+	</p>
+
+	<p>
+		Usage is extremely simple. Imagine the file field upload section of your form looks something like this:
+	</p>
+
+	{% codemirror php %}
+File: <input type="file" name="regular_file" />
+	{% endcodemirror %}
+
+	<p>
+		Now add the following PHP:
+	</p>
+
+{% codemirror php %}
+File: <input type="file" name="regular_file" />
+
+<?php
+$params = array(
+  "field_name" => "regular_file"
+);
+ft_api_display_image_field($params);
+?>
+{% endcodemirror %}
+
+	<p>
+		Note that the single required parameter passed to ft_api_display_image_field is the name attribute of the file
+        upload field.
+	</p>
+
+	<p>
+		What this code now does is display the image in the webpage - if it's already been uploaded. Also, it displays
+        a "Delete File" button, where the user can choose to delete the uploaded file. Note that the original file
+        upload field is still in the HTML. If the user uploads another image, the system automatically deletes the
+        old file and uploads the new image.
+	</p>
+
+	<p>
+		The following optional parameters can also be passed to the function, to give you a little more control:
+	</p>
+
+	<ul>
+		<li><b>width</b> - lets you specify the width of the image. This just adds a width="" attribute to the image tag.</li>
+		<li><b>height</b> - - lets you specify the height of the image. This just adds a height="" attribute to the image tag.</li>
+		<li><b>namespace</b> - only required if you specified a custom namespace in the original ft_api_init_form_page function.</li>
+		<li><b>hide_delete_button</b> - lets your omit the delete button.</li>
+		<li><b>delete_button_label</b> - lets you override the default text that appears on the delete button ("Delete file").</li>
+	</ul>
+
+{% include close_section.html %}

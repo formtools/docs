@@ -1,0 +1,170 @@
+---
+layout: default
+navPage: docs
+heading: ft_api_process_form
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Function Reference,/api/function_reference/
+  - Form Integration,/api/form_integration
+  - ft_api_process_form
+prev: ft_api_init_form_page,/api/ft_api_init_form_page/
+next: ft_api_clear_form_session,/api/ft_api_clear_form_sessions/
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='ft_api_process_form' nav_width=5 %}
+
+	<a name="overview"></a>
+	<h4>Overview</h4>
+
+	<p>
+		The simplest way to store form submission data is by submitting your form to
+		<b>process.php</b>; the information is stored, the user is redirect to some sort of
+		"thank you"page and everyone gets on with their life. This method, though the
+		simplest, doesn't allow for more complicated scenarios, such as:
+	</p>
+
+	<ul>
+		<li>You want to add server-side validation to ensure the information is valid before
+			adding to the database.</li>
+		<li>You have a multi-page form and need to submit the data only on the very last
+			step.</li>
+		<li>You have a multi-page form and need to store the data page-by-page as the user
+			progresses through the form.</li>
+		<li>You want to submit the information, but don't want it to appear in the Form Tools
+			UI until a later date.</li>
+	</ul>
+
+	<p>
+		Enter the API. The API comes with a number of functions designed to let you submit the
+		information via PHP code, rather than through the more restrictive
+		<a href="{{site.baseurl}}/userdoc/form_management/add_form_step3">process.php POST
+			script</a>. The most important of these functions is the <b>ft_api_process_form()</b>
+		function. For those of you familiar with earlier version of Form Tools, this function
+		replaces the older <b>process_form()</b> function used for "code" submission types,
+		and was found in the (now deprecated) process_code.php file.
+	</p>
+
+	<p>
+		Fundamentally, Form Tools doesn't care HOW the information gets into the database.
+		What's important is that it gets there.
+	</p>
+
+	<h4>Finalizing submissions</h4>
+
+	<p>
+		Every form submissions in the Form Tools database has a finalized flag: "yes" or "no".
+		By default, submissions sent via
+		<a href="{{site.baseurl}}/userdoc/form_management/page=add_form_step3">process.php</a> are set
+		to finalized. Submissions sent via <b>ft_api_process_form()</b> are NOT finalized.
+		Only finalized submissions appear in Form Tools.
+	</p>
+
+	<h4>Related Links</h4>
+
+	<p>
+		To understand the ft_api_process_form() function the best, we suggest you give one of the
+		following tutorials a read.
+	</p>
+
+	<ul>
+		<li><a href="{{site.baseurl}}/tutorials/api_single_page_form/">Tutorial: Adding a single-page form with the API</a></li>
+		<li><a href="{{site.baseurl}}/tutorials/api_multi_page_form/">Tutorial: Adding a multi-page form with the API</a></li>
+	</ul>
+
+	<h4>Parameter keys</h4>
+
+	<p>
+		For completion, here's all the values that may be passed via the single parameter
+		(a hash). But we <b>strongly</b> suggest giving one of the above tutorials a read first,
+		otherwise this won't make all that much sense.
+	</p>
+
+	<p><b>1. Required keys</b></p>
+
+	<div class="row">
+		<div class="col-lg-4">submit_button</div>
+		<div class="col-lg-8">
+			The name attribute of your submit button. This is needed to let the function know
+			when to try to process the form. If the name attribute isn't in the POST request,
+			the function does nothing.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4">form_data</div>
+		<div class="col-lg-8">
+			Generally this is the $_POST or $_GET. It contains the contents of the form just
+			submitted.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4">file_data</div>
+		<div class="col-lg-8">
+			If your form contains one or more file upload fields, you'll need to include this key,
+			passing along the $_FILES value ("file_data" =&gt; $_FILES).
+		</div>
+	</div>
+
+
+	<p><b>2. Optional keys</b></p>
+
+	<div class="row">
+		<div class="col-lg-5">next_page</div>
+		<div class="col-lg-7">
+			The URL (relative or absolute) of which page to redirect to (e.g. the next page
+			in the form or the "thankyou" page). If this isn't defined, it doesn't redirect
+			anywhere.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-5">finalize</div>
+		<div class="col-lg-7">
+			This tells the function to finalize the submission. This makes the submission appear
+			in the Form Tools UI, so generally you'll only want to pass this value on the final
+			step of your form - otherwise, for multi-page forms, incomplete submissions will appear
+			in the Form Tools interface.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-5">no_sessions_url</div>
+		<div class="col-lg-7">
+			For multi-page forms it's a good idea to pass along this value. It should be the URL
+			of a page (usually the FIRST page in the form sequence) where the user will be
+			redirected to if they didn't start the form from the first page. It ensures the form
+			submission gets created &amp; submitted properly.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-5">may_update_finalized_submissions</div>
+		<div class="col-lg-7">
+			This is pretty descriptive! It lets you control whether or not a finalized
+			submission may be updated or not. It's set to true by default, as of 1.0.0.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-5">namespace</div>
+		<div class="col-lg-7">
+			If you specified a custom namespace for ft_api_init_form_page, for where the form
+			values will be stored temporarily in sessions, you need to pass that same value to
+			this function - otherwise it won't be able to retrieve the form and submission ID.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-5">send_emails</div>
+		<div class="col-lg-7">
+			Added in 1.0.1. (boolean). By default, Form Tools will trigger any emails that have
+			been attached to the "on submission" event ONLY when the submission is finalized
+			(finalize=true). This setting provides you with direct control over when the emails
+			get sent. If not specified, will use the default behaviour.
+		</div>
+	</div>
+
+
+{% include close_section.html %}

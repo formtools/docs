@@ -1,0 +1,66 @@
+---
+layout: default
+navPage: docs
+heading: ft_api_show_submission_count
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Function Reference,/api/function_reference/
+  - Submissions,/api/submissions/
+  - ft_api_show_submission_count
+prev: ft_api_show_submission,/api/ft_api_show_submission/
+next: ft_api_get_submission,/api/ft_api_get_submission/
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='ft_api_show_submission_count' nav_width=5 %}
+
+	<p>
+		This function displays the number of submissions in a form. It takes a second optional View ID parameter that
+		limits the count to those results in a particular View. This is only needed for those instances where you've
+		created a View that uses a filter to show a <b>subset</b> of the form submissions, e.g. the number of male
+		applicants or the number of submissions that have been sent to a particular department in your company.
+	</p>
+
+	<p>
+		The function takes the following required parameters:
+	</p>
+
+	{% codemirror php %}
+<?php
+echo ft_api_show_submission_count($form_id);
+?>
+	{% endcodemirror %}
+
+	<p>
+		Or, if you're specifying a View:
+	</p>
+
+	{% codemirror php %}
+<?php
+echo ft_api_show_submission_count($form_id, $view_id);
+?>
+	{% endcodemirror %}
+
+	<p>
+		You would call it in your webpage (a PHP page) by embedding the following code. Note that you'll need to
+		replace 4 and 6 with your form and View IDs:
+	</p>
+
+	{% codemirror php %}
+<?php
+echo ft_api_show_submission_count(4, 6);
+?>
+	{% endcodemirror %}
+
+	<p>
+		To use the submission count value in your own code, just store it in a variable, like so:
+	</p>
+
+	{% codemirror php %}
+<?php
+$num_submissions = ft_api_show_submission_count(4, 6);
+?>
+	{% endcodemirror %}
+
+
+{% include close_section.html %}

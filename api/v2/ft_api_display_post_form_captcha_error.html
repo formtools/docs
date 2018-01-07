@@ -1,0 +1,51 @@
+---
+layout: default
+navPage: docs
+heading: ft_api_display_post_form_captcha_error
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Function Reference,/api/function_reference/
+  - Other Functions,/api/other_functions/
+  - ft_api_display_post_form_captcha_error
+prev: ft_api_start_sessions,/api/ft_api_start_sessions/
+next: API Error Codes,/api/error_codes/
+---
+
+{% include open_section.html nav='nav_api_v1.html' selected='ft_api_display_post_form_captcha_error' nav_width=5 %}
+
+	<p>
+		This function was added in version <b>20090614</b> of the Beta, to help abstract away some of
+		the nagging details of adding CAPTCHA spam detection script to a POST form. The function
+		should be included at the top of your POST forms that contain a reCAPTCHA. It displays an
+		appropriate error message if the user fails to enter the CAPTCHA properly. Usage:
+	</p>
+
+	{% codemirror php %}
+<?php echo ft_api_display_post_form_captcha_error(); ?>
+	{% endcodemirror %}
+
+	<p>
+		The default error message is <i>Sorry, the CAPTCHA (image verification) was entered
+		incorrectly. Please try again.</i> This message always in English. To override it in the
+		language of your choice, to change the wording or style the content, you can just pass in
+		a string as the parameter, containing whatever HTML content you want. e.g.:
+	</p>
+
+{% codemirror php %}
+<?php
+$error = '<div class="error">Error! Please re-enter!!</div>';
+ft_api_display_post_form_captcha_error($error);
+?>
+{% endcodemirror %}
+
+	<p>
+		That will then embed that HTML and error message into the page.
+	</p>
+
+	<p>
+		For more information on reCAPTCHA, see the documentation on the
+		<a href="{{site.baseurl}}/api/ft_api_display_captcha">ft_api_display_captcha</a> function.
+	</p>
+
+{% include close_section.html %}
