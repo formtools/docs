@@ -7,37 +7,37 @@ breadcrumbs:
   - API v2.x,/api/v2
   - Debugging Mode
 prev: Finalized Submissions,/api/v2/finalized/
-next: Function Reference,/api/v2/function_reference/
+next: Class Methods,/api/v2/class_methods/
 ---
 
 {% include open_section.html nav='nav_api_v2.html' selected='debugging' nav_width=4 %}
 
 	<p>
-		The API has a single $g_api_debug variable used to toggle debugging mode on and off for
-		all the API functions. By default, debugging is <b>enabled</b>.
+        The API uses the <code>$g_api_debug</code> variable used to toggle debugging mode on and off for
+		all the API functions. By default, debugging is <b>disabled</b>. On API versions earlier than 2.0.0, this
+        setting was enabled by default.
 	</p>
 
 	<p>
-		When you're in debugging mode, any time an error occurs it halts your code and displays
-		the error in the webpage. The errors consistent of the error type ("user" or "system")
-		and the unique error code. The error code is a link to the online help documentation
-		which describes the nature of the error - and maybe a tip or two to solve it. Error
-		types indicate the severity of the error. "user" errors indicate that the function has
-		been fed an incorrect value or two; "system" errors mean that some worse has happened:
-		either a file is missing or there's a bug on our end!
+		When you're in debugging mode, any time an error occurs it halts your code and displays the error in the
+        webpage. The errors consistent of the error type ("user" or "system") and the unique error code. The page
+        contains a link to the online help documentation which describes the nature of the error - and maybe a tip
+        or two to solve it. Error types indicate the severity of the error. "user" errors indicate that the function
+        has been fed an incorrect value or two; "system" errors mean that some worse has happened: either a file is
+        missing or there's a bug on our end.
 	</p>
 
 	<p>
-		Generally, you should find that errors only occur when you're in the midst of development,
-		so you can leave it perpetually in debugging mode. However, if you want to be extra careful,
-		you can you can deactivate debugging in two ways. One, by adding the following line in
-		every file where you include the API library file:
+        You can turn on/off debugging in two ways. First, by adding the <code>$g_api_debug</code> variable to your page
+        before you instantiate the API class to use its methods:
 	</p>
 
 	{% codemirror php %}
 <?php
-require_once("/path/to/global/api/api.php");
-$g_api_debug = false;
+require_once("/path/to/global/api/API.class.php");
+$g_api_debug = true;
+
+$api = new FormTools\API();
 ?>
 	{% endcodemirror %}
 
@@ -50,9 +50,8 @@ $g_api_debug = true;
 {% endcodemirror %}
 
 	<p>
-		Once this is done, the API functions will no longer display the error messages; instead,
-		they will return them programmatically which you can handle in whatever way you see fit.
-		See each function for more information on the return values.
+        This will set the debug value for any methods calling the API <i>unless</i> that location has specified their
+        own value, which will override this default.
 	</p>
 
 
