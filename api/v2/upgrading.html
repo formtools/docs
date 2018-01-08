@@ -1,0 +1,28 @@
+---
+layout: default
+navPage: docs
+heading: Upgrading from API v1.x
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Finalized Submissions
+prev: About the API,/api/v2/
+next: Finalized Submissions,/api/v2/finalized/
+---
+
+{% include open_section.html nav='nav_api_v2.html' selected='upgrading' nav_width=4 %}
+
+	<p>
+        When upgrading to Form Tools 3 by download an upgrade package from the Form Tools website it will include
+        version 2.x of the API. In terms of your own form integration, no further work is necessary: it should all just
+        "work".
+	</p>
+
+    <p>
+        Here's what's happening. The old <code>api.php</code> file used in API v1.x contains the function reference
+        (PHP functions of the form <code>ft_api_*</code> which you'll have used in your code). This file has been
+        replaced with simple wrapper methods with the same name as the old methods. These now call the new <code>API.class.php</code>
+        class methods. This is what allows for a seamless upgrade.
+    </p>
+
+{% include close_section.html %}

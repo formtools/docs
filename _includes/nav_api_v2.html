@@ -1,118 +1,122 @@
 <h4 {% if include.selected == 'api' %}class="selected"{% endif %}><a href="{{site.baseurl}}/api/">API v2.x</a></h4>
 
 <ul>
+    <li {% if include.selected == 'upgrading' %}class="selected"{% endif %}>
+        <a href="{{site.baseurl}}/api/v2/upgrading/">Upgrading from API v1.x</a>
+    </li>
 	<li {% if include.selected == 'finalized' %}class="selected"{% endif %}>
-		<a href="{{site.baseurl}}/api/finalized/">Finalized Submissions</a>
+		<a href="{{site.baseurl}}/api/v2/finalized/">Finalized Submissions</a>
 	</li>
 	<li {% if include.selected == 'debugging' %}class="selected"{% endif %}>
-		<a href="{{site.baseurl}}/api/debugging/">Debugging Mode</a>
+		<a href="{{site.baseurl}}/api/v2/debugging/">Debugging Mode</a>
 	</li>
 	<li>
-		<div {% if include.selected == 'function_reference' %}class="selected"{% endif %}>
-			<a href="{{site.baseurl}}/api/function_reference/">Function Reference</a>
+		<div {% if include.selected == 'class_methods' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/api/v2/class_methods/">API Class Methods</a>
 		</div>
 		<ul>
 			<li>
 				<div {% if include.selected == 'form_integration' %}class="selected"{% endif %}>
-					<a href="{{site.baseurl}}/api/form_integration/">Form Integration</a>
+					<a href="{{site.baseurl}}/api/v2/form_integration/">Form Integration</a>
 				</div>
 
 				<ul>
-					<li {% if include.selected == 'ft_api_init_form_page' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_init_form_page/">ft_api_init_form_page</a>
+					<li {% if include.selected == 'init_form_page' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/init_form_page/">initFormPage()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_process_form' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_process_form/">ft_api_process_form</a>
+					<li {% if include.selected == 'process_form_submission' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/process_form_submission/">processFormSubmission()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_clear_form_sessions' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_clear_form_sessions/">ft_api_clear_form_sessions</a>
+					<li {% if include.selected == 'clear_form_sessions' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/clear_form_sessions/">clearFormSessions()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_display_image_field' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_display_image_field/">ft_api_display_image_field</a>
+					<li {% if include.selected == 'display_image_field' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/display_image_field/">displayImageField()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_create_blank_submission' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_create_blank_submission/">ft_api_create_blank_submission</a>
+					<li {% if include.selected == 'create_submission' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/create_submission/">createSubmission()</a>
 					</li>
 				</ul>
 
 			</li>
 			<li>
 				<div {% if include.selected == 'submissions' %}class="selected"{% endif %}>
-					<a href="{{site.baseurl}}/api/submissions/">Submissions</a>
+					<a href="{{site.baseurl}}/api/v2/submissions/">Submissions</a>
 				</div>
 
 				<ul>
-					<li {% if include.selected == 'ft_api_show_submissions' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_show_submissions/">ft_api_show_submissions</a>
+					<li {% if include.selected == 'show_submissions' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/show_submissions/">showSubmissions</a>
 					</li>
-					<li {% if include.selected == 'ft_api_show_submission' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_show_submission/">ft_api_show_submission</a>
+					<li {% if include.selected == 'show_submission' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/show_submission/">showSubmission</a>
 					</li>
-					<li {% if include.selected == 'ft_api_show_submission_count' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_show_submission_count/">ft_api_show_submission_count</a>
+					<li {% if include.selected == 'show_submission_count' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/show_submission_count/">showSubmissionCount()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_get_submission' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_get_submission/">ft_api_get_submission</a>
+					<li {% if include.selected == 'get_submission' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/get_submission/">getSubmission()</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<div {% if include.selected == 'user_accounts' %}class="selected"{% endif %}>
-					<a href="{{site.baseurl}}/api/user_accounts/">User Accounts</a>
+					<a href="{{site.baseurl}}/api/v2/user_accounts/">User Accounts</a>
 				</div>
 
 				<ul>
-					<li {% if include.selected == 'ft_api_create_client_account' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_create_client_account/">ft_api_create_client_account</a>
+					<li {% if include.selected == 'createClientAccount' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/create_client_accounts/">createClientAccount()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_update_client_account' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_update_client_account/">ft_api_update_client_account</a>
+					<li {% if include.selected == 'update_client_account' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/updateClientAccount/">updateClientAccount()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_delete_client_account' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_delete_client_account/">ft_api_delete_client_account</a>
+					<li {% if include.selected == 'delete_client_account' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/delete_client_account/">deleteClientAccount()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_login' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_login/">ft_api_login</a>
+					<li {% if include.selected == 'login' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/login/">login()</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<div {% if include.selected == 'other_functions' %}class="selected"{% endif %}>
-					<a href="{{site.baseurl}}/api/other_functions/">Other Functions</a>
+					<a href="{{site.baseurl}}/api/v2/other_functions/">Other Functions</a>
 				</div>
 				<ul>
-					<li {% if include.selected == 'ft_api_load_field' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_load_field/">ft_api_load_field</a>
+					<li {% if include.selected == 'load_field' %}class="selected"{% endif %}>
+					<li {% if include.selected == 'load_field' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/loadField/">loadField()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_display_captcha' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_display_captcha/">ft_api_display_captcha</a>
+					<li {% if include.selected == 'displayCaptcha' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/displayCaptcha/">displayCaptcha()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_delete_unfinalized_submissions' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_delete_unfinalized_submissions/">ft_api_delete_unfinalized_submissions</a>
+					<li {% if include.selected == 'deleteUnfinalizedSubmissions' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/deleteUnfinalizedSubmissions/">deleteUnfinalizedSubmissions()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_check_submission_is_unique' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_check_submission_is_unique/">ft_api_check_submission_is_unique</a>
+					<li {% if include.selected == 'checkSubmissionIsUnique' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/checkSubmissionIsUnique/">checkSubmissionIsUnique()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_start_sessions' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_start_sessions/">ft_api_start_sessions</a>
+					<li {% if include.selected == 'startSessions' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/startSessions/">startSessions()</a>
 					</li>
-					<li {% if include.selected == 'ft_api_display_post_form_captcha_error' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/ft_api_display_post_form_captcha_error/">ft_api_display_post_form_captcha_error</a>
+					<li {% if include.selected == 'displayPostFormCaptchaError' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/displayPostFormCaptchaError/">displayPostFormCaptchaError()</a>
 					</li>
 				</ul>
 			</li>
 		</ul>
 	</li>
 	<li {% if include.selected == 'error_codes' %}class="selected"{% endif %}>
-		<a href="{{site.baseurl}}/api/error_codes/">API Error Codes</a>
+		<a href="{{site.baseurl}}/api/v2/error_codes/">API Error Codes</a>
 	</li>
 	<li {% if include.selected == 'namespaces' %}class="selected"{% endif %}>
-		<a href="{{site.baseurl}}/api/namespaces/">Namespaces</a>
+		<a href="{{site.baseurl}}/api/v2/namespaces/">Namespaces</a>
 	</li>
 	<li {% if include.selected == 'sessions' %}class="selected"{% endif %}>
-		<a href="{{site.baseurl}}/api/sessions/">API Sessions</a>
+		<a href="{{site.baseurl}}/api/v2/sessions/">API Sessions</a>
 	</li>
 	<li {% if include.selected == 'feature_suggestions' %}class="selected"{% endif %}>
-		<a href="{{site.baseurl}}/api/feature_suggestions/">Feature Suggestions</a>
+		<a href="{{site.baseurl}}/api/v2/feature_suggestions/">Feature Suggestions</a>
 	</li>
 </ul>
