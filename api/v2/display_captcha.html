@@ -5,15 +5,14 @@ heading: displayCaptcha()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
-  - Function Reference,/api/v2/function_reference/
+  - Class Methods,/api/v2/class_methods/
   - Other Functions,/api/v2/other_functions/
-  - ft_api_display_captcha
-prev: load_field,/api/v2/load_field/
-next: delete_unfinalized_submissions,/api/v2/delete_unfinalized_submissions/
+  - displayCaptcha()
+prev: loadField(),/api/v2/load_field/
+next: deleteUnfinalizedSubmissions(),/api/v2/delete_unfinalized_submissions/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_display_captcha' nav_width=4 %}
-
+{% include open_section.html nav='nav_api_v2.html' selected='display_captcha' nav_width=4 %}
 
 	<p>
 		The API comes fully integrated with the rather splendid "Recaptcha" service.
@@ -74,7 +73,8 @@ $g_api_recaptcha_public_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
 
 	{% codemirror php %}
 <?php
-ft_api_display_captcha();
+$api = new FormTools\API();
+$api->displayCaptcha();
 ?>
 	{% endcodemirror %}
 

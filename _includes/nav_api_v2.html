@@ -12,7 +12,7 @@
 	</li>
 	<li>
 		<div {% if include.selected == 'class_methods' %}class="selected"{% endif %}>
-			<a href="{{site.baseurl}}/api/v2/class_methods/">API Class Methods</a>
+			<a href="{{site.baseurl}}/api/v2/class_methods/">Class Methods</a>
 		</div>
 		<ul>
 			<li>
@@ -46,10 +46,10 @@
 
 				<ul>
 					<li {% if include.selected == 'show_submissions' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/v2/show_submissions/">showSubmissions</a>
+						<a href="{{site.baseurl}}/api/v2/show_submissions/">showSubmissions()</a>
 					</li>
 					<li {% if include.selected == 'show_submission' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/v2/show_submission/">showSubmission</a>
+						<a href="{{site.baseurl}}/api/v2/show_submission/">showSubmission()</a>
 					</li>
 					<li {% if include.selected == 'show_submission_count' %}class="selected"{% endif %}>
 						<a href="{{site.baseurl}}/api/v2/show_submission_count/">showSubmissionCount()</a>
@@ -85,23 +85,22 @@
 				</div>
 				<ul>
 					<li {% if include.selected == 'load_field' %}class="selected"{% endif %}>
-					<li {% if include.selected == 'load_field' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/v2/loadField/">loadField()</a>
+						<a href="{{site.baseurl}}/api/v2/load_field/">loadField()</a>
 					</li>
-					<li {% if include.selected == 'displayCaptcha' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/v2/displayCaptcha/">displayCaptcha()</a>
+					<li {% if include.selected == 'display_captcha' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/display_captcha/">displayCaptcha()</a>
 					</li>
-					<li {% if include.selected == 'deleteUnfinalizedSubmissions' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/v2/deleteUnfinalizedSubmissions/">deleteUnfinalizedSubmissions()</a>
+					<li {% if include.selected == 'delete_unfinalized_submissions' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/delete_unfinalized_submissions/">deleteUnfinalizedSubmissions()</a>
 					</li>
-					<li {% if include.selected == 'checkSubmissionIsUnique' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/v2/checkSubmissionIsUnique/">checkSubmissionIsUnique()</a>
+					<li {% if include.selected == 'check_submission_is_unique' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/check_submission_is_unique/">checkSubmissionIsUnique()</a>
 					</li>
-					<li {% if include.selected == 'startSessions' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/v2/startSessions/">startSessions()</a>
+					<li {% if include.selected == 'start_sessions' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/start_sessions/">startSessions()</a>
 					</li>
-					<li {% if include.selected == 'displayPostFormCaptchaError' %}class="selected"{% endif %}>
-						<a href="{{site.baseurl}}/api/v2/displayPostFormCaptchaError/">displayPostFormCaptchaError()</a>
+					<li {% if include.selected == 'display_post_form_captcha_error' %}class="selected"{% endif %}>
+						<a href="{{site.baseurl}}/api/v2/display_post_form_captcha_error/">displayPostFormCaptchaError()</a>
 					</li>
 				</ul>
 			</li>

@@ -1,70 +1,60 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_process_form
+heading: processFormSubmission()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
-  - Function Reference,/api/v2/function_reference/
-  - Form Integration,/api/v2/form_integration
-  - ft_api_process_form
-prev: ft_api_init_form_page,/api/v2/ft_api_init_form_page/
-next: ft_api_clear_form_session,/api/v2/ft_api_clear_form_sessions/
+  - Class Methods,/api/v2/class_methods/
+  - Form Integration,/api/v2/form_integration/
+  - processFormSubmission()
+prev: initFormPage(),/api/v2/init_form_page/
+next: clearFormSession(),/api/v2/clear_form_sessions/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_process_form' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='process_form_submission' nav_width=4 %}
 
 	<a name="overview"></a>
 	<h4>Overview</h4>
 
 	<p>
-		The simplest way to store form submission data is by submitting your form to
-		<b>process.php</b>; the information is stored, the user is redirect to some sort of
-		"thank you"page and everyone gets on with their life. This method, though the
-		simplest, doesn't allow for more complicated scenarios, such as:
+		The simplest way to store form submission data is by submitting your form to <b>process.php</b>; the
+        information is stored, the user is redirect to some sort of "thank you"page and everyone gets on with their
+        life. But this approach doesn't handle more complicated scenarios such as:
 	</p>
 
 	<ul>
-		<li>You want to add server-side validation to ensure the information is valid before
-			adding to the database.</li>
-		<li>You have a multi-page form and need to submit the data only on the very last
-			step.</li>
-		<li>You have a multi-page form and need to store the data page-by-page as the user
-			progresses through the form.</li>
-		<li>You want to submit the information, but don't want it to appear in the Form Tools
-			UI until a later date.</li>
+		<li>You want to add server-side validation to ensure the information is valid before adding to the database.</li>
+		<li>You have a multi-page form and need to submit the data only on the very last step.</li>
+		<li>You have a multi-page form and need to store the data page-by-page as the user progresses through the form.</li>
+		<li>You want to submit the information, but don't want it to appear in the Form Tools UI until a later date.</li>
 	</ul>
 
 	<p>
-		Enter the API. The API comes with a number of functions designed to let you submit the
-		information via PHP code, rather than through the more restrictive
-		<a href="{{site.baseurl}}/userdoc/form_management/add_form_step3">process.php POST
-			script</a>. The most important of these functions is the <b>ft_api_process_form()</b>
-		function. For those of you familiar with earlier version of Form Tools, this function
-		replaces the older <b>process_form()</b> function used for "code" submission types,
-		and was found in the (now deprecated) process_code.php file.
+		Enter the API. The API comes with a number of methods designed to let you submit the information via PHP code,
+        rather than through the more restrictive <a href="{{site.baseurl}}/userdoc/form_management/add_form_step3">process.php
+        POST script</a>. The most important of these functions is the <b>processFormSubmission()</b> class method.
 	</p>
 
 	<p>
-		Fundamentally, Form Tools doesn't care HOW the information gets into the database.
-		What's important is that it gets there.
+		Fundamentally, Form Tools doesn't care HOW the information gets into the database. What's important is that it
+        gets there.
 	</p>
 
 	<h4>Finalizing submissions</h4>
 
 	<p>
-		Every form submissions in the Form Tools database has a finalized flag: "yes" or "no".
-		By default, submissions sent via
-		<a href="{{site.baseurl}}/userdoc/form_management/page=add_form_step3">process.php</a> are set
-		to finalized. Submissions sent via <b>ft_api_process_form()</b> are NOT finalized.
-		Only finalized submissions appear in Form Tools.
+		Every form submissions in the Form Tools database has a finalized flag: "yes" or "no". By default, submissions
+        sent via <a href="{{site.baseurl}}/userdoc/form_management/page=add_form_step3">process.php</a> are set to
+        finalized. Submissions sent via <b>ft_api_process_form()</b> are NOT finalized. Only finalized submissions
+        appear in Form Tools.
 	</p>
 
 	<h4>Related Links</h4>
 
 	<p>
-		To understand the ft_api_process_form() function the best, we suggest you give one of the
-		following tutorials a read.
+		To understand the <b>processFormSubmission()</b> method better, we suggest reading one of these
+        tutorials:
 	</p>
 
 	<ul>
@@ -75,9 +65,9 @@ next: ft_api_clear_form_session,/api/v2/ft_api_clear_form_sessions/
 	<h4>Parameter keys</h4>
 
 	<p>
-		For completion, here's all the values that may be passed via the single parameter
-		(a hash). But we <b>strongly</b> suggest giving one of the above tutorials a read first,
-		otherwise this won't make all that much sense.
+		For completion, here's all the values that may be passed via the single parameter (a hash). But we
+        <b>strongly</b> suggest giving one of the above tutorials a read first, otherwise this won't make all that much
+        sense.
 	</p>
 
 	<p><b>1. Required keys</b></p>

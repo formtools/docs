@@ -1,34 +1,34 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_clear_form_sessions
+heading: clearFormSessions()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
-  - Function Reference,/api/v2/function_reference/
+  - Class Methods,/api/v2/class_methods/
   - Form Integration,/api/v2/form_integration
-  - ft_api_clear_form_sessions
-prev: ft_api_process_form,/api/v2/ft_api_process_form
-next: ft_api_display_image_field,/api/v2/ft_api_display_image_field
+  - clearFormSessions()
+prev: processFormSubmission(),/api/v2/process_form_submission
+next: displayImageField(),/api/v2/display_image_field
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_clear_form_sessions' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='clear_form_sessions' nav_width=4 %}
 
 	<p>
-		This function should always be called on the final "thankyou" page of your form. The
-		two functions, <a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page</a> and
-		<a href="{{site.baseurl}}/api/ft_api_process_form">ft_api_process_form</a> store various values in
-		sessions (a built-in PHP temporary storage mechanism) while the user progresses through
-		your form. This function clears them.
+		This function should always be called on the final "thankyou" page of your form. The two functions,
+        <a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage()</a> and
+        <a href="{{site.baseurl}}/api/v2/process_form_submission">processFormSubmission()</a> store various values in
+		sessions (a built-in PHP temporary storage mechanism) while the user progresses through your form. This
+        function clears them.
 	</p>
 
 	<div class="alert alert-warning">
-		Note: it appears there may be an issue with this function: you must include the following
-		line before calling <b>ft_api_clear_form_sessions</b> otherwise your sessions may not be
-		cleared:
+		Note: you must include the following line before calling <code>clearFormSessions()</code> otherwise your
+        sessions may not be cleared:
 
 		{% codemirror php %}
-$fields = ft_api_init_form_page(X); // where X is your form ID
+$api = new FormTools\API();
+$fields = $api->initFormPage(X); // where X is your form ID
 		{% endcodemirror %}
 	</div>
 
@@ -50,20 +50,22 @@ $fields = ft_api_init_form_page(X); // where X is your form ID
 
 	{% codemirror php %}
 <?php
-ft_api_clear_form_sessions();
+$api = new FormTools\API();
+$fields = $api->clearFormSessions();
 ?>
 	{% endcodemirror %}
 
 	<p>
 		If you originally passed a custom sessions namespace string to the
-		<a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page</a> function, you need to pass
+		<a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage</a> function, you need to pass
 		the same namespace string to this function. For example, if your namespace was "my_form",
 		you'd call this function like so:
 	</p>
 
 	{% codemirror php %}
 <?php
-ft_api_clear_form_sessions("my_form");
+$api = new FormTools\API();
+$fields = $api->clearFormSessions("my_form");
 ?>
 	{% endcodemirror %}
 

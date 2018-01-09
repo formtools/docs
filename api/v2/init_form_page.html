@@ -1,22 +1,22 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_init_form_page
+heading: initFormPage()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
-  - Function Reference,/api/v2/function_reference/
+  - Class Methods,/api/v2/class_methods/
   - Form Integration,/api/v2/form_integration/
-  - ft_api_init_form_page
+  - initFormPage()
 prev: Form Integration,/api/v2/form_integration/
-next: ft_api_process_form,/api/v2/ft_api_process_form/
+next: processFormSubmission(),/api/v2/process_form_submission/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_init_form_page' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='init_form_page' nav_width=4 %}
 
 	<p>
-		This valuable little function performs a number of tedious tasks, which previously had to do manually
-		with PHP. This function does the following:
+		This valuable function performs a number of tedious tasks which previously had to do manually
+		with PHP, namely:
 	</p>
 
 	<ul>
@@ -55,8 +55,10 @@ next: ft_api_process_form,/api/v2/ft_api_process_form/
 
 	{% codemirror php %}
 <?php
-require_once("../global/api/api.php");
-$fields = ft_api_init_form_page("", "test");
+require_once("path/to/global/api/API.class.php");
+
+$api = new FormTools\API();
+$fields = $api->initFormPage("", "test");
 ?>
 	{% endcodemirror %}
 
@@ -66,15 +68,16 @@ $fields = ft_api_init_form_page("", "test");
 
 	{% codemirror php %}
 <?php
-require_once("../global/api/api.php");
-$fields = ft_api_init_form_page();
+require_once("path/to/global/api/API.class.php");
+
+$api = new FormTools\API();
+$fields = $api->initFormPage("", "test");
 ?>
 	{% endcodemirror %}
 
 	<p>
-		Note that they're very similar. The difference it that the first page sets up the
-		environment: it lets the function know not to try to retrieve the submission ID
-		(since the form doesn't exist yet!)
+		Note that they're very similar. The first page sets up the environment: it lets the function know not to try
+        to retrieve the submission ID (since the form doesn't exist yet!)
 	</p>
 
 

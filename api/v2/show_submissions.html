@@ -1,19 +1,18 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_show_submissions
+heading: showSubmissions()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
-  - Function Reference,/api/v2/function_reference/
+  - Class Methods,/api/v2/class_methods/
   - Submissions,/api/v2/submissions/
-  - ft_api_show_submissions
+  - showSubmissions()
 prev: Submissions,/api/v2/submissions/
-next: ft_api_show_submission,/api/v2/ft_api_show_submission/
+next: showSubmission(),/api/v2/show_submission/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_show_submissions' nav_width=4 %}
-
+{% include open_section.html nav='nav_api_v2.html' selected='show_submissions' nav_width=4 %}
 
 	<div class="alert alert-info">
 		<ul>
@@ -39,7 +38,7 @@ next: ft_api_show_submission,/api/v2/ft_api_show_submission/
 	</ol>
 
 	<p>
-		The <a href="{{site.baseurl}}/api/#requirements">general requirements</a> for the Form Tools API
+		The <a href="{{site.baseurl}}/api/v2/#requirements">general requirements</a> for the Form Tools API
 		also apply.
 	</p>
 
@@ -74,7 +73,8 @@ next: ft_api_show_submission,/api/v2/ft_api_show_submission/
 
 	{% codemirror php %}
 <?php
-ft_api_show_submissions($form_id, $view_id, $export_type_id, $page);
+$api = new FormTools\API();
+$api->showSubmissions($form_id, $view_id, $export_type_id, $page);
 ?>
 	{% endcodemirror %}
 
@@ -86,19 +86,22 @@ ft_api_show_submissions($form_id, $view_id, $export_type_id, $page);
 
 	{% codemirror php %}
 <?php
-// the path will need to be updated!
-require("/path/to/global/api/api.php");
+// the path will need to be updated for your case
+require("/path/to/global/api/API.class.php");
 
-$page = ft_api_load_field("page", "page", 1);
-ft_api_show_submissions(26, 23, 2, $page);
+use FormTools\API;
+$api = new API();
+
+$page = $api->loadField("page", "page", 1);
+$api->showSubmissions(26, 23, 2, $page);
 ?>
 	{% endcodemirror %}
 
 	<p>
-		The ft_load_field function is a really handy helper function,
-		<a href="{{site.baseurl}}/api/ft_api_load_field" target="_blank">discussed here</a>. Suffice to say that
-		it always returns the appropriate page number - defaulted to 1. If a "page" value is
-		specified in the query string or through a POST submission, it will return that value.
+        The <code>loadField()</code> function is a really handy helper function,
+        <a href="{{site.baseurl}}/api/v2/load_field" target="_blank">discussed here</a>. Suffice to say that
+		it always returns the appropriate page number - defaulted to 1. If a "page" value is specified in the query
+        string or through a POST submission, it will return that value.
 	</p>
 
 	<hr size="1">
@@ -136,13 +139,15 @@ ft_api_show_submissions(26, 23, 2, $page);
 
 	{% codemirror php %}
 <?php
+$api = new FormTools\API();
+
 $page = (isset($_GET["page"])) ? $_GET["page"] : 1;
 $options = array(
 	"show_columns_only" => true,
 	"num_per_page" => 5,
 	"order" => "name-ASC"
 );
-ft_api_show_submissions(26, 23, 2, $page, $options);
+$api->showSubmissions(26, 23, 2, $page, $options);
 ?>
 	{% endcodemirror %}
 
@@ -213,7 +218,7 @@ ft_api_show_submissions(26, 23, 2, $page, $options);
 		<li>In the Export Manager module, create a new export type, with a link for each submission linking to another
 			page called, say, details.php. Make sure the link contains the submission ID as part of the query string.</li>
 		<li>Create the details.php page on your server which will be used to display the submission details. On that
-			page, use the <a href="{{site.baseurl}}/api/ft_api_show_submission">ft_api_show_submission</a> function to display the
+			page, use the <a href="{{site.baseurl}}/api/v2/show_submission">showSubmission()</a> function to display the
 			individual submission data.
 		</li>
 	</ol>

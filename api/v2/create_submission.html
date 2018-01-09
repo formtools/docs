@@ -1,0 +1,60 @@
+---
+layout: default
+navPage: docs
+heading: createSubmission()
+breadcrumbs:
+  - API,/api/
+  - API v2.x,/api/v2
+  - Class Methods,/api/v2/class_methods/
+  - Form Integration,/api/v2/form_integration
+  - createBlankSubmission
+prev: displayImageField(),/api/v2/display_image_field/
+next: Submissions,/api/v2/submissions/
+---
+
+{% include open_section.html nav='nav_api_v2.html' selected='create_submission' nav_width=4 %}
+
+	<p>
+		This function creates a new submission for any of your forms already configured in Form Tools and returns
+		the unique submission ID. It's called like so:
+	</p>
+
+	{% codemirror php %}
+<?php
+$api = new FormTools\API();
+$submission_id = $api->createSubmission($form_id);
+?>
+	{% endcodemirror %}
+
+	<p>
+		By default, the submission is NOT finalized - so it won't appear in the Form Tools UI. To make the submission
+        finalized by default, pass a second parameter set to true.
+	</p>
+
+	{% codemirror php %}
+<?php
+$api = new FormTools\API();
+$submission_id = $api->createSubmission($form_id, true);
+?>
+	{% endcodemirror %}
+
+	<p>
+		If you need your new submission to contain default values, you can include a <b>third</b> parameter.
+        This is an associative array of [database column name] =&gt; [value]. Note: you cannot set the default
+        values for any of the system fields (submission ID, submission data, last modified date and IP address and
+        is_finalized). To find the database column names, go to your Edit Form &raquo; Fields tab.
+	</p>
+
+	{% codemirror php %}
+<?php
+$api = new FormTools\API();
+$default_values = array(
+	"col_1" => "Bob",
+	"col_2" => "Jenkins",
+	"col_3" => "bob@jenkins.net"
+);
+$submission_id = $api->createSubmission($form_id, true, $default_values);
+?>
+	{% endcodemirror %}
+
+{% include close_section.html %}

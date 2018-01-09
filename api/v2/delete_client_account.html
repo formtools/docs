@@ -1,23 +1,23 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_delete_client_account
+heading: deleteClientAccount()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
-  - Function Reference,/api/v2/function_reference/
+  - Class Methods,/api/v2/class_methods/
   - User Accounts,/api/v2/user_accounts/
-  - ft_api_delete_client_account
-prev: ft_api_update_client_account,/api/v2/ft_api_update_client_account/
-next: ft_api_login,/api/v2/ft_api_login/
+  - deleteClientAccount()
+prev: updateClientAccount(),/api/v2/updateClientAccount/
+next: login(),/api/v2/login/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_delete_client_account' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='delete_client_account' nav_width=4 %}
 
 	<p>
-		This function deletes a client account programmatically. Note: it only deletes client accounts, not the
-		administrator. It completely removes all references to the client account from the database, including
-		client-form and client-view omit lists, as email recipients and everywhere else.
+		This method deletes a client account. Note: it can only deletes client accounts, not the administrator. It
+        completely removes all references to the client account from the database, including client-form and
+        client-view omit lists, as email recipients and everywhere else.
 	</p>
 
 	<p>
@@ -26,7 +26,8 @@ next: ft_api_login,/api/v2/ft_api_login/
 
 	{% codemirror php %}
 <?php
-ft_api_delete_client_account($account_id);
+$api = new FormTools\API();
+$api->deleteClientAccount($account_id);
 ?>
 	{% endcodemirror %}
 

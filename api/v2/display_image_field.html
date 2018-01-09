@@ -1,25 +1,24 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_display_image_field
+heading: displayImageField()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
-  - Function Reference,/api/v2/function_reference/
+  - Class Methods,/api/v2/class_methods/
   - Form Integration,/api/v2/form_integration
-  - ft_api_display_image_field
-prev: ft_api_clear_form_sessions,/api/v2/ft_api_clear_form_sessions
-next: ft_api_create_blank_submission,/api/v2/ft_api_create_blank_submission
+  - displayImageField()
+prev: clearFormSessions(),/api/v2/clear_form_sessions
+next: createSubmission(),/api/v2/create_submission
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_display_image_field' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='display_image_field' nav_width=4 %}
 
 	<p>
-		This function is included for people with multi-page forms that contain file upload fields - specifically, file
-        upload fields which are used to upload <b>images</b>. What this function does is take care of all the code
-        needed for displaying the image in your form - either on the original form page, if the user returns to the
-        page to edit some values - or on some sort of "review" page where they can see all the values they inputted up
-        to that point.
+		This function is for people with multi-page forms that contain file fields - specifically, file fields used
+        to upload <b>images</b>. What this function does is take care of all the code needed for displaying the image
+        in your form - either on the original form page, if the user returns to the page to edit some values - or
+        on some sort of "review" page where they can see all the values they inputted up to that point.
 	</p>
 
 	<p>
@@ -38,16 +37,18 @@ File: <input type="file" name="regular_file" />
 File: <input type="file" name="regular_file" />
 
 <?php
+$api = new FormTools\API();
+
 $params = array(
-  "field_name" => "regular_file"
+    "field_name" => "regular_file"
 );
-ft_api_display_image_field($params);
+$api->displayImageField($params);
 ?>
 {% endcodemirror %}
 
 	<p>
-		Note that the single required parameter passed to ft_api_display_image_field is the name attribute of the file
-        upload field.
+        Note that the single required parameter passed to <code>displayImageField()</code> is the name attribute of the
+        file upload field.
 	</p>
 
 	<p>
@@ -62,8 +63,8 @@ ft_api_display_image_field($params);
 	</p>
 
 	<ul>
-		<li><b>width</b> - lets you specify the width of the image. This just adds a width="" attribute to the image tag.</li>
-		<li><b>height</b> - - lets you specify the height of the image. This just adds a height="" attribute to the image tag.</li>
+		<li><b>width</b> - lets you specify the width of the image. This adds a width="" attribute to the image tag.</li>
+		<li><b>height</b> - lets you specify the height of the image. This adds a height="" attribute to the image tag.</li>
 		<li><b>namespace</b> - only required if you specified a custom namespace in the original ft_api_init_form_page function.</li>
 		<li><b>hide_delete_button</b> - lets your omit the delete button.</li>
 		<li><b>delete_button_label</b> - lets you override the default text that appears on the delete button ("Delete file").</li>
