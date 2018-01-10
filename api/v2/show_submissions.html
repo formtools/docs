@@ -88,9 +88,7 @@ $api->showSubmissions($form_id, $view_id, $export_type_id, $page);
 <?php
 // the path will need to be updated for your case
 require("/path/to/global/api/API.class.php");
-
-use FormTools\API;
-$api = new API();
+$api = new FormTools\API();
 
 $page = $api->loadField("page", "page", 1);
 $api->showSubmissions(26, 23, 2, $page);

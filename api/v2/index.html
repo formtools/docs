@@ -40,6 +40,8 @@ next: Upgrading from API v1.x,/api/v2/upgrading
 	{% codemirror php %}
 <?php
 require_once("/path/to/[form tools folder]/global/api/API.class.php");
+$api = new FormTools\API();
+// now you can use all the methods on the $api object
 ?>
 	{% endcodemirror %}
 
