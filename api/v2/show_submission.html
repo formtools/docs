@@ -7,7 +7,7 @@ breadcrumbs:
   - API v2.x,/api/v2
   - Class Methods,/api/v2/class_methods/
   - Submissions,/api/v2/submissions
-  - ft_api_show_submission
+  - showSubmission()
 prev: showSubmissions(),/api/v2/show_submissions/
 next: showSubmissionCount(),/api/v2/show_submission_count/
 ---
@@ -23,21 +23,21 @@ next: showSubmissionCount(),/api/v2/show_submission_count/
 	</div>
 
 	<a name="requirements"></a>
-	<h4>Requirements</h4>
+	<h3>Requirements</h3>
 	<ol>
 		<li>It requires the Export Manager module to be installed and enabled.</li>
 		<li>To generate the HTML, it uses one of the export types - so you may find you need to create a new one with the appropriate formatting (discussed below).</li>
 	</ol>
 
-	<p>The <a href="{{site.baseurl}}/api/#requirements">general requirements</a> for the Form Tools API also apply.</p>
+	<p>The <a href="{{site.baseurl}}/api/v2/">general requirements</a> for the Form Tools API also apply.</p>
 
 	<hr size="1">
 
 	<a name="overview"></a>
-	<h4>Overview</h4>
+	<h3>Overview</h3>
 	<p>
 		This function displays an individual submission. This can actually already be achieved with
-		<a href="{{site.baseurl}}/api/v2/show_submissions">ft_api_show_submissions</a>, but this function is
+		<a href="{{site.baseurl}}/api/v2/show_submissions">showSubmissions()</a>, but this function is
 		written for this precise purpose, so you may find it simpler to use.
 	</p>
 
@@ -76,7 +76,7 @@ $api->showSubmission(10, 15, 6, 155);
 	<hr size="1">
 
 	<a name="find"></a>
-	<h4>How to find the form, View, export type and submission IDs</h4>
+	<h3>How to find the form, View, export type and submission IDs</h3>
 
 	<ul>
 		<li>The form ID can be found in Form Tools. Log in as the administrator and go to the Form List page. The "ID"

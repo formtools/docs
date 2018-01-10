@@ -32,7 +32,7 @@ $fields = $api->initFormPage(X); // where X is your form ID
 		{% endcodemirror %}
 	</div>
 
-	<h4>Why is this needed?</h4>
+	<h3>Why is this needed?</h3>
 
 	<p>
 		If the sessions aren't emptied, the user may not be able to put through a second form
@@ -42,7 +42,7 @@ $fields = $api->initFormPage(X); // where X is your form ID
 		already been finalized by the original form submission - and fail!
 	</p>
 
-	<h4>Usage</h4>
+	<h3>Usage</h3>
 
 	<p>
 		The function is generally called without any parameters. It has no return value.
@@ -57,7 +57,7 @@ $fields = $api->clearFormSessions();
 
 	<p>
 		If you originally passed a custom sessions namespace string to the
-		<a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage</a> function, you need to pass
+		<a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage()</a> function, you need to pass
 		the same namespace string to this function. For example, if your namespace was "my_form",
 		you'd call this function like so:
 	</p>

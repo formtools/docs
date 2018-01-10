@@ -18,19 +18,19 @@ next: Other Functions,/api/v2/other_functions/
 		This function logs a user in programmatically. It takes a single parameter: a hash with these keys:
 	</p>
 
-	<h4>Required keys</h4>
+	<h3>Required keys</h3>
 	<ul>
 		<li>username (string)</li>
 		<li>password (string)</li>
 	</ul>
 
-	<h4>Optional keys</h4>
+	<h3>Optional keys</h3>
 	<ul>
 		<li>auto_redirect_after_login (boolean, defaulted to FALSE)</li>
 		<li>login_url (string) the URL to redirect to after logging in</li>
 	</ul>
 
-	<h4>Return Values</h4>
+	<h3>Return Values</h3>
 	<p>
 		The return values first depend on whether the <a href="{{site.baseurl}}/api/v2/debugging">$g_api_debug</a> value
 		is set. It if is, nothing is returned for errors: they are displayed in the browser. If not, the function has

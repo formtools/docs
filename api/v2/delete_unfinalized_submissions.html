@@ -14,7 +14,7 @@ next: checkSubmissionIsUnique(),/api/v2/check_submission_is_unique/
 
 {% include open_section.html nav='nav_api_v2.html' selected='delete_unfinalized_submissions' nav_width=4 %}
 
-	<h4>The problem</h4>
+	<h3>The problem</h3>
 
 	<p>
 		This page explains a problem that arises from using the API for your forms. If you don't
@@ -47,7 +47,7 @@ next: checkSubmissionIsUnique(),/api/v2/check_submission_is_unique/
 		indefinitely. Boo.
 	</p>
 
-	<h4>The solution</h4>
+	<h3>The solution</h3>
 
 	<p>
         Enter the <b>deleteUnfinalizedSubmissions()</b> method. This function does the job of both deleting those
@@ -72,7 +72,7 @@ $api->deleteUnfinalizedSubmissions($form_id, false);
 		in 99% of cases, leave the second parameter to <b>false</b>.
 	</p>
 
-	<h4>Return Value</h4>
+	<h3>Return Value</h3>
 
 	<p>
 		This function returns the number of unfinalized submissions that it just deleted.

@@ -36,7 +36,7 @@ list($success, $info) = $api->createClientAccount($account_info);
 		The function takes a single parameter - an associative array (hash) with the following keys.
 	</p>
 
-	<h4>Required keys</h4>
+	<h3>Required keys</h3>
 
 	<ul>
 		<li><b>first_name</b> - the client's first name</li>
@@ -46,7 +46,7 @@ list($success, $info) = $api->createClientAccount($account_info);
 		<li><b>password</b> - the client's login password</li>
 	</ul>
 
-	<h4>Optional keys</h4>
+	<h3>Optional keys</h3>
 
 	<ul>
 		<li><b>account_status</b> - "active", "disabled", "pending" (default: "pending")</li>
@@ -60,7 +60,7 @@ list($success, $info) = $api->createClientAccount($account_info);
 		<li><b>menu_id</b> - the unique menu ID</li>
 	</ul>
 
-	<h4>Return Values</h4>
+	<h3>Return Values</h3>
 
 	<p>
 		As with the other functions, if the <b>$g_api_debug</b> value is set to true in your api.php file, this

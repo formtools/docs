@@ -15,35 +15,26 @@ next: deleteUnfinalizedSubmissions(),/api/v2/delete_unfinalized_submissions/
 {% include open_section.html nav='nav_api_v2.html' selected='display_captcha' nav_width=4 %}
 
 	<p>
-		The API comes fully integrated with the rather splendid "Recaptcha" service.
-		<a href="http://recaptcha.net/learnmore.html" target="_blank">Click here</a> to visit
-		their website and learn more about the novel approach they've taken to CAPTCHAs.
-		The basic idea is that by solving their CAPTCHAs, you're unwittingly helping digitize
-		old books that have been scanned into a computer.
+		The API comes fully integrated with the <b>reCAPTCHA</b> service, now offered through Google.
+		<a href="https://developers.google.com/recaptcha/" target="_blank">Click here</a> to visit their website and
+        learn more.
 	</p>
 
 	<p>
-		Of the many CAPTCHA solutions there are out there, we selected this service over
-		others due to the usefulness of their approach and the clarity of the CAPTCHAs
-		themselves. Too often CAPTCHAs are unclear and hard to decipher by users; recaptchas
-		are far more readable.
-	</p>
-
-	<p>
-		This API function generates a CAPTCHA in your page with a single line of PHP. If the
-		user fails to enter the CAPTCHA correctly they are unable to proceed any further through
-		your form and the submission is never finalized.
+		This API function generates a CAPTCHA in your page with a single line of PHP. If the user fails to enter the
+        CAPTCHA correctly they are unable to proceed any further through your form and the submission is never
+        finalized.
 	</p>
 
 	<p>
 		This document explains how to get this function working for you.
 	</p>
 
-	<h4>1. Get a recaptcha account</h4>
+	<h3>1. Get a recaptcha account</h3>
 
 	<p>
-		I know it's a pain, but it's very quick. <a href="http://recaptcha.net/whyrecaptcha.html"
-		target="_blank">Visit their site here</a> and sign up for an account. Once you've
+		I know it's a pain, but it's very quick. <a href="https://developers.google.com/recaptcha/intro"
+		target="_blank">Visit the reCAPTCHA site here</a> and sign up for an API key pair. Once you've
 		created an account you register the domain(s) where you're using the service. Since the
 		API only runs on the same server as your Form Tools installation, you'll only need to set up the one domain.
 	</p>
@@ -62,7 +53,7 @@ $g_api_recaptcha_public_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
 		(replace the x's and y's with your own keys).
 	</p>
 
-	<h4>2. Add the captcha to your form</h4>
+	<h3>2. Add the captcha to your form</h3>
 
 	<p>
 		Next, in your form (which should already be integrated with the API with help from the tutorials

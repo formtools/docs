@@ -15,9 +15,9 @@ next: API Error Codes,/api/v2/error_codes/
 {% include open_section.html nav='nav_api_v2.html' selected='display_post_form_captcha_error' nav_width=4 %}
 
 	<p>
-		This function was added in version <b>20090614</b> of the Beta, to help abstract away some of the nagging
-        details of adding CAPTCHA spam detection script to a POST form. The function should be included at the top of
-        your POST forms that contain a reCAPTCHA. It displays an appropriate error message if the user fails to enter
+		This function was added to help abstract away some of the nagging details of adding CAPTCHA spam detection
+        script to a POST form. The function should be included at the top of your POST forms that contain a
+        reCAPTCHA. It displays an appropriate error message if the user fails to enter
         the CAPTCHA properly. Usage:
 	</p>
 
@@ -48,7 +48,7 @@ ft_api_display_post_form_captcha_error($error);
 
 	<p>
 		For more information on reCAPTCHA, see the documentation on the
-		<a href="{{site.baseurl}}/api/v2/display_captcha">displayCaptcha</a> function.
+		<a href="{{site.baseurl}}/api/v2/display_captcha">displayCaptcha()</a> function.
 	</p>
 
 {% include close_section.html %}

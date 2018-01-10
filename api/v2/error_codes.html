@@ -46,7 +46,7 @@ next: Namespaces,/api/v2/namespaces/
 				This occurs when trying to initialize a form. It usually means you're sending along an incorrect form
                 ID. If you're NOT trying to initialize a form, then you're still passing along the
                 <b>form_tools_initialize_form</b> hidden field in your form for "direct" submission page - or you have
-                the second parameter of the <a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page</a>
+                the second parameter of the <a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage()</a>
                 set to "initialize" if you're submitting the information via PHP.
 			</td>
 		</tr>
@@ -63,9 +63,9 @@ next: Namespaces,/api/v2/namespaces/
 					<li>you're passing along the wrong form ID (check it's not in a hidden field - this is a
 						common pitfall if you're upgrading an old Form Tools form)</li>
 					<li>you haven't removed the second parameter of the
-						<a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page</a> function on your
+						<a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage()</a> function on your
 						first form page for a form that HAS been set up. For the latter, clear your sessions
-						(see the <a href="{{site.baseurl}}/api/ft_api_clear_form_sessions">ft_api_clear_form_sessions</a>
+						(see the <a href="{{site.baseurl}}/api/v2/clear_form_sessions">clearFormSessions()</a>
 						function) and try putting through another submission.</li>
 				</ol>
 			</td>
@@ -109,7 +109,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="200"></a>200</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				This error occurs when the <a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page</a>
+				This error occurs when the <a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage()</a>
                 function is passed an invalid value for the second parameter. The second parameter contains the mode:
                 it should any of the following string values: "test", "initialize" or "live". Alternatively, you can omit
                 the parameter altogether - which is the same as "live".
@@ -119,10 +119,10 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="300"></a>300</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				This occurs when <a href="?page=ft_api_process_form">ft_api_process_form</a> doesn't receive BOTH the
-                form ID and the submission ID. These values are not passed to the function explicitly; they are set by
-                <a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page</a> - which should ALWAYS be
-                called prior to <a href="{{site.baseurl}}/api/ft_api_process_form">ft_api_process_form</a> on every one
+				This occurs when <a href="{{site.baseurl}}/api/v2/process_form_submission">processFormSubmission()</a>
+                doesn't receive BOTH the form ID and the submission ID. These values are not passed to the function
+                explicitly; they are set by <a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage()</a> - which should ALWAYS be
+                called prior to <a href="{{site.baseurl}}/api/v2/process_form_submission">processFormSubmission()</a> on every one
                 of your form pages.
 			</td>
 		</tr>
@@ -132,9 +132,9 @@ next: Namespaces,/api/v2/namespaces/
 			<td>
 				The form ID doesn't exist. Here, the function is trying to put through a live submission (i.e.
                 non-test/initialize). Most likely, you passed the wrong form ID value to
-                <a href="{{site.baseurl}}/api/ft_api_init_form_page">ft_api_init_form_page()</a>. Note: the (invalid)
+                <a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage()</a>. Note: the (invalid)
                 form ID is cached. Try emptying sessions using
-                <a href="{{site.baseurl}}/api/ft_api_clear_form_sessions">ft_api_clear_form_sessions()</a>, update the
+                <a href="{{site.baseurl}}/api/v2/clear_form_sessions">clearFormSessions()</a>, update the
                 form ID and try putting through another submission.
 			</td>
 		</tr>
@@ -143,10 +143,10 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="blue" valign="top">User</td>
 			<td>
 				The submission is already finalized! The
-				<a href="{{site.baseurl}}/api/ft_api_process_form">ft_api_process_form</a> only processes submissions
+				<a href="{{site.baseurl}}/api/v2/process_form_submission">processFormSubmission()</a> only processes submissions
 				that aren't finalized. You need to confirm that you are only finalizing the submission
 				on the FINAL step of your form. See the documentation on
-				<a href="{{site.baseurl}}/api/ft_api_process_form">ft_api_process_form</a> form more information.
+				<a href="{{site.baseurl}}/api/v2/process_form_submission">processFormSubmission()</a> form more information.
 			</td>
 		</tr>
 		<tr>
@@ -174,7 +174,7 @@ next: Namespaces,/api/v2/namespaces/
 				This occurs when the unfinalized submission being processed in a multi-page form no longer exists, but
                 the person hasn't finished putting it through. This should only occur if the database
 				record has been deleted - probably with
-                <a href="{{site.baseurl}}/api/ft_api_delete_unfinalized_submissions">ft_api_delete_unfinalized_submissions</a>.
+                <a href="{{site.baseurl}}/api/v2/deleteUnfinalizedSubmissions">deleteUnfinalizedSubmissions()</a>.
                 It's strongly recommended that you don't pass the second parameter to the function so that only
 				older unfinalized submissions that are no longer needed are actually deleted.
 			</td>
@@ -183,14 +183,16 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="306"></a>306</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The "form_data" parameter must ALWAYS be passed to the <a href="{{site.baseurl}}/api/ft_api_process_form">ft_api_process_form</a>
+				The "form_data" parameter must ALWAYS be passed to the
+                <a href="{{site.baseurl}}/api/v2/process_form_submission">processFormSubmission()</a>
 				function - even if it's empty. This is usually the $_POST value. See the function more information.
 			</td>
 		</tr>
-		</tbody></table>
+		</tbody>
+    </table>
 
 
-	<h4>Submissions</h4>
+	<h3>Submissions</h3>
 
 	<table class="list_table" cellpadding="0" cellspacing="1">
 		<tbody><tr>
@@ -208,28 +210,30 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="401"></a>401</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The form ID passed to the <a href="{{site.baseurl}}/api/ft_api_show_submissions">ft_api_show_submissions</a> function is invalid.
+				The form ID passed to the <a href="{{site.baseurl}}/api/v2/show_submissions">showSubmissions()</a>
+                function is invalid.
 			</td>
 		</tr>
 		<tr>
 			<td class="bold" valign="top"><a name="402"></a>402</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The View ID passed to the <a href="{{site.baseurl}}/api/ft_api_show_submissions">ft_api_show_submissions</a> function is invalid.
+				The View ID passed to the <a href="{{site.baseurl}}/api/v2/show_submissions">showSubmissions()</a> function is invalid.
 			</td>
 		</tr>
 		<tr>
 			<td class="bold" valign="top"><a name="403"></a>403</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The Export Type ID passed to the <a href="{{site.baseurl}}/api/ft_api_show_submissions">ft_api_show_submissions</a> function is invalid.
+				The Export Type ID passed to the <a href="{{site.baseurl}}/api/v2/show_submissions">showSubmissions()</a>
+                function is invalid.
 			</td>
 		</tr>
 		<tr>
 			<td class="bold" valign="top"><a name="404"></a>404</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The value passed for the "pagination_location" to the <a href="{{site.baseurl}}/api/ft_api_show_submissions">ft_api_show_submissions</a>
+				The value passed for the "pagination_location" to the <a href="{{site.baseurl}}/api/v2/show_submissions">showSubmissions()</a>
                 is incorrect. The valid values are "both", "top", "bottom" and "none".
 			</td>
 		</tr>
@@ -238,7 +242,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="blue" valign="top">User</td>
 			<td>
 				The form ID parameter (First) passed to the
-				<a href="{{site.baseurl}}/api/ft_api_get_submission">ft_api_get_submission</a> is invalid.
+				<a href="{{site.baseurl}}/api/v2/get_submission">getSubmission()</a> is invalid.
 			</td>
 		</tr>
 		<tr>
@@ -246,13 +250,13 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="blue" valign="top">User</td>
 			<td>
 				The submission ID parameter (second) passed to the
-				<a href="{{site.baseurl}}/api/ft_api_get_submission">ft_api_get_submission</a> is invalid.
+				<a href="{{site.baseurl}}/api/v2/get_submission">getSubmission()</a> is invalid.
 			</td>
 		</tr>
 		</tbody>
     </table>
 
-	<h4>Other</h4>
+	<h3>Other</h3>
 
 	<table class="list_table" cellpadding="0" cellspacing="1">
 		<tbody><tr>
@@ -264,7 +268,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="500"></a>500</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The form ID passed to the <a href="{{site.baseurl}}/api/ft_api_create_blank_submission">ft_api_create_blank_submission</a>
+				The form ID passed to the <a href="{{site.baseurl}}/api/v2/create_submission">createSubmission()</a>
                 function is invalid.
 			</td>
 		</tr>
@@ -272,15 +276,16 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="501"></a>501</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The default values passed to the <a href="{{site.baseurl}}/api/ft_api_create_blank_submission">ft_api_create_blank_submission</a>
-                function are invalid. Most likely, you've misspelled one of the database column names or included one that doesn't exist.
+				The default values passed to the <a href="{{site.baseurl}}/api/v2/createSubmission">createSubmission()</a>
+                function are invalid. Most likely, you've misspelled one of the database column names or included one
+                that doesn't exist.
 			</td>
 		</tr>
 		<tr>
 			<td class="bold" valign="top"><a name="550"></a>550</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The form ID passed to the <a href="{{site.baseurl}}/api/ft_api_submission_is_unique">ft_api_submission_is_unique</a>
+				The form ID passed to the <a href="{{site.baseurl}}/api/v2/submission_is_unique">submissionIsUnique()</a>
 				function is invalid.
 			</td>
 		</tr>
@@ -289,8 +294,8 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="blue" valign="top">User</td>
 			<td>
 				The second <b>$criteria</b> parameter passed to the
-				<a href="{{site.baseurl}}/api/ft_api_submission_is_unique">ft_api_submission_is_unique</a>
-				function is invalid - it needs to be a function.
+				<a href="{{site.baseurl}}/api/v2/submission_is_unique">submissionIsUnique()</a> function is invalid -
+                it needs to be a function.
 			</td>
 		</tr>
 		<tr>
@@ -298,8 +303,8 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="blue" valign="top">User</td>
 			<td>
 				The second <b>$criteria</b> parameter passed to the
-				<a href="{{site.baseurl}}/api/ft_api_submission_is_unique">ft_api_submission_is_unique</a>
-				function is invalid - it needs to be a hash.
+				<a href="{{site.baseurl}}/api/v2/submission_is_unique">submissionIsUnique()</a> function is invalid -
+                it needs to be a hash.
 			</td>
 		</tr>
 		<tr>
@@ -307,10 +312,9 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="blue" valign="top">User</td>
 			<td>
 				The second <b>$criteria</b> parameter passed to the
-				<a href="{{site.baseurl}}/api/ft_api_submission_is_unique">ft_api_submission_is_unique</a>
-				function is invalid - it needs to be an associative array (hash) where the keys
-				are the form table column names and the values are the values you are checking
-				to uniquely identify the record.
+				<a href="{{site.baseurl}}/api/v2/submission_is_unique">submissionIsUnique()</a> function is invalid -
+                it needs to be an associative array (hash) where the keys are the form table column names and the values
+                are the values you are checking to uniquely identify the record.
 			</td>
 		</tr>
 		<tr>
@@ -330,21 +334,21 @@ next: Namespaces,/api/v2/namespaces/
 			<td>
 				The public and/or private recaptcha field key hasn't been set in your api.php file.
 				For more information, read the instructions on the
-				<a href="{{site.baseurl}}/api/ft_api_display_captcha">ft_api_display_captcha</a> page.
+				<a href="{{site.baseurl}}/api/v2/display_captcha">displayCaptcha()</a> page.
 			</td>
 		</tr>
 		<tr>
 			<td class="bold" valign="top"><a name="650"></a>650</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The form ID passed to the <a href="{{site.baseurl}}/api/ft_api_delete_unfinalized_submissions">ft_api_delete_unfinalized_submissions</a>
+				The form ID passed to the <a href="{{site.baseurl}}/api/v2/delete_unfinalized_submissions">deleteUnfinalizedSubmissions()</a>
                 function is invalid.
 			</td>
 		</tr>
 		</tbody>
     </table>
 
-	<h4>User Accounts</h4>
+	<h3>User Accounts</h3>
 
 	<table class="list_table" cellpadding="0" cellspacing="1">
 		<tbody><tr>
@@ -356,7 +360,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="700"></a>700</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a> function
+				The <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a> function
                 didn't receive the "first_name" key.
 			</td>
 		</tr>
@@ -364,7 +368,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="701"></a>701</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a> function
+				The <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a> function
                 didn't receive the "last_name" key.
 			</td>
 		</tr>
@@ -372,7 +376,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="702"></a>702</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a> function
+				The <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a> function
                 didn't receive the "email" key.
 			</td>
 		</tr>
@@ -380,7 +384,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="703"></a>703</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a> function
+				The <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a> function
                 received an invalid email address in the "email" key.
 			</td>
 		</tr>
@@ -388,23 +392,23 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="704"></a>704</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a>
-                function didn't receive the "username" key.
+				The <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a> function didn't
+                receive the "username" key.
 			</td>
 		</tr>
 		<tr>
 			<td class="bold" valign="top"><a name="705"></a>705</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a> function
-                requires the "username" key only contains alphanumeric characters.
+				The <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a> function requires
+                the "username" key only contains alphanumeric characters.
 			</td>
 		</tr>
 		<tr>
 			<td class="bold" valign="top"><a name="706"></a>706</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a> function
+				The <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a> function
                 received an invalid value the "username" key. This usually means the username is already taken.
 			</td>
 		</tr>
@@ -412,7 +416,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="707"></a>707</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a> function
+				The <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a> function
                 didn't receive a value in the "password" key.
 			</td>
 		</tr>
@@ -420,7 +424,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="708"></a>708</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a> function
+				The <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a> function
                 requires the "password" key only contains alphanumeric characters.
 			</td>
 		</tr>
@@ -428,7 +432,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="709"></a>709</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The database INSERT query in the <a href="{{site.baseurl}}/api/ft_api_create_client_account">ft_api_create_client_account</a>
+				The database INSERT query in the <a href="{{site.baseurl}}/api/v2/create_client_account">createClientAccount()</a>
                 query failed. Most likely, you're passing invalid values for one of the optional keys.
 			</td>
 		</tr>
@@ -436,14 +440,15 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="800"></a>800</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The account ID passed to <a href="{{site.baseurl}}/api/ft_api_delete_client_account">ft_api_delete_client_account</a> was invalid.
+				The account ID passed to <a href="{{site.baseurl}}/api/v2/delete_client_account">deleteClientAccount()</a>
+                was invalid.
 			</td>
 		</tr>
 		<tr>
 			<td class="bold" valign="top"><a name="801"></a>801</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The account ID passed to <a href="{{site.baseurl}}/api/ft_api_delete_client_account">ft_api_delete_client_account</a>
+				The account ID passed to <a href="{{site.baseurl}}/api/v2/delete_client_account">deleteClientAccount()</a>
                 was not a client account.
 			</td>
 		</tr>
@@ -451,7 +456,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="900"></a>900</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The account ID passed to <a href="{{site.baseurl}}/api/ft_api_update_client_account">ft_api_update_client_account</a>
+				The account ID passed to <a href="{{site.baseurl}}/api/v2/update_client_account">updateClientAccount()</a>
                 was invalid.
 			</td>
 		</tr>
@@ -459,7 +464,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="901"></a>901</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The account ID passed to <a href="{{site.baseurl}}/api/ft_api_update_client_account">ft_api_update_client_account</a>
+				The account ID passed to <a href="{{site.baseurl}}/api/v2/update_client_account">updateClientAccount()</a>
                 was not a client account.
 			</td>
 		</tr>
@@ -467,9 +472,9 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="902"></a>902</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The update query in <a href="{{site.baseurl}}/api/ft_api_update_client_account">ft_api_update_client_account</a>
+				The update query in <a href="{{site.baseurl}}/api/v2/update_client_account">updateClientAccount()</a>
                 failed. This is usually due to one or more invalid values being passed to it. Try enabling
-                <a href="{{site.baseurl}}/api/g_api_debug">$g_api_debug</a> and put through the query through your web
+                <a href="{{site.baseurl}}/api/v2/debugging">$g_api_debug</a> and put through the query through your web
                 browser. When the function fails, it will display the failed query in the debugging section.
 			</td>
 		</tr>
@@ -477,7 +482,7 @@ next: Namespaces,/api/v2/namespaces/
 			<td class="bold" valign="top"><a name="1000"></a>1000</td>
 			<td class="blue" valign="top">User</td>
 			<td>
-				The password field wasn't sent to the <a href="{{site.baseurl}}/api/ft_api_login">ft_api_login</a>
+				The password field wasn't sent to the <a href="{{site.baseurl}}/api/v2/login">login()</a>
                 function, or it was empty.
 			</td>
 		</tr>

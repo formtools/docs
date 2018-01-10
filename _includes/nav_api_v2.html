@@ -1,8 +1,8 @@
-<h4 {% if include.selected == 'api' %}class="selected"{% endif %}><a href="{{site.baseurl}}/api/">API v2.x</a></h4>
+<h4 {% if include.selected == 'api' %}class="selected"{% endif %}><a href="{{site.baseurl}}/api/v2/">API v2.x</a></h4>
 
 <ul>
     <li {% if include.selected == 'upgrading' %}class="selected"{% endif %}>
-        <a href="{{site.baseurl}}/api/v2/upgrading/">Upgrading from API v1.x</a>
+        <a href="{{site.baseurl}}/api/v2/upgrading/">Upgrading from v1.x</a>
     </li>
 	<li {% if include.selected == 'finalized' %}class="selected"{% endif %}>
 		<a href="{{site.baseurl}}/api/v2/finalized/">Finalized Submissions</a>
@@ -65,7 +65,7 @@
 				</div>
 
 				<ul>
-					<li {% if include.selected == 'createClientAccount' %}class="selected"{% endif %}>
+					<li {% if include.selected == 'create_client_account' %}class="selected"{% endif %}>
 						<a href="{{site.baseurl}}/api/v2/create_client_accounts/">createClientAccount()</a>
 					</li>
 					<li {% if include.selected == 'update_client_account' %}class="selected"{% endif %}>
