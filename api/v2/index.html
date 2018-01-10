@@ -15,26 +15,23 @@ next: Upgrading from API v1.x,/api/v2/upgrading
 		The API releases are all found on github.
 	</div>
 
-	<p>
-		The Form Tools API files should be placed in your <strong>[form tools root]/global/api/</strong> folder.
-	</p>
-
 	<a name="requirements"></a>
-	<p><b>Requirements</b></p>
-	<ol>
+	<h3>Requirements</h3>
+
+    <ol>
 		<li>Form Tools must be installed on your server</li>
-		<li>It can only be called within a PHP page on the same server as your Form Tools installation</li>
-		<li>It requires the /global/api/API.class.php file to have been included in your page</li>
+        <li>The Form Tools API files should be placed in your <b>[form tools root]/global/api/</b> folder</li>
+		<li>It must be called within a PHP page on the same server as your Form Tools installation</li>
+        <li>It requires the <b>/global/api/API.class.php</b> file to have been included in your page</li>
 	</ol>
 
 	<a name="how_to_use"></a>
-	<p><b>How to use it</b></p>
+	<h3>How to use</h3>
 
 	<p>
-		In order to use the API functions you must include the api.php file in your web page
-		BEFORE the function call. You only need to include this line once. The path must be
-		&nbsp;edited for the location of your api.php file on your server. It can be a relative or
-		absolute link.
+		In order to use the API methods you must include the api.php file in your web page and instantiate the API
+        object. Note: the path to the API class file must must be edited for your server. It can be a relative or
+		absolute path.
 	</p>
 
 	{% codemirror php %}

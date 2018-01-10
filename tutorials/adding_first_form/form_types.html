@@ -10,31 +10,33 @@ next: Picked your Submission Method?,/tutorials/adding_first_form/next_step/
 
 {% include open_section.html nav='nav_tutorial_adding_first_form.html' selected='form_types' nav_width=3 %}
 
-	<h4>POST forms and API forms</h4>
+	<h3>POST forms and API forms</h3>
 
 	<p>
 		There are two ways to submit your form data:
 	</p>
-	<ul>
-		<li><b>1. POST forms</b> work by setting the "action" attribute of your form tag to point
+	<ol>
+		<li><b>POST forms</b> work by setting the "action" attribute of your form tag to point
 			to Form Tools' <b>process.php</b> file (found in the Form Tools root folder). This submits the
 			content to Form Tools, which then redirects to whatever URL you want. This method is the
 			simplest way to submit the data, but it's also quite limiting (see below).</li>
 
-		<li><b>2. API forms</b> work by using PHP to gather and send the form data. The API comes
+		<li><b>API forms</b> work by using PHP to gather and send the form data. The API comes
 			pre-installed with all bundled Form Tools installations (i.e. the zip and tar files found
 			on the <a href="https://formtools.org/download/">download page</a>). This method is extremely
 			powerful and generally favoured for multi-page forms, or forms that require server-side
 			validation.
-		</li></ul>
+		</li>
+    </ol>
 
 	<p>
 		Both methods have their advantages and disadvantages. The following table outlines
 		some of the key differences to help you determine which method is better for you.
 	</p>
 
-	<table cellspacing="0" cellpadding="1" width="600px">
-		<tbody><tr>
+	<table cellspacing="0" cellpadding="1" width="100%">
+		<tbody>
+        <tr>
 			<th>Requirement</th>
 			<th width="150">process.php</th>
 			<th width="150">API</th>
