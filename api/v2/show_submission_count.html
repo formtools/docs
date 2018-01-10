@@ -1,18 +1,18 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_show_submission_count
+heading: showSubmissionCount()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
   - Class Methods,/api/v2/class_methods/
   - Submissions,/api/v2/submissions/
-  - ft_api_show_submission_count
-prev: ft_api_show_submission,/api/v2/ft_api_show_submission/
-next: ft_api_get_submission,/api/v2/ft_api_get_submission/
+  - showSubmissionCount()
+prev: showSubmission(),/api/v2/show_submission/
+next: getSubmission(),/api/v2/get_submission/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_show_submission_count' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='show_submission_count' nav_width=4 %}
 
 	<p>
 		This function displays the number of submissions in a form. It takes a second optional View ID parameter that
@@ -27,7 +27,8 @@ next: ft_api_get_submission,/api/v2/ft_api_get_submission/
 
 	{% codemirror php %}
 <?php
-echo ft_api_show_submission_count($form_id);
+$api = new FormTools\API();
+echo $api->showSubmissionCount($form_id);
 ?>
 	{% endcodemirror %}
 
@@ -37,7 +38,8 @@ echo ft_api_show_submission_count($form_id);
 
 	{% codemirror php %}
 <?php
-echo ft_api_show_submission_count($form_id, $view_id);
+$api = new FormTools\API();
+echo $api->showSubmissionCount($form_id, $view_id);
 ?>
 	{% endcodemirror %}
 
@@ -48,7 +50,8 @@ echo ft_api_show_submission_count($form_id, $view_id);
 
 	{% codemirror php %}
 <?php
-echo ft_api_show_submission_count(4, 6);
+$api = new FormTools\API();
+echo $api->showSubmissionCount(4, 6);
 ?>
 	{% endcodemirror %}
 
@@ -58,7 +61,8 @@ echo ft_api_show_submission_count(4, 6);
 
 	{% codemirror php %}
 <?php
-$num_submissions = ft_api_show_submission_count(4, 6);
+$api = new FormTools\API();
+$num_submissions = $api->showSubmissionCount(4, 6);
 ?>
 	{% endcodemirror %}
 

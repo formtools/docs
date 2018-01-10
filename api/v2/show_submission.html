@@ -1,18 +1,18 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_show_submission
+heading: showSubmission()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
   - Class Methods,/api/v2/class_methods/
   - Submissions,/api/v2/submissions
   - ft_api_show_submission
-prev: ft_api_show_submissions,/api/v2/ft_api_show_submissions/
-next: ft_api_show_submission_count,/api/v2/ft_api_show_submission_count/
+prev: showSubmissions(),/api/v2/show_submissions/
+next: showSubmissionCount(),/api/v2/show_submission_count/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_show_submission' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='show_submission' nav_width=4 %}
 
 	<div class="alert alert-info">
 		<ul>
@@ -37,7 +37,7 @@ next: ft_api_show_submission_count,/api/v2/ft_api_show_submission_count/
 	<h4>Overview</h4>
 	<p>
 		This function displays an individual submission. This can actually already be achieved with
-		<a href="{{site.baseurl}}/api/ft_api_show_submissions">ft_api_show_submissions</a>, but this function is
+		<a href="{{site.baseurl}}/api/v2/show_submissions">ft_api_show_submissions</a>, but this function is
 		written for this precise purpose, so you may find it simpler to use.
 	</p>
 
@@ -47,7 +47,8 @@ next: ft_api_show_submission_count,/api/v2/ft_api_show_submission_count/
 
 	{% codemirror php %}
 <?php
-ft_api_show_submission($form_id, $view_id, $export_type_id, $submission_id);
+$api = new FormTools\API();
+$api->showSubmission($form_id, $view_id, $export_type_id, $submission_id);
 ?>
 	{% endcodemirror %}
 
@@ -59,9 +60,10 @@ ft_api_show_submission($form_id, $view_id, $export_type_id, $submission_id);
 	{% codemirror php %}
 <?php
 // remember to update this path
-require("/path/to/global/code/api/api.php");
+require("/path/to/global/code/api/API.class.php");
 
-ft_api_show_submission(10, 15, 6, 155);
+$api = new FormTools\API();
+$api->showSubmission(10, 15, 6, 155);
 ?>
 	{% endcodemirror %}
 

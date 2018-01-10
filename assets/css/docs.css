@@ -905,3 +905,10 @@ img.mfp-img {
 .module-index-list .row {
     margin-bottom: 10px;
 }
+
+.red {
+    color: #990000;
+}
+.blue {
+    color: #3399cc;
+}

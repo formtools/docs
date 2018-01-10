@@ -1,18 +1,18 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_create_client_account
+heading: createClientAccount()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
   - Class Methods,/api/v2/class_methods/
   - User Accounts,/api/v2/user_accounts
-  - ft_api_create_client_account
+  - createClientAccount()
 prev: User Accounts,/api/v2/user_accounts/
-next: ft_api_update_client_account,/api/v2/ft_api_update_client_account/
+next: updateClientAccount(),/api/v2/update_client_account/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_create_client_account' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='create_client_account' nav_width=4 %}
 
 	<p>
 		This function creates a client account programmatically. Example usage:
@@ -20,14 +20,15 @@ next: ft_api_update_client_account,/api/v2/ft_api_update_client_account/
 
 	{% codemirror php %}
 <?php
+$api = new FormTools\API();
 $account_info = array(
-  "first_name" => "Todd",
-  "last_name" => "Atkins",
-  "email" => "todd@gmail.com",
-  "username" => "todd",
-  "password" => "todd12345"
+    "first_name" => "Todd",
+    "last_name" => "Atkins",
+    "email" => "todd@gmail.com",
+    "username" => "todd",
+    "password" => "todd12345"
 );
-list($success, $info) = ft_api_create_client_account($account_info);
+list($success, $info) = $api->createClientAccount($account_info);
 ?>
 	{% endcodemirror %}
 
@@ -69,8 +70,10 @@ list($success, $info) = ft_api_create_client_account($account_info);
 
 	{% codemirror php %}
 <?php
+$api = new FormTools\API();
+
 // ...
-list($success, $info) = ft_api_create_client_account($account_info);
+list($success, $info) = $api->createClientAccount($account_info);
 
 // if $success == true, $info contains the new account ID (an integer)
 // if $success == false, $info contains an array of error codes
@@ -78,7 +81,7 @@ list($success, $info) = ft_api_create_client_account($account_info);
 	{% endcodemirror %}
 
 	<p>
-		The failure error codes are <a href="{{site.baseurl}}/api/error_codes/">documented here</a>.
+		The failure error codes are <a href="{{site.baseurl}}/api/v2/error_codes/">documented here</a>.
 	</p>
 
 {% include close_section.html %}

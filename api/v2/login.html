@@ -1,18 +1,18 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_login
+heading: login()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
   - Class Methods,/api/v2/class_methods/
   - User Accounts,/api/v2/user_accounts/
-  - ft_api_login
-prev: ft_api_delete_client_account,/api/v2/ft_api_delete_client_account/
+  - login()
+prev: ft_api_delete_client_account,/api/v2/delete_client_account/
 next: Other Functions,/api/v2/other_functions/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_login' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='login' nav_width=4 %}
 
 	<p>
 		This function logs a user in programmatically. It takes a single parameter: a hash with these keys:
@@ -32,11 +32,11 @@ next: Other Functions,/api/v2/other_functions/
 
 	<h4>Return Values</h4>
 	<p>
-		The return values first depend on whether the <a href="{{site.baseurl}}/api/debugging">$g_api_debug</a> value
+		The return values first depend on whether the <a href="{{site.baseurl}}/api/v2/debugging">$g_api_debug</a> value
 		is set. It if is, nothing is returned for errors: they are displayed in the browser. If not, the function has
 		the same return value pattern as the other functions: it returns an array with 2 indexes. The first is a
 		boolean, indicating whether the login was successful or not. The second is the unique
-		<a href="{{site.baseurl}}/api/error_codes">error code</a>, or the empty string when successful.
+		<a href="{{site.baseurl}}/api/v2/error_codes">error code</a>, or the empty string when successful.
 	</p>
 
 	<p>
@@ -51,11 +51,12 @@ next: Other Functions,/api/v2/other_functions/
 
 	{% codemirror php %}
 <?php
+$api = FormTools\API();
 $account_info = array(
-  "username" => "bob",
-  "password" => "bob12345"
+    "username" => "bob",
+    "password" => "bob12345"
 );
-list ($success, $message) = ft_api_login($account_info);
+list ($success, $message) = $api->login($account_info);
 ?>
 	{% endcodemirror %}
 
@@ -67,17 +68,19 @@ list ($success, $message) = ft_api_login($account_info);
 
 	{% codemirror php %}
 <?php
+$api = FormTools\API();
 $account_info = array(
-  "username" => "bob",
-  "password" => "bob12345",
-  "auto_redirect_after_login" => true
+    "username" => "bob",
+    "password" => "bob12345",
+    "auto_redirect_after_login" => true
 );
-list ($success, $message) = ft_api_login($account_info);
+list ($success, $message) = $api->login($account_info);
 ?>
 	{% endcodemirror %}
 
 	<p>
-		This will automatically log the user in, if successful. They will be redirected to their custom login page, defined in their user settings.
+		This will automatically log the user in, if successful. They will be redirected to their custom login page,
+        defined in their user settings.
 	</p>
 
 

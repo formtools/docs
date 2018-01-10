@@ -8,17 +8,16 @@ breadcrumbs:
   - Class Methods,/api/v2/class_methods/
   - Other Functions,/api/v2/other_functions/
   - startSessions()
-prev: checkSubmissionIsUnique(),/api/v2/ft_api_check_submission_is_unique/
-next: display_post_form_captcha_error,/api/v2/ft_api_display_post_form_captcha_error/
+prev: checkSubmissionIsUnique(),/api/v2/check_submission_is_unique/
+next: displayPostFormCaptchaError(),/api/v2/display_post_form_captcha_error/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_start_sessions' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='start_sessions' nav_width=4 %}
 
 	<p>
-		This function was added in version <b>20090614</b> of the Beta. All it does is start sessions, setting the
-		page charset to whatever is stored in <b>$g_api_header_charset</b> (by default, UTF-8). This was added to
-		help abstract away some of the details of adding reCAPTCHA to a POST form.
+		This method starts sessions, setting the page charset to whatever is stored in <b>$g_api_header_charset</b>
+        (by default, UTF-8). This was added to help abstract away some of the details of adding reCAPTCHA to a POST
+        form.
 	</p>
-
 
 {% include close_section.html %}

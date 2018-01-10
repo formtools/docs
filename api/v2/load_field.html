@@ -1,18 +1,18 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_load_field
+heading: loadField()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
   - Class Methods,/api/v2/class_methods/
   - Other Functions,/api/v2/other_functions/
-  - ft_api_load_field
+  - loadField()
 prev: Other Functions,/api/v2/other_functions/
-next: ft_api_display_captcha,/api/v2/ft_api_display_captcha/
+next: displayCaptcha(),/api/v2/display_captcha/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_load_field' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='load_field' nav_width=4 %}
 
 	<p>
 		This invaluable little function is a wrapper for ft_load_field, used in the core script. It's used for
@@ -43,7 +43,8 @@ next: ft_api_display_captcha,/api/v2/ft_api_display_captcha/
 
 	{% codemirror php %}
 <?php
-$page = ft_api_load_field("page", "session_page", 1);
+$api = new FormTools\API();
+$page = $api->loadField("page", "session_page", 1);
 ?>
 	{% endcodemirror %}
 

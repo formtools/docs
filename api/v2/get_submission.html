@@ -1,21 +1,21 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_get_submission
+heading: getSubmission()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
   - Class Methods,/api/v2/class_methods/
   - Submissions,/api/v2/submissions/
   - ft_api_get_submission
-prev: ft_api_show_submission_count,/api/v2/ft_api_show_submission_count/
+prev: showSubmissionCount(),/api/v2/show_submission_count/
 next: User Accounts,/api/v2/user_accounts/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_get_submission' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='get_submission' nav_width=4 %}
 
 	<p>
-		The ft_api_get_submission() function does pretty much what you'd expect it to do: it retrieves
+		The <code>getSubmission()</code> function does pretty much what you'd expect it to do: it retrieves
 		all information about a form submission. Unlike many other API functions, this one is more
 		for programmers. It returns a hash of information (where the keys are the database column names
 		and the values are the actual values in the field, directly from the database) which you can use
@@ -30,7 +30,8 @@ next: User Accounts,/api/v2/user_accounts/
 
 	{% codemirror php %}
 <?php
-$submission_info = ft_api_get_submission(2, 550);
+$api = new FormTools\API();
+$submission_info = $api->getSubmission(2, 550);
 ?>
 	{% endcodemirror %}
 

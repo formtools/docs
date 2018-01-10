@@ -1,19 +1,18 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_update_client_account
+heading: updateClientAccount()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
   - Class Methods,/api/v2/class_methods/
   - User Accounts,/api/v2/user_accounts/
-  - ft_api_update_client_account
-prev: ft_api_create_client_account,/api/v2/ft_api_create_client_account/
-next: ft_api_delete_client_account,/api/v2/ft_api_delete_client_account/
+  - updateClientAccount()
+prev: createClientAccount,/api/v2/create_client_account/
+next: deleteClientAccount,/api/v2/delete_client_account/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_update_client_account' nav_width=4 %}
-
+{% include open_section.html nav='nav_api_v2.html' selected='update_client_account' nav_width=4 %}
 
 	<p>
 		This function updates a client account. Usage:
@@ -21,7 +20,8 @@ next: ft_api_delete_client_account,/api/v2/ft_api_delete_client_account/
 
 	{% codemirror php %}
 <?php
-ft_api_update_client_account($account_id, $settings);
+$api = new FormTools\API();
+$api->updateClientAccount($account_id, $settings);
 ?>
 	{% endcodemirror %}
 

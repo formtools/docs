@@ -1,28 +1,31 @@
 ---
 layout: default
 navPage: docs
-heading: ft_api_display_post_form_captcha_error
+heading: displayPostFormCaptchaError()
 breadcrumbs:
   - API,/api/
   - API v2.x,/api/v2
   - Class Methods,/api/v2/class_methods/
   - Other Functions,/api/v2/other_functions/
-  - ft_api_display_post_form_captcha_error
-prev: ft_api_start_sessions,/api/v2/ft_api_start_sessions/
+  - displayPostFormCaptchaError()
+prev: startSessions(),/api/v2/start_sessions/
 next: API Error Codes,/api/v2/error_codes/
 ---
 
-{% include open_section.html nav='nav_api_v2.html' selected='ft_api_display_post_form_captcha_error' nav_width=4 %}
+{% include open_section.html nav='nav_api_v2.html' selected='display_post_form_captcha_error' nav_width=4 %}
 
 	<p>
-		This function was added in version <b>20090614</b> of the Beta, to help abstract away some of
-		the nagging details of adding CAPTCHA spam detection script to a POST form. The function
-		should be included at the top of your POST forms that contain a reCAPTCHA. It displays an
-		appropriate error message if the user fails to enter the CAPTCHA properly. Usage:
+		This function was added in version <b>20090614</b> of the Beta, to help abstract away some of the nagging
+        details of adding CAPTCHA spam detection script to a POST form. The function should be included at the top of
+        your POST forms that contain a reCAPTCHA. It displays an appropriate error message if the user fails to enter
+        the CAPTCHA properly. Usage:
 	</p>
 
 	{% codemirror php %}
-<?php echo ft_api_display_post_form_captcha_error(); ?>
+<?php
+$api = new FormTools\API();
+echo $api->displayPostFormCaptchaError();
+?>
 	{% endcodemirror %}
 
 	<p>
@@ -45,7 +48,7 @@ ft_api_display_post_form_captcha_error($error);
 
 	<p>
 		For more information on reCAPTCHA, see the documentation on the
-		<a href="{{site.baseurl}}/api/ft_api_display_captcha">ft_api_display_captcha</a> function.
+		<a href="{{site.baseurl}}/api/v2/display_captcha">displayCaptcha</a> function.
 	</p>
 
 {% include close_section.html %}
