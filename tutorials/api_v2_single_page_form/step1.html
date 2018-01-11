@@ -1,16 +1,16 @@
 ---
 layout: default
 navPage: docs
-heading: Configuring your Form Page
+heading: Configuring your form page
 breadcrumbs:
   - Tutorials,/tutorials/
-  - Adding a Single Page Form with the API,/tutorials/api_single_page_form/
-  - Configuring your Form Page
-prev: Introduction,/tutorials/api_single_page_form/
-next: Configuring your "Thankyou" Page,/tutorials/api_single_page_form/step2/
+  - Adding a single-page form with the API,/tutorials/api_v2_single_page_form/
+  - Configuring your form page
+prev: Introduction,/tutorials/api_v2_single_page_form/
+next: Configuring your "thankyou" page,/tutorials/api_v2_single_page_form/step2/
 ---
 
-{% include open_section.html nav='nav_tutorial_aspf.html' selected='step1' nav_width=4 %}
+{% include open_section.html nav='nav_tutorial_aspf_api2.html' selected='step1' nav_width=4 %}
 
 	<p>
 		Make sure your form has been given a .php extension (the API requires your files to be
@@ -20,8 +20,9 @@ next: Configuring your "Thankyou" Page,/tutorials/api_single_page_form/step2/
 
 	{% codemirror php %}
 <?php
-require_once("path/to/form_tools/global/api/api.php");
-$fields = ft_api_init_form_page("", "test");
+require_once("path/to/form_tools/global/api/API.class.php");
+$api = new FormTools\API();
+$fields = $api->initFormPage("", "test");
 $params = array(
     "submit_button" => "submit_button_name_attribute",
     "next_page" => "thanks.php",
@@ -29,7 +30,7 @@ $params = array(
     "file_data" => $_FILES,
     "finalize" => true
 );
-ft_api_process_form($params);
+$api->processFormSubmission($params);
 ?>
 	{% endcodemirror %}
 
@@ -68,9 +69,9 @@ ft_api_process_form($params);
 		action attribute. But by using the PHP variable, you don't have to worry about it!
 	</p>
 
-
 	<p>
-		With regard to the form's post attribute, if you want to use method="GET", that's fine - just change the PHP line in the top of the from:
+		With regard to the form's post attribute, if you want to use method="GET", that's fine - just change the PHP
+        line in the top of the from:
 	</p>
 
 	{% codemirror php %}
@@ -88,21 +89,22 @@ ft_api_process_form($params);
 		So far so good!
 	</p>
 
-	<h4>Explanation of Code</h4>
+    <hr size="1" />
+	<h3>Explanation of Code</h3>
 
 	<p>
 		If you're not interested in the details, ignore this section and
-		<a href="{{site.baseurl}}/tutorials/api_single_page_form/step2/">go to the next step</a>. It's just for those
+		<a href="{{site.baseurl}}/tutorials/api_v2_single_page_form/step2/">go to the next step</a>. It's just for those
 		of you who are curious to know what's going on!
 	</p>
 
 	<p>
-		The code does a number of things. First, the <b>ft_api_init_form_page</b> function
-		initializes the page environment; precisely what it does depends on the "mode", i.e. whether
-		the form is in "test" mode (like now), "initialize" mode (when you put through the
-		test submission to Form Tools later) or "live", when everything's been configured. But one
-		thing it ALWAYS does is start PHP sessions to provide storage for the form values and
-		"meta" info (like submission and form ID) as the user progresses through the form.
+		The code does a number of things. First, the <a href="{{site.baseurl}}/api/v2/init_form_page">initFormPage()</a>
+        function initializes the page environment; precisely what it does depends on the "mode", i.e. whether the form
+        is in "test" mode (like now), "initialize" mode (when you put through the test submission to Form Tools later)
+        or "live", when everything's been configured. But one thing it ALWAYS does is start PHP sessions to provide
+        storage for the form values and "meta" info (like submission and form ID) as the user progresses through the
+        form.
 	</p>
 
 	<p>
@@ -111,27 +113,27 @@ ft_api_process_form($params);
 		server-side validation that threw an error after the user submitted the form. You could
 		use the $fields variable to re-load all the values entered. (For more information
 		on that, see the <a href="{{site.baseurl}}/tutorials/php_validation/">Adding
-		Server-Side (PHP) Validation to your Forms</a> and <a href="{{site.baseurl}}/tutorials/api_refilling_form_fields/">Re-filling
-		form fields with the API</a> tutorials.
+		Server-Side (PHP) Validation to your Forms</a> and
+        <a href="{{site.baseurl}}/tutorials/api_v2_refilling_form_fields/">Re-filling form fields with the API</a>
+        tutorials.
 	</p>
 
 	<p>
-		The <b>ft_api_process_form</b> function is the main work-horse function: it does the job
-		of adding the information to the database and redirecting, based on whatever values you
-		pass to it.
+		The <a href="{{site.baseurl}}/api/v2/process_form_submission/">processFormSubmission()</a> function is the main
+        workhorse function: it does the job of adding the information to the database and redirecting, based on whatever
+        values you pass to it.
 	</p>
 
 	<p>
-		"Direct" form types that submit their content directly to the process.php script and have
-		the submission added in on go AFTER the user had submitted the form. The API works the
-		other way round. Once your form is live, the <b>ft_api_init_form_page</b> actually creates
-		a blank submission BEFORE the user has even filled in a field. Then, each form submit
-		will update those fields included in the form submission. Only when they are actually
-		finalized (i.e. the "finalize" =&gt; true parameter is passed to ft_api_process_form) is the
-		submission made visible within Form Tools. This has a number of benefits, including the
-		fact that it allows you to separate your form into multiple pages, updating separate
-		fields bit by bit. Also, it's compatible with adding an external mechanism to allow people
-		to return later on to complete setting up their form.
+		"Direct" form types that submit their content directly to the process.php script and have the submission added
+        in on go AFTER the user had submitted the form. The API works the other way round. Once your form is live, the
+        <a href="{{site.baseurl}}/api/v2/init_form_page/">initFormPage()</a> actually creates a blank submission BEFORE
+        the user has even filled in a field. Then, each form submit will update those fields included in the form
+        submission. Only when they are actually finalized (i.e. the "finalize" =&gt; true parameter is passed to
+        <a href="{{site.baseurl}}/api/v2/process_form_submission/">processFormSubmission()</a>) is the submission made
+        visible within Form Tools. This has a number of benefits, including the fact that it allows you to separate your
+        form into multiple pages, updating separate fields bit by bit. Also, it's compatible with adding an external
+        mechanism to allow people to return later on to complete setting up their form.
 	</p>
 
 {% include close_section.html %}

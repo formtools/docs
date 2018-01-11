@@ -1,27 +1,28 @@
 ---
 layout: default
 navPage: docs
-heading: Configuring your "Thankyou" Page
+heading: Configuring your "thankyou" page
 breadcrumbs:
   - Tutorials,/tutorials/
-  - Adding a Single Page Form with the API,/tutorials/api_single_page_form/
-  - Configuring your "Thankyou" Page
-prev: Configuring your Form Page,/tutorials/api_single_page_form/step1/
-next: The Test Submission,/tutorials/api_single_page_form/step3/
+  - Adding a single-page form with the API,/tutorials/api_v2_single_page_form/
+  - Configuring your "thankyou" page
+prev: Configuring your form page,/tutorials/api_v2_single_page_form/step1/
+next: The test submission,/tutorials/api_v2_single_page_form/step3/
 ---
 
-{% include open_section.html nav='nav_tutorial_aspf.html' selected='step2' nav_width=4 %}
+{% include open_section.html nav='nav_tutorial_aspf_api2.html' selected='step2' nav_width=4 %}
 
 	<p>
-		This bit's easy. At the top of your thank you page (again, don't forget it has to be a
-		PHP file), add the following code:
+		This bit's easy. At the top of your thank you page (again, don't forget it has to be a PHP file), add the
+        following code:
 	</p>
 
 	{% codemirror php %}
 <?php
-require_once("path/to/global/api/api.php");
-$fields = ft_api_init_form_page();
-ft_api_clear_form_sessions();
+require_once("path/to/global/api/API.class.php");
+$api = new FormTools\API();
+$fields = $api->initFormPage();
+$api->clearFormSessions();
 ?>
 	{% endcodemirror %}
 
@@ -29,19 +30,21 @@ ft_api_clear_form_sessions();
 		Don't forget to update the path to the API file, just like with your form page.
 	</p>
 
-	<h4 size="1">
-	</h4><h4>Explanation of Code</h4>
+	<hr size="1" />
+	<h3>Explanation of Code</h3>
 
 	<p>
-		This code does two main things. One, it returns all form values entered by the user
-		in the $fields variable. You can use that variable to display information in the page,
-		if you so need. Two, it closes sessions. The API stores information supplied by the users
-		in "sessions" (temporary PHP storage) so that the information isn't lost as they go from
-		page to page. To ensure that the next time the user returns to the form they don't see
-		the old information, this page empties the sessions. Note: it's VERY important while
-		you're setting up your form that sessions are cleared. Otherwise, the test values won't
-		overridden and you'll never be able to finish setting up your form!
+		This code does two things. It returns all form values entered by the user in the $fields variable which you can
+        to display information in the page, if you need. It also clears sessions. The API stores information
+        supplied by the users in a temporary PHP/Database storage known as "sessions" so that the information isn't
+        lost as they navigate from page to page. To ensure that the next time the user returns to the form they don't see
+		the old information, this page empties the sessions.
 	</p>
+
+    <p class="alert alert-info">
+        Note: it's VERY important while you're setting up your form that sessions are cleared. Otherwise, the test
+        values won't overridden and you'll never be able to finish setting up your form!
+    </p>
 
 
 {% include close_section.html %}

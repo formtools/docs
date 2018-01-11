@@ -1,41 +1,45 @@
 ---
 layout: default
 navPage: docs
-heading: The Test Submission
+heading: The test submission
 breadcrumbs:
   - Tutorials,/tutorials/
-  - Adding a Single Page Form with the API,/tutorials/api_single_page_form/
-  - The Test Submission
-prev: Configuring your \"Thankyou\" Page,/tutorials/api_single_page_form/step2/
-next: Going Live!,/tutorials/api_single_page_form/step4/
+  - Adding a single-page form with the API,/tutorials/api_v2_single_page_form/
+  - The test submission
+prev: Configuring your "thankyou" page,/tutorials/api_v2_single_page_form/step2/
+next: Going live!,/tutorials/api_v2_single_page_form/step4/
 ---
 
-{% include open_section.html nav='nav_tutorial_aspf.html' selected='step3' nav_width=4 %}
+{% include open_section.html nav='nav_tutorial_aspf_api2.html' selected='step3' nav_width=4 %}
 
 	<p>
-		At this point, you've done 95% of the work. Now you just need to put through a test submission so that
+		At this point, you've done most of the work. Now you just need to put through a test submission so that
 		Form Tools knows what form content to store.
 	</p>
 
-	<p>
-		Log into Form Tools (as the administrator) and on the Forms page, click on "Add Form". Continue to step 3
-		and click on the second "Code" option. There, it will have generated a line of PHP which looks like this (X
-		will be your form number):
-	</p>
+	<ol>
+        <li>Log into Form Tools (as the administrator) and go to the Add Form page</li>
+        <li>Select the "External" form type</li>
+        <li>Select the "Code" option</li>
+        <li>On te step 2 "Form Information" page, enter all the information. This is not a multi-page form, so that
+            value can be set to "no".</li>
+        <li>Continue to the "Text submission" step 3. There, it will have generated a line of PHP which looks like
+            the following (X will be your form number)</li>
+	</ol>
 
 	{% codemirror php %}
-$fields = ft_api_init_form_page(X, "initialize");
+$fields = $api->initFormPage(65, "initialize");
 	{% endcodemirror %}
 
 	<p>
-		Copy that line and overwrite the corresponding line in your form page.
+		Copy that line and overwrite the corresponding line in your form page (the first page, not the thankyou page).
 	</p>
 
 	<p>
-		{% include screenshot.html item='i98' %}
-		After saving, go to your "thankyou" page in your browser to ensure that sessions have
-		been deleted, then go back to your form. Here, fill in <b>every</b> field in your form
-		and click submit. You should see something like the screenshot to the right.
+		{% include screenshot.html item='i98.jpg' %}
+		After saving, go to your "thankyou" page in your browser to ensure that sessions have been cleared, then go
+        back to your form. Here, fill in <b>every</b> field in your form and click submit. You should see something
+        like the screenshot to the right.
 	</p>
 
 	<p>
