@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Configuring the "Thankyou" page
+breadcrumbs:
+  - Tutorials,/tutorials/
+  - Adding a Multi-page Form with the API,/tutorials/api_v2_multi_page_form/
+  - Configuring the "Thankyou" page
+prev: Configuring the first form page,/tutorials/api_v2_multi_page_form/step2/
+next: Confirming everything's working,/tutorials/api_v2_multi_page_form/step4/
+---
+
+{% include open_section.html nav='nav_tutorial_ampf_v2.html' selected='step3' nav_width=4 %}
+
+	<p>
+		This bit's easy. At the top of your thank you page (again, it has to be a PHP file),
+		add the following code:
+	</p>
+
+{% codemirror php %}
+<?php
+require_once("path/to/global/api/API.class.php");
+$api = new FormTools\API();
+$fields = $api->initFormPage();
+$api->clearFormSessions();
+?>
+{% endcodemirror %}
+
+	<p>
+		Don't forget to update the path to the API file, just like with your other pages.
+	</p>
+
+
+{% include close_section.html %}

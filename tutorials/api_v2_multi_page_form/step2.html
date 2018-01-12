@@ -1,0 +1,106 @@
+---
+layout: default
+navPage: docs
+heading: Configuring the other form pages
+breadcrumbs:
+  - Tutorials,/tutorials/
+  - Adding a multi-page form with the API,/tutorials/api_v2_multi_page_form/
+  - Configuring the Other Form Pages
+prev: Configuring the first form page,/tutorials/api_v2_multi_page_form/step1/
+next: Configuring the "Thankyou" page,/tutorials/api_v2_multi_page_form/step3/
+---
+
+{% include open_section.html nav='nav_tutorial_ampf_v2.html' selected='step2' nav_width=4 %}
+
+	<p>
+		This step is very much like the previous. Add the following to the top of your pages. Note
+		that the <code>initFormPage()</code> line doesn't contain any parameters - that's
+		important!
+	</p>
+
+	{% codemirror php %}
+<?php
+require_once("path/to/form_tools/global/api/API.class.php");
+$api = new FormTools\API();
+$fields = $api->initFormPage();
+$params = array(
+    "submit_button" => "submit_button_name_attribute",
+    "next_page" => "next_page.php",
+    "form_data" => $_POST,
+    "no_sessions_url" => "first_page_in_form.php"
+);
+$api->processFormSubmission($params);
+?>
+	{% endcodemirror %}
+
+	<p>
+		Like before, you'll need to tweak the following for each form page:
+	</p>
+
+	<ol>
+		<li>
+			The path to the api.php file has to be updated for your server.
+		</li>
+		<li>
+			Change "submit_button_name_attribute" to the name attribute of your form submit button.
+		</li>
+		<li>
+			Change "next_page.php" to the next page in the form sequence. This should be different
+			for each form page.
+		</li>
+		<li>
+			Again, as before, if your form contains file fields, add one more parameter to the $params array: the last
+			<b>file_data</b> row.
+
+{% codemirror php %}
+$params = array(
+  "submit_button" => "submit_button_name_attribute",
+  "next_page" => "next_page.php",
+  "form_data" => $_POST,
+  "file_data" => $_FILES
+);
+{% endcodemirror %}
+
+		</li>
+		<li>
+			Since generally you don't want people linking directly to the 2nd or 3rd page of your form -
+			you want them to start on page 1 - the "no_sessions_url" parameter to this function lets
+			you protect against this. It checks to see if sessions exist (i.e. were created on the
+			first page of the form). If they weren't it boots the user out to the file specified. This
+			can be an absolute or relative URL.
+		</li>
+	</ol>
+
+	<h4>One Last Thing</h4>
+
+	<p>
+		On the final page of your form - the page BEFORE your "thank you" page - you'll want to make
+		one last change. When the user clicks SUBMIT on that page, that's the point at which you'll
+		want the form submission to be marked as complete, or "finalized". Add one additional
+		parameter to the $params array:
+	</p>
+
+{% codemirror php %}
+"finalize" => true
+{% endcodemirror %}
+
+	<p>
+		So, your code will look something like this:
+	</p>
+
+{% codemirror php %}
+<?php
+require_once("path/to/form_tools/global/api/api.php");
+$fields = ft_api_init_form_page();
+$params = array(
+  "submit_button" => "submit_button_name_attribute",
+  "next_page" => "next_page.php",
+  "form_data" => $_POST,
+  "finalize" => true
+);
+ft_api_process_form($params);
+?>
+{% endcodemirror %}
+
+
+{% include close_section.html %}

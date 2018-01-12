@@ -1,0 +1,36 @@
+---
+layout: default
+navPage: docs
+heading: Going live!
+breadcrumbs:
+  - Tutorials,/tutorials/
+  - Adding a multi-page form with the API,/tutorials/api_v2_multi_page_form/
+  - Going Live!
+prev: The test submission,/tutorials/api_v2_multi_page_form/step5/
+next: Related links,/tutorials/api_v2_multi_page_form/related_links/
+---
+
+{% include open_section.html nav='nav_tutorial_ampf_v2.html' selected='step6' nav_width=4 %}
+
+	<p>
+		Finally, after your form has been added and configured via the Form Tools interface, you
+		just need to make one final change to push it live. This step is discussed on the final
+		step of the Add Form process. On your first form page, again change the
+		<code>initFormPage()</code> function line to this (where X is your form ID):
+	</p>
+
+{% codemirror php %}
+$fields = $api->initFormPage(X);
+{% endcodemirror %}
+
+	<p>
+		(All you did was remove the second parameter). Now, after you've revisited the "thank you"
+		page to ensure that sessions were emptied, all your form submissions should be stored in
+		Form Tools!
+	</p>
+
+	<p>
+		Time to mix that drink.
+	</p>
+
+{% include close_section.html %}

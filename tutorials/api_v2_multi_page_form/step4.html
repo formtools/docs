@@ -1,0 +1,56 @@
+---
+layout: default
+navPage: docs
+heading: Confirming everything's working
+breadcrumbs:
+  - Tutorials,/tutorials/
+  - Adding a multi-page form with the API,/tutorials/api_v2_multi_page_form/
+  - Confirming Everything's Working
+prev: Configuring the "Thankyou" page,/tutorials/api_v2_multi_page_form/step3/
+next: The test submission,/tutorials/api_v2_multi_page_form/step5/
+---
+
+{% include open_section.html nav='nav_tutorial_ampf_v2.html' selected='step4' nav_width=4 %}
+
+	<p>
+		At this stage, you've configured your form to utilize the Form Tools' API. It's set in "test"
+		mode only, so that nothing is actually being sent to Form Tools just yet. But here's a simple
+		way to test everything's working as it should.
+	</p>
+
+	<p>
+		You may have noticed that in the PHP you added to your forms, the <b>ft_api_init_form_page</b>
+		function returns a <b>$fields</b> variable. This variable contains all form fields values
+		that the user has submitted on each page. In other words, as the user progressed through
+		your form, the <b>$fields</b> variable will keep getting updated to store all the info. If
+		you choose, you can extract the form values from this variable to prefill any form field
+		entered in the form. This is handy if you want to give the user the option of returning to
+		a previous page to make changes.
+	</p>
+
+	<p>
+		To test everything's working, try this. On each page of your form, after the PHP you've
+		already inserted (i.e. after this line):
+	</p>
+
+	{% codemirror php %}
+$api->processFormSubmission($params);
+	{% endcodemirror %}
+
+	<p>
+		Add the following line:
+	</p>
+
+	{% codemirror php %}
+print_r($fields);
+	{% endcodemirror %}
+
+	<p>
+		That will output the content of $fields on each page (albeit in a very ugly fashion!). You
+		can use this to confirm that all the values being entered through your form are in fact being
+		stored. Try going back to previous pages and updating the values. You should see the values
+		being updated in $fields.
+	</p>
+
+
+{% include close_section.html %}

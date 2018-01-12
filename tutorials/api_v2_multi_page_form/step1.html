@@ -1,0 +1,103 @@
+---
+layout: default
+navPage: docs
+heading: Configuring the first form page
+breadcrumbs:
+  - Tutorials,/tutorials/
+  - Adding a multi-page form with the API,/tutorials/api_v2_multi_page_form/
+  - Configuring the first form page
+prev: Introduction,/tutorials/api_v2_multi_page_form/
+next: Configuring the other form pages,/tutorials/api_v2_multi_page_form/step2/
+---
+
+{% include open_section.html nav='nav_tutorial_ampf_v2.html' selected='step1' nav_width=4 %}
+
+	<p>
+		From the API's viewpoint, the first page in your form is special. It lets the script know
+		that a new user has just arrived and to start logging their form submission as they progress
+		through the form. Add this to the very top of your page (before the opening html tag and doctype),
+		and make a few minor modifications to it, as discussed below:
+	</p>
+
+{* highlight php %}
+<?php
+require_once("path/to/form_tools/global/api/API.class.php");
+$api = new FormTools\API();
+$fields = $api->initFormPage("", "test");
+$params = array(
+    "submit_button" => "submit_button_name_attribute",
+    "next_page" => "next_page.php",
+    "form_data" => $_POST
+);
+$api->processFormSubmission($params);
+?>
+{* endhighlight %}
+
+	<ol>
+		<li>
+			The path to the api.php file has to be updated for your server
+		</li>
+		<li>
+			Change "submit_button_name_attribute" to the name attribute of your form submit button
+		</li>
+		<li>
+			Change "next_page.php" to the SECOND page in your multi-page form. This is where the user gets
+			directed to after submitting this page.
+		</li>
+		<li>
+			If your form contains file fields, add one more parameter to the $params array: the last
+			<b>file_data</b> row.
+
+			{% codemirror php %}
+$params = array(
+    "submit_button" => "submit_button_name_attribute",
+    "next_page" => "next_page.php",
+    "form_data" => $_POST,
+    "file_data" => $_FILES
+);
+			{% endcodemirror %}
+
+		</li>
+	</ol>
+
+	<p>
+		Next, make sure your form tag has the following action and method attributes:
+	</p>
+
+	{% codemirror php %}
+<form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
+	{% endcodemirror %}
+
+	<p>
+		$_SERVER["PHP_SELF"] is just a PHP value for the location of the current page. This
+		makes the form <b>submit the information to itself</b>. The <b>ft_api_process_form()</b>
+		function will take care of redirecting to the next page. One of the nice things about
+		posting the submission to itself is that if later on, you choose to add server-side
+		validation (<a href="{{site.baseurl}}/tutorials/php_validation/">see
+		this tutorial</a>), it's much easier to handle the errors on the same page.
+	</p>
+
+	<p>
+		Tip: it's generally a better idea to use $_SERVER["PHP_SELF"] instead of the name of
+		the file, since filenames sometimes change. If that happens, you'd need to remember
+		to update the action attribute. But by using the PHP variable, you don't have to
+		worry about it!
+	</p>
+
+	<p>
+		With regard to the form's post attribute, if you want to use method="GET", that's
+		fine - just change the PHP line in the top of the from:
+	</p>
+
+	{% codemirror php %}
+"form_data" => $_POST,
+	{% endcodemirror %}
+
+	to:
+
+	{% codemirror php %}
+"form_data" => $_GET,
+	{% endcodemirror %}
+
+
+{% include close_section.html %}
