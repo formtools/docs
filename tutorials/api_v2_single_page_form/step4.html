@@ -14,17 +14,18 @@ next: Related links,/tutorials/api_v2_single_page_form/related_links/
 
 	<p>
 		Finally, after your form has been added and configured via the Form Tools interface, you just need to make
-		one final change to push it live. On your form page, again change the ft_api_init_form_page function line
+        one final change to push it live. On your form page, again change the <code>initFormPage()</code> function line
 		to this (where X is your form ID):
 	</p>
 
 	{% codemirror php %}
-$fields = ft_api_init_form_page(X);
+$fields = $api->initFormPage(X);
 	{% endcodemirror %}
 
 	<p>
 		(All you did was remove the second parameter). Now, after you've revisited the "thankyou" page to ensure that
-		sessions were emptied, all your form submissions should be stored in Form Tools!
+		sessions were emptied, try putting through some submissions. They should now all be showing up in Form Tools,
+        job well done!
 	</p>
 
 {% include close_section.html %}
