@@ -42,4 +42,9 @@ $api = new FormTools\API();
 ?>
 	{% endcodemirror %}
 
+    <p class="alert alert-warning">
+        <b>Important:</b> you only ever need to instantiate the <code>$api</code> object <b>once</b> on your form page.
+        Don't add multiple <code>$api = new FormTools\API();</code> lines or things may not work as expected!
+    </p>
+
 {% include close_section.html %}

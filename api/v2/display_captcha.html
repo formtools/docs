@@ -14,6 +14,12 @@ next: deleteUnfinalizedSubmissions(),/api/v2/delete_unfinalized_submissions/
 
 {% include open_section.html nav='nav_api_v2.html' selected='display_captcha' nav_width=4 %}
 
+    <p class="alert alert-warning">
+        <b>Please note</b>: this method and its configuration have changed from Form Tools 2.
+    </p>
+
+    <h3></h3>
+
 	<p>
 		The API comes fully integrated with the <b>reCAPTCHA</b> service, now offered through Google.
 		<a href="https://developers.google.com/recaptcha/" target="_blank">Click here</a> to visit their website and
@@ -33,20 +39,19 @@ next: deleteUnfinalizedSubmissions(),/api/v2/delete_unfinalized_submissions/
 	<h3>1. Get a recaptcha account</h3>
 
 	<p>
-		I know it's a pain, but it's very quick. <a href="https://developers.google.com/recaptcha/intro"
-		target="_blank">Visit the reCAPTCHA site here</a> and sign up for an API key pair. Once you've
-		created an account you register the domain(s) where you're using the service. Since the
+		Start by <a href="https://developers.google.com/recaptcha/intro" target="_blank">visit the reCAPTCHA site here</a>
+        and sign up for an API key pair. Once you've created an account you register the domain(s) where you're using the service. Since the
 		API only runs on the same server as your Form Tools installation, you'll only need to set up the one domain.
 	</p>
 
 	<p>
-		Recaptcha will generate two keys for you: a private and a public one. Add
-		those two values to your <b>/global/config.php</b> file, like so:
+		Recaptcha will generate two keys for you: a site key and a secret key. Add those two values to your
+        <code>/global/config.php</code> file, like so:
 	</p>
 
 	{% codemirror php %}
-$g_api_recaptcha_private_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-$g_api_recaptcha_public_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
+$g_api_recaptcha_site_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+$g_api_recaptcha_secret_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
 	{% endcodemirror %}
 
 	<p>
@@ -64,14 +69,17 @@ $g_api_recaptcha_public_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
 
 	{% codemirror php %}
 <?php
+// Note: you only need to include this next line ONCE per form page. Don't create multiple $api objects!
 $api = new FormTools\API();
 $api->displayCaptcha();
 ?>
 	{% endcodemirror %}
 
-	<p>
-		And you're done! Try it out!
-	</p>
+    <p>
+        At this point, if you refresh your web browser you should see the captcha appear in the page. But we're not done
+        yet.
+    </p>
 
+    <h3>Advanced settings</h3>
 
 {% include close_section.html %}

@@ -14,73 +14,10 @@ next: ft_api_delete_unfinalized_submissions,/api/ft_api_delete_unfinalized_submi
 
 {% include open_section.html nav='nav_api_v1.html' selected='ft_api_display_captcha' nav_width=5 %}
 
-
-	<p>
-		The API comes fully integrated with the rather splendid "Recaptcha" service.
-		<a href="http://recaptcha.net/learnmore.html" target="_blank">Click here</a> to visit
-		their website and learn more about the novel approach they've taken to CAPTCHAs.
-		The basic idea is that by solving their CAPTCHAs, you're unwittingly helping digitize
-		old books that have been scanned into a computer.
-	</p>
-
-	<p>
-		Of the many CAPTCHA solutions there are out there, we selected this service over
-		others due to the usefulness of their approach and the clarity of the CAPTCHAs
-		themselves. Too often CAPTCHAs are unclear and hard to decipher by users; recaptchas
-		are far more readable.
-	</p>
-
-	<p>
-		This API function generates a CAPTCHA in your page with a single line of PHP. If the
-		user fails to enter the CAPTCHA correctly they are unable to proceed any further through
-		your form and the submission is never finalized.
-	</p>
-
-	<p>
-		This document explains how to get this function working for you.
-	</p>
-
-	<h4>1. Get a recaptcha account</h4>
-
-	<p>
-		I know it's a pain, but it's very quick. <a href="http://recaptcha.net/whyrecaptcha.html"
-		target="_blank">Visit their site here</a> and sign up for an account. Once you've
-		created an account you register the domain(s) where you're using the service. Since the
-		API only runs on the same server as your Form Tools installation, you'll only need to set up the one domain.
-	</p>
-
-	<p>
-		Recaptcha will generate two keys for you: a private and a public one. Add
-		those two values to your <b>/global/config.php</b> file, like so:
-	</p>
-
-	{% codemirror php %}
-$g_api_recaptcha_private_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-$g_api_recaptcha_public_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
-	{% endcodemirror %}
-
-	<p>
-		(replace the x's and y's with your own keys).
-	</p>
-
-	<h4>2. Add the captcha to your form</h4>
-
-	<p>
-		Next, in your form (which should already be integrated with the API with help from the tutorials
-		on  <a href="{{site.baseurl}}/tutorials/api_single_page_form">adding a single page form </a> and
-		<a href="{{site.baseurl}}/tutorials/api_multi_page_form">adding a multi-page form</a>), add this line where
-		you want.
-	</p>
-
-	{% codemirror php %}
-<?php
-ft_api_display_captcha();
-?>
-	{% endcodemirror %}
-
-	<p>
-		And you're done! Try it out!
-	</p>
-
+    <p class="alert alert-danger">
+        Due to Google deprecating v1 of their reCAPTCHA service the Form Tools 2.x captcha API methods, including
+        this one, are no longer supported. You will need to upgrade to Form Tools 3 for the
+        <a href="{{site.baseurl}}/api/v2/display_captcha/">comparable API method</a>.
+    </p>
 
 {% include close_section.html %}

@@ -10,40 +10,21 @@ next: Before you start / requirements,/tutorials/post_form_captchas/requirements
 
 {% include open_section.html nav='nav_tutorial_post_form_captchas.html' selected='introduction' nav_width=4 %}
 
-	<h4>Overview</h4>
+    <p class="alert alert-warning">
+        This tutorial is for <b>Form Tools 3 only</b>. Google deprecated the old reCAPTCHA v1 method which was used
+        by the API for Form Tools 2.
+    </p>
+
+	<h3>Overview</h3>
 
 	<p>
-		Spam is something that every web developer and website owner has to contend with at one time
-		or other. One of the more common solutions for fighting spam is to include a "CAPTCHA" in
-		your form. CAPTCHA is an acronym for <i>Completely Automated Public Turing test to tell
-		Computers and Humans Apart.</i> It involves displaying an image that cannot be interpreted by
-		automated spam scripts, helping prevent dud form submissions.
+		Spam is something that every web developer and website owner has to contend with at one time or other. One of
+        the more common solutions for fighting spam is to include a "CAPTCHA" in your form. CAPTCHA is an acronym for
+        <i>Completely Automated Public Turing test to tell Computers and Humans Apart.</i> It involves displaying an
+        image that cannot be interpreted by automated spam scripts, helping prevent dud form submissions.
 	</p>
 
-	<p>
-		You can add submissions to Form Tools by three methods: using a Form Builder page, using the API
-		or by directly posting your form to the process.php script. The third type is known as a POST form; this
-		tutorial explains how to add a CAPTCHA to that form type. For more information on the types,
-		<a href="{{site.baseurl}}/userdoc/form_management/form_types/">click here</a>.
-	</p>
-
-	<h4>Meet reCAPTCHA</h4>
-
-	<p>
-		The Form Tools API comes pre-configured with a very powerful CAPTCHA service:
-		reCAPTCHA. reCAPTCHA is a free service that helps to digitize books, newspapers and old
-		time radio shows. Unlike other CAPTCHAs, all that time that's spent by countless people
-		on countless websites filling in those little characters actually goes towards something
-		useful. Plus, unlike other CAPTCHA scripts / services, reCAPTCHAs are attractive and
-		readable - which can help cut down on unnecessary frustration for your site visitors.
-	</p>
-
-	<p>
-		You can learn more about reCAPTCHA on <a href="http://www.recaptcha.net" target="_blank">their
-		website</a>.
-	</p>
-
-	<h4>Warning / Disclaimer</h4>
+	<h3>Warning / Disclaimer</h3>
 
 	<p>
 		The truth is, POSTing form content to Form Tools doesn't allow for much else than
