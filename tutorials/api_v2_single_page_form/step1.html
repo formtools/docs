@@ -51,14 +51,13 @@ $api->processFormSubmission($params);
 	</p>
 
 	{% codemirror php %}
-<form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
+<form method="POST">
 	{% endcodemirror %}
 
 	<p>
-		$_SERVER["PHP_SELF"] is just a PHP value for the location of the current page. This
-		makes the form <b>submit the information to itself</b>. The ft_api_process_form
-		function will take care of redirecting to the next page for you. One of the nice
-		things about posting the submission to itself is that if later on, you choose to add
+		Because no <code>action</code> attribute is included, the form will <b>submit the information to itself</b>.
+        The <code>processFormSubmission()</code> method will take care of redirecting to the next page for you. One of
+        the nice things about posting the submission to itself is that if later on, you choose to add
 		server-side validation (<a href="{{site.baseurl}}/tutorials/php_validation/">see
 		this tutorial</a>), it's very easy to handle and display the errors on the same page.
 	</p>

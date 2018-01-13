@@ -8,22 +8,22 @@ breadcrumbs:
 ---
 
     <p class="alert alert-warning">
-        This tutorial is for version 1.x of the API, which is for Form Tools 2. If you're using Form Tools 3,
-        please check out <a href="../api_v2_refilling_form_fields">this tutorial instead</a>.
+        This tutorial is for version 2.x of the API, which is for Form Tools 3. If you're using Form Tools 2,
+        please check out <a href="../api_refilling_form_fields">this tutorial instead</a>.
     </p>
 
 	<p>
-		Once you get into the wonderful world of multi-page forms (or even single-page forms
-		with server-side validation), you often need to access and display the values the user
-		has entered up to that point. Here's a couple of cases where this is handy:
+		Once you get into the wonderful world of creating multi-page forms (or even single-page forms with server-side
+        validation) you often need to access and display the values the user has entered up to that point. Here's a
+        couple of cases where this is handy:
 	</p>
 
 	<ul>
 		<li>If a user clicks back to a previous page to re-edit a field</li>
-		<li>You want to include a "review" page where the user can see the values they're entered in the form up to
-            that point, to ensure they're submitting the correct information.</li>
+		<li>If you want to include a "review" page where the user can see the values they're entered, to ensure they're
+            submitting the correct information.</li>
 		<li>Your form contains a CAPTCHA that prevents them from continuing until it's entered correctly. If entered
-            improperly, you'll need to re-enter their values to prevent them having to re-fill them.</li>
+            incorrectly, you'll need to re-enter the form fields to prevent them having to type them in again.</li>
 	</ul>
 
 	<p>
@@ -32,28 +32,28 @@ breadcrumbs:
 		tutorial is less about the API than it is about basic PHP.
 	</p>
 
-	<h3>The ft_api_init_form_page function</h3>
+	<h3>The initFormPage() method</h3>
 
 	<p>
-		If you've dutifully followed the instructions in the API and the multi-page tutorial,
-		you've added the ft_api_init_form_page() PHP call to each of your pages. In addition to
-		its other functionality, this <b>returns all form values in a single PHP array</b>.
+		If you've dutifully followed the instructions in the API and the multi-page tutorial, you've added the
+        <code>initFormPage()</code> PHP call to each of your pages. In addition to the other stuff it does, this method
+        also <b>returns all form values in a single PHP array</b>.
 	</p>
 
 {% codemirror php %}
-$fields = ft_api_init_form_page();
+$fields = $api->initFormPage();
 {% endcodemirror %}
 
 	<p>
-		The following explains how to re-fill fields of all different types. A few examples
-		assume that short tags are enabled on your system (<b><!--?= ?--></b>). If they're not,
-		you can use <b><!--?php echo ... ?--></b> instead. The two are synonymous.
+		The following explains how to re-fill fields of all different types. Several of the examples assume that
+        <a href="http://php.net/manual/en/language.basic-syntax.phptags.php" target="_blank">PHP short tags</a> are
+        enabled on your system. If not, you can use the full PHP tags.
 	</p>
 
 	<p>
-		The @ symbol isn't strictly necessary; it's included in case you have error reporting
-		turned up high. If the array keys don't exist, it will throw a minor notice. The @
-		character suppresses those notifications.
+        The <code>@</code> symbol isn't strictly necessary; it's included in case you have error reporting turned up
+        high. If the array keys don't exist, it will throw a minor notice. The <code>@</code> character suppresses
+        those notifications.
 	</p>
 
 	<h3>Form field types</h3>
