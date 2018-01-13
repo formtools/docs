@@ -19,8 +19,8 @@ next: The test submission,/tutorials/api_v2_multi_page_form/step5/
 	</p>
 
 	<p>
-		You may have noticed that in the PHP you added to your forms, the <b>ft_api_init_form_page</b>
-		function returns a <b>$fields</b> variable. This variable contains all form fields values
+		You may have noticed that in the PHP you added to your forms, the <code>$api->initFormPage()</code>
+		method returns a <b>$fields</b> variable. This variable contains all form fields values
 		that the user has submitted on each page. In other words, as the user progressed through
 		your form, the <b>$fields</b> variable will keep getting updated to store all the info. If
 		you choose, you can extract the form values from this variable to prefill any form field
@@ -49,7 +49,7 @@ print_r($fields);
 		That will output the content of $fields on each page (albeit in a very ugly fashion!). You
 		can use this to confirm that all the values being entered through your form are in fact being
 		stored. Try going back to previous pages and updating the values. You should see the values
-		being updated in $fields.
+        being updated in <b>$fields</b>.
 	</p>
 
 

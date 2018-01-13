@@ -19,7 +19,7 @@ next: Configuring the other form pages,/tutorials/api_v2_multi_page_form/step2/
 		and make a few minor modifications to it, as discussed below:
 	</p>
 
-{* highlight php %}
+{% codemirror php %}
 <?php
 require_once("path/to/form_tools/global/api/API.class.php");
 $api = new FormTools\API();
@@ -31,7 +31,7 @@ $params = array(
 );
 $api->processFormSubmission($params);
 ?>
-{* endhighlight %}
+{% endcodemirror %}
 
 	<ol>
 		<li>
@@ -65,28 +65,20 @@ $params = array(
 	</p>
 
 	{% codemirror php %}
-<form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
+<form method="POST">
 	{% endcodemirror %}
 
 	<p>
-		$_SERVER["PHP_SELF"] is just a PHP value for the location of the current page. This
-		makes the form <b>submit the information to itself</b>. The <b>ft_api_process_form()</b>
-		function will take care of redirecting to the next page. One of the nice things about
-		posting the submission to itself is that if later on, you choose to add server-side
-		validation (<a href="{{site.baseurl}}/tutorials/php_validation/">see
-		this tutorial</a>), it's much easier to handle the errors on the same page.
+		Note there's no <code>action</code> attribute - that makes the form <b>submit the information to itself</b>.
+        The <code>processFormSubmission()</code> method will take care of redirecting to the next page. One of the nice
+        things about posting the submission to itself is that if later on, you choose to add server-side validation
+        (<a href="{{site.baseurl}}/tutorials/php_validation/">see this tutorial</a>), it's much easier to handle the
+        errors on the same page.
 	</p>
 
 	<p>
-		Tip: it's generally a better idea to use $_SERVER["PHP_SELF"] instead of the name of
-		the file, since filenames sometimes change. If that happens, you'd need to remember
-		to update the action attribute. But by using the PHP variable, you don't have to
-		worry about it!
-	</p>
-
-	<p>
-		With regard to the form's post attribute, if you want to use method="GET", that's
-		fine - just change the PHP line in the top of the from:
+		With regard to the form's post attribute, if you want to use method="GET", that's fine - just change the PHP
+        line in the top of the from:
 	</p>
 
 	{% codemirror php %}
@@ -98,6 +90,5 @@ $params = array(
 	{% codemirror php %}
 "form_data" => $_GET,
 	{% endcodemirror %}
-
 
 {% include close_section.html %}

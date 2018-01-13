@@ -39,13 +39,13 @@ $api->processFormSubmission($params);
 
 	<ol>
 		<li>
-			The path to the api.php file has to be updated for your server.
+			The path to the API.class.php file has to be updated for your server.
 		</li>
 		<li>
-			Change "submit_button_name_attribute" to the name attribute of your form submit button.
+			Change <code>submit_button_name_attribute</code> to the name attribute of your form submit button.
 		</li>
 		<li>
-			Change "next_page.php" to the next page in the form sequence. This should be different
+			Change <code>next_page.php</code> to the next page in the form sequence. This should be different
 			for each form page.
 		</li>
 		<li>
@@ -54,10 +54,10 @@ $api->processFormSubmission($params);
 
 {% codemirror php %}
 $params = array(
-  "submit_button" => "submit_button_name_attribute",
-  "next_page" => "next_page.php",
-  "form_data" => $_POST,
-  "file_data" => $_FILES
+    "submit_button" => "submit_button_name_attribute",
+    "next_page" => "next_page.php",
+    "form_data" => $_POST,
+    "file_data" => $_FILES
 );
 {% endcodemirror %}
 
@@ -66,18 +66,17 @@ $params = array(
 			Since generally you don't want people linking directly to the 2nd or 3rd page of your form -
 			you want them to start on page 1 - the "no_sessions_url" parameter to this function lets
 			you protect against this. It checks to see if sessions exist (i.e. were created on the
-			first page of the form). If they weren't it boots the user out to the file specified. This
+			first page of the form) and if not, it redirects the user out to the file specified. This
 			can be an absolute or relative URL.
 		</li>
 	</ol>
 
-	<h4>One Last Thing</h4>
+	<h3>One Last Thing</h3>
 
 	<p>
-		On the final page of your form - the page BEFORE your "thank you" page - you'll want to make
-		one last change. When the user clicks SUBMIT on that page, that's the point at which you'll
-		want the form submission to be marked as complete, or "finalized". Add one additional
-		parameter to the $params array:
+		On the page BEFORE your "thank you" page you'll want to make one last change. When the user clicks
+        SUBMIT on that page, that's the point at which you'll want the form submission to be marked as complete, or
+        "finalized". Add one additional parameter to the $params array:
 	</p>
 
 {% codemirror php %}
@@ -90,15 +89,16 @@ $params = array(
 
 {% codemirror php %}
 <?php
-require_once("path/to/form_tools/global/api/api.php");
-$fields = ft_api_init_form_page();
+require_once("path/to/form_tools/global/api/API.class.php");
+$api = new FormTools\API();
+$fields = $api->initForm_Page();
 $params = array(
-  "submit_button" => "submit_button_name_attribute",
-  "next_page" => "next_page.php",
-  "form_data" => $_POST,
-  "finalize" => true
+    "submit_button" => "submit_button_name_attribute",
+    "next_page" => "next_page.php",
+    "form_data" => $_POST,
+    "finalize" => true
 );
-ft_api_process_form($params);
+$api->processFormSubmissions($params);
 ?>
 {% endcodemirror %}
 

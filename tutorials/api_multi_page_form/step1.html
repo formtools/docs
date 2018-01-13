@@ -1,13 +1,13 @@
 ---
 layout: default
 navPage: docs
-heading: Configuring the First Form Page
+heading: Configuring the first form page
 breadcrumbs:
   - Tutorials,/tutorials/
-  - Adding a Multi-page Form with the API,/tutorials/api_multi_page_form/
-  - Configuring the First Form Page
+  - Adding a multi-page form with the API,/tutorials/api_multi_page_form/
+  - Configuring the first form page
 prev: Introduction,/tutorials/api_multi_page_form/
-next: Configuring the Other Form Pages,/tutorials/api_multi_page_form/step2/
+next: Configuring the other form pages,/tutorials/api_multi_page_form/step2/
 ---
 
 {% include open_section.html nav='nav_tutorial_ampf.html' selected='step1' nav_width=4 %}
@@ -19,18 +19,18 @@ next: Configuring the Other Form Pages,/tutorials/api_multi_page_form/step2/
 		and make a few minor modifications to it, as discussed below:
 	</p>
 
-{* highlight php %}
+{% codemirror php %}
 <?php
 require_once("path/to/form_tools/global/api/api.php");
 $fields = ft_api_init_form_page("", "test");
 $params = array(
-  "submit_button" => "submit_button_name_attribute",
-  "next_page" => "next_page.php",
-  "form_data" => $_POST
+    "submit_button" => "submit_button_name_attribute",
+    "next_page" => "next_page.php",
+    "form_data" => $_POST
 );
 ft_api_process_form($params);
 ?>
-{* endhighlight %}
+{% endcodemirror %}
 
 	<ol>
 		<li>
@@ -49,10 +49,10 @@ ft_api_process_form($params);
 
 			{% codemirror php %}
 $params = array(
-  "submit_button" => "submit_button_name_attribute",
-  "next_page" => "next_page.php",
-  "form_data" => $_POST,
-  "file_data" => $_FILES
+    "submit_button" => "submit_button_name_attribute",
+    "next_page" => "next_page.php",
+    "form_data" => $_POST,
+    "file_data" => $_FILES
 );
 			{% endcodemirror %}
 
@@ -64,7 +64,7 @@ $params = array(
 	</p>
 
 	{% codemirror php %}
-<form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
+<form method="POST">
 	{% endcodemirror %}
 
 	<p>
