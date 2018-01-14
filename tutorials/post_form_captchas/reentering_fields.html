@@ -20,11 +20,12 @@ next: The error message,/tutorials/post_form_captchas/error_message/
 
 {% codemirror php %}
 <?php
-require_once("../qa2/global/api/api.php");
-ft_api_start_sessions();
+require_once("path/to/global/api/API.class.php");
+$api = new FormTools\API(array("start_sessions" => true));
 $fields = isset($_SESSION["form_tools_form_data"]) ?
-  ft_strip_tags($_SESSION["form_tools_form_data"]) : array();
+    FormTools\General::stripTags($_SESSION["form_tools_form_data"]) : array();
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>POST Form With CAPTCHA</title>
@@ -33,7 +34,7 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 
 <h1>Example form</h1>
 
-<?php ft_api_display_post_form_captcha_error(); ?>
+<?php $api->displayPostFormCaptchaError(); ?>
 
 <form action="http://www.yoursite.com/formtools/process.php" method="post">
 	<input type="hidden" name="form_tools_form_id" value="1" />
@@ -55,7 +56,7 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 	<?php if ($fields["age"] == "40+") echo "selected"; ?>>40+</option>
 </select><br />
 
-	<?php ft_api_display_captcha(); ?>
+	<?php $api->displayCaptcha(); ?>
 
 	<input type="submit" value="Submit" />
 </form>
@@ -64,9 +65,9 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 </html>
 {% endcodemirror %}
 
-
 	<p>
-		This now extracts the values out of $fields and re-enters the form field values. This methodology can be
+		This form extracts the values out of $fields and re-enters the form field values. This approach can be
 		applied to any type of form field.
 	</p>
+
 {% include close_section.html %}

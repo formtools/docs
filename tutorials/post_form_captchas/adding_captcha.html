@@ -22,25 +22,25 @@ next: Re-entering form fields,/tutorials/post_form_captchas/reentering_fields/
 
 {% codemirror php %}
 <?php
-require_once("/path/to/formtools/global/api/api.php");
-ft_api_start_sessions();
+require_once("/path/to/formtools/global/api/API.class.php");
+$api = new FormTools\API(array("start_sessions" => true));
 $fields = isset($_SESSION["form_tools_form_data"]) ?
-  ft_strip_tags($_SESSION["form_tools_form_data"]) : array();
+    FormTools\General::stripTags($_SESSION["form_tools_form_data"]) : array();
 ?>
 {% endcodemirror %}
 
 	<p>
-		You need to include a valid path from your form page to the api.php file. This
-		can be an absolute or relative path (but not a URL!).
+        You need to include a valid path from your form page to the <code>API.class.php</code> file. This can be an
+        absolute or relative path (but not a URL!).
 	</p>
 
 	<p>
-		<b>2.</b> At an appropriate spot in your form (usually the bottom, but before the form
-		submit button, add this line of PHP to add the CAPTCHA:
+		<b>2.</b> At an appropriate spot in your form (usually the bottom, but before the form submit button, add this
+        line of PHP to add the CAPTCHA:
 	</p>
 
 {% codemirror php %}
-<?php ft_api_display_captcha(); ?>
+<?php $api->displayCaptcha(); ?>
 {% endcodemirror %}
 
 	<p>
@@ -60,10 +60,8 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 
 
 {% codemirror php %}
-<?php ft_api_display_post_form_captcha_error(); ?>
+<?php $api->displayPostFormCaptchaError(); ?>
 {% endcodemirror %}
-
-	<hr size="1">
 
 	<p>
 		So far so good! Here's a sample form that should give you an idea of what your form should
@@ -72,11 +70,12 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 
 {% codemirror php %}
 <?php
-require_once("../qa2/global/api/api.php");
-ft_api_start_sessions();
+require_once("/path/to/formtools/global/api/API.class.php");
+$api = new FormTools\API(array("start_sessions" => true));
 $fields = isset($_SESSION["form_tools_form_data"]) ?
-  ft_strip_tags($_SESSION["form_tools_form_data"]) : array();
+    FormTools\General::stripTags($_SESSION["form_tools_form_data"]) : array();
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>POST Form With CAPTCHA</title>
@@ -85,7 +84,7 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 
 <h1>Example form</h1>
 
-<?php ft_api_display_post_form_captcha_error(); ?>
+<?php $api->displayPostFormCaptchaError(); ?>
 
 <form action="http://www.yoursite.com/formtools/process.php" method="post">
 	<input type="hidden" name="form_tools_form_id" value="1" />
@@ -100,7 +99,7 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 	<option value="40+">40+</option>
 </select><br />
 
-	<?php ft_api_display_captcha(); ?>
+	<?php $api->displayCaptcha(); ?>
 
 	<input type="submit" value="Submit" />
 </form>
@@ -109,32 +108,12 @@ $fields = isset($_SESSION["form_tools_form_data"]) ?
 </html>
 {% endcodemirror %}
 
-<hr size="1">
-
-	<h4>process.php fix for Form Tools 2.0.x versions</h4>
-
 	<p>
-		It appears that the 2.0.x version may have a problem on some systems which needs a manual fix.
-		Edit your [form tools root]/process.php file. There, at the top of the file, add the line in
-		bold at the appropriate spot.
+		Now try loading up the form in your browser and putting through a couple of submissions to confirm that the
+        CAPTCHA is working as expected. You may notice that when you fail to check the field it incorrectly, you're
+        returned to the form page but (a) your field values are all lost and (b) the error message is displayed but
+        doesn't look the way you want, or contains some text you don't like. Both these issues are addressed in the
+        next two steps.
 	</p>
-
-	<p>
-		// if the API is supplied, include it as well<br>
-		&nbsp;<b>$folder = dirname(__FILE__);</b><br>
-		require_once("$folder/global/api/api.php");
-	</p>
-
-	<hr size="1">
-
-	<p>
-		Now try loading up the form in your browser and putting through a couple of submissions
-		to confirm that the CAPTCHA is working like it should. You may notice that when you enter
-		it incorrectly, you're returned to the form page but (a) your field values are all lost and
-		(b) the error message displayed doesn't look the way you want, or contains some text you don't
-		like. Both these issues are addressed in the next two steps.
-	</p>
-
-
 
 {% include close_section.html %}

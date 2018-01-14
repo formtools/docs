@@ -13,12 +13,21 @@ next: Feature Suggestions,/api/v2/feature_suggestions/
 {% include open_section.html nav='nav_api_v2.html' selected='sessions' nav_width=4 %}
 
 	<p>
-		When you use the API for your forms, it uses sessions to store information about the form
-		as the user progresses from page to page. It either uses database or PHP sessions, depending on what value you
-        have set in your <b>$g_api_session_type</b> variable (<a href="{{site.baseurl}}/userdoc/getting_started/config_file/">see
-		here</a> for more information). If you have problems with PHP sessions, it's recommended that you set that
+		When you use the API for your forms, it uses sessions to store information about the form as the user
+        progresses from page to page. The API v1.x had a specific method to start sessions; the API v2.x does not. Instead, sessions are automatically
+        started as soon as you instantiate the API class, like so:
+    </p>
+
+    {% codemirror php %}
+$api = new FormTools\API();
+    {% endcodemirror %}
+
+    <p>
+        It either uses database or PHP sessions, depending on what value you have set in your
+        <b>$g_api_session_type</b> variable (<a href="{{site.baseurl}}/userdoc/getting_started/config_file/">see
+        here</a> for more information). If you have problems with PHP sessions, it's recommended that you set that
         value to "database".
-	</p>
+    </p>
 
 	<p>
 		To control the timeout for the database sessions, set the <b>$g_api_session_timeout</b> value to something

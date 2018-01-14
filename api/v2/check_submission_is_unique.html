@@ -9,7 +9,7 @@ breadcrumbs:
   - Other Functions,/api/v2/other_functions/
   - checkSubmissionIsUnique()
 prev: deleteUnfinalizedSubmissions(),/api/v2/delete_unfinalized_submissions/
-next: startSessions(),/api/v2/start_sessions/
+next: displayPostFormCaptchaError(),/api/v2/display_post_form_captcha_error/
 ---
 
 {% include open_section.html nav='nav_api_v2.html' selected='check_submission_is_unique' nav_width=4 %}
@@ -69,10 +69,10 @@ if (!$api->checkSubmissionIsUnique(10, $criteria, $fields["form_tools_submission
 ?>
 	{% endcodemirror %}
 
-	<p>
-		N.B. we chose to use database column names rather than form field names to allow you
-		to also use the system fields (is finalized, IP address) to check to uniqueness. You can
-		find the database column names on the Edit Form » Database tab.
+	<p class="alert alert-info">
+		We chose to use database column names rather than form field names to allow you to also use the system fields
+        (is finalized, IP address) to check for uniqueness. You can find the database column names on the Edit Form »
+        Fields tab.
 	</p>
 
 {% include close_section.html %}

@@ -18,35 +18,46 @@ next: deleteUnfinalizedSubmissions(),/api/v2/delete_unfinalized_submissions/
         <b>Please note</b>: this method and its configuration have changed from Form Tools 2.
     </p>
 
-    <h3></h3>
+    <h3>Overview</h3>
+
+    <p class="alert alert-info">
+        The <code>displayCaptcha()</code> method is for adding a CAPTCHA to your API forms, to help combat spam.
+    </p>
 
 	<p>
-		The API comes fully integrated with the <b>reCAPTCHA</b> service, now offered through Google.
+		The API comes fully integrated with the <b>reCAPTCHA</b> service, offered by Google.
 		<a href="https://developers.google.com/recaptcha/" target="_blank">Click here</a> to visit their website and
         learn more.
 	</p>
 
 	<p>
-		This API function generates a CAPTCHA in your page with a single line of PHP. If the user fails to enter the
-        CAPTCHA correctly they are unable to proceed any further through your form and the submission is never
-        finalized.
+		This API method generates a CAPTCHA in your page with a single line of PHP. Unlike earlier CAPTCHAs, the
+        new version
 	</p>
 
 	<p>
 		This document explains how to get this function working for you.
 	</p>
 
-	<h3>1. Get a recaptcha account</h3>
+	<h3>1. Set up reCAPTCHA for your website</h3>
+
+	<ul>
+        <li>
+            <a href="https://www.google.com/recaptcha/admin" target="_blank">Visit the reCAPTCHA site here</a>
+            and sign up for an API key pair.</li>
+        <li>Once you've created an account you register the domain(s) where you're using the service. Since the API only runs on
+            the same server as your Form Tools installation, you'll only need to set up the one domain. You will need
+            to choose the <b>reCAPTCHA V2</b> option.
+        </li>
+        <li>
+            Tip: if you're developing locally, you can enter both <b>localhost</b> and <b>127.0.0.1</b> in the Domains
+            section.
+        </li>
+    </ul>
 
 	<p>
-		Start by <a href="https://developers.google.com/recaptcha/intro" target="_blank">visit the reCAPTCHA site here</a>
-        and sign up for an API key pair. Once you've created an account you register the domain(s) where you're using the service. Since the
-		API only runs on the same server as your Form Tools installation, you'll only need to set up the one domain.
-	</p>
-
-	<p>
-		Recaptcha will generate two keys for you: a site key and a secret key. Add those two values to your
-        <code>/global/config.php</code> file, like so:
+        Once it's set up, reCAPTCHA will generate two keys for you: a <b>site key</b> and a <b>secret key</b>. Add those
+        two values to your Form Tools <code>global/config.php</code> file, like so:
 	</p>
 
 	{% codemirror php %}
@@ -58,28 +69,60 @@ $g_api_recaptcha_secret_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
 		(replace the x's and y's with your own keys).
 	</p>
 
-	<h3>2. Add the captcha to your form</h3>
+	<h3>2. Add the reCAPTCHA to your form</h3>
 
 	<p>
-		Next, in your form (which should already be integrated with the API with help from the tutorials
-		on  <a href="{{site.baseurl}}/tutorials/api_single_page_form">adding a single page form </a> and
-		<a href="{{site.baseurl}}/tutorials/api_multi_page_form">adding a multi-page form</a>), add this line where
-		you want.
+		In your form (which should already be integrated with the API with help from the tutorials
+		on <a href="{{site.baseurl}}/tutorials/api_v2_single_page_form">adding a single page form </a> and
+		<a href="{{site.baseurl}}/tutorials/api_v2_multi_page_form">adding a multi-page form</a>), add this line
+        wherever you want.
 	</p>
 
 	{% codemirror php %}
 <?php
-// Note: you only need to include this next line ONCE per form page. Don't create multiple $api objects!
+// Reminder: you should only include this next line ONCE per form page
 $api = new FormTools\API();
 $api->displayCaptcha();
 ?>
 	{% endcodemirror %}
 
     <p>
-        At this point, if you refresh your web browser you should see the captcha appear in the page. But we're not done
-        yet.
+        At this point, if you refresh your web browser you should see the captcha appear in the page. So far so good!
+        Next, we want to explicitly tell the API that this page contains a CAPTCHA so no-one can circumvent the test
+        by modifying the POST request. Add a new <b>"has_captcha" => true</b> key-value pair to your
+        <code>processFormSubmission()</code> method call, like so:
     </p>
 
-    <h3>Advanced settings</h3>
+    {% codemirror php %}
+$params = array(
+    // ...
+    "has_captcha" => true
+);
+$api->processFormSubmission($params);
+    {% endcodemirror %}
+
+    <p>
+        Great! Now your CAPTCHA is working on your form. Try submitting your form without checking the "I'm not a robot"
+        field. You should get redirected back to the same page and not continue.
+    </p>
+
+    <h3>Validation errors</h3>
+
+    <p>
+        Unlike earlier CAPTCHAs where user mistakes were common, the new ones are just a checkbox - not much room for
+        error! Nevertheless, if you'd like to catch for errors here's how to do it.
+    </p>
+    <p>
+        The default behaviour for the <code>displayCaptcha()</code> method is to display a simple "There was a reCAPTCHA error."
+        message in English in a div with a <code>.form_tools_recaptcha_error</code> class in the page above the CAPTCHA.
+        If you'd like to fine-fune this, just pass in a single <code>false</code> property to the <code>displayCaptcha()</code>
+        method and that will suppress the error.
+    </p>
+
+    <p>
+        To add your own error message in the page (wherever you want it) just check for the <code>$GLOBALS["g_api_recaptcha_error"]</code>
+        property. That will be set after an error and contain the error response from the Google recaptcha validation
+        method.
+    </p>
 
 {% include close_section.html %}

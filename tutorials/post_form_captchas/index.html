@@ -12,42 +12,21 @@ next: Before you start / requirements,/tutorials/post_form_captchas/requirements
 
     <p class="alert alert-warning">
         This tutorial is for <b>Form Tools 3 only</b>. Google deprecated the old reCAPTCHA v1 method which was used
-        by the API for Form Tools 2.
+        by Form Tools 2.
     </p>
 
 	<h3>Overview</h3>
 
 	<p>
-		Spam is something that every web developer and website owner has to contend with at one time or other. One of
-        the more common solutions for fighting spam is to include a "CAPTCHA" in your form. CAPTCHA is an acronym for
-        <i>Completely Automated Public Turing test to tell Computers and Humans Apart.</i> It involves displaying an
-        image that cannot be interpreted by automated spam scripts, helping prevent dud form submissions.
-	</p>
-
-	<h3>Warning / Disclaimer</h3>
-
-	<p>
-		The truth is, POSTing form content to Form Tools doesn't allow for much else than
-		submitting the form content. The data is sent to process.php where it converts the data into
-		database queries and redirects the user to the "thankyou" page. Things like
-		adding server-side validation or CAPTCHAs is something very much outside of the original
-		scope, and as such, the following tutorial is really something of a "hack". The whole idea of
-		POST forms was for <i>simple</i> integration of <i>simple</i> forms - something that anyone
-		could do. For power-users, there's the API. This tutorial and solution was devised because
-		adding CAPTCHAs to POST forms is very much needed to combat spam. But ideally, you might want
-		to consider learning how to use the API to submit your forms.
-		<a href="{{site.baseurl}}/tutorials/api_single_page_form/">Check out this tutorial</a>
-		if you're interested...!
+		If you find your form has become subject to spammers, adding a CAPTCHA is a standard way to cut down
+        on spam. CAPTCHA is an acronym for <i>Completely Automated Public Turing test to tell Computers and Humans
+        Apart.</i> There are many types of CAPTCHA out there. The Form Tools API provides an easy integration
+        with reCAPTCHA V2 - a Google service - that shows an "I'm not a robot" checkbox in your form that users
+        must click in order to submit the form.
 	</p>
 
 	<p>
-		Warning / disclaimer over!
-	</p>
-
-	<h4>Limitations</h4>
-
-	<p>
-		This only works for forms that are found on the same website as your Form Tools installation.
+		Please note, this only works for forms that are found on the same website as your Form Tools installation.
 	</p>
 
 

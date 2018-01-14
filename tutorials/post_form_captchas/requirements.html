@@ -13,35 +13,48 @@ next: Adding a CAPTCHA to your form,/tutorials/post_form_captchas/adding_captcha
 {% include open_section.html nav='nav_tutorial_post_form_captchas.html' selected='requirements' nav_width=4 %}
 
 	<p>
-		In order to add a reCAPTCHA to your form, you first need to ensure the following steps are
-		complete.
+		In order to add a reCAPTCHA to your form, you first need to do the following:
 	</p>
 
-	<ol>
-		<li>You need to have the API installed. To get the latest version of the API either do a
-			standard upgrade by clicking on the "Check for Updates" button on the Settings
-			» main tab, or visit the <a href="{{site.baseurl}}/api/">API main page</a>.</li>
-		<li>You need to create a reCAPTCHA account on their website. I know it's a pain, but
-			it's very quick. <a href="http://recaptcha.net/whyrecaptcha.html" target="_blank">Visit
-				their site here</a> and sign up for an account. Once you've created an account you
-			register the domain(s) where you're using the service. Since the API only runs on the
-			same server as your Form Tools installation, you'll only need to set up the one
-			domain.<br>
-			<br>
-			Recaptcha will generate two keys for you: a private and a public one. Add
-			those two values to your <b>/global/config.php</b> file, like so:
+    <ul>
+		<li>
+            If you haven't already done so, install the Form Tools API. To get the latest version of the API either do a
+			standard upgrade by clicking on the "Check for Updates" link in Form Tools, or visit the
+            <a href="{{site.baseurl}}/api/">API main page</a>.
+        </li>
+        <li>
+            <a href="https://developers.google.com/recaptcha/intro" target="_blank">Visit the reCAPTCHA site here</a>
+            and sign up for an API key pair.
+        </li>
+        <li>
+            Once you've created an account you register the domain(s) where you're using the service. Since the API only runs on
+            the same server as your Form Tools installation, you'll only need to set up the one domain. You will need
+            to choose the <b>reCAPTCHA V2</b> option.
+        </li>
+        <li>
+            Tip: if you're developing locally, you can enter both <b>localhost</b> and <b>127.0.0.1</b> in the Domains
+            section.
+        </li>
+    </ul>
 
-{% codemirror php %}
-$g_api_recaptcha_private_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-$g_api_recaptcha_public_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
-{% endcodemirror %}
+    <p>
+        Once it's set up, reCAPTCHA will generate two keys for you: a <b>site key</b> and a <b>secret key</b>. Add those
+        two values to your Form Tools <code>global/config.php</code> file, like so:
+    </p>
 
-			(replace the x's and y's with your own keys).
-		</li>
-		<li>Your form page need to be a .php file (or whatever file extension is used for PHP on your
-			server)</li>
-	</ol>
+    {% codemirror php %}
+$g_api_recaptcha_site_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+$g_api_recaptcha_secret_key = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
+    {% endcodemirror %}
 
+    <p>
+        (replace the x's and y's with your own keys).
+    </p>
+
+    <p>
+        Your form page need to be a .php file (or whatever file extension is used for PHP on your
+        server).
+    </p>
 
 
 {% include close_section.html %}

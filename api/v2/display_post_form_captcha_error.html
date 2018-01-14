@@ -8,14 +8,17 @@ breadcrumbs:
   - Class Methods,/api/v2/class_methods/
   - Other Functions,/api/v2/other_functions/
   - displayPostFormCaptchaError()
-prev: startSessions(),/api/v2/start_sessions/
+prev: checkSubmissionIsUnique(),/api/v2/check_submission_is_unique/
 next: API Error Codes,/api/v2/error_codes/
 ---
 
 {% include open_section.html nav='nav_api_v2.html' selected='display_post_form_captcha_error' nav_width=4 %}
 
     <p class="alert alert-warning">
-        <b>Please note</b>: this method and its configuration have changed from Form Tools 2.
+        <b>Please note</b>: this method and its configuration have changed from Form Tools 2. This page explains the
+        ins and outs of the <code>displayPostFormCaptchaError()</code> method, but be sure to check out the
+        tutorial on <a href="{{site.baseurl}}/tutorials/post_form_captchas/adding_captcha/">Adding a CAPTCHA to your
+        form</a> that explains a few other things you'll need to know to get it working on your form.
     </p>
 
 	<p>
@@ -41,18 +44,13 @@ echo $api->displayPostFormCaptchaError();
 
 {% codemirror php %}
 <?php
-$error = '<div class="error">Error! Please re-enter!!</div>';
-ft_api_display_post_form_captcha_error($error);
+$error = '<div class="error">Error! Please re-enter!</div>';
+$api->displayPostFormCaptchaError($error);
 ?>
 {% endcodemirror %}
 
 	<p>
 		That will then embed that HTML and error message into the page.
-	</p>
-
-	<p>
-		For more information on reCAPTCHA, see the documentation on the
-		<a href="{{site.baseurl}}/api/v2/display_captcha">displayCaptcha()</a> function.
 	</p>
 
 {% include close_section.html %}
