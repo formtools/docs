@@ -56,12 +56,4 @@ $page = $api->loadField("page", "session_page", 1);
 		save you a lot of fuss and bother!
 	</p>
 
-	<h3>A technical note</h3>
-
-	<p>
-		The function information is actually stored here: $_SESSION["ft"][<b>session key</b>] - e.g. in the previous
-		example, it would be stored: $_SESSION["ft"]["session_page"]. So in case you need to empty it, you'll need to
-		directly modify that value in sessions.
-	</p>
-
 {% include close_section.html %}

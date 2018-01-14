@@ -46,7 +46,7 @@ next: clearFormSession(),/api/v2/clear_form_sessions/
 	<p>
 		Every form submissions in the Form Tools database has a finalized flag: "yes" or "no". By default, submissions
         sent via <a href="{{site.baseurl}}/userdoc/form_management/page=add_form_step3">process.php</a> are set to
-        finalized. Submissions sent via <b>ft_api_process_form()</b> are NOT finalized. Only finalized submissions
+        finalized. Submissions sent via <code>processFormSubmission()</code> are NOT finalized. Only finalized submissions
         appear in Form Tools.
 	</p>
 
@@ -140,7 +140,7 @@ next: clearFormSession(),/api/v2/clear_form_sessions/
 	<div class="row">
 		<div class="col-lg-5">namespace</div>
 		<div class="col-lg-7">
-			If you specified a custom namespace for ft_api_init_form_page, for where the form
+			If you specified a custom namespace for <code>initFormPage()</code>, for where the form
 			values will be stored temporarily in sessions, you need to pass that same value to
 			this function - otherwise it won't be able to retrieve the form and submission ID.
 		</div>
