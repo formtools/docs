@@ -13,30 +13,38 @@ next: Deleting Modules,/userdoc/modules/deleting/
 {% include open_section.html nav='nav_userdoc_modules.html' selected='installing' %}
 
 	<p>
-		Installing a new module is very simple.
+		Installing a new module is quite simple, but at this stage (Jan 2018) the process is still manual. We
+        will be working on making this a whole lot simpler this year!
 	</p>
+
 	<ol>
-		<li>First, <a href="https://modules.formtools.org">browse the available modules</a> list on the
-			Form Tools site to locate the module you want.</li>
-		<li>Download the module to your desktop.
-			<ul>
-				<li>For zipfiles, unzip the file on your computer using whatever compressor/decompressor you have
-					installed. All modules are located in their own unique folder. Send the single folder to your
-					webserver via FTP; it should be placed in your <b>[form tools root]/modules</b> folder.</li>
-				<li>For tar.gz files, FTP the tar file to your <b>[form tools root]/modules</b>
-					folder on your webserver. SSH or telnet into your server and go to the modules folder.
-					There, run this command (replace name_of_tar_file_here with the name of your tar
-					file):
-
-					{% codemirror html %}
-tar -xzvf name_of_tar_file_here.tar.gz
-					{% endcodemirror %}
-
-				</li>
-			</ul>
-		</li>
-		<li>Next, log into Form Tools and go to the Modules page. Here, click the "REFRESH MODULE LIST" button. You
-      should now see your new module: click the INSTALL link to install it.
+		<li>First, <a href="https://modules.formtools.org">find the module</a> list you'd like to install</li>
+		<li>Click the <code>Download</code> button. That opens up a modal listing all available versions of the
+            module. Download the most recent version that is compatible with your Form Tools Core. To find out your
+            Core version, just log into Form Tools: you will see a number like <b>3.0.0</b> on every page
+            (in the default theme this is at the top right).</li>
+        <li>
+            Click on the appropriate download button and you will take you to <b>github.com</b> which houses the
+            source code. Download the file in any available format. The file will be named something like
+            <code>module-submission_pre_parser-1.1.4.zip</code>.
+        </li>
+        <li>
+            Unzip/untar the file on your computer. Note: this will require some sort of unzipping script - most operating
+            systems have them built in.
+        </li>
+        <li>
+            <div class="alert alert-warning">
+                <b>Important step!</b> the unzipped folder will be named something like this:
+                <code>module-submission_pre_parser-1.1.4</code>. Rename that to <code>submission_pre_parser</code> -
+                i.e. remove the <b>module-</b> prefix and the <b>-X.Y.Z</b> suffix.
+            </div>
+        </li>
+        <li>
+            Upload this folder to your <code>[form tools root]/moduiles/</code> folder.
+        </li>
+		<li>
+            Lastly, log into Form Tools and go to the Modules page. Here, click the "REFRESH MODULE LIST" button. You
+            should now see your new module: click the INSTALL link to get it installed.
 		</li>
 	</ol>
 
