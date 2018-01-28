@@ -1,0 +1,30 @@
+---
+layout: default
+navPage: docs
+heading: Google Maps Field
+breadcrumbs:
+  - Modules,/modules
+  - Google Maps Field,/modules/field_type_google_maps
+  - Upgrading from Form Tools 2
+prev: Configuration options,/modules/field_type_google_maps/options/
+---
+
+{% include open_section.html nav='nav_google_maps.html' selected='upgrading' %}
+
+    <h3>Upgrading from Form Tools 2</h3>
+
+    <p>
+        Versions 2.x of this module support Form Tools 3. Along with that update, this module now uses the latest
+        version of Google Maps which requires supplying a Google Maps key from Google. To do this,
+        <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">go to this
+        page</a>. That will lead you through the steps to acquire an API key.
+    </p>
+    <p>
+        When you have set it up with Google, log in as the Form Tools administrator and go to Modules &raquo; Google Maps Field.
+        There, enter your API key and save.
+    </p>
+    <p>
+        Done! Now your Google Maps fields will work as before.
+    </p>
+
+{% include close_section.html %}
