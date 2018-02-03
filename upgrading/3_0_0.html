@@ -1,0 +1,97 @@
+---
+layout: default
+navPage: docs
+heading: Upgrading to 3.0.0
+breadcrumbs:
+- Upgrading,/upgrading/
+- Upgrading to 3.0.0
+prev: Upgrading to 2.1.0,/upgrading/2_1_0/
+next: Problems upgrading?,/upgrading/problems/
+---
+
+{% include open_section.html nav='nav_upgrading.html' selected='3_0_0' %}
+
+<div class="alert alert-warning">
+    <p>
+        If you're upgrading your Form Tools installation to 3.0.0 to any earlier version, you'll need to follow the
+        instructions on this page.
+    </p>
+</div>
+
+<p>
+    Form Tools 3 was a complete rewrite of the entire codebase, taking almost a year. The broad goal was to simply
+    modernize the script, but specifically to allow it to run on PHP 7, use PDO, update all lib dependencies up to
+    date, introduce tests and pave the way for upcoming changes and features.
+</p>
+
+<h3>Upgrading Steps</h3>
+
+<ul>
+    <li>
+        Make sure you've updated your Form Tools installation to Form Tools 2.2.5, 2.2.6 or 2.2.7, and gotten all modules
+        update to date.
+    </li>
+    <li>
+        Go to the System Check module and run the Form Tools 3 compatibility test to confirm your system will run
+        Form Tools 3.
+    </li>
+    <li>Review the following changes so you know what to expect and <b>see if you'll be impacted</b>.</li>
+    <li>
+        Upgrade! <a href="{{site.baseurl}}/upgrading/">Follow the instructions here</a>.
+    </li>
+</ul>
+
+<hr size="1" />
+
+<h3>Form Tools 3 Changes</h3>
+
+<ul>
+    <li>Form Tools 3 now requires PHP 5.3 and later, including PHP 7 (Form Tools 2 supported PHP 4.3 - 5).</li>
+    <li>
+        The "Core Field Types" module has been incorporated into the Core code. The module no longer exists as a
+        standalone module. After you upgrade log in and go to the Modules page. Then you will need to delete the
+        <code>[form tools root]/modules/core_field_types/</code> folder.
+    <li>
+        <b>global/config.php changes</b>
+        <ul>
+            <li>The <code>$g_unicode</code> config setting has been removed.</li>
+            <li><code>$dbSSLEnabled</code> was also dropped.</li>
+            <li>The <code>$g_delete_module_folder_on_uninstallation</code> setting has been dropped. Now the uninstall
+                step just uninstalls the script and doesn't try to remove the files on your server. I'll be adding a
+                separate UI action to allow admins to remove the modules at a later date. This setting gave too much
+                potential for disaster.
+            </li>
+        </ul>
+    </li>
+    <li>The fefault max file upload size setting changed from 200KB to 500KB.</li>
+</ul>
+
+
+<h3>Significant module changes</h3>
+
+<ul>
+    <li>
+        <b>TinyMCE module.</b><br />
+        This has been updated to a much recent version of the script (4.7.1) The new tinyMCE interface has a different
+        look & feel and certain customizations that were offered with the older version of the module no longer exist.
+        You won't need to do anything to update your fields, but note they will look different.
+    </li>
+    <li>
+        <b>Submission Pre-parser, Hooks Manager</b><br />
+        The whole codebase was moved to object oriented code, so all the code hooks (link) have changed. These two
+        modules automatically update the hook references so you don't have to worry about it. However, a very small
+        number of code hooks (3 out of ~190) from FT2 no longer exist in the new version.
+    </li>
+    <li>
+        <b>Google Map field module.</b><br />
+        You are now required to get an API key from Google to use this module. Read the
+        <a href="{{site.baseurl}}/modules/field_type_google_maps/">module documentation</a> for more detailed information.
+    </li>
+    <li>
+        <b>Form Builder module.</b><br />
+        The "Classic Grey" Template Set based on the Form Tools theme has been removed.
+    </li>
+</ul>
+
+
+{% include close_section.html %}

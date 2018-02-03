@@ -3,107 +3,103 @@ layout: default
 navPage: docs
 heading: Upgrading to 2.1.0 or later
 breadcrumbs:
-  - Upgrading,/upgrading/
-  - Upgrading to 2.1.0 or later
-prev: Upgrading to 2.0.3 or later,/upgrading/2_0_3/
-next: Problems upgrading?,/upgrading/problems/
+- Upgrading,/upgrading/
+- Upgrading to 2.1.0
+prev: Upgrading to 2.0.3,/upgrading/2_0_3/
+next: Upgrading to 3.0.0,/upgrading/3_0_0/
 ---
 
 {% include open_section.html nav='nav_upgrading.html' selected='2_1_0' %}
 
-	<div class="alert alert-warning">
-		<p>
-			<strong>If you upgrade you Form Tools installation from an older version than 2.1.0 to any later
-				version, you need to follow the instructions on this page.</strong>
-		</p>
-	</div>
+<div class="alert alert-warning">
+    If you're upgrading your Form Tools installation to 2.1.0 to any earlier version, you need to follow the
+    instructions on this page.
+</div>
 
-	<div class="alert alert-danger">
-		<p>
-			<strong>IMPORTANT!</strong>
-			A number of things have changed Form Tools 2.1.0. So before upgrading PLEASE read the following.
-			Things will change after you upgrade, so don't get caught off-guard.
-		</p>
-	</div>
+<div class="alert alert-danger">
+    <strong>IMPORTANT!</strong>
+    A number of things have changed Form Tools 2.1.0. So before upgrading PLEASE read the following.
+    Things will change after you upgrade, so don't get caught off-guard.
+</div>
 
 
-	<h3>Back-up your database and files</h3>
+<h3>Back-up your database and files</h3>
 
-	<p>
-		I know, I know, everyone always says this and it's easy advice to ignore. But <b>upgrading to 2.1.0 is higher
-		risk than upgrading to other versions</b> and actually causes some of your changes to be lost (see below).
-	</p>
+<p>
+    I know, I know, everyone always says this and it's easy advice to ignore. But <b>upgrading to 2.1.0 is higher
+    risk than upgrading to other versions</b> and actually causes some of your changes to be lost (see below).
+</p>
 
-	<p>
-		The upgrade script makes a LOT of changes to your database and in case something goes wrong or you decide
-		you don't like something about the new version, you have the option to back-out and return to your old version.
-		<b>PLEASE DO THIS!</b>
-	</p>
+<p>
+    The upgrade script makes a LOT of changes to your database and in case something goes wrong or you decide
+    you don't like something about the new version, you have the option to back-out and return to your old version.
+    <b>PLEASE DO THIS!</b>
+</p>
 
 
-	<h3>Things you should know before choosing to upgrade</h3>
+<h3>Things you should know before choosing to upgrade</h3>
 
-	<ol>
-		<li><b>Required Field Type modules</b>. You <i>must</i> install the
-			<a href="https://docs.formtools.org/modules/field_type_file/" target="_blank">File
-				Upload</a> and the <a href="https://docs.formtools.org/modules/field_type_tinymce/" target="_blank">TinyMCE field</a>
-			at the time that you upgrade. This is to ensure backward compatibility. If you don't want
-			either of them, you can safely uninstall them later. If you attempt to upgrade without either of them
-			installed, the script will whine at you when you try to log in, and tell you you need to install them.
-			To include them, check the "show all components" option on the upgrade page and select those modules by
-			checking the column in the first column.
-		</li>
+<ol>
+    <li><b>Required Field Type modules</b>. You <i>must</i> install the
+        <a href="https://docs.formtools.org/modules/field_type_file/" target="_blank">File
+            Upload</a> and the <a href="https://docs.formtools.org/modules/field_type_tinymce/" target="_blank">TinyMCE field</a>
+        at the time that you upgrade. This is to ensure backward compatibility. If you don't want
+        either of them, you can safely uninstall them later. If you attempt to upgrade without either of them
+        installed, the script will whine at you when you try to log in, and tell you you need to install them.
+        To include them, check the "show all components" option on the upgrade page and select those modules by
+        checking the column in the first column.
+    </li>
 
-		<li>
-			<b>Your Export Manager module changes will be lost</b><br />
-			This sucks, I know, but it was unavoidable. The way the form field types (textboxes,
-			textareas, dropdowns etc.) are handled in Form Tools 2.1.0 is very different from
-			earlier releases. Because of this, we now feed different information to be used in
-			the Export Manager's fields. Any old export type's Smarty markup won't work any more.
-			For more information on this, see <a href="https://docs.formtools.org/modules/export_manager/v2changes/">this
-			page in the Export Manager module documentation</a>.
-		</li>
+    <li>
+        <b>Your Export Manager module changes will be lost</b><br />
+        This sucks, I know, but it was unavoidable. The way the form field types (textboxes,
+        textareas, dropdowns etc.) are handled in Form Tools 2.1.0 is very different from
+        earlier releases. Because of this, we now feed different information to be used in
+        the Export Manager's fields. Any old export type's Smarty markup won't work any more.
+        For more information on this, see <a href="https://docs.formtools.org/modules/export_manager/v2changes/">this
+        page in the Export Manager module documentation</a>.
+    </li>
 
-		<li><b>So where's the WYSIWYG settings page?</b><br>
-			Gone! The Settings -&gt; WYSIWYG page has been totally removed. All the existing WYSIWYG
-			functionality is still available, but it's managed through the
-			<a href="https://docs.formtools.org/modules/field_type_tinymce/">TinyMCE Field Type</a> module.
-			Upgrading to 2.1.0 or later will automatically remove the WYSIWYG menu item from your
-			nav menu. If you liked it there, you can always add it back in by editing the
-			administrator's menu.
-		</li>
+    <li><b>So where's the WYSIWYG settings page?</b><br>
+        Gone! The Settings -&gt; WYSIWYG page has been totally removed. All the existing WYSIWYG
+        functionality is still available, but it's managed through the
+        <a href="https://docs.formtools.org/modules/field_type_tinymce/">TinyMCE Field Type</a> module.
+        Upgrading to 2.1.0 or later will automatically remove the WYSIWYG menu item from your
+        nav menu. If you liked it there, you can always add it back in by editing the
+        administrator's menu.
+    </li>
 
-		<li><b>No Media Gallery or Mass Edit module support</b>. The Media Gallery module is
-			not going to be updated any more. So if you rely on it, don't upgrade. Also, the Mass Edit module
-			is no longer compatible.
-		</li>
+    <li><b>No Media Gallery or Mass Edit module support</b>. The Media Gallery module is
+        not going to be updated any more. So if you rely on it, don't upgrade. Also, the Mass Edit module
+        is no longer compatible.
+    </li>
 
-		<li><b>Date Field changes</b><br>
-			In earlier releases, only the Submission Date and Last Modified Date fields were
-			real "date" fields - i.e. they showed a datepicker, and the formatting of those dates
-			dates was controlled via the format specified in the Settings -&gt; Accounts page. Now,
-			any form field may be marked as a date field, and each one may have its own
-			date format: e.g. one field could be a date field, another a datetime field. The one
-			limitation is that there are fewer date formatting options than before. Things
-			like the "th" in "March 6th, 2011" cannot be done, so chances are you will notice that
-			the formatting of those fields in your form will change after upgrading.
-		</li>
+    <li><b>Date Field changes</b><br>
+        In earlier releases, only the Submission Date and Last Modified Date fields were
+        real "date" fields - i.e. they showed a datepicker, and the formatting of those dates
+        dates was controlled via the format specified in the Settings -&gt; Accounts page. Now,
+        any form field may be marked as a date field, and each one may have its own
+        date format: e.g. one field could be a date field, another a datetime field. The one
+        limitation is that there are fewer date formatting options than before. Things
+        like the "th" in "March 6th, 2011" cannot be done, so chances are you will notice that
+        the formatting of those fields in your form will change after upgrading.
+    </li>
 
-		<li>
-			<b>No more "Use Lightbox to display files" setting on the Settings -&gt; Files tab</b><br>
-			This has also been removed. Now, if you want to open an image up in a popup, you need
-			to select the "Open as image in dialog" option for the field. (Edit Form -&gt; Field Tab -&gt;
-			Edit Field -&gt; second tab).
-		</li>
+    <li>
+        <b>No more "Use Lightbox to display files" setting on the Settings -&gt; Files tab</b><br>
+        This has also been removed. Now, if you want to open an image up in a popup, you need
+        to select the "Open as image in dialog" option for the field. (Edit Form -&gt; Field Tab -&gt;
+        Edit Field -&gt; second tab).
+    </li>
 
-		<li>
-			<b>Admin username change</b><br>
-			The admin username must be only contain alphanumeric characters (0-9, a-z, A-Z) like
-			client accounts. If it doesn't fit the bill right now, don't worry: you won't have any
-			problems logging in, but you will need to change it whenever you update your info on
-			the Your Accounts page.
-		</li>
-	</ol>
+    <li>
+        <b>Admin username change</b><br>
+        The admin username must be only contain alphanumeric characters (0-9, a-z, A-Z) like
+        client accounts. If it doesn't fit the bill right now, don't worry: you won't have any
+        problems logging in, but you will need to change it whenever you update your info on
+        the Your Accounts page.
+    </li>
+</ol>
 
 
 

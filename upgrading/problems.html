@@ -5,38 +5,32 @@ heading: Problems Upgrading?
 breadcrumbs:
   - Upgrading,/upgrading/
   - Problems Upgrading?
-prev: Upgrading to 2.1.0 or later,/upgrading/2_1_0/
+prev: Upgrading to 3.0.0,/upgrading/3_0_0/
 ---
 
 {% include open_section.html nav='nav_upgrading.html' selected='problems' %}
 
 	<p>
-		For 2.1.3 and later, if there are ever any problems upgrading the database, all changes
-		that it just attempted to do are rolled back and a message is displayed with a
-		little information about what failed.
+        First and foremost: <a href="https://github.com/formtools/core/">report this problem on github!</a>. It
+        should not have occurred, and either points to a problem with your database, or a problem with the upgrade
+        script itself. Please provide as much details as possible about what went wrong, any error messages and what
+        version you were upgrading from.
 	</p>
 
 	<p>
-		First and foremost: <b>report this problem in the forums!</b> It should not have
-		occurred, and either points to a problem with your database, or a problem with the upgrade
-		script itself. Please quote the entire error message, and mention which version you were
-		upgrading from.
-	</p>
-
-	<p>
- 		Upgrading involves two things: updating the files on your server, and updating the database.
-		If the database upgrade fails, that means that there are new files trying to read the new
-		database, even though it wasn't updated. You have two options:
+        Upgrading involves two things: updating the <i>files</i> and updating the <i>database</i>. If the database
+        upgrade fails, that means that there are new files trying to read the new database, even though it wasn't
+        updated. You have two options:
 	</p>
 
 	<ul>
-		<li>Wait to hear a response in the forums concerning the problem,</li>
+		<li>Wait to hear a response on github,</li>
 		<li>Revert your Form Tools files back to the previous version.</li>
 	</ul>
 
 	<p>
-		But please know that in the current state (new files + old database), Form Tools may not
-		be able to function normally.
+		But please know that in the current state (new files + old database), Form Tools may not be able to function
+        normally.
 	</p>
 
 
