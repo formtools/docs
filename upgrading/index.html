@@ -16,21 +16,40 @@ next: Upgrading to 2.0.3,/upgrading/2_0_3
         upgrade script to simplify matters.
 	</p>
 
-	<h3>How to upgrade</h3>
-
-	<p>
-		Log into your Form Tools installation and click the "Upgrade" link. This appears in different locations
-        in the UI depending on your selected theme. The default theme shows it in the top right; Classic Grey and
-        Deep Blue show it in the left navigation menu. Click that link! This submits all relevant information about
-        your installation - your installed components and their versions (nothing personal) - to the Form Tools
-        website. We then do the job of figuring out what components have been upgrade and generates a custom zipfile
-        containing the appropriate components.
-	</p>
-
     <p class="alert alert-info">
         The following pages outline special Form Tools versions. If your installation is very out of date and you want
         to upgrade to the most recent version, upgrade to 2.0.3, THEN upgrade to 2.1.0, then to 3.0.0.
     </p>
+
+	<h3>General upgrade instructions</h3>
+
+	<ol>
+        <li>Backup your database and files. No, seriously! Yes, it's a pain but do it anyway.</li>
+        <li>
+            Log into your Form Tools installation and click the "Upgrade" link. This appears in different locations
+            in the UI depending on your selected theme. The default theme shows it in the top right; Classic Grey and
+            Deep Blue show it in the left navigation menu.
+        </li>
+        <li>
+            On the Form Tools site upgrade page, choose the components you want to upgrade and generate and download
+            the zipfile.
+        </li>
+        <li>
+            Log out of Form Tools in a web browser and go to the login page.
+        </li>
+        <li>
+            On your computer, unzip the file and upload the folder to your Form Tools folder on your server, overwriting
+            the old files.
+        </li>
+        <li>
+            On the Form Tools login page, click refresh. You should see a "You've been upgrade to ..." message.
+        </li>
+        <li>
+            Log in as the administrator and go to the Modules page. There, click the Upgrade button for all modules
+            that require it.
+        </li>
+        <li>You're done!</li>
+	</ol>
 
 	<hr size="1" />
 

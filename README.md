@@ -48,7 +48,6 @@ locally and the HTML files will be automatically regenerated on the fly.
 
 ### Remaining TODO (for me)
 
-- remove all tables 
-- search for 'demo' and remove any references
+- remove all tables so every page will work responsively
 - link checker on the entire doc (once complete)
 - search for 'feature suggestions' & make sure they're linking to github
