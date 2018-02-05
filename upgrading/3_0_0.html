@@ -13,26 +13,26 @@ next: Problems upgrading?,/upgrading/problems/
 
 <div class="alert alert-warning">
     <p>
-        If you're upgrading your Form Tools installation to 3.0.0 to any earlier version, you'll need to follow the
+        If you're upgrading your Form Tools installation to 3.0.0 from any earlier version, you'll need to follow the
         instructions on this page.
     </p>
 </div>
 
 <p>
-    Form Tools 3 was a complete rewrite of the entire codebase, taking almost a year. The broad goal was to simply
-    modernize the script, but specifically to allow it to run on PHP 7, use PDO, update all lib dependencies up to
-    date, introduce tests and pave the way for upcoming changes and features.
+    Form Tools 3 was a complete rewrite of the entire codebase. The broad goal was to simply modernize the script, but
+    specifically to allow it to run on PHP 7, use PDO, update all lib dependencies up to date, introduce tests and pave
+    the way for upcoming changes and features.
 </p>
 
 <h3>Upgrading Steps</h3>
 
 <ul>
     <li>
-        Make sure you've updated your Form Tools installation to Form Tools 2.2.5, 2.2.6 or 2.2.7, and gotten all modules
-        update to date.
+        Make sure you've first updated your Form Tools installation to Form Tools 2.2.5, 2.2.6 or 2.2.7, and gotten all
+        modules up to date.
     </li>
     <li>
-        Go to the <a href="{{site.baseurl}}/modules/system_check/">System Check module</a> and run the Form Tools 3
+        Open the <a href="{{site.baseurl}}/modules/system_check/">System Check module</a> and run the Form Tools 3
         compatibility test to confirm your system will run Form Tools 3. Note that that test only exists on the last
         Form Tools 2 compatible version of the module (1.1.0).
     </li>
@@ -72,6 +72,19 @@ next: Problems upgrading?,/upgrading/problems/
 
 <ul>
     <li>
+        <b>Form Builder module.</b><br />
+        <div class="alert alert-danger">
+            <b>After upgrading you will need to re-publish all of your Form Builder forms</b>. To do this:
+            <ul>
+                <li>Edit your form(s) and go to the Publish tab</li>
+                <li>Edit the published form and click the "Publish Settings" button at the bottom right.</li>
+                <li>Rename the file to something else and click Update.</li>
+                <li>Close the modal and click Publish Settings again.</li>
+                <li>Rename it back to the original file.</li>
+            </ul>
+        </div>
+    </li>
+    <li>
         <b>TinyMCE module.</b><br />
         This has been updated to a much recent version of the script (4.7.1) The new tinyMCE interface has a different
         look & feel and certain customizations that were offered with the older version of the module no longer exist.
@@ -87,10 +100,6 @@ next: Problems upgrading?,/upgrading/problems/
         <b>Google Map field module.</b><br />
         You are now required to get an API key from Google to use this module. Read the
         <a href="{{site.baseurl}}/modules/field_type_google_maps/">module documentation</a> for more detailed information.
-    </li>
-    <li>
-        <b>Form Builder module.</b><br />
-        The "Classic Grey" Template Set based on the Form Tools theme has been removed.
     </li>
 </ul>
 
