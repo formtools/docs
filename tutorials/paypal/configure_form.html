@@ -1,0 +1,54 @@
+---
+layout: default
+navPage: docs
+heading: Configure your form to submit to PayPal
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: "Step 3: Working in the Sandbox,/tutorials/paypal/step3/"
+next: Create a test buyer account,/tutorials/paypal/create_test_buyer/
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='configure_form' nav_width=3 %}
+
+<p>
+    You will need to configure the PHP script to send the appropriate values to
+    PayPal for processing. Even though it does currently redirect to PayPal, you need to
+    do some additional configuration to ensure all the values passed are correct.
+</p>
+<p>
+    Open up the <b>/includes/library.php</b> file and edit the following
+    lines, found at the very top.
+</p>
+
+{% codemirror php %}
+// your paypal email address
+$pp["business"] = "joebloggs@something.com";
+
+// your website root URL
+$pp["site_url"] = "http://www.formtools.org";
+
+// where the user is directed to after successful payment
+$pp["success_url"] = "/donate/success.php";
+
+// where the user is directed to after cancelled payment
+$pp["cancel_url"] = "/donate/cancelled.php";
+
+// the location of the ipn.php file
+$pp["notify_url"] = "/donate/ipn.php";
+
+// The currency code [USD,CAD,GBP,JPY,EUR]
+$pp["currency_code"] = "CAD";
+
+// "fso": fsockopen, "curl": cmd line, "libCurl": PHP compiles with libCurl
+$pp["post_method"] = "fso";
+{% endcodemirror %}
+
+<p>
+    For the success_url, cancel_url and notify_url values, you need to set them to the location
+    of those files - included in the zipfile - relative to your webroot. The default examples
+    assume you've uploaded the zipfile into a "donate" folder.
+</p>
+
+{% include close_section.html %}

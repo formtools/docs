@@ -1,0 +1,37 @@
+---
+layout: default
+navPage: docs
+heading: Making some test payments
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: Create a test buyer account,/tutorials/paypal/create_test_buyer/
+next: Styling the Pages,/tutorials/paypal/styling_pages/
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='make_test_payments' nav_width=3 %}
+
+<p>
+    Ppen up your form in your web browser - it doesn't have to be in the popup window. In fact,
+    it's easier to manage if you open it up in a tab in the main browser window. Put through
+    a submission through your form. If all goes well, you should be redirected to the PayPal
+    site where it will prompt you to log in as the buyer. Log in using your buyer test account.
+    Note that you need to use the <b>generated</b> email address that's listed on the sandbox
+    test accounts page, but you need to use the password that you yourself created.
+    Confusing? Don't get me started.
+</p>
+
+<p>
+    Try putting some successful payments through, cancelling other payments and
+    clicking on "Return to Merchant" on the PayPal site to verify all links work properly.
+</p>
+
+<p>
+    Finally, confirm that successful payments - and only successful payments are appearing
+    in Form Tools. The actually nitty gritty details of configuration are done automatically
+    by the files in the zipfile. But it's worth confirming everything works the way you
+    expect.
+</p>
+
+{% include close_section.html %}

@@ -1,0 +1,63 @@
+---
+layout: default
+navPage: docs
+heading: Create a test buyer account
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: Configure your form to submit to PayPal,/tutorials/paypal/configure_form/
+next: Making some test payments,/tutorials/paypal/make_test_payments/
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='create_test_buyer' nav_width=3 %}
+
+<p>
+    {% include screenshot.html item="i118.gif" %}
+    Log into your PayPal Developer's account. As mentioned before, everything done through a
+    developer account is "pretend" only - no money is actually changing hands. So you can safely
+    make and take payments without worry!
+</p>
+
+<p>
+    After you log into your developer account, you should see a screen that looks something
+    like the screenshot to the right. It's worth clicking around the interface to get a sense
+    of what options are available. We're only going to focus on a small subset of the
+    functionality.
+</p>
+
+<p>
+    Click on the "Create a preconfigured buyer or seller account". This will take you to a
+    screen that looks like the next screenshot. On this page create a "Buyer" account. For the
+    email, just enter your own - it will be converted automatically to a unique email address
+    after you click "Create Account". For the password, enter something simple to remember -
+    I chose 12345678.
+</p>
+
+<p>
+    {% include screenshot.html item="i119.gif" %}
+    Finally, after you click create account you will be redirected to the main test
+    accounts listing page. The screenshot below displays this page - with two sections
+    highlighted. The screenshot displays a number of test accounts that I'd created in
+    the past - don't worry about any of them other than the first row, highlighted in red.
+    This is your new account you just created. What's a bit confusing is that it converted
+    the email address to a unique one, containing a number of characters. This is just
+    something done internally by PayPal to ensure the uniqueness of the test accounts.
+</p>
+
+<p>
+    At the bottom of the page there's a button highlighted in orange: "Enter Sandbox Test Site".
+    This is the second confusing thing about this page. It seems like you're already in the
+    sandbox site, but you're not! So if you were to try to put through a test submission
+    through your form at this point, even though you'd see the URL in your browser point
+    to https://www.sanbox.paypal.com, you're not actually in the sandbox. Weird? I know. Bear
+    with me.
+</p>
+
+<p>
+    {% include screenshot.html item="i120.gif" %}
+    Click the "Enter Sandbox Test Site" button. This will open up a popup. You're now in
+    the sandbox: time to put through some test payments!
+</p>
+
+{% include close_section.html %}

@@ -1,0 +1,29 @@
+---
+layout: default
+navPage: docs
+heading: A Few Final Tips
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: Going live!,/tutorials/paypal/going_live/
+next: References,/tutorials/paypal/references/
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='final_tips' nav_width=3 %}
+
+<ol>
+    <li>Working with the Developers section of PayPal can be pretty bewildering at first,
+        but it makes more sense the more time you spend with it. Don't forget that when
+        using the PayPal sandbox, emails don't get sent to your normal email account, but to your development
+        email account.</li>
+    <li>If your payments are going through properly, but nothing appears in Form Tools, chances are
+        the IPN isn't configured properly. Try adding some <b>mail("your@email.com", "subject", "message");</b>
+        lines in ipn.php to confirm that PayPal is at least posting information to that URL. If not, you know
+        the problem is either with your <b>$paypal["notify_url"]</b> setting or with the setting you set up in
+        your PayPal account under IPN Preferences.</li>
+    <li>If you get stumped, try posting either in our forums or on the PayPal developer forums (listed
+        below)</li>
+</ol>
+
+{% include close_section.html %}

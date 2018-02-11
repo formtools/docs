@@ -1,0 +1,30 @@
+---
+layout: default
+navPage: docs
+heading: Styling the Pages
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: Making some test payments,/tutorials/paypal/make_test_payments/
+next: Going live!,/tutorials/paypal/going_live/
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='styling_pages' nav_width=3 %}
+
+<p>
+    While you were making your test payments you probably noticed that several of the pages
+    on your site looked a little plain. You'll probably want to style these files with whatever
+    CSS and markup you want:
+</p>
+
+<ul>
+    <li><b>index.php</b> - the donation form</li>
+    <li><b>success.php</b> - where users are redirected after successful payments</li>
+    <li><b>cancelled.php</b> - where users are sent after cancelling a payment</li>
+    <li><b>paypal_submit.php</b> - a temporary page that appears after the user submits the form.
+        The user is automatically redirected from this page to PayPal.
+    </li>
+</ul>
+
+{% include close_section.html %}

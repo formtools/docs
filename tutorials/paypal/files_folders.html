@@ -1,0 +1,46 @@
+---
+layout: default
+navPage: docs
+heading: Files and Folders
+breadcrumbs:
+- Tutorials,/tutorials/
+- Files and Folders
+subnavSection: Setting up a PayPal-Enabled Form
+prev: "Step 1: Configuring your form with Form Tools,/tutorials/paypal/step1/"
+next: Adding the donation form to Form Tools,/tutorials/paypal/add_donation_form/
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='files_folders' nav_width=3 %}
+
+    <p>
+        Here's a description of all the files and folders in the
+        <a href="https://github.com/formtools/misc/paypal_donate.zip">zipfile</a>. You don't need to know about most of
+        them - the ones that you'll be most concerned with are starred <span class="red">*</span>.
+    </p>
+
+    <ul>
+        <li><b>/includes</b> - folder
+            <ul>
+                <li><span class="red">*</span> library.php - contains the main settings for your PayPal form</li>
+                <li>config.inc.php - written by PayPal. This file contains various configuration settings for your form</li>
+                <li>global_config.inc.php - written by PayPal. Some global configuration settings</li>
+                <li>main.css - the CSS</li>
+                <li>rsv.js - the Really Simple Validation script for validating the donation form values</li>
+            </ul>
+        </li>
+        <li>
+            <span class="red">*</span> cancelled.php - the page that users get redirected back to if they cancel a donation
+            on the PayPal site
+        </li>
+        <li>
+            <span class="red">*</span> index.php - the donation form
+        </li>
+        <li>ipn.php - a script that handles the IPN interaction with PayPal</li>
+        <li>paypal_submit.php - the review / submit to PayPal page</li>
+        <li>
+            <span class="red">*</span> success.php - the page that users get sent to after a
+            successful donation
+        </li>
+    </ul>
+
+{% include close_section.html %}

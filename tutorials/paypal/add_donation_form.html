@@ -1,0 +1,144 @@
+---
+layout: default
+navPage: docs
+heading: Adding the donation form to Form Tools
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: Files and Folders,/tutorials/paypal/files_folders/
+next: "Step 2: Your PayPal Account,/tutorials/paypal/step2/"
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='add_donation_form' nav_width=3 %}
+
+    <p>
+        <b>1.</b> Upload the entire content of the zipfile to your website, perhaps in a <b>/donate</b>
+        folder. Open up the index.php file in your browser. You should see an error about not being
+        able to locate the api.php file.
+    </p>
+
+    <p>
+        <b>2.</b> Edit the <b>/includes/library.php</b>. At the very top, you'll see these lines:
+    </p>
+
+{% codemirror php %}
+// the path needs to be updated to include your api.php
+$includes_folder = dirname(__FILE__);
+require_once("$includes_folder/path/to/global/api/api.php");
+{% endcodemirror %}
+
+    <p>
+        {% include screenshot.html item="i116.gif" %}
+        You'll need to update the path to your api.php file. It's found in your Form Tools
+        /global/api folder. Note that you'll need to use a path, not a URL. When the path is
+        correct, you'll be able to load up the index.php page in your browser and see a page
+        that looks like the screenshot to the right.
+    </p>
+
+    <p>
+        <b>3.</b> Edit the form in your favourite editor. Right after the opening form tag
+        you'll see this hidden field:
+    </p>
+
+{% codemirror html %}
+<input type="hidden" name="item_name" value="Form Tools" />
+{% endcodemirror %}
+
+    <p>
+        This will appear as the "payee", or what the person is paying for. Change the value to
+        whatever you want. I included this directly in the form since it's very possible you'll want
+        that value to change depending on what's being ordered. So you can always change it to a
+        dropdown, or something like that. As long as the field has the name "item_name", it should
+        work.
+    </p>
+
+    <p>
+        <b>4.</b> Log into Form Tools and click on the "Add Form" button on the Forms page.
+    </p>
+
+    <p>
+        {% include screenshot.html item="i115.gif" %}
+        <b>5.</b> On the second page ("Main Information") fill in the Form Name and Form URL fields
+        as shown in the screenshot to the right. The Form URL should point to the <b>first</b> page
+        of your form. Leave the Redirect URL field blank and choose whatever permissions you want.
+    </p>
+
+    <p>
+        <b>6.</b> On the Test Submission page, click the "Code" button. This will generate some
+        PHP and HTML for your particular form. The line we're interested in look something like
+        this:
+    </p>
+
+{% codemirror php %}
+$fields = ft_api_init_form_page(43, "initialize");
+{% endcodemirror %}
+
+    <p>
+        Here, the form ID is <b>43</b>. It will almost certainly be different for your form. Ignore
+        the instructions on the page - they're correct for all other forms, but for this example,
+        the work is taken care of for you.
+    </p>
+
+    <p>
+        <b>7.</b> In an editor, open up your <b>/includes/library.php</b> file (included in the
+        main zipfile) and update the following line for your own form ID:
+    </p>
+
+{% codemirror php %}
+// your Form Tools form ID
+$pp["form_id"] = 1;
+{% endcodemirror %}
+
+    <p>
+        <b>8.</b> Now it's time to put through our test submission! Open up the index.php page
+        in your browser, fill in the fields and submit the form. You should see a Form Tools page
+        with the heading "Test Submission Received". At this point, return to the Form Tools UI
+        and finish setting up your form. For more information on the intracies of the various
+        Add Form pages, see the <a href="{{site.baseurl}}/form_management/add_form_step4/">Help
+        Documentation</a>. It's important that you DO finish setting up the form before proceeding
+        to the next step.  The following steps require you to have a valid, finished form
+        configuration.
+    </p>
+
+    <p>
+        On the final page of the Add Form process ("Finalize Form") it provides some instructions
+        to remove the form_tools_initialize_form field. Ignore this. Instead, again open up your
+        <b>/includes/library.php</b> file and find these two lines:
+    </p>
+
+{% codemirror php %}
+// the Form Tools submission mode
+$pp["mode"] = "initialize";
+{% endcodemirror %}
+
+    <p>
+        Update the second line to this:
+    </p>
+
+{% codemirror php %}
+// the Form Tools submission mode
+$pp["mode"] = "live";
+{% endcodemirror %}
+
+    <p>
+        <b>9.</b> Go to your success.php page in your browser. This is found in the same folder
+        as the index.php. When you go there, you'll see a blank "success" page thanking the user
+        for their donation. Any time you go to this page, the sessions are emptied - this basically
+        clears the cache of any temporary form information and unique submission IDs. If you ever get
+        stuck, always manually go to this page to empty your cache.
+    </p>
+
+    <p>
+        <b>10.</b> Open up the donation form again in your browser (index.php). Put through another
+        submission, this time you should be redirected to PayPal. You should see a page that looks
+        something like this:
+    </p>
+
+    {% include screenshot.html item="i117.gif" %}
+
+    <p>
+        So far so good! Now onto the PayPal integration!
+    </p>
+
+{% include close_section.html %}

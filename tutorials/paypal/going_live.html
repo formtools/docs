@@ -1,0 +1,47 @@
+---
+layout: default
+navPage: docs
+heading: Going live!
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: Styling the Pages,/tutorials/paypal/styling_pages/
+next: A Few Final Tips,/tutorials/paypal/final_tips/
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='going_live' nav_width=3 %}
+
+<p>
+    And finally, it's time to go live! All you need to do to push it live is to change
+    that one value in your <b>/includes/library.php</b> file. Change this line:
+</p>
+
+{% codemirror php %}
+$pp["url"] = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+{% endcodemirror %}
+
+<p>
+    to this:
+</p>
+
+{% codemirror php %}
+$pp["url"] = "https://www.paypal.com/cgi-bin/webscr";
+{% endcodemirror %}
+
+<p>
+    All this does is direct your form to use the live PayPal online payment gateway, not the
+    sandbox (developer) area. If ever you need to switch back to testing your form, you can
+    just revert the value in this line again.
+</p>
+
+<p>
+    If necessary, change the $pp["business"] line in /includes/library.php to your real
+    paypal address. Personally I always test with the actual business address, but that's
+    just me.
+</p>
+<p>
+    And you're done!
+</p>
+
+{% include close_section.html %}

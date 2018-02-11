@@ -1,0 +1,41 @@
+---
+layout: default
+navPage: docs
+heading: "Step 3: Working in the Sandbox"
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: Configure your PayPal account,/tutorials/paypal/configure_paypal_account/
+next: Configure your form to submit to PayPal,/tutorials/paypal/configure_form/
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='step3' nav_width=3 %}
+
+    <h3>The PayPal Sandbox</h3>
+
+    <p>
+        As mentioned on their site: "the PayPal Sandbox allows you to test the integration of
+        your PayPal payment solution before submitting transactions to the live PayPal
+        environment. The Sandbox is a duplicate of the live PayPal site, except that no real
+        money changes hands."
+    </p>
+
+    <p>
+        We're going to get your form going properly in the sandbox environment before going
+        live.
+    </p>
+
+    <p>
+        Before continuing, <a href="http://developer.paypal.com">click here to create a PayPal
+        developer account</a>.
+    </p>
+
+    <ol>
+        <li><a href="{{site.baseurl}}/tutorials/paypal/configure_form/">Configure your form to submit to PayPal</a></li>
+        <li><a href="{{site.baseurl}}/tutorials/paypal/create_test_buyer/">Create a Test Buyer Account</a></li>
+        <li><a href="{{site.baseurl}}/tutorials/paypal/make_test_payments/">Making some test payments</a></li>
+        <li><a href="{{site.baseurl}}/tutorials/paypal/going_live/">Going live!</a></li>
+    </ol>
+
+{% include close_section.html %}

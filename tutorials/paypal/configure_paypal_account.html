@@ -1,0 +1,32 @@
+---
+layout: default
+navPage: docs
+heading: Configure your PayPal account
+breadcrumbs:
+- Tutorials,/tutorials/
+- Setting up a PayPal-Enabled Form
+subnavSection: Setting up a PayPal-Enabled Form
+prev: "Step 2: Your PayPal Account,/tutorials/paypal/overview/"
+next: "Step 3: Working in the Sandbox,/tutorials/paypal/step3/"
+---
+
+{% include open_section.html nav='nav_tutorial_paypal.html' selected='configure_paypal_account' nav_width=3 %}
+
+<p>
+    Next, if you have a Premier or Business account, you'll need to make a small configuration change
+    to your PayPal settings.
+</p>
+
+<ul>
+    <li><a href="http://www.paypal.com">Log into PayPal</a></li>
+    <li>Click on your "Profile" tab</li>
+    <li>Click on "Instant Payment Notification Preferences"</li>
+    <li>
+        Check the "Instant Payment Notification" checkbox and enter in the URL of your ipn.php
+        file (located in the zipfile) into the Notification URL field. Don't worry: you can
+        override this URL for any form, so you can use the same PayPal email to accept payments on
+        multiple sites.
+    </li>
+</ul>
+
+{% include close_section.html %}
