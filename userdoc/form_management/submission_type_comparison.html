@@ -8,11 +8,12 @@ breadcrumbs:
   - process.php vs. the API
 prev: Adding External Forms,/userdoc/form_management/adding_external_forms/
 next: "Step 1: Choose integration method,/userdoc/form_management/add_form_step1/"
+category: userdoc
 ---
 
 {% include open_section.html nav='nav_userdoc_form_management.html' selected='submission_type_comparison' nav_width=4 %}
 
-	<h4>process.php vs. the API: Ultimate Smackdown</h4>
+	<h3>process.php vs. the API</h3>
 
 	<p>
 		For forms that you've created yourself, you can submit your form content to Form Tools by one 
@@ -30,66 +31,67 @@ next: "Step 1: Choose integration method,/userdoc/form_management/add_form_step1
 		some of the key differences to help you determine which method is better for you.
 	</p>
 
-	<table cellspacing="0" cellpadding="1" width="600px">
-		<tbody><tr>
-			<th>Requirement</th>
-			<th width="150">process.php</th>
-			<th width="150">API</th>
-		</tr>
-		<tr>
-			<td>Level of difficulty</td>
-			<td class="green" align="center">Simple</td>
-			<td class="red" align="center">Hard</td>
-		</tr>
-		<tr>
-			<td>Requires PHP knowledge</td>
-			<td align="center"></td>
-			<td class="bold" align="center">x</td>
-		</tr>
-		<tr>
-			<td>Submit form for storage</td>
-			<td class="bold" align="center">x</td>
-			<td class="bold" align="center">x</td>
-		</tr>
-		<tr>
-			<td>
-				Accepts form submissions sent from other websites than the one where
-				Form Tools is installed
-			</td>
-			<td class="bold" valign="top" align="center">x</td>
-			<td class="bold" align="center"> </td>
-		</tr>
-		<tr>
-			<td>Submit form in sections (e.g. page by page)</td>
-			<td class="bold" align="center"></td>
-			<td class="bold" align="center">x</td>
-		</tr>
-		<tr>
-			<td>Upload files through form</td>
-			<td class="bold" align="center">x</td>
-			<td class="bold" align="center">x</td>
-		</tr>
-		<tr>
-			<td>Client-side validation (JavaScript)</td>
-			<td class="bold" align="center">x</td>
-			<td class="bold" align="center">x</td>
-		</tr>
-		<tr>
-			<td>server-side validation (PHP)</td>
-			<td class="bold" align="center"> </td>
-			<td class="bold" align="center">x</td>
-		</tr>
-		<tr>
-			<td>CATPCHAs</td>
-			<td class="bold" align="center">x</td>
-			<td class="bold" align="center">x</td>
-		</tr>
-		<tr>
-			<td>Compatible with third-party payment gateways like PayPal</td>
-			<td class="bold" align="center"> </td>
-			<td class="bold" align="center">x</td>
-		</tr>
-		</tbody></table>
+	<div class="row">
+        <div class="col-lg-8">
+            <h4>Requirement</h4>
+        </div>
+        <div class="col-lg-2 text-center">
+            <h4>process.php</h4>
+        </div>
+        <div class="col-lg-2 text-center">
+            <h4>API</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">Level of difficulty</div>
+        <div class="col-lg-2 text-center green">Simple</div>
+        <div class="col-lg-2 text-center red">Hard</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">Requires PHP knowledge</div>
+        <div class="col-lg-2 text-center"></div>
+        <div class="col-lg-2 text-center">x</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">Submit form for storage</div>
+        <div class="col-lg-2 text-center">x</div>
+        <div class="col-lg-2 text-center">x</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">Accepts form submissions sent from other websites than the one where Form Tools is installed</div>
+        <div class="col-lg-2 text-center">x</div>
+        <div class="col-lg-2 text-center"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">Submit form in sections (e.g. page by page)</div>
+        <div class="col-lg-2 text-center"></div>
+        <div class="col-lg-2 text-center">x</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">Upload files through form</div>
+        <div class="col-lg-2 text-center">x</div>
+        <div class="col-lg-2 text-center">x</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">Client-side validation (JavaScript)</div>
+        <div class="col-lg-2 text-center">x</div>
+        <div class="col-lg-2 text-center">x</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">server-side validation (PHP)</div>
+        <div class="col-lg-2 text-center"></div>
+        <div class="col-lg-2 text-center">x</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">CATPCHAs</div>
+        <div class="col-lg-2 text-center">x</div>
+        <div class="col-lg-2 text-center">x</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">Compatible with third-party payment gateways like PayPal</div>
+        <div class="col-lg-2 text-center"></div>
+        <div class="col-lg-2 text-center">x</div>
+    </div>
 
 	<p>
 		As the table notes: using the API requires a least <i>some</i> PHP knowledge - and a

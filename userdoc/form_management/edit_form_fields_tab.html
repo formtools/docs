@@ -8,6 +8,7 @@ breadcrumbs:
   - Fields tab
 prev: Main tab,/userdoc/form_management/edit_form_main_tab/
 next: Views tab,/userdoc/form_management/edit_form_views_tab/
+category: userdoc
 ---
 
 {% include open_section.html nav='nav_userdoc_form_management.html' selected='edit_form_fields_tab' nav_width=4 %}
@@ -23,7 +24,7 @@ next: Views tab,/userdoc/form_management/edit_form_views_tab/
 		admit that it can be a little intimidating for newbies!
 	</p>
 
-	<h4>The Fields table</h4>
+	<h3>The Fields table</h3>
 
 	<p>
 		The page lists all fields in a table. For slow servers, or forms with a huge number of
@@ -53,62 +54,59 @@ next: Views tab,/userdoc/form_management/edit_form_views_tab/
 	</p>
 
 
-	<h4>The Columns</h4>
+	<h3>The Columns</h3>
 
 	<p>
 		Here's a description of what each of the columns mean on the page.
 	</p>
 
-	<table cellspacing="0" cellpadding="0" width="100%">
-		<tbody><tr>
-			<td width="160" class="blue" valign="top">Order</td>
-			<td>
-				This determines the default ordering of the fields. This only affects you when you
-				are creating new Views. It will list the fields in the dropdown list for insertion into
-				the View in the order specified here. Generally you'll want to keep the fields ordered
-				in some sort of logical manner, with related fields grouped together: it makes
-				managing the fields that much easier.
-			</td>
-		</tr>
-		<tr>
-			<td width="160" class="blue" valign="top">Display Text</td>
-			<td>
-				This is used throughout the Form Tools interface and the generated HTML, Excel, CSV and
-				other exported content to uniquely identify the field.
-			</td>
-		</tr>
-		<tr>
-			<td width="160" class="blue" valign="top">Form Field</td>
-			<td>
-				This is the name of the form field. It's <b>vital</b> that this value is always kept up
-				to date! It lets Form Tools know where to expect the form field data from and where it
-				should be stored. In case you change your form, be sure to update the form field name
-				here.
-			</td>
-		</tr>
-		<tr>
-			<td width="160" class="blue" valign="top">Field Type</td>
-			<td>
-				This determines the appearance of the field in the UI (user interface). Generally you'll
-				want to keep the field type the same as whatever the field type is within your form,
-				but you can always change it if you like. A common change is to modify regular textarea
-				fields to a "WYSIWYG" field, to convert the field into a rich-text editor for the
-				administrator and client accounts.
-			</td>
-		</tr>
-		<tr>
-			<td width="160" class="blue" valign="top">Pass On</td>
-			<td>
-				The Pass On column is only needed for "direct" submissions. If your form posts the form
-				content to <b>process.php</b>, this column lets you choose what information should be
-				passed to the Redirect URL (found on the <a href="?page=edit_form_main_tab">Edit Form
-				» Main tab</a>) in the query string. e.g. If you had a form field called
-				first_name and checked the Pass On column here, the redirect URL would become something
-				like http://www.yoursite.com/thanks.php?first_name=Tom. This lets you access the form
-				submission data on your "thank you" page.
-			</td>
-		</tr>
-		</tbody>
-	</table>
+	<div class="row">
+        <div class="col-lg-3"><code>Order</code></div>
+        <div class="col-lg-9">
+            This determines the default ordering of the fields. This only affects you when you
+            are creating new Views. It will list the fields in the dropdown list for insertion into
+            the View in the order specified here. Generally you'll want to keep the fields ordered
+            in some sort of logical manner, with related fields grouped together: it makes
+            managing the fields that much easier.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Display Text</code></div>
+        <div class="col-lg-9">
+            This is used throughout the Form Tools interface and the generated HTML, Excel, CSV and
+            other exported content to uniquely identify the field.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Form Field</code></div>
+        <div class="col-lg-9">
+            This is the name of the form field. It's <b>vital</b> that this value is always kept up
+            to date! It lets Form Tools know where to expect the form field data from and where it
+            should be stored. In case you change your form, be sure to update the form field name
+            here.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Field Type</code></div>
+        <div class="col-lg-9">
+            This determines the appearance of the field in the UI (user interface). Generally you'll
+            want to keep the field type the same as whatever the field type is within your form,
+            but you can always change it if you like. A common change is to modify regular textarea
+            fields to a "WYSIWYG" field, to convert the field into a rich-text editor for the
+            administrator and client accounts.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Pass On</code></div>
+        <div class="col-lg-9">
+            The Pass On column is only needed for "direct" submissions. If your form posts the form
+            content to <b>process.php</b>, this column lets you choose what information should be
+            passed to the Redirect URL (found on the <a href="?page=edit_form_main_tab">Edit Form
+            » Main tab</a>) in the query string. e.g. If you had a form field called
+            first_name and checked the Pass On column here, the redirect URL would become something
+            like http://www.yoursite.com/thanks.php?first_name=Tom. This lets you access the form
+            submission data on your "thank you" page.
+        </div>
+    </div>
 
 {% include close_section.html %}

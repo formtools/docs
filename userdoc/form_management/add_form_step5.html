@@ -8,6 +8,7 @@ breadcrumbs:
   - "5: Field Types"
 prev: "Step 4: Database Setup,/userdoc/form_management/add_form_step4/"
 next: "Step 6: Finalize Form,/userdoc/form_management/add_form_step6/"
+category: userdoc
 ---
 
 {% include open_section.html nav='nav_userdoc_form_management.html' selected='add_form_step5' nav_width=4 %}
@@ -25,7 +26,7 @@ next: "Step 6: Finalize Form,/userdoc/form_management/add_form_step6/"
 		Once the page has fully loaded, click the "Smart Fill" button.
 	</p>
 
-	<h5>How it works</h5>
+	<h3>How it works</h3>
 
 	<p>
 		You form page(s) are loaded in hidden iframe(s) in the page. If the form was on a different
@@ -48,15 +49,17 @@ next: "Step 6: Finalize Form,/userdoc/form_management/add_form_step6/"
 	</p>
 
 
-	<h5>Limitations: checkboxes and radio buttons</h5>
+    {% include screenshot.html item="i56.jpg" %}
 
-	{% include screenshot.html item="i56.jpg" %}
+	<h3>Limitations: checkboxes and radio buttons</h3>
 
 	<p>
 		Due to the nature of HTML, checkboxes and radio buttons have their labels located
 		<b>outside</b> of the input field elements: technically they could appear anywhere in
 		the webpage. For instance:
 	</p>
+
+    <div class="clear"></div>
 
 	{% codemirror html %}
 <!-- field types with their labels found outside of the element -->
@@ -80,7 +83,7 @@ My second checkbox: <input type="checkbox" name="c2" />
 		found in the same place, so they CAN be pre-filled.
 	</p>
 
-	<h5>Field Sizes</h5>
+	<h3>Field Sizes</h3>
 
 	<p>
 		The field size column specifies how much storage should be allocated for each field. Always

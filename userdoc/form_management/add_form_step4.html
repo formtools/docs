@@ -8,6 +8,7 @@ breadcrumbs:
   - "4: Database Setup"
 prev: "Step 3. Test Submission,/userdoc/form_management/add_form_step3/"
 next: "Step 5. Field Types,/userdoc/form_management/add_form_step5/"
+category: userdoc
 ---
 
 {% include open_section.html nav='nav_userdoc_form_management.html' selected='add_form_step4' nav_width=4 %}
@@ -26,52 +27,48 @@ next: "Step 5. Field Types,/userdoc/form_management/add_form_step5/"
 		and features of this page mean:
 	</p>
 
-
-	<table cellpadding="0" cellspacing="0" width="100%">
-		<tbody><tr>
-			<td class="bold" width="140" valign="top">Order</td>
-			<td>
-				This field determines the default order of your form fields as they will be listed
-				in the administration pages. Generally you'll want to arrange these in a logical manner,
-				but it doesn't terribly matter: every time the administrator or client looks at the form
-				data it will be through a View. Each View can be sorted in whatever way you want. To
-				reorder the rows, just move the mouse over the order column, click and drag the row
-				up or down. This sorting mechanism is used throughout Form Tools. The bars on the left
-				signify that you can <i>group</i> those rows. If you click in between the rows, the bars
-				will join and you can drag the (now joined) row. This can be handy if you're dealing
-				with a lot of rows and need to move groups of rows in one go.
-			</td>
-		</tr>
-		<tr>
-			<td class="bold" valign="top">Form Field Name</td>
-			<td>
-				The name of your form field. This is included for reference, so you can see at a glance
-				what the row is all about.
-			</td>
-		</tr>
-		<tr>
-			<td class="bold" valign="top">Display Name</td>
-			<td>
-				The display name should uniquely identify your field within your form. It should serve
-				as a simple label like "First Name", "Email", "Contact Phone Number" or something along
-				those lines. The <b>Smart Fill</b> button makes it's best guess at filling in the
-				display names based on the names you've given your form fields.<br>
-				<br>
-				Tip: if you'd like the Smart Fill option to work as effectively, you'll need to format
-				your form fields with underscore notation, like so <b>company_name</b>, <b>first_name</b>
-				and <b>email</b>. These get Smart-Filled as <b>Company Name</b>, <b>First Name</b> and
-				<b>Email</b> respectively. Smart Filling works by converting all underscores
-				to spaces and then uppercasing the first letter of each word.
-			</td>
-		</tr>
-		<tr>
-			<td class="bold" valign="top">Sample Data</td>
-			<td>
-				This column is again included just for reference: it shows the contents of the field
-				that was originally submitted.
-			</td>
-		</tr>
-		</tbody>
-	</table>
+    <div class="row">
+        <div class="col-lg-3"><code>Order</code></div>
+        <div class="col-lg-9">
+            This field determines the default order of your form fields as they will be listed
+            in the administration pages. Generally you'll want to arrange these in a logical manner,
+            but it doesn't terribly matter: every time the administrator or client looks at the form
+            data it will be through a View. Each View can be sorted in whatever way you want. To
+            reorder the rows, just move the mouse over the order column, click and drag the row
+            up or down. This sorting mechanism is used throughout Form Tools. The bars on the left
+            signify that you can <i>group</i> those rows. If you click in between the rows, the bars
+            will join and you can drag the (now joined) row. This can be handy if you're dealing
+            with a lot of rows and need to move groups of rows in one go.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Form Field Name</code></div>
+        <div class="col-lg-9">
+            The name of your form field. This is included for reference, so you can see at a glance
+            what the row is all about.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Display Name</code></div>
+        <div class="col-lg-9">
+            The display name should uniquely identify your field within your form. It should serve
+            as a simple label like "First Name", "Email", "Contact Phone Number" or something along
+            those lines. The <b>Smart Fill</b> button makes it's best guess at filling in the
+            display names based on the names you've given your form fields.<br>
+            <br>
+            Tip: if you'd like the Smart Fill option to work as effectively, you'll need to format
+            your form fields with underscore notation, like so <b>company_name</b>, <b>first_name</b>
+            and <b>email</b>. These get Smart-Filled as <b>Company Name</b>, <b>First Name</b> and
+            <b>Email</b> respectively. Smart Filling works by converting all underscores
+            to spaces and then uppercasing the first letter of each word.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Sample Data</code></div>
+        <div class="col-lg-9">
+            This column is again included just for reference: it shows the contents of the field
+            that was originally submitted.
+        </div>
+    </div>
 
 {% include close_section.html %}

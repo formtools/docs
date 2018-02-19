@@ -8,6 +8,7 @@ breadcrumbs:
   - "6: Finalize Form"
 prev: "Step 5. Field Types,/userdoc/form_management/add_form_step5/"
 next: Editing Forms,/userdoc/form_management/editing_forms/
+category: userdoc
 ---
 
 {% include open_section.html nav='nav_userdoc_form_management.html' selected='add_form_step6' nav_width=4 %}
@@ -20,11 +21,13 @@ next: Editing Forms,/userdoc/form_management/editing_forms/
 		type: <b>direct</b> or <b>code</b> via the API. Both are quite simple.
 	</p>
 
-	<h4>Direct Submissions</h4>
+	<h3>Direct Submissions</h3>
 
 	<p>
 		Return to your form and remove the following hidden field:
 	</p>
+
+    <div class="clear"></div>
 
 	{% codemirror html %}
 <input type="hidden" name="form_tools_initialize_form" value="1" />
@@ -34,7 +37,7 @@ next: Editing Forms,/userdoc/form_management/editing_forms/
 		Now refresh your form page. Going forward, submissions should now be stored in Form Tools.
 	</p>
 
-	<h4>Code Submissions (API)</h4>
+	<h3>Code Submissions (API)</h3>
 
 	<p>
 		Change the <b>ft_api_init_form_page</b> line on the first page of your form to whatever
