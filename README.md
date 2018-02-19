@@ -46,8 +46,24 @@ That starts a local server which you can access at `http://localhost:4000/docs/`
 locally and the HTML files will be automatically regenerated on the fly.
 
 
-### Remaining TODO (for me)
+### Page metadata 
 
-- remove all tables so every page will work responsively
-- link checker on the entire doc (once complete)
-- search for 'feature suggestions' & make sure they're linking to github
+I'm adding in the option to search the documentation. In order for this to be as useful as possible, the pages can
+have these optional front-matter tags to provide additional metadata for the search.
+
+```
+version: FT2
+page_type: overview
+category: modules
+```
+
+#### version
+`FT2` or `FT3`. Comma-delimited. If empty, it's assumed the page is relevant for any version of Form Tools. 
+
+#### page_type
+`toc` - table of contents (a list of links for the section)
+`introduction` - an introduction/overview to a component / subject. A good starting point for something.
+
+#### category
+Common delimited list of: `userdoc`, `modules`, `themes`, `api`, `theme_development`, `module_development`, `tutorial`,
+`installation`, `upgrading`, `translations`

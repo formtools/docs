@@ -8,21 +8,20 @@ breadcrumbs:
   - System Requirements
 prev: Installation and Upgrading,/userdoc/getting_started/install_upgrade/
 next: Changes in 2.1.0,/userdoc/changes_in_210/
+category: userdoc
 ---
 
 {% include open_section.html nav='nav_userdoc_getting_started.html' selected='system_requirements' %}
 
 	<p>
-		Form Tools has very minimal server and browser requirements, enabling it to run on
-		the vast majority of web servers. The web browser requirements are only for
-		administrators and clients who log in to view and manage their form submissions.
-		Regular website visitors submitting content may use whatever browser and OS they wish.
+		Form Tools has pretty basic server requirements, enabling it to run on the vast majority of web servers.
 	</p>
 
 	<ul>
-		<li>Form Tools 2.x requires PHP 4.3+ and supports up to PHP 5; Form Tools 3 requires PHP 5.3 and supports up to PHP 7.</li>
+        <li><b>Form Tools 2</b> requires PHP 4.3+ and supports up to PHP 5</li>
+        <li><b>Form Tools 3</b> requires PHP 5.3+ and supports PHP 7</li>
 		<li>MySQL 4+</li>
-		<li>PHP Sessions (after installation, you can move to database sessions by setting the <b>$g_session_type</b> variable
+		<li>PHP Sessions (after installation, you can move to database sessions by setting the <code>$g_session_type</code> variable
 			in your <a href="{{site.baseurl}}/userdoc/getting_started/config_file">config.php file</a>)</li>
 		<li>PHP mail() function or SMTP for sending emails (see the
 			<a href="{{site.baseurl}}/modules/swift_mailer/">Swift Mailer</a> module for further
@@ -39,7 +38,7 @@ next: Changes in 2.1.0,/userdoc/changes_in_210/
 		You will need to be able to set folder permissions on on your website. Specifically,
 		for file uploads, your upload folder(s) will need to have write permissions. Also,
 		the Smarty cache folder will need to have full write-permissions to let the
-		temporary files be created.
+        temporary files be created. That file is found at <b>/themes/[theme name]/cache</b>.
 	</p>
 
 	<p>

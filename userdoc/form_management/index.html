@@ -7,54 +7,49 @@ breadcrumbs:
   - Form Management
 prev: Placeholders,/userdoc/general_info/placeholders/
 next: Form Types,/userdoc/form_management/form_types/
+page_type: introduction
+category: userdoc
 ---
 
 {% include open_section.html nav='nav_userdoc_form_management.html' selected='form_management' nav_width=4 %}
 
-	<h4>Overview</h4>
+	<h3>Overview</h3>
 
 	{% include screenshot.html item='i265.gif' %}
 
 	<p>
-		The power and flexibility of Form Tools is in its interface for managing your forms.
-		There, you can add new forms for storage, modify existing forms, add and remove form
-		fields, add and change multi-select field options like radio and dropdown
-		boxes, specify locations on your server where files should be uploaded to, create any
-		number of emails to be sent based on certain event triggers, define ways to subdivide
-		and organize your form submissions, change the database column names
-		themselves and much, much more.
+		The power and flexibility of Form Tools is in its interface for managing your forms. There, you can add new
+        forms for storage, modify existing forms, add and remove form fields, manage multi-select field options
+        like radio and dropdown boxes, specify locations on your server where files should be uploaded to, create any
+		number of emails to be sent based on certain event triggers, define ways to subdivide and organize your form
+        submissions, change the database column names themselves and much, much more.
 	</p>
 
-	<h4>Integrating your forms</h4>
+	<h3>Integrating your forms</h3>
 	<p>
-		Form Tools can store submission data from forms from any location. If you chose to, you
-		could install the program on your website then use it to store form submissions from
-		multiple client websites. And since you can specify the redirect URL for each form
-		(i.e. where the user gets sent after submitting a form), you can redirect each user
-		back to the appropriate website in a seamless transaction. If need be, you can
-		specify form field data to get passed back through the query string - allowing
-		"receipt" or "thankyou" pages to display personal information, e.g. "Thanks for
-		submitting the form, John!"
+		Form Tools can store submission data from forms from any location. If you chose to, you could install the
+        program on your website then use it to store form submissions from multiple client websites. And since you can
+        specify the redirect URL for each form (i.e. where the user gets sent after submitting a form), you can redirect
+        each user back to the appropriate website in a seamless transaction. If need be, you can specify form field data
+        to get passed back through the query string - allowing "receipt" or "thankyou" pages to display personal
+        information, e.g. "Thanks for submitting the form, John!"
 	</p>
 
 	<p>
-		Form Tools is compatible with multi-page forms and can process form submissions
-		in two ways: a "direct" submission, in which the form submits the data directly to
-		a file called <b>process.php</b>, found in the root Form Tools folder. Or secondly,
-		the submissions can be submitted through the API. The API is a set of functions
-		for things like adding submissions to the database and displaying the data in your
-		webpages. Generally speaking, using the API is a better approach: it provides FAR
-		more control and is designed for things like multi-page forms, adding CAPTCHAs to
-		your forms, displaying images as they are uploaded through the form, handling
-		integration with online payment gateways and more. But this additional functionality
-		makes it more complicated: so you may well wish to stick with the simpler "direct"
-		approach, depending on your needs.
+		Form Tools is compatible with multi-page forms and can process form submissions in two ways: a "direct"
+        submission, in which the form submits the data directly to a file called <b>process.php</b>, found in the root
+        Form Tools folder. Or secondly, the submissions can be submitted through the API. The API is a set of functions
+		for things like adding submissions to the database and displaying the data in your webpages. Generally speaking,
+        using the API is a better approach: it provides FAR more control and is designed for things like multi-page forms,
+        adding CAPTCHAs to your forms, displaying images as they are uploaded through the form, handling integration
+        with online payment gateways and more. But this additional functionality makes it more complicated: so you may
+        well wish to stick with the simpler "direct" approach, depending on your needs.
 	</p>
 
 	<p>
-		The following pages explains all of the subjects mentioned in brief above, hopefully
-		answering the majority of your questions. If you can't find the answer to your question
-		here in the user doc, <a href="https://forums.formtools.org">just post it in our forums!</a>
+		The following pages explains all of the subjects mentioned in brief above, hopefully answering the majority of
+        your questions. If you can't find the answer to your question here in the user doc,
+        <a href="https://github.com/formtools/core/issues">just post a question on github!</a>
 	</p>
 
 {% include close_section.html %}
