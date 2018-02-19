@@ -48,13 +48,14 @@ locally and the HTML files will be automatically regenerated on the fly.
 
 ### Page metadata 
 
-I'm adding in the option to search the documentation. In order for this to be as useful as possible, the pages can
+I'm current working on adding documentation search feature. In order for this to be as useful as possible, the pages can
 have these optional front-matter tags to provide additional metadata for the search.
 
 ```
 version: FT2
 page_type: overview
 category: modules
+tags: permissions,visualization
 ```
 
 #### version
@@ -67,3 +68,7 @@ category: modules
 #### category
 Common delimited list of: `userdoc`, `modules`, `themes`, `api`, `theme_development`, `module_development`, `tutorial`,
 `installation`, `upgrading`, `translations`
+
+### tags
+Arbitrary strings to pinpoint what the page is about. This is as fine-grained as it gets. 
+`permissions`, `forms`, `views`, `fields`, `field_types`, `option_lists`, `validation` 

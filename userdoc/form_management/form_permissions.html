@@ -9,33 +9,33 @@ breadcrumbs:
 prev: Deleting forms,/userdoc/form_management/deleting_forms/
 next: Option Lists,/userdoc/form_management/option_lists/
 category: userdoc
+tags: permissions,forms
 ---
 
 {% include open_section.html nav='nav_userdoc_form_management.html' selected='form_permissions' nav_width=4 %}
 
+    <p class="alert alert-warning">
+        Form Tools 3.3 is planning to re-write the way Form Tools handles permissions to provide a more powerful and
+        <i>single</i> location for all account permissions. But until that release, the following information is correct.
+    </p>
+
 	<p>
-		Form Tools allows you to fine-tune the permissions to ensure that each user sees
-		precisely the information that you want. The permission settings let you create any
-		number of subsets of the form data which can be assigned to each client, preventing
-		some from seeing form data based on whatever criteria you need. Form permissions
-		work according to the following hierarchy:
+		Form Tools lets you fine-tune the permissions to ensure that each user sees exactly what you want. Form permissions
+        can be set in various places, on the:
 	</p>
 
 	<ol>
-		<li>Forms</li>
-		<li>
-			— Views<br>
-			— Export Groups
-		</li>
+		<li>Form-level</li>
+		<li>View-level</li>
+        <li>Module-level</li>
 	</ol>
 
 	<h3>1. Form Permissions</h3>
 
 	<p>
 		{% include screenshot.html item="i219.jpg" %}
-		At the top level, we have permissions on the actual forms. In the screenshot to
-		the right you'll see the Edit Form » Main tab. There, take a look at the
-		Access field. That has three options:
+		The standard form-level permissions is right on the forms themselves. In the screenshot to the right you'll see the
+        Edit Form » Main tab. There, take a look at the Access field. That has three options:
 	</p>
 
 	<ul>
@@ -59,11 +59,10 @@ category: userdoc
 		<li>The <b>Public</b> option is a very convenient way to set the permissions for the form
 			for all client accounts, <b>including those accounts that haven't been created yet</b>.
 			So if you set your form to Public then create a new user account, that account will be
-			automatically assigned to the form. This can help to significantly reduce the amount of
-			configuration every time you create a client account. <br>
+			automatically assigned to the form. This cuts down on unnecessary pointing and clicking later on.<br>
 			<br>
-			As a corollary to the Public option, there's an "Omit List" option. This lets you keep
-			the form as a public form, but exclude certain clients from seeing it. As we shall see,
+            The public option also has a convenient <b>Omit List</b> option. This lets you keep
+			the form as a public form, but excludes certain clients from seeing it. As we shall see,
 			both the form and each form View have an optional omit list.
 		</li>
 		<li>
@@ -75,32 +74,30 @@ category: userdoc
 	</ol>
 
 
-    <h3>2(a) View Permissions</h3>
+    <h3>2. View Permissions</h3>
 
 	<p>
 		As mentioned <a href="{{site.baseurl}}/userdoc/views">elsewhere in the user documentation</a>, Views let you
-		create any number of subsets of the form data, to present the information in the most
-		convenient clear manner for yourself and your clients.  Every form has at least one View;
-		every time you browse your form submissions you're looking at the information through a
-		form View. You <b>never</b> look at the "raw" form data; it's always through a View: this
-		is an important concept to understand. At first it may seem a little unnecessary and
+		create any number of subsets of the form data, to present the information in the most convenient clear manner
+        for yourself and your clients.  Every form has at least one View; every time you browse your form submissions
+        you're looking at the information through a form View. You <b>never</b> look at the "raw" form data; it's
+        always through a View: this is an important concept to understand. At first it may seem a little unnecessary and
 		confusing, but it provides enormous control that wouldn't be possible otherwise.
 	</p>
 
 	<p>
 		{% include screenshot.html item="i255.gif" %}
 
-		Views let you create any number of subsets of your form data including options like
-		hiding/showing particular form fields, grouping them in tabs, making some editable and
-		others non-editable, changing their sort order and limiting the submissions that will appear
-		based on whatever criteria you need. e.g. only show submissions Vancouver that have been
-		send to the Humanities department of the university.
+		Views let you create any number of subsets of your form data including options like hiding/showing particular
+        form fields, grouping them in tabs, making some editable and others non-editable, changing their sort order and
+        limiting the submissions that will appear based on whatever criteria you need. e.g. only show submissions
+        Vancouver that have been send to the Humanities department of the university.
 	</p>
 
 	<p>
-		This extremely powerful functionality can be harnessed by the View permissions, letting
-		you assign those information subsets to particular clients. View permissions work almost
-		exactly like their parent forms. They have four options:
+		This extremely powerful functionality can be harnessed by the View permissions, letting you assign those
+        information subsets to particular clients. View permissions work almost exactly like their parent forms.
+        They have four options:
 	</p>
 
 	<ul>
@@ -119,25 +116,35 @@ category: userdoc
 	</p>
 
 
-	<h3>2(b) Export Group Permissions</h3>
+	<h3>3. Modules</h3>
+
+    <p>
+        Different modules may also have their own permissions. For example, the <a href="{{site.baseurl}}/modules/data_visualization/">Data
+        Visualization</a> module lets you specify which users can see the visualizations; the
+        <a href="{{site.baseurl}}/modules/report_builder/">Report Builder</a> modules lets you target specific forms
+        to which the module applies. You'll need to review each module to see what functionality it offers and
+        see the permissions settings within (if it exists).
+    </p>
+
+    <h4>Export Manager</h4>
 
 	<p>
-		Lastly, there's also Export Group Permissions. This is actually part of the
-		<a href="{{site.baseurl}}/modules/export_manager/">Export Manager</a> module, but it's such a
-		commonly used feature of the script, we thought we'd cover it here too.
+        Another module that has its own permissions is the <a href="{{site.baseurl}}/modules/export_manager/">Export Manager</a>.
+		Controlling the Export Group permissions within this module is such a commonly used feature of the script,
+        we thought we'd cover it here too.
 	</p>
 
 	<p>
 		{% include screenshot.html item="i265.gif" %}
-		The list of available export options found at the bottom of the submission listing page
-		is also customizable for each client. To change these settings go to Modules »
-		Export Manager and edit the export group for which you want to change the permissions.
+		The list of available export options found at the bottom of the submission listing page is customizable for
+        each client. To change these settings go to Modules » Export Manager and edit the export group for which you
+        want to change the permissions.
 	</p>
 
 	<p>
-		On that page, you'll see the (by now) familiar permission settings: Administrator only,
-		Public and Private. Because the export groups are used for ALL forms, they will affect all
-		clients, regardless of what form they are assigned to.
+		On that page, you'll see the (by now) familiar permission settings: Administrator only, Public and Private.
+        Because the export groups are used for ALL forms, they will affect all clients, regardless of what form they
+        are assigned to.
 	</p>
 
 {% include close_section.html %}
