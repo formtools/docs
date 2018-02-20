@@ -7,14 +7,17 @@ breadcrumbs:
   - Form Submissions
 prev: The Custom Fields module,/userdoc/field_types/custom_fields_module/
 next: The submissions table,/userdoc/form_submissions/submissions_table/
+category: userdoc
+page_type: introduction
+tags: submissions
 ---
 
 {% include open_section.html nav='nav_userdoc_form_submissions.html' selected='form_submissions' %}
 
 	<p>
-		There are two main pages for viewing and editing your form submission data: the
-		<i>Submission Listing</i> page, and the <i>Edit Submission</i> page. Administrator and
-		clients accounts both see these two pages, with a few minor differences between them.
+		There are two main pages for viewing and editing your form submission data: the <i>Submission Listing</i> page,
+        and the <i>Edit Submission</i> page. Administrator and clients accounts both see these two pages, with a few
+        small differences between them.
 	</p>
 
 	<p>
@@ -22,157 +25,153 @@ next: The submissions table,/userdoc/form_submissions/submissions_table/
 		pages in this documentation section go into some of the features in more depth.
 	</p>
 
-	<table cellspacing="0" cellpadding="1" width="100%">
-		<tbody><tr>
-			<td width="100" class="blue" valign="top">Heading</td>
-			<td valign="top">
-				{% include screenshot.html item="i268.gif" %}
-				The form submissions page always contains the name of your form so you never lose
-				track of what you're currently viewing. Clicking the icon or the "Forms" link
-				returns you to the main form listing page where you can choose another form.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Edit Form / View Submissions toggle</td>
-			<td valign="top">
-				{% include screenshot.html item="i269.gif" %}
-				This appears for the administrator only; when you click it you toggle between
-				editing the submissions and editing the form. It's "smart" in that it redirects you
-				back to the last Edit Form page you were currently viewing (e.g. the Views tab);
-				similarly it takes you back to the last edited submission or Submission Listing page.
+	<div class="row">
+        <div class="col-lg-3"><code>Heading</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i268.gif" %}
+            The form submissions page always contains the name of your form so you never lose
+            track of what you're currently viewing. Clicking the icon or the "Forms" link
+            returns you to the main form listing page where you can choose another form.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Edit Form / View Submissions toggle</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i269.gif" %}
+            This appears for the administrator only; when you click it you toggle between
+            editing the submissions and editing the form. It's "smart" in that it redirects you
+            back to the last Edit Form page you were currently viewing (e.g. the Views tab);
+            similarly it takes you back to the last edited submission or Submission Listing page.
 
-				When you're in the midst of configuring your form, this can
-				be an extremely useful tool for confirming that your changes are having the affect
-				you expect.
-			</td>
-		</tr>
-		<tr>
-			<td width="150" class="blue" valign="top">Search Form</td>
-			<td valign="top">
-				{% include screenshot.html item="i270.gif" %}
-				The search form is an extremely useful tool for locating submissions and viewing
-				subsets of your submissions. As with all other aspects of the UI, it's customized
-				to your particular form: it allows you to search specific fields within your form.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Show All button</td>
-			<td valign="top">
-				{% include screenshot.html item="i271.gif" %}
-				The Show All button is useful when you've just performed a search that returns a subset
-				of the total submissions in the form. If you are viewing a subset it becomes boldened
-				and clicking it shows all submissions, emptying your current search criteria.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Pagination Links</td>
-			<td valign="top">
-				{% include screenshot.html item="i59.jpg" %}
-				The pagination links and "total results" line provide you with a little information about the
-				current set of submissions being viewed and the option to navigate between the pages.
-				Note that this section always reflects both the current <b>search</b> values and the
-				current <b>View</b>. So the "Total Results" value may be different from View to View.
-				Hopefully this should work fairly intuitively.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Views Dropdown</td>
-			<td>
-				{% include screenshot.html item="i272.gif" %}
-				The Views dropdown is an exciting addition in Form Tools 2. If you have more than one
-				View the account has permission to see it, you will see a dropdown
-				containing the list of Views. When you select the View, it will automatically load the
-				View. Views may contain any subset of fields and submissions, they can contain different
-				columns on the submission listings page, can group the submission fields in tabs on the
-				"Edit Submission" page, and much more. See the <a href="{{site.baseurl}}/userdoc/views">Views</a> section
-				for a more thorough discussion of the features.<br>
-				<br>
-				One final note: the default View loaded by any client account is the FIRST View in the
-				ordered set of Views that they have permissions to access.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Quicklinks bar</td>
-			<td>
-				{% include screenshot.html item="i273.gif" %}
-				Form Tools 2 allows modules to add quicklink icons to this location. This can be
-				convenient, depending on what the module is doing. In this case, the
-				<a href="{{site.baseurl}}/modules/report_builder/">Report Builder</a> module
-				has added a quicklink icon so that you can view all the reports, just by clicking its
-				quicklink.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Table Columns</td>
-			<td>
-				All the columns you see in this page can be specified on the
-				<a href="{{site.baseurl}}/userdoc/views/columns_tab">Edit View -&gt; Columns tab</a>. The point of the
-				submissions table is to provide a quick overview of the data, showing a subset of
-				relevant fields so that you can quickly find the field, then click on the edit icon to
-				see the full data.
-				<br>
-				Tip: if your column (i.e. form field!) contains numeric values and you want to make it a
-				sortable column, you may find that it sorts incorrectly. To remedy this, go to the
-				Edit Form » Database tab, locate the field and change the "Data Type" value to
-				"Number". That will tell the sorting mechanism to treat the field as a number.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Num Rows selected text</td>
-			<td valign="top">
-				{% include screenshot.html item="i63.jpg" %}
-				This label keeps track of the number of currently selected rows. Unlike Form Tools
-				1.x, you can now go from page to page selecting rows on each: the system will remember
-				which fields you have selected so that when you return to each page, you'll see
-				the current selected rows. The "num rows selected" text keeps you reminded of how many
-				rows selected.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Mass Select/Unselect Options</td>
-			<td>
-				{% include screenshot.html item="i67.jpg" %}
-				These buttons provide a convenient way to select and unselect submissions. The buttons
-				are also "smart" in that they know whether or not you're viewing a set of results shown
-				on a single page or multiple pages. As such, if you're on a single page and click the
-				"Select All" button it will select all rows and the button text will change to "All
-				X results selected". If there were multiple pages, it would select all submissions
-				on the page then the label would change to say "Select all XX results" where XX is the
-				total number of results in the current result set. So in other words, it has only
-				selected all the submissions on the current page - not every submission in the result set.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Delete button</td>
-			<td>
-				{% include screenshot.html item="i275.gif" %}
-				The delete button only appears if the View allows you to delete submissions. This option
-				is set in the Edit Form » Views » Edit View » main tab, under the
-				option "May delete submissions". Clicking the delete
-				button deletes ALL selected submissions. So be very careful you've selected the right
-				ones!
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Add button</td>
-			<td>
-				{% include screenshot.html item="i274.gif" %}
-				The Add button only appears if the View allows you to add submissions. This option
-				is set in the Edit Form » Views » Edit View » main tab, under the
-				option "May add submissions".
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Export options</td>
-			<td valign="top">
-				{% include screenshot.html item="i276.gif" %}
-				This bit's neat! I personally think it's one of the best features of Form Tools 2.
-				All the export options you see at the bottom of the page are handled by the new Export
-				Manager module. This gives you complete control over the way you can generate, view and
-				download the data. See the following page for more information on this great feature.
-			</td>
-		</tr>
-		</tbody>
-	</table>
+            When you're in the midst of configuring your form, this can be an extremely useful tool for confirming that
+            your changes are having the effect you expect.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Search Form</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i270.gif" %}
+            The search form appears above the submission list, providing some basic search options to find the submission(s)
+            you're interested in. As with all other aspects of the UI, it's customized to your particular form: it allows
+            you to search specific fields within your form.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Show All button</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i271.gif" %}
+            The Show All button is useful when you've just performed a search that returns a subset
+            of the total submissions in the form. If you are viewing a subset it becomes bold and clicking it shows
+            all submissions, emptying your current search criteria.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Pagination Links</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i59.jpg" %}
+            The pagination links and "total results" line provide you with a little information about the
+            current set of submissions being viewed and the option to navigate between the pages.
+            Note that this section always reflects both the current <b>search</b> values and the
+            current <b>View</b>. So the "Total Results" value may be different from View to View.
+            Hopefully this should work fairly intuitively.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Views Dropdown</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i272.gif" %}
+            The Views dropdown is an exciting addition in Form Tools 2. If you have more than one
+            View the account has permission to see it, you will see a dropdown
+            containing the list of Views. When you select the View, it will automatically load the
+            View. Views may contain any subset of fields and submissions, they can contain different
+            columns on the submission listings page, can group the submission fields in tabs on the
+            "Edit Submission" page, and much more. See the <a href="{{site.baseurl}}/userdoc/views">Views</a> section
+            for a more thorough discussion of the features.<br>
+            <br>
+            One final note: the default View loaded by any client account is the FIRST View in the
+            ordered set of Views that they have permissions to access.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Quicklinks bar</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i273.gif" %}
+            Form Tools 2 allows modules to add quicklink icons to this location. This can be
+            convenient, depending on what the module is doing. In this case, the
+            <a href="{{site.baseurl}}/modules/report_builder/">Report Builder</a> module
+            has added a quicklink icon so that you can view all the reports, just by clicking its
+            quicklink.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Table Columns</code></div>
+        <div class="col-lg-9">
+            All the columns you see in this page can be specified on the
+            <a href="{{site.baseurl}}/userdoc/views/columns_tab">Edit View &raquo; Columns tab</a>. The point of the
+            submissions table is to provide a quick overview of the data, showing a subset of
+            relevant fields so that you can quickly find the field, then click on the edit icon to
+            see the full data.
+            <br>
+            Tip: if your column (i.e. form field!) contains numeric values and you want to make it a
+            sortable column, you may find that it sorts incorrectly. To remedy this, go to the
+            Edit Form » Database tab, locate the field and change the "Data Type" value to
+            "Number". That will tell the sorting mechanism to treat the field as a number.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Num Rows selected text</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i63.jpg" %}
+            This label keeps track of the number of currently selected rows. Unlike Form Tools
+            1.x, you can now go from page to page selecting rows on each: the system will remember
+            which fields you have selected so that when you return to each page, you'll see
+            the current selected rows. The "num rows selected" text keeps you reminded of how many
+            rows selected.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Mass Select/Unselect Options</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i67.jpg" %}
+            These buttons provide a convenient way to select and unselect submissions. The buttons
+            are also "smart" in that they know whether or not you're viewing a set of results shown
+            on a single page or multiple pages. As such, if you're on a single page and click the
+            "Select All" button it will select all rows and the button text will change to "All
+            X results selected". If there were multiple pages, it would select all submissions
+            on the page then the label would change to say "Select all XX results" where XX is the
+            total number of results in the current result set. So in other words, it has only
+            selected all the submissions on the current page - not every submission in the result set.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Delete button</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i275.gif" %}
+            The delete button only appears if the View allows you to delete submissions. This option
+            is set in the Edit Form » Views » Edit View » main tab, under the
+            option "May delete submissions". Clicking the delete
+            button deletes ALL selected submissions. So be very careful you've selected the right
+            ones!
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Add button</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i274.gif" %}
+            The Add button only appears if the View allows you to add submissions. This option
+            is set in the Edit Form » Views » Edit View » main tab, under the
+            option "May add submissions".
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Export options</code></div>
+        <div class="col-lg-9">
+            {% include screenshot.html item="i276.gif" %}
+            This bit's neat! I personally think it's one of the best features of Form Tools 2.
+            All the export options you see at the bottom of the page are handled by the new Export
+            Manager module. This gives you complete control over the way you can generate, view and
+            download the data. See the following page for more information on this great feature.
+        </div>
+    </div>
 
 {% include close_section.html %}

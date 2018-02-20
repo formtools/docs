@@ -1,0 +1,59 @@
+---
+layout: default
+navPage: docs
+heading: Resetting Admin Password
+breadcrumbs:
+  - Tutorials,/tutorials/
+  - Resetting Admin Password
+category: tutorial
+---
+
+<p>
+    You may find yourself in the sticky position where you've forgotten your administrator
+    password. Ordinarily, you can just request the password to be sent to you via the "Forgot
+    Password" link on the Form Tools login page, but if for whatever reason your email
+    configuration isn't set up properly, you're rather stuck!
+</p>
+
+<p>
+    This short, one-page tutorial explains how to manually re-set your administrator password.
+</p>
+
+
+<h3>Requirements</h3>
+
+<p>
+    Access to your database via a tool like phpMyAdmin, or something like it. If you don't
+    have this, you will need to contact your hosting provider to ask them for access.
+</p>
+
+<h3>Resetting the password</h3>
+
+<p>
+    All passwords are encrypted in the database, so you can't just update the database record
+    with the new one. First, you need to encrypt it.
+</p>
+
+<ol>
+    <li>Go here: <a href="https://formtools.org/password_reset.php">https://formtools.org/password_reset.php</a></li>
+    <li>
+        On that page, enter your new password and submit the form. Copy and paste the encrypted
+        password to your clipboard.
+    </li>
+    <li>
+        Now access your database via phpMyAdmin and locate the <b>ft_accounts</b> table. The
+        actual name of your table will depend on the database table prefix you chose when
+        first installing it, but the default is <b>ft_</b>. If you're not sure, take a look
+        at your <b>/global/config.php</b> file and the <b>$g_table_prefix</b> setting.
+    </li>
+    <li>
+        View the contents of the table and look at the very first row (account_id = 1). Edit
+        the record and for the <b>password</b> column, paste the encrypted password into the
+        field and save.
+    </li>
+    <li>
+        Now try logging into Form Tools. All should be well! If not,
+        double-check that when you copied the password, it didn't tack on an extra space at the
+        end. Browsers / OSs can do that, occasionally.
+    </li>
+</ol>
