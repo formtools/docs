@@ -8,6 +8,8 @@ breadcrumbs:
   - Accounts Tab
 prev: Main Tab,/userdoc/settings/main_tab/
 next: Files Tab,/userdoc/settings/files_tab/
+category: userdoc
+tags: settings
 ---
 
 {% include open_section.html nav='nav_userdoc_settings.html' selected='accounts_tab' %}
@@ -30,74 +32,75 @@ next: Files Tab,/userdoc/settings/files_tab/
 		alphanumeric characters, as with 2.0.2 and earlier.
 	</p>
 
-	<table cellspacing="0" cellpadding="1" width="100%">
-		<tbody><tr>
-			<td width="160" class="blue" valign="top">Page Titles</td>
-			<td>
-				This setting determines the string that will appear in the web browser for the web page,
-				via the &lt;title&gt; HTML node. You can enter whatever string you want, but bear in mind
-				it will appear for all pages. It's a good idea to include the <b>{$page}</b> Smarty
-				placeholder in this field, too. That placeholder is replaced with the actual page name
-				for each page within the Form Tools UI.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Footer Text</td>
-			<td>
-				By default, this value is blank. But if you include a value, it will appear at the
-				bottom of each page. A common use for this is to add a copyright line.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Default Theme</td>
-			<td>
-				The default theme for all new accounts.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Login Page</td>
-			<td>
-				This determines what page the client will get directed to after logging in. By default,
-				this is set to the Forms page, but you pick whatever you want. This field is compatible
-				with the <a href="{{site.baseurl}}/modules/pages/">Pages module</a> - so you can create
-				custom pages and make them the client's login page.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Logout URL</td>
-			<td>
-				The URL where the clients are redirected to when they click Logout.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Default Language</td>
-			<td>
-				The default language for the client accounts.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">System Time Offset</td>
-			<td>
-				This setting lets you accomodate for differences between your server timezone and your
-				own timezone. This ensures times are all displayed in the correct time for your clients.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Default Sessions Timeout</td>
-			<td>
-				This determines the default inactivity timeout for the client accounts.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Date Format</td>
-			<td>
-				This setting lets you control the formatting of all dates within Form Tools. For
-				non-English installations, you'll probably want to change this value to exclude any
-				English strings. The formatting codes are from the php
-				<a href="http://ca.php.net/manual/en/function.date.php">date()</a> function.
-			</td>
-		</tr>
-		</tbody></table>
+    <div class="clear"></div>
+
+    <div class="row">
+        <div class="col-lg-3"><code>Page Titles</code></div>
+        <div class="col-lg-9">
+            This setting determines the string that will appear in the web browser for the web page,
+            via the &lt;title&gt; HTML node. You can enter whatever string you want, but bear in mind
+            it will appear for all pages. It's a good idea to include the <b>{$page}</b> Smarty
+            placeholder in this field, too. That placeholder is replaced with the actual page name
+            for each page within the Form Tools UI.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Footer Text</code></div>
+        <div class="col-lg-9">
+            By default, this value is blank. But if you include a value, it will appear at the
+            bottom of each page. A common use for this is to add a copyright line.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Default Theme</code></div>
+        <div class="col-lg-9">
+            The default theme for all new accounts.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Login Page</code></div>
+        <div class="col-lg-9">
+            This determines what page the client will get directed to after logging in. By default,
+            this is set to the Forms page, but you pick whatever you want. This field is compatible
+            with the <a href="{{site.baseurl}}/modules/pages/">Pages module</a> - so you can create
+            custom pages and make them the client's login page.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Logout URL</code></div>
+        <div class="col-lg-9">
+            The URL where the clients are redirected to when they click Logout.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Default Language</code></div>
+        <div class="col-lg-9">
+            The default language for the client accounts.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>System Time Offset</code></div>
+        <div class="col-lg-9">
+            This setting lets you accomodate for differences between your server timezone and your
+            own timezone. This ensures times are all displayed in the correct time for your clients.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Default Sessions Timeout</code></div>
+        <div class="col-lg-9">
+            This determines the default inactivity timeout for the client accounts.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Date Format</code></div>
+        <div class="col-lg-9">
+            This setting lets you control the formatting of all dates within Form Tools. For
+            non-English installations, you'll probably want to change this value to exclude any
+            English strings. The formatting codes are from the php
+            <a href="http://ca.php.net/manual/en/function.date.php">date()</a> function.
+        </div>
+    </div>
+
 
 	<h3>Security Settings</h3>
 
@@ -107,41 +110,36 @@ next: Files Tab,/userdoc/settings/files_tab/
 		and upgrades.
 	</p>
 
-	<table cellspacing="0" cellpadding="1" width="100%">
-		<tbody><tr>
-			<td width="160" class="blue" valign="top">
-				Auto-disable account after # failed login attempts
-			</td>
-			<td>
-				This setting prevents brute-force attempts at hacking a user account. The script
-				automatically disables the user account after a unbroken series of failed login
-				attempts.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Minimum password length</td>
-			<td>
-				This lets you force client passwords to be of a minimum number of characters.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Required password characters</td>
-			<td>
-				This settings is pretty self-explanatory: it lets you force the client account passwords
-				to contain certain characters - uppercase, numbers and "special" chars. This can
-				significantly reduce the likelihood of hackers guessing the account passwords.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Prevent re-use of # last passwords</td>
-			<td>
-				Form Tools automatically logs passwords and password changes for client accounts. This
-				setting lets you tap into that and prevent the client from re-using an old password.
-				Preventing password re-use like this can again reduce the likelihood of successful
-				hacking attempts.
-			</td>
-		</tr>
-		</tbody>
-	</table>
+    <div class="row">
+        <div class="col-lg-3"><code>Auto-disable account after # failed login attempts</code></div>
+        <div class="col-lg-9">
+            This setting prevents brute-force attempts at hacking a user account. The script
+            automatically disables the user account after a unbroken series of failed login
+            attempts.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Minimum password length</code></div>
+        <div class="col-lg-9">
+            This lets you force client passwords to be of a minimum number of characters.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Required password characters</code></div>
+        <div class="col-lg-9">
+            This settings is pretty self-explanatory: it lets you force the client account passwords
+            to contain certain characters - uppercase, numbers and "special" chars. This can
+            significantly reduce the likelihood of hackers guessing the account passwords.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Prevent re-use of # last passwords</code></div>
+        <div class="col-lg-9">
+            Form Tools automatically logs passwords and password changes for client accounts. This
+            setting lets you tap into that and prevent the client from re-using an old password.
+            Preventing password re-use like this can again reduce the likelihood of successful
+            hacking attempts.
+        </div>
+    </div>
 
 {% include close_section.html %}

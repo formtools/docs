@@ -9,6 +9,8 @@ breadcrumbs:
   - Content Tab
 prev: Recipient(s) Tab,/userdoc/emails/emails_recipients_tab
 next: Test Tab,/userdoc/emails/emails_test_tab
+category: userdoc
+tags: emails
 ---
 
 {% include open_section.html nav='nav_userdoc_emails.html' selected='emails_content_tab' %}
@@ -20,7 +22,7 @@ next: Test Tab,/userdoc/emails/emails_test_tab
 		There are two fields in the page: HTML template and Text template.
 	</p>
 
-	<h4>Email formats</h4>
+	<h3>Email formats</h3>
 
 	<p>
 		The three most common ways to send emails are: HTML, text and
@@ -36,7 +38,7 @@ next: Test Tab,/userdoc/emails/emails_test_tab
 		send it in multipart. Not exactly brain surgery.
 	</p>
 
-	<h4>The email content / Smarty!</h4>
+	<h3>The email content / Smarty!</h3>
 
 	<p>
 		To save you the effort of having to build your emails by hand, we've created a number of
@@ -53,7 +55,7 @@ next: Test Tab,/userdoc/emails/emails_test_tab
 		and this caused a lot of problems. Smarty is a far simpler approach.
 	</p>
 
-	<h4>A very, very short introduction to Smarty</h4>
+	<h3>A very, very short introduction to Smarty</h3>
 
 	<p>
 		By and large, you won't need to know anything about Smarty. You can just pick one of the
@@ -61,33 +63,33 @@ next: Test Tab,/userdoc/emails/emails_test_tab
 		if you're curious.
 	</p>
 
-	<table cellspacing="0" cellpadding="1" width="100%">
-		<tbody><tr>
-			<td width="120" class="blue" valign="top">Placeholders</td>
-			<td>
-				A placeholder is a sequence of characters like <b>{$QUESTION_my_email_field}</b>.
-				When the email is sent, it is converted to whatever special meaning it assigned to
-				it. For a list of all available placeholders for your form, see the Reference tab.
-			</td>
-		</tr>
-		<tr>
-			<td width="120" class="blue" valign="top">Logic</td>
-			<td>
-				Smarty also lets you embed logic (like if-else tests). To use the placeholder we just
-				mentioned, we could add something like this:
+    <div class="row">
+        <div class="col-lg-3"><code>Placeholders</code></div>
+        <div class="col-lg-9">
+            A placeholder is a sequence of characters like <b>{$ANSWER_my_email_field}</b>.
+            When the email is sent, it is converted to whatever special meaning it assigned to
+            it. For a list of all available placeholders for your form, see the Reference tab.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Logic</code></div>
+        <div class="col-lg-9">
+            Smarty also lets you embed logic (like if-else tests). To use the placeholder we just
+            mentioned, we could add something like this:
 
-				{if $QUESTION_my_email == "phil@philipglass.com"}
-				Hello Mr. Glass. Arpeggios get real boring!
-				{/if}
+            {% codemirror smarty %}
+{if $ANSWER_my_email == "todd@whomever.net"}
+    Hey Todd. 'sup?
+{/if}
+            {% endcodemirror %}
 
-				That will then add that derisive comment to the email IF the email sender if
-				phil@philipglass.com.
-			</td>
-		</tr>
-		</tbody></table>
+            That will then add that derisive comment to the email IF the email sender if
+            phil@philipglass.com.
+        </div>
+    </div>
 
 
-	<h4>"All Fields" vs. "Smarty Loop" patterns</h4>
+	<h3>"All Fields" vs. "Smarty Loop" patterns</h3>
 
 	<p>
 		In the example dropdowns, you'll see the email patterns arranged into

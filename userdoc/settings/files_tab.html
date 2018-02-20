@@ -8,6 +8,8 @@ breadcrumbs:
   - Files Tab
 prev: Accounts Tab,/userdoc/settings/accounts_tab/
 next: Menus Tab,/userdoc/settings/menus_tab/
+category: userdoc
+tags: settings
 ---
 
 {% include open_section.html nav='nav_userdoc_settings.html' selected='files_tab' %}
@@ -21,42 +23,41 @@ next: Menus Tab,/userdoc/settings/menus_tab/
 		first.
 	</p>
 
-	<table cellspacing="0" cellpadding="1" width="100%">
-		<tbody><tr>
-			<td class="blue" width="160" valign="top">Upload folder path</td>
-			<td>
-				This field determines the default file upload folder for all file upload fields.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Upload folder URL</td>
-			<td>
-				This field determines the default file upload URL for all file upload fields.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Max File Size</td>
-			<td>
-				This determines the maximum size of files that can be uploaded through the UI and
-				through your forms. The filesize options available in the download relate to your
-				server; the maximum option in that dropdown is the maximum size that files can be
-				uploaded as determined by your php.ini file.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Permitted File Types</td>
-			<td>
-				This determines what file types can be uploaded.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Use Lightbox to display files</td>
-			<td>
-				This option can be helpful if you're only upload images through your file fields.
-				It opens all files in a Lightbox popup.
-			</td>
-		</tr>
-		</tbody>
-	</table>
+    <div class="clear"></div>
+
+    <div class="row">
+        <div class="col-lg-3"><code>Upload folder path</code></div>
+        <div class="col-lg-9">
+            This field determines the default file upload folder for all file upload fields.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Upload folder URL</code></div>
+        <div class="col-lg-9">
+            This field determines the default file upload URL for all file upload fields.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Max File Size</code></div>
+        <div class="col-lg-9">
+            This determines the maximum size of files that can be uploaded through the UI and
+            through your forms. The filesize options available in the download relate to your
+            server; the maximum option in that dropdown is the maximum size that files can be
+            uploaded as determined by your php.ini file.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Permitted File Types</code></div>
+        <div class="col-lg-9">
+            This determines what file types can be uploaded.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Use Lightbox to display files</code></div>
+        <div class="col-lg-9">
+            This option can be helpful if you're only upload images through your file fields.
+            It opens all files in a Lightbox popup.
+        </div>
+    </div>
 
 {% include close_section.html %}

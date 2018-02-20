@@ -10,6 +10,8 @@ breadcrumbs:
   - Standard Filters - examples
 prev: Standard Filters,/userdoc/views/standard_filters/
 next: Client Map Filters,/userdoc/views/client_map_filters/
+category: userdoc
+tags: views,filters
 ---
 
 {% include open_section.html nav='nav_userdoc_views.html' selected='standard_filters_examples' %}
@@ -21,7 +23,8 @@ next: Client Map Filters,/userdoc/views/client_map_filters/
 		form for the federal government, where each submission is a person's resume.
 	</p>
 
-	<h4>Example 1: Only letting clients view "reviewed" submissions</h4>
+
+	<h3>Example 1: Only letting clients view "reviewed" submissions</h3>
 
 	<p>
 		You may find that you don't want clients to view all submissions that go through a form
@@ -42,37 +45,45 @@ next: Client Map Filters,/userdoc/views/client_map_filters/
 		leave "1" as the default value. Add the following values:
 	</p>
 
-	<table cellspacing="0" width="100%">
-		<tbody><tr>
-			<td width="250" class="blue">Auto-generate database column names</td>
-			<td>Leave <b>checked</b>.</td>
-		</tr>
-		<tr>
-			<td class="blue">Pass On</td>
-			<td>Leave <b>unchecked</b>.</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Form Field Name</td>
-			<td>
-				This new field isn't going to be passed along in the form with the other fields, but
-				Form Tools still requires a value here. It doesn't matter what you enter here, just
-				so long as it isn't already used by a form field. I'd suggest something like
-				"reviewed123" which will almost certainly be unique.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue">Display Text</td>
-			<td>Enter "Reviewed".</td>
-		</tr>
-		<tr>
-			<td class="blue">Field Size</td>
-			<td>Leave as "Tiny (&lt; 5 chars)".</td>
-		</tr>
-		<tr>
-			<td class="blue">Data Type</td>
-			<td>Leave as "String".</td>
-		</tr>
-		</tbody></table>
+    <div class="row">
+        <div class="col-lg-5"><code>Auto-generate database column names</code></div>
+        <div class="col-lg-7">
+            Leave <b>checked</b>.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5"><code>Pass On</code></div>
+        <div class="col-lg-7">
+            Leave <b>unchecked</b>.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5"><code>Form Field Name</code></div>
+        <div class="col-lg-7">
+            This new field isn't going to be passed along in the form with the other fields, but
+            Form Tools still requires a value here. It doesn't matter what you enter here, just
+            so long as it isn't already used by a form field. I'd suggest something like
+            "reviewed123" which will almost certainly be unique.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5"><code>Display Text</code></div>
+        <div class="col-lg-7">
+            Enter "Reviewed".
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5"><code>Field Size</code></div>
+        <div class="col-lg-7">
+            Leave as "Tiny (&lt; 5 chars)".
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5"><code>Data Type</code></div>
+        <div class="col-lg-7">
+            Leave as "String".
+        </div>
+    </div>
 
 	<p>
 		After clicking "ADD FIELDS", this new field will be stored in the database for your form
@@ -130,16 +141,13 @@ next: Client Map Filters,/userdoc/views/client_map_filters/
 		Export Field Groups, it won't seem half so daunting!
 	</p>
 
+	<h3>Example 2: "Disabling" an account by hiding all new submissions</h3>
 
-	<br>
-	<h4>Example 2: "Disabling" an account by hiding all new submissions</h4>
-
-	<p class="notify">
+	<p class="alert alert-info">
 		On a related note, you may also wish to see the Hooks Manager module documentation for an
-		example of how to do something similar: <u><a href="{{site.baseurl}}/modules/hooks_manager/example/client_account_expiry_dates">adding a
+		example of how to do something similar: <u><a href="{{site.baseurl}}/modules/hooks_manager/example/client_account_expiry_dates/">adding a
 		"expiry date" to a client account</a></u>.
 	</p>
-
 
 	<p>
 		If you're using Form Tools as a paid service for clients, you may need to disable
@@ -162,7 +170,7 @@ next: Client Map Filters,/userdoc/views/client_map_filters/
 		client from the OTHER View - the View that doesn't limit the submissions.
 	</p>
 
-	<h4>Example 3: Showing only submissions within a date range</h4>
+	<h3>Example 3: Showing only submissions within a date range</h3>
 
 	<p>
 		This may be useful to give a client a sample of submissions for illustration purposes.

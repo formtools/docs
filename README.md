@@ -71,4 +71,5 @@ Common delimited list of: `userdoc`, `modules`, `themes`, `api`, `theme_developm
 
 ### tags
 Arbitrary strings to pinpoint what the page is about. This is as fine-grained as it gets. 
-`permissions`, `forms`, `views`, `fields`, `field_types`, `option_lists`, `validation`, `submissions`, `data_export`
+`permissions`, `forms`, `views`, `fields`, `field_types`, `option_lists`, `validation`, `submissions`, `data_export`,
+`emails`, `filters`, `themes`

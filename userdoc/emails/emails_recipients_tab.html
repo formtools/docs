@@ -7,66 +7,70 @@ breadcrumbs:
   - Emails,/userdoc/emails
   - Adding / Editing Emails,/userdoc/emails/editing_emails/
   - Recipient(s) Tab
-prev: Configuration Tab,/userdoc/emails/emails_configuration_tab
-next: Content Tab,/userdoc/emails/emails_content_tab
+prev: Configuration Tab,/userdoc/emails/emails_configuration_tab/
+next: Content Tab,/userdoc/emails/emails_content_tab/
+category: userdoc
+tags: emails
 ---
 
 {% include open_section.html nav='nav_userdoc_emails.html' selected='emails_recipients_tab' %}
 
 	{% include screenshot.html item="i28.jpg" %}
+
 	<p>
 		The recipient(s) tab lets you control the email "headers", namely: the recipient list,
 		the subject line and the reply-to and from email addresses.
 	</p>
 
-	<table cellspacing="0" cellpadding="0" width="100%">
-		<tbody><tr>
-			<td width="120" class="blue" valign="top">Recipient(s)</td>
-			<td>
-				This field lets you define who should receive this email. The dropdown contains four
-				sections: <b>administrator</b>, <b>clients</b>, <b>user</b> and <b>other</b>. The admin
-				and clients group contain recipients that are dynamically pulled from the database. The
-				benefit to picking them here is that (a) it saves you some typing and makes it less
-				likely you type in an email address incorrectly, and (b) any time the account
-				information changes, the emails will automatically be updated too. The "user" option
-				specifies the user who submitted the form. This will only appear if your form contains
-				an email address for the sender, and you have <a href="../configure_form_email_fields">configured
-				it with Form Tools</a>.<br>
-				<br>
-				Make sure you click the "ADD" button to add the desired recipient.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Subject Line</td>
-			<td>
-				This is the subject line of the email. You can enter placeholders (strings of text
-				that are converted to other values) in this field to precisely customize the subject
-				line. For a list of available placeholders, see the Reference tab.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">From</td>
-			<td>
-				This lets you determine who the email is coming from. It's generally a good idea
-				to include <b>someone's</b> email address here, because emails sent without a "from"
-				sometimes incorrectly get identified as spam and never make it to the recipient's
-				inbox.
-			</td>
-		</tr>
-		<tr>
-			<td class="blue" valign="top">Reply-to</td>
-			<td>
-				This lets you determine the reply-to header of the email; i.e. where the email will
-				go to if they click "reply" in their email client.
-			</td>
-		</tr>
-		</tbody></table>
+
+    <div class="clear"></div>
+
+    <div class="row">
+        <div class="col-lg-3"><code>Recipient(s)</code></div>
+        <div class="col-lg-9">
+            This field lets you define who should receive this email. The dropdown contains four
+            sections: <b>administrator</b>, <b>clients</b>, <b>user</b> and <b>other</b>. The admin
+            and clients group contain recipients that are dynamically pulled from the database. The
+            benefit to picking them here is that (a) it saves you some typing and makes it less
+            likely you type in an email address incorrectly, and (b) any time the account
+            information changes, the emails will automatically be updated too. The "user" option
+            specifies the user who submitted the form. This will only appear if your form contains
+            an email address for the sender, and you have <a href="../configure_form_email_fields/">configured
+            it with Form Tools</a>.<br />
+            <br />
+            Make sure you click the "ADD" button to add the desired recipient.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Subject Line</code></div>
+        <div class="col-lg-9">
+            This is the subject line of the email. You can enter placeholders (strings of text
+            that are converted to other values) in this field to precisely customize the subject
+            line. For a list of available placeholders, see the Reference tab.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>From</code></div>
+        <div class="col-lg-9">
+            This lets you determine who the email is coming from. It's generally a good idea
+            to include <b>someone's</b> email address here, because emails sent without a "from"
+            sometimes incorrectly get identified as spam and never make it to the recipient's
+            inbox.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Reply-to</code></div>
+        <div class="col-lg-9">
+            This lets you determine the reply-to header of the email; i.e. where the email will
+            go to if they click "reply" in their email client.
+        </div>
+    </div>
 
 	<p>
-		If you have the Swift Mailer module installed and configured, you will also see an
-		"undeliverable email recipient" field here. Please see the following page in the
-		<a href="https://docs.formtools.org/modules/swift_mailer/undeliverable_emails/">Swift Mailer
-			documentation</a> for more information.
+		If you have the Swift Mailer module installed and configured, you will also see an "undeliverable email
+        recipient" field here. Please see the following page in the
+		<a href="{{site.baseurl}}/modules/swift_mailer/undeliverable_emails/">Swift Mailer documentation</a> for more
+        information.
 	</p>
 
 
