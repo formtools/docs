@@ -7,6 +7,7 @@ breadcrumbs:
   - Theme Structure
 prev: The Default Theme,/theme_development/default_theme/
 next: Cache Files,/theme_development/cache_files/
+category: theme_development
 ---
 
 {% include open_section.html nav='nav_theme_development.html' selected='theme_structure' nav_width=4 %}
@@ -17,33 +18,36 @@ next: Cache Files,/theme_development/cache_files/
 	</p>
 
 	<p>
-		If you look in the Form Tools root folder, you'll see the following directory structure.
+		If you look in the Form Tools root folder, you'll see two folders: <code>admin</code> and <code>client</code>,
+        which look something like this:
 	</p>
 
 	<pre>/admin/account/
 /admin/clients/
 /admin/forms/add/
-/admin/forms/field_option_groups/
-/admin/forms/field_types/
+/admin/forms/edit/
+/admin/forms/option_lists/
 /admin/modules/
 /admin/settings/
+/admin/themes/
 /clients/account/
 /clients/forms/
 </pre>
 
 	<p>
-		(and some other folders). Now look in the default theme folder (<b>/themes/default</b>).
+		Now look in the default theme folder (<b>/themes/default</b>).
 	</p>
 
-	<pre>/themes/default/admin/account/
-/themes/default/admin/clients/
-/themes/default/admin/forms/add/
-/themes/default/admin/forms/field_option_groups/
-/themes/default/admin/forms/field_types/
-/themes/default/admin/modules/
-/themes/default/admin/settings/
-/themes/default/clients/account/
-/themes/default/clients/forms/
+	<pre>/default/admin/account/
+/default/admin/clients/
+/default/admin/forms/add/
+/default/admin/forms/edit/
+/default/admin/forms/option_lists/
+/default/admin/modules/
+/default/admin/settings/
+/default/admin/themes/
+/default/clients/account/
+/default/clients/forms/
 </pre>
 
 	<p>
