@@ -1,0 +1,35 @@
+---
+layout: default
+navPage: docs
+heading: index.php
+breadcrumbs:
+  - Module Development,/module_development/
+  - Anatomy of a Module,/module_development/anatomy/
+  - index.php
+prev: module.php,/module_development/file_module/
+next: index.tpl,/module_development/file_index_tpl/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='file_index' nav_width=4 %}
+
+	<p>
+		The index.php file is the first page the user is linked to after they select the module. This
+		page should contain whatever PHP code you require on your index page. A bare-bones example can
+		be lifted from the <a href="https://docs.formtools.org/modules/hello_world/">Hello World!</a> module:
+	</p>
+
+	{% codemirror php %}
+<?php
+require_once("../../global/library.php");
+ft_init_module_page();
+ft_display_module_page("index.tpl");
+?>
+	{% endcodemirror %}
+
+	<p>
+		That imports the main Form Tools code file (library.php), initializes the module page and
+		displays the template page (index.tpl).
+	</p>
+
+{% include close_section.html %}

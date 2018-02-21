@@ -1,0 +1,24 @@
+---
+layout: default
+navPage: docs
+heading: ft_get_module_hooks
+breadcrumbs:
+  - Module Development,/module_development/
+  - Helper Functions,/module_development/helper_functions/
+  - ft_get_module_hooks
+prev: ft_get_dhtml_page_nav,/module_development/ft_get_dhtml_page_nav/
+next: ft_get_module_settings,/module_development/ft_get_module_settings/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='ft_get_module_hooks' nav_width=4 %}
+
+	<p>
+		This function returns all hooks associated with this module. It's called like so:
+	</p>
+
+{% codemirror php %}
+$hooks = ft_get_module_hooks("my_module");
+{% endcodemirror %}
+
+{% include close_section.html %}

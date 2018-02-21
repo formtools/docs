@@ -1,0 +1,72 @@
+---
+layout: default
+navPage: docs
+heading: Uninstallation Function
+breadcrumbs:
+  - Module Development,/module_development/
+  - Special Functions,/module_development/special_functions/
+  - Uninstallation Function
+prev: Installation Function,/module_development/installation_function/
+next: Upgrade Function,/module_development/upgrade_function/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='uninstallation_function' nav_width=4 %}
+
+	<h4>Uninstallation function</h4>
+
+	<p class="alert alert-info">
+		Important! When the administrator uninstalls a module, by default the core script will
+		automatically attempt to delete the module folder. While you're developing your own module,
+		this probably won't be what you want! To override the setting, add a
+		<b>$g_delete_module_folder_on_uninstallation = false;</b> setting to your
+		/global/config.php file.
+	</p>
+
+	<p>
+		The uninstallation functions work in a similar manner to the installation function. It's
+		called when the administrator clicks the "UNINSTALL" link. The function must be called
+		<b>my_module__uninstall</b> (where <b>my_module</b> is your module folder name).
+	</p>
+
+	<p>
+		This function should contain all the custom code you need to execute to remove
+		the module from the database. Again, if your module made no database changes, then
+		you won't need to include this file in your module.
+	</p>
+
+	<p>
+		The uninstall function is structured just like the install function:
+	</p>
+
+	{% codemirror php %}
+/**
+ * My Module's uninstallation function. This is automatically called by Form
+ * Tools when the module is uninstalled in the interface.
+ *
+ * @param integer $module_id
+ * @return array [0] true / false
+ *               [1] success or error message
+ */
+function my_module__uninstall($module_id)
+{
+  global $g_table_prefix, $L;
+
+  // do whatever you want here
+
+  return array($success, $message);
+}
+	{% endcodemirror %}
+
+	<p>
+		The module ID is passed to the function in case you need that information. Otherwise
+		you can just ignore it.
+	</p>
+
+	<p>
+		The return array is necessary. You MUST return an arrbeenay with two indexes: [0] true/false,
+		and [1] a message. If you want the core script to display the default "The module has been
+		uninstalled" message, just pass an empty string for the second index.
+	</p>
+
+{% include close_section.html %}

@@ -1,0 +1,39 @@
+---
+layout: default
+navPage: docs
+heading: ft_register_hook
+breadcrumbs:
+  - Module Development,/module_development/
+  - Helper Functions,/module_development/helper_functions/
+  - ft_register_hook
+prev: ft_load_module_field,/module_development/ft_load_module_field/
+next: ft_sanitize,/module_development/ft_sanitize/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='ft_register_hook' nav_width=4 %}
+
+	<p>
+		This function registers a new hook in the database.
+	</p>
+
+{% codemirror php %}
+ft_register_hook($module_folder, $when, $core_function, $hook_function, $priority = 50, $force_unique = false);
+{% endcodemirror %}
+
+	<p>
+		The second <b>$when</b> parameter is the string identifying where in the core function
+		the hook should be associated. See the <a href="{{site.baseurl}}/module_development/code_hooks/">code hooks</a>
+		page for more information on this and the available core functions that can have hooks.
+	</p>
+	<p>
+		The priority parameter determines the priority of the hook. It accepts any value from
+		1-100. 50 is the default.
+	</p>
+	<p>
+		The final parameter tells the function to ONLY register the hook if an identical hook
+		doesn't already exist. Identity is determined by all the fields passed EXCEPT the priority
+		field.
+	</p>
+
+{% include close_section.html %}

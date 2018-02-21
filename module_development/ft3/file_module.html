@@ -1,0 +1,153 @@
+---
+layout: default
+navPage: docs
+heading: module.php
+breadcrumbs:
+  - Module Development,/module_development/
+  - Anatomy of a Module,/module_development/anatomy/
+  - module.php
+prev: Anatomy of a Module,/module_development/anatomy/
+next: index.php,/module_development/file_index/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='file_module' nav_width=4 %}
+
+	<p>
+		The module.php contains all "meta" information about your module, required by Form Tools to
+		access and list your module in the administrator's Module section. It should be located
+		in the module folder's root.
+	</p>
+
+	<p>
+		Here's an example of this file contents, taken from the Export Manager.
+	</p>
+
+	{% codemirror php %}
+<?php
+/*
+ * Module file: Export Manager
+ */
+
+$MODULE["author"]          = "Ben Keen";
+$MODULE["author_email"]    = "ben.keen@gmail.com";
+$MODULE["author_link"]     = "https://formtools.org";
+$MODULE["version"]         = "1.0.0-beta-20090114";
+$MODULE["date"]            = "2009-01-14";
+$MODULE["origin_language"] = "en_us";
+$MODULE["supports_ft_versions"] = "2.0.0";
+
+// define the module navigation - the keys are keys defined in the language file. This lets
+// the navigation - like everything else - be customized to the users language. The paths are always built
+// relative to the module's root, so help/index.php means: /[form tools root]/modules/export_manager/help/index.php
+$MODULE["nav"] = array(
+  "module_name"              => array('{$module_dir}/index.php', false),
+  "word_settings"            => array('{$module_dir}/settings/', false),
+  "word_help"                => array('{$module_dir}/help/', false)
+);
+?>
+	{% endcodemirror %}
+
+	<div class="row">
+		<div class="col-lg-4"><strong>Setting</strong></div>
+		<div class="col-lg-8"><strong>Explanation</strong></div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4">
+			author
+		</div>
+		<div class="col-lg-8">
+			(required) the name of the author, or company name.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			author_email
+		</div>
+		<div class="col-lg-8">
+			(optional) the email address of the author / company email.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			author_link
+		</div>
+		<div class="col-lg-8">
+			(optional) a URL to the author's website.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			version
+		</div>
+		<div class="col-lg-8">
+			(required) the current module version. You can give your versions any numbering
+			scheme you want. We use the commonly used technique of <b>X.Y.Z</b>, where X is the
+			major release number, Y is the minor release and Z is for bug fix releases.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			date
+		</div>
+		<div class="col-lg-8">
+			(optional) the release date of the module version in the format YYYY-MM-DD.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4">
+			origin_language
+		</div>
+		<div class="col-lg-8">
+			(required) the name of the language file, minus the .php extension.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4">
+			supports_ft_versions
+		</div>
+		<div class="col-lg-8">
+			A comma delimited list of supported Form Tools versions. This setting should ignore
+			beta and release candidate releases - just the final versions.
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4">
+			nav
+		</div>
+		<div class="col-lg-8">
+			(required) This setting defines your module's menu items. It is an array, whose
+			keys correspond to entries in your language file. The values are an array with two
+			indexes: the URL of the page, and whether it should appear as a submenu item or not.
+		</div>
+	</div>
+
+	{% codemirror php %}
+<?php
+$MODULE["nav"] = array(
+  "module_name"   => array('{$module_dir}/index.php', false),
+  "word_settings" => array('{$module_dir}/settings/', false),
+  "word_help"     => array('{$module_dir}/help/', false)
+);
+?>
+	{% endcodemirror %}
+
+	<div class="row">
+		<div class="col-lg-4">
+
+		</div>
+		<div class="col-lg-8">
+			The "module_name", "word_settings" and "word_help" have corresponding entries in the
+			module's <b>lang/en_us.php</b> language file (i.e. $L["module_name"] = "Export Manager"
+			etc.). The values each contain the <b>{$module_dir}</b> Smarty placeholder. This is a
+			convenient way to refer to the module root URL. Often you find you won't need it, but if
+			your module arranges its files in subfolders, this wards against invalid links.
+		</div>
+	</div>
+
+
+{% include close_section.html %}

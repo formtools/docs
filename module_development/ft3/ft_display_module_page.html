@@ -1,0 +1,64 @@
+---
+layout: default
+navPage: docs
+heading: ft_display_module_page
+breadcrumbs:
+  - Module Development,/module_development/
+  - Helper Functions,/module_development/helper_functions/
+  - ft_display_module_page
+prev: ft_check_module_enabled,/module_development/ft_check_module_enabled/
+next: ft_eval_smarty_string,/module_development/ft_eval_smarty_string/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='ft_display_module_page' nav_width=4 %}
+
+	<p>
+		This is the main work-horse function used to you display a web page for your module. It works by letting you
+        define the location of a Smarty template with which to render the page, and the content to pass to the page.
+        There is no limit to either the type or volume of information passed to the template, but a general rule of
+        thumb is KISS (Keep It Simple, Stupid): don't pass along too much info and keep that info in simple data
+        structures that easy to process by the template.
+	</p>
+
+	{% codemirror php %}
+ft_display_module_page("templates/index.tpl", $info);
+	{% endcodemirror %}
+
+	<p>
+		N.B. it also takes a third optional hidden $theme parameter to let you control the <i>theme</i> with which the page
+		is rendered - but generally this isn't used, so unless you have something sneaky in mind, try to forget about it.
+		Nothing to see here, move along... move along...
+	</p>
+
+	<p>
+		The path of the smarty template is always relative to your module folder. So in the example above, it's locating the
+		file in a /templates subfolder.
+	</p>
+
+	<p>
+		In addition to the custom values passed to the page, the <b>ft_display_module_page</b> also populates a number
+		of other variables at your disposal in the Smarty templates:
+	</p>
+
+	<ul>
+		<li><b>{$L}</b> - the contents of your language file, containing the language of the administrator's choice (if it exists: otherwise
+			it defaults to the language file that the module was written in)</li>
+		<li><b>{$LANG}</b> - the contents of the main Form Tools language file, again in the admin's language</li>
+		<li><b>{$SESSION}</b> - the entire contents of the Form Tools sessions (aspects of this are included in separate vars below)</li>
+		<li><b>{$settings}</b> - the core Form Tools settings</li>
+		<li><b>{$account}</b> - the logged in user account information</li>
+		<li><b>{$g_root_dir}</b> - from config.php</li>
+		<li><b>{$g_root_url}</b> - from config.php</li>
+		<li><b>{$same_page}</b> - the URL of the current page. Handy when posting a form to itself</li>
+		<li><b>{$query_string}</b> - the query string of the current page (not guaranteed to be populated on all servers)</li>
+		<li><b>{$dir}</b> - the text direction (RTL / LTR)</li>
+		<li><b>{$g_success}</b> - populated by every core function after performing a task (like updating / adding DB records). This is a boolean
+			that logs whether the last task was a success or not</li>
+		<li><b>{$g_message}</b> - the error / success message of the last performed task</li>
+		<li><b>{$module_nav}</b> - the navigation menu contents for your module</li>
+		<li><b>{$images_url}</b> - the URL to the current theme's images folder (required to be /images subfolder in theme)</li>
+		<li><b>{$themes_url}</b> - the URL to the current theme folder</li>
+	</ul>
+
+{% include close_section.html %}

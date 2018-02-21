@@ -1,0 +1,91 @@
+---
+layout: default
+navPage: docs
+heading: ft_get_dhtml_page_nav
+breadcrumbs:
+  - Module Development,/module_development/
+  - Helper Functions,/module_development/helper_functions/
+  - ft_get_dhtml_page_nav
+prev: ft_eval_smarty_string,/module_development/ft_eval_smarty_string/
+next: ft_get_module_hooks,/module_development/ft_get_module_hooks/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='ft_get_dhtml_page_nav' nav_width=4 %}
+
+	<p>
+		This function is the DHTML counterpart of the ft_get_page_nav function defined above.
+		It provides exactly the same functionality to the user - displaying the same «
+		1 2 3 ... links - but instead of requiring a page refresh when a link is clicked, it
+		hides and shows the appropriate section from the page. For this function to work,
+		every page of the data has to have been loaded into the page, and only one of which is
+		displayed at any time.
+	</p>
+
+	<p>
+		Using this function instead of ft_get_page_nav can be a good or bad approach, depending
+		on your data set: it's primarily a question of volume. If you have a large amount of
+		data to show, I wouldn't recommend using this. It will require you to load everything
+		into the page - which can be extremely time consuming. It's really intended for
+		situations that entail smaller data sets; for example, it's used to display pagination
+		on the main Forms and Clients pages, since there will rarely be &gt; 100 results (forms
+		of clients) of either.
+	</p>
+
+	<p>
+		The function is called in your PHP, like so:
+	</p>
+
+	{% codemirror php %}
+$page_vars["pagination"] = ft_get_dhtml_page_nav($num_results, $num_per_page, $page);
+	{% endcodemirror %}
+
+	<p>
+		The function parameters are the following:
+	</p>
+
+	<ol>
+		<li>the number of results in the total result set (required)</li>
+		<li>the number of lines that appear per page (required)</li>
+		<li>the current page number (required)</li>
+	</ol>
+
+
+	<p>
+		The "pagination" key has to be passed to the template via the ft_display_module_page
+		function, like so:
+	</p>
+
+	{% codemirror php %}
+ft_display_module_page("your_template.tpl", $page_vars); // where $page_vars contains "pagination"
+	{% endcodemirror %}
+
+	<p>
+		In your template just use the $pagination variable to display it:
+	</p>
+
+	{% codemirror smarty %}
+{$pagination}
+	{% endcodemirror %}
+
+	<p>
+		You also <b>must</b> include /global/scripts/general.js in your template page. That
+		contains the JS used to hide/show the pages.
+	</p>
+
+	<p>
+		From an HTML standpoint, the function works by detecting nodes in your page that have
+		IDs of the form <b>page_X</b> - where X is a number corresponding to each page - and
+		hiding and showing them depending on what's selected. e.g. if you just clicked "4" in
+		the pagination links, it would (a) hide whatever page ID is currently selected
+		(defaults to 1), and (b) show the element.
+	</p>
+
+	<p>
+		Figuring out the template logic can be a bit tricky, so I'd suggest taking a look at the
+		/themes/[any theme]/admin/clients/index.tpl and/or
+		/themes/[any theme]/admin/forms/index.tpl templates. They provide a couple of real-life
+		examples of how to get it going.
+	</p>
+
+{% include close_section.html %}

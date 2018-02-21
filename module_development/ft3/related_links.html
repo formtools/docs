@@ -1,0 +1,36 @@
+---
+layout: default
+navPage: docs
+heading: Related Links
+breadcrumbs:
+  - Module Development,/module_development/
+  - Hooks,/module_development/hooks/
+  - Related Links
+prev: Hook Examples,/module_development/hook_examples/
+next: Common Tasks,/module_development/common_tasks/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='related_links' nav_width=4 %}
+
+	<p>
+		For practical examples of how hooks can be employed, see the following modules:
+	</p>
+
+	<ol>
+		<li>
+			<a href="https://docs.formtools.org/modules/submission_pre_parser/">Submission Pre-Parser module</a>.
+			At its core, it's fundamentally just a visual wrapper for writing your own code hooks.
+			It registers a single code hook for each of the <b>ft_process_form</b>,
+			<b>ft_api_process_form</b> and <b>ft_update_submission</b> functions. When those functions
+			are executed, the module processes each and every "rule" (i.e. PHP code) that has been
+			added through the UI.</li>
+		<li><a href="https://docs.formtools.org/modules/extended_client_fields">Extended Client Fields module</a>.
+			This module uses both code and template hooks to insert new fields into the edit client
+			pages - both administrator and client - which are saved to the database by attaching
+			custom events to the functions that get called when the form is updated. If you want a
+			good example of how to combine the two hook types, this is a good place to look!
+		</li>
+	</ol>
+
+{% include close_section.html %}

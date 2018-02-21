@@ -4,15 +4,17 @@ navPage: docs
 heading: Installation Function
 breadcrumbs:
   - Module Development,/module_development/
+  - Form Tools 2,/module_development/index_ft2/
   - Special Functions,/module_development/special_functions/
   - Installation Function
 prev: Special Functions,/module_development/special_functions/
 next: Uninstallation Function,/module_development/uninstallation_function/
+category: module_development
 ---
 
 {% include open_section.html nav='nav_module_development.html' selected='installation_function' nav_width=4 %}
 
-	<h4>Installation Function</h4>
+	<h3>Installation Function</h3>
 
 	<p>
 		This function must be named: <b>my_module__install()</b> (where <b>my_module</b> is
@@ -63,7 +65,7 @@ function my_module__install($module_id)
 return array(true, "");
 {% endcodemirror %}
 
-	<p><b>What your install script DOESN'T need to contain</b></p>
+	<h3>What your install script DOESN'T need to contain</h3>
 
 	<p>
 		As mentioned, your custom installation function is called from within the Form Tools

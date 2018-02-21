@@ -1,0 +1,128 @@
+---
+layout: default
+navPage: docs
+heading: lang/[lang file].php
+breadcrumbs:
+  - Module Development,/module_development/
+  - Anatomy of a Module,/module_development/anatomy/
+  - lang/[lang file].php
+prev: index.tpl,/module_development/file_index_tpl/
+next: library.php,/module_development/file_library/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='file_lang' nav_width=4 %}
+
+	<p>
+		In most web applications you just embed the language strings directly in the
+		PHP and HTML. This keeps everything nice and simple, but it limits the application to
+		a single language. Form Tools supports displaying the same pages in multiple languages
+		simultaneously to different users by storing all text strings in a separate language
+		file. The files are found in the <b>/global/lang/</b> folder, located in your Form
+		Tools root.
+	</p>
+
+	<p>
+		Modules work in precisely the same way as the main script. They have their own
+		<b>lang/</b> folder where the language files should be placed . As a developer, you
+		only need to write a single file in the language of your choice. This file contains
+		a single associative array (hash) called $L containing all the language snippets
+		that are used in your module. Here's an example (abbreviated) from the Export Manager
+		module:
+	</p>
+
+	{% codemirror php %}
+/*
+Form Tools - Module Language File
+---------------------------------
+
+File created: Oct 24th, 12:46 PM
+
+If you would like to help translate this module, please visit:
+https://translations.formtools.org/help.php
+*/
+
+$L = array();
+
+// required fields
+$L["module_name"] = "Export Manager";
+$L["module_description"] = "Define your own ways of exporting form submission data for view / download.";
+
+// custom fields
+$L["word_action"] = "Action";
+$L["word_excel"] = "Excel";
+$L["word_filename"] = "Filename";
+$L["word_generate"] = "Generate";
+$L["word_headers"] = "Headers";
+$L["word_help"] = "Help";
+$L["word_icon"] = "Icon";
+$L["word_none"] = "None";
+// ...
+	{% endcodemirror %}
+
+	<p>
+		When you define this file in the same language as the Form Tools administrator, all
+		the values in it are automatically made available to your PHP code and Smarty templates
+		just by calling the <b>ft_init_module_page()</b> function in your module page, as
+		mentioned above.
+	</p>
+
+	<p>
+		Here's a few more concrete details. Imagine you wanted to display the word "Action"
+		on screen, you would first define that word in your language file like so:
+	</p>
+
+	{% codemirror php %}
+$LANG["word_action"] = "Action";
+	{% endcodemirror %}
+
+	<p>
+		You can then reference it in your template, using the $L variable, like this:
+	</p>
+
+	{% codemirror smarty %}
+{$L.word_action}
+	{% endcodemirror %}
+
+	<p>
+		Or, to reference the value in your PHP, just reference the $L variable (defined in
+		your global namespage), like so: $L["word_action"];
+	</p>
+
+	<p>
+		All other values from the Form Tools language file can be referenced with the $LANG
+		global.
+	</p>
+
+	<p>
+		In addition to all the language snippets, your language file has two <b>required</b>
+		hash keys:
+	</p>
+
+{% codemirror php %}
+$L["module_name"] = "My module";
+$L["module_description"] = "My module does this, that, and the other,";
+{% endcodemirror %}
+
+	<p>
+		These values are used on the Modules page to present information about the module
+		(name &amp; description) to the user in their chosen language.
+	</p>
+
+	<p>
+		As with the Form Tools main build, Form Tools automatically takes care of presenting
+		modules in the language of the user. If the desired language file doesn't exist, it
+		uses the module's default language.
+	</p>
+
+	<h5>Is all of this really necessary? I'm just writing this module for speakers of a
+			single language...!</h5>
+
+	<p>
+		If you're not planning on publishing your module for others to use and just want to
+		use it yourself, then no - none of this is necessary. Just define the file and
+		include the two required keys (module_name and module_description). Then you can go
+		about hardcoding the language strings directly in your templates &amp; PHP.
+	</p>
+
+{% include close_section.html %}

@@ -1,0 +1,99 @@
+---
+layout: default
+navPage: docs
+heading: ft_load_module_field
+breadcrumbs:
+  - Module Development,/module_development/
+  - Helper Functions,/module_development/helper_functions/
+  - ft_load_module_field
+prev: ft_init_module_page,/module_development/ft_init_module_page/
+next: ft_register_hook,/module_development/ft_register_hook/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='ft_load_module_field' nav_width=4 %}
+
+	<p>
+		This wonderful little function is the module counterpart to the <b>ft_load_field</b>
+		function, found in the core code. It was written to get around having to perpetually
+		pass information via POST and GET, without having to explicitly update sessions on
+		each page. It's basically a simple storage mechanism for information that's only
+		updated IF the information is explicitly passed to the page via GET or POST.
+	</p>
+	<p>
+		It assumes that a variable name can (or MAY) be found in GET, POST or SESSIONS
+		(or all three). It then return the value stored in the most important variable
+		(GET first, POST second, SESSIONS third), and store the value in sessions at the same time.
+	</p>
+
+	<p>
+		The way it works is very simple. It's called like so:
+	</p>
+
+{% codemirror php %}
+$my_var = ft_load_module_field("my_module", "my_key", "var", "Default value!");
+{% endcodemirror %}
+
+	<p>
+		The four parameters are: your module folder, the key with which to later extract
+		this information from sessions, the key of the variable that can be found in GET,
+		POST or SESSIONS, and the default value.
+	</p>
+
+	<p>
+		<b>Clear as mud? How about an example.</b>
+	</p>
+
+	<p>
+		Imagine the following line is in your PHP.
+	</p>
+
+{% codemirror php %}
+$field_id = ft_load_module_field("my_module", "field_id", "field_id", "[NONE!]");
+{% endcodemirror %}
+
+	<p>
+		When a visitor first goes to the page, after this line has executed, $field_id (since
+		it's not in sessions and not being passed via POST or GET) has the default value assigned
+		to it: [NONE!].
+	</p>
+
+	<p>
+		After this has been called the first time, the function has created a memory location
+		for it in sessions - and it's automatically namespaced for your individual module, so
+		you don't have to worry about it overwriting any values used in the core script or
+		other modules. So if you click refresh on your page, $field_id will still have a
+		value [NONE!] but it will have ignored the fourth parameter - it will have pulled
+		that value from sessions.
+	</p>
+	<p>
+		Now, imagine you append <b>?field_id=100</b> to the page URL and click enter. On the
+		page refresh, the function will overwrite the old [NONE!] value with 100 and return
+		the new value. $field_id now has a value of 100.
+	</p>
+	<p>
+		Next, delete the <b>?field_id=100</b> from the URL and reload the page. At this point,
+		$field_id will STILL have a value of 100 even though it hasn't been passed in
+		explicitly. The function knows to only update the storage if it's passed via GET
+		or POST.
+	</p>
+
+	<p>
+		The same thing works for POSTing the field_id to the page. And what if the field ID
+		is both POSTed to the page and supplied in the query string? Well, in that case it
+		relies on the hierarchy: GET is most important and overrides POST and SESSIONS, POST
+		is second most important and overrides SESSIONS and lastly, if there's nothing in
+		SESSIONS, it'll use the default value.
+	</p>
+
+	<p>
+		<b>Good grief. How can this <i>possibly</i> be useful?!</b>
+	</p>
+
+	<p>
+		You'd be surprised! It's a very clean way to store simple information like IDs in your
+		pages without having to keep passing the information to and fro by appending to
+		links. It's used throughout Form Tools and it saves hundreds of lines of duplicate code!
+	</p>
+
+{% include close_section.html %}

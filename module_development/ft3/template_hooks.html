@@ -1,0 +1,233 @@
+---
+layout: default
+navPage: docs
+heading: Template Hooks
+breadcrumbs:
+  - Module Development,/module_development/
+  - Hooks,/module_development/hooks/
+  - Template Hooks
+prev: Hooks Methodology,/module_development/hooks_methodology/
+next: Hook Examples,/module_development/hook_examples/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='template_hooks' nav_width=4 %}
+
+	<p>
+		This page lists all template hooks available in the default templates. Since theme template
+		names are quite fluid - theme designers can create new templates with whatever names they want -
+		the following list is based on the <b>default</b> template. It actually doesn't matter what the
+		files are called; just so long as the "location" attribute of the template_hook smarty function
+		call has the value determined below, any assigned module functions will get called.
+	</p>
+
+	<p>
+		When looking for a template function, it's generally the best idea to go looking directly
+		in the templates to see what hooks are available. Still, this page is provided as a
+		reference.
+	</p>
+
+	<table cellspacing="0" cellpadding="1" width="100%" class="table table-condensed">
+		<tr>
+			<th>Template</th>
+			<th>Notes</th>
+			<th>Hooks</th>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/clients/tab_main.tpl</td>
+			<td valign="top">
+				These hooks appear at various places within the main edit client page for the
+				administrator.
+			</td>
+			<td valign="top">
+				admin_edit_client_main_top<br>
+				admin_edit_client_main_middle<br>
+				admin_edit_client_main_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/clients/tab_settings.tpl</td>
+			<td valign="top">
+				These hooks appear at various places within the edit client settings page for the
+				administrator.
+			</td>
+			<td valign="top">
+				admin_edit_client_settings_top<br>
+				admin_edit_client_settings_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/clients/tab_forms.tpl</td>
+			<td valign="top">
+				This is the administrator's edit client » forms tab, which lists the tabs
+				and Views that the client has access to.
+			</td>
+			<td valign="top">
+				admin_edit_client_forms_top<br>
+				admin_edit_client_forms_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/clients/add.tpl</td>
+			<td valign="top">
+				The Add Client page.
+			</td>
+			<td valign="top">
+				admin_add_client_top<br>
+				admin_add_client_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/clients/index.tpl</td>
+			<td valign="top">
+				The list clients page.
+			</td>
+			<td valign="top">
+				admin_list_clients_top<br>
+				admin_list_clients_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/clients/edit.tpl</td>
+			<td valign="top">
+				These hooks appear on ALL the Edit client pages, regardless of tab. They are positioned
+				above and below the tabsets.
+			</td>
+			<td valign="top">
+				admin_edit_client_pages_top<br>
+				admin_edit_client_pages_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/forms/tab_edit_email_tab1.tpl</td>
+			<td valign="top">
+				The first of the edit email tabs.
+			</td>
+			<td valign="top">
+				edit_template_tab1<br>
+				edit_template_tab1_advanced
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/forms/tab_edit_email_tab2.tpl</td>
+			<td valign="top">
+				The second of the edit email tabs.
+			</td>
+			<td valign="top">
+				edit_template_tab2
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/forms/submissions.tpl</td>
+			<td valign="top">
+				The submission listing page for the administrator account.
+			</td>
+			<td valign="top">
+				admin_submission_listings_buttons1<br>
+				admin_submission_listings_buttons2<br>
+				admin_submission_listings_buttons3<br>
+				admin_submission_listings_buttons4<br>
+				admin_submission_listings_top<br>
+				admin_submission_listings_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/clients/forms/index.tpl</td>
+			<td valign="top">
+				The submission listing page for client accounts.
+			</td>
+			<td valign="top">
+				client_submission_listings_buttons1<br>
+				client_submission_listings_buttons2<br>
+				client_submission_listings_buttons3<br>
+				client_submission_listings_buttons4<br>
+				client_submission_listings_top<br>
+				client_submission_listings_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/account/index.tpl</td>
+			<td valign="top">
+				These hooks appear at the top and bottom of the edit administrator account page.
+			</td>
+			<td valign="top">
+				admin_account_top<br>
+				admin_account_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/settings/tab_main.tpl</td>
+			<td valign="top">
+				The Settings » Main tab
+			</td>
+			<td valign="top">
+				admin_settings_main_tab_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/settings/tab_accounts.tpl</td>
+			<td valign="top">
+				The Settings » Accounts tab
+			</td>
+			<td valign="top">
+				admin_settings_client_settings_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/settings/tab_files.tpl</td>
+			<td valign="top">
+				The Settings » Files tab
+			</td>
+			<td valign="top">
+				admin_settings_files_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/settings/tab_wysiwyg.tpl</td>
+			<td valign="top">
+				The Settings » WYSIWYG tab
+			</td>
+			<td valign="top">
+				admin_settings_wysiwyg_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/settings/tab_themes.tpl</td>
+			<td valign="top">
+				The Settings » Themes tab
+			</td>
+			<td valign="top">
+				admin_settings_themes_bottom
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/settings/tab_menus.tpl</td>
+			<td valign="top">
+				The Settings » Menus tab
+			</td>
+			<td valign="top">
+				admin_settings_menus_top
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/settings/tab_edit_admin_menu.tpl</td>
+			<td valign="top">
+				The edit admin menu page
+			</td>
+			<td valign="top">
+				admin_settings_admin_menu_top
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" nowrap="">/admin/settings/tab_edit_client_menu.tpl</td>
+			<td valign="top">
+				The edit client menu page
+			</td>
+			<td valign="top">
+				admin_settings_admin_menu_top
+			</td>
+		</tr>
+	</table>
+
+
+{% include close_section.html %}

@@ -4,9 +4,11 @@ navPage: docs
 heading: Hooks
 breadcrumbs:
   - Module Development,/module_development/
+  - Form Tools 2,/module_development/index_ft2/
   - Hooks
 prev: ft_set_module_settings,/module_development/ft_set_module_settings/
 next: Methodology,/module_development/hooks_methodology/
+category: module_development
 ---
 
 {% include open_section.html nav='nav_module_development.html' selected='hooks' nav_width=4 %}
@@ -31,7 +33,7 @@ next: Methodology,/module_development/hooks_methodology/
 		hook types.
 	</p>
 
-	<h4>Code Hooks</h4>
+	<h3>Code Hooks</h3>
 
 	<p>
 		Littered throughout the Form Tools code - mostly found in getter and setter functions -
@@ -51,7 +53,7 @@ extract(ft_process_hooks("main", compact("account_info"), array("account_info"))
 		overridable, <a href="{{site.baseurl}}/module_development/available_hooks/">click here</a>.
 	</p>
 
-	<h4>Template Hooks</h4>
+	<h3>Template Hooks</h3>
 
 	<p>
 		Template hooks are probably simpler to understand. In the Smarty templates, there are

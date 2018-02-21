@@ -1,0 +1,61 @@
+---
+layout: default
+navPage: docs
+heading: Module Development
+breadcrumbs:
+  - Module Development,/module_development/
+  - Form Tools 2
+next: Anatomy of a Module,/module_development/anatomy/
+category: module_development
+page_type: introduction
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='introduction' nav_width=4 %}
+
+	<h3>Overview</h3>
+
+	<p>
+		No script with the scope of Form Tools can accommodate all functionality requests without becoming bloated
+		and unusable. To prevent this, many larger scripts turn to some form of module / plugin architecture that keeps
+		the core code small, but still allows for extensibility. Form Tools is one of those scripts. Developers can
+		extend the core functionality in whatever way they need without needing to tamper with the core script.
+	</p>
+
+	<p>
+		The modules were structured with the following goals in mind:
+	</p>
+
+	<ul>
+		<li>
+			<b>Simple to install and remove</b>. This is paramount. To make modules as useful as possible,
+			they have to be easy to install. Regardless of a users' technical proficiency, nobody like fussing
+			around with complicated installation instructions. If it's tough to install, people are going to give
+			up, and they're likely to make mistakes - potentially causing the main script to stop working.
+		</li>
+		<li>
+			<b>Consistent</b>. Consistency is king. Modules have to be consistent in terms of the overall
+			UI to make it look similar to the core code so that the user doesn't have to re-learn the interface for each
+			and every module; consistent so that all modules can be translated to other languages; consistent in the way the
+			information is stored in the database.
+		</li>
+		<li>
+			<b>International</b>. All modules need to be able to support multiple languages.
+		</li>
+		<li>
+			<b>Simple to develop and write</b>. Let's not forget the poor developer here! If a module isn't easy to write,
+			no-one's going to want to do it.
+		</li>
+	</ul>
+
+	<p>
+		We've developed a modular system to allow you, the developer, to add you own functionality
+		that are compatible with the above rules - just by following the required module structure.
+	</p>
+
+	<p>
+		Lastly, one quick disclaimer: it's not perfect! Depending on what your module does, it may still involve editing
+		some of the core pages. But by and large, it's not a bad approach. Depending on user feedback, this overall design
+		may be revised sometime in the future, but for now - let's get started!
+	</p>
+
+{% include close_section.html %}

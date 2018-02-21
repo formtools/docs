@@ -1,0 +1,156 @@
+---
+layout: default
+navPage: docs
+heading: Displaying your Pages
+breadcrumbs:
+  - Module Development,/module_development/
+  - Displaying your Pages
+prev: Module Navigation,/module_development/module_nav/
+next: Helper Functions,/module_development/helper_functions/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='display_pages' nav_width=4 %}
+
+	<div class="alert alert-info">
+		This page contains some information related to how your pages are displayed within the Form Tools
+		interface:
+
+		<ul>
+			<li><a href="#smarty">Smarty Templates</a></li>
+			<li><a href="#themes">Themes and CSS</a></li>
+			<li><a href="#language">Language Compatibility</a></li>
+		</ul>
+	</div>
+
+	<a name="smarty"></a>
+	<h3>Smarty Templates</h3>
+
+	<p>
+		All HTML rendered within Form Tools - the theme pages, modules, emails, everything - is done
+		with <a href="http://smarty.net/" target="_blank">Smarty</a>. For our usage, Smarty templates are just
+		HTML files with a .tpl extension, that contain special Smarty logic which process variables passed to
+		the template.
+	</p>
+
+	<p>
+		Smarty templates are called from your PHP using the <b>ft_display_module_page</b> helper function. This
+		function abstracts away all the fussy details, providing your templates with a wide range of information
+		about the environment, user, sessions and so forth. To understand how the Smarty templates are rendered,
+		I'd recommend reading these sections:
+	</p>
+
+	<ul>
+		<li><a href="{{site.baseurl}}/module_development/file_index/">Anatomy of a Module: index.php</a></li>
+		<li><a href="{{site.baseurl}}/module_development/ft_display_module_page/">Helper Functions: ft_display_module_page()</a></li>
+	</ul>
+
+	<hr size="1" />
+
+	<h3>Themes and CSS</h3>
+
+	<p>
+		Each theme can render the UI in any number of ways. But theme developers only ever edit the templates, CSS
+		and Javascript within their own theme folder. It would be unrealistic to expect them to edit the presentation
+		layer for all modules, too. So to account for this, <b>module pages are rendered within a module wrapper
+		defined by the theme designer</b>. This is actually very simple. All your templates should include the
+		<b>modules_header.tpl</b> and <b>modules_footer.tpl</b> files, like so:
+	</p>
+
+	{% codemirror smarty %}
+{include file='modules_header.tpl'}
+
+Your HTML here.
+
+{include file='modules_footer.tpl'}
+	{% endcodemirror %}
+
+	<p>
+		It's the theme designers job to develop that wrapper so that your HTML appears in the appropriate spot.
+	</p>
+
+	<p>
+		Now, since every theme presents the information in different ways, you need to keep this in mind when writing
+		your HTML. NEVER rely on CSS defined in your theme folder: that's custom to that particular theme and probably
+		won't exist for others.
+	</p>
+
+	<p>
+		The CSS rules you can rely on being available are stored in your <b>/global css/main.css</b> file. These
+		rules are imported for all themes so you can rely on them being there.
+	</p>
+
+	<p>
+		You can, of course, defined your own stylesheets to contain whatever CSS you wish. If you do, we strongly
+		recommend keeping things simple and generic to increase the likelihood of being visually compatible with
+		whatever theme is selected by the administrator.
+	</p>
+
+	<hr size="1" />
+
+	<a name="language"></a>
+	<h3>Language Compatibility</h3>
+
+	<p>
+		As mentioned in the discussion of the <a href="{{site.baseurl}}/module_development/file_lang/">module
+		language files</a>, Form Tools modules are designed support multiple languages. The way this works is
+		actually quite simple: all language strings that appear in the user interface and code
+		are stored in a separate language file. This is a PHP file, located in the module's
+		<b>/lang</b> folder. Every time a page is rendered, it automatically loads the
+		appropriate language file for use in your code.
+	</p>
+
+	<p>
+		But extracting the strings into your language file is only half the battle. Here's a
+		few other things to keep in mind. This list is FAR from complete and will be expanded
+		upon in later versions of the doc.
+	</p>
+
+
+	<h4>Spacing</h4>
+
+	<p>
+		This is very obvious, but it's easy to forget: just because a word is short in English,
+		doesn't mean it's going to be short in other languages. Try to keep this in mind when
+		developing your templates. Rather than using fixed widths for table columns, you might
+		want to consider adding a "nowrap" class and padding to the string so the text doesn't
+		get jammed up together. That way, the templates stay fairly flexible and can accomodate
+		strings of different lengths.
+	</p>
+
+	<h4>Language Strings Placeholders</h4>
+
+	<p>
+		Often you may need to embed something dynamic within a string. e.g. "You have X
+		settings to complete". In different languages, "X" may appear in different places
+		so you can't simply separate the string into two ("You have" and "settings to complete")
+		then construct your string by concatenating the values.
+	</p>
+
+	<p>
+		Instead, embed Smarty variables into your strings. Here's how it works. First, in your
+		language file, add your string like so:
+	</p>
+
+	{% codemirror php %}
+$L["phrase_num_settings_to_complete"] = "You have {\$num_settings} settings to complete.";
+	{% endcodemirror %}
+
+	<p>
+		Note that the <b>$</b> in <b>$num_settings</b> is escaped with a preceding \ dash. This
+		prevents it being interpreted as PHP.
+	</p>
+
+	<p>
+		Next, in your PHP you can use the Form Tools core function <b>ft_eval_smarty_string</b>
+		&nbsp;to replace the Smarty variable <b>$num_settings</b> with the value you need to insert.
+	</p>
+
+	{% codemirror php startinline %}
+$placeholders = array("num_settings" => 5);
+$string = ft_eval_smarty_string($L["phrase_num_settings_to_complete"], $placeholders)
+echo $string; // "You have 5 settings to complete."
+	{% endcodemirror %}
+
+
+{% include close_section.html %}

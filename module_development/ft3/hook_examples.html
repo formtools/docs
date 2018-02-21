@@ -1,0 +1,149 @@
+---
+layout: default
+navPage: docs
+heading: Hook Examples
+breadcrumbs:
+  - Module Development,/module_development/
+  - Hooks,/module_development/hooks/
+  - Hook Examples
+prev: Template Hooks,/module_development/template_hooks/
+next: Related Links,/module_development/related_links/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='hook_examples' nav_width=4 %}
+
+	<div class="alert alert-info">
+		<ul>
+			<li><a href="#code_hook_example">Code Hook Example</a></li>
+			<li><a href="#template_hook_example">Template Hook Example</a></li>
+		</ul>
+	</div>
+
+
+	<a name="code_hook_example"></a>
+	<h3>Code Hook Example</h3>
+
+	<p>
+		Let's register a <b>code</b> hook for a fictitious module named "My Module", found
+		in a "my_module" folder. The purpose is to execute out own PHP code when a certain
+		event happends in the code. Here's how we register the hook:
+	</p>
+
+{% codemirror php %}
+ft_register_hook("code", "my_module", "start", "ft_process_form", "my_hook", 50);
+{% endcodemirror %}
+
+	<p>
+		This line registers the code hook for the function <b>ft_process_form</b>; it tells it to
+		call the <b>my_hook</b> function at the "start" location in the function. The
+		priority is set to 50 (out of 1-100). The priority determines the order in which the hook
+		should get executed if there are multiple hooks assigned to the same hook.
+	</p>
+
+	<p>
+		As mentioned earlier, this line can be placed in your module's installation function, or
+		called at some point in your module pages based on user input.
+	</p>
+
+	<p>
+		Now let's look at the <b>my_hook</b> function. This function MUST be located in your
+		module's <a href="{{site.baseurl}}/module_development/file_library/">library.php file</a> - or included by
+		that file. When hooks are processed, they are looked for at that location. If it can't be found, the
+		hook is ignored.
+	</p>
+
+	<p>
+		Code hook functions should always accept a single parameter: a hash (associative array)
+		containing whatever information is passed by that particular function.
+	</p>
+
+{% codemirror php %}
+function my_hook($vars)
+{
+  // $vars always contains the form_tools_overridable_vars key: an array of variable names that
+  // can be overwritten by your hook for this particular core function. Some core functions
+  // don't allow any values to be overwritten, so this will be empty
+  print_r($vars["form_tools_overridable_vars"]);
+
+  // this key always contains the name of the core function that is calling your hook
+  echo $vars["form_tools_calling_function"];
+
+  // return values
+  $info = array();
+  $info["name"] = "Overridden!";
+  return $info;
+}
+{% endcodemirror %}
+
+	<p>
+		The comments should explain quite a bit. The two keys, <b>form_tools_overridable_vars</b>
+		and <b>form_tools_calling_function</b> are always passed to the function. The calling
+		function can be handy if you need your hook has been registered to multiple core functions
+		and you'd like it to behave differently based on the context. The
+		<b>form_tools_overridable_vars</b> key contains an array of the names of variables that
+		can be overridden. To override them, just make your function return a hash with those values
+		as keys. Any other values in that hash will be ignored. If the value isn't overridden, the
+		core function will continue ordinary processing.
+	</p>
+
+	<p>
+		For more information about the meaning of each variable, you'll need to look at the core
+		function.
+	</p>
+
+
+	<a name="template_hook_example"></a>
+	<h3>Template Hook Example</h3>
+
+	<p>
+		Now let's register a template hook, to insert some HTML into one of the places in the
+		Form Tools pages. Here's our register function:
+	</p>
+
+{% codemirror php %}
+ft_register_hook("template", "my_module", "edit_client_main_top", "", "say_hello", 50);
+{% endcodemirror %}
+
+	<p>
+		Like with the code hook register function calls, this line would usually be added to
+		your module's installation script, so that the hook gets registered once when the module
+		is first installed.
+	</p>
+	<p>
+		This line of code registers the <b>template</b> hook for the <b>my_module</b> function, to
+		be called at the <b>edit_client_main_top</b> location in the templates. In order words,
+		it'll be called wherever you find this line in one of the templates:
+	</p>
+
+{% codemirror smarty %}
+{template_hook location="admin_edit_client_main_top"}
+{% endcodemirror %}
+
+	<p>
+		(This happens to be in the /themes/default/admin/clients/tab_main.tpl template file).
+	</p>
+
+	<p>
+		Lastly, it tells the script to call the say_hello() PHP function, and gives it a priority
+		of 50 (from 1-100, where 1 is top priority). Here's what the say_hello function would
+		look like. All template hook functions should take two parameters:
+	</p>
+
+
+{% codemirror php %}
+/**
+ * Our template hook function.
+ *
+ * @param string $location the name of the template hook (i.e. the value of the "location"
+ *   attribute of the template hook, found in the Smarty template)
+ * @param array $info a giant array containing all the data available to the template. This
+ *   will contain whatever information you need, but you'll have to hunt for it.
+ */
+function say_hello($location, $info)
+{
+  echo "hello!";
+}
+{% endcodemirror %}
+
+{% include close_section.html %}

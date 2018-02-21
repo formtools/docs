@@ -1,0 +1,30 @@
+---
+layout: default
+navPage: docs
+heading: ft_include_modules
+breadcrumbs:
+  - Module Development,/module_development/
+  - Helper Functions,/module_development/helper_functions/
+  - ft_include_modules
+prev: ft_get_page_nav,/module_development/ft_get_page_nav/
+next: ft_init_module_page,/module_development/ft_init_module_page/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='ft_include_modules' nav_width=4 %}
+
+	<p>
+		This function is used to access your module content (functions, Smarty plugins and language file content) in
+		Form Tools pages within the main script (i.e. within any page that wasn't written by you!). The function takes either
+		a string or an array of strings - each string the folder name of the module you wish to import. Generally, it's used in
+		conjunction wit the ft_check_module_enabled() function (described below) which first verifies the module is installed and
+		enabled. Example usage:
+	</p>
+
+	{% codemirror php %}
+if (ft_check_module_enabled("pages"))
+  ft_include_modules("pages");
+	{% endcodemirror %}
+
+
+{% include close_section.html %}

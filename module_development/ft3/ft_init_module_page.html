@@ -1,0 +1,41 @@
+---
+layout: default
+navPage: docs
+heading: ft_init_module_page
+breadcrumbs:
+  - Module Development,/module_development/
+  - Helper Functions,/module_development/helper_functions/
+  - ft_init_module_page
+prev: ft_include_modules,/module_development/ft_include_modules/
+next: ft_load_module_field,/module_development/ft_load_module_field/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='ft_init_module_page' nav_width=4 %}
+
+	<p>
+		This function is generally called on every page of your module. It does the following:
+	</p>
+
+	<ul>
+		<li>Starts sessions</li>
+		<li>Ensures that the person viewing the page has the right permissions [This function accepts a single,
+			optional string parameter: <b>$account_type</b> ("admin" or "client") to determine who can see the page.
+			Administrators can see all pages, including those marked as "client"]
+		</li>
+		<li>
+			Includes your module's library.php file if it has been defined in your module folder. This is a handy
+			place to store the code for your module.
+		</li>
+		<li>
+			Loads the contents of the appropriate module language file into memory and stores it in two places:
+			<ul>
+				<li><b>$L</b>: this global variable is accessible anywhere within your module, but NOT in those
+					aspects of the module that are accessible outside of your module folder. This is a shortcut for
+					the second variable which is accessible everywhere:</li>
+				<li><b>$LANG["my_module"]</b>: where "my_module" is the name of your module folder.</li>
+			</ul>
+		</li>
+	</ul>
+
+{% include close_section.html %}

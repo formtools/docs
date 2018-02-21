@@ -4,10 +4,12 @@ navPage: docs
 heading: ft_check_module_enabled
 breadcrumbs:
   - Module Development,/module_development/
+  - Form Tools 2,/module_development/index_ft2/
   - Helper Functions,/module_development/helper_functions/
   - ft_check_module_enabled
 prev: Helper Functions,/module_development/helper_functions/
 next: ft_display_module_page,/module_development/ft_display_module_page/
+category: module_development
 ---
 
 {% include open_section.html nav='nav_module_development.html' selected='ft_check_module_enabled' nav_width=4 %}
@@ -18,8 +20,9 @@ next: ft_display_module_page,/module_development/ft_display_module_page/
 	</p>
 
 	{% codemirror php %}
-if (ft_check_module_enabled("pages"))
-  ft_include_modules("pages");
+if (ft_check_module_enabled("pages")) {
+    ft_include_modules("pages");
+}
 	{% endcodemirror %}
 
 {% include close_section.html %}

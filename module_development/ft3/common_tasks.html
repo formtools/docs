@@ -1,0 +1,57 @@
+---
+layout: default
+navPage: docs
+heading: Common Tasks
+breadcrumbs:
+  - Module Development,/module_development/
+  - Common Tasks
+prev: Related Links,/module_development/related_links/
+next: Example Modules,/module_development/example_modules/
+category: module_development
+---
+
+{% include open_section.html nav='nav_module_development.html' selected='common_tasks' nav_width=4 %}
+
+	<p>
+		Here's a few solutions to problems and scenarios likely to be encountered. Feel free to edit this page with more.
+	</p>
+
+	<h3>Displaying information in tabs</h3>
+
+	<p>
+		Tabs are a very nice way to group related data and avoid "information overload" - showing too much on the page
+		at once, which can be overwhelming for the user.
+	</p>
+
+	<p>
+		All Form Tools themes provide some sort of presentation for tabs. Precisely how it appears it up to the theme
+		developer, but generally they're all rendered as tab-like structures.
+	</p>
+
+	<p>
+		See the <a href="https://docs.formtools.org/modules/hello_tabs/">Hello Tabs!</a> example module for a simple illustration of how to
+		implement tabs into your module. Basically it works by passing a special <b>$tabs</b> variable to the
+		template, then calling the tabset_open.tpl and tabset_close.tpl templates in your template. They do the
+		job of rendering the tab information that you passed to it.
+	</p>
+
+	<hr size="1">
+
+
+	<h3>Displaying pagination</h3>
+
+	<p>
+		Often you may have too much information to display on a single page, and need to add some simple pagination
+		links (&laquo; 1 2 3 ...) to let the user see the information a page at a time.
+		Form Tools comes with two different mechanisms to allow for this: DHTML pagination and regular server-side navigation.
+	</p>
+
+	<h4>pagination.tpl</h4>
+
+	{% codemirror php %}
+$page_vars["pagination"] = ft_get_page_nav($num_results, $num_pages_per_page, $page, "");
+	{% endcodemirror %}
+
+
+
+{% include close_section.html %}
