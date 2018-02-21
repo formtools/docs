@@ -3,27 +3,57 @@ layout: default
 navPage: docs
 heading: Module Development
 breadcrumbs:
-  - Module Development
-next: Anatomy of a Module,/module_development/anatomy/
+  - Module Development,/module_development/
+  - Form Tools 3
+next: Anatomy of a Module,/module_development/ft3/anatomy/
 category: module_development
 page_type: introduction
 ---
 
-{% include open_section.html nav='nav_module_development_intro.html' selected='introduction' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='introduction' nav_width=4 %}
 
-	<p>
-		Want to write a Form Tools module? Awesome! There's an awful lot of information in this section, but we do
-		recommend slogging your way through the whole thing. Even if you don't catch all the details it will still
-		give you a sense of how it works and what exists to make your life easier. It won't be time wasted, honest.
-	</p>
+    <div class="alert alert-warning">
+        This is the <b>Form Tools 3</b> module development documentation. Please <a href="../index_ft2/">click here</a>
+        for Form Tools 2.
+    </div>
+
+    <h3>Overview</h3>
 
     <p>
-        Form Tools 2 and 3 have a completely different codebase, so start by picking your Form Tools version.
+        No script the size of Form Tools can accommodate all functionality without becoming bloated and unusable. To
+        prevent this, many larger scripts turn to some form of module / plugin architecture that keeps the core
+        code small, but still allows for extensibility. Form Tools is one of those scripts. Developers can
+        extend the core functionality in whatever way they need without needing to tamper with the core script.
+    </p>
+
+    <p>
+        The modules were structured with the following goals in mind:
     </p>
 
     <ul>
-        <li><a href="index_ft2.html">Form Tools 2</a></li>
-        <li><a href="v3/">Form Tools 3</a></li>
+        <li>
+            <b>Simple to install and remove</b>. Regardless of a users' technical level, nobody like fussing
+            around with complicated installation instructions. If it's tough to install, people are going to give
+            up, and they're likely to make mistakes - potentially causing the main script to stop working.
+        </li>
+        <li>
+            <b>Consistent</b>. Consistency is king. Modules can't look radically different from the rest of the script
+            or they've force the user doesn't have to re-learn the interface for each and every module. They need to be
+            consistent so they can be translated to other languages in the same manner; consistent in the way the
+            information is stored in the database and the way they tie into the core.
+        </li>
+        <li>
+            <b>International</b>. All modules need to be able to support multiple languages.
+        </li>
+        <li>
+            <b>Simple to develop and write</b>. Let's not forget the poor developer here! If a module isn't easy to write,
+            no-one's going to want to do it.
+        </li>
     </ul>
+
+    <p>
+        We've developed a modular system to allow you, the developer, to add your own functionality
+        that are compatible with the above rules - just by following the required module structure.
+    </p>
 
 {% include close_section.html %}

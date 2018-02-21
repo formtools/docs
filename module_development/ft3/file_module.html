@@ -4,49 +4,105 @@ navPage: docs
 heading: module.php
 breadcrumbs:
   - Module Development,/module_development/
-  - Anatomy of a Module,/module_development/anatomy/
-  - module.php
-prev: Anatomy of a Module,/module_development/anatomy/
-next: index.php,/module_development/file_index/
+  - Form Tools 3,/module_development/ft3/
+  - Anatomy of a Module,/module_development/ft3/anatomy/
+  - Module.class.php
+prev: Anatomy of a Module,/module_development/ft3/anatomy/
+next: index.php,/module_development/ft3/file_index/
 category: module_development
 ---
 
-{% include open_section.html nav='nav_module_development.html' selected='file_module' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='file_module' nav_width=4 %}
 
 	<p>
-		The module.php contains all "meta" information about your module, required by Form Tools to
-		access and list your module in the administrator's Module section. It should be located
-		in the module folder's root.
+        Every module contains a <code>/code/Module.class.php</code> file that handles the following:
 	</p>
 
+    <ul>
+        <li>
+            Contains various "meta" info about your module, like the author name, release date, module name and description
+            (in your target language).
+        </li>
+        <li>
+            Contains optional installation, uninstallation and upgrade code, should your module need it.
+        </li>
+        <li>
+            Contains links to JS and CSS resources to get autoloaded in every one of your module pages (very handy!)
+        </li>
+        <li>
+            Defines the module navigation that'll appear in the interface when the user enters your module.
+        </li>
+        <li>
+            Contains any methods you need to expose to the outside world.
+        </li>
+    </ul>
+
 	<p>
-		Here's an example of this file contents, taken from the Export Manager.
+		Here's an example of the class contents.
 	</p>
 
 	{% codemirror php %}
 <?php
-/*
- * Module file: Export Manager
- */
 
-$MODULE["author"]          = "Ben Keen";
-$MODULE["author_email"]    = "ben.keen@gmail.com";
-$MODULE["author_link"]     = "https://formtools.org";
-$MODULE["version"]         = "1.0.0-beta-20090114";
-$MODULE["date"]            = "2009-01-14";
-$MODULE["origin_language"] = "en_us";
-$MODULE["supports_ft_versions"] = "2.0.0";
+namespace FormTools\Modules\YourModuleName;
 
-// define the module navigation - the keys are keys defined in the language file. This lets
-// the navigation - like everything else - be customized to the users language. The paths are always built
-// relative to the module's root, so help/index.php means: /[form tools root]/modules/export_manager/help/index.php
-$MODULE["nav"] = array(
-  "module_name"              => array('{$module_dir}/index.php', false),
-  "word_settings"            => array('{$module_dir}/settings/', false),
-  "word_help"                => array('{$module_dir}/help/', false)
-);
-?>
+use FormTools\Module as FormToolsModule;
+
+class Module extends FormToolsModule
+{
+    protected $moduleName = "Your Module Name";
+    protected $moduleDesc = "This is the description of your module name.";
+    protected $author = "Your Name";
+    protected $authorEmail = "you@something.com";
+    protected $authorLink = "https://formtools.org";
+    protected $version = "1.0.0";
+    protected $date = "2018-02-20";
+    protected $originLanguage = "en_us";
+    protected $cssFiles = array(
+        // list of CSS files to include here
+    );
+    protected $jsFiles = array(
+        // list of CSS files to include here
+    );
+
+    protected $nav = array(
+        "module_name"  => array("index.php", false),
+        "word_submenu" => array("submenu.php", true)
+    );
+
+    public function install($module_id)
+    {
+        return array(true, "");
+    }
+
+    public function uninstall($module_id)
+    {
+        return array(true, "");
+    }
+
+    public function upgrade($module_id, $old_module_version)
+    {
+        return array(true, "");
+    }
+}
 	{% endcodemirror %}
+
+    <h3>Namespace</h3>
+
+    <p>
+        All Form Tools modules require their code to be namespaced. The namespace takes the form:
+        <code>FormTools\Modules\YourModuleName</code>. Form Tools folder conventions use underscores in folder names,
+        so here your module folder would be named <code>your_folder_name</code>. If your folder is named
+        <code>svg_visualizations_lib</code> your namespace needs to be <code>FormTools\Modules\SvgVisualizationsLib</code>.
+        If you don't enter the namespace correctly, Form Tools will not be able to load or find your module.
+    </p>
+
+    <h3>The Module abstract class</h3>
+
+    <p>
+        Take a look at <code>global/code/Module.abstract.class.php</code>
+    </p>
+
 
 	<div class="row">
 		<div class="col-lg-4"><strong>Setting</strong></div>
