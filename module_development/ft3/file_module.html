@@ -15,19 +15,19 @@ category: module_development
 {% include open_section.html nav='nav_module_development_ft3.html' selected='file_module' nav_width=4 %}
 
 	<p>
-        Every module contains a <code>/code/Module.class.php</code> file that handles the following:
+        Every module contains a <code>/code/Module.class.php</code> file that contains the following:
 	</p>
 
     <ul>
         <li>
-            Contains various "meta" info about your module, like the author name, release date, module name and description
+            High level information about your module, like the author name, release date, module name and description
             (in your target language).
         </li>
         <li>
-            Contains optional installation, uninstallation and upgrade code, should your module need it.
+            Installation, uninstallation and upgrade code, should your module require it.
         </li>
         <li>
-            Contains links to JS and CSS resources to get autoloaded in every one of your module pages (very handy!)
+            Links to JS and CSS resources to get autoloaded in every one of your module pages (very handy!)
         </li>
         <li>
             Defines the module navigation that'll appear in the interface when the user enters your module.
@@ -38,23 +38,23 @@ category: module_development
     </ul>
 
 	<p>
-		Here's an example of the class contents.
+		Let's start with an example.
 	</p>
 
 	{% codemirror php %}
 <?php
 
-namespace FormTools\Modules\YourModuleName;
+namespace FormTools\Modules\MyModule;
 
 use FormTools\Module as FormToolsModule;
 
 class Module extends FormToolsModule
 {
-    protected $moduleName = "Your Module Name";
+    protected $moduleName = "My Module";
     protected $moduleDesc = "This is the description of your module name.";
     protected $author = "Your Name";
     protected $authorEmail = "you@something.com";
-    protected $authorLink = "https://formtools.org";
+    protected $authorLink = "https://yoursite.com";
     protected $version = "1.0.0";
     protected $date = "2018-02-20";
     protected $originLanguage = "en_us";
@@ -97,97 +97,98 @@ class Module extends FormToolsModule
         If you don't enter the namespace correctly, Form Tools will not be able to load or find your module.
     </p>
 
-    <h3>The Module abstract class</h3>
+    <h3>The Module class</h3>
 
     <p>
-        Take a look at <code>global/code/Module.abstract.class.php</code>
+        Take a look at <code>global/code/Module.abstract.class.php</code>. All Form Tools modules must extend this
+        class - if you forget that step, Form Tools will not recognize your module. Also, note that your class name
+        is always <code>Module</code>. You can define as many classes as you want, but the primary module class
+        that Form Tools needs to see must be named <code>Module</code>.
     </p>
 
+    <h3>Member variables</h3>
 
+    <div class="row">
+        <div class="col-lg-3">
+            <code>$moduleName</code>
+        </div>
+        <div class="col-lg-9">
+            The name of your module in the language of your choice. You can also optionally provide a different name for
+            people viewing the UI in different languages via your <a href="../file_lang/">language files</a>.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <code>$moduleDesc</code>
+        </div>
+        <div class="col-lg-9">
+            A one-line description of your module in the language of your choice. Like with <code>$moduleName</code> you
+            can also provide localization for this value via your <a href="../file_lang/">language files</a>.
+        </div>
+    </div>
 	<div class="row">
-		<div class="col-lg-4"><strong>Setting</strong></div>
-		<div class="col-lg-8"><strong>Explanation</strong></div>
-	</div>
-
-	<div class="row">
-		<div class="col-lg-4">
-			author
+		<div class="col-lg-3">
+			<code>$author</code>
 		</div>
-		<div class="col-lg-8">
-			(required) the name of the author, or company name.
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-4">
-			author_email
-		</div>
-		<div class="col-lg-8">
-			(optional) the email address of the author / company email.
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-4">
-			author_link
-		</div>
-		<div class="col-lg-8">
-			(optional) a URL to the author's website.
+		<div class="col-lg-9">
+			Your name.
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-4">
-			version
+		<div class="col-lg-3">
+			<code>$authorLink</code>
 		</div>
-		<div class="col-lg-8">
-			(required) the current module version. You can give your versions any numbering
-			scheme you want. We use the commonly used technique of <b>X.Y.Z</b>, where X is the
-			major release number, Y is the minor release and Z is for bug fix releases.
+		<div class="col-lg-9">
+			A link to whatever site is relevant for the author.
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-4">
-			date
+		<div class="col-lg-3">
+			<code>$version</code>
 		</div>
-		<div class="col-lg-8">
-			(optional) the release date of the module version in the format YYYY-MM-DD.
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-lg-4">
-			origin_language
-		</div>
-		<div class="col-lg-8">
-			(required) the name of the language file, minus the .php extension.
+		<div class="col-lg-9">
+			The current module version. Please follow a simplified semver format of <b>X.Y.Z</b>, where X is the major
+            release number, Y is the minor release and Z is for bug fix releases.
 		</div>
 	</div>
-
 	<div class="row">
-		<div class="col-lg-4">
-			supports_ft_versions
+		<div class="col-lg-3">
+            <code>$date</code>
 		</div>
-		<div class="col-lg-8">
-			A comma delimited list of supported Form Tools versions. This setting should ignore
-			beta and release candidate releases - just the final versions.
+		<div class="col-lg-9">
+			The release date of the module version in YYYY-MM-DD format.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<code>$originLanguage</code>
+		</div>
+		<div class="col-lg-9">
+			The default language of the module. This maps to the filename of your language file. Set to <code>en_us</code>
+            by default.
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-lg-4">
-			nav
+			<code>$cssFiles</code>
 		</div>
 		<div class="col-lg-8">
-			(required) This setting defines your module's menu items. It is an array, whose
-			keys correspond to entries in your language file. The values are an array with two
-			indexes: the URL of the page, and whether it should appear as a submenu item or not.
+			This is a convenience option that lets you define CSS files to be included in all of your
+            module pages. If you're not using it, just omit the member var altogether. It comes with a couple of handy
+            placeholders so you can easily pinpoint the file you want.
+
+            <ul>
+                <li></li>
+            </ul>
 		</div>
 	</div>
 
 	{% codemirror php %}
 <?php
 $MODULE["nav"] = array(
-  "module_name"   => array('{$module_dir}/index.php', false),
-  "word_settings" => array('{$module_dir}/settings/', false),
-  "word_help"     => array('{$module_dir}/help/', false)
+    "module_name"   => array('{$module_dir}/index.php', false),
+    "word_settings" => array('{$module_dir}/settings/', false)
 );
 ?>
 	{% endcodemirror %}

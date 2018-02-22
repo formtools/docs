@@ -31,36 +31,48 @@ category: module_development
 	<h3>Required Files &amp; Folders</h3>
 
 	<p>
-		These files are required for every module. All paths are relative to the module folder, e.g.
-        <code>modules/my_module/</code>.
+		These files are required for every module. All paths are relative to the module folder, which in our case is
+        found at <code>[form tools root]/modules/my_module/</code>.
 	</p>
 
+    <div class="row">
+        <div class="col-lg-3">
+            <code>code/Module.class.php</code>
+        </div>
+        <div class="col-lg-9">
+            <a href="{{site.baseurl}}/module_development/ft3/file_module" class="btn btn-sm btn-info pull-right">More Info</a>
+            This is your main module class, which extends <code>global/code/Module.abstract.class.php</code> and contains
+            the author information, name and description, the module navigation menu, your installation, uninstallation
+            and upgrade code.
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-3">
             <code>index.php</code>
         </div>
         <div class="col-lg-9">
-            <a href="{{site.baseurl}}/module_development/file_index" class="btn btn-sm btn-primary pull-right">More Info</a>
+            <a href="{{site.baseurl}}/module_development/ft3/file_index" class="btn btn-sm btn-info pull-right">More Info</a>
             This is the first page the administrator will be linked to when clicking on the module on the Modules listing page.
         </div>
     </div>
-	<div class="row">
-		<div class="col-lg-3">
-			<code>code/Module.class.php</code>
-		</div>
-		<div class="col-lg-9">
-			<a href="{{site.baseurl}}/module_development/file_module" class="btn btn-sm btn-primary pull-right">More Info</a>
-			This is your main module class, which extends <code>global/code/Module.abstract.php</code> and contains
-            information about your module: the author information, name and description, and the module navigation menu.
-            It also contains your installation, uninstallation and upgrade code.
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-lg-3">
+            <code>/templates/index.tpl</code>
+        </div>
+        <div class="col-lg-9">
+            <a href="{{site.baseurl}}/module_development/ft3/file_index_tpl/" class="btn btn-sm btn-info pull-right">More Info</a>
+            All HTML in Form Tools is rendered via Smarty templates. Your module will need to define at least one Smarty
+            template to render the index.php page. Other than the required .tpl extension, you can call it what you want
+            (index.tpl isn't required) and store it wherever you want within your module folder - but for consistency
+            with the other modules, we recommend putting it in a <code>templates</code> folder.
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-3">
             <code>library.php</code>
         </div>
         <div class="col-lg-9">
-            <a href="{{site.baseurl}}/module_development/file_library/" class="btn btn-sm btn-primary pull-right">More Info</a>
+            <a href="{{site.baseurl}}/module_development/ft3/file_library/" class="btn btn-sm btn-info pull-right">More Info</a>
             All modules include a library.php file in their root that includes all PHP classes/code.
         </div>
     </div>
@@ -69,26 +81,12 @@ category: module_development
 			<code>/lang/en.php</code>
 		</div>
 		<div class="col-lg-9">
-			<a href="{{site.baseurl}}/module_development/file_lang" class="btn btn-sm btn-primary pull-right">More Info</a>
+			<a href="{{site.baseurl}}/module_development/ft3/file_lang" class="btn btn-sm btn-info pull-right">More Info</a>
 			All modules require a language file in the language of the developer. For US English,
             this file would be called <code>en_us.php</code>. We use the ISO 639-2 standard for the language
 			file names.
 		</div>
 	</div>
-
-	<div class="row">
-		<div class="col-lg-3">
-			<code>/templates/index.tpl</code>
-		</div>
-		<div class="col-lg-9">
-			<a href="{{site.baseurl}}/module_development/file_index_tpl/" class="btn btn-sm btn-primary pull-right">More Info</a>
-			All HTML in Form Tools is rendered via Smarty templates. Your module will need to define at least one Smarty
-            template to render the index.php page. Other than the required .tpl extension, you can call it what you want
-            (index.tpl isn't required) and store it wherever you want within your module folder - but for consistency
-            with the other modules, we recommend putting it in a <code>templates</code> folder.
-		</div>
-	</div>
-
 
 	<h3>Optional Files &amp; Folders</h3>
 
@@ -97,7 +95,7 @@ category: module_development
 			<code>smarty_plugins/</code>
 		</div>
 		<div class="col-lg-9">
-			<a href="{{site.baseurl}}/module_development/folder_smarty/" class="btn btn-sm btn-primary pull-right">More Info</a>
+			<a href="{{site.baseurl}}/module_development/ft3/smarty/" class="btn btn-sm btn-info pull-right">More Info</a>
 			Any Smarty functions and modifiers should be placed in this subfolder. Depending on the content and scope of
             your module, this may not be needed. But if you <b>do</b> and need to access them in pages in the core
             script, you will need to define them here. They will be automatically loaded and available within your
