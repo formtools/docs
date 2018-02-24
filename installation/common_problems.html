@@ -1,0 +1,50 @@
+---
+layout: default
+navPage: docs
+heading: Common Problems
+breadcrumbs:
+  - Installation,/installation/
+  - Common Problems
+prev: The Suhosin Extension,/installation/suhosin/
+category: installation
+---
+
+{% include open_section.html nav='nav_installation.html' selected='common_problems' %}
+
+    <h3>Common Problems</h3>
+
+    <p>
+        Encountered a problem? <a href="https://github.com/formtools/core/issues/">Let us know of the issue here</a> and
+        we'll update this page.
+    </p>
+
+    <hr size="1" />
+
+    <h4>/themes/default/cache isn't read-writable</h4>
+
+    <p>
+        <b>Problem</b>: when first loading up the Form Tools installation script in your browser, you immediately see a page
+        stating that this folder isn't writable.
+    </p>
+
+    <p>
+        The most likely cause of this is exactly that: that folder simply doesn't have read-write access. This usually
+        doesn't occur, but depending on your server settings you may need to do a little extra tweaking to solve.
+    </p>
+
+    <p><b>Steps to solve:</b></p>
+
+    <ul>
+        <li>First check the folder permissions and set them to 777 / read-write access.</li>
+        <li>If that doesn't work, check the folder hierarchy. You may need to set permissions on all parent folders as well.</li>
+        <li>
+            Failing that, check to see if you're on a version of linux that's running the
+            <a href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">SELinux module</a> (Security-Enhanced Linux)
+            such as Red Hat enterprise, Fedora, CentOS. You may need to do
+            <a href="http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/">additional
+                server configuration to configure your server</a>. Also see the following
+                <a href="https://github.com/formtools/core/issues/151">Form Tools issue</a>.
+        </li>
+    </ul>
+
+{% include close_section.html %}
