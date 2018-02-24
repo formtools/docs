@@ -1,0 +1,75 @@
+---
+layout: default
+navPage: docs
+heading: Submission Pre-Parser
+breadcrumbs:
+  - Modules,/modules
+  - Submission Pre-Parser,/modules/submission_pre_parser
+  - Database Access
+prev: Spam Detection,/modules/submission_pre_parser/spam_detection/
+next: Debugging,/modules/submission_pre_parser/debugging/
+---
+
+{% include open_section.html nav='nav_submission_pre_parser.html' selected='database_access' %}
+
+    <p>
+        You may find you need to make database queries within your pre-parser rules. This page contains a little code
+        to nudge you onto the right path. The code will depend on your exact use-case, but syntactically this will
+        give you an idea of what to include to run database queries.
+    </p>
+
+    <hr size="1" />
+
+    <h3>Form Tools 2</h3>
+
+    <p>
+        Form Tools 2 uses the old <code>mysql_*</code> methods that were standard in PHP for many years. You
+        can include this code in your rules to perform database queries. The <code>mysql_*</code> methods are very simple
+        to use, as illustrated:
+    </p>
+
+{% codemirror php %}
+$query = mysql_query("SELECT * FROM your_table");
+$result = mysql_fetch_assoc($query);
+print_r($result);
+{% endcodemirror %}
+
+    <hr size="1" />
+
+    <h3>Form Tools 3</h3>
+
+    <p>
+        Form Tools 3 uses PDO for all database interaction. It provides a wrapper via the Database class (found at
+        <code>global/code/Database.class.php</code>). Give that a good read for the various options available, but here
+        are a few simple examples of how to use the class:
+    </p>
+
+{% codemirror php %}
+
+// the Form Tools Core instantiates a FormTools\Database object on page load,
+// which is a wrapper for the various PDO methods. Here's how to access it.
+$db = FormTools\Core::$db;
+
+// this defines a query, executes it, then grabs the results
+$db->query("SELECT * FROM ft_form_5");
+$db->execute();
+$rows = $db->fetchAll();
+
+// outputs the number of rows in the above query
+echo $db->numRows();
+
+// loop through each and output the array
+foreach ($rows as $row) {
+    print_r($row);
+}
+
+// passing vars is done via placeholders, like so:
+$db->query("SELECT * FROM ft_form_63 WHERE submission_id = :submission_id");
+$db->bind("submission_id", 1);
+$db->execute();
+
+// fetching a single submission
+$submission = $db->fetch();
+{% endcodemirror %}
+
+{% include close_section.html %}
