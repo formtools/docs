@@ -52,24 +52,24 @@ I'm current working on adding documentation search feature. In order for this to
 have these optional front-matter tags to provide additional metadata for the search.
 
 ```
-version: FT2
+versions: FT2
 page_type: overview
-category: modules
+categories: modules
 tags: permissions,visualization
 ```
 
-#### version
+#### versions
 `FT2` or `FT3`. Comma-delimited. If empty, it's assumed the page is relevant for any version of Form Tools. 
 
 #### page_type
 - `toc` - table of contents (a list of links for the section)
 - `introduction` - an introduction/overview to a component / subject. A good starting point for something.
 
-#### category
-Usually just one, but may be a comma-delimited list of: `core`, `userdoc`, `modules`, `themes`, `api`, `theme_development`, 
+#### categories
+Comma-delimited list of: `core`, `userdoc`, `modules`, `themes`, `api`, `theme_development`, 
 `module_development`, `tutorial`, `installation`, `upgrading`, `translations`
 
-### tags
+#### tags
 Arbitrary strings to pinpoint what the page is about. This is as fine-grained as it gets. 
 `permissions`, `forms`, `views`, `fields`, `field_types`, `option_lists`, `validation`, `submissions`, `data_export`,
 `emails`, `filters`, `themes`, `spam`, `email`, `security`, `deprecated`
