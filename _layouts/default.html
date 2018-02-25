@@ -23,11 +23,13 @@
 						{% include breadcrumbs.html %}
 
 						<header>
-							<h1>{{page.heading}}</h1>
+							<h1 id="page-title">{{page.heading}}</h1>
 							{% include prev_next_nav.html %}
 						</header>
 
-						{{ content }}
+                        <div id="doc-content">
+						    {{ content }}
+                        </div>
 					</div>
 				</div>
 
