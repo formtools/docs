@@ -915,3 +915,98 @@ img.mfp-img {
 .green {
     color: green;
 }
+
+#page-tags {
+    float: right;
+    font-size: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#page-tags li {
+    display: inline-block;
+    line-height: 18px;
+}
+#page-tags li span {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 1px 8px;
+}
+
+/* styles for tag */
+#page-tags li span.fields {
+    background-color: #035994;
+    color: white;
+}
+#page-tags li span.validation {
+    background-color: #940303;
+    color: white;
+}
+#page-tags li span.permissions {
+    background-color: #f6eac7;
+    color: #111111;
+}
+#page-tags li span.field_types {
+    background-color: #c7e8f6;
+    color: #222222;
+}
+#page-tags li span.emails {
+    background-color: #569167;
+    color: white;
+}
+#page-tags li span.files {
+    background-color: #313e35;
+    color: white;
+}
+#page-tags li span.security {
+    background-color: #f38c3a;
+    color: #111111;
+}
+#page-tags li span.option_lists {
+    background-color: #704578;
+    color: #ffffff;
+}
+#page-tags li span.views {
+    background-color: #059986;
+    color: #ffffff;
+}
+#page-tags li span.submissions {
+    background-color: #e3cb02;
+    color: #111111;
+}
+#page-tags li span.data_export {
+    background-color: #42372f;
+    color: #ffffff;
+}
+#page-tags li span.accounts {
+    background-color: #9ed703;
+    color: #111111;
+}
+#page-tags li span.filters {
+    background-color: #cbd3b7;
+    color: #222222;
+}
+#page-tags li span.settings {
+    background-color: #c4b0f0;
+    color: #222222;
+}
+#page-tags li span.deprecated {
+    background-color: #000000;
+    color: #ffffff;
+}
+#page-tags li span.menus {
+    background-color: #799cff;
+    color: #111111;
+}
+#page-tags li span.themes {
+    background-color: #5c40ec;
+    color: #ffffff;
+}
+#page-tags li span.spam {
+    background-color: #cc1616;
+    color: white;
+}
+#page-tags li span.basics {
+    background-color: #fe8081;
+    color: white;
+}

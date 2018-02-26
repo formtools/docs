@@ -1,0 +1,6 @@
+<ul id="page-tags">
+  {% assign pagetags = page.tags | split: "," | sort %}
+  {% for item in pagetags %}
+    <li><span class="{{item}}">{{item | replace: "_", " " | capitalize_all }}</span></li>
+  {% endfor %}
+</ul>

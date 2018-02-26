@@ -58,18 +58,52 @@ categories: modules
 tags: permissions,visualization
 ```
 
+#### tags
+Arbitrary strings to pinpoint what the page is about. This is as fine-grained as it gets and it's the only one of these 
+metadata properties that actually visually appears in each documentation page. The user can click on the pills containing
+these names and it lets them perform searches to filter the results to pages sharing the same tags. 
+
+This list should be kept up to date. Current tags: 
+`permissions`, `views`, `fields`, `field_types`, `option_lists`, `validation`, `submissions`, `data_export`,
+`emails`, `filters`, `themes`, `modules`, `spam`, `email`, `security`, `deprecated`, `files`, `menus`
+
+
 #### versions
-`FT2` or `FT3`. Comma-delimited. If empty, it's assumed the page is relevant for any version of Form Tools. 
+`FT2` or `FT3`. Comma-delimited. If empty, it's assumed the page is relevant for any version of Form Tools. This value
+is used in searching only.
 
 #### page_type
 - `toc` - table of contents (a list of links for the section)
 - `introduction` - an introduction/overview to a component / subject. A good starting point for something.
 
 #### categories
-Comma-delimited list of: `core`, `userdoc`, `modules`, `themes`, `api`, `theme_development`, 
-`module_development`, `tutorial`, `installation`, `upgrading`, `translations`
+Comma-delimited list of: `core`, `userdoc`, `modules`, `themes`, `api`, `theme_development`, `module_development`, 
+`tutorial`, `installation`, `upgrading`, `translations`, `basics`, `accounts`
 
-#### tags
-Arbitrary strings to pinpoint what the page is about. This is as fine-grained as it gets. 
-`permissions`, `forms`, `views`, `fields`, `field_types`, `option_lists`, `validation`, `submissions`, `data_export`,
-`emails`, `filters`, `themes`, `spam`, `email`, `security`, `deprecated`
+These are presented in the search form to let you limit the results to a particular category.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
