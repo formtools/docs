@@ -78,32 +78,6 @@ is used in searching only.
 
 #### categories
 Comma-delimited list of: `core`, `userdoc`, `modules`, `themes`, `api`, `theme_development`, `module_development`, 
-`tutorial`, `installation`, `upgrading`, `translations`, `basics`, `accounts`
+`tutorial`, `installation`, `upgrading`, `translations`, `basics`, `accounts`, `developer`
 
 These are presented in the search form to let you limit the results to a particular category.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

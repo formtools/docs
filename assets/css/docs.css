@@ -1010,3 +1010,7 @@ img.mfp-img {
     background-color: #fe8081;
     color: white;
 }
+#page-tags li span.developer {
+    background-color: #085230;
+    color: white;
+}
