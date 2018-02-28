@@ -916,12 +916,22 @@ img.mfp-img {
     color: green;
 }
 
-.page-tags {
+#search-panel {
     float: right;
     font-size: 12px;
     list-style: none;
     margin: 0;
     padding: 0;
+}
+.page-tags {
+    display: inline-block;
+}
+
+/* The jekyll-generated docs can't be searched. They display the tags in pills for information purposes but they
+   don't do anything. The search button is hidden altogether. These are enhanced on the prod site to provide the full
+   search. */
+.search-button {
+    display: none;
 }
 .page-tags li {
     display: inline-block;

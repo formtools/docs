@@ -1,6 +1,9 @@
-<ul id="page-tags" class="page-tags">
-  {% assign pagetags = page.tags | split: "," | sort %}
-  {% for item in pagetags %}
-    <li><span class="{{item}}">{{item | replace: "_", " " | capitalize_all }}</span></li>
-  {% endfor %}
-</ul>
+<div id="search-panel">
+    <ul id="page-tags" class="page-tags">
+    {% assign pagetags = page.tags | split: "," | sort %}
+    {% for item in pagetags %}
+        <li><span class="{{item}}">{{item | replace: "_", " " | capitalize_all }}</span></li>
+    {% endfor %}
+    </ul>
+    <span class="search-button">Search &raquo;</span>
+</div>
