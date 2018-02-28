@@ -10,6 +10,8 @@ versions: FT3
 tags: basics
 ---
 
+{% include no_nav.html %}
+
     <p class="alert alert-warning">
         This tutorial is for version 2.x of the API, which is for Form Tools 3. If you're using Form Tools 2,
         please check out <a href="../api_refilling_form_fields">this tutorial instead</a>.
@@ -144,3 +146,5 @@ $fields = $api->initFormPage();
 	<option value="turgenev" <?php if (@in_array("turgenev", $fields["authors"])) echo "selected"; ?>>Turgenev</option>
 </select>
 {% endcodemirror %}
+
+{% include close_section.html %}
