@@ -919,12 +919,12 @@ img.mfp-img {
 #search-panel {
     float: right;
     font-size: 12px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 .page-tags {
     display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* The jekyll-generated docs can't be searched. They display the tags in pills for information purposes but they
