@@ -970,7 +970,7 @@ img.mfp-img {
 }
 .page-tags li span.security {
     background-color: #f38c3a;
-    color: #111111;
+    color: #ffffff;
 }
 .page-tags li span.option_lists {
     background-color: #704578;
@@ -1022,5 +1022,9 @@ img.mfp-img {
 }
 .page-tags li span.developer {
     background-color: #085230;
+    color: white;
+}
+.page-tags li span.localization {
+    background-color: #2a7424;
     color: white;
 }
