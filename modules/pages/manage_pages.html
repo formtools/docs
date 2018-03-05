@@ -1,7 +1,7 @@
 ---
 layout: default
 navPage: docs
-heading: Pages
+heading: Adding / Editing Pages
 breadcrumbs:
   - Modules,/modules
   - Pages,/modules/pages
@@ -13,58 +13,67 @@ categories: modules
 
 {% include open_section.html nav='nav_pages.html' selected='manage_pages' %}
 
-  <h3>Adding / Editing Pages</h3>
+    {% include screenshot.html item="i49.jpg" %}
 
-  {% include screenshot.html item="i49.jpg" %}
+    <p>
+        Here's what the various fields mean on the add and edit field pages. Most of it's
+        pretty self-explanatory, but there's a few things that you can still learn.
+    </p>
 
-  <p>
-    Here's what the various fields mean on the add and edit field pages. Most of it's
-    pretty self-explanatory, but there's a few things that you can still learn.
-  </p>
+    <div class="clear"></div>
 
-  <table width="100%">
-    <tbody><tr>
-      <th width="120">Field</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>Page Name</td>
-      <td>
-        This value is used internally to help you identify the page and as the menu
-        item label.
-      </td>
-    </tr>
-    <tr>
-      <td>Page Heading</td>
-      <td>
-        This is the heading that appears on the page.
-      </td>
-    </tr>
-    <tr>
-      <td>Content Type</td>
-      <td>
-        PHP, HTML or Smarty. This determines what kind of content type you enter into the
-        page. HTML is the simplest, but PHP and Smarty give you far more control over the
-        content of the page, as well as giving you access to the database and anything
-        else server-side.
-      </td>
-    </tr>
-    <tr>
-      <td>Page Content</td>
-      <td>
-        The actual page content.
-      </td>
-    </tr>
-    <tr>
-      <td>Who can access?</td>
-      <td>
-        This provides a secure way to protect the page from being accessed by anyone in
-        particular. However, as the comment notes: pages still need to be assigned to a
-        client via their menu or a hardcoded link in order to be seen. This setting is for
-        security purposes only.
-      </td>
-    </tr>
-    </tbody>
-  </table>
+    <div class="row">
+        <div class="col-lg-2">
+            <b>Field</b>
+        </div>
+        <div class="col-lg-10">
+            <b>Description</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <code>Page Name</code>
+        </div>
+        <div class="col-lg-10">
+            This value is used internally to help you identify the page and as the menu item label.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <code>Page Heading</code>
+        </div>
+        <div class="col-lg-10">
+            This is the heading that appears on the page.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <code>Content Type</code>
+        </div>
+        <div class="col-lg-10">
+            PHP, HTML or Smarty. This determines what kind of content type you enter into the page. HTML is the
+            simplest, but PHP and Smarty give you far more control over the content of the page, as well as giving you
+            access to the database and anything else server-side.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <code>Page Content</code>
+        </div>
+        <div class="col-lg-10">
+            The actual page content.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <code>Who can access?</code>
+        </div>
+        <div class="col-lg-10">
+            This provides a secure way to protect the page from being accessed by anyone in
+            particular. However, as the comment notes: pages still need to be assigned to a
+            client via their menu or a hardcoded link in order to be seen. This setting is for
+            security purposes only.
+        </div>
+    </div>
 
 {% include close_section.html %}
