@@ -1,7 +1,7 @@
 ---
 layout: default
 navPage: docs
-heading: module.php
+heading: Module.class.php
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
@@ -15,12 +15,12 @@ categories: module_development
 {% include open_section.html nav='nav_module_development_ft3.html' selected='file_module' nav_width=4 %}
 
 	<p>
-        Every module contains a <code>/code/Module.class.php</code> file that contains the following:
+        Every module has a <code>/code/Module.class.php</code> file that contains the following:
 	</p>
 
     <ul>
         <li>
-            High level information about your module, like the author name, release date, module name and description
+            High level information about your module: the author name, release date, module name and description
             (in your target language).
         </li>
         <li>
@@ -62,7 +62,7 @@ class Module extends FormToolsModule
         // list of CSS files to include here
     );
     protected $jsFiles = array(
-        // list of CSS files to include here
+        // list of JS files to include here
     );
 
     protected $nav = array(
@@ -90,11 +90,12 @@ class Module extends FormToolsModule
     <h3>Namespace</h3>
 
     <p>
-        All Form Tools modules require their code to be namespaced. The namespace takes the form:
-        <code>FormTools\Modules\YourModuleName</code>. Form Tools folder conventions use underscores in folder names,
-        so here your module folder would be named <code>your_folder_name</code>. If your folder is named
-        <code>svg_visualizations_lib</code> your namespace needs to be <code>FormTools\Modules\SvgVisualizationsLib</code>.
-        If you don't enter the namespace correctly, Form Tools will not be able to load or find your module.
+        Form Tools module code is namespaced to prevent naming conflicts with other modules and the core code. The
+        namespace takes the form: <code>FormTools\Modules\YourModuleName</code>. Form Tools folder conventions use
+        underscores in folder names, so here your module folder would be named <code>your_folder_name</code>. If your
+        folder is named <code>svg_visualizations_lib</code> your namespace needs to be
+        <code>FormTools\Modules\SvgVisualizationsLib</code>. If you don't enter the namespace correctly, Form Tools
+        will not be able to load or find your module.
     </p>
 
     <h3>The Module class</h3>

@@ -5,7 +5,6 @@
 
 module Jekyll
 	class CodeMirror < Liquid::Block
-
         def initialize(tag_name, lang, tokens)
             super
             @lang = lang.to_s.strip
@@ -13,7 +12,7 @@ module Jekyll
 
 		def render(context)
 		    require 'cgi'
-		    '<textarea class="codemirror" data-lang="' + @lang.to_s + '">' + CGI.escapeHTML(super.strip) + '</textarea>'
+		    '<pre class="codemirror" data-lang="' + @lang.to_s + '">' + CGI.escapeHTML(super.strip) + '</pre>'
 		end
 	end
 end

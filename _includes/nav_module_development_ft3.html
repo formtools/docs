@@ -10,7 +10,7 @@
 
 		<ul>
 			<li {% if include.selected == 'file_module' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/file_module/">Module.class.php</a>
+				<a href="{{site.baseurl}}/module_development/ft3/module_class/">Module.class.php</a>
 			</li>
 			<li {% if include.selected == 'file_index' %}class="selected"{% endif %}>
 				<a href="{{site.baseurl}}/module_development/ft3/file_index/">index.php</a>
@@ -25,7 +25,7 @@
 				<a href="{{site.baseurl}}/module_development/ft3/file_library/">library.php</a>
 			</li>
 			<li {% if include.selected == 'folder_smarty' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/smarty/">smarty/</a>
+				<a href="{{site.baseurl}}/module_development/ft3/smarty_plugins/">smarty/</a>
 			</li>
 		</ul>
 	</li>
@@ -61,44 +61,35 @@
 		</div>
 
 		<ul>
-			<li {% if include.selected == 'ft_check_module_enabled' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_check_module_enabled/">ft_check_module_enabled</a>
+            <li {% if include.selected == 'display_page' %}class="selected"{% endif %}>
+                <a href="{{site.baseurl}}/module_development/ft3/display_page/">$module->displayPage()</a>
+            </li>
+            <li {% if include.selected == 'get_settings' %}class="selected"{% endif %}>
+                <a href="{{site.baseurl}}/module_development/ft3/get_settings/">$module->getSettings()</a>
+            </li>
+            <li {% if include.selected == 'set_settings' %}class="selected"{% endif %}>
+                <a href="{{site.baseurl}}/module_development/ft3/set_settings/">$module->setSettings()</a>
+            </li>
+			<li {% if include.selected == 'check_module_enabled' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft3/check_module_enabled/">Modules::checkModuleEnabled()</a>
 			</li>
-			<li {% if include.selected == 'ft_display_module_page' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_display_module_page/">ft_display_module_page</a>
+            <li {% if include.selected == 'init_module_page' %}class="selected"{% endif %}>
+                <a href="{{site.baseurl}}/module_development/ft3/init_module_page/">Modules::initModulePage()</a>
+            </li>
+            <li {% if include.selected == 'load_module_field' %}class="selected"{% endif %}>
+                <a href="{{site.baseurl}}/module_development/ft3/load_module_field/">Modules::loadModuleField()</a>
+            </li>
+			<li {% if include.selected == 'eval_smarty_string' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft3/eval_smarty_string/">General::evalSmartyString()</a>
 			</li>
-			<li {% if include.selected == 'ft_eval_smarty_string' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_eval_smarty_string/">ft_eval_smarty_string</a>
+			<li {% if include.selected == 'get_dhtml_page_nav' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft3/get_dhtml_page_nav/">General::getDhtmlPageNav()</a>
 			</li>
-			<li {% if include.selected == 'ft_get_dhtml_page_nav' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_get_dhtml_page_nav/">ft_get_dhtml_page_nav</a>
+			<li {% if include.selected == 'get_page_nav' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft3/get_page_nav/">General::getPageNav()</a>
 			</li>
-			<li {% if include.selected == 'ft_get_module_hooks' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_get_module_hooks/">ft_get_module_hooks</a>
-			</li>
-			<li {% if include.selected == 'ft_get_module_settings' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_get_module_settings/">ft_get_module_settings</a>
-			</li>
-			<li {% if include.selected == 'ft_get_page_nav' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_get_page_nav/">ft_get_page_nav</a>
-			</li>
-			<li {% if include.selected == 'ft_include_modules' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_include_modules/">ft_include_modules</a>
-			</li>
-			<li {% if include.selected == 'ft_init_module_page' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_init_module_page/">ft_init_module_page</a>
-			</li>
-			<li {% if include.selected == 'ft_load_module_field' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_load_module_field/">ft_load_module_field</a>
-			</li>
-			<li {% if include.selected == 'ft_register_hook' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_register_hook/">ft_register_hook</a>
-			</li>
-			<li {% if include.selected == 'ft_sanitize' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_sanitize/">ft_sanitize</a>
-			</li>
-			<li {% if include.selected == 'ft_set_module_settings' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/ft_set_module_settings/">ft_set_module_settings</a>
+			<li {% if include.selected == 'register_hook' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft3/register_hook/">Hooks::registerHook()</a>
 			</li>
 		</ul>
 
