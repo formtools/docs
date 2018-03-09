@@ -38,8 +38,10 @@ module Jekyll
         # If the file is HTML, newlines within <pre> elements should not be
         #   collapsed.
         pre_regexp = /<\/?pre[^>]*>/i
-        pre_list = output.scan(pre_regexp)
-        blocks = output.split(pre_regexp)
+        textarea_regexp = /<\/?textarea[^>]*>/i
+
+        pre_list = output.scan(Regexp.union(pre_regexp, textarea_regexp))
+        blocks = output.split(Regexp.union(pre_regexp, textarea_regexp))
 
         collapsed_blocks = []
         blocks.each_with_index do |block, i|
