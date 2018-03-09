@@ -3,34 +3,44 @@ layout: default
 navPage: docs
 heading: index.php
 breadcrumbs:
-  - Module Development,/module_development/
-  - Form Tools 3,/module_development/ft3/
-  - Anatomy of a Module,/module_development/ft3/anatomy/
-  - index.php
+- Module Development,/module_development/
+- Form Tools 3,/module_development/ft3/
+- Anatomy of a Module,/module_development/ft3/anatomy/
+- index.php
 prev: module.php,/module_development/ft3/file_module/
 next: index.tpl,/module_development/ft3/file_index_tpl/
 categories: module_development
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='file_index' nav_width=4 %}
+{% include open_section.html nav='nav_module_development.html' selected='file_index' nav_width=4 %}
 
-	<p>
-		The index.php file is the first page the user is linked to after they select the module. This
-		page should contain whatever PHP code you require on your index page. A bare-bones example can
-		be lifted from the <a href="https://docs.formtools.org/modules/hello_world/">Hello World!</a> module:
-	</p>
+    <p>
+        The index.php file located in your module root (<code>[form tools root]/modules/my_module/</code>) is the
+        first page the user is linked to after they select the module within the Form Tools interface. A bare-bones
+        example can be lifted from the <a href="{{site.baseurl}}/modules/hello_world/">Hello World!</a> module:
+    </p>
 
-	{% codemirror php %}
+    {% codemirror php %}
 <?php
 require_once("../../global/library.php");
-ft_init_module_page();
-ft_display_module_page("index.tpl");
+$module = FormTools\Modules::initModulePage("admin");
+$module->displayPage("templates/index.tpl");
 ?>
-	{% endcodemirror %}
+    {% endcodemirror %}
 
-	<p>
-		That imports the main Form Tools code file (library.php), initializes the module page and
-		displays the template page (index.tpl).
-	</p>
+    <p>
+        That imports the main Form Tools code, initializes the module page and displays the template page (index.tpl).
+        All of your pages need to include the Form Tools core's <code>global/library.php</code> file and call the
+        <code>initModulePage()</code> method to ensure everything is properly prepared to load your page.
+    </p>
+
+    <p>
+        Further information:
+    </p>
+
+    <ul>
+        <li><a href="{{site.baseurl}}/module_development/ft3/init_module_page/">Modules::initModulePage()</a></li>
+        <li><a href="{{site.baseurl}}/module_development/ft3/display_page">$module->displayPage()</a></li>
+    </ul>
 
 {% include close_section.html %}

@@ -171,41 +171,81 @@ class Module extends FormToolsModule
 	</div>
 
 	<div class="row">
-		<div class="col-lg-4">
+		<div class="col-lg-3">
 			<code>$cssFiles</code>
 		</div>
-		<div class="col-lg-8">
+		<div class="col-lg-9">
 			This is a convenience option that lets you define CSS files to be included in all of your
             module pages. If you're not using it, just omit the member var altogether. It comes with a couple of handy
-            placeholders so you can easily pinpoint the file you want.
+            placeholders:
 
             <ul>
-                <li></li>
+                <li><code>{FTROOT}</code> - the URL of your Form Tools folder, the same value as your
+                    <code>$g_root_url</code> value in your
+                    <a href="{{site.baseurl}}/userdoc/getting_started/config_file/">config.php</a> file.</li>
+                <li><code>{FTVERSION}</code> - your Form Tools version.</li>
+                <li><code>{MODULEVERSION}</code> - your module version.</li>
+                <li><code>{MODULEROOT}</code> - the URL to your module folder.</li>
             </ul>
+
+            Example:
+
+{% codemirror php %}
+protected $cssFiles = array(
+    "{MODULEROOT}/styles/css1.css"
+    "{MODULEROOT}/styles/css2.css"
+);
+{% endcodemirror %}
+
 		</div>
 	</div>
 
-	{% codemirror php %}
-<?php
-$MODULE["nav"] = array(
-    "module_name"   => array('{$module_dir}/index.php', false),
-    "word_settings" => array('{$module_dir}/settings/', false)
-);
-?>
-	{% endcodemirror %}
+    <div class="row">
+        <div class="col-lg-3">
+            <code>$jsFiles</code>
+        </div>
+        <div class="col-lg-9">
+            This works exactly the same as the previous <code>$cssFiles</code> setting and offers the same placeholders.
+        </div>
+    </div>
+
 
 	<div class="row">
-		<div class="col-lg-4">
-
+		<div class="col-lg-3">
+            <code>$nav</code>
 		</div>
-		<div class="col-lg-8">
-			The "module_name", "word_settings" and "word_help" have corresponding entries in the
-			module's <b>lang/en_us.php</b> language file (i.e. $L["module_name"] = "Export Manager"
-			etc.). The values each contain the <b>{$module_dir}</b> Smarty placeholder. This is a
-			convenient way to refer to the module root URL. Often you find you won't need it, but if
-			your module arranges its files in subfolders, this wards against invalid links.
+		<div class="col-lg-9">
+            This member variable contains your module navigation menu items. They are of the form:
+            <code>"lang_key_prop_name" => array("file name", true|false)</code> where the last variable specifies
+            whether the menu item should appear as a submenu item. Submenu items are styled differently depending on the
+            theme, but they are usuall slightly indented and of a different colour.
+
+            <p>Example:</p>
+{% codemirror php %}
+protected $nav = array(
+    "module_name"   => array("index.php", false),
+    "word_settings" => array("/settings/", true)
+);
+{% endcodemirror %}
+
+            <p>
+                Here, your <a href="{{site.baseurl}}/module_development/ft3/file_lang/">language file</a> contains
+                at least two properties: "module_nav" and "word_settings" containing the appropriate strings.
+            </p>
 		</div>
 	</div>
 
+    <p>
+        Lastly, the <code>install()</code>, <code>uninstall()</code> and <code>upgrade()</code> methods contain
+        whatever logic you need to execute for each lifecycle method. If you don't need them, you don't need to
+        enter the method. See the following pages for more information, or just keep reading this section to continue
+        learning about the basic anatomy of a module.
+    </p>
+
+    <ul>
+        <li><a href="{{site.baseurl}}/module_development/ft3/installation_method/">Installation method</a></li>
+        <li><a href="{{site.baseurl}}/module_development/ft3/uninstallation_method/">Uninstallation method</a></li>
+        <li><a href="{{site.baseurl}}/module_development/ft3/upgrade_method/">Upgrade method</a></li>
+    </ul>
 
 {% include close_section.html %}
