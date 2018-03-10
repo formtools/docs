@@ -22,12 +22,6 @@
     margin-top: 75px;
 }
 
-
-/* docs */
-/*
-	convert to Sass!
-*/
-
 header {
     border-bottom: 1px solid #cccccc;
     margin-bottom: 20px;
@@ -139,9 +133,8 @@ header h1 {
     font-family: monospace;
     height: 300px;
     color: black;
+    padding: 12px;
 }
-
-/* PADDING */
 
 .CodeMirror-lines {
     padding: 4px 0; /* Vertical padding around content */

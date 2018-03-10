@@ -18,6 +18,7 @@ $(function () {
       mode: map[lang],
       readonly: true,
       viewportMargin: Infinity
+      //theme: "ambiance"
     });
   });
 
