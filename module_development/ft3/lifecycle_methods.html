@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Lifecycle Methods
+breadcrumbs:
+  - Module Development,/module_development/
+  - Form Tools 3,/module_development/ft3/
+  - Lifecycle Methods
+prev: smarty/,/module_development/ft3/smarty_plugins/
+next: Installation Method,/module_development/ft3/installation_method/
+categories: module_development
+page_type: intro
+versions: FT3
+---
+
+{% include open_section.html nav='nav_module_development_ft3.html' selected='lifecycle_methods' nav_width=4 %}
+
+	<p>
+		If you need to perform special actions when the module is installed, uninstalled or upgraded, you'll need to add
+        these methods to your <a href="{{site.baseurl}}/module_development/ft3/module_class/">Module class</a>. They
+        will be automatically called at the appropriate time by the core script.
+	</p>
+
+    <p>
+		All three methods are optional. For simple modules, you may find you don't need them.
+	</p>
+
+	<ul>
+		<li><a href="{{site.baseurl}}/module_development/ft3/installation_method/">Installation Function</a></li>
+		<li><a href="{{site.baseurl}}/module_development/ft3/uninstallation_method/">Uninstallation Method</a></li>
+		<li><a href="{{site.baseurl}}/module_development/ft3/upgrade_method/">Upgrade Method</a></li>
+	</ul>
+
+{% include close_section.html %}

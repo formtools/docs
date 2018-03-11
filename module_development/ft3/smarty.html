@@ -1,32 +1,31 @@
 ---
 layout: default
 navPage: docs
-heading: smarty/
+heading: smarty_plugins/
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
   - Anatomy of a Module,/module_development/ft3/anatomy/
-  - smarty/
+  - smarty_plugins/
 prev: library.php,/module_development/ft3/file_library/
-next: Special Functions,/module_development/ft3/special_functions/
+next: Lifecycle Methods,/module_development/ft3/lifecycle_methods/
 categories: module_development
+versions: FT3
 ---
 
 {% include open_section.html nav='nav_module_development_ft3.html' selected='folder_smarty' nav_width=4 %}
 
 	<p>
-		One of the many nice things about using Smarty templates is that you can abstract away
-		logic and content into separate libraries, saving you having to write duplicate code and
-		helping you keep the template file as clean and uncluttered as possible. It helps your
-		templates stay focused as possible on what it <b>should</b> be handling: the appearance
-		and presentation of the data - and not the logic.
+		One of the many nice things about using Smarty templates is that you can abstract away logic and content into
+        separate libraries, saving you having to write duplicate code and helping you keep the template clean and
+        uncluttered. It helps your templates stay focused as possible on what it <b>should</b> be handling: the appearance
+		and presentation of the data and not the logic.
 	</p>
 
 	<p>
-		For example, say you need to display a "Province/State" dropdown on multiple pages in
-		your module. First, you can write separate PHP function to generate the HTML content,
-		then second, you can write a separate Smarty function file to use that PHP that can be
-		called directly in your templates like so:
+		For example, say you need to display a "Province/State" dropdown on multiple pages in your module. First, you
+        can write separate PHP function to generate the HTML content, then second, you can write a separate Smarty
+        function file to use that PHP that can be called directly in your templates like so:
 	</p>
 
 	{% codemirror smarty %}
@@ -34,9 +33,9 @@ categories: module_development
 	{% endcodemirror %}
 
 	<p>
-		All your Smarty functions and modifiers belong in the /smarty subfolder of your module
+		All your Smarty functions and modifiers belong in the /smarty_plugins subfolder of your module
 		folder. By defining them there, they are automatically accessible to your template
-		pages within your module pages and even within the core script.
+		pages within your module pages.
 	</p>
 
 

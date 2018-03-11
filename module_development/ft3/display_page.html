@@ -1,18 +1,19 @@
 ---
 layout: default
 navPage: docs
-heading: ft_display_module_page
+heading: $module->displayPage()
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
-  - Helper Functions,/module_development/ft3/helper_functions/
-  - ft_display_module_page
-prev: ft_check_module_enabled,/module_development/ft3/ft_check_module_enabled/
-next: ft_eval_smarty_string,/module_development/ft3/ft_eval_smarty_string/
+  - Helper Methods,/module_development/ft3/helper_methods/
+  - $module->displayPage()
+prev: Helper Methods,/module_development/ft3/helper_methods/
+next: $module->getSettings(),/module_development/ft3/get_settings/
 categories: module_development
+versions: FT3
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='ft_display_module_page' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='display_page' nav_width=4 %}
 
 	<p>
 		This is the main work-horse function used to you display a web page for your module. It works by letting you
@@ -23,7 +24,7 @@ categories: module_development
 	</p>
 
 	{% codemirror php %}
-ft_display_module_page("templates/index.tpl", $info);
+$module->displayPage("templates/index.tpl", $info);
 	{% endcodemirror %}
 
 	<p>

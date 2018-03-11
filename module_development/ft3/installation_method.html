@@ -1,0 +1,70 @@
+---
+layout: default
+navPage: docs
+heading: Installation Method
+breadcrumbs:
+  - Module Development,/module_development/
+  - Form Tools 3,/module_development/ft3/
+  - Lifecycle Methods,/module_development/ft3/lifecycle_methods/
+  - Installation Method
+prev: Lifecycle Methods,/module_development/ft3/lifecycle_methods/
+next: Uninstallation Method,/module_development/ft3/uninstallation_method/
+categories: module_development
+versions: FT3
+---
+
+{% include open_section.html nav='nav_module_development_ft3.html' selected='installation_method' nav_width=4 %}
+
+	<p>
+        Your installation method takes a single parameter: the <code>$module_id</code>, passed to it from the core code.
+        You don't have to use the value if you don't need it, but your method definition will need to include it. The
+        module ID is unique and is the primary key in the <code>[prefix]modules</code> table.
+	</p>
+
+	{% codemirror php %}
+namespace FormTools\Modules\MyModule;
+
+use FormTools\Module as FormToolsModule;
+
+class MyModule extends FormToolsModule
+{
+    // ...
+
+    /**
+     * My Module's installation method. This is automatically called by Form Tools
+     * when the user installs the module.
+     *
+     * @param integer $module_id
+     * @return array [0] true / false
+     *               [1] success or error message
+     */
+    public function install($module_id)
+    {
+        // do anything you want here
+
+        $success = true;
+        $message = "";
+
+        return array($success, $message);
+    }
+
+    // ...
+}
+	{% endcodemirror %}
+
+	<p>
+		The return value is important. It needs to be an array with two indexes. The first indicates whether the
+        installation was successful or not. If it's set to false, Form Tools will halt the installation. The second
+        parameter is what should be displayed to the user - this is either a success or error message, depending on the
+        first parameter. Note: this second parameter does <b>not need to be included</b> for success messages. By
+        default, a successfully installed module will automatically display a message informing the user of this with
+        a "select this module" link. The second parameter, if included, will override this default message. So to rely
+        on the default message, just pass an empty string as the second parameter, like so:
+	</p>
+
+{% codemirror php %}
+return array(true, "");
+{% endcodemirror %}
+
+
+{% include close_section.html %}

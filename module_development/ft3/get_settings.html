@@ -1,36 +1,37 @@
 ---
 layout: default
 navPage: docs
-heading: ft_get_module_settings
+heading: $module->getSettings()
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
-  - Helper Functions,/module_development/ft3/helper_functions/
-  - ft_get_module_settings
-prev: ft_get_module_hooks,/module_development/ft3/ft_get_module_hooks/
-next: ft_get_page_nav,/module_development/ft3/ft_get_page_nav/
+  - Helper Methods,/module_development/ft3/helper_methods/
+  - $module->getSettings()
+prev: $module->displayPage(),/module_development/ft3/display_page/
+next: $module->setSettings(),/module_development/ft3/set_settings/
 categories: module_development
+versions: FT3
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='ft_get_module_settings' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='get_settings' nav_width=4 %}
 
 	<p>
-		This function is the sister of <b>ft_set_module_settings</b> described previously. It retrieves values stored
+		This function is the sister of <b>$module->setSettings()</b> described previously. It retrieves values stored
 		in the database for your module. It accepts a single parameter: a string of the setting name (key), or an array of
 		strings if you want to retrieve multiple values. For example:
 	</p>
 
 	{% codemirror php %}
 // getting a single value
-$age = ft_get_module_settings("age");
+$age = $module->getSettings("age");
 
 // getting multiple values
 $info = array("age", "name");
-list($age, $name) = ft_get_module_settings($info);
+list($age, $name) = $module->getSettings($info);
 	{% endcodemirror %}
 
 	<p>
-		The <b>ft_set_module_settings</b> and <b>ft_get_module_settings</b> functions are good for small snippets
+		The <b>$module->setSettings()</b> and <b>$module->getSettings()</b> functions are good for small snippets
         of data. If you need to store larger quantities of data, we recommend you create your own database table.
 	</p>
 

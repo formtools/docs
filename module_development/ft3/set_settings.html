@@ -1,39 +1,39 @@
 ---
 layout: default
 navPage: docs
-heading: ft_set_module_settings
+heading: $module->setSettings()
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
-  - Helper Functions,/module_development/ft3/helper_functions/
-  - ft_set_module_settings
-prev: ft_sanitize,/module_development/ft3/ft_sanitize/
+  - Helper Methods,/module_development/ft3/helper_methods/
+  - $module->setSettings()
+prev: $module->getSettings(),/module_development/ft3/get_settings/
 next: Hooks,/module_development/ft3/hooks/
 categories: module_development
+versions: FT3
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='ft_set_module_settings' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='set_settings' nav_width=4 %}
 
 	<p>
-		This function abstracts away all the details of storing settings for your module in
-		the <b>settings</b> database table. It takes a single parameter: a hash of key-value
-		pairs where the key is the setting name and the value, the setting value.
+		This function abstracts away all the details of storing settings for your module in the <b>settings</b> database
+        table. It takes a single parameter: a hash of key-value pairs where the key is the setting name and the value,
+        the setting value.
 	</p>
 
 	<p>
-		Imagine you want to store two pieces of information supplied by the user: their age
-		and name. You could store this information in the database like so:
+		Imagine you want to store two pieces of information supplied by the user: their age and name. You could store
+        this information in the database like so:
 	</p>
 
 {% codemirror php %}
 $info = array("name" => $name, "age" => $age);
-ft_set_module_settings($info);
+$module->setSettings($info);
 {% endcodemirror %}
 
 	<p>
-		And that's it! It's now stored in the database. If the value didn't already exist in
-		the database it will be added. If it <b>did</b> already exist, the values will be
-		updated.
+		And that's it! It's now stored in the database. If the value didn't already exist in the database it will be
+        added. If it <b>did</b> already exist, the values will be updated.
 	</p>
 
 

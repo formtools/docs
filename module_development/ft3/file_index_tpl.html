@@ -8,20 +8,21 @@ breadcrumbs:
   - Anatomy of a Module,/module_development/ft3/anatomy/
   - index.tpl
 prev: index.php,/module_development/ft3/file_index/
-next: lang/[lang file].php,/module_development/ft3/file_lang/
+next: Language files,/module_development/ft3/file_lang/
 categories: module_development
+versions: FT3
 ---
 
 {% include open_section.html nav='nav_module_development_ft3.html' selected='file_index_tpl' nav_width=4 %}
 
-	<p>
-		You're required to include at least <b>one</b> Smarty template to render your index.php page. This template
-		can be located within the main module folder or any subfolder within it and named whatever you want. We
-		suggest <b>index.tpl</b> to keep it simple.
-	</p>
+    <p>
+        All HTML within Form Tools is generated through the Smarty template language.
+    </p>
 
 	<p>
-		All HTML within Form Tools is generated through the Smarty template language.
+		Your <code>index.tpl</code> file is used to render the markup for your <code>index.php</code> file. As mentioned
+        before, your template files can be located anywhere in your module folder, but we recommend putting them
+        all within a <code>templates/</code> subfolder for consistency with the other modules.
 	</p>
 
 	<p>
@@ -30,12 +31,24 @@ categories: module_development
 	</p>
 
 	{% codemirror smarty %}
-{include file='modules_header.tpl'}
+{ft_include file='modules_header.tpl'}
 
 <div class="title">{$L.phrase_hello_world|upper}</div>
 
-{include file='modules_footer.tpl'}
+{ft_include file='modules_footer.tpl'}
 	{% endcodemirror %}
 
+
+    <p>
+        The <code>ft_include</code> method is used to include other templates within the main theme. It
+        does some clever stuff behind the scenes to first look for the file in the current users theme, then inherit
+        from the default theme if it's not defined there.
+    </p>
+
+    <p>
+        By and large you'll only ever be includes the header and footer as illustrated above. But if you want to include
+        templates within your <b>own</b> module, you'll want to use the default Smarty <code>{include file="..."}</code>
+        method.
+    </p>
 
 {% include close_section.html %}

@@ -19,7 +19,7 @@
 				<a href="{{site.baseurl}}/module_development/ft3/file_index_tpl/">index.tpl</a>
 			</li>
 			<li {% if include.selected == 'file_lang' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/file_lang/">lang/[lang file].php</a>
+				<a href="{{site.baseurl}}/module_development/ft3/file_lang/">Language Files</a>
 			</li>
 			<li {% if include.selected == 'file_library' %}class="selected"{% endif %}>
 				<a href="{{site.baseurl}}/module_development/ft3/file_library/">library.php</a>
@@ -30,19 +30,19 @@
 		</ul>
 	</li>
 	<li>
-		<div {% if include.selected == 'special_functions' %}class="selected"{% endif %}>
-			<a href="{{site.baseurl}}/module_development/ft3/special_functions/">Special Functions</a>
+		<div {% if include.selected == 'lifecycle_methods' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/module_development/ft3/lifecycle_methods/">Lifecycle Methods</a>
 		</div>
 
 		<ul>
-			<li {% if include.selected == 'installation_function' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/installation_function/">Installation Function</a>
+			<li {% if include.selected == 'installation_method' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft3/installation_method/">Installation Method</a>
 			</li>
-			<li {% if include.selected == 'uninstallation_function' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/uninstallation_function/">Uninstallation Function</a>
+			<li {% if include.selected == 'uninstallation_method' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft3/uninstallation_method/">Uninstallation Method</a>
 			</li>
-			<li {% if include.selected == 'upgrade_function' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/upgrade_function/">Upgrade Function</a>
+			<li {% if include.selected == 'upgrade_method' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft3/upgrade_method/">Upgrade Method</a>
 			</li>
 		</ul>
 	</li>
@@ -56,8 +56,8 @@
 		<a href="{{site.baseurl}}/module_development/ft3/display_pages/">Displaying your Pages</a>
 	</li>
 	<li>
-		<div {% if include.selected == 'helper_functions' %}class="selected"{% endif %}>
-			<a href="{{site.baseurl}}/module_development/ft3/helper_functions/">Helper Functions</a>
+		<div {% if include.selected == 'helper_methods' %}class="selected"{% endif %}>
+			<a href="{{site.baseurl}}/module_development/ft3/helper_methods/">Helper Methods</a>
 		</div>
 
 		<ul>
@@ -70,8 +70,8 @@
             <li {% if include.selected == 'set_settings' %}class="selected"{% endif %}>
                 <a href="{{site.baseurl}}/module_development/ft3/set_settings/">$module->setSettings()</a>
             </li>
-			<li {% if include.selected == 'check_module_enabled' %}class="selected"{% endif %}>
-				<a href="{{site.baseurl}}/module_development/ft3/check_module_enabled/">Modules::checkModuleEnabled()</a>
+			<li {% if include.selected == 'check_module_available' %}class="selected"{% endif %}>
+				<a href="{{site.baseurl}}/module_development/ft3/check_module_available/">Modules::checkModuleAvailable()</a>
 			</li>
             <li {% if include.selected == 'init_module_page' %}class="selected"{% endif %}>
                 <a href="{{site.baseurl}}/module_development/ft3/init_module_page/">Modules::initModulePage()</a>

@@ -1,36 +1,33 @@
 ---
 layout: default
 navPage: docs
-heading: lang/[lang file].php
+heading: Language files
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
   - Anatomy of a Module,/module_development/ft3/anatomy/
-  - lang/[lang file].php
+  - Language files
 prev: index.tpl,/module_development/ft3/file_index_tpl/
 next: library.php,/module_development/ft3/file_library/
 categories: module_development
 tags: localization
+versions: FT3
 ---
 
 {% include open_section.html nav='nav_module_development_ft3.html' selected='file_lang' nav_width=4 %}
 
 	<p>
-		In most web applications you just embed the language strings directly in the
-		PHP and HTML. This keeps everything nice and simple, but it limits the application to
-		a single language. Form Tools supports displaying the same pages in multiple languages
-		simultaneously to different users by storing all text strings in a separate language
-		file. The files are found in the <b>/global/lang/</b> folder, located in your Form
-		Tools root.
+		In some web applications you just embed the language strings directly in the PHP and HTML. This keeps
+        everything nice and simple, but it limits the application to a single language. Form Tools supports displaying
+        the same pages in multiple languages to different users by storing all text strings in a separate language
+		file. The files are found in the <b>/global/lang/</b> folder, located in your Form Tools folder.
 	</p>
 
 	<p>
-		Modules work in precisely the same way as the main script. They have their own
-		<b>lang/</b> folder where the language files should be placed . As a developer, you
-		only need to write a single file in the language of your choice. This file contains
-		a single associative array (hash) called $L containing all the language snippets
-		that are used in your module. Here's an example (abbreviated) from the Export Manager
-		module:
+		Modules work in precisely the same way as the main script. They have their own <b>lang/</b> folder where the
+        language files should be placed . As a developer, you only need to write a single file in the language of your
+        choice. This file contains a single associative array (hash) called $L containing all the language snippets
+		that are used in your module. Here's an example (abbreviated) from the Export Manager module:
 	</p>
 
 	{% codemirror php %}

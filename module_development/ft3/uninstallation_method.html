@@ -1,0 +1,73 @@
+---
+layout: default
+navPage: docs
+heading: Uninstallation Method
+breadcrumbs:
+  - Module Development,/module_development/
+  - Form Tools 3,/module_development/ft3/
+  - Lifecycle Methods,/module_development/ft3/lifecycle_methods/
+  - Uninstallation Method
+prev: Installation Method,/module_development/ft3/installation_method/
+next: Upgrade Method,/module_development/ft3/upgrade_method/
+categories: module_development
+versions: FT3
+---
+
+{% include open_section.html nav='nav_module_development_ft3.html' selected='uninstallation_method' nav_width=4 %}
+
+	<p>
+		The uninstallation functions work in a similar manner to the installation function. It's
+		called when the administrator clicks the "UNINSTALL" link.
+	</p>
+
+	<p>
+		This function should contain all the custom code you need to execute to remove the module from the database and
+        do whatever cleanup is required. Again, if your module made no database changes, then you won't need to include
+        this file in your module.
+	</p>
+
+	<p>
+		The uninstall method is structured just like the install method:
+	</p>
+
+	{% codemirror php %}
+namespace FormTools\Modules\MyModule;
+
+use FormTools\Module as FormToolsModule;
+
+class MyModule extends FormToolsModule
+{
+    // ...
+
+    /**
+     * My Module's uninstallation method.
+     *
+     * @param integer $module_id
+     * @return array [0] true / false
+     *               [1] success or error message
+     */
+    public function uninstall($module_id)
+    {
+        // do anything you want here
+
+        $success = true;
+        $message = "";
+
+        return array($success, $message);
+    }
+
+    // ...
+}
+	{% endcodemirror %}
+
+    <p>
+		The module ID is passed to the method in case you use it. Otherwise you can just ignore it.
+	</p>
+
+	<p>
+		The return array is necessary. You MUST return an array with two indexes: [0] true/false, and [1] a
+        message. If you want the core script to display the default "The module has been uninstalled" message, just
+        pass an empty string for the second index.
+	</p>
+
+{% include close_section.html %}

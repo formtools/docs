@@ -1,0 +1,64 @@
+---
+layout: default
+navPage: docs
+heading: Upgrade Method
+breadcrumbs:
+  - Module Development,/module_development/
+  - Form Tools 3,/module_development/ft3/
+  - Lifecycle Methods,/module_development/ft3/lifecycle_methods/
+  - Upgrade Method
+prev: Uninstallation Function,/module_development/ft3/uninstallation_method/
+next: Database Tables and Data,/module_development/ft3/database_tables/
+categories: module_development
+versions: FT3
+---
+
+{% include open_section.html nav='nav_module_development_ft3.html' selected='upgrade_method' nav_width=4 %}
+
+	<p>
+		As with the two previous functions, the upgrade works in a similar manner. The function must be located in
+        your library.php file and be called <b>my_module__upgrade()</b> - where (you know the drill!) the my_module
+        part is the name of your module folder.
+	</p>
+
+	<p>
+		This function is called automatically by the Form Tools core on the Modules listing page.
+		If the module version in the module.php file is different from the value stored in the
+		database, it will highlight the module row and replace the "SELECT" link with an "UPGRADE"
+		link. When clicked, it will call your upgrade function (if defined).
+	</p>
+
+	<p>
+		Your upgrade method should look like this:
+	</p>
+
+	{% codemirror php %}
+namespace FormTools\Modules\MyModule;
+
+use FormTools\Module as FormToolsModule;
+
+class MyModule extends FormToolsModule
+{
+    // ...
+
+    /**
+     * @param integer $module_id
+     * @return array [0] true / false
+     *               [1] success or error message
+     */
+    public function upgrade($module_id, $old_module_version)
+    {
+        // do anything you want here
+
+        $success = true;
+        $message = "";
+
+        return array($success, $message);
+    }
+
+    // ...
+}
+	{% endcodemirror %}
+
+
+{% include close_section.html %}
