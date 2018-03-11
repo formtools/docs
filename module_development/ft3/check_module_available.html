@@ -5,15 +5,15 @@ heading: Modules::checkModuleAvailable()
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
-  - Helper Functions,/module_development/ft3/helper_functions/
-  - ft_check_module_enabled
-prev: Helper Functions,/module_development/ft3/helper_functions/
-next: $module->displayPage(),/module_development/ft3/ft_display_module_page/
+  - Helper Methods,/module_development/ft3/helper_methods/
+  - Modules::checkModuleAvailable()
+prev: $module->setSettings(),/module_development/ft3/set_settings/
+next: Modules::initModulePage(),/module_development/ft3/init_module_page/
 categories: module_development
 versions: FT3
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='ft_check_module_enabled' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='check_module_available' nav_width=4 %}
 
 	<p>
 		This function returns a boolean, and accepts a single string as a parameter: the folder name of the module.
@@ -21,8 +21,9 @@ versions: FT3
 	</p>
 
 	{% codemirror php %}
-if (ft_check_module_enabled("pages"))
-  ft_include_modules("pages");
+if (Modules::checkModuleAvailable("pages")) {
+    Modules::includeModule("pages");
+}
 	{% endcodemirror %}
 
 {% include close_section.html %}

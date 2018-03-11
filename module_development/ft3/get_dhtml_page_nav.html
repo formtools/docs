@@ -1,37 +1,35 @@
 ---
 layout: default
 navPage: docs
-heading: ft_get_dhtml_page_nav
+heading: General::getDhtmlPageNav()
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
-  - Helper Functions,/module_development/ft3/helper_functions/
-  - ft_get_dhtml_page_nav
-prev: ft_eval_smarty_string,/module_development/ft3/ft_eval_smarty_string/
-next: ft_get_module_hooks,/module_development/ft3/ft_get_module_hooks/
+  - Helper Methods,/module_development/ft3/helper_methods/
+  - General::getDhtmlPageNav()
+prev: General::evalSmartyString(),/module_development/ft3/eval_smarty_string/
+next: General::getPageNav(),/module_development/ft3/get_page_nav/
 categories: module_development
 versions: FT3
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='ft_get_dhtml_page_nav' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='get_dhtml_page_nav' nav_width=4 %}
 
 	<p>
-		This function is the DHTML counterpart of the ft_get_page_nav function defined above.
-		It provides exactly the same functionality to the user - displaying the same «
-		1 2 3 ... links - but instead of requiring a page refresh when a link is clicked, it
-		hides and shows the appropriate section from the page. For this function to work,
-		every page of the data has to have been loaded into the page, and only one of which is
-		displayed at any time.
+		This function is the JS counterpart of the <a href="{{site.baseurl}}/module_development/ft3/get_page_nav/">General::getPageNav()</a>
+        method. It provides exactly the same functionality to the user - displaying the same <code>« 1 2 3 ...</code>
+        links - but instead of requiring a page refresh when a link is clicked, it hides and shows the appropriate
+        section from the page. For this function to work, every page of the data has to have been loaded into the
+        page, and only one of which is displayed at any time.
 	</p>
 
 	<p>
-		Using this function instead of ft_get_page_nav can be a good or bad approach, depending
-		on your data set: it's primarily a question of volume. If you have a large amount of
-		data to show, I wouldn't recommend using this. It will require you to load everything
-		into the page - which can be extremely time consuming. It's really intended for
-		situations that entail smaller data sets; for example, it's used to display pagination
-		on the main Forms and Clients pages, since there will rarely be &gt; 100 results (forms
-		of clients) of either.
+		Using this function instead of <a href="{{site.baseurl}}/module_development/ft3/get_page_nav/">General::getPageNav()</a>
+        can be a good or bad approach depending on your data set: it's primarily a question of volume. If you have a
+        large amount of data to show, I wouldn't recommend using this. It will require you to load everything into the
+        page - which can be extremely time consuming. It's really intended for situations that entail smaller data sets;
+        for example, it's used to display pagination on the main Forms and Clients pages, since there will rarely be &gt;
+        100 results (forms of clients) of either.
 	</p>
 
 	<p>
@@ -39,7 +37,7 @@ versions: FT3
 	</p>
 
 	{% codemirror php %}
-$page_vars["pagination"] = ft_get_dhtml_page_nav($num_results, $num_per_page, $page);
+$page_vars["pagination"] = General::getDhtmlPageNav($num_results, $num_per_page, $page);
 	{% endcodemirror %}
 
 	<p>
@@ -52,14 +50,13 @@ $page_vars["pagination"] = ft_get_dhtml_page_nav($num_results, $num_per_page, $p
 		<li>the current page number (required)</li>
 	</ol>
 
-
 	<p>
 		The "pagination" key has to be passed to the template via the ft_display_module_page
 		function, like so:
 	</p>
 
 	{% codemirror php %}
-ft_display_module_page("your_template.tpl", $page_vars); // where $page_vars contains "pagination"
+$module->displayPage("your_template.tpl", $page_vars); // where $page_vars contains "pagination"
 	{% endcodemirror %}
 
 	<p>

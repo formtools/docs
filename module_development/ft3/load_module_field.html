@@ -1,19 +1,19 @@
 ---
 layout: default
 navPage: docs
-heading: ft_load_module_field
+heading: Modules::loadModuleField()
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
-  - Helper Functions,/module_development/ft3/helper_functions/
-  - ft_load_module_field
-prev: ft_init_module_page,/module_development/ft3/ft_init_module_page/
-next: ft_register_hook,/module_development/ft3/ft_register_hook/
+  - Helper Methods,/module_development/ft3/helper_methods/
+  - Modules::loadModuleField()
+prev: Modules::initModulePage(),/module_development/ft3/init_module_page/
+next: General::evalSmartyString(),/module_development/ft3/eval_smarty_string/
 categories: module_development
 versions: FT3
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='ft_load_module_field' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='load_module_field' nav_width=4 %}
 
 	<p>
 		This wonderful little function is the module counterpart to the <b>ft_load_field</b>
@@ -33,7 +33,7 @@ versions: FT3
 	</p>
 
 {% codemirror php %}
-$my_var = ft_load_module_field("my_module", "my_key", "var", "Default value!");
+$my_var = Modules::loadModuleField("my_module", "my_key", "var", "Default value!");
 {% endcodemirror %}
 
 	<p>
@@ -51,7 +51,7 @@ $my_var = ft_load_module_field("my_module", "my_key", "var", "Default value!");
 	</p>
 
 {% codemirror php %}
-$field_id = ft_load_module_field("my_module", "field_id", "field_id", "[NONE!]");
+$field_id = Modules::loadModuleField("my_module", "field_id", "field_id", "[NONE!]");
 {% endcodemirror %}
 
 	<p>

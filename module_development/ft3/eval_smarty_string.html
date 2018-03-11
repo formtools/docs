@@ -1,19 +1,19 @@
 ---
 layout: default
 navPage: docs
-heading: ft_eval_smarty_string
+heading: General::evalSmartyString()
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
-  - Helper Functions,/module_development/ft3/helper_functions/
-  - ft_eval_smarty_string
-prev: ft_display_module_page,/module_development/ft3/ft_display_module_page/
-next: ft_get_dhtml_page_nav,/module_development/ft3/ft_get_dhtml_page_nav/
+  - Helper Methods,/module_development/ft3/helper_methods/
+  - General::evalSmartyString()
+prev: Modules::loadModuleField(),/module_development/ft3/load_module_field/
+next: General::getDhtmlPageNav(),/module_development/ft3/get_dhtml_page_nav/
 categories: module_development
 versions: FT3
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='ft_eval_smarty_string' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='eval_smarty_string' nav_width=4 %}
 
 	<p>
 		This is a powerful function that can process any string as a Smarty template, returning the string result.
@@ -32,7 +32,7 @@ $L["phrase_num_settings_to_complete"] = "You have {\$num_settings} settings to c
 
 	{% codemirror php %}
 $placeholders = array("num_settings" => 5);
-$string = ft_eval_smarty_string($L["phrase_num_settings_to_complete"], $placeholders);
+$string = General::evalSmartyString($L["phrase_num_settings_to_complete"], $placeholders);
 echo $string; // "You have 5 settings to complete."
 	{% endcodemirror %}
 

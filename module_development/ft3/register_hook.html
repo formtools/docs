@@ -1,26 +1,26 @@
 ---
 layout: default
 navPage: docs
-heading: ft_register_hook
+heading: Hooks::registerHook()
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
-  - Helper Functions,/module_development/ft3/helper_functions/
-  - ft_register_hook
-prev: ft_load_module_field,/module_development/ft3/ft_load_module_field/
-next: ft_sanitize,/module_development/ft3/ft_sanitize/
+  - Helper Methods,/module_development/ft3/helper_methods/
+  - Hooks::registerHook()
+prev: General::getPageNav(),/module_development/ft3/get_page_nav/
+next: Hooks,/module_development/ft3/hooks/
 categories: module_development
 versions: FT3
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='ft_register_hook' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='register_hook' nav_width=4 %}
 
 	<p>
 		This function registers a new hook in the database.
 	</p>
 
 {% codemirror php %}
-ft_register_hook($module_folder, $when, $core_function, $hook_function, $priority = 50, $force_unique = false);
+Hooks::registerHook($module_folder, $when, $core_function, $hook_function, $priority = 50, $force_unique = false);
 {% endcodemirror %}
 
 	<p>

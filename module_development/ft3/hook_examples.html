@@ -33,7 +33,7 @@ versions: FT3
 	</p>
 
 {% codemirror php %}
-ft_register_hook("code", "my_module", "start", "ft_process_form", "my_hook", 50);
+Hooks::registerHook("code", "my_module", "start", "ft_process_form", "my_hook", 50);
 {% endcodemirror %}
 
 	<p>
@@ -50,7 +50,7 @@ ft_register_hook("code", "my_module", "start", "ft_process_form", "my_hook", 50)
 
 	<p>
 		Now let's look at the <b>my_hook</b> function. This function MUST be located in your
-		module's <a href="{{site.baseurl}}/module_development/file_library/">library.php file</a> - or included by
+		module's <a href="{{site.baseurl}}/module_development/ft3/file_library/">library.php file</a> - or included by
 		that file. When hooks are processed, they are looked for at that location. If it can't be found, the
 		hook is ignored.
 	</p>
@@ -61,20 +61,19 @@ ft_register_hook("code", "my_module", "start", "ft_process_form", "my_hook", 50)
 	</p>
 
 {% codemirror php %}
-function my_hook($vars)
-{
-  // $vars always contains the form_tools_overridable_vars key: an array of variable names that
-  // can be overwritten by your hook for this particular core function. Some core functions
-  // don't allow any values to be overwritten, so this will be empty
-  print_r($vars["form_tools_overridable_vars"]);
+function my_hook($vars) {
+    // $vars always contains the form_tools_overridable_vars key: an array of variable names that
+    // can be overwritten by your hook for this particular core function. Some core functions
+    // don't allow any values to be overwritten, so this will be empty
+    print_r($vars["form_tools_overridable_vars"]);
 
-  // this key always contains the name of the core function that is calling your hook
-  echo $vars["form_tools_calling_function"];
+    // this key always contains the name of the core function that is calling your hook
+    echo $vars["form_tools_calling_function"];
 
-  // return values
-  $info = array();
-  $info["name"] = "Overridden!";
-  return $info;
+    // return values
+    $info = array();
+    $info["name"] = "Overridden!";
+    return $info;
 }
 {% endcodemirror %}
 
@@ -104,7 +103,7 @@ function my_hook($vars)
 	</p>
 
 {% codemirror php %}
-ft_register_hook("template", "my_module", "edit_client_main_top", "", "say_hello", 50);
+Hooks::registerHook("template", "my_module", "edit_client_main_top", "", "say_hello", 50);
 {% endcodemirror %}
 
 	<p>
@@ -144,7 +143,7 @@ ft_register_hook("template", "my_module", "edit_client_main_top", "", "say_hello
  */
 function say_hello($location, $info)
 {
-  echo "hello!";
+    echo "hello!";
 }
 {% endcodemirror %}
 

@@ -6,7 +6,7 @@ breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
   - Hooks
-prev: ft_set_module_settings,/module_development/ft3/ft_set_module_settings/
+prev: Hooks::registerHook(),/module_development/ft3/register_hook/
 next: Methodology,/module_development/ft3/hooks_methodology/
 categories: module_development
 versions: FT3
@@ -34,7 +34,7 @@ versions: FT3
 		hook types.
 	</p>
 
-	<h4>Code Hooks</h4>
+	<h3>Code Hooks</h3>
 
 	<p>
 		Littered throughout the Form Tools code - mostly found in getter and setter functions -
@@ -43,18 +43,17 @@ versions: FT3
 	</p>
 
 {% codemirror php %}
-extract(ft_process_hooks("main", compact("account_info"), array("account_info")), EXTR_OVERWRITE);
+extract(Hooks::processHookCalls("main", compact("account_info"), array("account_info")), EXTR_OVERWRITE);
 {% endcodemirror %}
 
 	<p>
 		Basically what this does it pass off execution control to the ft_process_hooks function,
 		which calls all custom module functions that have been assign to the hook ("main", uniquely
 		identified by the calling function). It specifies what variables are passed and what
-		may be overwritten. For a full list of code hooks and what variables are passed and
-		overridable, <a href="{{site.baseurl}}/module_development/available_hooks/">click here</a>.
+		may be overwritten.
 	</p>
 
-	<h4>Template Hooks</h4>
+	<h3>Template Hooks</h3>
 
 	<p>
 		Template hooks are probably simpler to understand. In the Smarty templates, there are
@@ -68,7 +67,7 @@ extract(ft_process_hooks("main", compact("account_info"), array("account_info"))
 {% endcodemirror %}
 
 	<p>
-		For a list of template hooks, <a href="{{site.baseurl}}/module_development/template_hooks/">click here</a>.
+		For a list of template hooks, <a href="{{site.baseurl}}/module_development/ft3/template_hooks/">click here</a>.
 	</p>
 
 

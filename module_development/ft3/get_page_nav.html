@@ -1,19 +1,19 @@
 ---
 layout: default
 navPage: docs
-heading: ft_get_page_nav
+heading: General::getPageNav()
 breadcrumbs:
   - Module Development,/module_development/
   - Form Tools 3,/module_development/ft3/
-  - Helper Functions,/module_development/ft3/helper_functions/
-  - ft_get_page_nav
-prev: ft_get_module_settings,/module_development/ft3/ft_get_module_settings/
-next: ft_include_modules,/module_development/ft3/ft_include_modules/
+  - Helper Methods,/module_development/ft3/helper_methods/
+  - General::getPageNav()
+prev: General::getDhtmlPageNav(),/module_development/ft3/get_dhtml_page_nav/
+next: Hooks::registerHook(),/module_development/ft3/register_hook/
 categories: module_development
 versions: FT3
 ---
 
-{% include open_section.html nav='nav_module_development_ft3.html' selected='ft_get_page_nav' nav_width=4 %}
+{% include open_section.html nav='nav_module_development_ft3.html' selected='get_page_nav' nav_width=4 %}
 
 	<p>
 		You may find yourself in a position where you have too much information to display on
@@ -58,7 +58,8 @@ $page_vars["pagination"] = ft_get_page_nav($num_results, $num_per_page, $page);
 	</p>
 
 {% codemirror php %}
-ft_display_module_page("your_template.tpl", $page_vars); // where $page_vars contains "pagination"
+// where $page_vars contains "pagination"
+$module->displayPage("your_template.tpl", $page_vars);
 {% endcodemirror %}
 
 	<p>
