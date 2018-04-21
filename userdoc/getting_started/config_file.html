@@ -292,7 +292,17 @@ tags: basics
 			Added in 2.2.3, this limits all Form Tools forms to a certain number of fields. This feature is disabled by
             default.
 		</div>
-	</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <code>$g_use_smarty_bc</code>
+        </div>
+        <div class="col-lg-8">
+            Added in 3.0.1, this tells Form Tools to use the <b>SmartyBC</b> (Smarty Backward-compatibility) class instead
+            of <b>Smarty</b> for all template rendering. The SmartyBC class lets you use <code>{php}</code> and
+            <code>{include_php}</code> in your smarty templates - something that was removed in Smarty 3.
+        </div>
+    </div>
 
 
     <h3>Form Tools 2 settings</h3>
