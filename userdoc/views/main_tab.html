@@ -10,7 +10,7 @@ breadcrumbs:
 prev: Editing Views,/userdoc/views/editing/
 next: Columns Tab,/userdoc/views/columns_tab/
 categories: userdoc
-tags: views,permissions
+tags: views,permissions,submissions
 ---
 
 {% include open_section.html nav='nav_userdoc_views.html' selected='main_tab' %}
@@ -71,15 +71,7 @@ tags: views,permissions
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3"><code>May delete submissions</code></div>
-        <div class="col-lg-9">
-            This option hides / shows the "DELETE" button on the main submission listing page and
-            on the individual Edit Submission pages. This affects both client and administrator
-            accounts.
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-3"><code>May add submissions</code></div>
+        <div class="col-lg-3"><code>Can add submissions</code></div>
         <div class="col-lg-9">
             This option hides / shows the "Add »" button on the main submission listing page and
             on the individual Edit Submission pages. This affects both client and administrator
@@ -103,6 +95,21 @@ tags: views,permissions
                     automatically contain the appropriate values to be listed in the View. Keep this in mind!
                 </li>
             </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Can copy submissions</code></div>
+        <div class="col-lg-9">
+            This option hides / shows the Copy button on the submission listing page. It allows users to make copies
+            selected submissions. By default this button is hidden.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"><code>Can delete submissions</code></div>
+        <div class="col-lg-9">
+            This option hides / shows the Delete button on the main submission listing page and
+            on the individual Edit Submission pages. This affects both client and administrator
+            accounts.
         </div>
     </div>
 
