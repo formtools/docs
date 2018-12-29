@@ -7,38 +7,38 @@ breadcrumbs:
 - Custom Fields,/modules/custom_fields/
 - Use in External Forms
 prev: When to use?,/modules/custom_fields/when_to_use
-next: Core compatibility,/modules/custom_fields/core_compatibility
+next: Breaking changes in 2.1.0,/modules/custom_fields/breaking_changes_210
 categories: modules
 tags: developer,field_types
 ---
 
 {% include open_section.html nav='nav_custom_fields.html' selected='external_forms' %}
 
-  <h3>Use in External Forms</h3>
+<h3>Use in External Forms</h3>
 
-  <p>
+<p>
     Form Tools differentiates between internal and external forms. You can
-    <a href="{{site.baseurl}}/userdoc/form_management/form_types">read more about the distinction here</a>, but in short, internal
-    forms are forms that are created and exist within Form Tools only. External forms are forms that you've manually
-    created on your site and submit the data to Form Tools. They are discrete entities.
-  </p>
+    <a href="{{site.baseurl}}/userdoc/form_management/form_types">read more about the distinction here</a>, but internal
+    forms are forms that are created and exist within Form Tools only; External forms are forms that you've created
+    yourself and submit their data to Form Tools.
+</p>
 
-  <p>
+<p>
     The field types that you create and customize via the Custom Fields modules are
-    automatically available for use in your internal forms. You just pick the new field type
-    on the Edit Form -&gt; Fields tab and you'll see it right away in your form. But what of
+    automatically available for use in your <i>internal</i> forms. You just pick the new field type
+    on the Edit Form -&gt; Fields tab and you'll see it right away in your form. But what about
     External forms? How do you see them there?
-  </p>
+</p>
 
-  <p>
+<p>
     The answer is that it all depends on the extent and nature of your field type. The most
     important part is that data from your external form needs to store the data in the
     database in a format that the field type can understand.
-  </p>
+</p>
 
-  <h4>A little context</h4>
+<h4>A little context</h4>
 
-  <p>
+<p>
     Form Tools was originally designed to be integrated with any web form, regardless of how
     it was created. This is very powerful. However, as time went on and the interface
     improved, the gap widened between people's forms and what Form Tools could offer. Version
@@ -51,15 +51,13 @@ tags: developer,field_types
     published directly on your site. Because the markup and code generated for your forms
     will be pulled directly from the Form Tools database, no additional configuration will
     be required.
-  </p>
+</p>
 
-  <p>
+<p>
     So, to sum up: if you wish to re-create the form field types you create within
     this module for use on your site, you'll need to do it manually. This may be quite a
-    bit of work, depending on exactly what you're doing. If you have questions, let us
-    know through <a href="https://forums.formtools.org">the forums</a>.
-  </p>
-
+    bit of work, depending on exactly what you're doing.
+</p>
 
 
 {% include close_section.html %}

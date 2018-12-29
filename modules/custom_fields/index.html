@@ -3,8 +3,8 @@ layout: default
 navPage: docs
 heading: Custom Fields
 breadcrumbs:
-  - Modules,/modules
-  - Custom Fields
+- Modules,/modules
+- Custom Fields
 next: Requirements,/modules/custom_fields/requirements
 categories: modules
 tags: developer,field_types
@@ -12,57 +12,49 @@ tags: developer,field_types
 
 {% include open_section.html nav='nav_custom_fields.html' selected='introduction' %}
 
-  <h3>Custom Fields</h3>
+<h3>Custom Fields</h3>
 
-  <div class="alert alert-warning">
-    <b>Warning: this is an advanced module, intended for web developers</b>. You need to
-    have some expertise in HTML, CSS, JS, Smarty and PHP.
-  </div>
+<div class="alert alert-warning">
+    <b>Warning</b>: this is an advanced module, intended for web developers. You need to have some expertise in HTML,
+    CSS, JS, Smarty and PHP.
+</div>
 
-  <h3>Introduction</h3>
+<div class="alert alert-danger">
+    <b>Important!</b> Anyone using versions earlier than <b>2.1.0</b> of this module, please
+    <a href="./breaking_changes_210/">read this page</a>.
+</div>
 
-  <p>
-    {% include screenshot.html item="i189.gif" %}
-    The Custom Fields module lets you customize and create those very field types that
-    you see in your forms: textboxes, textareas, etc. This is an <i>incredibly</i>
-    powerful module. In the immortal words of Keanu Reeves: <i>"Whoaahhh"</i>.
-  </p>
+<p>
+    {% include screenshot.html item="i189.png" %}
+    The Custom Fields module lets you customize and create those very field types that you can use in your Form Tools forms:
+    textboxes, textareas, dropdowns and so on. This is an <i>incredibly</i> powerful module. In the immortal words of
+    Keanu Reeves: <i>"Whoaahhh"</i>.
+</p>
 
-  <p>
-    The Custom Fields module is special. It was designed alongside version 2.1.0 of the
-    Form Tools Core to provide a new level of flexibility in the field types and what
-    options are available to configure them. Rather than distributing this functionality
-    with the main release, we decided that it would lead to a lot of confusion and
-    people potentially breaking their installations. So instead, the Custom Fields module
-    is released separately, only for people who need that advanced functionality.
-  </p>
+<p>
+    The Custom Fields was designed alongside version 2.1.0 of the Form Tools Core to provide more flexibility with the
+    field types and what options are available to configure them. Rather than distributing this functionality with the
+    main release, we decided that it would lead to a lot of confusion and may cause people to accidentally break their
+    installations. So instead, the Custom Fields module is released separately for anyone who needs a little advanced
+    functionality.
+</p>
 
-  <p>
-    In Form Tools 2.0.x, there was a hardcoded list of available field types. These
-    were all the common fields types that you've seen in any web form: textboxes, password
-    fields, textareas, radio buttons, checkboxes, dropdowns, multi-select dropdowns,
-    file upload fields and a TinyMCE WYSIWYG field. Although these field types covered
-    most typical needs, it was inconsistently implements (e.g. the date picker could
-    only be used by the Core's Submission Date field), and couldn't be easily changed.
-    With the up and coming HTML5 field types (dates, colour pickers, sliders and so on),
-    we decided to devote 2.1.x to restructuring the Core to be flexible in how those field
-    types are displayed, saved, processed and managed. The end result was the Custom
-    Fields module.
-  </p>
 
-  <h4>What can it do for you?</h4>
+<h3>What can it do for you?</h3>
 
-  <p>
-    This module lets you do any of the following:
-  </p>
-
-  <ul>
-    <li>Create totally new field types for use in Form Tools.</li>
-    <li>Modify existing field types, including adding new configurable settings to existing ones.</li>
+<ul>
+    <li>Create totally new field types for use in Form Tools and your published <a href="../form_builder/">Form Builder</a>
+        forms.</li>
+    <li>Tweak existing field types, including adding new configurable settings to existing ones ***</li>
     <li>Allocated database storage for the fields</li>
-    <li>Control every character that is used in displaying and editing the field type.</li>
-    <li>Add new optional validation rules to existing field types.</li>
-  </ul>
+    <li>Control every single character that's used in displaying and editing the field type.</li>
+    <li>Add new settings for your field type to get more usage out of it when configuring your fields.</li>
+    <li>Add new validation rules to field types.</li>
+</ul>
 
+<p>
+    As of Form Tools 3.0.10, the core field types are now all locked down. But instead you can make copies of those
+    fields and edit them.
+</p>
 
 {% include close_section.html %}

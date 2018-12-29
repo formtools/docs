@@ -1,0 +1,46 @@
+---
+layout: default
+navPage: docs
+heading: Custom Fields
+breadcrumbs:
+- Modules,/modules
+- Custom Fields,/modules/custom_fields/
+- Breaking changes for 2.1.0
+prev: Use in External forms,/modules/custom_fields/external_forms
+next: The main page,/modules/custom_fields/main_page
+categories: modules
+tags: developer,field_types
+---
+
+{% include open_section.html nav='nav_custom_fields.html' selected='breaking_changes_210' %}
+
+<h3>Breaking changes in 2.1.0</h3>
+
+<div class="alert alert-info">
+    As of Form Tools 3.0.10, you can <b>no longer edit the core field types</b> through this module. Anyone who has
+    edited the core fields using this module in earlier versions should:
+    <ul>
+        <li>Update to version 2.1.0 of this module (and Form Tools Core 3.0.10)</li>
+        <li>Make copies of the field types you edited.</li>
+        <li>Use those new field types in your forms</li>
+    </ul>
+</div>
+
+<h3>What's going on</h3>
+
+<p>
+    This was an oversight on my part. I didn't consider the problems here, and only recently noticed the documentation
+    for this module was incorrect: <b>Form Tools can't guarantee it won't overwrite the core field types whenever you
+    upgrade the Form Tools Core</b>. Originally it purported to do just that, but I found this wasn't practically
+    possible: occasionally bugs would arise in the field types which need patching. Fixing those bugs necessarily
+    meant overwriting changes you may have made to them via this module.
+</p>
+
+<p>
+    So to prevent any future problems, the Form Tools Core now locks down those core fields types. However, you can
+    still copy them and make changes to the copies - and hide the original field types from View. So from a UI perspective
+    the change won't be noticeable.
+</p>
+
+
+{% include close_section.html %}

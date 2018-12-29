@@ -1,5 +1,5 @@
 ## TODO
-# - convert this to JSON. 
+# - convert this to JSON.
 # - remove screenshot_id, list_order [main_link?]
 -
   screenshot_id: 18
@@ -1481,8 +1481,8 @@
   screenshot_id: 189
   component_type: "module"
   component_id: 23
-  thumb_filename: "i189_th.gif"
-  filename: "i189.gif"
+  thumb_filename: "i189_th.png"
+  filename: "i189.png"
   caption: "Custom Fields module"
   main_link: "http://modules.formtools.org/custom_fields/"
   list_order: 0

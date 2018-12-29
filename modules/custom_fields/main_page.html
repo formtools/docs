@@ -6,117 +6,118 @@ breadcrumbs:
 - Modules,/modules
 - Custom Fields,/modules/custom_fields/
 - The main page
-prev: Core compatibility,/modules/custom_fields/core_compatibility
-next: Adding new Field Types,/modules/custom_fields/adding_field_types
+prev: Breaking changes in 2.1.0,/modules/custom_fields/breaking_changes_210/
+next: Adding new Field Types,/modules/custom_fields/adding_field_types/
 categories: modules
 tags: developer,field_types
 ---
 
 {% include open_section.html nav='nav_custom_fields.html' selected='main_page' %}
 
-  <h3>The main page</h3>
+<h3>The main page</h3>
 
-  {% include screenshot.html item="i189.gif" %}
-  <p>
+{% include screenshot.html item="i189.png" %}
+<p>
     When you select the module from your modules page, you'll see a page much like the
     screenshot to the right. This page lists all field types in the database. Let's look at
     each different element in the page individually: there's a lot here!
-  </p>
+</p>
 
-  <h4>Groups</h4>
+<h4>Groups</h4>
 
-  <p>
+<p>
     The first thing you'll notice is that the field types are arranged into two groups:
     <i>Standard Fields</i> and <i>Special Fields</i>. This grouping affects how the
     field types are listed in the Edit Form -&gt; Fields tab, whenever you select the field
     type for a form field. Using this module, you can change the group names and order
     to whatever you want.
-  </p>
+</p>
 
-  <h4>Ordering</h4>
+<h4>Ordering</h4>
 
-  <p>
+<p>
     Like much of Form Tools, the field types and groups on this page can be sorted.
     To change the sort order of a field type, just click the first "Order" column and
     drag the row up or down. To move it to a different group, just drag it over!
-  </p>
+</p>
 
-  <p>
+<p>
     To re-sort the groups, click and drag the group via the icon at the top right of the
     group.
-  </p>
+</p>
 
-  <h4>The field type tables</h4>
+<h4>The field type tables</h4>
 
-  <table cellspacing="0" cellpadding="1" class="info">
-    <tbody><tr>
-      <td class="blue" valign="top" width="180">Order</td>
-      <td>As mentioned above, you can click on this row to re-order the field types.</td>
+<table cellspacing="0" cellpadding="1" class="info">
+    <tbody>
+    <tr>
+        <td class="blue" valign="top" width="180">Order</td>
+        <td>As mentioned above, you can click on this row to re-order the field types.</td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Field Type</td>
-      <td>The name of the field type.</td>
+        <td class="blue" valign="top">Field Type</td>
+        <td>The name of the field type.</td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Identifier</td>
-      <td>This is used programmatically to uniquely identify the field types. Identifiers
-        must be unique.</td>
+        <td class="blue" valign="top">Identifier</td>
+        <td>This is used programmatically to uniquely identify the field types. Identifiers
+            must be unique.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Compatible Field Sizes</td>
-      <td>
-        This lists all the field sizes that are compatible for this field type. This allows
-        you to prevent users accidentally allocating too much or too little database
-        storage for a field, depending on what is being stored. For example, a "Date" string
-        only needs a few characters in the database, but a textarea field potentially
-        requires a great deal.
-      </td>
+        <td class="blue" valign="top">Validation</td>
+        <td>
+            This lists the number of validation rules defined for this field type. These
+            appear as options in the third "Validation" tab of the
+            <a href="{{site.baseurl}}/userdoc/field_types/edit_field_dialog/">Edit Field dialog</a>.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Validation</td>
-      <td>
-        This lists the number of validation rules defined for this field type. These
-        appear as options in the third "Validation" tab of the
-        <a href="{{site.baseurl}}/userdoc/field_types/edit_field_dialog">Edit Field dialog</a>.
-      </td>
+        <td class="blue" valign="top">Settings</td>
+        <td>
+            This lists the number of settings available for the field. These
+            appear as options in the second "Settings" tab of the
+            <a href="{{site.baseurl}}/userdoc/field_types/edit_field_dialog/">Edit Field dialog</a>.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Settings</td>
-      <td>
-        This lists the number of settings available for the field. These
-        appear as options in the second "Settings" tab of the
-        <a href="{{site.baseurl}}/userdoc/field_types/edit_field_dialog">Edit Field dialog</a>.
-      </td>
+        <td class="blue" valign="top">Enabled</td>
+        <td>
+            This setting lets you disable certain field types so they don't appear as options within Form Tools.
+            Note: if you try to disable a field type that's already in use, it will notify you when you save the page
+            that it will change all fields using that field to a textbox. The textbox and date fields cannot be disabled.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">"Edit" icon</td>
-      <td>
-        As with most Form Tools tables, click this icon to edit the field. Some fields
-        (those with an "info" icon on the next column) can't actually be edited, but you
-        can still click around the pages to see how the field is configured.
-      </td>
+        <td class="blue" valign="top">"Edit" icon</td>
+        <td>
+            As with most Form Tools tables, click this icon to edit the field. Some fields
+            (those with an "info" icon on the next column) can't actually be edited, but you
+            can still click around the pages to see how the field is configured.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">"Delete" icon</td>
-      <td>
-        The final column lets you delete an entire field type. You'll notice that some
-        columns forbid you from deleting them and just show an "info" icon. That icon appears
-        for the "Textbox" and "Date" field types, and for any external field type module
-        (Google Maps, file upload, tinyMCE etc). External field type modules may only be
-        deleted by uninstalling the module. The Textbox and Date field types cannot be deleted
-        because the Core fields (submission ID, submission Date etc) require them.
-      </td>
+        <td class="blue" valign="top">"Delete" icon</td>
+        <td>
+            The final column lets you delete an entire field type. You'll notice that some
+            columns forbid you from deleting them and just show an "info" icon. That icon appears
+            for the "Textbox" and "Date" field types, and for any external field type module
+            (Google Maps, file upload, tinyMCE etc). External field type modules may only be
+            deleted by uninstalling the module. The Textbox and Date field types cannot be deleted
+            because the Core fields (submission ID, submission Date etc) require them.
+        </td>
     </tr>
-    </tbody></table>
+    </tbody>
+</table>
 
-  <h4>Adding new Types and Groups</h4>
+<h4>Adding new Types and Groups</h4>
 
-  <p>
+<p>
     To add groups and types, just
     click on the appropriate link on the page. The "Add Field Type »" links are found at the
     bottom-right of all groups. When you click that, a dialog window appears that lets you
     create a new field type from scratch - or based on an existing one.
-  </p>
+</p>
 
 
 {% include close_section.html %}

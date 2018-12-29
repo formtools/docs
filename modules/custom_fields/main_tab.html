@@ -15,97 +15,104 @@ tags: developer,field_types
 
 {% include open_section.html nav='nav_custom_fields.html' selected='main_tab' %}
 
-  <h3>The Main tab</h3>
+<h3>The Main tab</h3>
 
-  {% include screenshot.html item="i332.gif" %}
-  <p>
+{% include screenshot.html item="i332.gif" %}
+<p>
     The main tab contains all the most general settings for the field type. All fields except
     for the field type identifier may be edited, but by and large you'll want to leave these
     values alone once you've created your field and it's in use.
-  </p>
+</p>
 
-  <p>
+<p>
     The following table explains each of the fields.
-  </p>
-  <div class="clear"></div>
+</p>
+<div class="clear"></div>
 
-  <table cellspacing="0" cellpadding="1" class="info">
-    <tbody><tr>
-      <td width="160" class="blue" valign="top">Field Type Name</td>
-      <td>
-        This field defines the main label for the field type. You'll noticed that the
-        Core field types use a language placeholder for this field (like
-        <b>{$LANG.word_textarea}</b> shown in the screenshot). This is so that the field
-        type name shows up in the appropriate language for the user. Please note: language
-        placeholders for the field type names are only currently available for the Core
-        fields.
-      </td>
+<table cellspacing="0" cellpadding="1" class="info">
+    <tbody>
+    <tr>
+        <td width="160" class="blue" valign="top">Field Type Name</td>
+        <td>
+            This field defines the main label for the field type. You'll noticed that the
+            Core field types use a language placeholder for this field (like
+            <b>{$LANG.word_textarea}</b> shown in the screenshot). This is so that the field
+            type name shows up in the appropriate language for the user. Please note: language
+            placeholders for the field type names are only currently available for the Core
+            fields.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Field Type Identifier</td>
-      <td>
-        The unique identifier string used to locate your field. This is necessary for the Core
-        code and is picked when first adding your form. It cannot be changed.
-      </td>
+        <td class="blue" valign="top">Field Type Identifier</td>
+        <td>
+            The unique identifier string used to locate your field. This is necessary for the Core
+            code and is picked when first adding your form. It cannot be changed.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Field Type Group</td>
-      <td>
-        This determines which group your field type appears in. You can change it here, but
-        it's a lot easier just to drag and drop it to the desired position and group
-        on the Custom Fields main page.
-      </td>
+        <td class="blue" valign="top">Field Type Group</td>
+        <td>
+            This determines which group your field type appears in. You can change it here, but
+            it's a lot easier just to drag and drop it to the desired position and group
+            on the Custom Fields main page.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Is File Field</td>
-      <td>
-        If your field type contains a file upload field, you
-        <i>must</i> set this to "yes".
-      </td>
+        <td class="blue" valign="top">Is File Field</td>
+        <td>
+            If your field type contains a file upload field, you
+            <i>must</i> set this to "yes".
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Is Date Field</td>
-      <td>
-        If your field type is storing a date, you <i>must</i> set this to "yes". Date fields
-        must always store their database content in MySQL datetime format
-        (yyyy-mm-dd hh:mm:ss). The reason for this is that date fields are handled in a
-        special way by the Core. For example, on the Submission Listing page, if the user
-        chooses a date field in the search bar, a date picker will appear, through which
-        they select the date / date range. The MySQL datetime format is necessary to ensure
-        the data is in a format that can be understood by the Core.
-      </td>
+        <td class="blue" valign="top">Is Date Field</td>
+        <td>
+            If your field type is storing a date, you <i>must</i> set this to "yes". Date fields
+            must always store their database content in MySQL datetime format
+            (yyyy-mm-dd hh:mm:ss). The reason for this is that date fields are handled in a
+            special way by the Core. For example, on the Submission Listing page, if the user
+            chooses a date field in the search bar, a date picker will appear, through which
+            they select the date / date range. The MySQL datetime format is necessary to ensure
+            the data is in a format that can be understood by the Core.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Compatible Field Sizes</td>
-      <td>
-        This determines the available list of field sizes that can be selected for fields
-        that use this field type. The option to select the field size appears on the
-        Edit Form -&gt; Fields tab, and in the Edit Field dialog window on that page. Any time
-        the user changes a field type, the list of available field sizes is automatically
-        updated. If you permit only a single field size, they won't have the option of
-        selecting the database allocation. This field lets you ensure that the database
-        field is always large enough to contain the field data.
-      </td>
+        <td class="blue" valign="top">Compatible Field Sizes</td>
+        <td>
+            This determines the available list of field sizes that can be selected for fields
+            that use this field type. The option to select the field size appears on the
+            Edit Form -&gt; Fields tab, and in the Edit Field dialog window on that page. Any time
+            the user changes a field type, the list of available field sizes is automatically
+            updated. If you permit only a single field size, they won't have the option of
+            selecting the database allocation. This field lets you ensure that the database
+            field is always large enough to contain the field data.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Raw Field Type Map</td>
-      <td>
-        The HTML specification provides a number of standard fields: textboxes, radios and
-        so on. Form Tools, however, lets you extend the field type list to store whatever
-        data types you want, such as WYSIWYG fields, Google Maps fields and so on. This
-        field lets you (optionally) map your field type to a standard field type. Once that's
-        done, when a user adds an External form to Form Tools for processing, they will be
-        able to select your form field type for that standard form field type. For example,
-        if their External form contains a textarea field, but Form Tools has mapped both
-        the "Textarea" and "WYSIWYG" field types to the textarea field (through this field),
-        when the Form Tools administrator is picking the field type for the textarea field,
-        they can choose to pick the WYSIWYG field instead. In that instance, this lets
-        administrator enhance the textarea field in the original form so that it appears as a
-        WYSIWYG field within Form Tools. <br>
-        <br>
-        This setting only has significance for the Add External form process.
-      </td>
+        <td class="blue" valign="top">Raw Field Type Map</td>
+        <td>
+            The HTML specification provides a number of standard fields: textboxes, radios and
+            so on. Form Tools, however, lets you extend the field type list to store whatever
+            data types you want, such as WYSIWYG fields, Google Maps fields and so on. This
+            field lets you (optionally) map your field type to a standard field type. Once that's
+            done, when a user adds an External form to Form Tools for processing, they will be
+            able to select your form field type for that standard form field type. For example,
+            if their External form contains a textarea field, but Form Tools has mapped both
+            the "Textarea" and "WYSIWYG" field types to the textarea field (through this field),
+            when the Form Tools administrator is picking the field type for the textarea field,
+            they can choose to pick the WYSIWYG field instead. In that instance, this lets
+            administrator enhance the textarea field in the original form so that it appears as a
+            WYSIWYG field within Form Tools. <br>
+            <br>
+            This setting only has significance for the Add External form process.
+        </td>
     </tr>
-    </tbody></table>
+    </tbody>
+</table>
+
+<p>
+    For versions <b>2.1.0</b> of this module and later, all core field types show a "Reset Field Type" button
+    on this page where you can reset the field type to it's factory defaults in case there are ever problems.
+</p>
 
 {% include close_section.html %}
