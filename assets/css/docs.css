@@ -65,13 +65,6 @@ header h1 {
     padding-left: 34px;
     background: #0A7CDF url(../images/github.png) 4px center no-repeat;
 }
-.githubIcon a {
-    padding-left: 34px;
-    background: #449d44 url(../images/github.png) 4px center no-repeat;
-}
-.githubIcon a:active {
-    background: #449d44 url(../images/github.png) 4px center no-repeat;
-}
 
 .prevNextBottom {
     border-top: 1px solid #cccccc;
