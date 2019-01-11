@@ -3250,3 +3250,12 @@
   caption: "Encrypt field data"
   main_link: ""
   list_order: 0
+-
+  screenshot_id: 387
+  component_type: "module"
+  component_id: 16
+  thumb_filename: "edit_submission_multiple_files_th.png"
+  filename: "edit_submission_multiple_files.png"
+  caption: "Multiple file upload"
+  main_link: ""
+  list_order: 0

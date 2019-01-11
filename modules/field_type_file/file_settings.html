@@ -3,9 +3,9 @@ layout: default
 navPage: docs
 heading: File Upload Field
 breadcrumbs:
-  - Modules,/modules
-  - File Upload Field,/modules/field_type_file
-  - File Settings
+- Modules,/modules
+- File Upload Field,/modules/field_type_file
+- File Settings
 prev: Installing the module,/modules/field_type_file/installing/
 next: Adding to your forms,/modules/field_type_file/adding_to_forms
 categories: modules
@@ -14,75 +14,76 @@ tags: field_types
 
 {% include open_section.html nav='nav_file_upload.html' selected='file_settings' %}
 
-  <h3>File Settings</h3>
+<h3>File Settings</h3>
 
-  {% include screenshot.html item="i320.jpg" %}
+{% include screenshot.html item="i320.jpg" %}
 
-  <p>
+<p>
     Using the file field is very simple: you just choose the "File" field type for any
     field on the Edit Form -&gt; Fields tab, and the field will show up as a file upload field
     within the Form Tools interface. It will use the file upload field defined in the
     Settings -&gt; Files tab.
-  </p>
+</p>
 
-  <p>
+<p>
     However, you may find it useful to change the default file upload folder, or other
     settings. To do that, click the Edit icon on the Edit Form -&gt; Fields tab to open up the
     Edit Field dialog window. There, click on the second tab. That contains all the custom
     settings, as illustrated in the screenshot to the right. Here's what all the settings
     mean.
-  </p>
+</p>
 
-  <table cellspacing="1" cellpadding="0" width="100%">
-    <tbody><tr>
-      <td class="blue" width="220" valign="top">Open Link with Fancybox</td>
-      <td>
-        "Fancybox" is a script used to open up (usually) images in a dialog window when
-        clicking on their link in the Form Tools interface. Fancybox
-        was added in 2.1.0 to replace the earlier "Lightbox" script. Generally you'll
-        only want to enable this for file upload fields that store an image.
-      </td>
+<table cellspacing="1" cellpadding="0" width="100%">
+    <tbody>
+    <tr>
+        <td class="blue" width="220" valign="top">Open Link with Fancybox</td>
+        <td>
+            "Fancybox" is a script used to open up (usually) images in a dialog window when
+            clicking on their link in the Form Tools interface. Fancybox
+            was added in 2.1.0 to replace the earlier "Lightbox" script. Generally you'll
+            only want to enable this for file upload fields that store an image.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Folder Path</td>
-      <td>
-        This setting controls the folder to which the files are uploaded. The default
-        folder is defined in the Settings -&gt; Files page. If you update the folder path
-        here, you must also update the following Folder URL setting, in order to ensure
-        the files are linked to properly.
-      </td>
+        <td class="blue" valign="top">Folder Path</td>
+        <td>
+            This setting controls the folder to which the files are uploaded. The default
+            folder is defined in the Settings -&gt; Files page. If you update the folder path
+            here, you must also update the following Folder URL setting, in order to ensure
+            the files are linked to properly.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Folder URL</td>
-      <td>
-        This setting specifies the URL of the file upload folder for the field. The default
-        folder is defined in the Settings -&gt; Files page. As with the previous field: you
-        need to update the Folder Path field if you ever want to change the Folder URL.
-      </td>
+        <td class="blue" valign="top">Folder URL</td>
+        <td>
+            This setting specifies the URL of the file upload folder for the field. The default
+            folder is defined in the Settings -&gt; Files page. As with the previous field: you
+            need to update the Folder Path field if you ever want to change the Folder URL.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Permitted File Types</td>
-      <td>
-        This overrides the default permitted file types that may be uploaded through
-        the field. The default file types are specified on the Settings -&gt; Files page.
-      </td>
+        <td class="blue" valign="top">Permitted File Types</td>
+        <td>
+            This overrides the default permitted file types that may be uploaded through
+            the field. The default file types are specified on the Settings -&gt; Files page.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Max File Sizes (KB)</td>
-      <td>
-        This overrides the default max file size that can be uploaded through
-        the field. The default max file size is specified on the Settings -&gt; Files page.
-      </td>
+        <td class="blue" valign="top">Max File Sizes (KB)</td>
+        <td>
+            This overrides the default max file size that can be uploaded through
+            the field. The default max file size is specified on the Settings -&gt; Files page.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Field Comments</td>
-      <td>
-        All field contain this optional setting: it lets you add some arbitrary text that
-        appear underneath the field, when editing it. This can provide a little information
-        to the Form Tools user who sees the field.
-      </td>
+        <td class="blue" valign="top">Field Comments</td>
+        <td>
+            All field contain this optional setting: it lets you add some arbitrary text that
+            appear underneath the field, when editing it. This can provide a little information
+            to the Form Tools user who sees the field.
+        </td>
     </tr>
     </tbody>
-  </table>
+</table>
 
 {% include close_section.html %}
