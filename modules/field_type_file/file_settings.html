@@ -3,20 +3,20 @@ layout: default
 navPage: docs
 heading: File Upload Field
 breadcrumbs:
-- Modules,/modules
-- File Upload Field,/modules/field_type_file
+- Modules,/modules/
+- File Upload Field,/modules/field_type_file/
 - File Settings
-prev: Installing the module,/modules/field_type_file/installing/
-next: Adding to your forms,/modules/field_type_file/adding_to_forms
+prev: Default file settings,/modules/field_type_file/default_file_settings/
+next: Adding to your forms,/modules/field_type_file/adding_to_forms/
 categories: modules
-tags: field_types
+tags: field_types,files
 ---
 
 {% include open_section.html nav='nav_file_upload.html' selected='file_settings' %}
 
-<h3>File Settings</h3>
+<h3>Per-field file settings</h3>
 
-{% include screenshot.html item="i320.jpg" %}
+{% include screenshot.html item="file_field_settings.png" %}
 
 <p>
     Using the file field is very simple: you just choose the "File" field type for any
@@ -42,6 +42,18 @@ tags: field_types
             clicking on their link in the Form Tools interface. Fancybox
             was added in 2.1.0 to replace the earlier "Lightbox" script. Generally you'll
             only want to enable this for file upload fields that store an image.
+        </td>
+    </tr>
+    <tr>
+        <td class="blue" valign="top">Allow multiple file uploads</td>
+        <td>
+            This controls whether you users upload more than one file in this field. By default, it's
+            set to "no" so you need to manually change it to "yes" to enable this functionality. Note: for internal and
+            Form Builder forms, they will automatically show the new option - no additional configuration is required.
+            But for external forms (including API forms) you will need to make some
+            <a href="{{site.baseurl}}/modules/field_type_file/adding_to_forms/">small adjustments to your
+            HTML markup</a> to allow this. For a couple more details about multiple file uploads, see the section at
+            the bottom of the page.
         </td>
     </tr>
     <tr>
@@ -78,12 +90,35 @@ tags: field_types
     <tr>
         <td class="blue" valign="top">Field Comments</td>
         <td>
-            All field contain this optional setting: it lets you add some arbitrary text that
-            appear underneath the field, when editing it. This can provide a little information
+            All field types provide this optional setting: it lets you add some arbitrary text that
+            appear underneath the field when the user is editing it. This can provide a little information
             to the Form Tools user who sees the field.
         </td>
     </tr>
     </tbody>
 </table>
+
+
+<hr size="1" />
+
+<h3>Multiple file upload details</h3>
+
+<p>
+    There are a couple minor things you should know about when configuring a field for multiple file uploads:
+</p>
+
+<ul>
+    <li>
+        Uploading multiple files in a single form field is supported by all modern browsers, including IE11 and up. If,
+        however, a user is using a very old browser which doesn't permit it, internal and Form Builder forms will automatically
+        downgrade so they can only upload a single one at at time. For any internal form and a Form Builder form with
+        at least 2 pages before the "thankyou" page, the user can upload multiple files - but only one by one.
+    </li>
+    <li>
+        If you configure your field to allow multiple file uploads then later downgrade it to permit only a <i>single</i>
+        one, the script will <b>not</b> remove all the files already uploaded in that field. It will continue to allow
+        users to delete files, but only ever add a new one if there is nothing already in the field.
+    </li>
+</ul>
 
 {% include close_section.html %}

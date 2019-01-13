@@ -2651,8 +2651,8 @@
   screenshot_id: 320
   component_type: "module"
   component_id: 26
-  thumb_filename: "i320_th.jpg"
-  filename: "i320.jpg"
+  thumb_filename: "file_field_settings_th.png"
+  filename: "file_field_settings.png"
   caption: "File Upload module: settings"
   main_link: ""
   list_order: 0

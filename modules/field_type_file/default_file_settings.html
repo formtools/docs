@@ -1,0 +1,40 @@
+---
+layout: default
+navPage: docs
+heading: File Upload Field
+breadcrumbs:
+- Modules,/modules
+- File Upload Field,/modules/field_type_file
+- Default file settings
+prev: Introduction,/modules/field_type_file/
+next: Per-field file Settings,/modules/field_type_file/file_settings
+categories: modules
+tags: field_types,files
+---
+
+{% include open_section.html nav='nav_file_upload.html' selected='default_file_settings' %}
+
+<h3>Default file settings</h3>
+
+<p>
+    {% include screenshot.html item='i315.gif' %}
+    The last thing you want to have to do is manually configure each and every file upload field in your Form Tools
+    forms with the same settings again and again. To prevent that, log in as the Form Tools administrator and
+    navigate to the <a href="{{site.baseurl}}/userdoc/settings/files_tab/">Settings &raquo; Files</a> tab.
+    There, you will see a page like the screenshot to the right.
+</p>
+
+<p>
+    This is where you go to set up the default file upload settings: what folder the files should be uploaded to,
+    what file types are permitted and the max file sizes. Now, any new file upload fields will automatically pick
+    up from these settings. And if you choose to change the values when your forms already have files uploaded, the
+    settings will immediately take effect and files will then be uploaded according to the new settings. No additional
+    configuration required.
+</p>
+
+<p>
+    But the File Upload module also provides some additional options, only configurable on a field-by-field basis. For
+    that, see the <a href="{{site.base_url}}/modules/field_type_file/file_settings/">next page</a>.
+</p>
+
+{% include close_section.html %}

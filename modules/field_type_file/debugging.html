@@ -3,55 +3,68 @@ layout: default
 navPage: docs
 heading: File Upload Field
 breadcrumbs:
-  - Modules,/modules
-  - File Upload Field,/modules/field_type_file
-  - Files not uploading?
+- Modules,/modules
+- File Upload Field,/modules/field_type_file
+- Files not uploading?
 prev: Adding to your forms,/modules/field_type_file/adding_to_forms
 categories: modules
-tags: field_types
+tags: field_types,files
 ---
 
 {% include open_section.html nav='nav_file_upload.html' selected='debugging' %}
 
-  <h3>Files not uploading?</h3>
+<h3>Files not uploading?</h3>
 
-  <p>
-    Finding that your files aren't uploading properly through your forms is a common problem.
-    There are a number of things that could go wrong, from the server configuration, to a
-    Form Tools misconfiguration, to the particular file you're trying to upload. Here are
-    a few tips to figuring out why it's not working.
-  </p>
+<p>
+    Finding that your files aren't uploading properly through your forms is a common problem. There are a number of
+    things that could go wrong, from the way the server is configured to a Form Tools misconfiguration, to the
+    particular file you're trying to upload. Here are a couple of debugging tips.
+</p>
 
-  <h4>Test in Form Tools!</h4>
+<hr size="1" />
 
-  <p>
+<h3>First: test in Form Tools!</h3>
+
+<p>
     If your file isn't uploading through your external form, log into Form Tools, create
     a new form submission (or edit an existing one) and try uploading the file there. This
     can help you in a couple of ways:
-  </p>
+</p>
 
-  <ol>
+<ol>
     <li><b>Less potential errors</b>. The forms within the Form Tools interface are
-      preconfigured to handle the file uploads, so it's more likely to succeed there.</li>
+        preconfigured to handle the file uploads, so it's more likely to succeed there.
+    </li>
     <li><b>Useful error messages</b>. Form Tools will try to provide helpful error messages
-      if the file can't be uploaded. For instance, it will tell you if your file upload folder
-      can't be written to, if the file is too large or of an non-permitted file type. This
-      can go a long way into identifying the source of the problem.</li>
-  </ol>
+        if the file can't be uploaded. For instance, it will tell you if your file upload folder
+        can't be written to, if the file is too large or the file type isn't permitted. This can go a long way into
+        identifying the source of the problem.
+    </li>
+</ol>
 
-  <p>
+<p>
     If your file doesn't upload in the Form Tools interface, you should see some sort of
     error explaining why it could not. If it <i>does</i> upload, that means there is a problem
-    with your form. Check over the previous <a href="../adding_to_forms">Add to your
+    with your form. Check over the previous <a href="../adding_to_forms">adding to your
     forms</a> page to confirm that you've done all the necessary steps.
-  </p>
+</p>
 
-  <p>
+<p>
     If you've read through all the instructions and still have problems, it's possible that
     the server isn't configured properly. You might want to take whatever your discovered
     to your hosting provider to ask their advice. The most common form of server error
     is that the temporary file upload folder isn't set up properly, or the folder doesn't
     have write-permissions.
-  </p>
+</p>
+
+<hr size="1" />
+<h3>External forms: multiple vs. single file upload</h3>
+
+<p>
+    If you've set your field to accept either a single files or multiple file, check you've got the markup right. If
+    you've configured it expect multiple files and your HTML markup is passing the data along as a single one (or
+    vice-versa) it will fail silently. Check the <a href="{{site.baseurl}}/modules/field_type_file/adding_to_forms/">Adding
+    to forms</a> page for details.
+</p>
 
 {% include close_section.html %}
