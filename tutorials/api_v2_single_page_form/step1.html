@@ -65,15 +65,17 @@ $api->processFormSubmission($params);
 		this tutorial</a>), it's very easy to handle and display the errors on the same page.
 	</p>
 
-	<p>
-		It's generally a better idea to use $_SERVER["PHP_SELF"] instead of the name of the file,
-		since filenames sometimes change. If that happens, you'd need to remember to update the
-		action attribute. But by using the PHP variable, you don't have to worry about it!
-	</p>
+    <p>
+        If you are uploading files through your form, also include the <code>enctype</code> attribute, like so:
+    </p>
+
+    {% codemirror php %}
+<form method="POST" enctype="multipart/form-data">
+    {% endcodemirror %}
 
 	<p>
-		With regard to the form's post attribute, if you want to use method="GET", that's fine - just change the PHP
-        line in the top of the from:
+		With regard to the form's post attribute, if you want to use method="GET", that's fine - just change the value
+        in the form method attribute to "GET" and change the PHP line in the top of the from:
 	</p>
 
 	{% codemirror php %}
@@ -87,17 +89,18 @@ $api->processFormSubmission($params);
 	{% endcodemirror %}
 
 	<p>
-		Finally, put through a form submission. You should be redirected to your "thank you" page.
-		So far so good!
+		That lets the API know where to look for the form submission data. Finally, put through a form submission. You
+        should be redirected to your "thank you" page. So far so good! Nothing is being stored in Form Tools yet, but
+        we're getting there.
 	</p>
 
     <hr size="1" />
-	<h3>Explanation of Code</h3>
+	<h3>Explanation of code</h3>
 
 	<p>
 		If you're not interested in the details, ignore this section and
 		<a href="{{site.baseurl}}/tutorials/api_v2_single_page_form/step2/">go to the next step</a>. It's just for those
-		of you who are curious to know what's going on!
+		of you who are curious.
 	</p>
 
 	<p>
@@ -110,11 +113,10 @@ $api->processFormSubmission($params);
 	</p>
 
 	<p>
-		Note that the <b>ft_api_init_form_page</b> returns a <b>$fields</b> variable. This variable
-		contains all the form field values entered up to that point. So, imagine you added some
-		server-side validation that threw an error after the user submitted the form. You could
-		use the $fields variable to re-load all the values entered. (For more information
-		on that, see the <a href="{{site.baseurl}}/tutorials/php_validation/">Adding
+		Note that the <code>initFormPage()</code> method returns a <code>$fields</code> variable. This variable contains all the
+        form field values entered up to that point. So, imagine you added some server-side validation that threw an
+        error after the user submitted the form. You could use the <code>$fields</code> variable to reload all the
+        values entered. (For more information on that, see the <a href="{{site.baseurl}}/tutorials/php_validation/">Adding
 		Server-Side (PHP) Validation to your Forms</a> and
         <a href="{{site.baseurl}}/tutorials/api_v2_refilling_form_fields/">Re-filling form fields with the API</a>
         tutorials.

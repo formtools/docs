@@ -17,8 +17,11 @@ tags: basics
 
 	<p>
 		Finally, after your form has been added and configured via the Form Tools interface, you just need to make
-        one final change to push it live. On your form page, again change the <code>initFormPage()</code> function line
-		to this (where X is your form ID):
+        one final change to push it live. The last step (step 6) of the Add Form process described what to do,
+        but we'll add it here too.
+    </p>
+    <p>
+        On your form page, again change the <code>initFormPage()</code> function line to this (where X is your form ID):
 	</p>
 
 	{% codemirror php %}
@@ -26,9 +29,9 @@ $fields = $api->initFormPage(X);
 	{% endcodemirror %}
 
 	<p>
-		(All you did was remove the second parameter). Now, after you've revisited the "thankyou" page to ensure that
-		sessions were emptied, try putting through some submissions. They should now all be showing up in Form Tools,
-        job well done!
+		(All you did was remove the second parameter to that function). Now, after you've revisited the "thankyou" page
+        to ensure that sessions were emptied, try putting through some submissions. They should now all be showing up
+        in Form Tools. Job well done!
 	</p>
 
 {% include close_section.html %}

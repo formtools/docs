@@ -24,14 +24,14 @@ tags: basics
         <li>Log into Form Tools (as the administrator) and go to the Add Form page</li>
         <li>Select the "External" form type</li>
         <li>Select the "Code" option</li>
-        <li>On te step 2 "Form Information" page, enter all the information. This is not a multi-page form, so that
+        <li>On the step 2 "Form Information" page, enter all the information. This is not a multi-page form, so that
             value can be set to "no".</li>
         <li>Continue to the "Text submission" step 3. There, it will have generated a line of PHP which looks like
-            the following (X will be your form number)</li>
+            the following ("X" will be your form number)</li>
 	</ol>
 
 	{% codemirror php %}
-$fields = $api->initFormPage(65, "initialize");
+$fields = $api->initFormPage(X, "initialize");
 	{% endcodemirror %}
 
 	<p>
@@ -47,8 +47,22 @@ $fields = $api->initFormPage(65, "initialize");
 
 	<p>
 		Return to Form Tools, click the "refresh page" button at the bottom of the page, then
-		click "Next Step »" to continue adding your form.
+		click "Next Step »" to continue adding your form. This will lead you through a few more steps to set up each
+        form field as you'd like, doing things like allocating the appropriate space in the database for each field
+        and removing any fields you don't want (like the submit button).
 	</p>
 
+    <h3>Troubleshooting</h3>
+
+    <p>
+        If you're converting an old <b>process.php</b> form to the API, you may see a
+        <a href="{{site.baseurl}}/api/v2/error_codes/#101">101</a> Form Tools error code
+        here. If that happens, check you're not still passing along an old form ID in a hidden field. That's not necessary
+        with the API.
+    </p>
+
+{% codemirror html %}
+<input type="hidden" name="form_tools_form_id" value="16" />
+{% endcodemirror %}
 
 {% include close_section.html %}
