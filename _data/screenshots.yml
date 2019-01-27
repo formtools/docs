@@ -3259,3 +3259,14 @@
   caption: "Multiple file upload"
   main_link: ""
   list_order: 0
+
+-
+  screenshot_id: 388
+  component_type: "module"
+  component_id: 16
+  thumb_filename: "edit-field__filename_format_th.png"
+  filename: "edit-field__filename_format.png"
+  caption: "Customize uploaded filename format"
+  main_link: ""
+  list_order: 0
+

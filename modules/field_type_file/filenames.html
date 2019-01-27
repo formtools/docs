@@ -1,0 +1,224 @@
+---
+layout: default
+navPage: docs
+heading: File Upload Field
+breadcrumbs:
+- Modules,/modules/
+- File Upload Field,/modules/field_type_file/
+- File Settings
+prev: Per-field file settings,/modules/field_type_file/file_settings/
+next: Adding to your forms,/modules/field_type_file/adding_to_forms/
+categories: modules
+tags: field_types,files
+---
+
+{% include open_section.html nav='nav_file_upload.html' selected='filenames' %}
+
+<h3>Uploaded Filenames</h3>
+
+<p>
+    {% include screenshot.html item="edit-field__filename_format.png" %}
+
+    With version 2.2.0 of this module you can now customize the filenames that are created when a user uploads a
+    file. To customize the filename, you'll need to edit the <b>Filename format</b> setting in the Edit field
+    dialog, found in the Edit Form &raquo; Fields page.
+</p>
+
+
+<h4>Placeholders</h4>
+
+<p>
+    These are special placeholders that can be used in your <b>Filename format</b> field to control how the filename
+    is generated. See below for some examples on how they can be used.
+</p>
+
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$clean_filename}</code>
+    </div>
+    <div class="col-lg-8">
+        This is the default value for uploaded files: they get created with a "clean" version of their original
+        filename. Form Tools whitelists specific characters that may be included in uploaded filenames, see the
+        <code>$g_filename_char_whitelist</code> setting in your
+        <a href="{{site.baseurl}}/userdoc/getting_started/config_file/">config.php</a> file for more info. Those
+        whitelisted characters are what's used to determine the clean filename.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$clean_filename_no_extension}</code>
+    </div>
+    <div class="col-lg-8">
+        The clean file string without the filename extension. Handy if you want to add a suffix to the filename.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$raw_filename}</code>
+    </div>
+    <div class="col-lg-8">
+        This placeholder is the original filename as uploaded by the user. Generally you should avoid this placeholder:
+        users could upload filenames with any characters whatsoever.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$raw_filename_no_extension}</code>
+    </div>
+    <div class="col-lg-8">
+        The raw file string without the filename extension.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$extension}</code>
+    </div>
+    <div class="col-lg-8">
+        The file extension (e.g. <b>jpg</b> in <b>filename.jpg</b>).
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$form_id}</code>
+    </div>
+    <div class="col-lg-8">
+        The current form ID.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$submission_id}</code>
+    </div>
+    <div class="col-lg-8">
+        The current submission ID.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$index}</code>
+    </div>
+    <div class="col-lg-8">
+        The index of the file in the set of files being uploaded for a field. For fields configured as single
+        file uploads (the default option), this value will always be <b>0</b>.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$field_name}</code>
+    </div>
+    <div class="col-lg-8">
+        The name of the form field for the file upload field.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$date}</code>
+    </div>
+    <div class="col-lg-8">
+        A simple placeholder containing the current date (in whatever timezone your server thinks it currently is). This
+        outputs the date in YYYYMMDD format, e.g. <b>20190126</b>.
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <code>{$unixtime}</code>
+    </div>
+    <div class="col-lg-8">
+        This placeholder outputs the current unixtime, but can also be used to output a date or time in any format you
+        want. To customize the format, you need to use the <code>date_format</code> modifier like so:
+
+        <code>{$unixtime|date_format:"M-n-Y"}</code>. The content of the double quotes are whatever formatting string
+        you'd like. See the <a href="http://php.net/manual/en/function.date.php">PHP date method</a> for the list of
+        available placeholders.
+    </div>
+</div>
+
+<br />
+<p class="alert alert-info">
+    Note that in case of a filename conflict, <i>the module will rename files to ensure each filename is unique</i>.
+    So if you upload a file that happens to have the same name as an existing file - even after whatever custom
+    filename format you entered, it will still automatically rename it.
+</p>
+
+<h3>Examples</h3>
+
+<p>
+    Here are a few examples to get an idea of how you can use the placeholders in the field. As you can see from
+    below, any characters that aren't in a placeholder get included in the filename. <b>The one exception is the
+    colon character</b>: that's not a valid character in filenames on Unix or Windows systems so it will always be
+    stripped out, even if it's part of your date formatting string.
+</p>
+
+<div>
+    <div>
+        <code>{$submission_id}-{$field_name}-{$index}.{$extension}</code>
+    </div>
+    Three png images uploaded through a multiple-field upload field, where the submission ID is <b>35</b> and the
+    field name is <b>filefield</b>.
+    <ul>
+        <li><b>35-filefield-0.png</b></li>
+        <li><b>35-filefield-1.png</b></li>
+        <li><b>35-filefield-2.png</b></li>
+    </ul>
+</div>
+
+<div>
+    <div>
+        <code>{$submission_id}-{$field_name}-{$index+1}.{$extension}</code>
+    </div>
+    Same as the last one, except it starts the numbering from <b>1</b>.
+    <ul>
+        <li><b>35-filefield-1.png</b></li>
+        <li><b>35-filefield-2.png</b></li>
+        <li><b>35-filefield-3.png</b></li>
+    </ul>
+</div>
+
+<div>
+    <div>
+        <code>f{$form_id}-s{$submission_id}-{$clean_filename}</code>
+    </div>
+    Tacks on the form ID and submission ID as a prefix to the clean filename. This helps to visually identify
+    which files in your upload folder belong to which form and submission.
+    <ul>
+        <li><b>f5-s39-infodoc.xls</b></li>
+        <li><b>f5-s29-happypic.jpg</b></li>
+    </ul>
+</div>
+
+<div>
+    <div>
+        <code>{$clean_filename_no_extension}-{$date}.{$extension}</code>
+    </div>
+    Displays the filename with the YYYYMMDD appended as a suffix to the filename.
+    <ul>
+        <li><b>greenbug-20190127.png</b></li>
+        <li><b>fritillarybutterfly-20190127.gif</b></li>
+    </ul>
+</div>
+
+<div>
+    <div>
+        <code>{$clean_filename_no_extension}-{$date}.{$extension}</code>
+    </div>
+    Displays the filename with the YYYYMMDD appended as a suffix to the filename.
+    <ul>
+        <li><b>greenbug-20190127.png</b></li>
+        <li><b>fritillarybutterfly-20190127.gif</b></li>
+    </ul>
+</div>
+
+<div>
+    <div>
+        <code>{$clean_filename_no_extension}-{$unixtime|date_format:"MjS-h-ia"}.{$extension}</code>
+    </div>
+    Displays the filename with the YYYYMMDD appended as a suffix to the filename. As mentioned above, you cannot
+    include colons (<b>:</b>) in the date formatting string because they are invalid filename characters on most
+    systems. If you do, they will be stripped out.
+    <ul>
+        <li><b>aniseswallowtail-Jan27th-05-48pm.png</b></li>
+        <li><b>beetle-Jan27th-05-48pm.png</b></li>
+    </ul>
+</div>
+
+{% include close_section.html %}
