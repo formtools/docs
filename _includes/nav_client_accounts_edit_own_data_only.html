@@ -1,0 +1,15 @@
+<div {% if include.selected == 'introduction' %}class="selected"{% endif %}>
+    <a href="{{site.baseurl}}/tutorials/client_accounts_edit_own_data_only/">Introduction</a>
+</div>
+
+<ol>
+    <li {% if include.selected == 'hidden_mapping_field' %}class="selected"{% endif %}>
+        <a href="{{site.baseurl}}/tutorials/client_accounts_edit_own_data_only/hidden_mapping_field/">Add hidden mapping field</a>
+    </li>
+    <li {% if include.selected == 'configure_form_view' %}class="selected"{% endif %}>
+        <a href="{{site.baseurl}}/tutorials/client_accounts_edit_own_data_only/configure_form_view/">Configure form view</a>
+    </li>
+    <li {% if include.selected == 'all_submissions_view' %}class="selected"{% endif %}>
+        <a href="{{site.baseurl}}/tutorials/client_accounts_edit_own_data_only/all_submissions_view/">Create view showing all submissions</a>
+    </li>
+</ol>

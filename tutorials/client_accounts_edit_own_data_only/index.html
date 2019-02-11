@@ -1,0 +1,55 @@
+---
+layout: default
+navPage: docs
+heading: Configuring client accounts to only edit their own form data
+breadcrumbs:
+- Tutorials,/tutorials
+- Configuring client accounts to only edit their own form data
+next: Add hidden mapping field,/tutorials/client_accounts_edit_own_data_only/hidden_mapping_field/
+categories: tutorial
+tags: permissions,accounts,views
+---
+
+{% include open_section.html nav='nav_client_accounts_edit_own_data_only.html' selected='introduction' nav_width=3 %}
+
+<p class="alert alert-warning">
+    This tutorial requires <b>Form Tools 3.0.13</b> or later.
+</p>
+
+<p>
+    This tutorial explains how you can configure a Form Tools form so client can <i>only edit their own
+    form data</i> and nobody else's. You can optionally configure it so client accounts can <i>view</i> other data
+    in the form, but only readonly. This technique works for any form, regardless of form data.
+</p>
+
+<p>
+    This tutorial is conceptually quite complicated and covers a fair bit of ground. So if you have any questions,
+    do pipe up with a <a href="https://github.com/formtools/core/issues" target="_blank">question</a>. But once you
+    see how it works, you'll have a decent understanding of how Form Tools Views work.
+</p>
+
+<p>
+    In abstract, here's how it'll work.
+</p>
+
+<ol>
+    <li>We're going to add a database field to your form that tracks <b>which Form Tools account created the submission</b>.</li>
+    <li>We'll configure a form View to limit results to only show results created for the current client account.</li>
+    <li>(Optional) create a second readonly View so client accounts can view all data in the form, but not edit it.</li>
+</ol>
+
+<h3>Restrictions</h3>
+
+<ul>
+    <li>
+        This technique only applies to submissions created within the Form Tools interface (Internal forms), not
+        <a href="{{site.baseurl}}/modules/form_builder/">Form Builder forms</a> or
+        <a href="{{site.baseurl}}/userdoc/form_management/adding_external_forms/">External forms</a>.
+    </li>
+    <li>
+        This tutorial explains how to set it up for a <i>single</i> form. If you need clients to only edit their own data
+        for multiple forms, you will need to make the same change to each form.
+    </li>
+</ul>
+
+{% include close_section.html %}

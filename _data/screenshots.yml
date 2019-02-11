@@ -11,15 +11,6 @@
   main_link: ""
   list_order: 0
 -
-  screenshot_id: 19
-  component_type: "core"
-  component_id: 0
-  thumb_filename: "i19_th.jpg"
-  filename: "i19.jpg"
-  caption: "Edit Form - Fields tab"
-  main_link: ""
-  list_order: 0
--
   screenshot_id: 20
   component_type: "core"
   component_id: 0
@@ -3259,7 +3250,6 @@
   caption: "Multiple file upload"
   main_link: ""
   list_order: 0
-
 -
   screenshot_id: 388
   component_type: "module"
@@ -3269,4 +3259,23 @@
   caption: "Customize uploaded filename format"
   main_link: ""
   list_order: 0
+-
+  screenshot_id: 389
+  component_type: "core"
+  component_id: 16
+  thumb_filename: "edit-form__fields_tab_th.png"
+  filename: "edit-form__fields_tab.png"
+  caption: "Edit Form &raquo; Fields tab"
+  main_link: ""
+  list_order: 0
+-
+  screenshot_id: 389
+  component_type: "core"
+  component_id: 16
+  thumb_filename: "tutorial-client-map-edit-view-general-tab_th.png"
+  filename: "tutorial-client-map-edit-view-general-tab.png"
+  caption: "Edit View -> General tab"
+  main_link: ""
+  list_order: 0
+
 

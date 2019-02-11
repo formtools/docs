@@ -1,0 +1,94 @@
+---
+layout: default
+navPage: docs
+heading: Configuring client accounts to only edit their own form data
+breadcrumbs:
+- Tutorials,/tutorials
+- Configuring client accounts to only edit their own form data
+prev: Add hidden mapping field,/tutorials/client_accounts_edit_own_data_only/hidden_mapping_field/
+next: Create view showing all submissions,/tutorials/client_accounts_edit_own_data_only/all_submissions_view/
+categories: tutorial
+tags: permissions,accounts,views
+---
+
+{% include open_section.html nav='nav_client_accounts_edit_own_data_only.html' selected='configure_form_view' nav_width=3 %}
+
+<p>
+    The next step is to configure a View:
+</p>
+
+<ol>
+    <li>Automatically store what Form Tools account created the submission.</li>
+    <li>Set the view to <i>only show submissions for the current client account.</i></li>
+</ol>
+
+<h3>Which View?</h3>
+
+<p>
+    You can read more about <a href="{{site.baseurl}}/userdoc/views/">Views here</a>, but the important things to know
+    are: you can create as many Views as you want; each View can be configured differently to show different form data;
+    by default, every new Form gets a new View created along with it called "All submissions".
+</p>
+
+<p>
+    For this tutorial, you can edit any View you'd like - so perhaps just make these changes default All Submissions
+    view. You can rename it or add more Views later once you get a better feel for it.
+</p>
+
+<h3>Editing the View</h3>
+
+<h4>Tracking show created the submission</h4>
+
+<p>
+    Now click on the Views tab within the Edit Form pages. There, edit one of the Views (we'll pick the default
+    "All Submissions" View, as shown in the screenshots).
+</p>
+
+{% include screenshot.html item="tutorial-client-map-edit-view-general-tab.png" %}
+
+<ul>
+    <li>
+        On the General tab, set the <b>Access</b> field to public. This will allow all clients that have access to the form
+        also have access to this particular View.
+    </li>
+    <li>
+        Set the <b>Can add submissions</b> to <i>yes</i>.
+    </li>
+    <li>
+        In the <b>Default Values for New Submissions</b> setting, add the field as shown in the screenshot to the right,
+        namely: Field <i>Account ID</i> (the field you just created in the previous step) and default value:
+        <i>{% raw %}{$ACCOUNT_ID}{% endraw %}</i>
+
+        <div class="alert alert-info">
+            <b>{% raw %}{$ACCOUNT_ID}{% endraw %}</b> is a <i>placeholder</i>. It gets replaced with the user's account ID
+            when the submission is created. For a full list of placeholders, see the section on the
+            <a href="{{site.baseurl}}/userdoc/views/main_tab/">Default Values for New Submissions</a> field.
+        </div>
+    </li>
+    <li>
+        Click save.
+    </li>
+</ul>
+
+<p>
+    What you've just done is configure your View to store the account ID of whatever user just created the form
+    through the Form Tools interface. As mentioned before, submissions created from an external, API or Form Builder
+    form won't have this value populated: it's only for submissions created within Form Tools.
+</p>
+
+
+<h4>Making the View only show submissions for the current user</h4>
+
+
+
+{% include close_section.html %}
+
+
+
+
+
+
+
+
+
+

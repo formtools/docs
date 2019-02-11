@@ -1,0 +1,46 @@
+---
+layout: default
+navPage: docs
+heading: Configuring client accounts to only edit their own form data
+breadcrumbs:
+- Tutorials,/tutorials
+- Configuring client accounts to only edit their own form data
+prev: Introduction,/tutorials/client_accounts_edit_own_data_only/
+next: Configure form view,/tutorials/client_accounts_edit_own_data_only/configure_form_view/
+categories: tutorial
+tags: permissions,accounts,views
+---
+
+{% include open_section.html nav='nav_client_accounts_edit_own_data_only.html' selected='hidden_mapping_field' nav_width=3 %}
+
+<p>
+    {% include screenshot.html item="edit-form__fields_tab.png" %}
+    The first step is to create a new form field to track who created the form submission. Adding new fields on this
+    page does <b>not</b> mean they become visible for users within Form Tools. They only appear in the interface when
+    they are explicitly added to your form View(s). In our case we're just going to be using this field programmatically,
+    so adding it to this page is enough.
+</p>
+
+<ul>
+    <li>Log in as the administrator and edit your form.</li>
+    <li>On the Edit Form &raquo; Fields tab (shown in the screenshot to the right) add a new field with the following
+    values:
+
+        <ul>
+            <li><b>Display Text</b>: Account ID</li>
+            <li><b>Form Field</b>: ft_account_id</li>
+            <li><b>Field Type</b>: Textbox</li>
+            <li><b>Pass On</b>: [unchecked]</li>
+            <li><b>Field Size</b>: Small</li>
+            <li><b>Sort As</b>: String</li>
+            <li><b>DB Column</b>: ft_account_id</li>
+        </ul>
+    </li>
+</ul>
+
+<p>
+    At this point you've now added a field to store who created the submission.
+    <a href="{{site.baseurl}}/tutorials/client_accounts_edit_own_data_only/configure_form_view/">Onto the next step!</a>
+</p>
+
+{% include close_section.html %}
