@@ -83,20 +83,33 @@ tags: views,permissions,submissions
 <div class="row">
     <div class="col-lg-3"><code>Default Values for New Submissions</code></div>
     <div class="col-lg-9">
-        If "Can add submissions" is set to "yes", a new section will appear at the bottom of
-        the page. This was added in 2.1.0 to allow you to specify default values for submissions
-        added via the Form Tools interface. All you need to do is add those fields that you would
-        like to contain default values, and specify exactly what values you want them to have.
+        This section appears when "Can add submissions" is set to "yes". It lets you to specify default values for
+        submission fields when added through the Form Tools interface. All you need to do is add those fields that you
+        would like to contain default values, and specify exactly what values you want them to have.
+
+        This section is very important if your View has <a href="">filters</a>. Filters limit what submissions appear
+        in the View. So unless your submission contains values that match the criteria you entered immediately after
+        the submission is created, it may appear that creating a submission does nothing - since you can never view the
+        submission in your View.
+
+        <p>
+            Since version 3.0.13 of the Core, you can also enter the following placeholders. These work for any Form
+            Tools user account (admin or client) and will have their values replaced with their content.
+        </p>
+
         <ul>
-            <li>Tip: a big reason this was added was to reconcile an issue that arose when adding
-                View Filters. Filters let you limit the results that appear in a View (e.g. only
-                show people from Vancouver, BC). When you added a submission in that View, even though
-                the submission was created, it wouldn't get listed in the View - because the value
-                of the "City" field wasn't "Vancouver". So, the <i>Default Values for New Submissions</i>
-                resolves this issue: it lets new submissions added to Views with standard filters
-                automatically contain the appropriate values to be listed in the View. Keep this in mind!
-            </li>
+            <li><b>{% raw %}{$ACCOUNT_ID}{% endraw %}</b></li>
+            <li><b>{% raw %}{$USERNAME}{% endraw %}</b></li>
+            <li><b>{% raw %}{$EMAIL}{% endraw %}</b></li>
+            <li><b>{% raw %}{$FIRST_NAME}{% endraw %}</b></li>
+            <li><b>{% raw %}{$LAST_NAME}{% endraw %}</b></li>
         </ul>
+
+        <p>
+            You may also use placeholders from the <a href="{{site.baseurl}}/modules/extended_client_fields/">Extended
+            Client Fields</a> module here to add values from those fields. That module (version 2.1.0 and later) lists
+            the available placeholders.
+        </p>
     </div>
 </div>
 <div class="row">
