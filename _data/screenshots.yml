@@ -3269,12 +3269,21 @@
   main_link: ""
   list_order: 0
 -
-  screenshot_id: 389
+  screenshot_id: 390
   component_type: "core"
   component_id: 16
   thumb_filename: "tutorial-client-map-edit-view-general-tab_th.png"
   filename: "tutorial-client-map-edit-view-general-tab.png"
   caption: "Edit View -> General tab"
+  main_link: ""
+  list_order: 0
+-
+  screenshot_id: 390
+  component_type: "core"
+  component_id: 16
+  thumb_filename: "tutorial-client-map-edit-view-filters-tab_th.png"
+  filename: "tutorial-client-map-edit-view-filters-tab.png"
+  caption: "Edit View -> Filters tab"
   main_link: ""
   list_order: 0
 

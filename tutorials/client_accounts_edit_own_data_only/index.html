@@ -17,24 +17,23 @@ tags: permissions,accounts,views
 </p>
 
 <p>
-    This tutorial explains how you can configure a Form Tools form so client can <i>only edit their own
-    form data</i> and nobody else's. You can optionally configure it so client accounts can <i>view</i> other data
-    in the form, but only readonly. This technique works for any form, regardless of form data.
+    This tutorial explains how you can configure a Form Tools form so a client account can <i>only edit their own
+    form submission data</i> and nobody else's. You can optionally configure it so client accounts can <i>view</i>
+    other data in the form, but only readonly. This technique works for any form, regardless of what's in the form.
 </p>
 
 <p>
     This tutorial is conceptually quite complicated and covers a fair bit of ground. So if you have any questions,
-    do pipe up with a <a href="https://github.com/formtools/core/issues" target="_blank">question</a>. But once you
-    see how it works, you'll have a decent understanding of how Form Tools Views work.
+    do <a href="https://github.com/formtools/core/issues" target="_blank">ask a question on github</a>.
 </p>
 
 <p>
-    In abstract, here's how it'll work.
+    In abstract, here's what we're going to do.
 </p>
 
 <ol>
-    <li>We're going to add a database field to your form that tracks <b>which Form Tools account created the submission</b>.</li>
-    <li>We'll configure a form View to limit results to only show results created for the current client account.</li>
+    <li>First we'll add a database field to your form that tracks <b>which Form Tools account created the submission</b>.</li>
+    <li>We'll configure one of your form Views to limit results to only show results created for the current client account.</li>
     <li>(Optional) create a second readonly View so client accounts can view all data in the form, but not edit it.</li>
 </ol>
 

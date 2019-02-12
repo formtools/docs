@@ -6,7 +6,7 @@ breadcrumbs:
 - Tutorials,/tutorials
 - Configuring client accounts to only edit their own form data
 prev: Add hidden mapping field,/tutorials/client_accounts_edit_own_data_only/hidden_mapping_field/
-next: Create view showing all submissions,/tutorials/client_accounts_edit_own_data_only/all_submissions_view/
+next: Related links,/tutorials/client_accounts_edit_own_data_only/links/
 categories: tutorial
 tags: permissions,accounts,views
 ---
@@ -14,25 +14,20 @@ tags: permissions,accounts,views
 {% include open_section.html nav='nav_client_accounts_edit_own_data_only.html' selected='configure_form_view' nav_width=3 %}
 
 <p>
-    The next step is to configure a View:
+    The next step is to configure one of your Views to:
 </p>
 
 <ol>
-    <li>Automatically store what Form Tools account created the submission.</li>
-    <li>Set the view to <i>only show submissions for the current client account.</i></li>
+    <li>automatically store what Form Tools account created the submission, and</li>
+    <li>only show submissions for the current client account.</li>
 </ol>
 
 <h3>Which View?</h3>
 
 <p>
-    You can read more about <a href="{{site.baseurl}}/userdoc/views/">Views here</a>, but the important things to know
-    are: you can create as many Views as you want; each View can be configured differently to show different form data;
-    by default, every new Form gets a new View created along with it called "All submissions".
-</p>
-
-<p>
-    For this tutorial, you can edit any View you'd like - so perhaps just make these changes default All Submissions
-    view. You can rename it or add more Views later once you get a better feel for it.
+    You can read more about <a href="{{site.baseurl}}/userdoc/views/">Views here</a>, but for this tutorial, you can
+    edit any View you'd like - so perhaps just make these changes to the default <i>All Submissions</i> view. You can
+    rename it or add more Views later once you get a better feel for how it all works.
 </p>
 
 <h3>Editing the View</h3>
@@ -71,24 +66,40 @@ tags: permissions,accounts,views
 </ul>
 
 <p>
-    What you've just done is configure your View to store the account ID of whatever user just created the form
-    through the Form Tools interface. As mentioned before, submissions created from an external, API or Form Builder
+    You've now configured your View to store the account ID of whatever user just created the form through the Form
+    Tools interface (admin or client). As mentioned before, submissions created from an external, API or Form Builder
     form won't have this value populated: it's only for submissions created within Form Tools.
 </p>
 
 
 <h4>Making the View only show submissions for the current user</h4>
 
+<p>
+    {% include screenshot.html item="tutorial-client-map-edit-view-filters-tab.png" %}
+    Click on the Filters subtab, add a row in the Client Map filters section with the following information:
+</p>
+
+<ul>
+    <li>
+        <b>Field</b>: <i>Account ID</i> (this is the field you added earlier)
+    </li>
+    <li>
+        <b>Operator</b>: <i>Equals</i>
+    </li>
+    <li>
+        <b>Client Field</b>: <i>ID</i>.
+    </li>
+</ul>
+
+<p>
+    This tells the View to only show data where your new field contains the same ID as the client account. To test this,
+    try going to the Accounts page and click the Login link for that user.
+</p>
+
+<div class="alert alert-info">
+    <b>Note</b>: Client Map filters are just that: for clients! If you access this view through an administrator
+    account the client map filters will not apply: you will see all results.
+</div>
 
 
 {% include close_section.html %}
-
-
-
-
-
-
-
-
-
-
