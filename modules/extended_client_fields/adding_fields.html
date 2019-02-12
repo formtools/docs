@@ -3,9 +3,9 @@ layout: default
 navPage: docs
 heading: Extended Client Fields
 breadcrumbs:
-  - Modules,/modules
-  - Extended Client Fields,/modules/extended_client_fields/
-  - Adding Fields
+- Modules,/modules
+- Extended Client Fields,/modules/extended_client_fields/
+- Adding Fields
 prev: Overview,/modules/extended_client_fields
 next: Field Locations,/modules/extended_client_fields/field_locations
 categories: modules
@@ -14,66 +14,81 @@ tags: accounts
 
 {% include open_section.html nav='nav_extended_client_fields.html' selected='adding_fields' %}
 
-  <h3>Adding Fields</h3>
+<h3>Adding Fields</h3>
 
-  {% include screenshot.html item="i104.jpg" %}
 
-  <p>
+{% include screenshot.html item="extended-client-fields_add-field.png" %}
+
+<p>
     Adding your custom fields is really very simple. After installing the module (see
-    <a href="{{site.baseurl}}/userdoc/modules/installing">explanation here</a>), select the module and click on the "Add Field" link
+    <a href="{{site.baseurl}}/userdoc/modules/installing">explanation here</a>), select the module and click on the "Add
+    Field" link
     in the left-hand navigation menu. You should see a page similar to the screenshot to the right (the field options
     section only appears when you select a multi-select option like radios or checkboxes).
-  </p>
+</p>
 
-  <p>
+<p>
     Here's what all the fields mean.
-  </p>
+</p>
 
-  <table class="info" cellpadding="1" cellspacing="0" width="100%">
-    <tbody><tr>
-      <td class="blue" valign="top" width="160">Page and Location</td>
-      <td valign="top">
-        This dropdown contains the five locations in the Edit Client pages (main tab and settings tab) where you can
-        insert your new fields. See the <a href="../field_locations">Field Locations</a> page for a visual
-        representation of the locations.
-      </td>
+<table class="info" cellpadding="1" cellspacing="0" width="100%">
+    <tbody>
+    <tr>
+        <td class="blue" valign="top" width="160">Page and Location</td>
+        <td valign="top">
+            This dropdown contains the five locations in the Edit Client pages (main tab and settings tab) where you can
+            insert your new fields. See the <a href="../field_locations">Field Locations</a> page for a visual
+            representation of the locations.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Administrator Only</td>
-      <td valign="top">
-        This makes the field only appear for the administrator - not the client.
-      </td>
+        <td class="blue" valign="top">Administrator Only</td>
+        <td valign="top">
+            This makes the field only appear for the administrator - not the client.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Field Label</td>
-      <td valign="top">
-        The label for the field (e.g. "Gender", "City" or something that specifies it's meaning).
-      </td>
+        <td class="blue" valign="top">Field Label</td>
+        <td valign="top">
+            The label for the field (e.g. "Gender", "City" or something that specifies it's meaning).
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Field Type</td>
-      <td valign="top">
-        The form field type: textbox, textarea, radios, checkboxes, select, multi-select, password.
-      </td>
+        <td class="blue" valign="top">Field Type</td>
+        <td valign="top">
+            The form field type: textbox, textarea, radios, checkboxes, select, multi-select, password.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Default Value</td>
-      <td valign="top">
-        The default value for the field. If the field is a multi-select field like a group of checkboxes or multi-select
-        dropdown, you can enter multiple default values by separating them with a pipe (|) character. For example, if
-        there were three options: One, Two and Three, you could set One and Three as selected/checked by default by
-        entering "One|Three" into this field.
-      </td>
+        <td class="blue" valign="top">Field Identifier</td>
+        <td valign="top">
+            This was added in <b>2.1.0</b>. Field identifiers let you give a name to your field so you can use them
+            in placeholders elsewhere in Form Tools. See the
+            <a href="{{site.baseurl}}/modules/extended_client_fields/placeholders/">Placeholders</a> page for more information.
+        </td>
     </tr>
     <tr>
-      <td class="blue" valign="top">Required Field</td>
-      <td valign="top">
-        This line lets you add basic field validation to the field. Specifically, whether the field is required or not.
-        Make sure that if you check the "Required Field?" checkbox, you enter the error message that should appear if
-        the field is empty.
-      </td>
+        <td class="blue" valign="top">Default Value</td>
+        <td valign="top">
+            The default value for the field. If the field is a multi-select field like a group of checkboxes or
+            multi-select
+            dropdown, you can enter multiple default values by separating them with a pipe (|) character. For example,
+            if
+            there were three options: One, Two and Three, you could set One and Three as selected/checked by default by
+            entering "One|Three" into this field.
+        </td>
+    </tr>
+    <tr>
+        <td class="blue" valign="top">Required Field</td>
+        <td valign="top">
+            This line lets you add basic field validation to the field. Specifically, whether the field is required or
+            not.
+            Make sure that if you check the "Required Field?" checkbox, you enter the error message that should appear
+            if
+            the field is empty.
+        </td>
     </tr>
     </tbody>
-  </table>
+</table>
 
 {% include close_section.html %}

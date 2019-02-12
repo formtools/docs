@@ -1,0 +1,34 @@
+---
+layout: default
+navPage: docs
+heading: Extended Client Fields
+breadcrumbs:
+- Modules,/modules
+- Extended Client Fields,/modules/extended_client_fields/
+- Section Titles
+prev: Section Titles,/modules/extended_client_fields/field_locations
+next: Info for developers,/modules/extended_client_fields/developer_info
+categories: modules
+tags: accounts,developer
+---
+
+{% include open_section.html nav='nav_extended_client_fields.html' selected='placeholders' %}
+
+<h3>Placeholders</h3>
+
+<p>
+    This page was added in 2.1.0. It lists all available placeholders that can be used in Form Tools fields,
+    specifically the <b>Default Values for New Submissions</b> setting in
+    <a href="{{site.baseurl}}/userdoc/views/main_tab/">Edit View &raquo; main tab</a>. These placeholders,
+    when entered in that field, will have their values automatically inserted for all new submissions created by
+    that client account when they create a new submission via the Form Tools UI. This lets you do all sorts of things like
+    tracking who creates submissions, to <a href="{{site.baseurl}}/tutorials/client_accounts_edit_own_data_only/">configuring
+    client accounts to only ever be able to edit their own form data</a> and no other clients assigned to the form.
+</p>
+
+<p>
+    If you don't see your field listed here, edit the field and add the <b>Field Identifier</b> value. It will then get
+    listed and show you the placeholder you can copy and paste into the Core field.
+</p>
+
+{% include close_section.html %}
