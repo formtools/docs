@@ -1,0 +1,59 @@
+---
+layout: default
+navPage: docs
+heading: Edit conflicts
+breadcrumbs:
+- User Documentation,/userdoc/
+- Form Submissions,/userdoc/form_submissions/
+- Edit conflicts
+prev: Editing form submissions,/userdoc/form_submissions/editing_form_submissions/
+next: Client accounts,/userdoc/client_accounts/
+categories: userdoc
+tags: submissions
+---
+
+{% include open_section.html nav='nav_userdoc_form_submissions.html' selected='edit_conflicts' %}
+
+<p class="alert alert-info">
+    Please note, Form Tools still does not support editing multiple submissions by the
+    <a href="https://github.com/formtools/core/issues/479">same user in multiple tabs</a>.
+    This is currently just the way that Form Tools is designed.
+</p>
+
+<p>
+    Form Tools 3.0.13 added a feature to resolve conflicts that may arise when editing form data. In most cases this
+    is an unusual scenario, but with some installations that have multiple users simultaneously editing form submissions
+    the probability of a conflict becomes a lot higher.
+</p>
+
+<h3>Scenario</h3>
+
+<p>
+    {% include screenshot.html item="edit_submission_conflict.png" %}
+    Imagine two Form Tools users (admin or client) happen to be editing the same submission at the same time. When
+    the second user submits the form data, the original values they had seen in their page could have changed. So without
+    knowing it, they may accidentally override values that had just been updated by a second user.
+</p>
+
+<p>
+    What Form Tools does is whenever a user starts editing a submission, it tracks the original field values for whatever
+    fields are in their particular View. When the user submits the form, it examines the latest fresh data
+    in the database and if any of the fields that the user just changed have also changed in the database, it presents them
+    with a page like in the screenshot to here. For all conflicting fields, the user is shown the current value in the
+    database (a value they haven't seen yet) and their own value. They can then choose which value to keep.
+</p>
+
+<h4>A few subtleties to know about</h4>
+
+<ul>
+    <li>When a user sees this resolve conflicts page, any field value that <i>wasn't in conflict</i> from their last form
+    submission will have been updated in the database.</li>
+    <li>If the user navigates away from the conflict resolution page, the database won't be updated with their new
+    values: they have to explicitly choose their own values here to update the database.</li>
+    <li>The only exception to this conflict resolution is <i>files</i>. Files are currently always updated in the database
+    from each submission even in the case of a conflict.</li>
+    <li>The conflict resolution page will also appear if the form submission data had been updated through other means
+    besides just another Form Tools user editing the data (e.g. manual changes to the database, or via the API).</li>
+</ul>
+
+{% include close_section.html %}

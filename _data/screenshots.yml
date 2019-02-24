@@ -3278,7 +3278,7 @@
   main_link: ""
   list_order: 0
 -
-  screenshot_id: 390
+  screenshot_id: 391
   component_type: "core"
   component_id: 16
   thumb_filename: "tutorial-client-map-edit-view-filters-tab_th.png"
@@ -3286,5 +3286,12 @@
   caption: "Edit View -> Filters tab"
   main_link: ""
   list_order: 0
-
-
+-
+  screeenshot_id: 392
+  component_type: "core"
+  component_id: 16
+  thumb_filename: "edit_submission_conflict_th.png"
+  filename: "edit_submission_conflict.png"
+  caption: "Edit submission -> conflict resolution"
+  main_link: ""
+  list_order: 0
