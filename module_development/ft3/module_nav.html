@@ -28,36 +28,33 @@ versions: FT3
 	</p>
 
 	<p>
-		Your module menu items are defined in your <a href="{{site.baseurl}}/module_development/file_module/">module.php</a>
-		file, as discussed earlier.
+		Your module menu items are defined in your
+        <a href="{{site.baseurl}}/module_development/ft3/module_class/">Module.class.php</a> file, as discussed earlier.
 	</p>
 
 	<p>
-		The $MODULE["nav"] setting in that file defines your module's menu items. It is an array,
+		The protected class variable in that class defines your module's menu items. It is an array,
 		whose keys correspond to entries in your language file. The values are an array with two
 		indexes: the URL of the page, and whether it should appear as a submenu item or not.
 	</p>
 
 {% codemirror php %}
-$MODULE["nav"] = array(
-  "module_name"   => array('{$module_dir}/index.php', false),
-  "word_settings" => array('{$module_dir}/settings/', false),
-  "word_help"     => array('{$module_dir}/help/', false)
+protected $nav = array(
+    "module_name" => array("index.php", false),
+    "word_settings" => array("settings/", false),
+    "word_help" => array("help.php", false)
 );
 {% endcodemirror %}
 
 	<p>
 		The "module_name", "word_settings" and "word_help" have corresponding entries in the
-		module's lang/en_us.php language file (e.g. $L["module_name"] = "Export Manager"
-		etc). The values each contain the {$module_dir} Smarty placeholder. This is a
-		convenient way to refer to the module root URL. Often you find you won't need it, but if
-		your module arranges its files in subfolders, this ensures valid links from any page
-		location.
+		module's <code>lang/en_us.php</code> language file (e.g. $L["module_name"] = "Export Manager"
+		etc). The paths are all relative to the module folder.
 	</p>
 
 	<p>
-		After defining your module menu items in your module.php file as described above, the
-		menu information will be automatically created by the modules installation script.
+		After defining your module menu items as described above, your module's menu will be automatically added
+        after your module is installed.
 	</p>
 
 {% include close_section.html %}

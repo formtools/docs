@@ -20,12 +20,13 @@ versions: FT3
 	</p>
 
 {% codemirror php %}
-Hooks::registerHook($module_folder, $when, $core_function, $hook_function, $priority = 50, $force_unique = false);
+Hooks::registerHook($module_folder, $when, $core_function, $hook_function,
+    $priority = 50, $force_unique = false);
 {% endcodemirror %}
 
 	<p>
 		The second <b>$when</b> parameter is the string identifying where in the core function
-		the hook should be associated. See the <a href="{{site.baseurl}}/module_development/code_hooks/">code hooks</a>
+		the hook should be associated. See the <a href="{{site.baseurl}}/module_development/ft3/code_hooks/">code hooks</a>
 		page for more information on this and the available core functions that can have hooks.
 	</p>
 	<p>
