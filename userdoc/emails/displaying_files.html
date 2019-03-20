@@ -1,0 +1,40 @@
+---
+layout: default
+navPage: docs
+heading: Email Patterns
+breadcrumbs:
+  - User Documentation,/userdoc/
+  - Emails,/userdoc/emails
+  - Email Patterns
+prev: Email Patterns,/userdoc/emails/email_patterns/
+next: The Swift Mailer module,/userdoc/emails/swift_mailer_module/
+categories: userdoc
+tags: emails
+---
+
+{% include open_section.html nav='nav_userdoc_emails.html' selected='displaying_files' %}
+
+	<p>
+		If your form contains file upload fields, you may notice the email contain a line like this for the file
+        upload field:
+	</p>
+
+	{% codemirror smarty %}
+{display_files format="html" files=$FILENAMES_field1 folder=$FOLDERURL_field1}
+	{% endcodemirror %}
+
+    <p>
+        Here's what's going on. The <code>{display_files}</code> function handles displaying the contents of your file
+        upload field. With the File Upload module v2.1 each field can contain multiple files, so that method
+    </p>
+
+    <ul>
+        <li><code>format</code>: this option governs how the file"html" or "text".</li>
+        <li><code>files</code>: this is the list of  </li>
+        <li><code>folder</code>: this is the list of  </li>
+        <li><code>delim</code>: whatever you want to delimit the list of items with. For HTML, you'll probably want
+        `, ` or `<br />`.
+        </li>
+    </ul>
+
+{% include close_section.html %}
