@@ -15,8 +15,7 @@ tags: emails
 {% include open_section.html nav='nav_userdoc_emails.html' selected='displaying_files' %}
 
 	<p>
-		If your form contains file upload fields, you may notice the email contain a line like this for the file
-        upload field:
+		If your form contains file upload fields, your email templates will contain lines like this:
 	</p>
 
 	{% codemirror smarty %}
@@ -25,15 +24,39 @@ tags: emails
 
     <p>
         Here's what's going on. The <code>{display_files}</code> function handles displaying the contents of your file
-        upload field. With the File Upload module v2.1 each field can contain multiple files, so that method
+        field. Version 2.1.0 of the File Upload module added the option to upload multiple files in a single form field
+        so we needed a way to display the contents of a file upload field in a variety of different ways: in text format,
+        HTML format, as plain filenames, filenames as links to the actual file, and more.
+    </p>
+
+    <p>
+        The email patterns are preset to output the correct configuration for this method for the selected pattern,
+        but here's what options exist and what they do.
     </p>
 
     <ul>
-        <li><code>format</code>: this option governs how the file"html" or "text".</li>
-        <li><code>files</code>: this is the list of  </li>
-        <li><code>folder</code>: this is the list of  </li>
-        <li><code>delim</code>: whatever you want to delimit the list of items with. For HTML, you'll probably want
-        `, ` or `<br />`.
+        <li>
+            <code>format</code>: this option governs how the file content is outputted, either: "html" or "text".
+            The default value is "text" so if this attribute isn't defined, that'll be the value.
+        </li>
+        <li>
+            <code>files</code>: the list of files found in the particular field. This should always be set to the
+            placeholder containing that information, e.g. <code>$FILENAMES_fieldX</code> (where "fieldX" is the field
+            name of your file upload field)
+        </li>
+        <li>
+            <code>folder</code>: this is the URL folder containing the files uploaded to this field. It should
+            be set to the placeholder <code>$FOLDERURL_fieldX</code> -
+        </li>
+        <li>
+            <code>delim</code>: whatever you want to delimit the list of items with. For HTML, you'll probably want
+            <code>, </code> or <code>&lt;br /&gt;</code>.
+        </li>
+        <li>
+            <code>link</code>: this setting controls whether you want a full link outputted to the email or just the
+            filename. For HTML emails this will appear as a full link that the user can click on. For text emails,
+            generally email clients will know to render the URL as a clickable link but some may just output the URL
+            as a non-clickable string.
         </li>
     </ul>
 
