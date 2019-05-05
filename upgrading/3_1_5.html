@@ -1,0 +1,68 @@
+---
+layout: default
+navPage: docs
+heading: Upgrading to 3.1.5
+breadcrumbs:
+- Upgrading,/upgrading/
+- Upgrading to 3.1.5
+prev: Upgrading to 3.0.0,/upgrading/3_0_0/
+next: Problems upgrading?,/upgrading/problems/
+categories: upgrading
+---
+
+{% include open_section.html nav='nav_upgrading.html' selected='3_1_5' %}
+
+<div class="alert alert-warning">
+    <p>
+        Upgrading to 3.1.5 <b>should be automatic</b> and not require you to do any additional work. However,
+        on some systems you may find you need to do a little extra work.
+    </p>
+</div>
+
+<h3>What Changed</h3>
+
+<p>
+    Form Tools has always used a temporary <b>cache</b> folder to store generated templates for the pages you see in the
+    application. Up until 3.1.5, each theme folder has had its own cache folder at the following locations:
+    <code>[form tools root]/themes/[theme name]/cache/</code>. This was unnecessary and on some web servers meant
+    having to configure the permissions for every theme cache folder.
+</p>
+
+<p>
+    With Form Tools 3.1.5, there is now a single cache folder located by default here: <code>[form tools root]/cache/</code>.
+    You can choose to customize the location of this folder via the <code>$g_custom_cache_folder</code> setting in your
+    <a href="{{site.baseurl}}/userdoc/getting_started/config_file/">config.php</a> file.
+</p>
+
+<h3>Upgrading Steps</h3>
+
+<ul>
+    <li>
+        <a href="{{site.baseurl}}/upgrading/">Upgrade normally to this version</a> or later.
+    </li>
+    <li>
+        Log into Form Tools as an administrator and go to the Forms page. If you <b>don't</b> see an error message at the
+        top of the page you're good to go! Nothing to do (but see the "Optional" section below).
+    </li>
+    <li>
+        If you see the error message linking to this page, you'll need to manually create this folder on your web server:
+        <code>[form tools root]/cache/</code> and make sure it has full read-write permissions.
+    </li>
+    <li>
+        After doing that, refresh the Forms page. The message should disappear. Done!
+    </li>
+</ul>
+
+<h3>Optional</h3>
+
+<p>
+    Now your system is using the new cache location, you can optionally remove the old cache folders in your themes.
+    There's nothing terribly wrong with leaving them there, but for people who like a nice clean system it can be nice!
+    (Newer versions of all the themes no longer contain this folder).
+</p>
+
+<p>
+    Just remove the cache folders found at this location: <code>[form tools root]/themes/[theme]/cache</code>.
+</p>
+
+{% include close_section.html %}

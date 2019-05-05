@@ -123,6 +123,18 @@ tags: basics
 </div>
 <div class="row">
     <div class="col-lg-4">
+        <code>$g_custom_cache_folder</code>
+    </div>
+    <div class="col-lg-8">
+        This was added in 3.1.5. Form Tools uses a cache folder to generate temporary files; up until 3.1.5 there were
+        multiple cache folders, one per theme. Now there's a single one located here: <code>[form tools root]/cache/</code>.
+        If you would like to customize this location, e.g. for security reasons to place it outside your webroot,
+        just enter this setting. It should contain the full path to the folder. <b>Note: you will need to create the
+        folder yourself and give it full read-write permissions.</b>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
         <code>$g_max_nav_pages</code>
     </div>
     <div class="col-lg-8">

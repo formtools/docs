@@ -17,4 +17,5 @@ module.exports = function(grunt) {
 
 	// starts the Jekyll server
 	grunt.registerTask("start", ["shell:start"]);
+	grunt.registerTask('default', "start");
 };
