@@ -52,7 +52,6 @@ use FormTools\Module as FormToolsModule;
 class Module extends FormToolsModule
 {
     protected $moduleName = "My Module";
-    protected $moduleDesc = "This is the description of your module name.";
     protected $author = "Your Name";
     protected $authorEmail = "you@something.com";
     protected $authorLink = "https://yoursite.com";
@@ -124,8 +123,10 @@ class Module extends FormToolsModule
             <code>$moduleDesc</code>
         </div>
         <div class="col-lg-9">
-            A one-line description of your module in the language of your choice. Like with <code>$moduleName</code> you
-            can also provide localization for this value via your <a href="../file_lang/">language files</a>.
+            <b>This has been removed in 3.1.5.</b> You should now provide a one-liner description of your module
+            in the <code>module_description</code> key in your language file. This will allow automatic localization
+            of that value in the interface. See the <a href="{{site.baseurl}}/module_development/ft3/file_lang/">Language
+            files</a> page for more info.
         </div>
     </div>
 	<div class="row">
