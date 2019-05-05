@@ -12,10 +12,21 @@ categories: upgrading
 
 {% include open_section.html nav='nav_upgrading.html' selected='3_1_5' %}
 
-<div class="alert alert-warning">
+<div class="alert alert-info">
     <p>
         Upgrading to 3.1.5 <b>should be automatic</b> and not require you to do any additional work. However,
         on some systems you may find you need to do a little extra work.
+    </p>
+</div>
+
+<div class="alert alert-warning">
+    <p>
+        <b>3.1.5 behaviour change:</b> there was a
+        <a href="https://github.com/formtools/core/issues/520" target="_blank">small bug</a>
+        where any multi-option form fields (dropdowns, multi-select dropdowns, radios, checkboxes) that reference values
+        in another form field would show blank entries - possibly multiple. Now in order to have an option appear it
+        needs to have an actual value in that other forms field. i.e. blank entries will no longer get listed. If you
+        need a blank entry, edit a submission and enter some whitespace - or some "--" chars or something.
     </p>
 </div>
 
