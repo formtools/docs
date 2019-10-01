@@ -11,7 +11,7 @@ page_type: introduction
 
 {% include open_section.html nav='nav_installation.html' selected='installation' %}
 
-	{% include screenshot.html item="i342.gif" %}
+	{% include screenshot.html item="install_step1.png" %}
 
 	<p>
 		This section explains how to install Form Tools on your server.
@@ -19,13 +19,13 @@ page_type: introduction
 
 	<p>
 		Installing Form Tools is usually very simple. The only problems that usually occur are
-		if you don't have the MySQL information correct or if you're on a Windows server and 
+		if you don't have the MySQL information correct or if you're on a Windows server and
 		the permissions on the theme cache folder aren't right. This section explains how to
 		get the script, upload it to your website, run through the installation steps and deal with
 		any of the most likely problems. It's really easy! Honest!
 	</p>
 
-	<h3>Getting the script + Uploading</h3>
+	<h3>Getting the script and uploading to your server</h3>
 
 	<ol>
 		<li>
@@ -33,28 +33,14 @@ page_type: introduction
 			and unzip the files into a folder on your computer.
 		</li>
 		<li>
-			With an FTP client, upload the files to your webserver to a location of your choosing. This folder must be accessible via a URL on your site, e.g.
-			<b>http://www.yoursite.com/formtools/</b>
+			With an FTP client, upload the files to your webserver to a location of your choosing. This folder must be
+            accessible via a URL on your site, e.g. <b>http://www.yoursite.com/formtools/</b>
 		</li>
 		<li>
-			After the files have fully uploaded, boot up your web browser and go to the URL
-			where you uploaded the script. It will automatically take you to the
-			installation script.
+			After the files have fully uploaded, boot up your web browser and go to the URL where you uploaded the
+            script. It will automatically take you to the installation script.
 		</li>
 	</ol>
-
-	<h4>Don't see the installation script?</h4>
-
-	<p>
-		In most cases, you'll now see the installation script and can just follow through
-		the instructions on the page to get Form Tools all configured. However, on some
-		servers (Windows, I'm calling you out!) you may see an error message saying that you
-		need to change the permissions on the <b>/themes/default/cache</b> cache folder. This folder
-		is used to create temporary cache files: it must be read-writable in order for Form Tools
-		to work. Change the permissions to 777 on Unix, or ask your hosting provider to make it
-		read-writable for Windows servers. Once that's done, just refresh the page and you'll be
-		redirected to the installation script. Challenge #1 complete!
-	</p>
 
 	<p>
 		The following pages explain each step of the installation script.

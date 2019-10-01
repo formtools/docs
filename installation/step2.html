@@ -13,28 +13,21 @@ categories: installation
 {% include open_section.html nav='nav_installation.html' selected='step2' %}
 
 	<p>
-		{% include screenshot.html item='i343.gif' %}
-		The second step runs a few key tests on your server to confirm that Form Tools will be
-		able to run. The full system requirements are
-		<a href="{{site.baseurl}}/userdoc/getting_started/system_requirements/">outlined here</a>,
+        {% include screenshot.html item="install_step2.png" %}
+		The second step runs a few key tests on your server to confirm that Form Tools will be able to run. The full
+        system requirements are <a href="{{site.baseurl}}/userdoc/getting_started/system_requirements/">outlined here</a>,
 		but the most common problems encountered on this page are these:
 	</p>
 
 	<ul>
-		<li><b>MySQL version identified as incorrect</b>. Form Tools requires MySQL 4 or later
-			to run. If you think your version is compatible, just click the "Ignore" button to bypass
-			the error.
+		<li>
+            <b>MySQL version identified as incorrect</b>. Form Tools requires MySQL 4 or later to run.
 		</li>
-		<li><b>Write permissions</b>. The /themes/default/cache and /upload folders needs to be read-writable.
+		<li>
+            <b>Write permissions</b>. The /themes/default/cache and /upload folders needs to be read-writable.
 			If you're on a Windows server, you may need to contact your hosting provider to ask them
-			to set the folder permissions.</li>
-		<li><b>Core Field Types module not installed</b>. As of Form Tools 2.1.5, the
-			<a href="https://docs.formtools.org/modules/core_field_types/">Core Field Types</a> module
-			is now required. It comes included in all the default download packages, but if you
-			used the <a href="https://formtools.org/build/">Custom Build script</a>, you may
-			not have included it. To remedy this, just download the module and upload it to your
-			/modules folder. Then refresh the Form Tools installation page and it will automatically
-			detect that it's ready to be installed.</li>
+			to set the folder permissions.
+        </li>
 	</ul>
 
 {% include close_section.html %}

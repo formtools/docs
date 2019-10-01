@@ -2840,8 +2840,8 @@
   screenshot_id: 342
   component_type: "core"
   component_id: 0
-  thumb_filename: "i342_th.gif"
-  filename: "i342.gif"
+  thumb_filename: "install_step1_th.png"
+  filename: "install_step1.png"
   caption: "Installation: Step 1"
   main_link: ""
   list_order: 0
@@ -2849,8 +2849,8 @@
   screenshot_id: 343
   component_type: "core"
   component_id: 0
-  thumb_filename: "i343_th.gif"
-  filename: "i343.gif"
+  thumb_filename: "install_step2_th.png"
+  filename: "install_step2.png"
   caption: "Installation: Step 2"
   main_link: ""
   list_order: 0
