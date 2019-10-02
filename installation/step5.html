@@ -3,8 +3,8 @@ layout: default
 navPage: docs
 heading: "Step 5: Create Admin Account"
 breadcrumbs:
-  - Installation,/installation/
-  - "Step 5: Create Admin Account"
+- Installation,/installation/
+- "Step 5: Create Admin Account"
 subnavSection: "Step 5: Create Admin Account"
 prev: "Step 4: Create Config File,/installation/step4/"
 next: "Step 6: Clean Up,/installation/step6/"
@@ -13,17 +13,17 @@ categories: installation
 
 {% include open_section.html nav='nav_installation.html' selected='step5' %}
 
-	<p>
-		{% include screenshot.html item='i346.gif' %}
-		This step creates administrator user account and (behind the scenes) does all the exciting
-		stuff, like populating the database and installing the modules. It may take a few moments
-		to complete.
-	</p>
+<p>
+    {% include screenshot.html item='install_step5.png' %}
 
-	<p>
-		The administrator's username needs to be alphanumeric (a-Z, 0-9) only. It will prompt you
-		if what you entered isn't permitted.
-	</p>
+    This step sets up the administrator account for your Form Tools installation. At this point there
+    you can only have a single administrator for your installation, but this will be changing in upcoming
+    versions.
+</p>
+
+<p>
+    The administrator's username must be alphanumeric (a-Z, 0-9) only.
+</p>
 
 
 {% include close_section.html %}

@@ -3,8 +3,8 @@ layout: default
 navPage: docs
 heading: "Step 3: Create Database Tables"
 breadcrumbs:
-  - Installation,/installation/
-  - "Step 3: Create Database Tables"
+- Installation,/installation/
+- "Step 3: Create Database Tables"
 prev: "Step 2: System Check,/installation/step2/"
 next: "Step 4: Create Config File,/installation/step4/"
 categories: installation
@@ -12,24 +12,36 @@ categories: installation
 
 {% include open_section.html nav='nav_installation.html' selected='step3' %}
 
-	<p>
-		{% include screenshot.html item='i344.gif' %}
-		Step 3 sets up your database. For this, you'll need the information listed below. If you're
-		not sure about any of these values, you'll need to contact your hosting provider.
-	</p>
+<p>
+    {% include screenshot.html item='install_step3.png' %}
+    Step 3 sets up your database. For this, you'll need the information listed below. If you're
+    not sure about any of these values, you'll need to contact your hosting provider.
+</p>
 
-	<ul>
-		<li><b>Database hostname</b> - this is usually "localhost", but some hosts require you
-			enter the explicit MySQL hostname (like mysql.yoursite.com).</li>
-		<li><b>Database name</b> - the name of the database that you want to use. Form Tools (like
-			all open source PHP/MySQL applications) requires that the database already be created.</li>
-		<li><b>Database user</b> - this is a user created within MySQL that has all the permissions
-			needed to run Form Tools. They need to be able to create tables, delete records -
-			everything! Generally, users on all hosts are created with these settings.</li>
-		<li><b>Database password</b> - the password for the user.</li>
-		<li><b>Database table prefix</b> - this adds a prefix to all your database tables so
-			that you can use the database for multiple scripts even multiple installations of
-			Form Tools.</li>
-	</ul>
+<ul>
+    <li>
+        <b>Database hostname</b> - this is usually "localhost", but some hosts require you enter the explicit MySQL
+        hostname (like mysql.yoursite.com).
+    </li>
+    <li>
+        <b>Database name</b> - the name of the database that you want to use. Form Tools (like all open source
+        PHP/MySQL applications) requires that the database already be created.
+    </li>
+    <li>
+        <b>Port</b> - the database port. This is usually 3306 but can be customized here.
+    </li>
+    <li>
+        <b>Database username</b> - this is a user created within MySQL that has all the permissions needed to run Form
+        Tools. They need to be able to create tables, delete records - everything! Generally, users on all hosts are
+        created with these settings.
+    </li>
+    <li>
+        <b>Database password</b> - the password for the user.
+    </li>
+    <li>
+        <b>Database table prefix</b> - this adds a prefix to all your database tables so that you can use the database
+        for multiple scripts even multiple installations of Form Tools.
+    </li>
+</ul>
 
 {% include close_section.html %}

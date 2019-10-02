@@ -2858,8 +2858,8 @@
   screenshot_id: 344
   component_type: "core"
   component_id: 0
-  thumb_filename: "i344_th.gif"
-  filename: "i344.gif"
+  thumb_filename: "install_step3_th.png"
+  filename: "install_step3.png"
   caption: "Installation: Step 3"
   main_link: ""
   list_order: 0
@@ -2867,8 +2867,8 @@
   screenshot_id: 345
   component_type: "core"
   component_id: 0
-  thumb_filename: "i345_th.gif"
-  filename: "i345.gif"
+  thumb_filename: "install_step4_th.png"
+  filename: "install_step4.png"
   caption: "Installation: Step 4"
   main_link: ""
   list_order: 0
@@ -2876,8 +2876,8 @@
   screenshot_id: 346
   component_type: "core"
   component_id: 0
-  thumb_filename: "i346_th.gif"
-  filename: "i346.gif"
+  thumb_filename: "install_step5_th.png"
+  filename: "install_step5.png"
   caption: "Installation: Step 5"
   main_link: ""
   list_order: 0
@@ -2885,8 +2885,8 @@
   screenshot_id: 347
   component_type: "core"
   component_id: 0
-  thumb_filename: "i347_th.gif"
-  filename: "i347.gif"
+  thumb_filename: "install_step6_th.png"
+  filename: "install_step6.png"
   caption: "Installation: Step 6"
   main_link: ""
   list_order: 0

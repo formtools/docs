@@ -14,7 +14,7 @@ categories: installation
 
 	<p>
         {% include screenshot.html item="install_step2.png" %}
-		The second step runs a few key tests on your server to confirm that Form Tools will be able to run. The full
+		The second step runs a few key tests on your server to confirm that Form Tools is able to run. The full
         system requirements are <a href="{{site.baseurl}}/userdoc/getting_started/system_requirements/">outlined here</a>,
 		but the most common problems encountered on this page are these:
 	</p>
@@ -29,5 +29,11 @@ categories: installation
 			to set the folder permissions.
         </li>
 	</ul>
+
+    <p>
+        The last row lets you choose a custom cache folder if you don't want to use the default <code>/cache</code>
+        folder. This folder is used for storing temporary cached version of the Form Tools interface pages amongst other
+        things. It is perfectly safe to have it within your webroot, but you can put it wherever you need.
+    </p>
 
 {% include close_section.html %}

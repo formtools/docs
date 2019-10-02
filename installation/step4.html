@@ -3,8 +3,8 @@ layout: default
 navPage: docs
 heading: "Step 4: Create Config File"
 breadcrumbs:
-  - Installation,/installation/
-  - "Step 4: Create Config File"
+- Installation,/installation/
+- "Step 4: Create Config File"
 prev: "Step 3: Create Database Tables,/installation/step3/"
 next: "Step 5: Create Admin Account,/installation/step5/"
 categories: installation
@@ -12,21 +12,17 @@ categories: installation
 
 {% include open_section.html nav='nav_installation.html' selected='step4' %}
 
-	<p>
-		{% include screenshot.html item='i345.gif' %}
-		The fourth step creates your configuration file. The config.php file is the <b>only</b>
-		file in Form Tools that stores custom data. It's not included in the original installation
-		script or in upgrade packages so it will never be overwritten.
-	</p>
+<p>
+    {% include screenshot.html item='install_step4.png' %}
+    The fourth step creates your <b>global/config.php</b> file. This is the only file in your Form Tools installation
+    that stores your settings for your application. It's not included in the original installation script or in
+    upgrade packages so it will never be overwritten.
+</p>
 
-	<p>
-		This step attempts to create the file automatically. If it cannot, you will need to manually
-		create the file by creating it locally in notepad / textedit and FTPing it to your server.
-	</p>
-
-	<p>
-		The config.php file is located in the <b>/global</b> folder.
-	</p>
-
+<p>
+    This step creates the file automatically. If it is unable to do this (e.g. for file permission reasons), it will
+    prompt you to create the file  manually by FTPing the file onto your server. If you have to create the file
+    manually but are not sure how to do it you will need to contact your hosting provider.
+</p>
 
 {% include close_section.html %}
