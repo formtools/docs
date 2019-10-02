@@ -3,7 +3,7 @@ layout: default
 navPage: docs
 heading: Installation
 breadcrumbs:
-  - Installation
+- Installation
 next: "Step 1: Welcome!,/installation/step1/"
 categories: installation
 page_type: introduction
@@ -11,40 +11,38 @@ page_type: introduction
 
 {% include open_section.html nav='nav_installation.html' selected='installation' %}
 
-	{% include screenshot.html item="install_step1.png" %}
+{% include screenshot.html item="install_step1.png" %}
 
-	<p>
-		This section explains how to install Form Tools on your server.
-	</p>
+<p>
+    Installing Form Tools is usually very simple. The only problems that usually occur are invalid or missing
+    MySQL credentials, or if you're on a Windows server and the permissions on the theme cache folder aren't right.
+    This section explains how to get the script, upload it to your website, run through the installation steps and deal
+    with the most likely problems. It's really easy! Honest!
+</p>
 
-	<p>
-		Installing Form Tools is usually very simple. The only problems that usually occur are
-		if you don't have the MySQL information correct or if you're on a Windows server and
-		the permissions on the theme cache folder aren't right. This section explains how to
-		get the script, upload it to your website, run through the installation steps and deal with
-		any of the most likely problems. It's really easy! Honest!
-	</p>
+<h3>Download the script</h3>
 
-	<h3>Getting the script and uploading to your server</h3>
+<ol>
+    <li>
+        Download the latest zipfile from the <a href="http://formtools.org/download/" target="_blank">downloads page</a>
+        and unzip the files into a folder on your computer. This file is a package containing various essential
+        modules and themes so you can get the most out of the script, right out of the box. But you can always add and
+        remove modules/themes later.
+    </li>
+    <li>
+        With an FTP client, upload the files to your web server. The folder you upload them to must be accessible via a
+        URL on your site, e.g. <b>http://www.yoursite.com/formtools/</b>. Unless you want it to be the entire website,
+        you'll want to put it in a subfolder.
+    </li>
+    <li>
+        After the files have fully uploaded, open your web browser and go to the URL where you uploaded the
+        script. It will automatically take you to the installation script.
+    </li>
+</ol>
 
-	<ol>
-		<li>
-			Download the zipfile from the <a href="http://formtools.org/download/" target="_blank">downloads page</a>
-			and unzip the files into a folder on your computer.
-		</li>
-		<li>
-			With an FTP client, upload the files to your webserver to a location of your choosing. This folder must be
-            accessible via a URL on your site, e.g. <b>http://www.yoursite.com/formtools/</b>
-		</li>
-		<li>
-			After the files have fully uploaded, boot up your web browser and go to the URL where you uploaded the
-            script. It will automatically take you to the installation script.
-		</li>
-	</ol>
-
-	<p>
-		The following pages explain each step of the installation script.
-	</p>
+<p>
+    The following pages explain each step of the installation script.
+</p>
 
 
 {% include close_section.html %}
