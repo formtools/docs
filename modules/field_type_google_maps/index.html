@@ -3,8 +3,8 @@ layout: default
 navPage: docs
 heading: Google Maps Field
 breadcrumbs:
-  - Modules,/modules
-  - Google Maps Field
+- Modules,/modules
+- Google Maps Field
 next: Configuration options,/modules/field_type_google_maps/options/
 categories: modules
 tags: field_types
@@ -12,57 +12,57 @@ tags: field_types
 
 {% include open_section.html nav='nav_google_maps.html' selected='how_to_use' %}
 
-    <h3>How to Use</h3>
+<h3>How to Use</h3>
 
-    {% include screenshot.html item="i187.jpg" %}
+{% include screenshot.html item="google_maps_field.png" %}
 
-    <p>
-        This module lets you embed a Google Maps fields into your form, so users can view an address on a map instead of
-        with a plain input field. This module can be used for <a href="{{site.baseurl}}/userdoc/form_management/form_types/">Internal forms and Form Builder
-        forms</a>; for your own forms (External forms) you'll need to handle the google map integration yourself.
-    </p>
+<p>
+    This module lets you embed a Google Maps fields into your form, so users can view an address on a map instead of
+    with a plain input field. This module can be used for <a
+        href="{{site.baseurl}}/userdoc/form_management/form_types/">Internal forms and Form Builder
+    forms</a>; for your own forms (External forms) you'll need to handle the google map integration yourself.
+</p>
 
-    <p class="alert alert-info">
-        <b>Note</b>: this field requires an internet connection. It connects directly to Google's servers to dole up the
-        map information. So no working locally without internet!
-    </p>
+<p class="alert alert-info">
+    <b>Note</b>: this field requires an internet connection. It connects directly to Google's servers to dole up the
+    map information. So no working locally without internet!
+</p>
 
-    <h4>How to Use</h4>
+<h3>How to Use</h3>
 
-    <p>
-        It's a very simple module, with very few options - so this should be a breeze to explain! (Optimistic, hey?)
-    </p>
+<ul>
+    <li>
+        After installing the module, go to Modules &raquo; Google Maps and enter your Google Maps key. Google
+        requires this to be set for anyone using their service.
+    </li>
+    <li>
+        Now go to the Forms -&gt; Edit Form page for any form that you would like to add a Google Maps field to.
+    </li>
+    <li>
+        There, on the Fields tab, locate the appropriate field (or add a new one), and in the "Field Type" column,
+        select "Google Maps".
+    </li>
+    <li>Click Update.</li>
+    <li>
+        Lastly, click the toggle icon at the top-right of the screen. That icon lets you switch between the last
+        viewing submission data page you went to (Submission Listing / Edit Submission) and the last Edit Form page.
+        If it doesn't take you to the Edit Submission page, edit a submission: behold the beauty of the Google Maps
+        field!
+    </li>
+</ul>
 
-    <ul>
-        <li>
-            After installing the module, go to Modules &raquo; Google Maps and enter your Google Maps key. Google
-            requires this to be set for anyone using their service.
-        </li>
-        <li>
-            Now go to the Forms -&gt; Edit Form page for any form that you would like to add a Google Maps field to.
-        </li>
-        <li>
-            There, on the Fields tab, locate the appropriate field (or add a new one), and in the "Field Type" column,
-            select "Google Maps".
-        </li>
-        <li>Click Update.</li>
-        <li>
-            Lastly, click the toggle icon at the top-right of the screen. That icon lets you switch between the last
-            viewing submission data page you went to (Submission Listing / Edit Submission) and the last Edit Form page.
-            If it doesn't take you to the Edit Submission page, edit a submission: behold the beauty of the Google Maps
-            field!
-        </li>
-    </ul>
+<p>
+    So far so good. So how does the field work? Well, all you need to do is enter an address
+    in the field that appears above the Google Map. After you click the Update button to the
+    right, it will attempt to locate the address and show the appropriate map coordinates.
+</p>
 
-    <p>
-        So far so good. So how does the field work? Well, all you need to do is enter an address
-        in the field that appears above the Google Map. After you click the Update button to the
-        right, it will attempt to locate the address and show the appropriate map coordinates.
-    </p>
+<h3>"Your Location" button</h3>
 
-    <p>
-        That's it!
-    </p>
+<p>
+    Version 2.1.0 added a new "Your Location" button that, when clicked, focuses the map on your current coordinates.
+    This button only appears on secure websites (<code>https</code>) due to a limitation in how the web API works.
+</p>
 
 
 {% include close_section.html %}

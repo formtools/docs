@@ -1454,9 +1454,9 @@
   screenshot_id: 187
   component_type: "module"
   component_id: 27
-  thumb_filename: "i187_th.jpg"
-  filename: "i187.jpg"
-  caption: "Google Maps Field - Edit field"
+  thumb_filename: "google_maps_field_th.png"
+  filename: "google_maps_field.png"
+  caption: "Google Maps Field"
   main_link: "http://modules.formtools.org/field_type_google_maps/"
   list_order: 0
 -
