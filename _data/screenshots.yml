@@ -1436,8 +1436,8 @@
   screenshot_id: 185
   component_type: "module"
   component_id: 1
-  thumb_filename: "i185_th.gif"
-  filename: "i185.gif"
+  thumb_filename: "export-manager_th.png"
+  filename: "export-manager.png"
   caption: "Export Manager: settings"
   main_link: ""
   list_order: 9

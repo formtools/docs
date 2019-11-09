@@ -3,10 +3,10 @@ layout: default
 navPage: docs
 heading: Export Manager
 breadcrumbs:
-  - Modules,/modules
-  - Export Manager,/modules/export_manager
-  - Main Functionality,/modules/export_manager/main/
-  - Settings
+- Modules,/modules
+- Export Manager,/modules/export_manager
+- Main Functionality,/modules/export_manager/main/
+- Settings
 prev: Managing Export Types,/modules/export_manager/main/managing_export_types/
 next: Reset to defaults,/modules/export_manager/main/reset_defaults
 categories: modules
@@ -15,17 +15,26 @@ tags: data_export,settings
 
 {% include open_section.html nav='nav_export_manager.html' selected='settings' %}
 
-  <h3>Settings</h3>
+<h3>Settings</h3>
 
-  {% include screenshot.html item="i185.gif" %}
+{% include screenshot.html item="export-manager.png" %}
 
-  <p>
-    The Settings page contains a couple of settings for the module. Specificaly, the
-    Export Manager allows you to generate actual files on the server instead of popping
-    them open in a popup or prompting download through a dialog window. For the file
-    generation option, here you can control which folder should be used to create and store
-    the files.
-  </p>
+<p>
+    The Settings page contains a few settings for the module.
+</p>
+
+<ul>
+    <li>
+        <b>Export timeout</b>: generating a form data can take time, so this setting let you control the time at which
+        it gives up on the export. By default, it's set to <code>300</code> seconds (5 minutes).
+    </li>
+    <li>
+        <b>Generated files folder path / generated files folder URL</b>: when exporting data, the module lets you to
+        generate actual files on the server instead of popping them open in a popup or prompting download through a
+        dialog window. For the file generation option, these settings control which folder should be used to create and
+        store the files.
+    </li>
+</ul>
 
 
 {% include close_section.html %}
