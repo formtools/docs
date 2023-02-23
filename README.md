@@ -36,8 +36,8 @@ If you want to run the documentation locally, you'll need to do the following:
 2. Install Jekyll via the [instructions here](http://jekyllrb.com/docs/installation/)
 3. Once it's been installed, open up your terminal/command line, navigate to the root folder of this repo and enter:
 ```
-npm install 
-npm install -g grunt-cli
+yarn install 
+yarn global add grunt-cli
 ```
 
 4. Next, start up the doc with `grunt start` (I need to run `sudo grunt start` myself).

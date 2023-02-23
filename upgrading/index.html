@@ -4,7 +4,7 @@ navPage: docs
 heading: Upgrading
 breadcrumbs:
   - Upgrading
-next: Upgrading to 2.0.3,/upgrading/2_0_3
+next: Old version upgrading instructions,/upgrading/old_versions
 categories: upgrading
 page_type: introduction
 ---
@@ -12,39 +12,92 @@ page_type: introduction
 {% include open_section.html nav='nav_upgrading.html' selected='upgrading' %}
 
 	<p>
-		{% include screenshot.html item="i176.gif" %}
 		Form Tools is made up of a separate of components: the Core, Modules, Themes and the API - each of which needs
-        to be updated individually. Since upgrading each component one by one would be rather tiresome, we created a
-        upgrade script to simplify matters.
-	</p>
-
-    <p class="alert alert-info">
-        The following pages outline special Form Tools versions. If your installation is very out of date and you want
-        to upgrade to the most recent version, upgrade to 2.0.3, THEN upgrade to 2.1.0, then to 3.0.0.
+        to be updated individually. Up until 2020, the Form Tools website offered a simple Upgrade script which did
+        the work of calculating exactly what packages you needed/wanted to update, and generate a custom zipfile of all
+        the components. But alas, alack, due to hosting costs we had to downgrade the website, which meant
+        we could no longer offer the upgrade functionality. We're very sorry! We miss it too!
     </p>
 
-	<h3>General upgrade instructions</h3>
+	<h3>Manual upgrade instructions</h3>
+
+    <p>
+        So instead, here's how you go about upgrading.
+    </p>
+
+    <h4>1. Check the unique version list</h4>
+
+    <p>
+        Most versions can be updated without special steps, but not all.
+    </p>
+    <p>
+        Take a look at the versions in the sidebar to the left. Those are special versions that required special
+        installation steps. To be blunt, they are very old. You may just want to consider doing a fresh installation,
+        but if you do want to update to the latest Form Tools version you'll need to upgrade to each of those versions
+        one by one, before updating to the very latest version. See those pages for more information - but the steps
+        below apply to any Form Tools version, so you'll need to repeat them for each of those versions.
+    </p>
+
+    <h4>2. Get the upgrade files</h4>
 
 	<ol>
-        <li>Backup your database and files. No, seriously! Yes, it's a pain but do it anyway.</li>
         <li>
-            Log into your Form Tools installation and click the "Upgrade" link. This appears in different locations
-            in the UI depending on your selected theme. The default theme shows it in the top right; Classic Grey and
-            Deep Blue show it in the left navigation menu.
+            Browse the list of <a href="https://modules.formtools.org">modules</a> and <a href="https://modules.formtools.org">themes</a>
+            on the website to find those packages you want to upgrade. (To see the available versions, click on the Download buttons).
+            For the available Core and API versions, visit the <a href="https://formtools.org/download/">download page</a>
+            and click on those items.
         </li>
         <li>
-            On the Form Tools site upgrade page, choose the components you want to upgrade and generate and download
-            the zipfile.
+            Download the appropriate versions from <a href="https://github.com/formtools">github</a>. Github stores all
+            the source code under the "Releases" area for each package.
+        </li>
+    </ol>
+
+    <h4>3. Preparing files</h4>
+
+    <ol>
+        <li>
+            Unzip the packages, one by one. Modules and themes will contain a single folder named something like <i>module-export_manager-3.3.0</i>.
         </li>
         <li>
-            Log out of Form Tools in a web browser and go to the login page.
+            For modules and themes, rename that folder to remove the <i>module-</i> or <i>theme-</i> prefix, and the -X.Y.Z <i>suffix</i>. In
+            this example, the final folder should just be named <i>export_manager</i>.
         </li>
         <li>
-            On your computer, unzip the file and upload the folder to your Form Tools folder on your server, overwriting
-            the old files.
+            Don't worry about the API or Core folders. They don't need to be renamed.
+        </li>
+    </ol>
+
+    <h4>4. Updating the files</h4>
+
+    <ol>
+        <li>Before we do this next bit, <b>backup your database and files</b>. No, seriously! Yes, it's a pain but do it anyway.</li>
+        <li>
+            For this next part, we're going to overwrite the old files on your server. Generally this means FTPing of SFTPing
+            the files and overwriting the old ones.
         </li>
         <li>
-            On the Form Tools login page, click refresh. You should see a "You've been upgrade to ..." message.
+            First do the Core (if you're updating that part). For that, just overwrite the contents of those files on
+            your server.
+
+            <div class="alert alert-warning">
+                Note that if this is a LOCAL installation, often operating systems will just remove entire folder and replace them
+                with the new ones, so special files - like your all-important <b>global/config.php</b> file that contains all
+                your settings - will be overwritten. So for local installations, overwriting the files folder by folder
+                is the (slow and annoying!) way to go. For FTP/SFTP you can just drag & drop and it'll do a merge overwrite -
+                keeping any files that already existed & weren't overwritten.
+            </div>
+        </li>
+        <li>
+            For modules and themes, do the same. Find the /modules and /themes subfolders and overwrite their contents
+            there.
+        </li>
+        <li>
+            Lastly, the API is found in global/api. Again, just overwrite the files.
+        </li>
+        <li>
+            Load up Form Tools in your browser and go to the Form Tools login page. You should see a "You've been
+            upgraded to ..." message right away.
         </li>
         <li>
             Log in as the administrator and go to the Modules page. There, click the Upgrade button for all modules
@@ -52,16 +105,6 @@ page_type: introduction
         </li>
         <li>You're done!</li>
 	</ol>
-
-	<hr size="1" />
-
-	<h3>Upgrading Form Tools 1.x to 2.0.x</h3>
-
-	<p>
-		Form Tools 1 is very, very old! We used to have an upgrade script to allow you to update to 
-		an old version of Form Tools 2, but even that is now out of date. I'm afraid there are no longer
-		ways to update to the new versions.
-	</p>
 
 
 {% include close_section.html %}
