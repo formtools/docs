@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 	var config = {
 		shell: {
 			start: {
-				command: "jekyll serve --watch",
+				command: "bundle exec jekyll serve",
 			}
 		}
 	};
